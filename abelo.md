@@ -45,7 +45,18 @@ Other teams you may Liase with are
 - Commitment to producing accurate, high-quality work.
 - Highly disciplined, organised and keen to learn.
 
+## Internship | What does Abelo say about students?
 
+![Abelo internship](/assets/uploads/image-3.png)
+
+Abelo says interns are given **responsibility**, **exposure** and are **fully integrated into the team**.
+
+It says it looks for students who are **interested and curious about aircraft leasing** and who can bring something distinctive while learning from the team.
+
+**Interview wording:**  
+“I liked that Abelo specifically says interns are given responsibility and integrated into the team. That is the type of placement I’m looking for — somewhere I can learn, but also contribute.”
+
+[Abelo Internship](https://abelo.aero/internship/)
 
 ## **Know Abelo** | **What do you know about Abelo**
 
@@ -302,18 +313,7 @@ Do not memorise an archive. Know a small number of current examples and what the
 
 [Abelo News](https://abelo.aero/our-news/)
 
-## Internship | What does Abelo say about students?
 
-![Abelo internship](/assets/uploads/image-3.png)
-
-Abelo says interns are given **responsibility**, **exposure** and are **fully integrated into the team**.
-
-It says it looks for students who are **interested and curious about aircraft leasing** and who can bring something distinctive while learning from the team.
-
-**Interview wording:**  
-“I liked that Abelo specifically says interns are given responsibility and integrated into the team. That is the type of placement I’m looking for — somewhere I can learn, but also contribute.”
-
-[Abelo Internship](https://abelo.aero/internship/)
 
 ## Contact & Limerick | Where is the interview?
 
