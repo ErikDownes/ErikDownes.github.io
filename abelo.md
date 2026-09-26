@@ -6,8 +6,6 @@ nav_order: 30
 eyebrow: Know the company. Say it simply.
 intro: "Company knowledge for the Abelo interview. "
 ---
-
-
 ## Intern Job | Asset Management Intern
 
 Based in **Limerick**, reporting to **Niamh O'Dwyer, AVP Asset Management**. Niamh reports to **Liam Duffy, VP Asset Management**.
@@ -45,12 +43,6 @@ Abelo is an Irish regional aircraft leasing company specialising in turboprops, 
 
 
 &nbsp;
-
-&nbsp;
-
-Abelo specialises in  leasing turboprop aircraft such as the ATR 42 and ATR 72  . 
-
-
 
 ## ATR | 1981 to now
 
