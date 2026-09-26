@@ -66,9 +66,9 @@ Its strategy focuses on modern turboprop aircraft and newer technologies that ca
 **Interview wording:**  
 “What stood out to me is that Abelo is not just leasing aircraft. It has a clear focus on regional connectivity and on moving towards newer, more efficient aircraft.”
 
-## Bees | Why the name  “Abelo”?
+## Bees | Do you know why we are called “Abelo”?
 
-I liked the idea behind the name. Abelo means bee in Esperanto, and the company links that to teamwork, structure and supporting a wider ecosystem.
+ Abelo means bee in Esperanto, linking the company to teamwork, structure, sustainability  and supporting a wider ecosystem.
 
 ## The Abelo Team | How is the Abelo business organised?
 
