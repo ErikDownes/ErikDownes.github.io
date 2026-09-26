@@ -14,18 +14,6 @@ In person - UL Co-op Interview - Abelo Aviation -
 
 Unit 7, Castletroy Business Park, Plassey Park Road, Castletroy, Limerick V94 KW28 Tuesday, 29th September
 
-
-
-## **Abelo** | **What do you know about Abelo**
-
-Abelo is a regional aircraft leasing company specialised in turboprops **and management services**. The company is based in Dublin with offices in 
-
-
-
-**Position Overview**
-
-
-
 Abelo is looking for an Intern to support our busy, Dublin based Asset Management team. The role will provide great exposure to the Aircraft Leasing industry.
 
 
@@ -56,6 +44,18 @@ Abelo is looking for an Intern to support our busy, Dublin based Asset Managemen
 - Highly disciplined, accompanied by a strong desire to learn.
 
 
+
+&nbsp;
+
+## **Abelo** | **What do you know about Abelo**
+
+Abelo is a regional aircraft leasing company specialised in turboprops **and management services**. The company is based in Dublin with offices in 
+
+
+
+&nbsp;
+
+&nbsp;
 
 &nbsp;
 
