@@ -21,7 +21,7 @@ Follow the story from the Wright brothers’ propeller-driven aircraft to the em
 
 **Key idea:** aviation did not simply move from propeller to jet. Propellers remained ideal for small aircraft and evolved into turboprops for short regional routes, while jets became dominant for faster, longer-distance travel.
 
-##  Regional Aviation | Why Turboprops suit Low density  Regional Aviation
+## Regional Aviation | Why Turboprops suit Low density  Regional Aviation
 
 - Regional routes are often **short and lower-density**.
 - The **route economics largely drive the aircraft choice**: distance, passenger demand, frequency, airport infrastructure and operating cost.
@@ -33,46 +33,41 @@ Follow the story from the Wright brothers’ propeller-driven aircraft to the em
 
 **Remember:** **the route drives the aircraft — turboprop for lower-density short-haul efficiency; larger jets for higher-density demand.**
 
-## ATR | 1981 to now
+## ATR | From the Original Series to the -600
 
-- **1981:** ATR formed by France’s **Aérospatiale** and Italy’s **Aeritalia**.
-- **1985:** ATR 42 enters service.
-- **1989:** larger ATR 72 follows.
-- Later **500-series** and **600-series** generations modernise the family.
-- **Today:** final assembly in **Toulouse**; roughly **30–40 aircraft per year**, mostly ATR 72s.
+**1981:** ATR formed by France’s **Aérospatiale** and Italy’s **Aeritalia**.
 
-**Key idea:** ATR specialises in efficient regional turboprops.
+- **1985:** first ATR 42 delivered and enters service.
+- **1989:** larger ATR 72 enters service.
+- **1993:** ATR gives the go-ahead for the new **-500 series**.
+- **1994:** first flight of the **ATR 42-500**.
+- **1996:** first flight of the **ATR 72-500**.
+- **2007:** ATR launches the next-generation **-600 series**.
+- **2009:** first flight of the **ATR 72-600**.
+- **2010:** first flight of the **ATR 42-600**.
+- **2011:** first **ATR 72-600** delivered, to Royal Air Maroc.
+- **2012:** first **ATR 42-600** enters commercial service.
 
+**Key idea:** the ATR 42 and ATR 72 are not completely new aircraft every generation. The **-500 and -600 series are successive modernisations of the same basic aircraft families**, introducing improved engines, avionics, cabin design and operating efficiency.
 
-
-Aircraft Leasing | Financial maths link
-
-
+## Aircraft Leasing | Financial Maths Link
 
 - **ATR 42:** roughly **US$20–22m** new.
 - **ATR 72:** roughly **US$26–27m** new.
 - Actual purchase prices are usually **negotiated and confidential**.
-- Lease economics depend on **purchase price, term, interest/discount rate, airline credit risk, cash flow and residual value**.
+- Lease economics depend on **purchase price, lease term, interest/discount rate, airline credit risk, cash flow and residual value**.
+- **time value of money**
 
-**Key idea:** aircraft value = **future lease income + residual value, discounted for time and risk**.
-
-## Aircraft Leasing | Aircraft Leasing is Financial Maths
-
-- **ATR 42:** roughly **US$20–22m** new.
-- **ATR 72:** roughly **US$26–27m** new.
-- Actual prices are usually negotiated.
-- Financial maths includes:
-  - **time value of money**
-  - **regular lease payments**
-  - **present and future value**
-  - **interest / discount rates**
-  - **credit risk**
-  - **residual value**
-  - **amortisation-style cash-flow curves**
+- **regular lease payments**
+- **present and future value**
+- **interest / discount rates**
+- **credit risk**
+- **residual value**
+- **amortisation-style cash-flow curves**
 
 **Key idea:** compare the aircraft’s **purchase cost** with the present value of future lease payments and its expected value at lease end.
 
-## Merging to Abelo | Elix (Leasing)+ ADARE  (Management) 
+## Merging to Abelo | Elix (Leasing)+ ADARE  (Management)
 
 - **2013:** Elix founded — turboprop leasing platform and portfolio.
 - **2020:** ADARE founded — regional-aviation management expertise.
