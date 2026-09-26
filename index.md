@@ -16,6 +16,17 @@ intro: Interviews are not about inventing brilliant answers on the spot. They
   <p class="home-hero-copy">You already have the course, the projects, the technical knowledge and the experiences. The interview tests whether you can <strong>retrieve them, structure them and say them clearly when it matters.</strong></p>
 </div>
 
+<div class="home-video" style="margin: 1.5rem 0 2rem;">
+  <iframe
+    src="https://www.youtube.com/embed/tKsS7KZie8Y"
+    title="Interview preparation video"
+    style="width:100%; aspect-ratio:16/9; border:0; border-radius:12px;"
+    loading="lazy"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen>
+  </iframe>
+</div>
+
 <div class="home-three">
   <div class="home-panel">
     <span class="home-panel-number">01</span>
