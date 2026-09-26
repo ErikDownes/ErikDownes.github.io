@@ -69,7 +69,7 @@ content:
           format: html
 
   - { name: about_erik, label: "About Erik", type: file, path: about-erik.md, format: yaml-frontmatter, fields: *docfields }
-  - { name: abelo, label: "Abelo", type: file, path: abelo.md, format: yaml-frontmatter, fields: *docfields }
+  - { name: abelo, label: "Abelo & Aircraft Leasing", type: file, path: abelo.md, format: yaml-frontmatter, fields: *docfields }
   - { name: working_with_others, label: "Work with Others", type: file, path: working-with-others.md, format: yaml-frontmatter, fields: *docfields }
   - { name: working_independently, label: "Work Independently", type: file, path: working-independently.md, format: yaml-frontmatter, fields: *docfields }
   - { name: modules_projects, label: "Modules & Projects", type: file, path: modules-projects.md, format: yaml-frontmatter, fields: *docfields }
