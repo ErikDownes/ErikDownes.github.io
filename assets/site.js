@@ -25,6 +25,68 @@
     { term: 'Robustness', definition: 'The extent to which a result remains reliable when assumptions, inputs or conditions change.', cue: 'Change inputs → does the conclusion hold?' },
     { term: 'Sensitivity analysis', definition: 'Testing how changes in model inputs or assumptions affect the resulting output.', cue: 'Vary input → observe output.' },
     { term: 'Variance', definition: 'A measure of how widely values are dispersed around their mean.', cue: 'Distance from mean, squared and averaged.' }
+
+    ,{ term: 'Asset management', definition: 'Managing an aircraft through its lease life to protect value, control risk and support commercial returns.', cue: 'Aircraft condition + lease compliance + value.' }
+    ,{ term: 'Aircraft leasing', definition: 'Providing an aircraft to an airline for an agreed period in return for lease payments under a contract.', cue: 'Asset owner → airline user → lease rent.' }
+    ,{ term: 'Lessor', definition: 'The owner or financing party that leases an aircraft to an airline.', cue: 'Lessor owns; lessee operates.' }
+    ,{ term: 'Lessee', definition: 'The airline or operator that uses an aircraft under a lease agreement.', cue: 'Lessee operates; lessor owns.' }
+    ,{ term: 'Lease agreement', definition: 'The contract setting out rent, term, maintenance, reporting, insurance, return conditions and other obligations.', cue: 'The rules governing the lease.' }
+    ,{ term: 'Residual value', definition: 'The estimated value of an aircraft at the end of a lease or investment period.', cue: 'What is the aircraft worth at the end?' }
+    ,{ term: 'Maintenance reserve', definition: 'Payments linked to aircraft or engine usage that help fund major future maintenance events.', cue: 'Usage today → maintenance funding later.' }
+    ,{ term: 'Utilisation', definition: 'How intensively an aircraft is used, commonly measured by flight hours and flight cycles.', cue: 'Hours + cycles.' }
+    ,{ term: 'Flight cycle', definition: 'One take-off and one landing; an important measure of structural and component usage.', cue: 'Take-off + landing = one cycle.' }
+    ,{ term: 'Airframe', definition: 'The main physical structure of an aircraft excluding engines and many removable systems.', cue: 'The aircraft structure itself.' }
+    ,{ term: 'Turboprop', definition: 'A gas-turbine engine that drives a propeller, well suited to efficient short regional routes.', cue: 'Turbine power → propeller.' }
+    ,{ term: 'Regional aviation', definition: 'Air transport connecting smaller cities and communities, usually over shorter routes with smaller aircraft.', cue: 'Shorter routes + smaller markets.' }
+    ,{ term: 'ATR 42', definition: 'A smaller twin-engine regional turboprop in the ATR family, typically used on lower-demand short routes.', cue: 'Smaller ATR.' }
+    ,{ term: 'ATR 72', definition: 'The larger twin-engine regional turboprop in the ATR family, offering more seats than the ATR 42.', cue: 'Larger ATR.' }
+    ,{ term: 'ATR 600 series', definition: 'The current-generation ATR family with updated avionics, cabin and operating improvements over earlier variants.', cue: 'Modern ATR generation.' }
+    ,{ term: 'Avionics', definition: 'The electronic systems used for aircraft communication, navigation, monitoring and flight control support.', cue: 'Aircraft electronics.' }
+    ,{ term: 'Delivery slot', definition: 'A reserved position in an aircraft manufacturer’s future production and delivery schedule.', cue: 'Place in the production queue.' }
+    ,{ term: 'Purchase option', definition: 'A contractual right, but not usually an obligation, to purchase an aircraft or take a future delivery under agreed terms.', cue: 'Right, not obligation.' }
+    ,{ term: 'Option', definition: 'A contractual right that gives flexibility to act later without the same obligation as a firm commitment.', cue: 'Flexibility has value.' }
+    ,{ term: 'Firm order', definition: 'A binding commitment to purchase specified aircraft, subject to the terms of the purchase agreement.', cue: 'Committed aircraft order.' }
+    ,{ term: 'OEM', definition: 'Original Equipment Manufacturer; the company that manufactures the aircraft or major equipment.', cue: 'The manufacturer.' }
+    ,{ term: 'Power BI', definition: 'Microsoft software for connecting, modelling and visualising data in interactive reports and dashboards.', cue: 'Data → model → visual report.' }
+    ,{ term: 'Dashboard', definition: 'A visual display that brings key measures and trends together for monitoring and decision-making.', cue: 'Important information at a glance.' }
+    ,{ term: 'KPI', definition: 'Key Performance Indicator; a measure used to track performance against an important objective.', cue: 'A measure that matters.' }
+    ,{ term: 'Data validation', definition: 'Checking that data is complete, sensible, correctly formatted and consistent before it is used.', cue: 'Is the data fit to use?' }
+    ,{ term: 'Reconciliation', definition: 'Comparing two records or datasets and resolving differences so that they agree.', cue: 'Compare → investigate → match.' }
+    ,{ term: 'Billing', definition: 'The process of calculating, issuing and tracking amounts due from customers under contractual terms.', cue: 'What is due, why and when.' }
+    ,{ term: 'Accrual', definition: 'Recognising income or expense in the period it is earned or incurred rather than when cash moves.', cue: 'Economic period, not cash date.' }
+    ,{ term: 'Cash flow', definition: 'The movement of cash into and out of a business or investment over time.', cue: 'Cash in minus cash out over time.' }
+    ,{ term: 'Discount rate', definition: 'The rate used to convert future cash flows into present value, reflecting time and required return or risk.', cue: 'Rate used to bring future cash back to today.' }
+    ,{ term: 'Net present value', definition: 'The present value of expected future cash inflows minus the present value of cash outflows.', cue: 'Discounted inflows − discounted outflows.' }
+    ,{ term: 'NPV', definition: 'Net present value; the value today of future net cash flows after discounting.', cue: 'Present value of the net cash flows.' }
+    ,{ term: 'Internal rate of return', definition: 'The discount rate at which an investment’s net present value equals zero.', cue: 'The project’s break-even discount rate.' }
+    ,{ term: 'IRR', definition: 'Internal rate of return; the discount rate that makes net present value equal to zero.', cue: 'NPV = 0.' }
+    ,{ term: 'Credit risk', definition: 'The risk that a counterparty will fail to make payments or meet financial obligations.', cue: 'Will the counterparty pay?' }
+    ,{ term: 'Counterparty', definition: 'The other party to a contract or financial transaction.', cue: 'Who is on the other side of the deal?' }
+    ,{ term: 'Default', definition: 'Failure to meet a contractual obligation, such as making a required payment.', cue: 'Contractual obligation not met.' }
+    ,{ term: 'Covenant', definition: 'A contractual promise or restriction that a party must comply with during an agreement.', cue: 'Ongoing contractual rule.' }
+    ,{ term: 'Sanctions', definition: 'Legal restrictions imposed by governments or international bodies on specified countries, organisations, individuals or transactions.', cue: 'Legal restrictions on dealing.' }
+    ,{ term: 'Geopolitical risk', definition: 'Risk arising from political conflict, sanctions, war, trade restrictions or international instability.', cue: 'Politics affecting assets and contracts.' }
+    ,{ term: 'Liquidity', definition: 'The ability to meet cash obligations when due, or how easily an asset can be converted to cash without a large loss in value.', cue: 'Access to cash.' }
+    ,{ term: 'Depreciation', definition: 'The accounting allocation of an asset’s cost over its useful life.', cue: 'Cost spread over useful life.' }
+    ,{ term: 'Impairment', definition: 'An accounting reduction in an asset’s carrying value when it is no longer expected to recover that amount.', cue: 'Book value reduced after loss in recoverability.' }
+    ,{ term: 'Carrying value', definition: 'The value at which an asset is recorded in the accounts after depreciation and other adjustments.', cue: 'Accounting book value.' }
+    ,{ term: 'Yield', definition: 'A return measure that relates income or cash flow to the value or cost of an investment.', cue: 'Return relative to value.' }
+    ,{ term: 'Portfolio', definition: 'A collection of assets or investments managed together.', cue: 'Group of assets.' }
+    ,{ term: 'Diversification', definition: 'Spreading exposure across different assets, customers or markets to reduce concentration risk.', cue: 'Do not rely on one exposure.' }
+    ,{ term: 'Concentration risk', definition: 'Risk created by having too much exposure to one customer, market, aircraft type or other factor.', cue: 'Too much in one place.' }
+    ,{ term: 'Scenario analysis', definition: 'Testing how outcomes change under different plausible combinations of future conditions.', cue: 'What happens under different futures?' }
+    ,{ term: 'Forecast', definition: 'An estimate of a future value or outcome based on available data, assumptions and a chosen method.', cue: 'Evidence-based estimate of what may happen.' }
+    ,{ term: 'Time series', definition: 'Data recorded in time order, often analysed for trend, seasonality and forecasting.', cue: 'Values indexed by time.' }
+    ,{ term: 'R-squared', definition: 'A regression measure describing the proportion of variation in the response explained by the model.', cue: 'How much variation the model explains.' }
+    ,{ term: 'p-value', definition: 'A probability used in hypothesis testing to assess how incompatible observed data are with a null hypothesis.', cue: 'Evidence against the null, not effect size.' }
+    ,{ term: 'Standard deviation', definition: 'A measure of typical spread around the mean, expressed in the same units as the data.', cue: 'Typical distance from the mean.' }
+    ,{ term: 'API', definition: 'Application Programming Interface; a defined way for software systems to exchange data or functionality.', cue: 'Software talking to software.' }
+    ,{ term: 'CSV', definition: 'Comma-separated values; a simple text format for storing tabular data.', cue: 'Rows and columns in text form.' }
+    ,{ term: 'Database', definition: 'A structured system for storing, organising and retrieving data.', cue: 'Persistent organised data store.' }
+    ,{ term: 'Automation', definition: 'Using software or defined processes to perform repetitive tasks with less manual intervention.', cue: 'Repeatable task done automatically.' }
+    ,{ term: 'Process improvement', definition: 'A structured effort to make a workflow more accurate, efficient, reliable or easier to operate.', cue: 'Understand → improve → measure.' }
+    ,{ term: 'AVP', definition: 'Assistant Vice President; a management title commonly used in financial services and aircraft leasing organisations.', cue: 'Assistant Vice President.' }
+    ,{ term: 'EVP', definition: 'Executive Vice President; a senior executive title above vice-president level in many organisations.', cue: 'Executive Vice President.' }
   ];
 
   const cleanText = value => (value || '')
@@ -577,6 +639,70 @@
 
   if (!body) return;
 
+  const showGlossaryDefinition = rawTerm => {
+    const term = cleanText(rawTerm);
+    const item = readGlossary().find(entry => entry.term.toLowerCase() === term.toLowerCase());
+    if (!item) return;
+    glossaryDialog.hidden = false;
+    const heading = document.createElement('h2');
+    heading.textContent = item.term;
+    const definition = document.createElement('p');
+    definition.textContent = item.definition || '';
+    glossaryDialogBody.replaceChildren(heading, definition);
+    if (item.cue) {
+      const cue = document.createElement('p');
+      cue.className = 'recall';
+      cue.innerHTML = '<strong>Recall cue:</strong> ';
+      cue.append(document.createTextNode(item.cue));
+      glossaryDialogBody.appendChild(cue);
+    }
+  };
+
+  const linkKnownGlossaryTerms = root => {
+    if (!root) return;
+    const entries = readGlossary().filter(item => item.term && item.term.length > 1);
+    const terms = entries.map(item => item.term).sort((a, b) => b.length - a.length);
+    const escapeRegExp = value => value.replace(/[.*+?^$()|[\]\\]/g, '\\$&');
+    const pattern = terms.map(escapeRegExp).join('|');
+    if (!pattern) return;
+    const matcher = new RegExp('\\b(' + pattern + ')\\b', 'gi');
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+    const nodes = [];
+    while (walker.nextNode()) {
+      const node = walker.currentNode;
+      const parent = node.parentElement;
+      if (!parent || parent.closest('a,button,script,style,textarea,input,.glossary-term')) continue;
+      matcher.lastIndex = 0;
+      if (matcher.test(node.nodeValue || '')) nodes.push(node);
+    }
+    nodes.forEach(node => {
+      const value = node.nodeValue || '';
+      const fragment = document.createDocumentFragment();
+      let last = 0;
+      matcher.lastIndex = 0;
+      value.replace(matcher, (match, _group, offset) => {
+        fragment.append(document.createTextNode(value.slice(last, offset)));
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'glossary-term';
+        button.textContent = match;
+        button.title = 'Show definition';
+        button.addEventListener('click', event => {
+          event.preventDefault();
+          event.stopPropagation();
+          showGlossaryDefinition(match);
+        });
+        fragment.appendChild(button);
+        last = offset + match.length;
+        return match;
+      });
+      fragment.append(document.createTextNode(value.slice(last)));
+      node.replaceWith(fragment);
+    });
+  };
+
+  linkKnownGlossaryTerms(body);
+
   const interviewHeadings = () => Array.from(body.querySelectorAll(':scope > h2[data-question-text]'));
 
   const sourceNodesFor = heading => {
@@ -1071,17 +1197,10 @@
 
     controls.append(play, stop, outlineButton, answerButton, movePage);
 
-    if (pageEdit?.href) {
-      const cms = document.createElement('a');
-      cms.href = `${pageEdit.href.split('#')[0]}#:~:text=${encodeURIComponent(sourceHeadingText(heading))}`;
-      cms.target = '_blank';
-      cms.rel = 'noopener';
-      cms.textContent = 'Edit in CMS';
-      cms.title = 'Edit this page permanently in Pages CMS';
-      controls.appendChild(cms);
-    }
+
 
     focusContent.replaceChildren(title, controls, outline, copy);
+    linkKnownGlossaryTerms(copy);
     lastTrigger = heading;
     overlay.hidden = false;
     document.body.classList.add('answer-focus-open');
