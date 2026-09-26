@@ -75,6 +75,52 @@
         <a class="edit-link" href="{{ cms_url }}" target="_blank" rel="noopener">Edit this page</a>
         {% endif %}
       </div>
+      {% if page.path == 'abelo.md' %}
+      <div id="abeloInterviewTools" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;margin:20px 0 28px;">
+        <section style="border:1px solid rgba(127,127,127,.28);border-radius:16px;padding:22px;text-align:center;display:flex;flex-direction:column;justify-content:center;min-height:220px;">
+          <div style="font-size:.78rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;opacity:.68;">Interview countdown</div>
+          <div id="abeloCountdown" style="font-size:clamp(2.2rem,6vw,4rem);font-weight:850;line-height:1.05;margin:.45rem 0;">—</div>
+          <div style="opacity:.72;">Tuesday 29 September · 11:10 AM</div>
+        </section>
+        <section style="border:1px solid rgba(127,127,127,.28);border-radius:16px;overflow:hidden;min-height:340px;">
+          <iframe
+            title="Abelo Aviation Limerick interview location — V94 KW28"
+            src="https://www.google.com/maps?q=52.6670293,-8.5753877&z=18&t=k&output=embed"
+            width="100%"
+            height="360"
+            style="border:0;display:block;"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen>
+          </iframe>
+        </section>
+      </div>
+      <script>
+        (() => {
+          const output = document.getElementById('abeloCountdown');
+          if (!output) return;
+          const interview = new Date('2026-09-29T11:10:00+01:00');
+          function updateCountdown() {
+            const ms = interview.getTime() - Date.now();
+            if (ms <= 0) {
+              output.textContent = 'Interview time';
+              return;
+            }
+            const totalSeconds = Math.floor(ms / 1000);
+            const hours = Math.floor(totalSeconds / 3600);
+            const minutes = Math.floor((totalSeconds % 3600) / 60);
+            const seconds = totalSeconds % 60;
+            output.textContent =
+              hours + 'h ' +
+              String(minutes).padStart(2, '0') + 'm ' +
+              String(seconds).padStart(2, '0') + 's';
+          }
+          updateCountdown();
+          setInterval(updateCountdown, 1000);
+        })();
+      </script>
+      {% endif %}
+
       <div class="doc-body" id="docBody">{{ content }}</div>
       {% unless page.study_mode %}
       <script>
