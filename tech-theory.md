@@ -10,7 +10,37 @@ intro: Keep the core interview pages lean. Use this space for the deeper
 ---
 
 
+# Abelo | What do you know about Abelo?
 
+## Key Line
+
+**Abelo is an Irish aircraft leasing company specialising in regional turboprop aircraft, particularly the ATR 42 and ATR 72, with expertise across the full aircraft asset-management lifecycle.** [Abelo - Turboprop Technology](https://abelo.aero/?utm_source=chatgpt.com)
+
+## Merging to Abelo | Elix + ADARE
+
+- **2013:** Elix Aviation established as a regional aircraft leasing platform, providing leasing and asset-management services. [Abelo - Turboprop Technology](https://abelo.aero/welcome-to-abelo/?utm_source=chatgpt.com)
+- **2020:** ADARE Aviation Capital established, bringing specialist regional-aviation management expertise. [Abelo - Turboprop Technology](https://abelo.aero/welcome-to-abelo/?utm_source=chatgpt.com)
+- **2022:** Elix and ADARE merged to form **Abelo**.
+- The merger combined **Elix's leasing platform and turboprop portfolio** with **ADARE's management expertise**. [Abelo - Turboprop Technology](https://abelo.aero/welcome-to-abelo/?utm_source=chatgpt.com)
+- **2025:** Abelo was acquired from Oaktree-managed funds by an affiliate of **Cerberus Capital Management**, a global alternative-investment manager with approximately **$65 billion in assets** at the time of the acquisition. [Cerberus Capital Management](https://www.cerberus.com/media/cerberus-acquires-turboprop-aircraft-lessor-abelo/?utm_source=chatgpt.com)
+
+## What Abelo Does
+
+Abelo specialises in **turboprop aircraft leasing**, with particular focus on modern regional aircraft such as the **ATR 42 and ATR 72**.
+
+But it is more than simply buying aircraft and renting them to airlines. Abelo describes its capabilities across the aircraft ownership cycle, including:
+
+**acquisition → leasing → asset management → technical oversight → remarketing / end-of-life solutions.** [Abelo - Turboprop Technology](https://abelo.aero/abelo-announces-the-appointment-of-two-new-board-members/?utm_source=chatgpt.com)
+
+## Why Turboprops?
+
+Abelo has deliberately positioned itself as a **specialist turboprop lessor** rather than a broad aircraft lessor.
+
+Its strategy is based on turboprops being particularly suitable for **short regional routes**, where efficiency and lower fuel consumption can be more important than the higher speeds provided by jets. Abelo also emphasises the role of modern turboprops in reducing the environmental footprint of regional aviation. [Abelo - Turboprop Technology](https://abelo.aero/?utm_source=chatgpt.com)
+
+## Interview Version
+
+**“Abelo is an Irish regional aircraft leasing company specialising in turboprops, particularly aircraft such as the ATR 42 and ATR 72. It was created in 2022 through the merger of Elix Aviation, which brought the leasing platform and turboprop portfolio, and ADARE Aviation Capital, which brought specialist management expertise. What I find interesting is that Abelo isn't simply a lessor — it manages aircraft throughout the asset lifecycle, from acquisition and leasing through asset management and ultimately remarketing or disposal. In 2025 the company was acquired by Cerberus, giving it substantial institutional backing for further growth.”** [Abelo - Turboprop Technology](https://abelo.aero/welcome-to-abelo/?utm_source=chatgpt.com)
 
 ## Strategy | Specialist vs Diversified
 
