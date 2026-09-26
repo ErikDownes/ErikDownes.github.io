@@ -16,7 +16,7 @@ Unit 7, Castletroy Business Park, Plassey Park Road, Castletroy, Limerick V94 KW
 
 
 
-## **Company Overview**
+## **Abelo** | **What do you know about Abelo**
 
 Abelo is a regional aircraft leasing company specialised in turboprops **and management services**. The company is based in Dublin with offices in 
 
