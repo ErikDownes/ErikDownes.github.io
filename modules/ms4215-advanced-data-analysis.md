@@ -6,45 +6,63 @@ year: "3rd"
 semester: "Sem1"
 status: "Core"
 eyebrow: "3RD YEAR · SEM1"
-intro: "A concise interview-ready page for MS4215 — Advanced Data Analysis."
+intro: "Lecture notes and resources for advanced data analysis, organised by week and lab."
+study_mode: true
 ---
-<p><a href="{{ '/modules-projects.html' | relative_url }}">← Modules & Projects</a></p>
 
-## Module overview
+[← Modules & Projects]({{ '/modules-projects.html' | relative_url }})
 
-This is the interview-level page for **MS4215 — Advanced Data Analysis**. Add the lecturer's module overview or syllabus here, then reduce it to the main ideas Erik should be able to recognise and explain.
+## Start here
 
-## Core concepts
+**[Read Week 1 as a web page →]({{ '/course/ms4215/week-01.html' | relative_url }})**  
+Introduction, the R environment, variable types, descriptive statistics, plots, sampling, confidence intervals and hypothesis tests. The page combines Lectures 1A and 1B into readable sections, with the original slides available below.
 
-- Add the main concepts from the module here.
+This module develops practical and theoretical skill in **building, interpreting and critically evaluating statistical models**. It connects multiple regression, analysis of variance (ANOVA) and generalised linear models (GLMs). The emphasis is on interpreting results and checking whether a model answers the question reliably.
 
-## Key definitions
+## Course map
 
-- Add the essential vocabulary and definitions here.
+| Stage | Focus | Material in this archive |
+|:--|:--|:--|
+| Weeks 1–6 | Multiple linear regression, diagnostics and model selection | Slides for Weeks 1–3 |
+| Weeks 7–8 | ANOVA and extensions | Lab sheets in the archive |
+| Weeks 9–11 | GLMs for binary and count outcomes | Lab sheets in the archive |
+| Week 12 | Revision | — |
 
-## Important methods / theorems
+The Brightspace overview lists an **online test in Week 6 (10%)**, a **data analysis assignment due at the end of Week 12 (20%)**, and a **final exam in Weeks 14/15 (70%)**. Confirm dates and instructions in Brightspace, especially if they change. Labs begin in **Week 3**, so the numbered lab sheets below are separate from Week 1.
 
-- Add the main methods, formulas, models or theorems Erik should recognise.
+## Lecture resources
 
-## Explain it simply
+| Week | Topic | Original slides | Data supplied |
+|:--|:--|:--|:--|
+| 1A | Module introduction, data analysis and R | [Week 01A slides (ZIP)]({{ '/resources/ms4215/archives/Week_01A.zip' | relative_url }}) | [Irish weather CSV]({{ '/resources/ms4215/data/ireland_weather_2000_2023.csv' | relative_url }}) |
+| 1B | Statistical concepts and inference | [Week 01B PDF]({{ '/resources/ms4215/lectures/Week_01B.pdf' | relative_url }}) | Same weather data |
+| 2A | Correlation and simple linear regression | [Week 02A PDF]({{ '/resources/ms4215/lectures/Week_02A.pdf' | relative_url }}) | Slides mention `sales.csv`; it was not in the ZIP |
+| 2B | Multiple linear regression | [Week 02B PDF]({{ '/resources/ms4215/lectures/Week_02B.pdf' | relative_url }}) | [Earnings CSV]({{ '/resources/ms4215/data/earnings.csv' | relative_url }}); slides also mention `beer.csv`, not in the ZIP |
+| 3A | Multicollinearity in multiple regression | [Week 03A PDF]({{ '/resources/ms4215/lectures/Week_03A.pdf' | relative_url }}) | [Cars CSV]({{ '/resources/ms4215/data/cars.csv' | relative_url }}) |
 
-Write a short plain-English explanation of what this module is about and what problem it helps solve.
+**Week 1 is available in HTML above.** Later lecture PDFs are indexed here while their HTML lessons are prepared. The two copies of `cars.csv` in the upload were identical, so the resource folder contains one copy.
 
-## Applications & connections
+## Lab sheets and datasets
 
-Connect the module to finance, data, modelling, computing, business, engineering or Abelo where relevant.
+| Lab | Questions | Dataset | Other material |
+|:--|:--|:--|:--|
+| 1 | [Spotify analysis]({{ '/resources/ms4215/labs/lab_1_questions.pdf' | relative_url }}) | [Spotify CSV (ZIP)]({{ '/resources/ms4215/archives/lab1_dataset_spotify.zip' | relative_url }}) | [Supplied solutions]({{ '/resources/ms4215/labs/lab_1_solutions.pdf' | relative_url }}) |
+| 2 | [Espresso]({{ '/resources/ms4215/labs/lab_2_questions.pdf' | relative_url }}) | [Espresso CSV]({{ '/resources/ms4215/data/espresso.csv' | relative_url }}) | — |
+| 3 | [Cardiovascular study]({{ '/resources/ms4215/labs/lab_3_questions.pdf' | relative_url }}) | [Heart study CSV]({{ '/resources/ms4215/data/heart_study.csv' | relative_url }}) | — |
+| 4 | [Wages and experience]({{ '/resources/ms4215/labs/lab_4_questions.pdf' | relative_url }}) | `CPS1985` is loaded from an R package in the sheet | — |
+| 5 | [Exercise and wellbeing]({{ '/resources/ms4215/labs/lab_5_questions.pdf' | relative_url }}) | [Exercise CSV]({{ '/resources/ms4215/data/exercise_wellbeing.csv' | relative_url }}) | — |
+| 6 | [Penguins and ANOVA]({{ '/resources/ms4215/labs/lab_6_questions.pdf' | relative_url }}) | [Penguins CSV]({{ '/resources/ms4215/data/penguins.csv' | relative_url }}) | — |
+| 7 | [Baseball salaries]({{ '/resources/ms4215/labs/lab_7_questions.pdf' | relative_url }}) | [Hitters CSV]({{ '/resources/ms4215/data/hitters.csv' | relative_url }}) | — |
+| 8 | [Heart disease and logistic regression]({{ '/resources/ms4215/labs/lab_8_questions.pdf' | relative_url }}) | [Heart CSV]({{ '/resources/ms4215/data/heart.csv' | relative_url }}) | — |
+| 9 | [Diabetes and logistic regression]({{ '/resources/ms4215/labs/lab_9_questions.pdf' | relative_url }}) | Pima data are loaded from the R package named in the sheet | — |
 
-## Interview questions
+The lab numbers are the document labels; the upload does not give a separate calendar date for each lab. Files are grouped by the dataset named in each sheet, rather than by alphabetical filename.
 
-- What is this module about?
-- Which concept from it did you find most useful?
-- Where could it be applied in practice?
-- How does it connect to other modules in the degree?
+## What to recognise and explain
 
-## Projects / assignments / evidence
+- **Regression:** how a response changes with predictors, what coefficients mean, and why assumptions and diagnostics matter.
+- **ANOVA:** compares groups within the same linear-model framework; categorical predictors can be represented using indicator variables.
+- **GLMs:** extend the framework to outcomes such as yes/no results and counts.
+- **Critical interpretation:** distinguish association from causation, assess missingness and selection, and explain uncertainty in ordinary language.
 
-Add assignments, projects, software, grades or examples Erik can use as evidence.
-
-## Recall cues
-
-**Recall cue:** overview → concepts → method → application → evidence
+For an asset-management interview, a useful connection is **exploring an aircraft dataset, fitting a model of an outcome, checking its assumptions, and communicating what the result can and cannot support**. That is an application of the methods, not a claim that this module used aircraft data.

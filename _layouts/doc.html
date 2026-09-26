@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="{{ '/assets/styles.css' | relative_url }}?v={{ site.github.build_revision }}">
   <link rel="stylesheet" href="{{ '/assets/mirror-fixes.css' | relative_url }}?v={{ site.github.build_revision }}">
 </head>
-<body>
+<body class="{% if page.study_mode %}study-mode{% endif %}">
   <header class="topbar">
     <a class="brand" href="{{ '/' | relative_url }}" aria-label="Erik Downes UL Co-op Interview — Home">
       <img src="{{ '/assets/coop-logo.svg' | relative_url }}" alt="Erik Downes UL Co-op Interview">
@@ -69,9 +69,14 @@
       {% endif %}
       <div class="doc-toolbar" aria-label="Document controls">
         <button type="button" data-action="print">Print</button>
+        {% if page.study_mode %}
+        <a class="edit-link" href="https://github.com/ronandownes/coop/edit/main/{{ page.path }}" target="_blank" rel="noopener">Edit this page</a>
+        {% else %}
         <a class="edit-link" href="{{ cms_url }}" target="_blank" rel="noopener">Edit this page</a>
+        {% endif %}
       </div>
       <div class="doc-body" id="docBody">{{ content }}</div>
+      {% unless page.study_mode %}
       <script>
         (() => {
           const body = document.getElementById('docBody');
@@ -101,6 +106,7 @@
           });
         })();
       </script>
+      {% endunless %}
     </article>
   </main>
 

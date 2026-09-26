@@ -53,6 +53,17 @@ body{margin:0;background:var(--page);color:var(--ink);font-family:Arial,Helvetic
 .doc-body>h2.interview-question-heading:hover,.doc-body>h2.interview-question-heading:focus-visible{background:#f3f6fb;color:#174ea6;outline:none}
 .interview-question-heading::before{content:"→";display:inline-block;margin-right:.45em;color:#5f6368;font-weight:800}
 
+/* Course notes use ordinary reading sections, rather than interview popups. */
+.study-mode .doc-body{overflow-wrap:anywhere}
+.study-mode .doc-body>h2{padding-top:20px;border-top:1px solid #e2e8ed}
+.study-mode .doc-body>h2:first-of-type{border-top:0;padding-top:0}
+.study-mode .doc-body a{color:#155fa7;text-underline-offset:2px}
+.study-mode .doc-body table{display:block;max-width:100%;overflow-x:auto;border-collapse:collapse;margin:16px 0 22px;font-size:.94rem}
+.study-mode .doc-body th,.study-mode .doc-body td{border-bottom:1px solid #dce3e9;padding:9px 12px;text-align:left;vertical-align:top;min-width:100px}
+.study-mode .doc-body th{background:#eef4f8;color:#193a52}
+.study-mode .doc-body tr:nth-child(even) td{background:#fafcfd}
+.study-mode .doc-body pre{overflow-x:auto;background:#f4f7fa;padding:12px;border-radius:6px}
+
 /* Co-op home page and supporting content. */
 .practice-rule{margin:1.15rem 0 1.5rem;padding:.85rem 1rem;border-left:3px solid #4979a6;background:#f5f8fb}
 .section-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem;margin-top:1rem}
