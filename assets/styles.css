@@ -766,3 +766,46 @@ body.answer-focus-open{overflow:hidden}
 .answer-focus-editor li{
   margin:.2em 0;
 }
+
+/* Contextual glossary terms */
+.glossary-term{
+  display:inline;
+  border:0;
+  border-bottom:1px dotted currentColor;
+  background:transparent;
+  color:inherit;
+  padding:0;
+  margin:0;
+  font:inherit;
+  line-height:inherit;
+  cursor:help;
+}
+.glossary-term:hover,
+.glossary-term:focus-visible{
+  background:rgba(66,133,244,.08);
+  outline:none;
+}
+.glossary-definition-dialog{
+  width:min(560px,100%);
+}
+.glossary-definition-dialog h2{
+  margin:0 2.5rem .55rem 0;
+}
+.answer-focus-outline{
+  margin:0 0 16px;
+  padding:12px 14px;
+  border-left:4px solid #8aa4c8;
+  border-radius:0 9px 9px 0;
+  background:#f7f9fc;
+}
+.answer-focus-outline > strong{
+  display:block;
+  margin-bottom:6px;
+}
+.answer-focus-outline ul{
+  margin:0 0 0 1.1rem;
+  padding:0;
+}
+.answer-focus-outline li{
+  margin:.2rem 0;
+}
