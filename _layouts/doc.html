@@ -133,24 +133,27 @@
             const raw = heading.textContent.replace(/\s+/g, ' ').trim();
             if (!raw) return;
 
-            const pipeIndex = raw.indexOf('|');
-            const hasPipe = pipeIndex >= 0;
-            const left = hasPipe ? raw.slice(0, pipeIndex).trim() : raw;
-            const right = hasPipe ? raw.slice(pipeIndex + 1).trim() : raw;
+            // Double pipe = interview answer / rehearsal.
+            // Single pipe = information section.
+            const isInterview = raw.includes('||');
+            const delimiter = isInterview ? '||' : (raw.includes('|') ? '|' : '');
+            const splitAt = delimiter ? raw.indexOf(delimiter) : -1;
+            const left = splitAt >= 0 ? raw.slice(0, splitAt).trim() : raw;
+            const right = splitAt >= 0 ? raw.slice(splitAt + delimiter.length).trim() : raw;
 
-            // "Handle | Section title" is optional. Legacy H2 headings with no
-            // pipe remain fully supported by using the same text for both.
             const menuLabel = left || right;
             const questionText = right || left;
             if (!menuLabel || !questionText) return;
 
             heading.dataset.menuLabel = menuLabel;
             heading.dataset.questionText = questionText;
-            heading.dataset.sourceHeading = hasPipe
-              ? `${menuLabel} | ${questionText}`
+            heading.dataset.sectionHeading = 'true';
+            heading.dataset.entryType = isInterview ? 'interview' : 'information';
+            heading.dataset.sourceHeading = delimiter
+              ? `${menuLabel} ${delimiter} ${questionText}`
               : raw;
             heading.textContent = questionText;
-            heading.classList.add('interview-question-heading');
+            heading.classList.add(isInterview ? 'interview-question-heading' : 'information-section-heading');
           });
         })();
       </script>
