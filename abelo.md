@@ -10,12 +10,10 @@ intro: "Company knowledge for the Abelo interview. "
 
 Based in Limerick and reporting to Niamh O'Dwyer Assistant Vice president AVP Asset Management.Niamh report to the VP od asset management Liam Duffy
 
-In person - UL Co-op Interview - Abelo Aviation - Tuesday, 29th September
+In person - UL Co-op Interview - Abelo Aviation - 
 
+Unit 7, Castletroy Business Park, Plassey Park Road, Castletroy, Limerick V94 KW28 Tuesday, 29th September
 
-|  |  |  |  |  |
-| ---- | ------ | --------------------- | ---------------------------------------------------------------------------------- | -------- |
-| ERIK | DOWNES | Financial Mathematics | Unit 7, Castletroy Business Park, Plassey Park Road, Castletroy, Limerick V94 KW28 | 11:10 AM |
 
 
 ## **Company Overview**
