@@ -18,23 +18,57 @@ In person - UL Co-op Interview - Abelo Aviation - Tuesday, 29th September
 | ERIK | DOWNES | Financial Mathematics | Unit 7, Castletroy Business Park, Plassey Park Road, Castletroy, Limerick V94 KW28 | 11:10 AM |
 
 
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin:22px 0 30px;">
+  <section style="border:1px solid rgba(127,127,127,.28);border-radius:16px;padding:20px;text-align:center;">
+    <div style="font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;opacity:.68;">Interview countdown</div>
+    <div id="abeloCountdown" style="font-size:clamp(2rem,7vw,4rem);font-weight:800;line-height:1.05;margin:.35rem 0;">—</div>
+    <div style="opacity:.72;">Tuesday 29 September · 11:10 AM</div>
+  </section>
 
+  <section style="border:1px solid rgba(127,127,127,.28);border-radius:16px;overflow:hidden;min-height:300px;">
+    <iframe
+      title="Abelo Aviation Limerick office — V94 KW28"
+      src="https://www.google.com/maps?q=Unit%207%2C%20Castletroy%20Business%20Park%2C%20Plassey%20Park%20Road%2C%20Castletroy%2C%20Limerick%20V94%20KW28&z=17&output=embed"
+      width="100%"
+      height="340"
+      style="border:0;display:block;"
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      allowfullscreen>
+    </iframe>
+  </section>
+</div>
 
-&nbsp;
+<script>
+(() => {
+  const output = document.getElementById('abeloCountdown');
+  if (!output) return;
 
-&nbsp;
+  // 11:10 AM local Irish time on 29 September 2026 (IST, UTC+1).
+  const interview = new Date('2026-09-29T11:10:00+01:00');
 
-&nbsp;
+  function updateCountdown() {
+    const ms = interview.getTime() - Date.now();
+    if (ms <= 0) {
+      output.textContent = 'Interview time';
+      return;
+    }
 
-V94 KW28 
+    const totalSeconds = Math.floor(ms / 1000);
+    const hours = Math.floor(totalSeconds / 3600);
+    const minutes = Math.floor((totalSeconds % 3600) / 60);
+    const seconds = totalSeconds % 60;
 
+    output.textContent =
+      hours + 'h ' +
+      String(minutes).padStart(2, '0') + 'm ' +
+      String(seconds).padStart(2, '0') + 's';
+  }
 
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+})();
+</script>
 
 ## **Company Overview**
 
