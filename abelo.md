@@ -18,7 +18,7 @@ Abelo is looking for an Intern to support its Asset Management team. The role pr
 
 Other teams you may Liase with are 
 
--  **finance,** 
+- **finance,** 
 - **legal,** 
 - **technical,** 
 - **commercial,** 
@@ -95,7 +95,7 @@ For this placement, the important connection is that Asset Management does not w
 
 
 
-
+&nbsp;
 
 ## Relevant  Team | Relevant  Team members
 
@@ -328,4 +328,60 @@ V94 KW28
 **Interviewer:** David Cann
 
 The placement job specification is **based in Limerick**, while the Asset Management team it supports is described in the specification as Dublin-based.
+
+
+
+&nbsp;
+
+&nbsp;
+
+# Airshows | Where Aviation Business Gets Done
+
+## Why Airshows Matter
+
+Major airshows are important commercial meeting points for the aviation industry. They bring together **aircraft manufacturers, airlines, lessors, financiers, suppliers, governments and the aviation media**.
+
+They are used for:
+
+- commercial meetings and negotiations;
+- aircraft order and leasing announcements;
+- customer and manufacturer relationship-building;
+- discussing future fleet requirements;
+- showcasing new aircraft and technology;
+- generating international publicity.
+
+An aircraft deal announced at an airshow may have been discussed and negotiated long before the event. The airshow provides a high-profile opportunity to **sign, confirm or publicly announce** the transaction.
+
+## Abelo and Airshows
+
+Abelo has already used major airshows for important ATR announcements.
+
+At the **Farnborough International Airshow in 2022**, Abelo and ATR announced an agreement involving new ATR aircraft.
+
+At the **Dubai Airshow in 2023**, Abelo announced an order for **10 ATR 72-600 aircraft with options for another 10**.
+
+This shows how airshows can connect:
+
+**Negotiation → announcement → options → future demand → aircraft delivery and leasing**
+
+## Major Airshows
+
+Some of the most important international aviation shows include:
+
+- **Paris Air Show** — Le Bourget, France
+- **Farnborough International Airshow** — England
+- **Dubai Airshow** — United Arab Emirates
+- **Singapore Airshow** — Singapore
+
+The **Paris Air Show in June 2027** falls during the placement period. The **Dubai Airshow also takes place later in 2027**.
+
+## Interview Question
+
+**Paris and Dubai both take place during the placement period. Is Abelo planning to attend either of them, and what does the company’s representation at a major airshow usually look like?**
+
+**Would it mainly be senior management and the commercial team, or would areas such as Asset Management, Finance, Technical or marketing and digital communications also be involved?**
+
+If the conversation is relaxed:
+
+**I’m just curious how a company like Abelo actually operates at an airshow — who goes, what they are there to do, and how much preparation goes on behind the scenes.**
 
