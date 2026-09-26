@@ -7,6 +7,8 @@
   const pageEdit = document.querySelector('.doc-toolbar .edit-link[href]');
   const pagePrint = document.querySelector('.doc-toolbar [data-action="print"]');
   const EDIT_PREFIX = 'coop-answer-edit:v1:';
+  const MOVE_PREFIX = 'coop-section-moves:v1';
+  const ORDER_PREFIX = 'coop-section-order:v1:';
   const GLOSSARY_PREFIX = 'coop-glossary:v1';
   const GLOSSARY_SEED = [
     { term: 'Commercial awareness', definition: 'Understanding how an organisation creates value, controls cost, serves customers and responds to its market.', cue: 'Business model → costs → customers → decisions.' },
@@ -614,12 +616,178 @@
     }
   };
 
+  const sectionIdFor = heading => {
+    if (!heading.dataset.sectionMoveId) {
+      heading.dataset.sectionMoveId = `${normalisePath(location.pathname)}::${sourceHeadingText(heading).toLowerCase()}`;
+    }
+    return heading.dataset.sectionMoveId;
+  };
+
+  const sectionBlockFor = heading => [heading, ...sourceNodesFor(heading)];
+
+  const readSectionMoves = () => {
+    try {
+      const value = JSON.parse(localStorage.getItem(MOVE_PREFIX) || '[]');
+      return Array.isArray(value) ? value : [];
+    } catch (_) {
+      return [];
+    }
+  };
+
+  const writeSectionMoves = moves => {
+    localStorage.setItem(MOVE_PREFIX, JSON.stringify(moves));
+  };
+
+  const saveSectionOrder = () => {
+    const order = interviewHeadings().map(sectionIdFor);
+    localStorage.setItem(`${ORDER_PREFIX}${normalisePath(location.pathname)}`, JSON.stringify(order));
+  };
+
+  const restoreSectionOrder = () => {
+    let saved = [];
+    try {
+      saved = JSON.parse(localStorage.getItem(`${ORDER_PREFIX}${normalisePath(location.pathname)}`) || '[]');
+      if (!Array.isArray(saved)) saved = [];
+    } catch (_) {
+      saved = [];
+    }
+    if (!saved.length) return;
+
+    const headings = interviewHeadings();
+    const byId = new Map(headings.map(heading => [sectionIdFor(heading), heading]));
+    const currentIds = headings.map(sectionIdFor);
+    const desired = [
+      ...saved.filter(id => byId.has(id)),
+      ...currentIds.filter(id => !saved.includes(id))
+    ];
+
+    desired.forEach(id => {
+      const heading = byId.get(id);
+      if (!heading) return;
+      sectionBlockFor(heading).forEach(node => body.appendChild(node));
+    });
+  };
+
+  const restoreMovedSections = () => {
+    const currentPath = normalisePath(location.pathname);
+    const moves = readSectionMoves();
+
+    // Remove any original/local copy that now belongs on another page.
+    interviewHeadings().forEach(heading => {
+      const id = sectionIdFor(heading);
+      const move = moves.find(item => item?.id === id);
+      if (move && normalisePath(move.to) !== currentPath) {
+        sectionBlockFor(heading).forEach(node => node.remove());
+      }
+    });
+
+    // Add sections moved onto this page. New arrivals default to the bottom.
+    moves
+      .filter(item => item?.id && normalisePath(item.to) === currentPath)
+      .forEach(move => {
+        const existing = interviewHeadings().find(heading => sectionIdFor(heading) === move.id);
+        if (existing) {
+          if (move.bodyHtml) applySavedToSource(existing, move.bodyHtml);
+          return;
+        }
+
+        const template = document.createElement('template');
+        template.innerHTML = `${move.headingHtml || ''}${move.bodyHtml || ''}`;
+        Array.from(template.content.childNodes).forEach(node => body.appendChild(node));
+      });
+
+    restoreSectionOrder();
+  };
+
+  const moveSectionWithinPage = (heading, where) => {
+    const headings = interviewHeadings();
+    const index = headings.indexOf(heading);
+    if (index < 0 || headings.length < 2) return false;
+
+    let targetIndex = index;
+    if (where === 'up') targetIndex = Math.max(0, index - 1);
+    if (where === 'down') targetIndex = Math.min(headings.length - 1, index + 1);
+    if (where === 'top') targetIndex = 0;
+    if (where === 'bottom') targetIndex = headings.length - 1;
+    if (targetIndex === index) return false;
+
+    const block = sectionBlockFor(heading);
+    if (targetIndex < index) {
+      const target = headings[targetIndex];
+      block.forEach(node => body.insertBefore(node, target));
+    } else {
+      const target = headings[targetIndex];
+      const targetBlock = sectionBlockFor(target);
+      const afterTarget = targetBlock[targetBlock.length - 1]?.nextSibling || null;
+      block.forEach(node => body.insertBefore(node, afterTarget));
+    }
+
+    saveSectionOrder();
+    return true;
+  };
+
+  const moveSectionToPage = (heading, destinationUrl) => {
+    const destination = new URL(destinationUrl, location.href);
+    const destinationPath = normalisePath(destination.pathname);
+    const currentPath = normalisePath(location.pathname);
+    if (destinationPath === currentPath) return;
+
+    const id = sectionIdFor(heading);
+    const headingClone = heading.cloneNode(true);
+    headingClone.querySelectorAll?.('button,.cm-question-play').forEach(node => node.remove());
+    headingClone.dataset.sectionMoveId = id;
+
+    const answer = cloneAnswer(heading);
+    const moves = readSectionMoves().filter(item => item?.id !== id);
+    moves.push({
+      id,
+      from: currentPath,
+      to: destinationPath,
+      headingHtml: headingClone.outerHTML,
+      bodyHtml: answer.innerHTML,
+      movedAt: new Date().toISOString()
+    });
+    writeSectionMoves(moves);
+
+    sectionBlockFor(heading).forEach(node => node.remove());
+    saveSectionOrder();
+    location.href = destination.href;
+  };
+
+  const populateMovePageSelect = async select => {
+    try {
+      const base = document.querySelector('.brand')?.href || location.href;
+      const response = await fetch(new URL('nav.json', base), { cache: 'no-store' });
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      const pages = await response.json();
+      const currentPath = normalisePath(location.pathname);
+
+      pages.forEach(page => {
+        if (!page?.url) return;
+        const url = new URL(page.url, location.origin);
+        if (normalisePath(url.pathname) === currentPath) return;
+        const option = document.createElement('option');
+        option.value = url.href;
+        option.textContent = page.title || page.page_title || url.pathname;
+        select.appendChild(option);
+      });
+    } catch (_) {
+      const option = document.createElement('option');
+      option.disabled = true;
+      option.textContent = 'Pages unavailable';
+      select.appendChild(option);
+    }
+  };
+
   const restoreSavedAnswers = () => {
     interviewHeadings().forEach(heading => {
       const saved = localStorage.getItem(editKeyFor(heading));
       if (saved) applySavedToSource(heading, saved);
     });
   };
+
+  restoreMovedSections();
+  restoreSavedAnswers();
 
   /* -----------------------------------------------------------------------
      Audio state shared by inline play, focus play and page Listen.
@@ -738,7 +906,9 @@
 
   const closeFocus = () => {
     if (overlay.hidden) return;
+    if (overlay.dataset.unsaved === 'true' && !window.confirm('Discard unsaved changes?')) return;
     resetAudio();
+    delete overlay.dataset.unsaved;
     overlay.hidden = true;
     focusContent.replaceChildren();
     document.body.classList.remove('answer-focus-open');
@@ -747,6 +917,7 @@
   };
 
   const openFocus = heading => {
+    delete overlay.dataset.unsaved;
     const copy = cloneAnswer(heading);
     if (!cleanText(copy.textContent)) return;
 
@@ -796,23 +967,6 @@
       play.textContent = '▶ Play';
     });
 
-    const copyButton = document.createElement('button');
-    copyButton.type = 'button';
-    copyButton.textContent = 'Copy';
-    copyButton.title = 'Copy this answer to the clipboard';
-    copyButton.addEventListener('click', async event => {
-      event.stopPropagation();
-      const text = cleanText(copy.innerText);
-      try {
-        await navigator.clipboard.writeText(text);
-        copyButton.textContent = 'Copied';
-      } catch (_) {
-        selectContent(copy);
-        copyButton.textContent = 'Selected';
-      }
-      window.setTimeout(() => { copyButton.textContent = 'Copy'; }, 900);
-    });
-
     const editButton = document.createElement('button');
     editButton.type = 'button';
     editButton.textContent = 'Edit';
@@ -823,12 +977,6 @@
     saveButton.textContent = 'Save';
     saveButton.title = 'Save the edited answer';
     saveButton.disabled = true;
-
-    const cancelButton = document.createElement('button');
-    cancelButton.type = 'button';
-    cancelButton.textContent = 'Cancel';
-    cancelButton.title = 'Cancel editing';
-    cancelButton.disabled = true;
 
     let answerEditor = null;
     let formatToolbar = null;
@@ -864,7 +1012,6 @@
       copy.hidden = false;
       editButton.disabled = false;
       saveButton.disabled = true;
-      cancelButton.disabled = true;
     };
 
     editButton.addEventListener('click', event => {
@@ -903,7 +1050,6 @@
 
       editButton.disabled = true;
       saveButton.disabled = false;
-      cancelButton.disabled = false;
 
       requestAnimationFrame(() => {
         answerEditor.focus({ preventScroll: true });
@@ -920,6 +1066,7 @@
 
       localStorage.setItem(editKeyFor(heading), html);
       applySavedToSource(heading, html);
+      delete overlay.dataset.unsaved;
 
       stopEditing();
       saveButton.textContent = 'Saved ✓';
@@ -928,10 +1075,39 @@
       }, 900);
     });
 
-    cancelButton.addEventListener('click', event => {
-      event.preventDefault();
+    const makeMoveButton = (label, title, where) => {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.textContent = label;
+      button.title = title;
+      button.addEventListener('click', event => {
+        event.preventDefault();
+        event.stopPropagation();
+        if (moveSectionWithinPage(heading, where)) closeFocus();
+      });
+      return button;
+    };
+
+    const moveUp = makeMoveButton('↑ Up', 'Move this section up one position', 'up');
+    const moveDown = makeMoveButton('↓ Down', 'Move this section down one position', 'down');
+    const moveTop = makeMoveButton('⇧ Top', 'Move this section to the top of the page', 'top');
+    const moveBottom = makeMoveButton('⇩ Bottom', 'Move this section to the bottom of the page', 'bottom');
+
+    const movePage = document.createElement('select');
+    movePage.className = 'answer-focus-move-page';
+    movePage.title = 'Move this section to another page (it will be placed at the bottom)';
+    movePage.setAttribute('aria-label', 'Move section to another page');
+    const movePrompt = document.createElement('option');
+    movePrompt.value = '';
+    movePrompt.textContent = 'Move to Page…';
+    movePrompt.selected = true;
+    movePrompt.disabled = true;
+    movePage.appendChild(movePrompt);
+    populateMovePageSelect(movePage);
+    movePage.addEventListener('change', event => {
       event.stopPropagation();
-      stopEditing();
+      if (!movePage.value) return;
+      moveSectionToPage(heading, movePage.value);
     });
 
     const glossaryButton = document.createElement('button');
@@ -944,7 +1120,7 @@
       openGlossaryTerm(selection);
     });
 
-    controls.append(play, stop, copyButton, editButton, saveButton, cancelButton, glossaryButton);
+    controls.append(play, stop, editButton, saveButton, moveUp, moveDown, moveTop, moveBottom, movePage, glossaryButton);
 
     if (pageEdit?.href) {
       const cms = document.createElement('a');
