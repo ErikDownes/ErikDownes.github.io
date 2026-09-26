@@ -8,6 +8,81 @@ intro: "Company knowledge for the Abelo interview. "
 ---
 ## Overview | What is Abelo?
 
+**Job Description**
+
+  
+
+
+Job title: 	Asset Management Intern
+
+Based: 	Limerick, Ireland
+
+Report to: 	AVP Asset Management
+
+![image.png](/assets/uploads/image-10.png)
+
+#### **Niamh O' Dwyer**
+
+AVP Asset Management  
+
+
+Job Type: 	Placement Period
+
+  
+  
+
+
+**Company Overview**
+
+  
+
+
+Abelo is a regional aircraft leasing company specialised in turboprops and management services. The company is based in Dublin, Ireland.
+
+  
+
+
+**Position Overview**
+
+  
+
+
+Abelo is looking for an Intern to support our busy, Dublin based Asset Management team. The role will provide great exposure to the Aircraft Leasing industry.
+
+  
+
+
+**Key Responsibilities**
+
+  
+
+
+- Assist with preparation of reports the timeframe specified in the Lease Agreement
+- Data entry into our internal data management systems and support Asset team with billing processes. 
+- Assist with systemizing reporting though PowerBI and other reporting systems.
+- Support other key Internal departments such as Commercial, Finance and Legal as required.
+- Administration of other day to day activities carried out by Asset Management.
+- Aid in process improvements within the asset management function. 
+
+  
+
+
+**Job Requirements**
+
+  
+
+
+- Individual studying Finance / Business or a similar facility that has a keen interest in the Aviation Industry. 
+- Excellent quantitative and analytical skills.
+- Proficiency with MS Office (particularly Excel) and strong software skills.
+- Commitment to providing excellent quality work.
+- Highly disciplined, accompanied by a strong desire to learn.
+
+
+
+  
+
+
 
 
 Abelo specialises in  leasing turboprop aircraft such as the ATR 42 and ATR 72  . 
