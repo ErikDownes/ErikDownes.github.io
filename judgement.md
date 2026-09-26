@@ -2,7 +2,6 @@
 layout: doc
 handle: Judgement
 title: Judgement
-nav_order: 70
 eyebrow: INTERVIEW STRUCTURE
 intro: >
   These questions test whether an employer can trust you to learn, communicate
