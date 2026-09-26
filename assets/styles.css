@@ -809,3 +809,57 @@ body.answer-focus-open{overflow:hidden}
 .answer-focus-outline li{
   margin:.2rem 0;
 }
+
+
+/* Interview-answer practice controls. Only H2 sections marked with || receive these. */
+.information-section-heading{cursor:default}
+.answer-practice-panel{
+  margin:22px 0 0;
+  padding:18px;
+  border:1px solid #dbe2ea;
+  border-radius:14px;
+  background:#f8fafc;
+}
+.answer-practice-head{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
+  gap:8px 16px;
+  align-items:baseline;
+}
+.answer-practice-head strong{font-size:1.05rem}
+.answer-practice-head span{font-size:.88rem;color:#5f6b78;font-weight:700}
+.answer-practice-reminder{margin:.55rem 0 1rem;color:#4b5563;line-height:1.5}
+.answer-practice-timer{
+  margin:.2rem 0 .8rem;
+  font-size:clamp(1.8rem,4vw,2.8rem);
+  font-variant-numeric:tabular-nums;
+  font-weight:800;
+  letter-spacing:-.035em;
+}
+.answer-practice-record{
+  border:1px solid #cbd5e1;
+  border-radius:999px;
+  background:#fff;
+  padding:.65rem 1rem;
+  font:inherit;
+  font-weight:800;
+  cursor:pointer;
+}
+.answer-practice-record.is-recording{border-color:#b42318}
+.answer-practice-attempts{display:grid;gap:8px;margin-top:12px}
+.answer-practice-attempt{
+  display:grid;
+  grid-template-columns:auto minmax(160px,1fr) auto;
+  gap:10px;
+  align-items:center;
+  padding:9px 10px;
+  border-radius:10px;
+  background:#fff;
+  border:1px solid #e2e8f0;
+}
+.answer-practice-attempt audio{width:100%;min-width:0}
+.answer-practice-attempt a{font-weight:700}
+@media(max-width:600px){
+  .answer-practice-attempt{grid-template-columns:1fr}
+}
