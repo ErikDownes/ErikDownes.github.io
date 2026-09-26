@@ -7,145 +7,126 @@ eyebrow: FINISH THE INTERVIEW WELL
 intro: Choose two or three. Ask questions that help you understand the work and
   show serious interest in the placement.
 ---
-## Risk | Geopolitical Environment  and Financial  Risk
-
-**Recent years have brought geopolitical disruption, sanctions and large movements in interest rates and inflation. How does Abelo think about protecting aircraft value and lease returns against those risks?**
-
-
-
-&nbsp;
-
-Understood. I’ll use standard aviation/leasing terminology rather than mirror your phrasing.
-
-## Options |  Options Capacity and Commitment
-
-At the 2023 Dubai Airshow, Abelo ordered 10 ATR 72-600s with options for another 10, then exercised three options in late 2024 and another three in 2026. How do you balance securing future delivery capacity against the cost and risk of committing to aircraft before the leasing demand is fully visible?
-
-
-
-&nbsp;
-
-## Strategy | Why stay specialist in turboprops?
-
-Abelo has deliberately built a specialist position around regional turboprops, particularly the ATR 42 and ATR 72, rather than moving into the much larger mainstream narrow-body leasing market dominated by aircraft such as the Boeing 737 MAX and Airbus A320neo families. Abelo has publicly described larger turboprops as a distinct asset class and has said its ambition is to be a go-to lessor in that niche. citeturn160671search13turn160671search14
-
-**Have you ever considered expanding beyond the ATR and regional-turboprop market into mainstream jets such as the Boeing 737 family, or is remaining a specialist part of the competitive advantage? What is the strategic rationale for staying focused?**
-
-Possible follow-up:
-
-**Does specialisation give Abelo advantages in areas such as technical expertise, airline relationships, asset management and understanding residual values that would be harder to preserve if the fleet became much broader?**
-
-**Why this works:** It shows Erik has noticed that Abelo is making a deliberate strategic choice about **where to compete**, rather than assuming that growth must mean moving into larger aircraft. It also gives the interviewer room to explain the economics of niche expertise, competition and capital allocation.
-
-
-&nbsp;
-
-&nbsp;
-
-
+# Questions
 
 ## Key Line
 
-**Ask a question that shows you already understand something about Abelo — then use the answer to learn something you could not simply have read on the website.**
+**Choose two or three. These are deliberately Abelo-specific questions; the generic interview questions have been removed.**
 
-Do not ask all of these. **Choose two or three**, depending on what has already been covered in the interview.
+## Strategy | Why Stay Specialist?
 
-## Responsibility | What would I actually get to own?
+**Have you ever considered expanding beyond turboprops into mainstream jets, or is staying specialised part of Abelo’s competitive advantage?**
 
-I saw that Abelo says its interns are given real responsibility and are integrated into the team.
+### What they might say
 
-**If I was doing well in the placement, what might I be trusted to take ownership of after the first few months that I probably wouldn't be given on day one?**
+They may talk about:
 
-**Why this works:** It is much stronger than asking, *“What would a typical day look like?”* It tells them Erik wants responsibility and is already thinking about progression during the placement.
+- deep expertise in ATR and regional aircraft;
+- stronger knowledge of residual values and technical risk;
+- established relationships with regional airlines;
+- less competition than in the A320/737 leasing market;
+- avoiding dilution of specialist knowledge;
+- deploying capital where Abelo believes it has an advantage.
 
-## Asset Management | Where does the analysis become a decision?
+Abelo itself describes the turboprop market as a distinct niche and has positioned itself as a specialist lessor.
 
-My course is Financial Mathematics, so I've studied areas such as Finance, Financial Accounting, Statistics, Data Analysis and Operations Research.
+## Growth | How Do You Decide How Fast to Grow?
 
-**In the Asset Management team, where would someone in this placement most often see the data and financial analysis turn into an actual commercial decision about an aircraft or a lease?**
+**How does Abelo decide how quickly to grow the fleet? Are there limits to how much aircraft demand and financing you would be comfortable committing to?**
 
-Possible follow-up:
+### What they might say
 
-**Would that be more around lease reporting, billing, aircraft transitions, forecasting, or something else?**
+They may mention a combination of:
 
-**Why this works:** It directly connects Erik's degree to Abelo's business rather than merely telling them that he is “good at maths.”
+- confirmed and expected airline demand;
+- available aircraft and manufacturer delivery slots;
+- diversification across airlines and regions;
+- aircraft values and expected lease returns;
+- access to financing;
+- risk limits set by management, investors or lenders.
 
-## Growth | What does Abelo's expansion mean for the team?
+The important idea for Erik is that **growth is not simply “buy more aircraft.”** It is a capital-allocation decision involving demand, pricing, financing and risk.
 
-I've been looking at Abelo's recent growth — the additional ATR orderbook, new airline customers and the acquisition of further turboprop aircraft.
+## Finance | How Is Fleet Growth Funded?
 
-**From an Asset Management point of view, what does that growth actually change for the team day to day?**
-
-Possible follow-up:
-
-**Does it mainly mean more aircraft and lease data to manage, or does it also create new types of analytical and commercial work?**
-
-**Why this works:** This is unmistakably an **Abelo question**. It could not simply be asked at any company.
-
-## Accounting | Following the aircraft through the numbers
-
-One part of my course that I hadn't initially associated with aviation is Financial Accounting.
-
-**Would I get much exposure during the placement to seeing how the operational side of an aircraft lease feeds through into things like billing, financial reporting and wider commercial decisions?**
-
-**Why this works:** It turns Financial Accounting from “a module I completed” into evidence that Erik understands that an aircraft is both a physical asset and a financial asset.
-
-## Data & Power BI | Improving the process
-
-I noticed that the role involves data systems, Power BI and process improvement as well as the aircraft-leasing work itself.
-
-**Are there any reporting or data processes in Asset Management that you would particularly like the co-op student to help improve during the placement?**
+**With Cerberus backing Abelo and the new financing facilities, how do you decide the right mix of investor capital and borrowing when funding aircraft growth?**
 
 Possible follow-up:
 
-**Would there be scope to build something and leave the team with a better process than the one I started with?**
+**How important is the spread between Abelo’s cost of funding and the return generated by the lease?**
 
-**Why this works:** It shifts Erik from **“What training will you give me?”** to **“Where could I contribute?”**
+### What they might say
 
-## David Cann | What distinguishes the students who succeed?
+They may explain that aircraft portfolios can be funded using a combination of **equity and debt**, rather than simply paying cash for every aircraft.
 
-![image.png](blob:https:/app.pagescms.org/0e59ec31-be52-47a5-81bd-6538f5962852)
+In 2025 Abelo announced a warehouse financing facility of up to **$750 million**, underwritten by Deutsche Bank, shortly after its acquisition by a Cerberus affiliate. Abelo said the facility was intended to support fleet and customer growth.
 
+They are unlikely to disclose commercially sensitive borrowing margins or exact return requirements. Erik does not need those figures. The useful thing is understanding **how they think about the economics**.
 
+## Options | Capacity Versus Commitment
 
-&nbsp;
+**When you take options on future ATR deliveries, how do you balance securing aircraft early against the risk that demand may change before delivery?**
 
-&nbsp;
+### What they might say
 
-Because you've seen students coming through Abelo's internship programme:
+They may discuss:
 
-**What have you noticed about the students who become genuinely valuable members of the team during their placement?**
+- securing scarce future production slots;
+- having flexibility before making a firm commitment;
+- matching future aircraft to prospective lessees;
+- market forecasts;
+- deposits or option economics;
+- aircraft values at the eventual delivery date.
 
-Or, even sharper:
+At Dubai in 2023, Abelo agreed to 10 firm ATR 72-600s and options for another 10, with deliveries scheduled from 2026–2028. Three of those options were subsequently firmed in late 2024.
 
-**By the end of the placement, what would make you say, “That was an excellent co-op student”?**
+## Asset Management | Where Does Analysis Become a Decision?
 
-## **Why this works:** David Cann is MD Human Resources. This is exactly the kind of question he is unusually well placed to answer.
+**Where in the Asset Management team would I most often see data or financial analysis turn into an actual commercial decision?**
 
-**Rule:** Do not ask all of them.
+Possible follow-up:
 
-A very strong combination with David Cann would be:
+**Would that tend to happen around leases, billing, aircraft transitions, forecasting or something else?**
 
-**1. Responsibility** — What could I eventually be trusted to own?
+### What they might say
 
-**2. Asset Management** — Where does the analysis turn into a commercial decision?
+They could give examples involving:
 
-**3. Success** — What makes you say someone was an excellent co-op student?
+- monitoring lease obligations;
+- analysing utilisation or maintenance information;
+- billing and financial reporting;
+- aircraft transitions between operators;
+- lease extensions or amendments;
+- supporting Commercial, Finance, Legal or Technical teams;
+- improving management reporting.
 
-If the interview has already covered one of those subjects, switch to the **Abelo Growth** or **Data & Power BI** question.
+This is particularly useful for Erik because it connects **Financial Mathematics and data analysis directly to the job** rather than simply telling them that he likes mathematics.
 
-- 
+## Responsibility | What Could I Eventually Own?
 
-- 
+**If I was doing well after the first few months, what might I be trusted to take ownership of that I probably wouldn’t be given on day one?**
 
-- 
+### What they might say
 
-- What would a typical day look like for the co-op student?
-- What sort of projects would I be likely to work on?
-- What skills make someone successful in this placement?
-- What training or support would I receive at the start?
-- Who would I be working most closely with?
-- How is feedback normally given to co-op students?
-- What have previous co-op students gone on to do?
+They may describe progressively giving the intern:
 
-**Rule:** Do not ask all of them. Pick the two or three that genuinely matter for that employer.
+- responsibility for recurring reports;
+- ownership of particular datasets or processes;
+- Power BI or reporting improvements;
+- direct interaction with colleagues in other departments;
+- responsibility for tracking part of an aircraft or lease-management process;
+- a defined improvement project.
+
+This fits particularly well with Abelo’s own description of its internship programme: students are given **responsibility and exposure** and are fully integrated into the team.
+
+---
+
+**Best set of three if Erik gets the opportunity:**
+
+**Strategy** — Why remain a turboprop specialist?  
+**Finance/Growth** — How do you finance and control fleet growth?  
+**Responsibility** — What could I eventually be trusted to own?
+
+Keep **Options**, **Asset Management**, and the **airshow question** as alternatives depending on what has already been discussed during the interview.
+
+Separate the finance and growth questionsShorten each answer-preparation section
