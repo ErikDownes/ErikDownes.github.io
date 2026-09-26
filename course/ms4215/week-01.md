@@ -6,7 +6,7 @@ intro: "Introduction to the module and a revision of the statistical ideas used 
 study_mode: true
 ---
 
-[← MS4215 resources]({{ '/modules/ms4215-advanced-data-analysis.html' | relative_url }}) · [Lecture 1A slides (PDF)]({{ '/resources/ms4215/lectures/Week_01A.pdf' | relative_url }}) · [Lecture 1B slides]({{ '/resources/ms4215/lectures/Week_01B.pdf' | relative_url }}) · [Irish weather data]({{ '/resources/ms4215/data/ireland_weather_2000_2023.csv' | relative_url }})
+[← MS4215 resources]({{ '/modules/ms4215-advanced-data-analysis.html' | relative_url }}) · [Lecture 1A slides (PDF)]({{ '/resources/ms4215/lectures/Week_01A.pdf' | relative_url }}) · [Lecture 1B slides]({{ '/resources/ms4215/lectures/Week_01B.pdf' | relative_url }}) · [Irish weather data]({{ '/resources/ms4215/data/ireland_weather_2000_2023.csv' | relative_url }}) · [Weather Google Sheet](https://docs.google.com/spreadsheets/d/1brO-_bQPuW2agos1WuYbVBC5Waye64-FDtYaj-Z36x4/edit?usp=drivesdk)
 
 These web notes follow **Lectures 1A and 1B** from Associate Professor Sinéad Moylett’s MS4215 slides. They put the ideas into a continuous reading format. Use the original slides for the complete examples, figures and class instructions.
 
