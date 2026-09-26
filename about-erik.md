@@ -37,3 +37,19 @@ I want to understand how quantitative work is actually used inside an organisati
 real workplacejudgementcommunicationuncertainty
 
 **Recall cue:** Apply learning → learn workplace judgement → contribute.
+
+
+
+&nbsp;
+
+&nbsp;
+
+## handle | Single Pipe
+
+  
+  
+I want to understand how quantitative work is actually used inside an organisation: how problems are framed, how data is checked, how results are communicated and how decisions are made when there is uncertainty. I also want to improve my professional judgement, communication and ability to contribute as part of a team.real workplacejudgementcommunicationuncertainty**Recall cue:** Apply learning → learn workplace judgement → contribute.  
+  
+  
+
+
