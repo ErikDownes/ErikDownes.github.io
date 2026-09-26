@@ -27,6 +27,17 @@ intro: Interviews are not about inventing brilliant answers on the spot. They
   </iframe>
 </div>
 
+<div class="home-video" style="margin: 1.5rem 0 2rem;">
+  <iframe
+    src="https://www.youtube.com/embed/AFpG3dIFDvw"
+    title="Interview preparation video"
+    style="width:100%; aspect-ratio:16/9; border:0; border-radius:12px;"
+    loading="lazy"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen>
+  </iframe>
+</div>
+
 <div class="home-three">
   <div class="home-panel">
     <span class="home-panel-number">01</span>
