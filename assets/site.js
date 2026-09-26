@@ -576,67 +576,6 @@
 
   renderGlossaryPage();
 
-  // Permanent access from every page.
-  const globalGlossary = document.createElement('button');
-  globalGlossary.type = 'button';
-  globalGlossary.className = 'global-glossary-button';
-  globalGlossary.textContent = 'A–Z Glossary';
-  globalGlossary.title = 'Open the glossary from anywhere';
-  globalGlossary.addEventListener('click', () => {
-    const selection = window.getSelection()?.toString() || '';
-    if (cleanText(selection)) openGlossaryTerm(selection);
-    else location.href = new URL('glossary.html', document.querySelector('.brand')?.href || location.href).href;
-  });
-  document.body.appendChild(globalGlossary);
-
-  // Select or double-click a word/phrase anywhere in the document and offer
-  // a one-click route into the glossary.
-  const selectionChip = document.createElement('button');
-  selectionChip.type = 'button';
-  selectionChip.className = 'glossary-selection-chip';
-  selectionChip.textContent = '+ Glossary';
-  selectionChip.hidden = true;
-  document.body.appendChild(selectionChip);
-
-  let selectedGlossaryText = '';
-  const positionSelectionChip = () => {
-    const selection = window.getSelection();
-    const text = cleanText(selection?.toString() || '');
-    if (!selection || selection.rangeCount === 0 || !text || text.length > 90) {
-      selectionChip.hidden = true;
-      selectedGlossaryText = '';
-      return;
-    }
-    const range = selection.getRangeAt(0);
-    if (!body?.contains(range.commonAncestorContainer)) {
-      selectionChip.hidden = true;
-      return;
-    }
-    const rect = range.getBoundingClientRect();
-    if (!rect.width && !rect.height) {
-      selectionChip.hidden = true;
-      return;
-    }
-    selectedGlossaryText = text;
-    selectionChip.style.left = `${Math.max(8, Math.min(window.innerWidth - 120, rect.left + window.scrollX))}px`;
-    selectionChip.style.top = `${Math.max(8, rect.bottom + window.scrollY + 7)}px`;
-    selectionChip.hidden = false;
-  };
-
-  body?.addEventListener('mouseup', () => window.setTimeout(positionSelectionChip, 0));
-  body?.addEventListener('keyup', () => window.setTimeout(positionSelectionChip, 0));
-  selectionChip.addEventListener('mousedown', event => event.preventDefault());
-  selectionChip.addEventListener('click', () => {
-    const term = selectedGlossaryText;
-    selectionChip.hidden = true;
-    openGlossaryTerm(term);
-  });
-
-  document.addEventListener('mousedown', event => {
-    if (event.target === selectionChip || event.target.closest('.glossary-dialog')) return;
-    selectionChip.hidden = true;
-  });
-
   if (!body) return;
 
   const showGlossaryDefinition = rawTerm => {
