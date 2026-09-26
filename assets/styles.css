@@ -101,8 +101,9 @@ body.answer-focus-open{overflow:hidden}
 .answer-focus-close{position:sticky;float:right;top:0;z-index:3;width:38px;height:38px;margin:-8px -8px 0 12px;border:1px solid #d7dce2;border-radius:50%;background:#fff;color:#3c4043;font:700 1.35rem/1 Arial,sans-serif;cursor:pointer;box-shadow:0 2px 8px rgba(60,64,67,.14)}
 .answer-focus-close:hover,.answer-focus-close:focus-visible{background:#f1f3f4;outline:2px solid #aecbfa;outline-offset:2px}
 .answer-focus-tools{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:0 0 18px;padding:0 0 14px;border-bottom:1px solid #e7eaee}
-.answer-focus-tools button,.answer-focus-tools a{border:1px solid #cfd5dc;border-radius:999px;background:#fff;color:#30343b;padding:7px 12px;font:inherit;font-size:.78em;font-weight:650;line-height:1.2;cursor:pointer;text-decoration:none}
-.answer-focus-tools button:hover,.answer-focus-tools button:focus-visible,.answer-focus-tools a:hover,.answer-focus-tools a:focus-visible{background:#f3f6fb;border-color:#aecbfa;outline:none}
+.answer-focus-tools button,.answer-focus-tools a,.answer-focus-tools select{border:1px solid #cfd5dc;border-radius:999px;background:#fff;color:#30343b;padding:7px 12px;font:inherit;font-size:.78em;font-weight:650;line-height:1.2;cursor:pointer;text-decoration:none}
+.answer-focus-tools select{padding-right:30px;max-width:220px}
+.answer-focus-tools button:hover,.answer-focus-tools button:focus-visible,.answer-focus-tools a:hover,.answer-focus-tools a:focus-visible,.answer-focus-tools select:hover,.answer-focus-tools select:focus-visible{background:#f3f6fb;border-color:#aecbfa;outline:none}
 .answer-focus-tools .answer-focus-save{background:#1a73e8;border-color:#1a73e8;color:#fff}
 .answer-focus-tools .answer-focus-save:hover,.answer-focus-tools .answer-focus-save:focus-visible{background:#1765cc;border-color:#1765cc;color:#fff}
 .answer-focus-copy strong,.answer-focus-copy b{font-weight:800;color:#202124}
