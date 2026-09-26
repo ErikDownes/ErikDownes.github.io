@@ -1,7 +1,7 @@
 ---
 layout: doc
-handle: About Abelo
-title: About Abelo
+handle: Abelo & Aircraft Leasing
+title: Abelo & Aircraft Leasing
 nav_order: 30
 eyebrow: "Know the  job and the company. "
 intro: "Company knowledge for the Abelo interview. "
@@ -232,6 +232,103 @@ The job specification says the intern will help with:
 
 **Interview wording:**  
 “What attracts me to Asset Management is that the analysis becomes operational. The data and reports are connected to real aircraft, real lease obligations and real commercial decisions.”
+
+## AerCap Videos | Aircraft lifecycle & maintenance reserves
+
+AerCap's **Investor Education** series is a strong starting point because it explains aircraft leasing from the lessor's perspective.
+
+Watch these two videos on the same page:
+
+- **The Lifecycle of an Aircraft** — ordering, placing with an airline, transitions between operators and eventual part-out.
+- **Maintenance Reserves** — why airlines make usage-related maintenance payments and how those payments protect the aircraft owner.
+
+**For this interview:** connect the videos to the Abelo duties involving **lease-agreement reporting, billing, aircraft data and Asset Management**.
+
+[AerCap — Investor Education](https://www.aercap.com/investors/investor-education)
+
+## AEROPODA Video | Maintenance reserves & asset protection
+
+AEROPODA's short aircraft-leasing training material gives another explanation of **maintenance reserves**, with more emphasis on protecting the physical aircraft asset.
+
+**Watch for:**
+
+- why aircraft usage matters financially,
+- why maintenance condition matters to a lessor,
+- how technical information can become a financial or contractual issue.
+
+[AEROPODA — Basic Understanding of Maintenance Reserves](https://www.linkedin.com/posts/aeropoda_part-7-1basic-understanding-of-maintenance-activity-7439234066916196352-a4xl)
+
+[AEROPODA — Maintenance Reserves: Essential for Asset Protection](https://www.linkedin.com/posts/aeropoda_part-7-2aircraft-maintenance-reserves-essential-activity-7439596497043742720-Mcxc)
+
+## Aircraft Leasing Ireland | Understand the Irish leasing industry
+
+Aircraft Leasing Ireland is useful for understanding the wider industry in which Abelo operates.
+
+The important idea is that aircraft leasing is a major Irish financial-services industry involving **aircraft, finance, contracts, risk, asset management and international airline customers**.
+
+Use its videos and industry material to become comfortable with the language of leasing rather than trying to memorise statistics.
+
+[Aircraft Leasing Ireland](https://www.ibec.ie/aircraftleasingireland)
+
+## Power BI Video | What aircraft-leasing reporting can look like
+
+This demonstration is **not Abelo's own system**. It is useful because the internship specifically says Erik may help **systemise reporting through Power BI and other reporting systems**.
+
+Look at the types of information a leasing dashboard can bring together:
+
+- aircraft and lease data,
+- lease revenue,
+- utilisation,
+- maintenance costs,
+- portfolio KPIs,
+- filters by aircraft, region or lease term.
+
+<iframe width="100%" height="430" src="https://www.youtube.com/embed/YpMeefP-ckU" title="Aircraft Leasing Dashboard in Power BI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+[Open Aircraft Leasing Dashboard in Power BI on YouTube](https://www.youtube.com/watch?v=YpMeefP-ckU)
+
+## Acumen Aviation | See the asset-management workflow
+
+Acumen is useful because it lays out the aircraft lifecycle as a professional asset-management process:
+
+**Acquisition → Asset Management → Lease Management → Remarketing → Redelivery → Divestment**
+
+Its material makes the job advert more concrete. Lease management can involve **invoicing, cash management, insurance, lease covenants and risk management**.
+
+**Interview connection:** Asset Management sits between the aircraft, the lease contract, the airline customer and the financial outcome.
+
+[Acumen Aviation](https://www.acumen.aero/)
+
+## Leasepoint | What an internal aircraft-management system tracks
+
+Leasepoint shows the sort of information an aircraft lessor may need to organise in an internal system.
+
+Useful areas to notice include:
+
+- contracts and lease dates,
+- aircraft and technical data,
+- maintenance reserves,
+- business reporting.
+
+This connects directly to the internship responsibility for **data entry into internal data-management systems**.
+
+[Leasepoint](https://www.leasepoint.aero/)
+
+## Cirium | Aircraft data, values & portfolio intelligence
+
+Cirium is useful for seeing the wider data environment around aircraft finance and leasing.
+
+A lessor may need information about:
+
+- aircraft utilisation and operators,
+- lease-end dates,
+- maintenance schedules,
+- aircraft values,
+- airline and market risk.
+
+**Interview connection:** good Asset Management depends on accurate data being turned into useful information for Commercial, Finance, Legal and Technical teams.
+
+[Cirium — Aviation Finance](https://www.cirium.com/industry-solutions/aviation-finance/)
 
 ## Our News | What has Abelo been doing recently?
 
