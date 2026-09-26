@@ -57,7 +57,6 @@ Follow the story from the Wright brothers’ propeller-driven aircraft to the em
 - Actual purchase prices are usually **negotiated and confidential**.
 - Lease economics depend on **purchase price, lease term, interest/discount rate, airline credit risk, cash flow and residual value**.
 - **time value of money**
-
 - **regular lease payments**
 - **present and future value**
 - **interest / discount rates**
@@ -67,13 +66,5 @@ Follow the story from the Wright brothers’ propeller-driven aircraft to the em
 
 **Key idea:** compare the aircraft’s **purchase cost** with the present value of future lease payments and its expected value at lease end.
 
-## Merging to Abelo | Elix (Leasing)+ ADARE  (Management)
 
-- **2013:** Elix founded — turboprop leasing platform and portfolio.
-- **2020:** ADARE founded — regional-aviation management expertise.
-- **2022:** combined to create **Abelo**.
-- **2022–24:** further ATR investment and portfolio growth.
-- **2025:** acquired by **Cerberus** from Oaktree — a global investment firm managing about **€63 billion** in assets.
-
-**Key idea:** Elix brought the **platform and fleet**; ADARE brought the **management expertise**; Cerberus provides the **large-scale investment backing**.
 
