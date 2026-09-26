@@ -34,7 +34,7 @@ The Brightspace overview lists an **online test in Week 6 (10%)**, a **data anal
 
 | Week | Topic | Original slides | Data supplied |
 |:--|:--|:--|:--|
-| 1A | Module introduction, data analysis and R | [Week 01A slides (ZIP)]({{ '/resources/ms4215/archives/Week_01A.zip' | relative_url }}) | [Irish weather CSV]({{ '/resources/ms4215/data/ireland_weather_2000_2023.csv' | relative_url }}) |
+| 1A | Module introduction, data analysis and R | [Week 01A PDF]({{ '/resources/ms4215/lectures/Week_01A.pdf' | relative_url }}) | [Irish weather CSV]({{ '/resources/ms4215/data/ireland_weather_2000_2023.csv' | relative_url }}) |
 | 1B | Statistical concepts and inference | [Week 01B PDF]({{ '/resources/ms4215/lectures/Week_01B.pdf' | relative_url }}) | Same weather data |
 | 2A | Correlation and simple linear regression | [Week 02A PDF]({{ '/resources/ms4215/lectures/Week_02A.pdf' | relative_url }}) | Slides mention `sales.csv`; it was not in the ZIP |
 | 2B | Multiple linear regression | [Week 02B PDF]({{ '/resources/ms4215/lectures/Week_02B.pdf' | relative_url }}) | [Earnings CSV]({{ '/resources/ms4215/data/earnings.csv' | relative_url }}); slides also mention `beer.csv`, not in the ZIP |
