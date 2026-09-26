@@ -16,11 +16,7 @@ Unit 7, Castletroy Business Park, Plassey Park Road, Castletroy, Limerick V94 KW
 
 Abelo is looking for an Intern to support our busy, Dublin based Asset Management team. The role will provide great exposure to the Aircraft Leasing industry.
 
-
-
 **Key Responsibilities**
-
-
 
 - Assist with preparation of reports the timeframe specified in the Lease Agreement
 - Data entry into our internal data management systems and support Asset team with billing processes. 
@@ -31,11 +27,7 @@ Abelo is looking for an Intern to support our busy, Dublin based Asset Managemen
 
 
 
-&nbsp;
-
 **Job Requirements**
-
-
 
 - Individual studying Finance / Business or a similar facility that has a keen interest in the Aviation Industry. 
 - Excellent quantitative and analytical skills.
