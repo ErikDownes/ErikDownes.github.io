@@ -2,7 +2,6 @@
 layout: doc
 handle: Work Independently
 title: Work Independently
-nav_order: 50
 eyebrow: STAR QUESTIONS
 intro: Employers are looking for how you think when the answer is not obvious.
 ---
