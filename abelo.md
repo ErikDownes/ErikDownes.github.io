@@ -44,40 +44,6 @@ Abelo is an Irish regional aircraft leasing company specialising in turboprops, 
 
 &nbsp;
 
-## ATR | 1981 to now
-
-ATR sits directly inside that regional-aviation story.
-
-**1981 — ATR is created**
-
-France's Aérospatiale and Italy's Aeritalia combined two similar regional-aircraft projects. The cooperation agreement launching ATR was signed on 4 November 1981.
-
-**1984–1985 — ATR 42**
-
-The ATR 42 made its first flight in August 1984 and the first aircraft was delivered to Air Littoral in December 1985.
-
-The number **42** originally reflected the aircraft's approximate passenger-capacity class rather than being an engine or performance number.
-
-**1986–1989 — ATR 72**
-
-ATR launched the stretched ATR 72 in 1986. It first flew in October 1988 and the first delivery followed in 1989.
-
-The larger aircraft allowed the same basic family concept to serve a higher-capacity regional market.
-
-**1990s — the -500 generation**
-
-ATR introduced improved -500 variants, continuing the development of the family rather than replacing it with a completely different aircraft.
-
-**2007 onward — the -600 generation**
-
-ATR launched the -600 series in 2007. New avionics, cabin changes and successive engine developments modernised the platform while retaining the basic regional-aircraft concept.
-
-**Today**
-
-The ATR 42 and ATR 72 remain centred on the same fundamental proposition that created ATR: match an efficient aircraft to short regional routes where a larger or faster jet is not necessarily the best economic tool.
-
-
-
 &nbsp;
 
 &nbsp;
@@ -283,7 +249,7 @@ Look at the types of information a leasing dashboard can bring together:
 - portfolio KPIs,
 - filters by aircraft, region or lease term.
 
-<iframe width="100%" height="430" src="https://www.youtube.com/embed/YpMeefP-ckU" title="Aircraft Leasing Dashboard in Power BI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 
 [Open Aircraft Leasing Dashboard in Power BI on YouTube](https://www.youtube.com/watch?v=YpMeefP-ckU)
 
