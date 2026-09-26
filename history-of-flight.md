@@ -68,3 +68,12 @@ Follow the story from the Wright brothers’ propeller-driven aircraft to the em
 
 
 
+## Merging to Abelo | Elix (Leasing)+ ADARE  (Management)
+
+- **2013:** Elix founded — turboprop leasing platform and portfolio.
+- **2020:** ADARE founded — regional-aviation management expertise.
+- **2022:** combined to create **Abelo**.
+- **2022–24:** further ATR investment and portfolio growth.
+- **2025:** acquired by **Cerberus** from Oaktree — a global investment firm managing about **€63 billion** in assets.
+
+**Key idea:** Elix brought the **platform and fleet**; ADARE brought the **management expertise**; Cerberus provides the **large-scale investment backing**.
