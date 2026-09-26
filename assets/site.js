@@ -857,6 +857,48 @@
 
   addInlinePlayButtons();
 
+  const addSectionMoveMenus = () => {
+    interviewHeadings().forEach(heading => {
+      if (heading.querySelector(':scope > .section-move-menu')) return;
+      const wrap = document.createElement('span');
+      wrap.className = 'section-move-menu';
+      const toggle = document.createElement('button');
+      toggle.type = 'button';
+      toggle.className = 'section-move-toggle';
+      toggle.textContent = '⋮';
+      toggle.title = 'Reorder this section';
+      const menu = document.createElement('span');
+      menu.className = 'section-move-actions';
+      menu.hidden = true;
+
+      [['↑ Up','up'], ['↓ Down','down'], ['⇧ Top','top'], ['⇩ Bottom','bottom']].forEach(pair => {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.textContent = pair[0];
+        button.addEventListener('click', event => {
+          event.preventDefault();
+          event.stopPropagation();
+          if (moveSectionWithinPage(heading, pair[1])) {
+            heading.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+          menu.hidden = true;
+        });
+        menu.appendChild(button);
+      });
+
+      toggle.addEventListener('click', event => {
+        event.preventDefault();
+        event.stopPropagation();
+        menu.hidden = !menu.hidden;
+      });
+
+      wrap.append(toggle, menu);
+      heading.appendChild(wrap);
+    });
+  };
+
+  addSectionMoveMenus();
+
   /* -----------------------------------------------------------------------
      Focus answer overlay — clicking a question produces the same blocking,
      distraction-free rehearsal view as the Education site.
