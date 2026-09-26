@@ -70,8 +70,7 @@ content:
 
   - { name: about_erik, label: "About Erik", type: file, path: about-erik.md, format: yaml-frontmatter, fields: *docfields }
   - { name: abelo, label: "Abelo & Aircraft Leasing", type: file, path: abelo.md, format: yaml-frontmatter, fields: *docfields }
-  - { name: working_with_others, label: "Work with Others", type: file, path: working-with-others.md, format: yaml-frontmatter, fields: *docfields }
-  - { name: working_independently, label: "Work Independently", type: file, path: working-independently.md, format: yaml-frontmatter, fields: *docfields }
+  - { name: working_with_others, label: "Workplace Skills", type: file, path: working-with-others.md, format: yaml-frontmatter, fields: *docfields }
   - { name: modules_projects, label: "Modules & Projects", type: file, path: modules-projects.md, format: yaml-frontmatter, fields: *docfields }
 
   - name: modules
@@ -112,7 +111,6 @@ content:
         sort: title
         order: asc
 
-  - { name: judgement, label: "Judgement", type: file, path: judgement.md, format: yaml-frontmatter, fields: *docfields }
   - { name: questions, label: "Questions", type: file, path: questions.md, format: yaml-frontmatter, fields: *docfields }
   - { name: communication, label: "Communication", type: file, path: communication.md, format: yaml-frontmatter, fields: *docfields }
   - { name: glossary, label: "Glossary (A–Z)", type: file, path: glossary.md, format: yaml-frontmatter, fields: *docfields }
