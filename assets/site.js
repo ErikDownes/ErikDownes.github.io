@@ -967,131 +967,48 @@
       play.textContent = '▶ Play';
     });
 
-    const editButton = document.createElement('button');
-    editButton.type = 'button';
-    editButton.textContent = 'Edit';
-    editButton.title = 'Edit this answer here';
+    const outline = document.createElement('div');
+    outline.className = 'answer-focus-outline';
 
-    const saveButton = document.createElement('button');
-    saveButton.type = 'button';
-    saveButton.textContent = 'Save';
-    saveButton.title = 'Save the edited answer';
-    saveButton.disabled = true;
+    const outlineItems = Array.from(copy.querySelectorAll('p,li,blockquote'))
+      .map(node => cleanText(node.textContent))
+      .filter(value => /^(key idea|key line|recall cue|cue|remember|outline|why this works)\s*:/i.test(value))
+      .slice(0, 6);
 
-    let answerEditor = null;
-    let formatToolbar = null;
-
-    const runFormat = (command, value = null) => {
-      if (!answerEditor) return;
-      answerEditor.focus({ preventScroll: true });
-      document.execCommand(command, false, value);
-    };
-
-    const makeFormatButton = (label, title, command, value = null) => {
-      const button = document.createElement('button');
-      button.type = 'button';
-      button.textContent = label;
-      button.title = title;
-      button.addEventListener('mousedown', event => {
-        event.preventDefault();
+    if (outlineItems.length) {
+      const label = document.createElement('strong');
+      label.textContent = 'Outline';
+      const list = document.createElement('ul');
+      outlineItems.forEach(value => {
+        const li = document.createElement('li');
+        li.textContent = value.replace(/^(key idea|key line|recall cue|cue|remember|outline|why this works)\s*:\s*/i, '');
+        list.appendChild(li);
       });
-      button.addEventListener('click', event => {
-        event.preventDefault();
-        event.stopPropagation();
-        runFormat(command, value);
-      });
-      return button;
-    };
+      outline.append(label, list);
+    } else {
+      outline.hidden = true;
+    }
 
-    const stopEditing = () => {
-      if (!answerEditor) return;
-      answerEditor.remove();
-      formatToolbar?.remove();
-      answerEditor = null;
-      formatToolbar = null;
-      copy.hidden = false;
-      editButton.disabled = false;
-      saveButton.disabled = true;
-    };
-
-    editButton.addEventListener('click', event => {
+    const outlineButton = document.createElement('button');
+    outlineButton.type = 'button';
+    outlineButton.textContent = outline.hidden ? 'Outline unavailable' : 'Hide Outline';
+    outlineButton.disabled = outline.hidden;
+    outlineButton.addEventListener('click', event => {
       event.preventDefault();
       event.stopPropagation();
-      if (answerEditor) return;
-
-      resetAudio();
-
-      formatToolbar = document.createElement('div');
-      formatToolbar.className = 'answer-format-toolbar';
-      formatToolbar.setAttribute('aria-label', 'Text formatting controls');
-
-      const normal = makeFormatButton('Text', 'Normal paragraph', 'formatBlock', 'p');
-      const h1 = makeFormatButton('H1', 'Heading 1', 'formatBlock', 'h1');
-      const h2 = makeFormatButton('H2', 'Heading 2', 'formatBlock', 'h2');
-      const bold = makeFormatButton('B', 'Bold', 'bold');
-      const italic = makeFormatButton('I', 'Italic', 'italic');
-      const bullets = makeFormatButton('• List', 'Bulleted list', 'insertUnorderedList');
-      const numbers = makeFormatButton('1. List', 'Numbered list', 'insertOrderedList');
-
-      formatToolbar.append(normal, h1, h2, bold, italic, bullets, numbers);
-
-      answerEditor = document.createElement('div');
-      answerEditor.className = 'answer-focus-editor';
-      answerEditor.contentEditable = 'true';
-      answerEditor.setAttribute('role', 'textbox');
-      answerEditor.setAttribute('aria-multiline', 'true');
-      answerEditor.setAttribute('aria-label', 'Edit this answer');
-      answerEditor.spellcheck = true;
-      answerEditor.innerHTML = copy.innerHTML;
-
-      copy.hidden = true;
-      copy.insertAdjacentElement('afterend', formatToolbar);
-      formatToolbar.insertAdjacentElement('afterend', answerEditor);
-
-      editButton.disabled = true;
-      saveButton.disabled = false;
-
-      requestAnimationFrame(() => {
-        answerEditor.focus({ preventScroll: true });
-      });
+      outline.hidden = !outline.hidden;
+      outlineButton.textContent = outline.hidden ? 'Show Outline' : 'Hide Outline';
     });
 
-    saveButton.addEventListener('click', event => {
+    const answerButton = document.createElement('button');
+    answerButton.type = 'button';
+    answerButton.textContent = 'Hide Answer';
+    answerButton.addEventListener('click', event => {
       event.preventDefault();
       event.stopPropagation();
-      if (!answerEditor) return;
-
-      const html = answerEditor.innerHTML.trim();
-      copy.innerHTML = html;
-
-      localStorage.setItem(editKeyFor(heading), html);
-      applySavedToSource(heading, html);
-      delete overlay.dataset.unsaved;
-
-      stopEditing();
-      saveButton.textContent = 'Saved ✓';
-      window.setTimeout(() => {
-        saveButton.textContent = 'Save';
-      }, 900);
+      copy.hidden = !copy.hidden;
+      answerButton.textContent = copy.hidden ? 'Show Answer' : 'Hide Answer';
     });
-
-    const makeMoveButton = (label, title, where) => {
-      const button = document.createElement('button');
-      button.type = 'button';
-      button.textContent = label;
-      button.title = title;
-      button.addEventListener('click', event => {
-        event.preventDefault();
-        event.stopPropagation();
-        if (moveSectionWithinPage(heading, where)) closeFocus();
-      });
-      return button;
-    };
-
-    const moveUp = makeMoveButton('↑ Up', 'Move this section up one position', 'up');
-    const moveDown = makeMoveButton('↓ Down', 'Move this section down one position', 'down');
-    const moveTop = makeMoveButton('⇧ Top', 'Move this section to the top of the page', 'top');
-    const moveBottom = makeMoveButton('⇩ Bottom', 'Move this section to the bottom of the page', 'bottom');
 
     const movePage = document.createElement('select');
     movePage.className = 'answer-focus-move-page';
@@ -1110,17 +1027,7 @@
       moveSectionToPage(heading, movePage.value);
     });
 
-    const glossaryButton = document.createElement('button');
-    glossaryButton.type = 'button';
-    glossaryButton.textContent = '+ Glossary';
-    glossaryButton.title = 'Select a word or phrase in this answer, then add it to the glossary';
-    glossaryButton.addEventListener('click', event => {
-      event.stopPropagation();
-      const selection = cleanText(window.getSelection()?.toString() || '');
-      openGlossaryTerm(selection);
-    });
-
-    controls.append(play, stop, editButton, saveButton, moveUp, moveDown, moveTop, moveBottom, movePage, glossaryButton);
+    controls.append(play, stop, outlineButton, answerButton, movePage);
 
     if (pageEdit?.href) {
       const cms = document.createElement('a');
@@ -1132,7 +1039,7 @@
       controls.appendChild(cms);
     }
 
-    focusContent.replaceChildren(title, controls, copy);
+    focusContent.replaceChildren(title, controls, outline, copy);
     lastTrigger = heading;
     overlay.hidden = false;
     document.body.classList.add('answer-focus-open');
