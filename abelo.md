@@ -41,13 +41,9 @@ Abelo is looking for an Intern to support our busy, Dublin based Asset Managemen
 
 ## **Abelo** | **What do you know about Abelo**
 
-Abelo is a regional aircraft leasing company specialised in turboprops **and management services**. The company is based in Dublin with offices in 
+Abelo is an Irish regional aircraft leasing company specialising in turboprops, particularly aircraft such as the ATR 42 and ATR 72. It was created in 2022 through the merger of Elix Aviation, which brought the leasing platform and turboprop portfolio, and ADARE Aviation Capital, which brought specialist management expertise. What I find interesting is that Abelo isn't simply a lessor — it manages aircraft throughout the asset lifecycle, from acquisition and leasing through asset management and ultimately remarketing or disposal. In 2025 the company was acquired by Cerberus, giving it substantial institutional backing for further growth.
 
 
-
-&nbsp;
-
-&nbsp;
 
 &nbsp;
 
