@@ -3,7 +3,7 @@ layout: doc
 handle: About Abelo
 title: About Abelo
 nav_order: 30
-eyebrow: Know the company. Say it simply.
+eyebrow: "Know the  job and the company. "
 intro: "Company knowledge for the Abelo interview. "
 ---
 ## Intern Job | Asset Management Intern
