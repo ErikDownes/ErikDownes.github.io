@@ -6,55 +6,54 @@ nav_order: 30
 eyebrow: Know the company. Say it simply.
 intro: "Company knowledge for the Abelo interview. "
 ---
-## Overview | What is Abelo?
+## Job title  | Asset Management Intern
 
-**Job Description**
+Based in Limerick and reporting to Niamh O'Dwyer Assistant Vice president AVP Asset Management.Niamh report to the VP od asset management Liam Duffy
 
-  
-
-
-Job title: 	Asset Management Intern
-
-Based: 	Limerick, Ireland
-
-Report to: 	AVP Asset Management
-
-![image.png](/assets/uploads/image-10.png)
-
-#### **Niamh O' Dwyer**
-
-AVP Asset Management  
+In person - UL Co-op Interview - Abelo Aviation - Tuesday, 29th September
 
 
-Job Type: 	Placement Period
-
-  
-  
-
-
-**Company Overview**
-
-  
+|  |  |  |  |  |
+| ---- | ------ | --------------------- | ---------------------------------------------------------------------------------- | -------- |
+| ERIK | DOWNES | Financial Mathematics | Unit 7, Castletroy Business Park, Plassey Park Road, Castletroy, Limerick V94 KW28 | 11:10 AM |
 
 
-Abelo is a regional aircraft leasing company specialised in turboprops and management services. The company is based in Dublin, Ireland.
 
-  
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+V94 KW28 
+
+
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+## **Company Overview**
+
+
+
+Abelo is a regional aircraft leasing company specialised in turboprops **and management services**. The company is based in Dublin with offices in 
+
 
 
 **Position Overview**
 
-  
 
 
 Abelo is looking for an Intern to support our busy, Dublin based Asset Management team. The role will provide great exposure to the Aircraft Leasing industry.
 
-  
 
 
 **Key Responsibilities**
 
-  
 
 
 - Assist with preparation of reports the timeframe specified in the Lease Agreement
@@ -62,14 +61,14 @@ Abelo is looking for an Intern to support our busy, Dublin based Asset Managemen
 - Assist with systemizing reporting though PowerBI and other reporting systems.
 - Support other key Internal departments such as Commercial, Finance and Legal as required.
 - Administration of other day to day activities carried out by Asset Management.
-- Aid in process improvements within the asset management function. 
+- Aid in process improvements within the asset management function.
 
-  
 
+
+&nbsp;
 
 **Job Requirements**
 
-  
 
 
 - Individual studying Finance / Business or a similar facility that has a keen interest in the Aviation Industry. 
@@ -80,10 +79,9 @@ Abelo is looking for an Intern to support our busy, Dublin based Asset Managemen
 
 
 
-  
+&nbsp;
 
-
-
+&nbsp;
 
 Abelo specialises in  leasing turboprop aircraft such as the ATR 42 and ATR 72  . 
 
