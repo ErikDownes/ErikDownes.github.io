@@ -10,7 +10,7 @@ intro: Build a confident academic and personal introduction without sounding scr
 
 I am studying Financial Mathematics at the University of Limerick. I enjoy work that combines mathematics, data and practical decision-making, and I have been strongest in areas such as probability and statistics, finance, data analysis and numerical methods. I am looking for a co-op role where I can apply that quantitative background in a real workplace, learn from experienced colleagues and become more commercially aware.
 
-Financial Mathematicsquantitativedatacommercial awareness
+
 
 **Recall cue:** Course → strongest areas → practical application → what I want from co-op.
 
@@ -45,8 +45,6 @@ real workplacejudgementcommunicationuncertainty
 &nbsp;
 
 ## handle | Single Pipe
-
-
 
 I want to understand how quantitative work is actually used inside an organisation: how problems are framed, how data is checked, how results are communicated and how decisions are made when there is uncertainty. I also want to improve my professional judgement, communication and ability to contribute as part of a team.real workplacejudgementcommunicationuncertainty**Recall cue:** Apply learning → learn workplace judgement → contribute.  
 
