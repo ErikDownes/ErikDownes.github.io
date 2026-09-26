@@ -6,7 +6,7 @@ nav_order: 20
 eyebrow: INTERVIEW STRUCTURE
 intro: Build a confident academic and personal introduction without sounding scripted.
 ---
-## Introduction | Tell me about yourself.
+## Tell me Ab... | Tell me about yourself.
 
 I am studying Financial Mathematics at the University of Limerick. I enjoy work that combines mathematics, data and practical decision-making, and I have been strongest in areas such as probability and statistics, finance, data analysis and numerical methods. I am looking for a co-op role where I can apply that quantitative background in a real workplace, learn from experienced colleagues and become more commercially aware.
 
