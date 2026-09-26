@@ -18,7 +18,7 @@ I am studying Financial Mathematics at the University of Limerick. I enjoy work 
 
 I wanted a course that kept the rigour of mathematics but connected it to finance, probability, data and real decision-making. The course suits me because I enjoy analytical problems, but I also like understanding what the answer means in practice rather than stopping at the calculation.
 
-rigourprobabilityfinanceinterpretation
+
 
 **Recall cue:** Maths + real decisions + interpretation.
 
