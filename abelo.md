@@ -70,9 +70,9 @@ Its strategy focuses on modern turboprop aircraft and newer technologies that ca
 
  Abelo means bee in Esperanto, linking the company to teamwork, structure, sustainability  and supporting a wider ecosystem.
 
-## The Abelo Team | How is the Abelo business organised?
+## The Abelo Ethos| What is the Abelo ethos?
 
-Abelo has  a **people-first** culture built around 
+Abelo has  a **people-first** culture underpinned by
 
 1. trust,
 2. responsibility and
