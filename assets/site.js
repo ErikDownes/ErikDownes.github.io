@@ -642,7 +642,8 @@
 
   linkKnownGlossaryTerms(body);
 
-  const interviewHeadings = () => Array.from(body.querySelectorAll(':scope > h2[data-question-text]'));
+  const sectionHeadings = () => Array.from(body.querySelectorAll(':scope > h2[data-section-heading]'));
+  const interviewHeadings = () => Array.from(body.querySelectorAll(':scope > h2[data-entry-type="interview"]'));
 
   const sourceNodesFor = heading => {
     const nodes = [];
@@ -704,7 +705,7 @@
   };
 
   const saveSectionOrder = () => {
-    const order = interviewHeadings().map(sectionIdFor);
+    const order = sectionHeadings().map(sectionIdFor);
     localStorage.setItem(`${ORDER_PREFIX}${normalisePath(location.pathname)}`, JSON.stringify(order));
   };
 
@@ -718,7 +719,7 @@
     }
     if (!saved.length) return;
 
-    const headings = interviewHeadings();
+    const headings = sectionHeadings();
     const byId = new Map(headings.map(heading => [sectionIdFor(heading), heading]));
     const currentIds = headings.map(sectionIdFor);
     const desired = [
@@ -738,7 +739,7 @@
     const moves = readSectionMoves();
 
     // Remove any original/local copy that now belongs on another page.
-    interviewHeadings().forEach(heading => {
+    sectionHeadings().forEach(heading => {
       const id = sectionIdFor(heading);
       const move = moves.find(item => item?.id === id);
       if (move && normalisePath(move.to) !== currentPath) {
@@ -750,7 +751,7 @@
     moves
       .filter(item => item?.id && normalisePath(item.to) === currentPath)
       .forEach(move => {
-        const existing = interviewHeadings().find(heading => sectionIdFor(heading) === move.id);
+        const existing = sectionHeadings().find(heading => sectionIdFor(heading) === move.id);
         if (existing) {
           if (move.bodyHtml) applySavedToSource(existing, move.bodyHtml);
           return;
@@ -765,7 +766,7 @@
   };
 
   const moveSectionWithinPage = (heading, where) => {
-    const headings = interviewHeadings();
+    const headings = sectionHeadings();
     const index = headings.indexOf(heading);
     if (index < 0 || headings.length < 2) return false;
 
@@ -845,7 +846,7 @@
   };
 
   const restoreSavedAnswers = () => {
-    interviewHeadings().forEach(heading => {
+    sectionHeadings().forEach(heading => {
       const saved = localStorage.getItem(editKeyFor(heading));
       if (saved) applySavedToSource(heading, saved);
     });
@@ -923,7 +924,7 @@
   addInlinePlayButtons();
 
   const addSectionMoveMenus = () => {
-    interviewHeadings().forEach(heading => {
+    sectionHeadings().forEach(heading => {
       if (heading.querySelector(':scope > .section-move-menu')) return;
       const wrap = document.createElement('span');
       wrap.className = 'section-move-menu';
@@ -1015,6 +1016,7 @@
     if (overlay.hidden) return;
     if (overlay.dataset.unsaved === 'true' && !window.confirm('Discard unsaved changes?')) return;
     resetAudio();
+    focusContent.querySelector('.answer-practice-record.is-recording')?.click();
     delete overlay.dataset.unsaved;
     overlay.hidden = true;
     focusContent.replaceChildren();
@@ -1136,9 +1138,116 @@
 
     controls.append(play, stop, outlineButton, answerButton, movePage);
 
+    const practice = document.createElement('section');
+    practice.className = 'answer-practice-panel';
+    const words = cleanText(copy.innerText).split(/\s+/).filter(Boolean).length;
+    const fastSeconds = Math.max(10, Math.round((words / 150) * 60));
+    const slowSeconds = Math.max(fastSeconds, Math.round((words / 120) * 60));
+    const targetSeconds = Math.max(10, Math.round((words / 135) * 60));
+    const fmt = seconds => {
+      const mins = Math.floor(seconds / 60);
+      const secs = seconds % 60;
+      return `${mins}:${String(secs).padStart(2, '0')}`;
+    };
 
+    const practiceHead = document.createElement('div');
+    practiceHead.className = 'answer-practice-head';
+    practiceHead.innerHTML = `<strong>Practice answer</strong><span>Suggested time ${fmt(fastSeconds)}–${fmt(slowSeconds)}</span>`;
 
-    focusContent.replaceChildren(title, controls, outline, copy);
+    const reminder = document.createElement('p');
+    reminder.className = 'answer-practice-reminder';
+    reminder.textContent = 'Learn the structure, not the script. Stay with the breadcrumbs and say it naturally.';
+
+    const timer = document.createElement('div');
+    timer.className = 'answer-practice-timer';
+    timer.textContent = `0:00 / ~${fmt(targetSeconds)} target`;
+
+    const record = document.createElement('button');
+    record.type = 'button';
+    record.className = 'answer-practice-record';
+    record.textContent = '● Record answer';
+
+    const attempts = document.createElement('div');
+    attempts.className = 'answer-practice-attempts';
+
+    let recorder = null;
+    let stream = null;
+    let chunks = [];
+    let startedAt = 0;
+    let tick = null;
+    let attemptNumber = 0;
+
+    const stopClock = () => {
+      if (tick) window.clearInterval(tick);
+      tick = null;
+    };
+    const updateClock = () => {
+      if (!startedAt) return;
+      const elapsed = Math.max(0, Math.floor((Date.now() - startedAt) / 1000));
+      timer.textContent = `${fmt(elapsed)} / ~${fmt(targetSeconds)} target`;
+    };
+
+    record.addEventListener('click', async event => {
+      event.preventDefault();
+      event.stopPropagation();
+
+      if (recorder && recorder.state === 'recording') {
+        recorder.stop();
+        record.textContent = '● Record answer';
+        record.classList.remove('is-recording');
+        stopClock();
+        return;
+      }
+
+      if (!navigator.mediaDevices?.getUserMedia || typeof MediaRecorder === 'undefined') {
+        timer.textContent = 'Recording is not supported in this browser.';
+        return;
+      }
+
+      try {
+        stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        const preferred = MediaRecorder.isTypeSupported?.('audio/webm;codecs=opus')
+          ? 'audio/webm;codecs=opus'
+          : '';
+        recorder = preferred ? new MediaRecorder(stream, { mimeType: preferred }) : new MediaRecorder(stream);
+        chunks = [];
+        recorder.ondataavailable = e => { if (e.data?.size) chunks.push(e.data); };
+        recorder.onstop = () => {
+          stopClock();
+          stream?.getTracks().forEach(track => track.stop());
+          stream = null;
+          const blob = new Blob(chunks, { type: recorder.mimeType || 'audio/webm' });
+          const url = URL.createObjectURL(blob);
+          attemptNumber += 1;
+
+          const row = document.createElement('div');
+          row.className = 'answer-practice-attempt';
+          const label = document.createElement('strong');
+          label.textContent = `Recording ${attemptNumber}`;
+          const audio = document.createElement('audio');
+          audio.controls = true;
+          audio.src = url;
+          const download = document.createElement('a');
+          download.href = url;
+          download.download = `interview-practice-${attemptNumber}.webm`;
+          download.textContent = 'Save';
+          row.append(label, audio, download);
+          attempts.prepend(row);
+        };
+        recorder.start();
+        startedAt = Date.now();
+        updateClock();
+        tick = window.setInterval(updateClock, 250);
+        record.textContent = '■ Stop recording';
+        record.classList.add('is-recording');
+      } catch (_) {
+        timer.textContent = 'Microphone permission is needed to record.';
+      }
+    });
+
+    practice.append(practiceHead, reminder, timer, record, attempts);
+
+    focusContent.replaceChildren(title, controls, outline, copy, practice);
     linkKnownGlossaryTerms(copy);
     lastTrigger = heading;
     overlay.hidden = false;
@@ -1241,7 +1350,7 @@
     let ticking = false;
     const updateEditTarget = () => {
       ticking = false;
-      const headings = interviewHeadings();
+      const headings = sectionHeadings();
       if (!headings.length) {
         floatingEdit.href = floatingEdit.dataset.cmsBase;
         return;
