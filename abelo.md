@@ -6,38 +6,37 @@ nav_order: 30
 eyebrow: Know the company. Say it simply.
 intro: "Company knowledge for the Abelo interview. "
 ---
-## Intern Job   | Asset Management Intern
 
-Based in Limerick and reporting to Niamh O'Dwyer Assistant Vice president AVP Asset Management.Niamh report to the VP od asset management Liam Duffy
 
-In person - UL Co-op Interview - Abelo Aviation - 
+## Intern Job | Asset Management Intern
 
-Unit 7, Castletroy Business Park, Plassey Park Road, Castletroy, Limerick V94 KW28 Tuesday, 29th September
+Based in **Limerick**, reporting to **Niamh O'Dwyer, AVP Asset Management**. Niamh reports to **Liam Duffy, VP Asset Management**.
 
-Abelo is looking for an Intern to support our busy, Dublin based Asset Management team. The role will provide great exposure to the Aircraft Leasing industry.
+**Interview:** In person — UL Co-op Interview, Abelo Aviation  
+**Date:** Tuesday, 29 September 2026  
+**Location:** Unit 7, Castletroy Business Park, Plassey Park Road, Castletroy, Limerick, V94 KW28
+
+Abelo is looking for an Intern to support its Asset Management team. The role provides exposure to the **aircraft leasing industry** and to the operational, financial and reporting work involved in managing leased aircraft assets.
 
 **Key Responsibilities**
 
-- Assist with preparation of reports the timeframe specified in the Lease Agreement
-- Data entry into our internal data management systems and support Asset team with billing processes. 
-- Assist with systemizing reporting though PowerBI and other reporting systems.
-- Support other key Internal departments such as Commercial, Finance and Legal as required.
-- Administration of other day to day activities carried out by Asset Management.
-- Aid in process improvements within the asset management function.
-
-
+- Assist with preparation of reports within the timeframes specified in the **Lease Agreement**.
+- Enter and maintain data in internal data-management systems.
+- Support the Asset Management team with billing processes.
+- Assist with systemising reporting through **Power BI** and other reporting systems.
+- Support internal departments including **Commercial, Finance and Legal** as required.
+- Assist with day-to-day Asset Management administration.
+- Contribute to process improvements within the Asset Management function.
 
 **Job Requirements**
 
-- Individual studying Finance / Business or a similar facility that has a keen interest in the Aviation Industry. 
+- Studying Finance, Business or a related discipline, with a strong interest in the aviation industry.
 - Excellent quantitative and analytical skills.
-- Proficiency with MS Office (particularly Excel) and strong software skills.
-- Commitment to providing excellent quality work.
-- Highly disciplined, accompanied by a strong desire to learn.
+- Proficiency in Microsoft Office, particularly **Excel**, with strong general software skills.
+- Commitment to producing accurate, high-quality work.
+- Highly disciplined, organised and keen to learn.
 
 
-
-&nbsp;
 
 ## **Know Abelo** | **What do you know about Abelo**
 
