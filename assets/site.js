@@ -104,11 +104,17 @@
 
   const splitQuestionHeading = value => {
     const text = cleanText(value);
-    const pipeIndex = text.indexOf('|');
-    if (pipeIndex < 0) return null;
+    if (!text) return null;
+    const delimiter = text.includes('||') ? '||' : (text.includes('|') ? '|' : '');
+    if (!delimiter) return null;
+    const pipeIndex = text.indexOf(delimiter);
     const handle = cleanText(text.slice(0, pipeIndex));
-    const question = cleanText(text.slice(pipeIndex + 1));
-    return handle && question ? { handle, question } : null;
+    const question = cleanText(text.slice(pipeIndex + delimiter.length));
+    return handle && question ? {
+      handle,
+      question,
+      entryType: delimiter === '||' ? 'interview' : 'information'
+    } : null;
   };
 
   const currentPath = location.pathname.replace(/\/+$/, '') || '/';
