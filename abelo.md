@@ -18,16 +18,6 @@ In person - UL Co-op Interview - Abelo Aviation - Tuesday, 29th September
 | ERIK | DOWNES | Financial Mathematics | Unit 7, Castletroy Business Park, Plassey Park Road, Castletroy, Limerick V94 KW28 | 11:10 AM |
 
 
-**Interview countdown**
-
-**—**
-
-Tuesday 29 September · 11:10 AM
-
-
-
-![image.png](blob:https:/app.pagescms.org/6941743e-06ed-4243-8f36-e4b249efe030)
-
 ## **Company Overview**
 
 Abelo is a regional aircraft leasing company specialised in turboprops **and management services**. The company is based in Dublin with offices in 
