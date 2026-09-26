@@ -16,6 +16,17 @@ Based in **Limerick**, reporting to **Niamh O'Dwyer, AVP Asset Management**. Nia
 
 Abelo is looking for an Intern to support its Asset Management team. The role provides exposure to the **aircraft leasing industry** and to the operational, financial and reporting work involved in managing leased aircraft assets.
 
+Other teams you may Liase with are 
+
+-  **finance,** 
+- **legal,** 
+- **technical,** 
+- **commercial,** 
+- **digital innovation,** 
+- **risk and operations**.
+
+
+
 **Key Responsibilities**
 
 - Assist with preparation of reports within the timeframes specified in the **Lease Agreement**.
@@ -53,7 +64,7 @@ Abelo was created in **June 2022** from the combination of the Elix Aviation pla
 **Interview wording:**  
 “Abelo is an Irish aircraft lessor specialising in turboprops and regional aviation. It combines aircraft leasing with asset management and other in-house capabilities.”
 
-[Official Abelo website](https://abelo.aero/)
+
 
 ## Purpose & Mission | What is Abelo trying to do?
 
@@ -82,49 +93,24 @@ The team brings together expertise across **asset management, finance, legal, te
 
 For this placement, the important connection is that Asset Management does not work in isolation: the job specification also refers to supporting **Commercial, Finance and Legal**.
 
-## Leadership & Senior Management | Who leads Abelo?
 
-### Leadership
 
-- **Stephen Gorman** — Chief Executive Officer
-- **Mathieu Duquesnoy** — Chief Marketing Officer
-- **Richard Hill** — Chief Financial Officer
-- **Paul Dillon** — Chief Technical Officer
 
-### Senior Management
 
-- **David Cann** — MD Human Resources
-- **Lorraine Jordan** — MD Finance
-- **Mike Scimgeour** — MD Legal
-- **Martina O Neill** — Head of Operations
+## Relevant  Team | Relevant  Team members
 
-**Interview connection:** David Cann is conducting Erik’s UL co-op interview.
-
-## Our Team | Who works across the business?
-
-Keep this as a quick-reference people map rather than something to memorise.
-
-- **Amy Mizzoni** — VP Contract Management
-- **Bill Rossi** — SVP Marketing
-- **Declan Corcoran** — VP Digital Innovation
-- **Francis Walsh** — Manager Legal
-- **Eoghan Connolly** — VP Legal
-- **Fergus Woods** — SVP Marketing
-- **Ian McElligott** — VP Technical
-- **Gary Lomax** — VP Technical
-- **Ian Derwin** — VP Marketing
-- **Jack Conroy** — VP Marketing
-- **Karen Hayes** — VP Finance
-- **Liam Duffy** — VP Asset Management
-- **Melissa Rayos** — Finance Accountant
-- **Padraig Hayes** — Manager Accounts Payable
-- **Richard Murphy** — VP Risk
-- **Shannon Jackson** — AVP Digital Innovation
-- **Shane McInerney** — Manager FP&A & Pricing
-- **Saskia Reijnen** — SVP Marketing
-- **Niamh O' Dwyer** — AVP Asset Management
-- **Paul Prendeville** — VP Technical & Engineering
-- **Edel Burke** — VP Legal
+- **Niamh O'Dwyer — AVP Asset Management**  
+The role reports directly to the **AVP Asset Management**.
+- **Liam Duffy — VP Asset Management**  
+Senior leader of the **Asset Management** function.
+- **Karen Hayes — VP Finance**  
+Relevant because the role supports **Finance** and includes billing and reporting.
+- **Shane McInerney — Manager FP&A & Pricing**  
+Relevant to the role’s **financial analysis, pricing and reporting** work.
+- **Declan Corcoran — VP Digital Innovation**  
+Relevant because the role involves **Power BI, reporting systems and process improvement**.
+- **Eoghan Connolly — VP Legal**  
+Relevant because the role supports **Legal** and works with obligations arising from **lease agreements**.
 
 **Most relevant to this placement:** Asset Management, Finance / FP&A, Digital Innovation, Legal and Commercial.
 
