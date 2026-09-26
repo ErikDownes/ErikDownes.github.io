@@ -8,20 +8,37 @@ intro: Keep the core interview pages lean. Use this space for the deeper
   mathematics, finance, aircraft, data and technology that make the interview
   answers more intelligent.
 ---
-## Aircraft & flight
 
-Build enough engineering understanding to explain what a turboprop is, why propellers are still used on modern commercial aircraft, and why the design can make sense on shorter regional routes.
 
-Topics to develop:
 
-- turboprop versus turbofan
-- propeller, turbine and thrust
-- altitude, range and speed
-- ATR 42 versus ATR 72
-- passenger versus cargo configurations
-- aircraft age, utilisation and maintenance cycles
 
-[Open the History of Flight timeline]({% link history-of-flight.md %})
+## Strategy | Specialist vs Diversified
+
+**Abelo has deliberately built deep expertise in turboprops, not just in leasing them but across the whole asset-management cycle.** Abelo itself says regional aircraft require a specific skill set and that turboprops operate in a market with “unique dynamics.” [Abelo - Turboprop Technology](https://abelo.aero/our-business/?utm_source=chatgpt.com)
+
+**Ask them:**
+
+**What do you see as the main competitive advantage of remaining a turboprop specialist, and have you ever considered expanding into regional jets or aircraft such as the A320 or 737 families?**
+
+### How they may reply
+
+They may say that specialising gives Abelo **deeper technical and commercial expertise** in one asset class. Their team can become very strong on ATR values, maintenance cycles, lease transitions, reconfiguration, residual values and the needs of regional airlines rather than spreading that expertise across many aircraft types.
+
+They may also point to **strong manufacturer and airline relationships**. Abelo has continued to deepen its relationship with ATR, including converting and exercising aircraft options, so remaining focused can strengthen access to aircraft, delivery positions and market knowledge. [Abelo - Turboprop Technology](https://abelo.aero/wp-content/uploads/2025/01/2025.01.09-ATR-Abelo-EN5.pdf?utm_source=chatgpt.com)
+
+A third answer may be that **asset management itself becomes a competitive advantage**. Abelo recently described managing an ATR 72-500 through repossession, inspection, maintenance and reconfiguration for a new operator in under 100 days. That is the kind of specialist capability they may argue is harder to maintain across many unrelated aircraft families. [Abelo - Turboprop Technology](https://abelo.aero/wp-content/uploads/2026/02/Abelo-Delivers-ATR72-500-MSN-762-to-Air-Navigator-Group.pdf?utm_source=chatgpt.com)
+
+They could also say that entering A320s or 737s would put Abelo into a **much larger and more competitive leasing market**, against major global lessors with enormous fleets and capital bases. Staying in turboprops allows Abelo to occupy a more distinctive niche.
+
+Finally, they may frame the decision around **strategy rather than inability**: they could diversify, but doing so might dilute the expertise, relationships and brand position they have deliberately built around regional turboprops.
+
+### Follow-up
+
+**Would moving into jets risk diluting the specialist advantage that Abelo has built?**
+
+That follow-up is useful because it moves the discussion from simply **“Why don't you lease jets?”** to the more interesting strategic question of **specialisation versus diversification**.
+
+
 
 ## Lease finance
 
@@ -44,6 +61,7 @@ A useful dashboard should let a user change assumptions and see the financial co
 [Open the Aircraft Leasing Decision Lab]({{ '/lease-dashboard.html' | relative_url }})
 
 The lab includes:
+
 - a single-aircraft lease and residual-value curve
 - a start-at-any-age model, including a six-year-old aircraft entering a new lease
 - an extend-versus-re-lease comparison
