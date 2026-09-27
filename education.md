@@ -4,14 +4,14 @@ handle: Education
 title: Education
 nav_order: 40
 eyebrow: LEARN THE INDUSTRY
-intro: "Read the expert explanation, learn it one idea at a time, then test your understanding. Aircraft-leasing terms stay within reach throughout."
+intro: "Listen, read, then study one idea at a time. Recall prompts and a final check help Erik decide what to revisit."
 study_mode: true
 ---
 
 <div class="education-aercap-intro">
   <div class="education-aercap-kicker">AERCAP · INVESTOR EDUCATION</div>
-  <div class="education-aercap-title">READ IT.<br><span>LEARN IT.</span><br>TEST IT.</div>
-  <p>Read each explanation once, then reveal its ideas in Learn. Test gives three short questions with feedback that helps you return to the concept. Click highlighted terms at any stage; double-click a section title to rehearse it aloud.</p>
+  <div class="education-aercap-title">LISTEN.<br>READ.<br><span>STUDY.</span></div>
+  <p>Use the play button beside a section heading to listen. Read the cleaned transcript, then study one idea at a time with short recall prompts. Speak opens the existing rehearsal space. Check gives feedback at the end so you know what to revisit. Tap highlighted terms for definitions throughout.</p>
 </div>
 
 ## Power-by-the-Hour
