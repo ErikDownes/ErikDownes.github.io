@@ -14,6 +14,13 @@ study_mode: true
   <p>Each card is a short idea you could explain in an interview. Read it, reveal one idea at a time, then speak without looking. The questions check whether you can use the idea. Follow the source link if you want the full industry explanation.</p>
 </div>
 
+## Power-by-the-Hour
+<div class="aercap-beamer" data-aercap-beamer data-title="Power-by-the-Hour"><div class="aercap-source">
+<p>Under a power-by-the-hour arrangement, some rent follows how much an aircraft flies. That can help an airline through a period of uncertain demand.</p>
+<p>The lessor must weigh that flexibility against its need for predictable income. The exact contract determines when payments return to a fixed basis.</p>
+<p><strong>Say it:</strong> “It is a useful example of lease terms responding to a shock. I would be interested in how the team decides when flexibility protects value.”</p>
+</div></div>
+
 ## Aircraft Leasing 101
 <div class="aercap-beamer" data-aercap-beamer data-title="Aircraft Leasing 101"><div class="aercap-source">
 <p>An airline can lease an aircraft rather than fund its full purchase. A lessor buys the asset and earns rent while the airline operates it.</p>
@@ -42,12 +49,7 @@ study_mode: true
 <p><strong>Say it:</strong> “I can see why accurate reporting matters: a small change in payments or utilisation could be an early signal that deserves a closer look.”</p>
 </div></div>
 
-## Power-by-the-Hour
-<div class="aercap-beamer" data-aercap-beamer data-title="Power-by-the-Hour"><div class="aercap-source">
-<p>Under a power-by-the-hour arrangement, some rent follows how much an aircraft flies. That can help an airline through a period of uncertain demand.</p>
-<p>The lessor must weigh that flexibility against its need for predictable income. The exact contract determines when payments return to a fixed basis.</p>
-<p><strong>Say it:</strong> “It is a useful example of lease terms responding to a shock. I would be interested in how the team decides when flexibility protects value.”</p>
-</div></div>
+
 
 ## Balance Sheet Discipline in Aircraft Leasing
 <div class="aercap-beamer" data-aercap-beamer data-title="Balance Sheet Discipline in Aircraft Leasing"><div class="aercap-source">
