@@ -616,11 +616,11 @@
     if (!label || !menu) return;
     const pageUrl = new URL(label.href, location.href);
     const targetPath = normalisePath(pageUrl.href);
-    const isStudiesLibrary = /\/studies(?:\.html)?$/.test(pageUrl.pathname.replace(/\/+$/, ''));
+    const isCourseworkLibrary = /\/coursework(?:\.html)?$/.test(pageUrl.pathname.replace(/\/+$/, ''));
 
     try {
       if (targetPath === currentPath && body) {
-        if (isStudiesLibrary) {
+        if (isCourseworkLibrary) {
           populateModuleMenu(item, Array.from(body.querySelectorAll('a[href]')), pageUrl);
         } else {
           const headings = Array.from(body.querySelectorAll(':scope > h2')).filter(heading => headingInfo(heading));
@@ -634,7 +634,7 @@
       const html = await response.text();
       const parsed = new DOMParser().parseFromString(html, 'text/html');
 
-      if (isStudiesLibrary) {
+      if (isCourseworkLibrary) {
         populateModuleMenu(item, Array.from(parsed.querySelectorAll('#docBody a[href]')), pageUrl);
         return;
       }
