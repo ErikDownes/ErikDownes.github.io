@@ -16,7 +16,7 @@ study_mode: true
 
 ## Power-by-the-Hour
 <div class="aercap-beamer" data-aercap-beamer data-title="Power-by-the-Hour"><div class="aercap-source">
-<p>Under a power-by-the-hour arrangement, some rent follows how much an aircraft flies. That can help an airline through a period of uncertain demand.</p>
+<p>Under a power-by-the-hour arrangement, some rent follows how much an aircraft flies. That can help an airline through a period of uncertain demand such as covid.</p>
 <p>The lessor must weigh that flexibility against its need for predictable income. The exact contract determines when payments return to a fixed basis.</p>
 <p><strong>Say it:</strong> “It is a useful example of lease terms responding to a shock. I would be interested in how the team decides when flexibility protects value.”</p>
 </div></div>
