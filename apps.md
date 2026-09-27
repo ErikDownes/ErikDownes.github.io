@@ -4,12 +4,12 @@ handle: Apps
 title: Apps
 nav_order: 100
 eyebrow: INTERACTIVE TOOLS
-intro: Interactive apps, dashboards and visual tools for finance, aircraft leasing and interview preparation.
+intro: The tools stay inside the learning context. Use them here or on the Finance and Asset Management pages rather than opening detached app files.
 ---
 
 # Apps
 
-This page is for the **interactive tools**. Academic content stays under **Modules** and **Finance**; calculators, dashboards, maps and decision-support tools live here.
+The apps are **part of the learning**, not separate destinations.
 
 ## Abelo Fleet & Lease Placement Map
 
@@ -21,34 +21,24 @@ Built from public **Abelo / Elix transactions, aircraft histories and fleet data
 
 ## Aircraft Leasing Decision Lab
 
-[Open the Aircraft Leasing Decision Lab]({{ '/lease-dashboard.html' | relative_url }})
+Change an aircraft assumption and see what happens to **lease cash flow, residual value, NPV and the extend-versus-re-lease decision**.
 
-A browser-based asset-management model for testing aircraft leasing decisions.
+<details class="embedded-app">
+  <summary><strong>Open the leasing lab here</strong></summary>
+  <iframe
+    title="Aircraft Leasing Decision Lab"
+    src="{{ '/lease-dashboard.html' | relative_url }}#leaseLab"
+    style="width:100%;height:920px;border:1px solid rgba(127,127,127,.28);border-radius:16px;margin-top:14px;background:#fff;"
+    loading="lazy">
+  </iframe>
+</details>
 
-It lets Erik:
+## Finance Lab
 
-- start with an aircraft at a selected age
-- model lease income and residual value
-- discount future cash flows
-- compare lease extension with transition and re-leasing
-- stress assumptions using conservative, base and upside scenarios
-- explain why the result changes rather than simply quote a number
+The finance tools now sit inside one learning sequence:
 
-**Built with:** HTML, CSS and JavaScript.
+**friend loan → risk language → simple interest → compound interest → PCP → mortgage → aircraft finance**
 
-## Finance & Mortgage Calculator
+[Use the embedded Finance learning lab]({{ '/mortgage-calculator.html' | relative_url }})
 
-[Open the Finance & Mortgage Calculator]({{ '/mortgage-calculator.html' | relative_url }})
-
-A financial mathematics app for exploring borrowing, repayment and amortisation visually.
-
-It lets Erik:
-
-- vary price, deposit, interest rate and term
-- calculate monthly repayments
-- generate a full amortisation schedule
-- model recurring lump-sum overpayments
-- inspect principal, interest and outstanding balance on the graph
-- use the same financial logic as a bridge into aircraft-finance thinking
-
-**Built with:** HTML, CSS, JavaScript and Canvas.
+The PCP, mortgage and aircraft controls are on that page beside the concepts they are meant to explain. The deeper academic route is linked there to **MS4027 — Fundamentals of Financial Mathematics**.
