@@ -36,3 +36,28 @@
   .lease-kpis{grid-template-columns:repeat(2,minmax(0,1fr))}
   .scenario-cards,.lineage-grid,.lease-mini-grid{grid-template-columns:1fr}
 }
+
+.portfolio-heading{display:flex;justify-content:space-between;gap:1rem;align-items:flex-start}
+.portfolio-heading h3{margin-bottom:.35rem}
+.portfolio-heading p{max-width:850px}
+.portfolio-kpis{margin:1rem 0}
+.portfolio-controls{display:flex;gap:.75rem;flex-wrap:wrap;margin:1rem 0}
+.portfolio-controls label{font-weight:700;min-width:190px}
+.portfolio-controls select{display:block;width:100%;margin-top:.35rem;padding:.55rem .65rem;border:1px solid #cbd3df;border-radius:10px;background:#fff;font:inherit}
+.abelo-fleet-map{height:520px;border:1px solid #d7dce5;border-radius:16px;overflow:hidden;background:#eef2f7;z-index:1}
+.portfolio-map-note{font-size:.9rem}
+.portfolio-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem;margin:1rem 0}
+.portfolio-card{border:1px solid #d7dce5;background:#fff;border-radius:16px;padding:1rem}
+.portfolio-card h3{margin:.55rem 0 .2rem}
+.portfolio-card p{margin:.45rem 0}
+.portfolio-card-top{display:flex;justify-content:space-between;gap:.5rem;align-items:center}
+.portfolio-evidence{font-size:.68rem;font-weight:850;letter-spacing:.045em;border-radius:999px;padding:.28rem .5rem;background:#e8f3ec}
+.portfolio-place{font-weight:700}
+.portfolio-ids{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.84rem}
+.portfolio-ids.muted{font-family:inherit;opacity:.65}
+.portfolio-card a{font-weight:750}
+@media(max-width:850px){
+  .abelo-fleet-map{height:430px}
+  .portfolio-list{grid-template-columns:1fr}
+  .portfolio-controls{display:grid;grid-template-columns:1fr}
+}
