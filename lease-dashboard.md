@@ -192,10 +192,29 @@ It connects Financial Mathematics, statistics, accounting and asset management b
     </div>
 
     <div class="lease-kpis portfolio-kpis">
-      <div><span>Abelo stated portfolio</span><strong>&gt;60</strong></div>
-      <div><span>Aircraft represented here</span><strong id="portfolioMapped">—</strong></div>
-      <div><span>Operators / placements</span><strong id="portfolioOperators">—</strong></div>
-      <div><span>MSNs identified</span><strong id="portfolioMsnCount">—</strong></div>
+      <div><span>Aircraft</span><strong>61</strong></div>
+      <div><span>Lessees</span><strong>26</strong></div>
+      <div><span>Countries</span><strong>19</strong></div>
+      <div><span>Publicly mapped here</span><strong id="portfolioMapped">—</strong></div>
+    </div>
+
+    <div class="lease-note">
+      <strong>Working reconstruction:</strong> 61 aircraft · 26 lessees · 19 countries. These are a public-data working estimate for the proof of concept, not a claim that Abelo has published a complete live fleet register. The map below shows the documented subset currently tied to public transaction evidence.
+    </div>
+
+    <div class="lease-mini-grid">
+      <div>
+        <h3>The problem</h3>
+        <p>Abelo says it supports more than 60 turboprops, but there is no complete public aircraft-by-aircraft register to download. A customer airline may lease aircraft from several different lessors, registrations can change, and aircraft may sit inside Elix/Abelo special-purpose companies rather than carrying an obvious “Abelo” owner name.</p>
+      </div>
+      <div>
+        <h3>The challenge</h3>
+        <p>Reconstruct the portfolio without confusing an airline’s whole fleet with Abelo’s exposure. The durable key is the aircraft MSN, then registration history, owner/SPV, lessor or manager, lessee, country and transaction date. Public announcements establish the lease relationship; the large aircraft database is used to enrich and cross-check the airframe record.</p>
+      </div>
+    </div>
+
+    <div class="lease-note">
+      <strong>Proof of concept:</strong> start with the 61 · 26 · 19 working portfolio, classify each relationship as verified, strong inference or assumed, and progressively replace assumptions with aircraft-level evidence. The value of the app is the reconciliation process and audit trail — not pretending uncertain public data is exact.
     </div>
 
     <div class="portfolio-controls">
