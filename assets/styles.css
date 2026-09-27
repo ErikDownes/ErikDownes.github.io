@@ -915,7 +915,8 @@ body.answer-focus-open{overflow:hidden}
   width: auto !important;
 }
 .abelo-popup-card {
-  min-width: 320px;
+  min-width: 250px;
+  max-width: 310px;
 }
 .abelo-popup-line {
   margin: 0;
@@ -951,6 +952,17 @@ body.answer-focus-open{overflow:hidden}
   font-weight: 700;
   letter-spacing: .035em;
   color: #607080;
+}
+.abelo-popup-brief {
+  margin: .55rem 0 .45rem;
+  font-size: .78rem;
+  line-height: 1.4;
+  color: #526170;
+}
+.abelo-popup-source {
+  font-size: .76rem;
+  font-weight: 700;
+  text-decoration: none;
 }
 @media (max-width: 520px) {
   .abelo-map .leaflet-popup-content-wrapper {
