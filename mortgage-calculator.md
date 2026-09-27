@@ -1,41 +1,86 @@
 ---
 layout: doc
 handle: Finance
-title: Residential & Aircraft Finance — Decision Lab
+title: Finance — From a Friend Loan to an Aircraft
 nav_order: 70
-eyebrow: OPEN · ONLINE · INTERACTIVE
-intro: Start with a residential mortgage, then use the same cash-flow thinking to understand aircraft ownership, financing, leasing, options and residual value.
+eyebrow: LEARN · LANGUAGE · APPLY
+intro: Start with the simplest possible loan, add the language of risk and interest, then carry the same cash-flow thinking into a car, a house and finally an aircraft.
 ---
 
-<div class="mortgage-note"><strong>Interactive app page:</strong> This page is maintained as a browser application rather than a normal Pages CMS document. Use the controls directly here; edit the source in GitHub when the application itself needs to change.</div>
+## Financial instruments | Start with the contract, not the formula
 
+A **financial instrument** is an agreement that creates financial rights and obligations between parties. Start with the simplest possible example and keep adding one idea at a time.
 
-## Financial instruments | Same questions, different contracts
+**Friend loan → risk language → simple interest → compound interest → PCP → mortgage → aircraft finance**
 
-The easiest way to understand finance is not to memorise products. Ask the same questions every time:
+[Go deeper in MS4027 — Fundamentals of Financial Mathematics]({{ '/modules/ms4027-fundamentals-of-financial-mathematics.html' | relative_url }})
 
-**Who supplies the capital? Who owns the asset? What payments are made? Who carries the risk? What happens at the end?**
+The same questions keep returning:
+
+**Who provides the money? Who receives it? For how long? What must be repaid? What can go wrong? Who carries that risk?**
 
 <div class="finance-flow">
-  <div><strong>Friend loan</strong><span>cash now → repayment later</span></div>
-  <div><strong>Bank credit</strong><span>borrow → interest → repay</span></div>
-  <div><strong>Mortgage</strong><span>borrow → buy → own</span></div>
-  <div><strong>PCP</strong><span>deposit → monthly payments → balloon / return</span></div>
-  <div><strong>Aircraft lease</strong><span>lease rentals → use aircraft → return aircraft</span></div>
+  <div><strong>Friend loan</strong><span>money now → money back later</span></div>
+  <div><strong>Simple interest</strong><span>interest on principal</span></div>
+  <div><strong>Compound interest</strong><span>interest on a growing balance</span></div>
+  <div><strong>PCP</strong><span>deposit → monthly → balloon</span></div>
+  <div><strong>Mortgage</strong><span>deposit → loan → ownership</span></div>
+  <div><strong>Aircraft</strong><span>capital → asset → lease cash flow</span></div>
 </div>
+
+## Friend loan | Finance before interest
+
+Suppose a friend lends you **€1,000 today** and you agree to repay **€1,000 in one year**.
+
+There is no interest, but there is already a financial contract and already some risk.
 
 <div class="instrument-grid">
-  <article><h3>Interest-free personal loan</h3><p>The simplest instrument: one person provides capital and expects it back later. No interest does not mean no risk.</p><strong>Idea:</strong> trust, time and credit risk.</article>
-  <article><h3>Current / deposit account</h3><p>You provide money to a bank. Liquidity is high and expected return is usually modest.</p><strong>Idea:</strong> liquidity versus return.</article>
-  <article><h3>Overdraft / credit card</h3><p>Flexible revolving borrowing rather than a fixed amortising loan. Interest is charged on the balance used.</p><strong>Idea:</strong> flexibility versus borrowing cost.</article>
-  <article><h3>Shares / investments</h3><p>Capital is invested for uncertain future value rather than repaid under a fixed schedule.</p><strong>Idea:</strong> expected return and market risk.</article>
-  <article><h3>Mortgage</h3><p>Long-term secured borrowing used to acquire an asset that the borrower owns.</p><strong>Idea:</strong> deposit, amortisation and security.</article>
-  <article><h3>PCP car finance</h3><p>Deposit plus monthly payments with a large optional final payment linked to the vehicle's future value.</p><strong>Idea:</strong> cash today versus cash later.</article>
-  <article><h3>Aircraft operating lease</h3><p>The airline pays for use. Ownership normally stays with the lessor and the aircraft is returned under the lease terms.</p><strong>Idea:</strong> use without ownership.</article>
-  <article><h3>Aircraft lessor finance</h3><p>The lessor may combine debt and equity to buy the aircraft before leasing it to an airline.</p><strong>Idea:</strong> capital stack, lease income and residual value.</article>
+  <article><h3>Lender</h3><p>The person providing the money.</p></article>
+  <article><h3>Borrower</h3><p>The person receiving the money and taking on the repayment obligation.</p></article>
+  <article><h3>Principal</h3><p>The amount originally borrowed: here, €1,000.</p></article>
+  <article><h3>Term</h3><p>The agreed length of the borrowing: here, one year.</p></article>
+  <article><h3>Credit risk</h3><p>The risk that the borrower does not repay as agreed.</p></article>
+  <article><h3>Creditworthiness / credit rating</h3><p>Creditworthiness is the borrower's ability and willingness to repay. A formal credit rating is an external assessment used for companies, banks and governments.</p></article>
+  <article><h3>Default</h3><p>Failure to meet a contractual payment or another material obligation.</p></article>
+  <article><h3>Security / collateral</h3><p>An asset or claim that may protect a lender if the borrower defaults. A casual friend loan may have none.</p></article>
+  <article><h3>Reputational risk</h3><p>Even without collateral, failure to repay can damage trust and future access to finance.</p></article>
 </div>
 
-## PCP | Compare financing structures
+**Key idea:** interest is only one part of finance. **Time, obligation and risk exist even when the interest rate is 0%.**
+
+## Simple interest | Pay for the use of money
+
+With **simple interest**, interest is calculated only on the original principal.
+
+**Interest:** \(I = Prt\)
+
+**Amount repaid:** \(A = P(1 + rt)\)
+
+For €1,000 at 6% simple interest for 3 years:
+
+**Interest = €1,000 × 0.06 × 3 = €180**  
+**Amount repaid = €1,180**
+
+The important language is now **principal, rate, term, interest and maturity value**.
+
+## Compound interest | Interest joins the balance
+
+With **compound interest**, each interest calculation increases the balance on which later interest can be earned or charged.
+
+For annual compounding:
+
+**\(A = P(1+r)^t\)**
+
+For €1,000 at 6% for 3 years:
+
+**€1,000 → €1,060 → €1,123.60 → €1,191.02**
+
+That extra €11.02 compared with simple interest is the effect of **interest on interest**.
+
+The same idea becomes much more important when rates, terms and balances are large. Consumer loans and mortgages add another feature: the borrower usually makes regular repayments, so the balance is also being reduced over time.
+
+<a id="pcp"></a>
+## PCP | Buy a car with a final choice
 
 PCP is useful because it separates the decision into an **up-front deposit**, a stream of **monthly payments** and an **optional final payment / GMFV**.
 
@@ -93,7 +138,9 @@ Use the model to compare structures rather than focusing on the monthly payment 
   </div>
 </div>
 
-## Mortgage | Borrow to own
+<a id="mortgage"></a>
+
+## Mortgage | Buy a house with secured borrowing
 
 Use the slider for fast exploration and the number box for precision. The house-price slider moves in **€5,000 steps**.
 
@@ -172,39 +219,21 @@ Use the slider for fast exploration and the number box for precision. The house-
 </div>
 
 
-## Residential rent and aircraft leasing | Same skeleton, different world
+## From house to aircraft | Same cash-flow questions, bigger asset
 
-At the simplest level, the relationship is recognisable:
+A mortgage introduces **secured long-term borrowing**: the borrower contributes equity through the deposit, borrows the balance, pays interest and gradually reduces the principal.
 
-**Landlord → house → tenant → rent**
+Aircraft finance keeps those ideas but adds a commercial layer. The asset is not just something to own; it is expected to **generate lease income**.
 
-**Aircraft lessor → aircraft → airline → lease rentals**
+**Home:** buyer equity + mortgage debt → house → borrower repays bank
 
-In both cases, the owner supplies the use of an asset for a period in return for recurring payments. But an aircraft lease is a large, negotiated commercial contract with technical, maintenance, insurance, return-condition, jurisdiction, default and repossession provisions that have no close residential equivalent.
+**Aircraft:** lessor equity + debt → aircraft → airline pays lease rentals
 
-For Irish residential property, rent is also constrained by tenancy law. From **1 March 2026**, national rent-control rules generally limit annual increases to **2% or CPI inflation, whichever is lower**, subject to stated exceptions. That means a landlord cannot simply say “my mortgage rate rose, so I will raise the rent by the same amount.” [RTB — current rent-setting rules](https://rtb.ie/renting/setting-and-reviewing-private-rents-from-1-march-2026/)
+At aircraft scale, the vocabulary expands naturally: **debt, equity, leverage, lease rental, counterparty credit risk, residual value, maintenance exposure and remarketing risk**.
 
-### Who is financing the owner?
+<a id="aircraft"></a>
 
-A useful way to extend the analogy is:
-
-**Mortgage bank → homeowner/landlord → house → tenant**
-
-**Banks / investors → aircraft lessor → aircraft → airline**
-
-This is not hypothetical for Abelo. In 2024 Abelo announced a **$190 million financing facility covering 20 turboprop aircraft**, with MUFG, Deutsche Bank and Société Générale participating. In May 2025 it announced an **up-to-$750 million warehouse financing facility** arranged by Deutsche Bank and MUFG to support fleet growth.
-
-So an aircraft lessor does not have to fund every acquisition entirely with cash equity. The lessor can combine investor capital with secured or corporate debt, acquire aircraft, lease them to airlines, and manage the difference between financing cost, lease income, asset costs and residual value.
-
-### If both sides want out of an aircraft lease
-
-The lease is binding according to its negotiated terms. An airline normally cannot simply hand the aircraft back because it no longer wants it, and the lessor normally cannot simply take it back because another customer offers more money.
-
-If **both sides agree**, however, commercial contracts can generally be restructured by agreement. Depending on the actual lease this can involve an agreed early termination, lease amendment, buy-out, novation to another operator, sale of the aircraft subject to the lease, or an agreed return.
-
-If only one side wants out, the contract matters. Aircraft leases commonly contain detailed **events of default, cure periods, termination rights, return conditions and remedies**. Enforcement also depends on governing law, aircraft registration, international conventions and local insolvency/repossesssion rules. So the correct interview answer is not “the lease can never be broken”; it is **“it is binding, but the contract defines the routes out.”**
-
-## Aircraft version | Lessor economics
+## Aircraft | Finance an income-producing asset
 
 The model below is deliberately illustrative. It is **not Abelo pricing**. It is a way to see the extra layer that does not exist in the residential mortgage calculator: a lessor may borrow to acquire the asset and then lease that asset to somebody else.
 
@@ -291,61 +320,15 @@ The model below is deliberately illustrative. It is **not Abelo pricing**. It is
   </div>
 </div>
 
-## Options | Not the same as a stock-market option
+## What changed? | From €1,000 to an aircraft
 
-An aircraft purchase option is a **contractual right to firm additional aircraft under agreed commercial terms**, rather than a freely traded financial derivative.
+The mathematics became richer, but the underlying questions did not change:
 
-At the **Dubai Airshow on 14 November 2023**, Abelo and ATR announced a Heads of Agreement for **10 firm ATR 72-600s plus options for 10 more**. In late 2024, Abelo converted three of those options into firm ATR 72-600 orders. On **31 March 2026**, ATR announced that Abelo had exercised three additional ATR 72-600 options; ATR said Abelo then had **36 firm aircraft ordered** and still held **nine options and purchase rights**. [Abelo/ATR 2023 agreement](https://abelo.aero/abelo-signs-deal-for-up-to-20-atr-72-600/) · [ATR option exercise, March 2026](https://www.atr-aircraft.com/presspost/abelo-confirms-three-additional-atr-72-600-options/)
+**capital → term → cash flows → risk → value at the end**
 
-The useful interview question is therefore:
+A friend loan makes **credit risk** visible. Simple and compound interest price the **time value of money**. PCP adds a **balloon payment and end-of-contract choice**. A mortgage adds **security and amortisation**. Aircraft finance adds **lease income, counterparty risk, asset management and residual value**.
 
-**Why keep an option rather than firm the aircraft immediately?**
-
-Because an option can preserve **fleet flexibility and access to production positions** while the lessor waits for customer demand, financing, market conditions and delivery timing to become clearer. The exact option price, aircraft price and escalation formula are commercial terms and should not be assumed to be public.
-
-## Why airshows matter | The deal usually starts before the show
-
-Airshows are not five days during which everybody suddenly negotiates billion-dollar contracts from scratch.
-
-They are a **concentration point** for the industry: manufacturers, airlines, lessors, banks, investors, suppliers, governments and media are in the same place. Negotiations may have been running for weeks or months beforehand; an airshow creates a deadline and a high-visibility place to sign or announce a Heads of Agreement, order, financing, partnership or aircraft placement.
-
-Abelo itself gives two excellent examples:
-
-- **Farnborough 2022:** Abelo announced its agreement to acquire 20 ATR aircraft.
-- **Dubai 2023:** Abelo and ATR announced 10 firm ATR 72-600s plus 10 options.
-
-The latest of the major alternating European shows was **Farnborough, 20–24 July 2026**, which has already happened. The **next Paris Air Show is 14–20 June 2027**, followed later that year by the **Dubai Airshow, 15–19 November 2027**. Farnborough returns **17–21 July 2028**.
-
-So, no: **Dubai was not the last big airshow.** Dubai 2025 was followed by Farnborough 2026. As of September 2026, Paris 2027 is the next major Paris/Farnborough commercial-airshow date.
-
-
-## Technology choices
-
-This calculator is deliberately built as an **open-source browser application** using **HTML, CSS and vanilla JavaScript**, hosted through **GitHub Pages / Jekyll**.
-
-The mathematics runs entirely in the browser. There is no paid backend, no proprietary calculation engine and no licence required to use or inspect the model.
-
-- **HTML** provides the inputs, outputs and accessible page structure.
-- **CSS** controls the responsive dashboard layout.
-- **JavaScript** performs the calculations and redraws outputs immediately.
-- **Canvas** is used for the mortgage repayment curves.
-- **GitHub Pages / Jekyll** keeps deployment simple, public and reproducible.
-
-### Why not Power BI?
-
-Power BI is highly relevant for governed reporting, shared dashboards, scheduled refreshes and enterprise data. This page is different: it is an interactive calculator where the user changes assumptions continuously. A small browser application gives direct control over that behaviour while exposing the underlying mathematics.
-
-## What the model is doing
-
-For a standard repayment mortgage, the monthly payment is calculated from the principal, monthly interest rate and number of monthly payments. The model then simulates the mortgage **month by month**, splitting each payment into interest and principal.
-
-When an annual top-up is entered, the simulator applies that extra payment after each completed year, reducing the outstanding principal. That can shorten the payoff period and reduce later interest.
-
-At a **0% interest rate**, the model simply divides principal by the number of months. At a **100% deposit**, the mortgage required is zero and the house is treated as a cash purchase. A term of **0 years** is therefore only valid when no mortgage is required.
-
-## Decision-support purpose
-
-The point is not just to produce one repayment number. It is to let a user change the assumptions and see the **shape of the financing decision**: how a larger deposit changes borrowing, how rate changes affect interest, how term changes trade monthly affordability against total interest, and how recurring overpayments accelerate principal reduction.
+That is the bridge from basic financial mathematics to the kind of asset-finance thinking used in aircraft leasing.
 
 <link rel="stylesheet" href="{{ '/assets/mortgage-calculator.css' | relative_url }}">
 <script defer src="{{ '/assets/mortgage-calculator.js' | relative_url }}"></script>
