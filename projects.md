@@ -1,7 +1,7 @@
 ---
 layout: doc
 handle: Projects
-title: Projects — Aircraft & Finance
+title: Projects — Focusing on the  Turboprop Aircraft Sector Asset management
 nav_order: 70
 eyebrow: EXPLORE · EXPLAIN · APPLY
 ---
@@ -27,9 +27,9 @@ The aim is not to present myself as an expert before I have worked in the indust
 
 
 
+&nbsp;
 
-
-
+&nbsp;
 
 ## Fleet map | Ask what the records tell us
 
@@ -213,7 +213,7 @@ Use the model to compare structures rather than focusing on the monthly payment 
 
 
 
-
+&nbsp;
 
 ## Mortgage | Buy a house with secured borrowing
 
