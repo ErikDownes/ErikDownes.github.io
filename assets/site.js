@@ -1558,15 +1558,18 @@
     {
       lat: 53.35, lng: -6.26,
       title: 'Ireland — Emerald Airlines',
+      source: 'https://abelo.aero/wp-content/uploads/2026/08/Press-Release-Aergo-JULY2026-Updated-05.08.2026-003.pdf',
       date: 'Aug 2026',
-      atr42: 0,
-      atr72: 1,
+      aircraftCount: 1,
+      atr42: null,
+      atr72: null,
       age: 'Existing aircraft; exact vintage not stated in the public acquisition announcement',
-      history: 'Acquired in August 2026 as part of the Aergo portfolio, with the existing lease continuing to Emerald Airlines.'
+      history: 'Acquired in August 2026 as part of the Aergo portfolio, with the existing lease continuing to Emerald Airlines. Abelo names the lessee but does not identify which of the six aircraft are ATR 72-600 versus Dash 8-400.'
     },
     {
       lat: 59.33, lng: 18.07,
       title: 'Sweden — Braathens Regional Airways',
+      source: 'https://abelo.aero/abelo-to-acquire-three-atr-72-600-aircraft-on-lease-to-braathens/',
       date: '2025',
       atr42: 0,
       atr72: 3,
@@ -1576,6 +1579,7 @@
     {
       lat: 37.98, lng: 23.72,
       title: 'Greece — SKY express / Olympic Air',
+      source: 'https://abelo.aero/abelo-leases-new-aircraft-to-olympic-air/',
       date: '2024',
       atr42: 0,
       atr72: 3,
@@ -1585,15 +1589,18 @@
     {
       lat: 28.29, lng: -16.63,
       title: 'Canary Islands — Binter Canarias',
+      source: 'https://abelo.aero/wp-content/uploads/2026/08/Press-Release-Aergo-JULY2026-Updated-05.08.2026-003.pdf',
       date: 'Aug 2026',
-      atr42: 0,
-      atr72: 1,
+      aircraftCount: 1,
+      atr42: null,
+      atr72: null,
       age: 'Existing aircraft; exact vintage not stated in the public acquisition announcement',
-      history: 'Added in August 2026 through the Aergo portfolio acquisition, with the existing lease continuing to Binter.'
+      history: 'Added in August 2026 through the Aergo portfolio acquisition, with the existing lease continuing to Binter. Abelo names the lessee but does not identify which of the six aircraft are ATR 72-600 versus Dash 8-400.'
     },
     {
       lat: 4.71, lng: -74.07,
       title: 'Colombia — SATENA',
+      source: 'https://abelo.aero/abelo-announces-follow-on-atr-aircraft-placement-with-colombian-regional-operator-satena/',
       date: 'May 2026',
       atr42: 1,
       atr72: 1,
@@ -1603,6 +1610,7 @@
     {
       lat: 4.18, lng: 73.51,
       title: 'Maldives — Maldivian',
+      source: 'https://abelo.aero/abelo-delivers-second-atr-42-600-to-maldivian-under-edc-backed-finance-lease/',
       date: 'May 2025',
       atr42: 2,
       atr72: 0,
@@ -1612,6 +1620,7 @@
     {
       lat: 23.81, lng: 90.41,
       title: 'Bangladesh — Air Astra',
+      source: 'https://abelo.aero/abelo-is-pleased-to-announce-the-delivery-of-three-brand-new-atr-72-600-aircraft-to-air-astra/',
       date: 'Sep 2026',
       atr42: 0,
       atr72: 3,
@@ -1621,6 +1630,7 @@
     {
       lat: -4.33, lng: 15.31,
       title: 'DR Congo — Air Congo via Ethiopian Airlines Group',
+      source: 'https://abelo.aero/abelo-leases-two-new-atr-72-600-aircraft-to-ethiopian-airlines-for-african-operations-11-march-2026/',
       date: '2026',
       atr42: 0,
       atr72: 2,
@@ -1630,15 +1640,34 @@
     {
       lat: -6.21, lng: 106.85,
       title: 'Indonesia — Citilink',
+      source: 'https://abelo.aero/wp-content/uploads/2026/08/Press-Release-Aergo-JULY2026-Updated-05.08.2026-003.pdf',
       date: 'Aug 2026',
-      atr42: 0,
-      atr72: 2,
+      aircraftCount: 2,
+      atr42: null,
+      atr72: null,
       age: 'Existing aircraft; exact vintages not stated in the public acquisition announcement',
-      history: 'Two ATR 72s were added in August 2026 through the Aergo portfolio acquisition with leases already in place.'
+      history: 'Two ATR 72s were added in August 2026 through the Aergo portfolio acquisition with leases already in place. Abelo names the lessee but does not identify which of the six aircraft are ATR 72-600 versus Dash 8-400.'
+    },
+    {
+      lat: -23.7, lng: 133.9,
+      title: 'Australia — National Jet Express',
+      source: 'https://abelo.aero/wp-content/uploads/2026/08/Press-Release-Aergo-JULY2026-Updated-05.08.2026-003.pdf',
+      date: 'Aug 2026', aircraftCount: 1, atr42: null, atr72: null,
+      age: 'Existing aircraft; vintage and type by lessee not itemised',
+      history: 'One of six turboprops acquired from the Aergo-managed portfolio is on lease to National Jet Express. The announcement does not identify its type by lessee.'
+    },
+    {
+      lat: 14.60, lng: 120.98,
+      title: 'Philippines — Philippine Airlines',
+      source: 'https://abelo.aero/wp-content/uploads/2026/08/Press-Release-Aergo-JULY2026-Updated-05.08.2026-003.pdf',
+      date: 'Aug 2026', aircraftCount: 1, atr42: null, atr72: null,
+      age: 'Existing aircraft; vintage and type by lessee not itemised',
+      history: 'One of six turboprops acquired from the Aergo-managed portfolio is on lease to Philippine Airlines. The announcement does not identify its type by lessee.'
     },
     {
       lat: -31.95, lng: 115.86,
       title: 'Australia — Aerlink / Air Navigator Group',
+      source: 'https://abelo.aero/abelo-delivers-atr72-500-msn-762-to-air-navigator-group/',
       date: '2026',
       atr42: 0,
       atr72: 1,
@@ -1648,6 +1677,7 @@
     {
       lat: 19.08, lng: 72.88,
       title: 'India — IndiGo',
+      source: 'https://abelo.aero/abelo-expands-fleet-with-acquisition-of-four-atr72-600-aircraft-and-welcomes-indigo-as-a-new-partner/',
       date: 'Mar 2024',
       atr42: 0,
       atr72: 4,
@@ -1657,6 +1687,7 @@
     {
       lat: -1.29, lng: 36.82,
       title: 'Kenya — Renegade Air',
+      source: 'https://abelo.aero/abelo-announces-atr72-cargo-conversion-delivery-to-renegade-airline-in-kenya/',
       date: '2024',
       atr42: 0,
       atr72: 1,
@@ -1706,9 +1737,10 @@
         <div class="abelo-popup-line abelo-popup-date">${escapeHtml(p.date)}</div>
         <div class="abelo-popup-line abelo-popup-customer">${escapeHtml(customerName(p))}</div>
         <div class="abelo-popup-line abelo-popup-ratio" aria-label="ATR 42 count ${escapeHtml(p.atr42)}, ATR 72 count ${escapeHtml(p.atr72)}">
-          <strong>${escapeHtml(p.atr42)} / ${escapeHtml(p.atr72)}</strong>
-          <span>ATR 42 / ATR 72</span>
+          ${p.atr42 == null ? `<strong>${escapeHtml(p.aircraftCount)} aircraft</strong><span>ATR 72-600 / Dash 8-400 type not specified by lessee</span>` : `<strong>${escapeHtml(p.atr42)} / ${escapeHtml(p.atr72)}</strong><span>ATR 42 / ATR 72</span>`}
         </div>
+        <div class="abelo-popup-line">${escapeHtml(p.history)}</div>
+        <a href="${escapeHtml(p.source)}" target="_blank" rel="noopener noreferrer">Abelo announcement ↗</a>
       </div>`;
 
   loadLeaflet().then(L => {
@@ -1750,7 +1782,7 @@
   wrapper.dataset.abeloMap = '';
   wrapper.innerHTML = `
     <div class="abelo-map-canvas" id="abeloWorldMap" role="img" aria-label="World map of documented Abelo aircraft placements"></div>
-    <p class="abelo-map-note"><strong>Map key:</strong> each marker shows a documented Abelo-linked placement with the airline, date and ATR 42 / ATR 72 count. Locations are operating markets, not live aircraft positions.</p>
+    <p class="abelo-map-note"><strong>27 aircraft in 14 published placement groups.</strong> Abelo says its fleet exceeds 60 turboprops; its website does not publish a complete aircraft-by-aircraft register. These markers show disclosed customer markets, not a complete current fleet or live aircraft positions. Open a marker for the Abelo source. The six Aergo portfolio aircraft include four ATR 72-600s and two Dash 8-400s, but Abelo does not specify which type belongs to each named lessee.</p>
   `;
 
   marker.replaceWith(wrapper);
