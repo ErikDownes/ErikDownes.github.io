@@ -1737,6 +1737,27 @@
 })();
 
 
+// Render the Abelo placement map as a standalone development/app.
+(() => {
+  const body = document.getElementById('docBody');
+  if (!body) return;
+
+  const marker = [...body.querySelectorAll('p')].find(p => p.textContent.trim() === 'ABEL0_MAP_APP');
+  if (!marker) return;
+
+  const wrapper = document.createElement('div');
+  wrapper.className = 'abelo-map';
+  wrapper.dataset.abeloMap = '';
+  wrapper.innerHTML = `
+    <div class="abelo-map-canvas" id="abeloWorldMap" role="img" aria-label="World map of documented Abelo aircraft placements"></div>
+    <p class="abelo-map-note"><strong>Map key:</strong> each marker shows a documented Abelo-linked placement with the airline, date and ATR 42 / ATR 72 count. Locations are operating markets, not live aircraft positions.</p>
+  `;
+
+  marker.replaceWith(wrapper);
+  document.dispatchEvent(new CustomEvent('abeloResearchRendered'));
+})();
+
+
 // Render the detailed Abelo research summary outside Pages CMS rich-text parsing.
 (() => {
   const body = document.getElementById('docBody');
