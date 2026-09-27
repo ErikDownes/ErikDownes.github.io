@@ -17,7 +17,7 @@ components:
       - { name: title, type: string, label: "Page title" }
       - { name: nav_order, type: number, label: "Menu order" }
       - { name: eyebrow, type: string, label: "Eyebrow", required: false }
-      - { name: intro, type: text, label: Introduction }
+      - { name: intro, type: text, label: Introduction, required: false }
       - name: image
         type: image
         label: "Page image"
@@ -113,5 +113,5 @@ content:
         order: asc
 
   - { name: questions, label: "Questions", type: file, path: questions.md, format: yaml-frontmatter, fields: *docfields }
-  - { name: dashboards, label: "Projects", type: file, path: dashboards.md, format: yaml-frontmatter, fields: *docfields }
+  - { name: projects, label: "Projects", type: file, path: projects.md, format: yaml-frontmatter, fields: *docfields }
   - { name: glossary, label: "Glossary (A–Z)", type: file, path: glossary.md, format: yaml-frontmatter, fields: *docfields }
