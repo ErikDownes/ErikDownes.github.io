@@ -60,3 +60,6 @@
 
 /* Mortgage app: make the repayment graph the dominant first element. */
 #mortgageLab>.mortgage-grid>.mortgage-chart-card{grid-column:1/-1}
+
+.air-debt-dot{background:#2563eb}.air-rent-dot{background:#16a34a}.air-cost-dot{background:#f59e0b}
+.aircraft-chart-card{margin-bottom:1rem}
