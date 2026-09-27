@@ -1579,7 +1579,8 @@
     {
       lat: 37.98, lng: 23.72,
       title: 'Greece — SKY express / Olympic Air',
-      source: 'https://abelo.aero/abelo-leases-new-aircraft-to-olympic-air/',
+      source: 'https://abelo.aero/we-are-thrilled-to-celebrate-the-successful-delivery-of-our-second-atr72-600-aircraft-to-sky-express/',
+      source2: 'https://abelo.aero/abelo-leases-new-aircraft-to-olympic-air/',
       date: '2024',
       atr42: 0,
       atr72: 3,
@@ -1736,11 +1737,12 @@
       <div class="abelo-popup-card">
         <div class="abelo-popup-line abelo-popup-date">${escapeHtml(p.date)}</div>
         <div class="abelo-popup-line abelo-popup-customer">${escapeHtml(customerName(p))}</div>
-        <div class="abelo-popup-line abelo-popup-ratio" aria-label="ATR 42 count ${escapeHtml(p.atr42)}, ATR 72 count ${escapeHtml(p.atr72)}">
+        <div class="abelo-popup-line abelo-popup-ratio" aria-label="${p.atr42 == null ? `${escapeHtml(p.aircraftCount)} aircraft; type by lessee not specified` : `ATR 42 count ${escapeHtml(p.atr42)}, ATR 72 count ${escapeHtml(p.atr72)}`}">
           ${p.atr42 == null ? `<strong>${escapeHtml(p.aircraftCount)} aircraft</strong><span>ATR 72-600 / Dash 8-400 type not specified by lessee</span>` : `<strong>${escapeHtml(p.atr42)} / ${escapeHtml(p.atr72)}</strong><span>ATR 42 / ATR 72</span>`}
         </div>
         <div class="abelo-popup-line">${escapeHtml(p.history)}</div>
         <a href="${escapeHtml(p.source)}" target="_blank" rel="noopener noreferrer">Abelo announcement ↗</a>
+        ${p.source2 ? ` · <a href="${escapeHtml(p.source2)}" target="_blank" rel="noopener noreferrer">Second announcement ↗</a>` : ''}
       </div>`;
 
   loadLeaflet().then(L => {
