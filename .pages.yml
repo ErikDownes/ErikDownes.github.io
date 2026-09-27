@@ -110,7 +110,5 @@ content:
       default:
         sort: title
         order: asc
-
-  - { name: questions, label: "Questions", type: file, path: questions.md, format: yaml-frontmatter, fields: *docfields }
   - { name: projects, label: "Projects", type: file, path: projects.md, format: yaml-frontmatter, fields: *docfields }
   - { name: glossary, label: "Glossary (A–Z)", type: file, path: glossary.md, format: yaml-frontmatter, fields: *docfields }
