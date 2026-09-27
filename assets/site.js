@@ -1915,6 +1915,75 @@
     ? p.title.split('—').slice(1).join('—').trim()
     : p.title;
 
+  const countryName = p => p.title.includes('—')
+    ? p.title.split('—')[0].trim()
+    : 'Other';
+
+  const countries = [...new Set(rankedPlacements.map(countryName))];
+  const countryHue = new Map(
+    countries.map((country, index) => [country, Math.round((index * 360) / countries.length)])
+  );
+
+  const countryColor = country => `hsl(${countryHue.get(country) ?? 210} 68% 43%)`;
+  const countryTint = country => `hsl(${countryHue.get(country) ?? 210} 70% 96%)`;
+
+  rankedPlacements.forEach(p => {
+    p.country = countryName(p);
+    p.customer = customerName(p);
+  });
+
+  const filterHost = document.createElement('div');
+  filterHost.className = 'abelo-filter-panel';
+  filterHost.innerHTML = `
+    <div class="abelo-filter-head">
+      <div>
+        <strong>Filter the portfolio</strong>
+        <span class="abelo-filter-status" data-abelo-filter-status></span>
+      </div>
+      <button type="button" class="abelo-filter-clear" data-abelo-clear>Clear filters</button>
+    </div>
+    <div class="abelo-filter-group">
+      <div class="abelo-filter-label">19 countries</div>
+      <div class="abelo-filter-grid abelo-filter-grid--countries" data-abelo-country-filters></div>
+    </div>
+    <div class="abelo-filter-group">
+      <div class="abelo-filter-label">26 lessees</div>
+      <div class="abelo-filter-grid abelo-filter-grid--lessees" data-abelo-lessee-filters></div>
+    </div>
+  `;
+  mapHost.parentElement.insertBefore(filterHost, mapHost);
+
+  const countryFilterHost = filterHost.querySelector('[data-abelo-country-filters]');
+  const lesseeFilterHost = filterHost.querySelector('[data-abelo-lessee-filters]');
+  const statusHost = filterHost.querySelector('[data-abelo-filter-status]');
+  const clearButton = filterHost.querySelector('[data-abelo-clear]');
+
+  countries.forEach(country => {
+    const count = rankedPlacements.filter(p => p.country === country).length;
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'abelo-filter-chip abelo-filter-chip--country';
+    button.dataset.country = country;
+    button.style.setProperty('--country-color', countryColor(country));
+    button.style.setProperty('--country-tint', countryTint(country));
+    button.innerHTML = `<span class="abelo-filter-swatch"></span><span>${escapeHtml(country)}</span><small>${count}</small>`;
+    countryFilterHost.appendChild(button);
+  });
+
+  rankedPlacements.forEach(p => {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'abelo-filter-chip abelo-filter-chip--lessee';
+    button.dataset.lessee = p.customer;
+    button.style.setProperty('--country-color', countryColor(p.country));
+    button.style.setProperty('--country-tint', countryTint(p.country));
+    button.innerHTML = `<span class="abelo-filter-swatch"></span><span>#${escapeHtml(p.recencyRank)} ${escapeHtml(p.customer)}</span><small>${escapeHtml(p.country)}</small>`;
+    lesseeFilterHost.appendChild(button);
+  });
+
+  let activeCountry = null;
+  let activeLessee = null;
+
   const popupHtml = p => {
     const firstSentence = String(p.history || '').split(/(?<=[.!?])\s+/)[0];
     return `
@@ -1938,27 +2007,101 @@
       attribution: '&copy; OpenStreetMap contributors'
     }).addTo(map);
 
-    rankedPlacements.forEach(p => {
-      const offset = pinOffsets.get(p.sourceIndex) || { x: 0, y: 0 };
-      const icon = L.divIcon({
-        className: 'abelo-numbered-marker',
-        html: `<span class="abelo-numbered-marker__badge" style="--pin-x:${offset.x}px;--pin-y:${offset.y}px">${escapeHtml(p.recencyRank)}</span>`,
-        iconSize: [30, 30],
-        iconAnchor: [15, 15],
-        popupAnchor: [offset.x, offset.y - 18]
+    const markerLayer = L.layerGroup().addTo(map);
+
+    const filteredPlacements = () => rankedPlacements.filter(p =>
+      (!activeCountry || p.country === activeCountry) &&
+      (!activeLessee || p.customer === activeLessee)
+    );
+
+    const syncFilterUi = () => {
+      filterHost.querySelectorAll('[data-country]').forEach(button => {
+        const selected = button.dataset.country === activeCountry;
+        button.classList.toggle('is-active', selected);
+        button.setAttribute('aria-pressed', selected ? 'true' : 'false');
       });
 
-      L.marker([p.lat, p.lng], {
-        icon,
-        title: `#${p.recencyRank} · ${customerName(p)}`,
-        riseOnHover: true
-      })
-        .addTo(map)
-        .bindPopup(popupHtml(p), { maxWidth: 460, minWidth: 360 });
+      filterHost.querySelectorAll('[data-lessee]').forEach(button => {
+        const selected = button.dataset.lessee === activeLessee;
+        const p = rankedPlacements.find(item => item.customer === button.dataset.lessee);
+        const compatible = !activeCountry || (p && p.country === activeCountry);
+        button.classList.toggle('is-active', selected);
+        button.classList.toggle('is-muted', !compatible);
+        button.setAttribute('aria-pressed', selected ? 'true' : 'false');
+      });
+
+      const visible = filteredPlacements();
+      const aircraft = visible.reduce((sum, p) => sum + Number(p.aircraftCount || 0), 0);
+      const visibleCountries = new Set(visible.map(p => p.country)).size;
+      statusHost.textContent = `${visible.length} lessee${visible.length === 1 ? '' : 's'} · ${visibleCountries} countr${visibleCountries === 1 ? 'y' : 'ies'} · ${aircraft} aircraft`;
+      clearButton.disabled = !activeCountry && !activeLessee;
+    };
+
+    const renderMarkers = ({ fit = true } = {}) => {
+      markerLayer.clearLayers();
+      const visible = filteredPlacements();
+
+      visible.forEach(p => {
+        const offset = pinOffsets.get(p.sourceIndex) || { x: 0, y: 0 };
+        const color = countryColor(p.country);
+        const icon = L.divIcon({
+          className: 'abelo-numbered-marker',
+          html: `<span class="abelo-numbered-marker__badge" style="--pin-x:${offset.x}px;--pin-y:${offset.y}px;--pin-color:${color}">${escapeHtml(p.recencyRank)}</span>`,
+          iconSize: [30, 30],
+          iconAnchor: [15, 15],
+          popupAnchor: [offset.x, offset.y - 18]
+        });
+
+        L.marker([p.lat, p.lng], {
+          icon,
+          title: `#${p.recencyRank} · ${p.customer} · ${p.country}`,
+          riseOnHover: true
+        })
+          .addTo(markerLayer)
+          .bindPopup(popupHtml(p), { maxWidth: 460, minWidth: 360 });
+      });
+
+      syncFilterUi();
+
+      if (fit && visible.length) {
+        const group = L.featureGroup(visible.map(p => L.marker([p.lat, p.lng])));
+        map.fitBounds(group.getBounds().pad(0.18), { maxZoom: visible.length === 1 ? 5 : 3 });
+      }
+    };
+
+    countryFilterHost.addEventListener('click', event => {
+      const button = event.target.closest('[data-country]');
+      if (!button) return;
+      const next = button.dataset.country;
+      activeCountry = activeCountry === next ? null : next;
+      if (activeLessee) {
+        const selected = rankedPlacements.find(p => p.customer === activeLessee);
+        if (selected && activeCountry && selected.country !== activeCountry) activeLessee = null;
+      }
+      renderMarkers();
     });
 
-    const group = L.featureGroup(rankedPlacements.map(p => L.marker([p.lat, p.lng])));
-    map.fitBounds(group.getBounds().pad(0.18), { maxZoom: 2 });
+    lesseeFilterHost.addEventListener('click', event => {
+      const button = event.target.closest('[data-lessee]');
+      if (!button) return;
+      const next = button.dataset.lessee;
+      if (activeLessee === next) {
+        activeLessee = null;
+      } else {
+        activeLessee = next;
+        const selected = rankedPlacements.find(p => p.customer === next);
+        if (selected) activeCountry = selected.country;
+      }
+      renderMarkers();
+    });
+
+    clearButton.addEventListener('click', () => {
+      activeCountry = null;
+      activeLessee = null;
+      renderMarkers();
+    });
+
+    renderMarkers();
   }).catch(() => {
     mapHost.innerHTML = '<p style="padding:1rem">Interactive map unavailable. The placement list below remains available.</p>';
   });
@@ -1986,7 +2129,7 @@
       <div style="border:1px solid #d9dee8;border-radius:14px;padding:16px;text-align:center;"><strong style="display:block;font-size:2rem;line-height:1;">26</strong><span>Lessees</span></div>
       <div style="border:1px solid #d9dee8;border-radius:14px;padding:16px;text-align:center;"><strong style="display:block;font-size:2rem;line-height:1;">19</strong><span>Countries</span></div>
     </div>
-    <p class="abelo-map-note"><strong>How to read the pins:</strong> 1 is the newest documented customer relationship in this reconstruction. Pins then run newest → oldest by first documented year; same-year ordering is display-only. Customers sharing a city are offset slightly so every pin remains visible and clickable.</p>
+    <p class="abelo-map-note"><strong>How to read the pins:</strong> 1 is the newest documented customer relationship in this reconstruction. Pins run newest → oldest by first documented year, are colour-coded by country, and same-city pins are offset slightly so every customer remains visible and clickable.</p>
     <p class="abelo-map-note"><strong>Fleet mix:</strong> 34 ATR 72 · 8 ATR 42 · 19 Dash 8.</p>
     <div class="abelo-map-canvas" id="abeloWorldMap" role="img" aria-label="World map of Abelo and Elix aircraft placements"></div>
     <p class="abelo-map-note">Public Abelo / Elix transactions and aircraft histories reconciled into one portfolio view.</p>
@@ -2059,7 +2202,7 @@
     <p><strong>Click a numbered marker for a deliberately simple fleet card</strong>. Pin 1 is the newest documented customer relationship in this reconstruction; the sequence then runs newest → oldest by first documented year. Same-city customers are offset slightly so their pins do not sit on top of one another. Counts refer to the Abelo-linked aircraft identified in the public material shown here, <strong>not the airline’s total fleet</strong>.</p>
     <div class="abelo-map" data-abelo-map>
       <div class="abelo-map-canvas" id="abeloWorldMap" role="img" aria-label="World map of documented Abelo aircraft placements"></div>
-      <p class="abelo-map-note"><strong>Map key:</strong> numbered pins show customer recency in this reconstruction (newest first). Same-city pins are visually offset but retain their original geographic anchor. Locations are operating markets, not live aircraft positions.</p>
+      <p class="abelo-map-note"><strong>Map key:</strong> numbered pins show customer recency (newest first) and are colour-coded by country. Same-city pins are visually offset but retain their original geographic anchor. Locations are operating markets, not live aircraft positions.</p>
     </div>
 
     <h3>What one transaction actually involves</h3>
