@@ -55,8 +55,10 @@
       let mode = 'read';
       let questionIndex = 0;
       let resultsVisible = false;
-      const reflectionKey = `${REFLECT_PREFIX}${location.pathname}:${(box.dataset.title || '').toLowerCase()}`;
-      let confidence = Math.max(0, Math.min(5, Number(localStorage.getItem(reflectionKey)) || 0));
+      const concepts = [box.dataset.title, ...(box.dataset.concepts || '').split('|').map(value => value.trim()).filter(Boolean)];
+      let activeConcept = concepts[0];
+      const reflectionKeyFor = concept => `${REFLECT_PREFIX}${location.pathname}:${box.dataset.title.toLowerCase()}${concept === concepts[0] ? '' : ':' + concept.toLowerCase()}`;
+      const getConfidence = concept => Math.max(0, Math.min(5, Number(localStorage.getItem(reflectionKeyFor(concept))) || 0));
       const quiz = (questions[box.dataset.title] || []).map(item => {
         const order = item.options.map((_, i) => i);
         for (let i = order.length - 1; i > 0; i--) {
@@ -69,11 +71,11 @@
 
       const head = document.createElement('div');
       head.className = 'aercap-beamer-head';
-      head.innerHTML = '<div class="aercap-beamer-brand">READ · STUDY · CHECK · REFLECT · SPEAK</div><div class="aercap-progress" role="progressbar" aria-label="Learning progress" aria-valuemin="1"><span></span></div><div class="aercap-counter"></div>';
+      head.innerHTML = '<div class="aercap-beamer-brand">READ · STUDY · CHECK · REFLECT · PERFORM</div><div class="aercap-progress" role="progressbar" aria-label="Learning progress" aria-valuemin="1"><span></span></div><div class="aercap-counter"></div>';
 
       const controls = document.createElement('div');
       controls.className = 'aercap-controls';
-      controls.innerHTML = '<button type="button" data-mode="read" class="is-on" aria-pressed="true">Read</button><button type="button" data-mode="study" aria-pressed="false">Study</button><button type="button" data-mode="check" aria-pressed="false">Check</button><button type="button" data-mode="reflect" aria-pressed="false">Reflect</button><button type="button" data-practise aria-label="Practise this section aloud">Speak</button><span class="aercap-spacer"></span><button type="button" data-prev aria-label="Previous idea">←</button><button type="button" data-next aria-label="Next idea">Next →</button>';
+      controls.innerHTML = '<button type="button" data-mode="read" class="is-on" aria-pressed="true">Read</button><button type="button" data-mode="study" aria-pressed="false">Study</button><button type="button" data-mode="check" aria-pressed="false">Check</button><button type="button" data-mode="reflect" aria-pressed="false">Reflect</button><button type="button" data-mode="perform" data-practise aria-pressed="false">Perform</button><span class="aercap-spacer"></span><button type="button" data-prev aria-label="Previous idea">←</button><button type="button" data-next aria-label="Next idea">Next →</button>';
 
       const stage = document.createElement('div');
       stage.className = 'aercap-stage';
@@ -89,6 +91,22 @@
       const reflect = document.createElement('div');
       reflect.className = 'aercap-reflect';
       reflect.hidden = true;
+      const perform = document.createElement('div');
+      perform.className = 'aercap-perform';
+      perform.hidden = true;
+      const performHeading = document.createElement('h3');
+      performHeading.textContent = `Explain ${box.dataset.title} in your own words`;
+      const performCue = document.createElement('p');
+      performCue.textContent = 'Pause. Give the main idea, then one aircraft-leasing example or decision.';
+      const model = document.createElement('details');
+      model.className = 'aercap-perform-model';
+      const modelLabel = document.createElement('summary');
+      modelLabel.textContent = 'Example wording';
+      const modelText = document.createElement('p');
+      modelText.textContent = (beats.find(beat => /^say it:/i.test(beat)) || beats[beats.length - 1]).replace(/^say it:\s*/i, '');
+      model.append(modelLabel, modelText);
+      const performance = window.coopPractice.create(modelText.textContent, { title: 'Perform aloud' });
+      perform.append(performHeading, performCue, performance.panel, model);
       const showTerm = term => {
         const entry = glossary.readGlossary().find(item => item.term.toLowerCase() === term.toLowerCase());
         if (!entry) return;
@@ -111,13 +129,25 @@
           why.append(lead, document.createTextNode(entry.why || entry.cue));
           pop.append(why);
         }
+        const scoreTerm = document.createElement('button');
+        scoreTerm.type = 'button';
+        scoreTerm.className = 'aercap-score-term';
+        scoreTerm.textContent = 'Score my confidence in this word';
+        scoreTerm.addEventListener('click', () => {
+          if (!concepts.includes(entry.term)) concepts.push(entry.term);
+          activeConcept = entry.term;
+          selectMode('reflect');
+          box.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+          reflect.querySelector('select')?.focus({ preventScroll: true });
+        });
+        pop.append(scoreTerm);
         glossary.renderGlossaryLearningContent?.(pop, entry, { compact: true });
         pop.hidden = false;
         close.focus({ preventScroll: true });
       };
 
       const updateChrome = () => {
-        const position = mode === 'read' || mode === 'reflect'
+        const position = mode === 'read' || mode === 'reflect' || mode === 'perform'
           ? 1
           : mode === 'study'
             ? index + 1
@@ -132,12 +162,13 @@
         head.querySelector('.aercap-counter').textContent =
           mode === 'read' ? 'READ' :
           mode === 'study' ? `${position} / ${total}` :
-          mode === 'reflect' ? (confidence ? `CONFIDENCE ${confidence} / 5` : 'REFLECT') :
+          mode === 'reflect' ? (getConfidence(activeConcept) ? `CONFIDENCE ${getConfidence(activeConcept)} / 5` : 'REFLECT') :
+          mode === 'perform' ? 'PERFORM' :
           resultsVisible ? 'REVIEW' :
           `QUESTION ${position} / ${total}`;
         const previous = controls.querySelector('[data-prev]');
         const next = controls.querySelector('[data-next]');
-        previous.hidden = next.hidden = mode === 'read' || mode === 'reflect';
+        previous.hidden = next.hidden = mode === 'read' || mode === 'reflect' || mode === 'perform';
         previous.disabled = mode === 'study' ? index === 0 : mode === 'check' ? questionIndex === 0 && !resultsVisible : true;
         next.disabled = mode === 'check' && !resultsVisible && answers[questionIndex] === null;
         next.textContent = mode === 'study' && index === beats.length - 1 ? 'Replay ↺' : mode === 'check' && resultsVisible ? 'Try again ↺' : mode === 'check' && questionIndex === quiz.length - 1 ? 'Results →' : 'Next →';
@@ -189,7 +220,7 @@
           const detail = document.createElement('p');
           detail.textContent = needsReview
             ? 'Follow the explanations marked ↗, return to Study, and check again when ready.'
-            : 'Use Speak to explain this section in your own words, without reading.';
+            : 'Use Perform to explain this section in your own words, without reading.';
           test.append(heading, detail);
           quiz.forEach((item, i) => {
             const summary = document.createElement('p');
@@ -249,12 +280,27 @@
         eyebrow.className = 'aercap-reflect-eyebrow';
         eyebrow.textContent = 'REFLECT · ASSESSMENT AS LEARNING';
 
+        const choice = document.createElement('label');
+        choice.className = 'aercap-concept-choice';
+        choice.textContent = 'Word or concept';
+        const picker = document.createElement('select');
+        concepts.forEach(concept => {
+          const option = document.createElement('option');
+          option.value = concept;
+          option.textContent = concept;
+          picker.append(option);
+        });
+        picker.value = activeConcept;
+        picker.addEventListener('change', () => { activeConcept = picker.value; renderReflect(); });
+        choice.append(picker);
+
+        const confidence = getConfidence(activeConcept);
         const heading = document.createElement('h3');
-        heading.textContent = `How confidently could you explain and use “${box.dataset.title}” without looking?`;
+        heading.textContent = `How confidently could you explain “${activeConcept}” without looking?`;
 
         const intro = document.createElement('p');
         intro.className = 'aercap-reflect-intro';
-        intro.textContent = 'Score the understanding you have now, after studying and checking it. This is not a mark.';
+        intro.textContent = 'Choose your confidence now. Score each word or concept separately.';
 
         const labels = [
           'Not yet',
@@ -284,14 +330,13 @@
           button.append(number, label);
 
           button.addEventListener('click', () => {
-            confidence = score;
-            localStorage.setItem(reflectionKey, String(score));
+            localStorage.setItem(reflectionKeyFor(activeConcept), String(score));
             renderReflect();
           });
           scale.append(button);
         });
 
-        reflect.append(eyebrow, heading, intro, scale);
+        reflect.append(eyebrow, choice, heading, intro, scale);
 
         if (confidence) {
           const feedback = document.createElement('div');
@@ -303,7 +348,7 @@
             confidence <= 2 ? 'Return to Study, then Check it again.' :
             confidence === 3 ? 'Explain the idea once without looking.' :
             confidence === 4 ? 'Give a concrete aircraft-leasing example.' :
-            'Use Speak and connect the idea to an Abelo asset-management decision.';
+            'Use Perform and connect the idea to an Abelo asset-management decision.';
           feedback.append(lead, message);
           reflect.append(feedback);
         }
@@ -317,6 +362,8 @@
         read.hidden = mode !== 'read';
         test.hidden = mode !== 'check';
         reflect.hidden = mode !== 'reflect';
+        perform.hidden = mode !== 'perform';
+        if (mode !== 'perform') performance.stop();
         controls.querySelectorAll('[data-mode]').forEach(option => {
           const on = option.dataset.mode === mode;
           option.classList.toggle('is-on', on);
@@ -352,11 +399,6 @@
         activeDeck = box;
         if (button.hasAttribute('data-next')) next();
         else if (button.hasAttribute('data-prev')) previous();
-        else if (button.hasAttribute('data-practise')) {
-          let heading = box.previousElementSibling;
-          while (heading && heading.tagName !== 'H2') heading = heading.previousElementSibling;
-          heading?.dispatchEvent(new MouseEvent('dblclick', { bubbles: true }));
-        }
         else if (button.dataset.mode) selectMode(button.dataset.mode);
       });
 
@@ -369,7 +411,7 @@
       box.addEventListener('focusin', () => { activeDeck = box; });
       source.hidden = true;
       box.prepend(head, controls);
-      box.append(stage, read, test, reflect);
+      box.append(stage, read, test, reflect, perform);
       renderLearn();
       updateChrome();
     });

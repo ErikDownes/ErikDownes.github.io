@@ -1336,6 +1336,8 @@
         return;
       }
       const clone = node.cloneNode(true);
+      // Keep words that the glossary has turned into buttons.
+      clone.querySelectorAll?.('button.glossary-term').forEach(el => el.replaceWith(document.createTextNode(el.textContent)));
       clone.querySelectorAll?.('script,style,button,.cm-question-play,a[href*="pagescms.org"]').forEach(el => el.remove());
       if (cleanText(clone.textContent) || clone.matches?.('img,table,ul,ol,blockquote,.key-vocab,.recall')) wrapper.appendChild(clone);
     });
@@ -1477,116 +1479,17 @@
 
     controls.append(play, stop, outlineButton, answerButton, movePage);
 
-    const practice = document.createElement('section');
-    practice.className = 'answer-practice-panel';
-    const words = cleanText(copy.innerText).split(/\s+/).filter(Boolean).length;
-    const fastSeconds = Math.max(10, Math.round((words / 150) * 60));
-    const slowSeconds = Math.max(fastSeconds, Math.round((words / 120) * 60));
-    const targetSeconds = Math.max(10, Math.round((words / 135) * 60));
-    const fmt = seconds => {
-      const mins = Math.floor(seconds / 60);
-      const secs = seconds % 60;
-      return `${mins}:${String(secs).padStart(2, '0')}`;
-    };
-
-    const practiceHead = document.createElement('div');
-    practiceHead.className = 'answer-practice-head';
-    practiceHead.innerHTML = `<strong>Practice answer</strong><span>Suggested time ${fmt(fastSeconds)}–${fmt(slowSeconds)}</span>`;
-
-    const reminder = document.createElement('p');
-    reminder.className = 'answer-practice-reminder';
-    reminder.textContent = 'Learn the structure, not the script. Stay with the breadcrumbs and say it naturally.';
-
-    const timer = document.createElement('div');
-    timer.className = 'answer-practice-timer';
-    timer.textContent = `0:00 / ~${fmt(targetSeconds)} target`;
-
-    const record = document.createElement('button');
-    record.type = 'button';
-    record.className = 'answer-practice-record';
-    record.textContent = '● Record answer';
-
-    const attempts = document.createElement('div');
-    attempts.className = 'answer-practice-attempts';
-
-    let recorder = null;
-    let stream = null;
-    let chunks = [];
-    let startedAt = 0;
-    let tick = null;
-    let attemptNumber = 0;
-
-    const stopClock = () => {
-      if (tick) window.clearInterval(tick);
-      tick = null;
-    };
-    const updateClock = () => {
-      if (!startedAt) return;
-      const elapsed = Math.max(0, Math.floor((Date.now() - startedAt) / 1000));
-      timer.textContent = `${fmt(elapsed)} / ~${fmt(targetSeconds)} target`;
-    };
-
-    record.addEventListener('click', async event => {
-      event.preventDefault();
-      event.stopPropagation();
-
-      if (recorder && recorder.state === 'recording') {
-        recorder.stop();
-        record.textContent = '● Record answer';
-        record.classList.remove('is-recording');
-        stopClock();
-        return;
-      }
-
-      if (!navigator.mediaDevices?.getUserMedia || typeof MediaRecorder === 'undefined') {
-        timer.textContent = 'Recording is not supported in this browser.';
-        return;
-      }
-
-      try {
-        stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-        const preferred = MediaRecorder.isTypeSupported?.('audio/webm;codecs=opus')
-          ? 'audio/webm;codecs=opus'
-          : '';
-        recorder = preferred ? new MediaRecorder(stream, { mimeType: preferred }) : new MediaRecorder(stream);
-        chunks = [];
-        recorder.ondataavailable = e => { if (e.data?.size) chunks.push(e.data); };
-        recorder.onstop = () => {
-          stopClock();
-          stream?.getTracks().forEach(track => track.stop());
-          stream = null;
-          const blob = new Blob(chunks, { type: recorder.mimeType || 'audio/webm' });
-          const url = URL.createObjectURL(blob);
-          attemptNumber += 1;
-
-          const row = document.createElement('div');
-          row.className = 'answer-practice-attempt';
-          const label = document.createElement('strong');
-          label.textContent = `Recording ${attemptNumber}`;
-          const audio = document.createElement('audio');
-          audio.controls = true;
-          audio.src = url;
-          const download = document.createElement('a');
-          download.href = url;
-          download.download = `interview-practice-${attemptNumber}.webm`;
-          download.textContent = 'Save';
-          row.append(label, audio, download);
-          attempts.prepend(row);
-        };
-        recorder.start();
-        startedAt = Date.now();
-        updateClock();
-        tick = window.setInterval(updateClock, 250);
-        record.textContent = '■ Stop recording';
-        record.classList.add('is-recording');
-      } catch (_) {
-        timer.textContent = 'Microphone permission is needed to record.';
-      }
+    const { panel: practice } = window.coopPractice.create(copy.innerText);
+    copy.querySelectorAll('ul,ol').forEach(list => {
+      if (list.children.length >= 5) list.classList.add('answer-columns');
     });
+    // Keep the rehearsal controls visible when a section has a long reference answer.
+    if (cleanText(copy.textContent).length > 350) {
+      copy.hidden = true;
+      answerButton.textContent = 'Show Answer';
+    }
 
-    practice.append(practiceHead, reminder, timer, record, attempts);
-
-    focusContent.replaceChildren(title, controls, outline, copy, practice);
+    focusContent.replaceChildren(title, controls, outline, practice, copy);
     linkKnownGlossaryTerms(copy);
     lastTrigger = heading;
     overlay.hidden = false;
