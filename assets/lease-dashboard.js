@@ -136,6 +136,7 @@
     document.querySelectorAll('.lease-tab').forEach(b=>b.classList.toggle('active',b===btn));
     document.querySelectorAll('.lease-panel').forEach(p=>p.classList.toggle('active',p.dataset.panel===btn.dataset.tab));
     if(btn.dataset.tab==='scenarios') updateScenarios();
+    if(btn.dataset.tab==='portfolio') initPortfolioMap();
   }));
 
   ['startAge','startValue','monthlyLease','horizon','discountRate','valueDecline','annualCost'].forEach(id=>$(id)?.addEventListener('input',updateSingle));
@@ -144,5 +145,107 @@
     $('startValue').value=d.value;$('monthlyLease').value=d.lease;$('valueDecline').value=d.decline;updateSingle();
   });
   ['reAge','reLease','newLeaseDelta','downtime','transitionCost','reHorizon'].forEach(id=>$(id)?.addEventListener('input',updateRelet));
+
+  const portfolioRecords = [
+    {operator:'IndiGo',country:'India',city:'Delhi / Gurugram',region:'Asia',lat:28.46,lng:77.03,count:4,aircraft:'ATR 72-600',msn:[],detail:'Four aircraft acquired in 2024 with existing IndiGo leases attached.',source:'https://abelo.aero/wp-content/uploads/2024/03/Abelo-Press-Release-25032024.pdf'},
+    {operator:'SKY express',country:'Greece',city:'Athens',region:'Europe',lat:37.99,lng:23.73,count:2,aircraft:'ATR 72-600',msn:[],registration:['SX-TWR'],detail:'Two new ATR 72-600 placements from Abelo’s ATR orderbook in 2024.',source:'https://abelo.aero/abelo-sky-express-collaboration-continues-with-two-brand-new-atr-72-600/'},
+    {operator:'Olympic Air',country:'Greece',city:'Athens',region:'Europe',lat:38.08,lng:23.82,count:1,aircraft:'ATR 72-600',msn:[],detail:'New ATR 72-600 delivered on lease in 2024.',source:'https://avitrader.com/2024/04/12/abelo-leases-new-aircraft-to-olympic-air/'},
+    {operator:'Renegade Air',country:'Kenya',city:'Nairobi',region:'Africa',lat:-1.29,lng:36.82,count:1,aircraft:'ATR 72-500F',msn:['875'],registration:['5Y-RNF'],detail:'Cargo-converted ATR 72-500 delivered in 2024.',source:'https://www.journal-aviation.com/leasing-et-financement/abelo-livre-un-atr72f-au-kenya-20240524.html'},
+    {operator:'Maldivian',country:'Maldives',city:'Malé',region:'Asia',lat:4.18,lng:73.51,count:2,aircraft:'ATR 42-600',msn:['1617'],registration:['8Q-IAV'],detail:'Two ATR 42-600 finance-lease aircraft; the second was delivered in May 2025. One MSN is publicly identified here.',source:'https://abelo.aero/wp-content/uploads/2025/06/PR-Maldivian-May-2025.pdf'},
+    {operator:'Madagascar Airlines',country:'Madagascar',city:'Antananarivo',region:'Africa',lat:-18.88,lng:47.51,count:2,aircraft:'ATR 72-500 / ATR 72-600',msn:['698','1248'],registration:['5R-MJF','5R-EJB'],detail:'Two Abelo leases extended in 2025 to January 2028 and November 2029 respectively.',source:'https://madagascarairlines.com/fileadmin/user_upload/actualites/JOINT_PRESS_RELEASE_MD-Abelo_062325.pdf'},
+    {operator:'Braathens Regional Airways',country:'Sweden',city:'Stockholm',region:'Europe',lat:59.33,lng:18.07,count:3,aircraft:'ATR 72-600',msn:[],detail:'Three 2015/2016-vintage aircraft acquired in 2025 with Braathens leases already attached.',source:'https://abelo.aero/wp-content/uploads/2025/06/Abelo-to-acquire-Three-ATR-72-600-Aircraft-on-lease-to-Braathens.pdf'},
+    {operator:'SATENA',country:'Colombia',city:'Bogotá',region:'Americas',lat:4.71,lng:-74.07,count:2,aircraft:'ATR 42-600 / ATR 72-600',msn:['1619','1725'],registration:['HK-5485'],detail:'ATR 42-600 delivered December 2025; ATR 72-600 followed in 2026. SATENA has also described a further aircraft expected later in 2026.',source:'https://abelo.aero/our-news/'},
+    {operator:'Ethiopian Airlines / Air Congo',country:'DR Congo',city:'Kinshasa',region:'Africa',lat:-4.44,lng:15.27,count:2,aircraft:'ATR 72-600',msn:[],detail:'Two new ATR 72-600s leased to Ethiopian Airlines Group for Air Congo operations in 2026.',source:'https://aviationweek.com/air-transport/airlines-lessors/abelo-leases-atr-72-600s-ethiopian-airlines-air-congo'},
+    {operator:'Aerlink / Air Navigator Group',country:'Australia',city:'Perth',region:'Oceania',lat:-31.95,lng:115.86,count:1,aircraft:'ATR 72-500',msn:['762'],registration:['VH-FVX'],detail:'Transitioned from Blue Islands and delivered to Aerlink in 2026 after repossession, inspection, maintenance and reconfiguration.',source:'https://abelo.aero/wp-content/uploads/2026/02/Abelo-Delivers-ATR72-500-MSN-762-to-Air-Navigator-Group.pdf'},
+    {operator:'Air Astra',country:'Bangladesh',city:'Dhaka',region:'Asia',lat:23.81,lng:90.41,count:3,aircraft:'ATR 72-600',msn:['1822'],detail:'Three brand-new ATR 72-600 aircraft delivered in 2026. One publicly reported MSN is included here.',source:'https://abelo.aero/our-news/'},
+    {operator:'Emerald Airlines',country:'Ireland',city:'Dublin',region:'Europe',lat:53.35,lng:-6.26,count:1,aircraft:'Aergo six-aircraft portfolio',msn:[],detail:'One of the operators in Abelo’s 2026 acquisition of six turboprops from the Aergo-managed portfolio; exact aircraft/type allocation is not stated in the transaction release.',source:'https://www.aergocapital.com/aergo-capital-announces-sale-of-six-turboprops-to-abelo-aviation/'},
+    {operator:'Binter Canarias',country:'Spain',city:'Las Palmas',region:'Europe',lat:28.12,lng:-15.44,count:1,aircraft:'Aergo six-aircraft portfolio',msn:[],detail:'One of the operators in the 2026 six-turboprop portfolio acquisition; exact aircraft/type allocation is not stated in the transaction release.',source:'https://www.aergocapital.com/aergo-capital-announces-sale-of-six-turboprops-to-abelo-aviation/'},
+    {operator:'National Jet Express',country:'Australia',city:'Perth',region:'Oceania',lat:-31.86,lng:115.98,count:1,aircraft:'Aergo six-aircraft portfolio',msn:[],detail:'One of the operators in the 2026 six-turboprop portfolio acquisition; exact aircraft/type allocation is not stated in the transaction release.',source:'https://www.aergocapital.com/aergo-capital-announces-sale-of-six-turboprops-to-abelo-aviation/'},
+    {operator:'Citilink / Garuda Indonesia',country:'Indonesia',city:'Jakarta',region:'Asia',lat:-6.21,lng:106.85,count:2,aircraft:'Aergo six-aircraft portfolio',msn:[],detail:'Abelo’s uploaded release names Citilink (two aircraft); Aergo’s public sale announcement names Garuda Indonesia. Shown together here rather than pretending the source wording is identical.',source:'https://www.aergocapital.com/aergo-capital-announces-sale-of-six-turboprops-to-abelo-aviation/'},
+    {operator:'Philippine Airlines',country:'Philippines',city:'Manila',region:'Asia',lat:14.60,lng:120.98,count:1,aircraft:'Aergo six-aircraft portfolio',msn:[],detail:'One of the operators in the 2026 six-turboprop portfolio acquisition; exact aircraft/type allocation is not stated in the transaction release.',source:'https://www.aergocapital.com/aergo-capital-announces-sale-of-six-turboprops-to-abelo-aviation/'}
+  ];
+
+  let portfolioMap = null;
+  let portfolioLayer = null;
+
+  function portfolioFiltered() {
+    const region = $('portfolioRegion') ? $('portfolioRegion').value : 'all';
+    const evidence = $('portfolioEvidence') ? $('portfolioEvidence').value : 'all';
+    return portfolioRecords.filter(function(r){
+      const regionOk = region === 'all' || r.region === region;
+      const hasMsn = r.msn && r.msn.length > 0;
+      const evidenceOk = evidence === 'all' || (evidence === 'msn' ? hasMsn : !hasMsn);
+      return regionOk && evidenceOk;
+    });
+  }
+
+  function portfolioEvidenceLabel(r) {
+    if (!r.msn || !r.msn.length) return 'TRANSACTION VERIFIED';
+    if (r.msn.length >= r.count) return 'AIRFRAME VERIFIED';
+    return 'PARTIAL MSN MATCH';
+  }
+
+  function renderPortfolioList() {
+    const list = $('portfolioList');
+    if (!list) return;
+    const rows = portfolioFiltered();
+    const total = rows.reduce(function(sum,r){ return sum + r.count; }, 0);
+    const msnCount = rows.reduce(function(sum,r){ return sum + (r.msn ? r.msn.length : 0); }, 0);
+    setOut('portfolioMapped', String(total));
+    setOut('portfolioOperators', String(rows.length));
+    setOut('portfolioMsnCount', String(msnCount));
+
+    list.innerHTML = rows.map(function(r){
+      const ids = [];
+      if (r.msn && r.msn.length) ids.push('MSN ' + r.msn.join(', '));
+      if (r.registration && r.registration.length) ids.push('Reg ' + r.registration.join(', '));
+      return '<article class="portfolio-card">' +
+        '<div class="portfolio-card-top"><span class="portfolio-evidence">' + portfolioEvidenceLabel(r) + '</span><strong>' + r.count + ' aircraft</strong></div>' +
+        '<h3>' + r.operator + '</h3>' +
+        '<p class="portfolio-place">' + r.city + ', ' + r.country + ' · ' + r.aircraft + '</p>' +
+        (ids.length ? '<p class="portfolio-ids">' + ids.join(' · ') + '</p>' : '<p class="portfolio-ids muted">MSN not disclosed in the cited transaction source</p>') +
+        '<p>' + r.detail + '</p>' +
+        '<p><a href="' + r.source + '" target="_blank" rel="noopener">Open source ↗</a></p>' +
+      '</article>';
+    }).join('');
+  }
+
+  function initPortfolioMap() {
+    renderPortfolioList();
+    const mapEl = $('abeloFleetMap');
+    if (!mapEl || typeof L === 'undefined') return;
+
+    if (!portfolioMap) {
+      portfolioMap = L.map(mapEl, {scrollWheelZoom:false, worldCopyJump:true}).setView([20,15], 2);
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 18,
+        attribution: '&copy; OpenStreetMap contributors'
+      }).addTo(portfolioMap);
+      portfolioLayer = L.layerGroup().addTo(portfolioMap);
+    }
+
+    portfolioLayer.clearLayers();
+    const rows = portfolioFiltered();
+    const bounds = [];
+    rows.forEach(function(r){
+      const marker = L.circleMarker([r.lat,r.lng], {
+        radius: 6 + Math.min(r.count,4) * 2,
+        weight: 2,
+        fillOpacity: 0.72
+      });
+      const msnText = r.msn && r.msn.length ? '<br><strong>MSN:</strong> ' + r.msn.join(', ') : '<br><strong>MSN:</strong> not public in this source';
+      marker.bindPopup('<strong>' + r.operator + '</strong><br>' + r.count + ' × ' + r.aircraft + '<br>' + r.city + ', ' + r.country + msnText + '<br><a href="' + r.source + '" target="_blank" rel="noopener">Source ↗</a>');
+      marker.addTo(portfolioLayer);
+      bounds.push([r.lat,r.lng]);
+    });
+    if (bounds.length > 1) portfolioMap.fitBounds(bounds, {padding:[28,28], maxZoom:4});
+    else if (bounds.length === 1) portfolioMap.setView(bounds[0], 5);
+    setTimeout(function(){ portfolioMap.invalidateSize(); }, 50);
+  }
+
+  $('portfolioRegion')?.addEventListener('change', initPortfolioMap);
+  $('portfolioEvidence')?.addEventListener('change', initPortfolioMap);
+  renderPortfolioList();
+
   updateSingle();updateRelet();
 })();
