@@ -1,15 +1,15 @@
 ---
 layout: doc
-handle: Developments
-title: Developments
+handle: Apps
+title: Apps
 nav_order: 100
-eyebrow: BUILT WORK
-intro: Apps, models and practical tools Erik has built while preparing for the role.
+eyebrow: INTERACTIVE TOOLS
+intro: Interactive apps, dashboards and visual tools for finance, aircraft leasing and interview preparation.
 ---
 
-# Developments
+# Apps
 
-This page is for **things Erik has built**. The academic material stays under **Modules**; the working apps, models and visual tools live here.
+This page is for the **interactive tools**. Academic content stays under **Modules** and **Finance**; calculators, dashboards, maps and decision-support tools live here.
 
 ## Abelo Fleet & Lease Placement Map
 
