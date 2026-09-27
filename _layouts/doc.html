@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="{{ '/assets/styles.css' | relative_url }}?v={{ site.github.build_revision }}">
   <link rel="stylesheet" href="{{ '/assets/mirror-fixes.css' | relative_url }}?v={{ site.github.build_revision }}">
 </head>
-<body class="{% if page.study_mode %}study-mode{% endif %}{% if page.path == 'studies.md' %} education-mode{% endif %}">
+<body class="{% if page.study_mode %}study-mode{% endif %}{% if page.path == 'coursework.md' %} education-mode{% endif %}">
   <header class="topbar">
     <a class="brand" href="{{ '/' | relative_url }}" aria-label="Erik Downes UL Co-op Interview — Home">
       <img src="{{ '/assets/coop-logo.svg' | relative_url }}" alt="Erik Downes UL Co-op Interview">
@@ -46,7 +46,7 @@
     {% when 'communication.md' %}{% assign cms_url = cms_base | append: '/file/communication' %}
     {% when 'candidate-profile.md' %}{% assign cms_url = cms_base | append: '/file/candidate_profile' %}
     {% when 'aviation.md' %}{% assign cms_url = cms_base | append: '/file/aviation' %}
-    {% when 'studies.md' %}{% assign cms_url = cms_base | append: '/file/studies' %}
+    {% when 'coursework.md' %}{% assign cms_url = cms_base | append: '/file/coursework' %}
     {% when 'workplace-skills.md' %}{% assign cms_url = cms_base | append: '/file/workplace_skills' %}
     {% when 'working-independently.md' %}{% assign cms_url = cms_base | append: '/file/working_independently' %}
         {% when 'judgement.md' %}{% assign cms_url = cms_base | append: '/file/judgement' %}
@@ -115,6 +115,6 @@
 
   <script src="{{ '/assets/practice.js' | relative_url }}?v={{ site.github.build_revision }}"></script>
   <script src="{{ '/assets/site.js' | relative_url }}?v={{ site.github.build_revision }}"></script>
-  {% if page.path == 'studies.md' %}<script src="{{ '/assets/education.js' | relative_url }}?v={{ site.github.build_revision }}"></script>{% endif %}
+  {% if page.path == 'coursework.md' %}<script src="{{ '/assets/education.js' | relative_url }}?v={{ site.github.build_revision }}"></script>{% endif %}
 </body>
 </html>
