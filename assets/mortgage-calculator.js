@@ -1,7 +1,7 @@
 (()=>{
 const root=document.getElementById('mortgageLab');if(!root)return;
 const $=id=>document.getElementById(id);
-const el={price:$('housePrice'),dep:$('depositPct'),rate:$('interestRate'),term:$('termYears'),extra:$('annualExtra'),canvas:$('mortgageChart'),tip:$('mortgageTooltip'),msg:$('mortgageValidation')};
+const el={price:$('housePrice'),priceExact:$('housePriceExact'),dep:$('depositPct'),rate:$('interestRate'),term:$('termYears'),extra:$('annualExtra'),canvas:$('mortgageChart'),tip:$('mortgageTooltip'),msg:$('mortgageValidation')};
 const euro=n=>new Intl.NumberFormat('en-IE',{style:'currency',currency:'EUR',maximumFractionDigits:0}).format(Math.max(0,Number.isFinite(n)?n:0));
 const euro2=n=>new Intl.NumberFormat('en-IE',{style:'currency',currency:'EUR',minimumFractionDigits:2,maximumFractionDigits:2}).format(Math.max(0,Number.isFinite(n)?n:0));
 const clamp=(n,a,b)=>Math.min(b,Math.max(a,n));
@@ -12,8 +12,8 @@ function simulate(P,annual,years,annualExtra){const months=Math.round(years*12),
  return {pay,rows,interest:cumInt,total,extraUsed,payoff:rows[rows.length-1].m};
 }
 let current=null, selectedIndex=null;
-function read(){const price=Math.max(0,Number(el.price.value)||0);const dep=clamp(Number(el.dep.value)||10,10,100);const rate=clamp(Number(el.rate.value)||0,0,9.9);const term=clamp(Number(el.term.value)||0,0,35);const extra=Math.max(0,Number(el.extra.value)||0);return {price,dep,rate,term,extra,deposit:price*dep/100,loan:price*(1-dep/100)}}
-function update(){const s=read();el.dep.value=s.dep;el.rate.value=s.rate;el.term.value=s.term;$('depositPctOut').textContent=s.dep.toFixed(1)+'%';$('interestRateOut').textContent=s.rate.toFixed(1)+'%';$('termYearsOut').textContent=s.term+(s.term===1?' year':' years');$('depositCash').textContent=euro(s.deposit);
+function read(){const price=Math.max(0,Number(el.priceExact.value)||0);const dep=clamp(Number(el.dep.value)||10,10,100);const rate=clamp(Number(el.rate.value)||0,0,9.9);const term=clamp(Number(el.term.value)||0,0,35);const extra=Math.max(0,Number(el.extra.value)||0);return {price,dep,rate,term,extra,deposit:price*dep/100,loan:price*(1-dep/100)}}
+function update(){const s=read();el.price.value=clamp(Math.round(s.price/5000)*5000,Number(el.price.min),Number(el.price.max));$('housePriceOut').textContent=euro(s.price);el.dep.value=s.dep;el.rate.value=s.rate;el.term.value=s.term;$('depositPctOut').textContent=s.dep.toFixed(1)+'%';$('interestRateOut').textContent=s.rate.toFixed(1)+'%';$('termYearsOut').textContent=s.term+(s.term===1?' year':' years');$('depositCash').textContent=euro(s.deposit);
  if(s.loan>0&&s.term===0){current=null;el.msg.textContent='Choose a term above 0 years when a mortgage is required.';['loanKpi','monthlyKpi','payoffKpi','interestKpi','totalPaidKpi','savedKpi','houseKpi','depositKpi','extraUsedKpi'].forEach(id=>$(id).textContent='—');drawEmpty();return}
  el.msg.textContent='';
  const sim=simulate(s.loan,s.rate,s.term,s.extra);const base=simulate(s.loan,s.rate,s.term,0);current={s,sim,base};selectedIndex=null;
@@ -31,8 +31,8 @@ function draw(){if(!current)return drawEmpty();const {ctx,w,h}=setupCanvas(),row
 }
 function shortMoney(n){if(n>=1000000)return '€'+(n/1000000).toFixed(1)+'m';if(n>=1000)return '€'+Math.round(n/1000)+'k';return '€'+Math.round(n)}
 function inspect(ev){if(!current||!current.sim.rows.length)return;const rect=el.canvas.getBoundingClientRect(),padL=62,padR=18,pw=rect.width-padL-padR;const px=clamp(ev.clientX-rect.left-padL,0,pw);const idx=Math.round(px/pw*(current.sim.rows.length-1));selectedIndex=idx;const r=current.sim.rows[idx];const year=Math.floor(r.m/12),month=r.m%12;el.tip.innerHTML='<strong>Year '+year+', month '+month+'</strong>Balance: '+euro(r.balance)+'<br>Principal repaid: '+euro(r.principal)+'<br>Interest paid: '+euro(r.interest)+(r.extra?'<br>Annual top-up: '+euro(r.extra):'');el.tip.hidden=false;const left=clamp(ev.clientX-rect.left+12,6,rect.width-220),top=clamp(ev.clientY-rect.top-72,6,rect.height-105);el.tip.style.left=left+'px';el.tip.style.top=top+'px';draw()}
-['input','change'].forEach(evt=>[el.price,el.dep,el.rate,el.term,el.extra].forEach(n=>n.addEventListener(evt,update)));
-$('resetMortgage').addEventListener('click',()=>{el.price.value=400000;el.dep.value=10;el.rate.value=2.2;el.term.value=30;el.extra.value=0;update()});
+el.price.addEventListener('input',()=>{el.priceExact.value=el.price.value;update()});el.priceExact.addEventListener('input',update);['input','change'].forEach(evt=>[el.dep,el.rate,el.term,el.extra].forEach(n=>n.addEventListener(evt,update)));
+$('resetMortgage').addEventListener('click',()=>{el.price.value=400000;el.priceExact.value=400000;el.dep.value=10;el.rate.value=2.2;el.term.value=30;el.extra.value=0;update()});
 el.canvas.addEventListener('pointermove',inspect);el.canvas.addEventListener('pointerdown',inspect);el.canvas.addEventListener('pointerleave',()=>{if(selectedIndex===null)el.tip.hidden=true});
 window.addEventListener('resize',()=>{if(current)draw()});update();
 })();
@@ -44,7 +44,7 @@ const euro=n=>new Intl.NumberFormat('en-IE',{style:'currency',currency:'EUR',max
 const clamp=(n,a,b)=>Math.min(b,Math.max(a,n));
 function pmt(P,annual,months){if(P<=0)return 0;const r=annual/1200;if(r===0)return P/months;return P*r/(1-Math.pow(1+r,-months));}
 function updateAircraft(){
-  const price=Math.max(0,(Number($('airPrice').value)||0)*1e6);
+  const price=Math.max(0,(Number($('airPriceExact').value)||0)*1e6); $('airPrice').value=clamp(Math.round(price/1e6),Number($('airPrice').min),Number($('airPrice').max)); $('airPriceOut').textContent='€'+(price/1e6).toFixed(1).replace(/\.0$/,'')+'m';
   const eq=clamp(Number($('airEquity').value)||0,0,100);
   const rate=clamp(Number($('airDebtRate').value)||0,0,12);
   const debtYears=clamp(Number($('airDebtTerm').value)||1,1,20);
@@ -77,8 +77,61 @@ function updateAircraft(){
   $('airResidualKpi').textContent=euro(residual);
   $('airNetKpi').textContent=euro(net);
 }
-['airPrice','airEquity','airDebtRate','airDebtTerm','airRent','airLeaseTerm','airAnnualCost','airResidual'].forEach(id=>{
+$('airPrice').addEventListener('input',()=>{$('airPriceExact').value=$('airPrice').value;updateAircraft()});$('airPriceExact').addEventListener('input',updateAircraft);['airEquity','airDebtRate','airDebtTerm','airRent','airLeaseTerm','airAnnualCost','airResidual'].forEach(id=>{
   const n=$(id); if(n){n.addEventListener('input',updateAircraft);n.addEventListener('change',updateAircraft);}
 });
 updateAircraft();
+})();
+
+(()=> {
+  const root=document.getElementById('pcpLab'); if(!root) return;
+  const $=id=>document.getElementById(id);
+  const euro=n=>new Intl.NumberFormat('en-IE',{style:'currency',currency:'EUR',maximumFractionDigits:0}).format(Number.isFinite(n)?n:0);
+  const euro2=n=>new Intl.NumberFormat('en-IE',{style:'currency',currency:'EUR',minimumFractionDigits:2,maximumFractionDigits:2}).format(Number.isFinite(n)?n:0);
+  const clamp=(n,a,b)=>Math.min(b,Math.max(a,n));
+
+  function paymentWithBalloon(P, annual, months, balloon){
+    if(months<=0) return 0;
+    const r=annual/1200;
+    if(r===0) return Math.max(0,(P-balloon)/months);
+    const pvBalloon=balloon/Math.pow(1+r,months);
+    return Math.max(0,(P-pvBalloon)*r/(1-Math.pow(1+r,-months)));
+  }
+
+  function updatePCP(){
+    const exact=Math.max(0,Number($('pcpPriceExact').value)||0);
+    $('pcpPrice').value=clamp(Math.round(exact/1000)*1000,Number($('pcpPrice').min),Number($('pcpPrice').max));
+    const price=exact;
+    const deposit=clamp(Number($('pcpDeposit').value)||0,0,price);
+    const rate=clamp(Number($('pcpRate').value)||0,0,15);
+    const months=clamp(Number($('pcpTerm').value)||36,24,60);
+    const balloon=clamp(Number($('pcpBalloon').value)||0,0,price-deposit);
+    $('pcpDeposit').max=Math.max(0,price);
+    $('pcpBalloon').max=Math.max(0,price-deposit);
+    $('pcpPriceOut').textContent=euro(price);
+    $('pcpDepositOut').textContent=euro(deposit);
+    $('pcpRateOut').textContent=rate.toFixed(2).replace(/0$/,'').replace(/\.0$/,'')+'%';
+    $('pcpTermOut').textContent=months+' months';
+    $('pcpBalloonOut').textContent=euro(balloon);
+
+    const financed=Math.max(0,price-deposit);
+    const monthly=paymentWithBalloon(financed,rate,months,balloon);
+    const monthlyTotal=monthly*months;
+    const buyTotal=deposit+monthlyTotal+balloon;
+    const financeCost=Math.max(0,buyTotal-price);
+
+    $('pcpFinancedKpi').textContent=euro(financed);
+    $('pcpMonthlyKpi').textContent=euro2(monthly)+'/mo';
+    $('pcpMonthlyTotalKpi').textContent=euro(monthlyTotal);
+    $('pcpBuyKpi').textContent=euro(buyTotal);
+    $('pcpCostKpi').textContent=euro(financeCost);
+    $('pcpBalloonKpi').textContent=euro(balloon);
+  }
+
+  $('pcpPrice').addEventListener('input',()=>{$('pcpPriceExact').value=$('pcpPrice').value;updatePCP()});
+  $('pcpPriceExact').addEventListener('input',updatePCP);
+  ['pcpDeposit','pcpRate','pcpTerm','pcpBalloon'].forEach(id=>{
+    $(id).addEventListener('input',updatePCP); $(id).addEventListener('change',updatePCP);
+  });
+  updatePCP();
 })();
