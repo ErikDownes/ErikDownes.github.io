@@ -24,6 +24,7 @@ It connects Financial Mathematics, statistics, accounting and asset management b
     <button class="lease-tab" data-tab="relet" type="button">Re-lease decision</button>
     <button class="lease-tab" data-tab="scenarios" type="button">Scenario comparison</button>
     <button class="lease-tab" data-tab="lineage" type="button">Fleet lineage</button>
+    <button class="lease-tab" data-tab="portfolio" type="button">Abelo fleet map</button>
   </div>
 
   <section class="lease-panel active" data-panel="single">
@@ -177,6 +178,57 @@ It connects Financial Mathematics, statistics, accounting and asset management b
       <strong>Historical anchor:</strong> Abelo announced the sale of a Dash 8-100 in July 2022, shortly after the Elix–ADARE combination created Abelo. This makes Dash 8 a legitimate part of the historical asset-management story while keeping the present-day ATR focus clear.
     </div>
   </section>
+
+  <section class="lease-panel" data-panel="portfolio">
+    <div class="portfolio-heading">
+      <div>
+        <h3>Abelo public fleet map</h3>
+        <p>Turn the portfolio into something you can see. Abelo currently describes itself as supporting a fleet of <strong>more than 60 turboprop aircraft</strong>. This map plots aircraft and placements that can be tied to public Abelo, airline, regulator or transaction evidence.</p>
+      </div>
+    </div>
+
+    <div class="lease-note">
+      <strong>Evidence rule:</strong> this is not presented as Abelo's confidential live fleet database. A marker can represent an individually identified airframe or a publicly announced multi-aircraft transaction. Where an MSN is not public, the app says so rather than inventing one.
+    </div>
+
+    <div class="lease-kpis portfolio-kpis">
+      <div><span>Abelo stated portfolio</span><strong>&gt;60</strong></div>
+      <div><span>Aircraft represented here</span><strong id="portfolioMapped">—</strong></div>
+      <div><span>Operators / placements</span><strong id="portfolioOperators">—</strong></div>
+      <div><span>MSNs identified</span><strong id="portfolioMsnCount">—</strong></div>
+    </div>
+
+    <div class="portfolio-controls">
+      <label>Region
+        <select id="portfolioRegion">
+          <option value="all">All regions</option>
+          <option value="Europe">Europe</option>
+          <option value="Africa">Africa</option>
+          <option value="Asia">Asia</option>
+          <option value="Oceania">Oceania</option>
+          <option value="Americas">Americas</option>
+        </select>
+      </label>
+      <label>Evidence
+        <select id="portfolioEvidence">
+          <option value="all">All public records</option>
+          <option value="msn">Includes identified MSN</option>
+          <option value="transaction">Transaction-level only</option>
+        </select>
+      </label>
+    </div>
+
+    <div id="abeloFleetMap" class="abelo-fleet-map" aria-label="Map of publicly documented Abelo aircraft placements"></div>
+    <div class="lease-note portfolio-map-note">
+      <strong>Map meaning:</strong> pins show the airline/operator geography associated with the lease or placement — <em>not</em> a live aircraft position.
+    </div>
+
+    <div id="portfolioList" class="portfolio-list"></div>
+
+    <div class="lease-note">
+      <strong>Research trail:</strong> the current map starts with recent, verifiable transactions including IndiGo, SKY express, Olympic Air, Renegade Air, Maldivian, Madagascar Airlines, Braathens, SATENA, Ethiopian/Air Congo, Aerlink, Air Astra and the six-aircraft Aergo portfolio. It is deliberately extensible as further MSNs and registrations are verified.
+    </div>
+  </section>
 </div>
 
 ## What Erik can say in the interview
@@ -187,5 +239,7 @@ It connects Financial Mathematics, statistics, accounting and asset management b
 
 This dashboard uses **plain HTML, CSS and JavaScript in the browser**. It is static, inspectable and deployable on GitHub Pages without Power BI, a proprietary BI licence or a paid backend.
 
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 <link rel="stylesheet" href="{{ '/assets/lease-dashboard.css' | relative_url }}">
+<script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script defer src="{{ '/assets/lease-dashboard.js' | relative_url }}"></script>
