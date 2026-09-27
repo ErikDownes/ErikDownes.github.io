@@ -35,6 +35,8 @@ study_mode: true
 <p><strong>Say it:</strong> “I would want reporting that shows how the aircraft is being used, what maintenance is due and whether the lease payments and return conditions match that exposure.”</p>
 </div></div>
 
+
+
 ## Managing Credit Risk in Aircraft Leasing
 <div class="aercap-beamer" data-aercap-beamer data-title="Managing Credit Risk in Aircraft Leasing"><div class="aercap-source">
 <p>An airline may run into difficulty even under a well-written lease. The lessor therefore monitors payments and the aircraft’s condition.</p>
