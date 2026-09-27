@@ -1,10 +1,10 @@
 ---
 layout: doc
-permalink: /
-handle: Communication
-title: Communication
-nav_order: 10
-intro: Retrieve what you know, structure it and communicate it clearly under pressure.
+permalink: /presentation.html
+handle: Presentation
+title: Presentation
+nav_order: 30
+intro: Prepare your ideas, pause, and communicate them clearly for the audience in front of you.
 ---
 <div class="home-hero">
   <div class="home-hero-kicker">AN INTERVIEW IS A PERFORMANCE</div>
@@ -245,7 +245,7 @@ intro: Retrieve what you know, structure it and communicate it clearly under pre
 <p class="home-section-lead">Prepare more than you say. Use the sections below to build evidence, vocabulary and examples, then practise retrieving only what the question needs.</p>
 
 <div class="section-grid">
-  <a class="section-card" href="{{ '/candidate-profile.html' | relative_url }}"><strong>Candidate Profile</strong><span>Course, strengths, academic story, motivation and co-op goals.</span><span class="cue">Start here</span></a>
+  <a class="section-card" href="{{ '/' | relative_url }}"><strong>Profile</strong><span>Course, strengths, academic story, motivation and co-op goals.</span><span class="cue">Start here</span></a>
   <a class="section-card" href="{{ '/abelo.html' | relative_url }}"><strong>Abelo</strong><span>Aircraft leasing, role fit, turboprops and what you want to learn.</span><span class="cue">Company-specific</span></a>
   <a class="section-card" href="{{ '/workplace-skills.html' | relative_url }}"><strong>Workplace Skills</strong><span>Teamwork, disagreement, explanation and feedback.</span><span class="cue">Use evidence</span></a>
   <a class="section-card" href="{{ '/working-independently.html' | relative_url }}"><strong>Work Independently</strong><span>Problem solving, initiative, accuracy and knowing when to ask for help.</span><span class="cue">STAR where useful</span></a>
