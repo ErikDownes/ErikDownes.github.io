@@ -552,7 +552,7 @@
         const key = normalisePath(href.href);
         if (seen.has(key)) return null;
         seen.add(key);
-        return { label, href };
+        return { label, href, completed: Boolean(link.closest('strong')) };
       })
       .filter(Boolean)
       .sort((a, b) => {
@@ -572,6 +572,10 @@
       const link = document.createElement('a');
       link.href = module.href.href;
       link.textContent = module.label;
+      if (module.completed) {
+        link.style.fontWeight = '800';
+        link.setAttribute('aria-label', module.label + ' — completed');
+      }
       link.addEventListener('click', () => {
         item.classList.remove('is-open');
         item.querySelector('[data-nav-toggle]')?.setAttribute('aria-expanded', 'false');
