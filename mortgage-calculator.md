@@ -248,6 +248,25 @@ The model below is deliberately illustrative. It is **not Abelo pricing**. It is
     </section>
 
     <section class="mortgage-output" aria-label="Aircraft finance results">
+      <div class="mortgage-chart-card aircraft-chart-card">
+        <div class="mortgage-chart-heading">
+          <div>
+            <h3>Aircraft economics over time</h3>
+            <p>See debt fall while lease income and owner costs accumulate. Move across the chart or tap it for exact values.</p>
+          </div>
+          <div class="mortgage-legend" aria-hidden="true">
+            <span><i class="air-debt-dot"></i>Debt balance</span>
+            <span><i class="air-rent-dot"></i>Lease rentals</span>
+            <span><i class="air-cost-dot"></i>Owner costs</span>
+          </div>
+        </div>
+        <div class="mortgage-canvas-wrap">
+          <canvas id="aircraftChart" width="960" height="460" aria-label="Interactive aircraft debt, lease rental and owner cost curves"></canvas>
+          <div id="aircraftTooltip" class="mortgage-tooltip" hidden></div>
+        </div>
+        <p class="mortgage-help"><strong>Residual value is shown at the lease-end point</strong> because it is an end-of-period asset value rather than recurring income.</p>
+      </div>
+
       <div class="mortgage-kpis">
         <div><span>Equity invested</span><strong id="airEquityKpi">—</strong></div>
         <div><span>Acquisition debt</span><strong id="airDebtKpi">—</strong></div>
