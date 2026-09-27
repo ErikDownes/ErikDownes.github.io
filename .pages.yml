@@ -70,7 +70,7 @@ content:
 
   - { name: candidate_profile, label: "Candidate Profile", type: file, path: candidate-profile.md, format: yaml-frontmatter, fields: *docfields }
   - { name: aviation, label: "Aviation", type: file, path: aviation.md, format: yaml-frontmatter, fields: *docfields }
-  - { name: studies, label: "Studies", type: file, path: studies.md, format: yaml-frontmatter, fields: *docfields }
+  - { name: coursework, label: "Coursework", type: file, path: coursework.md, format: yaml-frontmatter, fields: *docfields }
   - { name: workplace_skills, label: "Workplace Skills", type: file, path: workplace-skills.md, format: yaml-frontmatter, fields: *docfields }
 
   - name: modules
