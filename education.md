@@ -21,11 +21,15 @@ study_mode: true
 <p><strong>Say it:</strong> “It is a useful example of lease terms responding to a shock. I would be interested in how the team decides when flexibility protects value.”</p>
 </div></div>
 
-## Aircraft Leasing 101
-<div class="aercap-beamer" data-aercap-beamer data-title="Aircraft Leasing 101"><div class="aercap-source">
-<p>An airline can lease rather than buy an aircraft. A lessor buys the asset and earns rent while the airline operates it.</p>
-<p>The lessor has to judge the airline, the aircraft, the lease terms and what the aircraft may be worth when the lease ends.</p>
-<p><strong>Say it:</strong> “What interests me is that a lease is both a financing decision and an asset decision. The aircraft must work for the airline now and remain attractive to another operator later.”</p>
+## The Lifecycle of an Aircraft
+<div class="aercap-beamer" data-aercap-beamer data-title="The Lifecycle of an Aircraft"><div class="aercap-source">
+
+<p>Aircraft asset management is multifaceted. Technical condition, maintenance, lease terms, airline credit, market demand, financing and residual value all interact over the life of the aircraft.</p>
+
+<p>Some decisions can be analysed quantitatively, but the future is uncertain. The asset manager has to combine data and financial analysis with deep sector knowledge and commercial judgement — particularly around lease extensions, lease transitions, remarketing and sale.</p>
+
+<p><strong>Say it:</strong> “What attracts me to asset management is that quantitative analysis meets deep industry knowledge and judgement under uncertainty. You are managing several things at once — the aircraft, the lease, the airline, maintenance, cash flows and the future market. I think that makes it a very interesting and creative problem-solving role.”</p>
+
 </div></div>
 
 ## The Lifecycle of an Aircraft
