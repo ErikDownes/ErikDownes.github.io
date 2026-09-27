@@ -59,7 +59,14 @@
       let mode = 'read';
       let questionIndex = 0;
       let resultsVisible = false;
-      const quiz = questions[box.dataset.title] || [];
+      const quiz = (questions[box.dataset.title] || []).map(item => {
+        const order = item.options.map((_, i) => i);
+        for (let i = order.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [order[i], order[j]] = [order[j], order[i]];
+        }
+        return { ...item, options: order.map(i => item.options[i]), correct: order.indexOf(item.correct) };
+      });
       let answers = Array(quiz.length).fill(null);
 
       const head = document.createElement('div');
