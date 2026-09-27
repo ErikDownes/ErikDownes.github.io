@@ -7,27 +7,92 @@ eyebrow: OPEN · ONLINE · INTERACTIVE
 intro: Start with a residential mortgage, then use the same cash-flow thinking to understand aircraft ownership, financing, leasing, options and residual value.
 ---
 
-## Technology choices
+## Financial instruments | Same questions, different contracts
 
-This calculator is deliberately built as an **open-source browser application** using **HTML, CSS and vanilla JavaScript**, hosted through **GitHub Pages / Jekyll**.
+The easiest way to understand finance is not to memorise products. Ask the same questions every time:
 
-The mortgage mathematics runs entirely in the browser. There is no paid backend, no proprietary calculation engine and no licence required to use or inspect the model.
+**Who supplies the capital? Who owns the asset? What payments are made? Who carries the risk? What happens at the end?**
 
-**Why this stack?**
+<div class="finance-flow">
+  <div><strong>Friend loan</strong><span>cash now → repayment later</span></div>
+  <div><strong>Bank credit</strong><span>borrow → interest → repay</span></div>
+  <div><strong>Mortgage</strong><span>borrow → buy → own</span></div>
+  <div><strong>PCP</strong><span>deposit → monthly payments → balloon / return</span></div>
+  <div><strong>Aircraft lease</strong><span>lease rentals → use aircraft → return aircraft</span></div>
+</div>
 
-- **HTML** provides the inputs, outputs and accessible page structure.
-- **CSS** controls the responsive dashboard layout.
-- **JavaScript** performs the amortisation calculations and redraws the chart instantly when an assumption changes.
-- **Canvas** is used for the interactive repayment curves, including point inspection by mouse, touch or stylus.
-- **GitHub Pages / Jekyll** keeps deployment simple, public and reproducible.
+<div class="instrument-grid">
+  <article><h3>Interest-free personal loan</h3><p>The simplest instrument: one person provides capital and expects it back later. No interest does not mean no risk.</p><strong>Idea:</strong> trust, time and credit risk.</article>
+  <article><h3>Current / deposit account</h3><p>You provide money to a bank. Liquidity is high and expected return is usually modest.</p><strong>Idea:</strong> liquidity versus return.</article>
+  <article><h3>Overdraft / credit card</h3><p>Flexible revolving borrowing rather than a fixed amortising loan. Interest is charged on the balance used.</p><strong>Idea:</strong> flexibility versus borrowing cost.</article>
+  <article><h3>Shares / investments</h3><p>Capital is invested for uncertain future value rather than repaid under a fixed schedule.</p><strong>Idea:</strong> expected return and market risk.</article>
+  <article><h3>Mortgage</h3><p>Long-term secured borrowing used to acquire an asset that the borrower owns.</p><strong>Idea:</strong> deposit, amortisation and security.</article>
+  <article><h3>PCP car finance</h3><p>Deposit plus monthly payments with a large optional final payment linked to the vehicle's future value.</p><strong>Idea:</strong> cash today versus cash later.</article>
+  <article><h3>Aircraft operating lease</h3><p>The airline pays for use. Ownership normally stays with the lessor and the aircraft is returned under the lease terms.</p><strong>Idea:</strong> use without ownership.</article>
+  <article><h3>Aircraft lessor finance</h3><p>The lessor may combine debt and equity to buy the aircraft before leasing it to an airline.</p><strong>Idea:</strong> capital stack, lease income and residual value.</article>
+</div>
 
-### Why not Power BI?
+## PCP | Eric's first real financial decision
 
-Power BI is highly relevant in business environments because it is strong for governed reporting, shared dashboards, scheduled data refreshes and connecting decision-makers to enterprise data.
+Eric has already used financial mathematics in a real decision. His mother was offered **three PCP structures** with different deposit and monthly-payment combinations while the optional final payment was fixed.
 
-It was **not used here by design**. This project is a public financial calculator rather than a reporting dashboard: the user needs fine-grained sliders, immediate amortisation recalculation, annual overpayment logic and interactive curve inspection. A small browser application gives direct control over that behaviour, remains licence-free for the public user, and demonstrates the underlying programming and financial mathematics rather than hiding them behind a BI layer.
+Eric checked the figures, compared the total cash outlay and showed that, provided the up-front capital was available, the middle structure was about **€600 cheaper overall**.
 
-A commercial organisation could still take the outputs from this model into **Power BI** for portfolio-level reporting, scenario comparison or management dashboards. The two technologies solve different parts of the problem.
+**Check the numbers → compare alternatives → recognise the capital constraint → choose the lower-cost structure.**
+
+<div id="pcpLab" class="mortgage-lab">
+  <div class="mortgage-grid">
+    <section class="mortgage-controls" aria-label="PCP assumptions">
+      <h3>PCP assumptions</h3>
+
+      <label>Car price <output id="pcpPriceOut">€30,000</output>
+        <input id="pcpPrice" type="range" min="10000" max="80000" step="1000" value="30000">
+      </label>
+      <div class="money-input"><span>€</span><input id="pcpPriceExact" type="number" min="0" step="100" value="30000"></div>
+
+      <label>Deposit <output id="pcpDepositOut">€6,000</output>
+        <input id="pcpDeposit" type="range" min="0" max="30000" step="500" value="6000">
+      </label>
+
+      <label>APR <output id="pcpRateOut">6.0%</output>
+        <input id="pcpRate" type="range" min="0" max="15" step="0.25" value="6">
+      </label>
+
+      <label>Term <output id="pcpTermOut">36 months</output>
+        <input id="pcpTerm" type="range" min="24" max="60" step="6" value="36">
+      </label>
+
+      <label>Optional final payment / GMFV <output id="pcpBalloonOut">€12,000</output>
+        <input id="pcpBalloon" type="range" min="0" max="40000" step="500" value="12000">
+      </label>
+    </section>
+
+    <section class="mortgage-output" aria-label="PCP results">
+      <div class="mortgage-kpis">
+        <div><span>Amount financed</span><strong id="pcpFinancedKpi">—</strong></div>
+        <div><span>Monthly payment</span><strong id="pcpMonthlyKpi">—</strong></div>
+        <div><span>Total monthly payments</span><strong id="pcpMonthlyTotalKpi">—</strong></div>
+        <div><span>Total if car is bought</span><strong id="pcpBuyKpi">—</strong></div>
+        <div><span>Total finance cost</span><strong id="pcpCostKpi">—</strong></div>
+        <div><span>Final payment</span><strong id="pcpBalloonKpi">—</strong></div>
+      </div>
+
+      <div class="mortgage-chart-card">
+        <h3>The PCP cash-flow shape</h3>
+        <div class="pcp-flow">
+          <div><strong>Deposit</strong><span>cash now</span></div><b>→</b>
+          <div><strong>Monthly payments</strong><span>finance the middle</span></div><b>→</b>
+          <div><strong>GMFV / balloon</strong><span>buy, return or change car</span></div>
+        </div>
+        <p class="mortgage-help">The calculator is illustrative. Real PCP agreements can include fees, mileage limits, condition requirements and manufacturer/dealer terms.</p>
+      </div>
+    </section>
+  </div>
+</div>
+
+## Mortgage | Borrow to own
+
+Use the slider for fast exploration and the number box for precision. The house-price slider moves in **€5,000 steps**.
 
 <div class="mortgage-note"><strong>Model convention:</strong> “Deposit” means the cash paid up front. “Annual top-up” means an optional extra lump-sum mortgage repayment made after each 12 months of scheduled repayments.</div>
 
@@ -36,9 +101,10 @@ A commercial organisation could still take the outputs from this model into **Po
     <section class="mortgage-controls" aria-label="Mortgage assumptions">
       <h3>Mortgage assumptions</h3>
 
-      <label for="housePrice">House price
-        <div class="money-input"><span>€</span><input id="housePrice" type="number" min="0" step="1000" value="400000" inputmode="decimal"></div>
+      <label for="housePrice">House price <output id="housePriceOut">€400,000</output>
+        <input id="housePrice" type="range" min="100000" max="1500000" step="5000" value="400000">
       </label>
+      <div class="money-input"><span>€</span><input id="housePriceExact" type="number" min="0" step="1000" value="400000" inputmode="decimal"></div>
 
       <label for="depositPct">Deposit <output id="depositPctOut">10.0%</output>
         <input id="depositPct" type="range" min="10" max="100" step="0.5" value="10">
@@ -144,9 +210,10 @@ The model below is deliberately illustrative. It is **not Abelo pricing**. It is
     <section class="mortgage-controls" aria-label="Aircraft finance assumptions">
       <h3>Illustrative lessor assumptions</h3>
 
-      <label>Aircraft acquisition price
-        <div class="money-input"><span>€m</span><input id="airPrice" type="number" min="0" step="0.5" value="20"></div>
+      <label>Aircraft acquisition price <output id="airPriceOut">€20m</output>
+        <input id="airPrice" type="range" min="5" max="100" step="1" value="20">
       </label>
+      <div class="money-input"><span>€m</span><input id="airPriceExact" type="number" min="0" step="0.1" value="20"></div>
 
       <label>Equity contribution <output id="airEquityOut">30%</output>
         <input id="airEquity" type="range" min="0" max="100" step="5" value="30">
@@ -229,6 +296,22 @@ The latest of the major alternating European shows was **Farnborough, 20–24 Ju
 
 So, no: **Dubai was not the last big airshow.** Dubai 2025 was followed by Farnborough 2026. As of September 2026, Paris 2027 is the next major Paris/Farnborough commercial-airshow date.
 
+
+## Technology choices
+
+This calculator is deliberately built as an **open-source browser application** using **HTML, CSS and vanilla JavaScript**, hosted through **GitHub Pages / Jekyll**.
+
+The mathematics runs entirely in the browser. There is no paid backend, no proprietary calculation engine and no licence required to use or inspect the model.
+
+- **HTML** provides the inputs, outputs and accessible page structure.
+- **CSS** controls the responsive dashboard layout.
+- **JavaScript** performs the calculations and redraws outputs immediately.
+- **Canvas** is used for the mortgage repayment curves.
+- **GitHub Pages / Jekyll** keeps deployment simple, public and reproducible.
+
+### Why not Power BI?
+
+Power BI is highly relevant for governed reporting, shared dashboards, scheduled refreshes and enterprise data. This page is different: it is an interactive calculator where the user changes assumptions continuously. A small browser application gives direct control over that behaviour while exposing the underlying mathematics.
 
 ## What the model is doing
 
