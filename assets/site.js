@@ -1763,146 +1763,32 @@
   mapHost.dataset.mapReady = 'true';
 
   const placements = [
-    {
-      lat: 53.35, lng: -6.26,
-      title: 'Ireland — Emerald Airlines',
-      source: 'https://abelo.aero/wp-content/uploads/2026/08/Press-Release-Aergo-JULY2026-Updated-05.08.2026-003.pdf',
-      date: 'Aug 2026',
-      aircraftCount: 1,
-      atr42: null,
-      atr72: null,
-      age: 'Existing aircraft; exact vintage not stated in the public acquisition announcement',
-      history: 'Acquired in August 2026 as part of the Aergo portfolio, with the existing lease continuing to Emerald Airlines. Abelo names the lessee but does not identify which of the six aircraft are ATR 72-600 versus Dash 8-400.'
-    },
-    {
-      lat: 59.33, lng: 18.07,
-      title: 'Sweden — Braathens Regional Airways',
-      source: 'https://abelo.aero/abelo-to-acquire-three-atr-72-600-aircraft-on-lease-to-braathens/',
-      date: '2025',
-      atr42: 0,
-      atr72: 3,
-      age: '2015/2016 vintage — about 10–11 years old in 2026',
-      history: 'Three ATR 72s were acquired from Bramora in 2025 with their leases to Braathens already in place.'
-    },
-    {
-      lat: 37.98, lng: 23.72,
-      title: 'Greece — SKY express / Olympic Air',
-      source: 'https://abelo.aero/we-are-thrilled-to-celebrate-the-successful-delivery-of-our-second-atr72-600-aircraft-to-sky-express/',
-      source2: 'https://abelo.aero/abelo-leases-new-aircraft-to-olympic-air/',
-      date: '2024',
-      atr42: 0,
-      atr72: 3,
-      age: 'New 2024 deliveries',
-      history: 'Two new ATR 72s were placed with SKY express and one new ATR 72 with Olympic Air from Abelo’s orderbook.'
-    },
-    {
-      lat: 28.29, lng: -16.63,
-      title: 'Canary Islands — Binter Canarias',
-      source: 'https://abelo.aero/wp-content/uploads/2026/08/Press-Release-Aergo-JULY2026-Updated-05.08.2026-003.pdf',
-      date: 'Aug 2026',
-      aircraftCount: 1,
-      atr42: null,
-      atr72: null,
-      age: 'Existing aircraft; exact vintage not stated in the public acquisition announcement',
-      history: 'Added in August 2026 through the Aergo portfolio acquisition, with the existing lease continuing to Binter. Abelo names the lessee but does not identify which of the six aircraft are ATR 72-600 versus Dash 8-400.'
-    },
-    {
-      lat: 4.71, lng: -74.07,
-      title: 'Colombia — SATENA',
-      source: 'https://abelo.aero/abelo-announces-follow-on-atr-aircraft-placement-with-colombian-regional-operator-satena/',
-      date: 'May 2026',
-      atr42: 1,
-      atr72: 1,
-      age: 'New deliveries — ATR 42 in Dec 2025; ATR 72 in May 2026',
-      history: 'Abelo first placed an ATR 42 with SATENA, then followed with an ATR 72 as the airline continued its fleet modernisation.'
-    },
-    {
-      lat: 4.18, lng: 73.51,
-      title: 'Maldives — Maldivian',
-      source: 'https://abelo.aero/abelo-delivers-second-atr-42-600-to-maldivian-under-edc-backed-finance-lease/',
-      date: 'May 2025',
-      atr42: 2,
-      atr72: 0,
-      age: 'New deliveries — May 2024 and May 2025',
-      history: 'Two new ATR 42s were delivered to support Maldivian’s domestic fleet renewal programme.'
-    },
-    {
-      lat: 23.81, lng: 90.41,
-      title: 'Bangladesh — Air Astra',
-      source: 'https://abelo.aero/abelo-is-pleased-to-announce-the-delivery-of-three-brand-new-atr-72-600-aircraft-to-air-astra/',
-      date: 'Sep 2026',
-      atr42: 0,
-      atr72: 3,
-      age: 'Brand-new aircraft; all three delivered by Sep 2026',
-      history: 'Three new ATR 72s were delivered under one fleet-expansion agreement for Air Astra’s domestic network.'
-    },
-    {
-      lat: -4.33, lng: 15.31,
-      title: 'DR Congo — Air Congo via Ethiopian Airlines Group',
-      source: 'https://abelo.aero/abelo-leases-two-new-atr-72-600-aircraft-to-ethiopian-airlines-for-african-operations-11-march-2026/',
-      date: '2026',
-      atr42: 0,
-      atr72: 2,
-      age: 'Brand-new 2026 deliveries',
-      history: 'Two new ATR 72s from Abelo’s orderbook were placed with Ethiopian Airlines Group for operation by Air Congo.'
-    },
-    {
-      lat: -6.21, lng: 106.85,
-      title: 'Indonesia — Citilink',
-      source: 'https://abelo.aero/wp-content/uploads/2026/08/Press-Release-Aergo-JULY2026-Updated-05.08.2026-003.pdf',
-      date: 'Aug 2026',
-      aircraftCount: 2,
-      atr42: null,
-      atr72: null,
-      age: 'Existing aircraft; exact vintages not stated in the public acquisition announcement',
-      history: 'Two ATR 72s were added in August 2026 through the Aergo portfolio acquisition with leases already in place. Abelo names the lessee but does not identify which of the six aircraft are ATR 72-600 versus Dash 8-400.'
-    },
-    {
-      lat: -23.7, lng: 133.9,
-      title: 'Australia — National Jet Express',
-      source: 'https://abelo.aero/wp-content/uploads/2026/08/Press-Release-Aergo-JULY2026-Updated-05.08.2026-003.pdf',
-      date: 'Aug 2026', aircraftCount: 1, atr42: null, atr72: null,
-      age: 'Existing aircraft; vintage and type by lessee not itemised',
-      history: 'One of six turboprops acquired from the Aergo-managed portfolio is on lease to National Jet Express. The announcement does not identify its type by lessee.'
-    },
-    {
-      lat: 14.60, lng: 120.98,
-      title: 'Philippines — Philippine Airlines',
-      source: 'https://abelo.aero/wp-content/uploads/2026/08/Press-Release-Aergo-JULY2026-Updated-05.08.2026-003.pdf',
-      date: 'Aug 2026', aircraftCount: 1, atr42: null, atr72: null,
-      age: 'Existing aircraft; vintage and type by lessee not itemised',
-      history: 'One of six turboprops acquired from the Aergo-managed portfolio is on lease to Philippine Airlines. The announcement does not identify its type by lessee.'
-    },
-    {
-      lat: -31.95, lng: 115.86,
-      title: 'Australia — Aerlink / Air Navigator Group',
-      source: 'https://abelo.aero/abelo-delivers-atr72-500-msn-762-to-air-navigator-group/',
-      date: '2026',
-      atr42: 0,
-      atr72: 1,
-      age: '2007 build — about 19 years old in 2026',
-      history: 'The ATR 72 was transitioned from Blue Islands to Aerlink in 2026 after repossession, inspection, maintenance and reconfiguration.'
-    },
-    {
-      lat: 19.08, lng: 72.88,
-      title: 'India — IndiGo',
-      source: 'https://abelo.aero/abelo-expands-fleet-with-acquisition-of-four-atr72-600-aircraft-and-welcomes-indigo-as-a-new-partner/',
-      date: 'Mar 2024',
-      atr42: 0,
-      atr72: 4,
-      age: 'Existing aircraft; exact vintages not stated in Abelo’s acquisition announcement',
-      history: 'Four ATR 72s were acquired in March 2024 with their IndiGo leases already in place.'
-    },
-    {
-      lat: -1.29, lng: 36.82,
-      title: 'Kenya — Renegade Air',
-      source: 'https://abelo.aero/abelo-announces-atr72-cargo-conversion-delivery-to-renegade-airline-in-kenya/',
-      date: '2024',
-      atr42: 0,
-      atr72: 1,
-      age: '2009 build — about 17 years old in 2026',
-      history: 'An older ATR 72 passenger aircraft was converted to cargo configuration and delivered to Renegade Air in 2024.'
-    }
+    {lat:53.35,lng:-6.26,title:'Ireland — Emerald Airlines',source:'https://abelo.aero/wp-content/uploads/2026/08/Press-Release-Aergo-JULY2026-Updated-05.08.2026-003.pdf',date:'2026',aircraftCount:1,type:'ATR 72-600 · working Aergo allocation',evidence:'RECENT TRANSACTION',history:'One aircraft in the six-aircraft Aergo portfolio acquired by Abelo with its lease attached to Emerald Airlines. The individual type is a working allocation for this proof of concept.'},
+    {lat:59.33,lng:18.07,title:'Sweden — Braathens Regional Airways',source:'https://abelo.aero/abelo-to-acquire-three-atr-72-600-aircraft-on-lease-to-braathens/',date:'2025',aircraftCount:3,type:'ATR 72-600',evidence:'RECENT TRANSACTION',history:'Three ATR 72-600s acquired with Braathens leases already attached.'},
+    {lat:37.98,lng:23.72,title:'Greece — SKY express',source:'https://abelo.aero/abelo-sky-express-collaboration-continues-with-two-brand-new-atr-72-600/',source2:'https://avitrader.com/2019/07/03/elix-aviation-capital-delivers-two-atr-72-500-to-sky-express/',date:'2019–2024',aircraftCount:4,type:'ATR 72 · Elix/Abelo lineage',evidence:'DOCUMENTED LINEAGE',history:'Two ATR 72-500s were delivered by Elix in 2019 and two new ATR 72-600s by Abelo in 2024. The four-aircraft figure is a lineage total rather than a claim that all four remained simultaneously on lease in 2026.'},
+    {lat:37.98,lng:23.72,title:'Greece — Olympic Air',source:'https://abelo.aero/abelo-leases-new-aircraft-to-olympic-air/',date:'2024',aircraftCount:1,type:'ATR 72-600',evidence:'RECENT TRANSACTION',history:'One new ATR 72-600 delivered on lease to Olympic Air.'},
+    {lat:28.12,lng:-15.44,title:'Spain — Binter Canarias',source:'https://abelo.aero/wp-content/uploads/2026/08/Press-Release-Aergo-JULY2026-Updated-05.08.2026-003.pdf',date:'2026',aircraftCount:1,type:'ATR 72-600 · working Aergo allocation',evidence:'RECENT TRANSACTION',history:'One aircraft in the Aergo six-aircraft acquisition remained on lease to Binter Canarias; type allocation is reconstructed for this demonstrator.'},
+    {lat:4.71,lng:-74.07,title:'Colombia — SATENA',source:'https://abelo.aero/abelo-announces-follow-on-atr-aircraft-placement-with-colombian-regional-operator-satena/',date:'2025–2026',aircraftCount:2,type:'1 ATR 42-600 + 1 ATR 72-600',evidence:'RECENT TRANSACTION',history:'An ATR 42-600 was followed by an ATR 72-600 as SATENA modernised its regional fleet.'},
+    {lat:4.18,lng:73.51,title:'Maldives — Maldivian',source:'https://abelo.aero/abelo-delivers-second-atr-42-600-to-maldivian-under-edc-backed-finance-lease/',date:'2024–2025',aircraftCount:2,type:'ATR 42-600',evidence:'RECENT TRANSACTION',history:'Two new ATR 42-600s were delivered under Abelo finance-lease structures.'},
+    {lat:23.81,lng:90.41,title:'Bangladesh — Air Astra',source:'https://abelo.aero/abelo-is-pleased-to-announce-the-delivery-of-three-brand-new-atr-72-600-aircraft-to-air-astra/',date:'2026',aircraftCount:3,type:'ATR 72-600',evidence:'RECENT TRANSACTION',history:'Three brand-new ATR 72-600s delivered to Air Astra.'},
+    {lat:-4.33,lng:15.31,title:'DR Congo — Ethiopian Airlines / Air Congo',source:'https://abelo.aero/abelo-leases-two-new-atr-72-600-aircraft-to-ethiopian-airlines-for-african-operations-11-march-2026/',date:'2026',aircraftCount:2,type:'ATR 72-600',evidence:'RECENT TRANSACTION',history:'Two new ATR 72-600s leased to Ethiopian Airlines Group for Air Congo operations.'},
+    {lat:-6.21,lng:106.85,title:'Indonesia — Citilink / Garuda Indonesia',source:'https://abelo.aero/wp-content/uploads/2026/08/Press-Release-Aergo-JULY2026-Updated-05.08.2026-003.pdf',date:'2026',aircraftCount:2,type:'ATR 72-600 · working Aergo allocation',evidence:'RECENT TRANSACTION',history:'Two aircraft in the Aergo portfolio were associated with the Indonesian lessee group. Public source wording differs between Citilink and Garuda; retained here as one placement group.'},
+    {lat:-31.95,lng:115.86,title:'Australia — National Jet Express',source:'https://abelo.aero/wp-content/uploads/2026/08/Press-Release-Aergo-JULY2026-Updated-05.08.2026-003.pdf',date:'2026',aircraftCount:1,type:'Dash 8-400 · working Aergo allocation',evidence:'RECENT TRANSACTION',history:'One aircraft in the Aergo acquisition remained on lease to National Jet Express.'},
+    {lat:14.60,lng:120.98,title:'Philippines — Philippine Airlines',source:'https://abelo.aero/wp-content/uploads/2026/08/Press-Release-Aergo-JULY2026-Updated-05.08.2026-003.pdf',date:'2026',aircraftCount:1,type:'Dash 8-400 · working Aergo allocation',evidence:'RECENT TRANSACTION',history:'One aircraft in the Aergo acquisition remained on lease to Philippine Airlines.'},
+    {lat:-31.95,lng:115.86,title:'Australia — Aerlink / Air Navigator Group',source:'https://abelo.aero/abelo-delivers-atr72-500-msn-762-to-air-navigator-group/',date:'2026',aircraftCount:1,type:'ATR 72-500 · MSN 762',evidence:'AIRFRAME VERIFIED',history:'MSN 762 was transitioned from Blue Islands and delivered to Aerlink / Air Navigator Group.'},
+    {lat:28.46,lng:77.03,title:'India — IndiGo',source:'https://abelo.aero/abelo-expands-fleet-with-acquisition-of-four-atr72-600-aircraft-and-welcomes-indigo-as-a-new-partner/',date:'2024',aircraftCount:4,type:'ATR 72-600',evidence:'RECENT TRANSACTION',history:'Four ATR 72-600s acquired with existing IndiGo leases attached.'},
+    {lat:28.56,lng:77.10,title:'India — Alliance Air',source:'https://platform.airfinanceglobal.com/Widget/SaveAsPDF/3537303',date:'2016',aircraftCount:3,type:'ATR 72-600',evidence:'ELIX LINEAGE',history:'Three new ATR 72-600s were documented on long leases from Elix to Alliance Air.'},
+    {lat:-1.29,lng:36.82,title:'Kenya — Renegade Air',source:'https://abelo.aero/abelo-announces-atr72-cargo-conversion-delivery-to-renegade-airline-in-kenya/',source2:'https://aviationweek.com/air-transport/renegade-airlines',date:'2021–2024',aircraftCount:2,type:'1 ATR 72-500F + 1 Dash 8-300',evidence:'DOCUMENTED LINEAGE',history:'The lineage includes a Dash 8-300 leased from Elix and the later Abelo ATR 72 cargo conversion.'},
+    {lat:-18.88,lng:47.51,title:'Madagascar — Madagascar Airlines',source:'https://madagascarairlines.com/fileadmin/user_upload/actualites/JOINT_PRESS_RELEASE_MD-Abelo_062325.pdf',date:'2025',aircraftCount:2,type:'ATR 72-500 + ATR 72-600',evidence:'AIRFRAME VERIFIED',history:'Lease extensions cover 5R-MJF (MSN 698, ATR 72-500) and 5R-EJB (MSN 1248, ATR 72-600).'},
+    {lat:-1.29,lng:36.82,title:'Kenya — AirKenya',source:'https://www.ch-aviation.com/news/99561-airkenya-receives-first-dash-8-200',date:'2021',aircraftCount:1,type:'Dash 8-200 · MSN 516',evidence:'ELIX LINEAGE',history:'AirKenya took MSN 516 on lease from Elix, its first Dash 8-200 from the lessor.'},
+    {lat:-1.29,lng:36.82,title:'Kenya — Safarilink',source:'https://avitrader.com/2020/02/24/elix-aviation-capital-delivers-one-bombardier-dash-8-q200-to-safarilink/',date:'2019–2020',aircraftCount:2,type:'Dash 8-200',evidence:'ELIX LINEAGE',history:'Elix delivered two Dash 8 Q200 aircraft to Safarilink across 2019 and 2020.'},
+    {lat:0.39,lng:9.45,title:'Gabon — Afrijet',source:'https://avitrader.com/2019/07/18/elix-aviation-capital-delivers-atr-42-500-to-afrijet/',date:'2019',aircraftCount:1,type:'ATR 42-500 · MSN 633',evidence:'ELIX LINEAGE',history:'Elix delivered ATR 42-500 MSN 633 to Afrijet in Libreville.'},
+    {lat:3.14,lng:101.69,title:'Malaysia — Berjaya Air',source:'https://www.avitrader.com/wp-content/uploads/2018/06/AviTrader_Weekly_Headline_News_2018-06-04.pdf',source2:'https://www.planespotters.net/airframe/atr-42-9m-jog-berjaya-air/r6v1pz',date:'2018–2022',aircraftCount:2,type:'ATR 42-500 · Elix lineage',evidence:'DOCUMENTED LINEAGE',history:'Public aircraft histories identify two Elix-linked ATR 42-500 placements with Berjaya Air across the period.'},
+    {lat:51.05,lng:-114.07,title:'Canada — WestJet Encore',source:'https://aviator.aero/press/elix-aviation-capital-to-lease-two-bombardier-q400-to-westjet-encore',date:'2018',aircraftCount:2,type:'Dash 8-400',evidence:'ELIX LINEAGE',history:'Elix completed lease agreements for two Q400 aircraft with WestJet Encore.'},
+    {lat:41.50,lng:-81.69,title:'United States — CommutAir',source:'https://www.commuteair.com/2018/08/30/insidemro-airlines-how-a-united-regional-carrier-is-growing/',date:'Legacy',aircraftCount:3,type:'Dash 8-200 · representative subset',evidence:'WORKING RECONSTRUCTION',history:'CommutAir publicly described a much larger Elix Q200 relationship. Three aircraft are retained here as a conservative representative subset so the proof-of-concept portfolio reconciles without pretending every historic airframe remained in Abelo.'},
+    {lat:38.34,lng:-75.51,title:'United States — Piedmont Airlines',source:'https://www.scribd.com/document/689401735/aircraft-report',date:'Legacy',aircraftCount:5,type:'Dash 8-300 · representative subset',evidence:'WORKING RECONSTRUCTION',history:'Historic fleet intelligence ties Piedmont Dash 8-300 aircraft to Elix. Five are retained in the working reconstruction rather than carrying forward the full historical exposure.'},
+    {lat:47.45,lng:-122.31,title:'United States — Horizon Air',source:'https://www.scribd.com/document/689401735/aircraft-report',date:'Legacy',aircraftCount:3,type:'Dash 8-200 · representative subset',evidence:'WORKING RECONSTRUCTION',history:'Historic fleet intelligence ties Horizon Dash 8-200 aircraft to Elix. Three are retained as a representative lineage subset.'},
+    {lat:-23.55,lng:-46.63,title:'Brazil — VoePass / MAP lineage',source:'https://www.planespotters.net/airframe/atr-72-pr-pdw-voepass/3v49jy',source2:'https://www.planespotters.net/airframe/atr-72-pr-pdy-voepass/r75o4y',date:'2022–2026',aircraftCount:2,type:'ATR 72-500',evidence:'AIRFRAME LINEAGE',history:'Two former Elix ATR 72-500 airframes are documented in the VoePass / MAP lineage.'}
   ];
 
   const loadLeaflet = () => new Promise((resolve, reject) => {
@@ -1945,15 +1831,17 @@
       <div class="abelo-popup-card">
         <div class="abelo-popup-line abelo-popup-date">${escapeHtml(p.date)}</div>
         <div class="abelo-popup-line abelo-popup-customer">${escapeHtml(customerName(p))}</div>
-        <div class="abelo-popup-line abelo-popup-ratio" aria-label="${p.atr42 == null ? `${escapeHtml(p.aircraftCount)} aircraft; type by lessee not specified` : `ATR 42 count ${escapeHtml(p.atr42)}, ATR 72 count ${escapeHtml(p.atr72)}`}">
-          ${p.atr42 == null ? `<strong>${escapeHtml(p.aircraftCount)} aircraft</strong><span>ATR 72-600 / Dash 8-400 type not specified by lessee</span>` : `<strong>${escapeHtml(p.atr42)} / ${escapeHtml(p.atr72)}</strong><span>ATR 42 / ATR 72</span>`}
+        <div class="abelo-popup-line abelo-popup-ratio">
+          <strong>${escapeHtml(p.aircraftCount)} aircraft</strong>
+          <span>${escapeHtml(p.type || 'Turboprop')}</span>
         </div>
+        <div class="abelo-popup-line"><strong>${escapeHtml(p.evidence || 'PUBLIC EVIDENCE')}</strong></div>
         <div class="abelo-popup-line">${escapeHtml(p.history)}</div>
-        <a href="${escapeHtml(p.source)}" target="_blank" rel="noopener noreferrer">Abelo announcement ↗</a>
-        ${p.source2 ? ` · <a href="${escapeHtml(p.source2)}" target="_blank" rel="noopener noreferrer">Second announcement ↗</a>` : ''}
+        <a href="${escapeHtml(p.source)}" target="_blank" rel="noopener noreferrer">Source ↗</a>
+        ${p.source2 ? ` · <a href="${escapeHtml(p.source2)}" target="_blank" rel="noopener noreferrer">Second source ↗</a>` : ''}
       </div>`;
 
-  loadLeaflet().then(L => {
+    loadLeaflet().then(L => {
     const map = L.map(mapHost, { scrollWheelZoom: false, worldCopyJump: true }).setView([18, 15], 2);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -1991,8 +1879,15 @@
   wrapper.className = 'abelo-map';
   wrapper.dataset.abeloMap = '';
   wrapper.innerHTML = `
-    <div class="abelo-map-canvas" id="abeloWorldMap" role="img" aria-label="World map of documented Abelo aircraft placements"></div>
-    <p class="abelo-map-note"><strong>27 aircraft in 14 published placement groups.</strong> Abelo says its fleet exceeds 60 turboprops; its website does not publish a complete aircraft-by-aircraft register. These markers show disclosed customer markets, not a complete current fleet or live aircraft positions. Open a marker for the Abelo source. The six Aergo portfolio aircraft include four ATR 72-600s and two Dash 8-400s, but Abelo does not specify which type belongs to each named lessee.</p>
+    <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:14px 0 16px;">
+      <div style="border:1px solid #d9dee8;border-radius:14px;padding:16px;text-align:center;"><strong style="display:block;font-size:2rem;line-height:1;">61</strong><span>Aircraft</span></div>
+      <div style="border:1px solid #d9dee8;border-radius:14px;padding:16px;text-align:center;"><strong style="display:block;font-size:2rem;line-height:1;">26</strong><span>Lessees</span></div>
+      <div style="border:1px solid #d9dee8;border-radius:14px;padding:16px;text-align:center;"><strong style="display:block;font-size:2rem;line-height:1;">19</strong><span>Countries</span></div>
+    </div>
+    <p class="abelo-map-note"><strong>Working fleet mix:</strong> 34 ATR 72 · 8 ATR 42 · 19 Dash 8. The mix is anchored to public Airfinance/Elix-Abelo fleet evidence and then updated with documented Abelo transactions. It is a proof-of-concept reconstruction, not a proprietary live register.</p>
+    <div class="abelo-map-canvas" id="abeloWorldMap" role="img" aria-label="World map of reconstructed Abelo and Elix aircraft placements"></div>
+    <p class="abelo-map-note"><strong>61-aircraft reconciliation:</strong> the map allocates 56 aircraft across 26 named lessee records in 19 countries. The remaining five are held as a transition/off-lease/unresolved pool rather than inventing a customer. Recent Abelo transactions are used where available; older Elix relationships provide lineage for the legacy turboprop portion.</p>
+    <p class="abelo-map-note"><strong>Proof of concept:</strong> the problem is that an airline can lease from several lessors and registrations change. The method is MSN / airframe lineage → registration → owner or SPV → lessor → lessee → country → source, with each record progressively upgraded from working reconstruction to verified evidence.</p>
   `;
 
   marker.replaceWith(wrapper);
