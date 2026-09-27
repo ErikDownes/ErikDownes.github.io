@@ -543,6 +543,253 @@ body.answer-focus-open{overflow:hidden}
   margin: .55rem 0;
 }
 
+.glossary-deep-dive {
+  margin: .9rem 0 .35rem;
+  border: 1px solid #d8e4ef;
+  border-radius: 12px;
+  background: #f8fbff;
+  overflow: hidden;
+}
+
+.glossary-deep-dive > summary {
+  cursor: pointer;
+  padding: .72rem .85rem;
+  color: #0c5fa6;
+  font-weight: 850;
+  list-style-position: inside;
+}
+
+.glossary-learning-body {
+  display: grid;
+  gap: .8rem;
+  padding: 0 .85rem .9rem;
+}
+
+.glossary-formula {
+  border-left: 4px solid #1680c4;
+  border-radius: 0 9px 9px 0;
+  background: #eaf5ff;
+  padding: .7rem .8rem;
+  color: #173f69;
+}
+
+.glossary-formula strong {
+  display: block;
+  margin-bottom: .2rem;
+  font-size: .72rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.glossary-frayer {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .65rem;
+}
+
+.glossary-frayer-card {
+  min-width: 0;
+  border: 1px solid #dde6ef;
+  border-radius: 10px;
+  background: #fff;
+  padding: .72rem .8rem;
+}
+
+.glossary-frayer-card h4 {
+  margin: 0 0 .45rem;
+  color: #143f6b;
+  font-size: .9rem;
+}
+
+.glossary-frayer-card ul {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.glossary-frayer-card li {
+  margin: .28rem 0;
+  line-height: 1.45;
+}
+
+.glossary-mini-section {
+  border-top: 1px solid #dfe7ef;
+  padding-top: .55rem;
+}
+
+.glossary-mini-section > summary {
+  cursor: pointer;
+  font-weight: 800;
+  color: #244d70;
+}
+
+.glossary-learning-check,
+.glossary-self-check {
+  border-radius: 10px;
+  padding: .8rem;
+  background: #fff;
+  border: 1px solid #dce6ef;
+}
+
+.glossary-learning-label {
+  display: block;
+  margin-bottom: .45rem;
+  color: #136fac;
+  font-size: .68rem;
+  font-weight: 900;
+  letter-spacing: .12em;
+}
+
+.glossary-check-prompt {
+  margin: .2rem 0 .65rem !important;
+  font-weight: 750;
+}
+
+.glossary-check-options {
+  display: grid;
+  gap: .45rem;
+}
+
+.glossary-check-options button {
+  width: 100%;
+  border: 1px solid #c9d9e9;
+  border-radius: 9px;
+  background: #f8fbff;
+  color: #173e69;
+  padding: .62rem .7rem;
+  text-align: left;
+  font: inherit;
+  font-weight: 650;
+  line-height: 1.35;
+  cursor: pointer;
+}
+
+.glossary-check-options button:not(:disabled):hover,
+.glossary-check-options button:focus-visible {
+  border-color: #2380c7;
+  background: #eaf5ff;
+  outline: none;
+}
+
+.glossary-check-options button:disabled {
+  cursor: default;
+  opacity: .72;
+}
+
+.glossary-check-options button.is-correct {
+  border-color: #2d876e;
+  background: #edf9f5;
+  color: #176750;
+  opacity: 1;
+}
+
+.glossary-check-options button.is-incorrect {
+  border-color: #ad6671;
+  background: #fff3f4;
+  color: #8b3a46;
+  opacity: 1;
+}
+
+.glossary-check-feedback[hidden] {
+  display: none;
+}
+
+.glossary-check-feedback {
+  margin: .65rem 0 0 !important;
+  padding: .55rem .65rem;
+  border-left: 3px solid #1680c4;
+  background: #eef7ff;
+}
+
+.glossary-self-check > p {
+  margin: .2rem 0 .55rem !important;
+}
+
+.glossary-self-check-list {
+  display: grid;
+  gap: .45rem;
+}
+
+.glossary-self-check-list label {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: .55rem;
+  align-items: start;
+  line-height: 1.4;
+  cursor: pointer;
+}
+
+.glossary-self-check-list input {
+  margin-top: .2rem;
+}
+
+.aercap-glossary-pop .glossary-deep-dive {
+  border-color: rgba(143, 211, 255, .3);
+  background: rgba(255, 255, 255, .06);
+}
+
+.aercap-glossary-pop .glossary-deep-dive > summary,
+.aercap-glossary-pop .glossary-mini-section > summary,
+.aercap-glossary-pop .glossary-learning-label,
+.aercap-glossary-pop .glossary-frayer-card h4 {
+  color: #8fd3ff;
+}
+
+.aercap-glossary-pop .glossary-learning-body {
+  padding-left: .7rem;
+  padding-right: .7rem;
+}
+
+.aercap-glossary-pop .glossary-formula,
+.aercap-glossary-pop .glossary-frayer-card,
+.aercap-glossary-pop .glossary-learning-check,
+.aercap-glossary-pop .glossary-self-check,
+.aercap-glossary-pop .glossary-check-feedback {
+  border-color: rgba(143, 211, 255, .25);
+  background: rgba(255, 255, 255, .08);
+  color: #edf7ff;
+}
+
+.aercap-glossary-pop .glossary-formula {
+  border-left-color: #8fd3ff;
+}
+
+.aercap-glossary-pop .glossary-frayer-card li,
+.aercap-glossary-pop .glossary-self-check-list label,
+.aercap-glossary-pop .glossary-mini-section p {
+  color: #edf7ff;
+}
+
+.aercap-glossary-pop .glossary-check-options button {
+  border-color: rgba(143, 211, 255, .34);
+  background: rgba(255, 255, 255, .1);
+  color: #fff;
+}
+
+.aercap-glossary-pop .glossary-check-options button.is-correct {
+  border-color: #77d2b3;
+  background: rgba(48, 145, 113, .24);
+  color: #eafff8;
+}
+
+.aercap-glossary-pop .glossary-check-options button.is-incorrect {
+  border-color: #f2a0ad;
+  background: rgba(181, 76, 92, .24);
+  color: #fff1f3;
+}
+
+@media (max-width: 620px) {
+  .glossary-frayer {
+    grid-template-columns: 1fr;
+  }
+  .glossary-deep-dive > summary {
+    padding: .72rem .75rem;
+  }
+  .glossary-learning-body {
+    padding-left: .75rem;
+    padding-right: .75rem;
+  }
+}
+
 
 .answer-focus-editor{
   display:block;
