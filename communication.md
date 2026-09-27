@@ -2,7 +2,7 @@
 layout: doc
 handle: Home
 title: Home
-nav_order: 30
+nav_order: 1
 intro: Prepare your ideas, pause, and communicate them clearly for the audience
   in front of you.
 ---
