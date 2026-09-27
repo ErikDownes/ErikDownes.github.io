@@ -464,7 +464,7 @@ Topics to develop:
 
 A useful dashboard should let a user change assumptions and see the financial consequences rather than stare at a fixed calculation.
 
-[Open the Aircraft Leasing Decision Lab]({{ '/lease-dashboard.html' | relative_url }})
+[Open the Aircraft Leasing Decision Lab on Dashboards]({{ '/dashboards.html' | relative_url }}#aircraft-leasing-decision-lab)
 
 The lab includes:
 
@@ -478,7 +478,7 @@ The lab includes:
 
 This project is useful because the **technology choice is part of the evidence**.
 
-[Open the Mortgage Calculator Decision Lab]({{ '/mortgage-calculator.html' | relative_url }})
+[Open the finance learning lab on Dashboards]({{ '/dashboards.html' | relative_url }}#finance-learning-lab)
 
 ### Technology stack
 
@@ -806,4 +806,3 @@ The ATR 42 and ATR 72 remain centred on the same fundamental proposition that cr
 - **2025:** acquired by **Cerberus** from Oaktree — a global investment firm managing about **€63 billion** in assets.
 
 **Key idea:** Elix brought the **platform and fleet**; ADARE brought the **management expertise**; Cerberus provides the **large-scale investment backing**.
-

@@ -113,5 +113,5 @@ content:
         order: asc
 
   - { name: questions, label: "Questions", type: file, path: questions.md, format: yaml-frontmatter, fields: *docfields }
-  - { name: apps, label: "Apps", type: file, path: apps.md, format: yaml-frontmatter, fields: *docfields }
+  - { name: dashboards, label: "Dashboards", type: file, path: dashboards.md, format: yaml-frontmatter, fields: *docfields }
   - { name: glossary, label: "Glossary (A–Z)", type: file, path: glossary.md, format: yaml-frontmatter, fields: *docfields }

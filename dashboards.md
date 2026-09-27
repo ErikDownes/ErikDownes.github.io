@@ -1,11 +1,45 @@
 ---
 layout: doc
-handle: Finance
-title: Finance — From a Friend Loan to an Aircraft
+handle: Dashboards
+title: Dashboards — Aircraft & Finance
 nav_order: 70
-eyebrow: LEARN · LANGUAGE · APPLY
-intro: Start with the simplest possible loan, add the language of risk and interest, then carry the same cash-flow thinking into a car, a house and finally an aircraft.
+eyebrow: EXPLORE · EXPLAIN · APPLY
+intro: Explore the aircraft portfolio, test a leasing decision and follow the financial ideas from a simple loan to an aircraft. Use the results to practise explaining what matters in an Asset Management role.
 ---
+
+## The placement in one view
+
+Abelo asks the intern to help prepare **lease reports**, keep **aircraft and contract data accurate**, support **billing**, and improve **reporting and processes**. Commercial, Finance and Legal may all use that work. These dashboards are practice tools for thinking through those tasks; their figures and scenarios are not Abelo's internal data or decisions.
+
+**Interview answer:** “I would start by learning the lease requirements and checking the underlying data. I could then help make reporting and billing more reliable, and use my quantitative skills to explain what a change in the numbers means.”
+
+[Explore the fleet](#fleet-map) · [Test a leasing decision](#aircraft-leasing-decision-lab) · [Use the finance lab](#finance-learning-lab)
+
+<a id="fleet-map"></a>
+## Fleet map | Ask what the records tell us
+
+The interactive map brings together a public-record reconstruction of **61 aircraft, 26 lessees and 19 countries**. Treat the individual placements as research leads where records are incomplete.
+
+ABEL0_MAP_APP
+
+**Job connection:** A useful report needs consistent aircraft identities, lessee names, lease dates and source records. If two sources disagree, flag the discrepancy before using it for billing or a decision.
+
+<a id="aircraft-leasing-decision-lab"></a>
+## Aircraft leasing decision lab | Change one assumption
+
+Try an aircraft age or lease income, then compare the value of extending a lease with re-leasing after downtime and transition cost. The model uses **illustrative assumptions** and is designed for discussion, not Abelo pricing.
+
+<details class="embedded-app">
+  <summary><strong>Open the aircraft leasing lab</strong></summary>
+  <iframe title="Aircraft Leasing Decision Lab" src="{{ '/lease-dashboard.html' | relative_url }}#leaseLab" style="width:100%;height:920px;border:1px solid rgba(127,127,127,.28);border-radius:16px;margin-top:14px;background:#fff;" loading="lazy"></iframe>
+</details>
+
+**Job connection:** A clean dashboard should make a change visible and explainable. Which assumption drove the result: rent, downtime, maintenance cost or residual value? State what you checked before drawing a conclusion.
+
+<a id="finance-learning-lab"></a>
+## Finance learning lab | From a friend loan to an aircraft
+
+Start with the words **principal, term, repayment and risk**. Then build toward interest, PCP, a mortgage and an aircraft that earns lease income. The controls below let you test each step.
 
 ## Financial instruments | Start with the contract, not the formula
 

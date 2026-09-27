@@ -53,6 +53,34 @@ intro: Interviews are not about inventing brilliant answers on the spot. They ar
   <strong>Make the statement. Then support it.</strong>
 </div>
 
+## The Abelo Role | What to show in the interview
+
+<p class="home-section-lead">For this placement, show that you can learn the aircraft leasing business and do careful work that other teams can rely on. Keep each answer specific to a task in the job description.</p>
+
+<div class="home-three">
+  <div class="home-panel">
+    <span class="home-panel-number">01</span>
+    <strong>Accurate records</strong>
+    <p>Lease reports, aircraft data and billing depend on checking dates, terms and figures against the source.</p>
+  </div>
+  <div class="home-panel">
+    <span class="home-panel-number">02</span>
+    <strong>Useful reporting</strong>
+    <p>Show how you turn data into a clear report, check it and explain a change. The role mentions Power BI and other reporting systems.</p>
+  </div>
+  <div class="home-panel">
+    <span class="home-panel-number">03</span>
+    <strong>Learn and improve</strong>
+    <p>Be ready to support Asset Management, Commercial, Finance and Legal, ask good questions and improve a repeatable process.</p>
+  </div>
+</div>
+
+<div class="practice-rule home-practice">
+  <strong>Say it:</strong> “I want to learn how the lease and the aircraft are managed together. I can bring quantitative skills, careful checking and a willingness to make reporting more useful.”
+</div>
+
+<p><a href="{{ '/abelo.html' | relative_url }}">Understand Abelo and the role</a> · <a href="{{ '/dashboards.html' | relative_url }}">Explore the aircraft and finance dashboards</a></p>
+
 ## 40 · 60 · 80 Seconds | Control the length
 
 <p class="home-section-lead">
