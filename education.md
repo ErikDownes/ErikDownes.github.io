@@ -4,34 +4,28 @@ handle: Education
 title: Education
 nav_order: 40
 eyebrow: INTERVIEW PRACTICE
-intro: "Understand the idea. Say it briefly. Then try it without the text."
+intro: "Read it. Retrieve it. Reflect on it. Say it."
 study_mode: true
 ---
 
 <div class="education-aercap-intro">
   <div class="education-aercap-kicker">ERIK · AVIATION ASSET MANAGEMENT</div>
   <div class="education-aercap-title">UNDERSTAND.<br>SAY IT.<br><span>OWN IT.</span></div>
-  <p>Each card is a short idea you could explain in an interview. Read it, reveal one idea at a time, then speak without looking. The questions check whether you can use the idea. Follow the source link if you want the full industry explanation.</p>
+  <p>Read for context. Study one idea at a time. Check what you can retrieve. Reflect on your confidence. Then speak without the text. Repeated retrieval, feedback, self-assessment and articulation turn exposure into usable knowledge.</p>
 </div>
 
-
-
-## The Lifecycle of an Aircraft
-<div class="aercap-beamer" data-aercap-beamer data-title="The Lifecycle of an Aircraft"><div class="aercap-source">
-
-<p>Aircraft asset management is multifaceted. Technical condition, maintenance, lease terms, airline credit, market demand, financing and residual value all interact over the life of the aircraft.</p>
-
-<p>Some decisions can be analysed quantitatively, but the future is uncertain. The asset manager has to combine data and financial analysis with deep sector knowledge and commercial judgement — particularly around lease extensions, lease transitions, remarketing and sale.</p>
-
-<p><strong>Say it:</strong> “What attracts me to asset management is that quantitative analysis meets deep industry knowledge and judgement under uncertainty. You are managing several things at once — the aircraft, the lease, the airline, maintenance, cash flows and the future market. I think that makes it a very interesting and creative problem-solving role.”</p>
-
+## Aircraft Leasing 101
+<div class="aercap-beamer" data-aercap-beamer data-title="Aircraft Leasing 101"><div class="aercap-source">
+<p>An airline can lease an aircraft rather than fund its full purchase. A lessor buys the asset and earns rent while the airline operates it.</p>
+<p>The lease agreement sets the lease term, rent and other obligations. The lessor has to judge the airline, the aircraft, the contract and what the aircraft may be worth when the lease ends.</p>
+<p><strong>Say it:</strong> “What interests me is that a lease is both a financing decision and an asset decision. The aircraft must work for the airline now and remain attractive to another operator later.”</p>
 </div></div>
 
 ## The Lifecycle of an Aircraft
 <div class="aercap-beamer" data-aercap-beamer data-title="The Lifecycle of an Aircraft"><div class="aercap-source">
-<p>An aircraft can be leased, returned and placed with another airline. Its condition and market demand affect each transition.</p>
-<p>At a decision point, the lessor can extend the lease, re-lease the aircraft or sell it. The best choice depends on the likely return from each option.</p>
-<p><strong>Say it:</strong> “Asset management interests me because a decision about maintenance or lease extension can affect what happens to the aircraft years later.”</p>
+<p>Aircraft asset management is multifaceted. Technical condition, maintenance, lease terms, airline credit, market demand, financing and residual value all interact over the life of the aircraft.</p>
+<p>Some decisions can be analysed quantitatively, but the future is uncertain. The asset manager has to combine data and financial analysis with deep sector knowledge and commercial judgement — particularly around lease extensions, lease transitions, remarketing and sale.</p>
+<p><strong>Say it:</strong> “What attracts me to asset management is that quantitative analysis meets deep industry knowledge and judgement under uncertainty. You are managing several things at once — the aircraft, the lease, the airline, maintenance, cash flows and the future market. I think that makes it a very interesting and creative problem-solving role.”</p>
 </div></div>
 
 ## Maintenance Reserves
@@ -48,8 +42,6 @@ study_mode: true
 <p><strong>Say it:</strong> “I can see why accurate reporting matters: a small change in payments or utilisation could be an early signal that deserves a closer look.”</p>
 </div></div>
 
-
-
 ## Balance Sheet Discipline in Aircraft Leasing
 <div class="aercap-beamer" data-aercap-beamer data-title="Balance Sheet Discipline in Aircraft Leasing"><div class="aercap-source">
 <p>Aircraft require substantial funding, while lease income arrives over years. A lessor needs enough liquidity to meet obligations through changing markets.</p>
@@ -64,9 +56,6 @@ study_mode: true
 <p><strong>Say it:</strong> “I would ask what condition we acquired, what condition the lease requires at return and how that difference is reflected in the deal.”</p>
 </div></div>
 
-
-
-
 ## Valuation Practices in Aircraft Leasing
 <div class="aercap-beamer" data-aercap-beamer data-title="Valuation Practices in Aircraft Leasing"><div class="aercap-source">
 <p>An aircraft’s book value reflects its purchase and depreciation history. Its market value can differ as demand, supply and condition change.</p>
@@ -74,19 +63,11 @@ study_mode: true
 <p><strong>Say it:</strong> “I would want to understand the assumptions behind a valuation, especially the aircraft’s condition and its prospects with other operators.”</p>
 </div></div>
 
-
 ## Power-by-the-Hour
-
-<div class="aercap-beamer" data-aercap-beamer data-title="Power-by-the-Hour">
-<div class="aercap-source">
-
+<div class="aercap-beamer" data-aercap-beamer data-title="Power-by-the-Hour"><div class="aercap-source">
 <p>Under a power-by-the-hour arrangement, some rent follows how much an aircraft flies. That can help an airline through a period of uncertain demand such as covid.</p>
-
 <p>The lessor must weigh that flexibility against its need for predictable income. The exact contract determines when payments return to a fixed basis.</p>
-
 <p><strong>Say it:</strong> “It is a useful example of lease terms responding to a shock. I would be interested in how the team decides when flexibility protects value.”</p>
-
-</div>
-</div>
+</div></div>
 
 <div class="education-source-note">These are interview practice notes drawn from broader industry material, not descriptions of Abelo’s internal policies. <a href="https://www.aercap.com/investors/investor-education" target="_blank" rel="noopener">Explore the original AerCap Investor Education series</a> for the full explanations.</div>
