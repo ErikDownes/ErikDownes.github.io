@@ -48,6 +48,21 @@
     if (!glossary) return;
 
     let activeDeck = null;
+    const pop = document.createElement('aside');
+    pop.className = 'aercap-glossary-pop';
+    pop.setAttribute('role', 'dialog');
+    pop.setAttribute('aria-label', 'Glossary definition');
+    pop.setAttribute('aria-live', 'polite');
+    pop.hidden = true;
+    document.body.append(pop);
+    let returnFocus = null;
+    const closePop = () => {
+      pop.hidden = true;
+      if (returnFocus?.isConnected) returnFocus.focus({ preventScroll: true });
+    };
+    document.addEventListener('pointerdown', event => {
+      if (!pop.hidden && !pop.contains(event.target) && !event.target.closest?.('.glossary-term')) pop.hidden = true;
+    });
     document.querySelectorAll('[data-aercap-beamer]').forEach(box => {
       const source = box.querySelector('.aercap-source');
       if (!source) return;
@@ -88,19 +103,21 @@
       const test = document.createElement('div');
       test.className = 'aercap-test';
       test.hidden = true;
-      const pop = document.createElement('aside');
-      pop.className = 'aercap-glossary-pop';
-      pop.setAttribute('aria-live', 'polite');
-      pop.hidden = true;
-
       const showTerm = term => {
         const entry = glossary.readGlossary().find(item => item.term.toLowerCase() === term.toLowerCase());
         if (!entry) return;
+        returnFocus = document.activeElement;
+        const close = document.createElement('button');
+        close.type = 'button';
+        close.className = 'aercap-glossary-close';
+        close.setAttribute('aria-label', 'Close definition');
+        close.textContent = '×';
+        close.addEventListener('click', closePop);
         const title = document.createElement('strong');
         title.textContent = entry.term;
         const definition = document.createElement('p');
         definition.textContent = entry.definition;
-        pop.replaceChildren(title, definition);
+        pop.replaceChildren(close, title, definition);
         if (entry.why || entry.cue) {
           const why = document.createElement('p');
           const lead = document.createElement('b');
@@ -109,6 +126,7 @@
           pop.append(why);
         }
         pop.hidden = false;
+        close.focus({ preventScroll: true });
       };
 
       const updateChrome = () => {
@@ -130,15 +148,10 @@
 
       const renderLearn = () => {
         stage.replaceChildren();
-        const start = Math.max(0, index - 3);
-        beats.slice(start, index + 1).forEach((text, offset) => {
-          const paragraph = document.createElement('p');
-          paragraph.className = 'aercap-beat';
-          if (start + offset === index) paragraph.classList.add('is-active');
-          else if (start + offset >= index - 1) paragraph.classList.add('is-recent');
-          paragraph.textContent = text;
-          stage.append(paragraph);
-        });
+        const paragraph = document.createElement('p');
+        paragraph.className = 'aercap-beat is-active';
+        paragraph.textContent = beats[index];
+        stage.append(paragraph);
         glossary.linkKnownGlossaryTerms(stage, showTerm);
         updateChrome();
         pop.hidden = true;
@@ -247,12 +260,14 @@
       box.addEventListener('focusin', () => { activeDeck = box; });
       source.hidden = true;
       box.prepend(head, controls);
-      box.append(stage, read, test, pop);
+      box.append(stage, read, test);
       renderLearn();
       updateChrome();
     });
 
     document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && !pop.hidden) { closePop(); return; }
+      if (!pop.hidden) return;
       if (!activeDeck || activeDeck.navigate.mode !== 'learn' || document.body.classList.contains('answer-focus-open')) return;
       if (event.target.closest?.('input, textarea, select, [role="dialog"]')) return;
       if (event.key === 'ArrowRight' || (event.key === ' ' && !event.target.closest?.('button, a'))) {
