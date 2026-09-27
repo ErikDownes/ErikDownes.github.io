@@ -43,7 +43,7 @@
   {% assign cms_base = 'https://app.pagescms.org/ronandownes/coop/main' %}
   {% assign cms_url = cms_base %}
   {% case page.path %}
-    {% when 'index.md' %}{% assign cms_url = cms_base | append: '/file/home' %}
+    {% when 'communication.md' %}{% assign cms_url = cms_base | append: '/file/communication' %}
     {% when 'candidate-profile.md' %}{% assign cms_url = cms_base | append: '/file/candidate_profile' %}
     {% when 'abelo.md' %}{% assign cms_url = cms_base | append: '/file/abelo' %}
     {% when 'education.md' %}{% assign cms_url = cms_base | append: '/file/education' %}

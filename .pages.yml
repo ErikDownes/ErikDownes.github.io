@@ -40,10 +40,10 @@ components:
           rename: safe
 
 content:
-  - name: home
-    label: "Prepare"
+  - name: communication
+    label: "Communication"
     type: file
-    path: index.md
+    path: communication.md
     format: yaml-frontmatter
     fields:
       - { name: layout, type: string, hidden: true }

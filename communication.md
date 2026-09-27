@@ -1,9 +1,10 @@
 ---
 layout: doc
-handle: Prepare
-title: Interview Preparation
+permalink: /
+handle: Communication
+title: Communication
 nav_order: 10
-intro: Interviews are not about inventing brilliant answers on the spot. They are about retrieving what you know, structuring it and saying it clearly under pressure.
+intro: Retrieve what you know, structure it and communicate it clearly under pressure.
 ---
 <div class="home-hero">
   <div class="home-hero-kicker">AN INTERVIEW IS A PERFORMANCE</div>
