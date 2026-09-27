@@ -9,9 +9,9 @@ study_mode: true
 ---
 
 <div class="education-aercap-intro">
-  <div class="education-aercap-kicker">AERCAP · INVESTOR EDUCATION</div>
+  <div class="education-aercap-kicker">ERIK · AVIATION ASSET MANAGEMENT</div>
   <div class="education-aercap-title">LISTEN.<br>READ.<br><span>STUDY.</span></div>
-  <p>Use the play button beside a section heading to listen. Read the cleaned transcript, then study one idea at a time with short recall prompts. Speak opens the existing rehearsal space. Check gives feedback at the end so you know what to revisit. Tap highlighted terms for definitions throughout.</p>
+  <p>I already had an interest in aviation. I gave myself several days to turn that into an informed interest in aviation asset management, then built this tool to make the ideas easier to learn, question and explain. Listen, read and study one idea at a time; use recall, speaking and the final check to test whether you can explain it rather than just recognise it.</p>
 </div>
 
 ## Power-by-the-Hour
@@ -48,16 +48,18 @@ study_mode: true
 
 ## Maintenance Rights Assets
 <div class="aercap-beamer" data-aercap-beamer data-title="Maintenance Rights Assets"><div class="aercap-source">
-<p>A Maintenance Rights Asset, or MRA, can arise when a lessor buys an aircraft with an existing lease attached, often through M&amp;A.</p>
-<p>The new owner acquires a contractual right to receive the aircraft at lease end in better maintenance condition than its condition at the acquisition date. That right has value separate from the physical aircraft.</p>
-<p>The concept is particularly relevant to lessors that engage in large-scale M&amp;A because it is a feature of purchase accounting. AerCap encountered substantial MRA after the acquisition of ILFC in 2014 and GECAS in 2021.</p>
-<p>Purchase-price accounting separates the acquired asset into two parts on the balance sheet. Flight equipment held for operating lease is the aircraft’s “metal value”; the MRA records the value of the maintenance right in the attached lease.</p>
-<p>Although the metal and the Maintenance Rights Asset are both part of the aircraft’s economic value and trade together on sale, they are treated differently for accounting purposes.</p>
-<p>The metal value is depreciated on a straight-line basis over the aircraft’s remaining useful life. The MRA is instead amortised when a relevant event occurs over the remaining lease term, such as lease end, aircraft sale or a maintenance shop visit.</p>
-<p>Suppose a company acquires a ten-year-old aircraft for $50 million with an existing two-year lease. The redelivery condition in the lease is $15 million better than the aircraft’s actual maintenance condition at acquisition.</p>
-<p>Purchase accounting separates the $50 million price into a $35 million flight-equipment asset and a $15 million MRA. The aircraft has about fifteen years of useful life left, but the attached lease has only two years left.</p>
-<p>The $35 million of metal value is depreciated over that remaining fifteen-year aircraft life. The $15 million MRA can be amortised when a relevant event occurs within the next two years, creating a much faster expense pattern.</p>
-<p>Relative to buying an economically identical aircraft outright, purchase accounting can therefore produce higher effective depreciation, lower reported asset values and lower profits in the earlier years after an acquisition.</p>
+<p><strong>Start with a real Abelo transaction.</strong> In March 2024 Abelo acquired four ATR 72-600 aircraft through SKY Leasing. All four aircraft already had leases attached and were operating with IndiGo.</p>
+<p>That is exactly the kind of acquisition that should make an asset manager ask a maintenance-rights question: <strong>what maintenance condition did we buy today, and what maintenance condition does the existing lease require us to receive back?</strong></p>
+<p>A <strong>Maintenance Rights Asset, or MRA</strong>, can arise when a lessor acquires an aircraft subject to an existing lease and the contractual return condition is better than the aircraft's physical maintenance condition at the acquisition date. The difference is a contractual economic right, separate from the aircraft's metal value.</p>
+<p>Think about the aircraft component by component. How much engine life remains? When are the next shop visits due? What life remains on landing gear and major components? What heavy checks are approaching? What does the redelivery clause require the lessee to restore, replace or compensate for?</p>
+<p>If the lessor acquires an aircraft partly through a maintenance cycle but the lease requires the lessee to return it in a stronger maintenance position, the purchaser has bought more than the physical aircraft sitting on the ramp. It has also acquired the right to that future maintenance value.</p>
+<p><strong>Abelo gives us a second real situation.</strong> In June 2025 it announced the acquisition of three 2015/2016-vintage ATR 72-600 aircraft already on lease to Braathens Regional Airways. Again, an asset manager would want to understand the maintenance condition at acquisition, the lease return conditions, maintenance reserves or other compensation mechanisms, and the value of those rights.</p>
+<p><strong>Important evidence distinction:</strong> Abelo's public announcements confirm that these aircraft were acquired with leases attached. They do not disclose the aircraft-by-aircraft maintenance condition, purchase-price allocation or whether Abelo recognised an MRA. We can identify the question; we should not invent the answer.</p>
+<p>For a simplified example, suppose a used aircraft with an attached lease is acquired for $50 million. If $35 million represents the aircraft in its present physical condition and $15 million represents the fair value of a contractual maintenance right, purchase accounting may recognise the aircraft and the maintenance right separately. The precise subsequent accounting depends on the lease terms and how the maintenance benefit is ultimately realised.</p>
+<p><strong>Do not confuse an MRA with maintenance reserves.</strong> Maintenance reserves are contractual payments linked to future maintenance exposure. An MRA is the value, at acquisition, of a maintenance-related contractual right embedded in an existing lease.</p>
+<p><strong>Erik's asset-management question:</strong> If Abelo buys an aircraft already on lease, what is its maintenance position today, what must the lessee give back, what payments or reserves sit between those two states, and what is that contractual difference worth?</p>
+<p><strong>Remember it:</strong> I bought the aircraft partly used; the lease may require me to get it back restored. <strong>That difference can have value.</strong></p>
+<p class="education-inline-source"><strong>Real situations:</strong> <a href="https://abelo.aero/wp-content/uploads/2024/03/Abelo-Press-Release-25032024.pdf" target="_blank" rel="noopener">Abelo / IndiGo acquisition</a> · <a href="https://abelo.aero/wp-content/uploads/2025/06/Abelo-to-acquire-Three-ATR-72-600-Aircraft-on-lease-to-Braathens.pdf" target="_blank" rel="noopener">Abelo / Braathens acquisition</a></p>
 </div></div>
 
 ## Maintenance Reserves
@@ -139,4 +141,4 @@ study_mode: true
 <p>Matching the timing, duration and rate structure of leases and debt reduces duration risk: the risk that funding reprices or matures while lease income remains fixed. This helps preserve flexibility and long-run shareholder value.</p>
 </div></div>
 
-<div class="education-source-note"><strong>Source:</strong> Eight AerCap Investor Education transcript PDFs supplied for this site. Repeated introductions, closings and chart extraction noise have been removed. Figures describe the period of each original video, not necessarily AerCap today.</div>
+<div class="education-source-note"><strong>Sources:</strong> Industry background includes the AerCap Investor Education transcripts supplied for this site. Abelo examples are drawn from public Abelo and counterpart announcements. The lessons, questions and study workflow have been reorganised and rewritten as Erik's aviation asset-management learning tool. Period-specific figures should not be read as current unless explicitly stated.</div>
