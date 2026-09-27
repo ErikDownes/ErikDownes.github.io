@@ -18,6 +18,24 @@ So what I'm looking for now is a placement where I can bring that analytical bac
 
 **Recall cue:** Analytical mind → H1s → Financial Mathematics → applications → aviation → real business.
 
+##   
+  
+Promise | In 15 minutes you will know my passion and skills for this intern job
+
+  
+cycle on a subject   
+tell em what you want to tell em  
+tell em again  
+tell em what you told them
+
+Build a fence around your skills  
+  
+I will be only one who build your fleet dashboard and a asset management app
+
+
+
+&nbsp;
+
 ## Why this course || Why did you choose Financial Mathematics?
 
 I wanted a course that kept the rigour of mathematics but connected it to finance, probability, data and real decision-making. The course suits me because I enjoy analytical problems, but I also like understanding what the answer means in practice rather than stopping at the calculation.
