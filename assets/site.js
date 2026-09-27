@@ -11,6 +11,15 @@
   const ORDER_PREFIX = 'coop-section-order:v1:';
   const GLOSSARY_PREFIX = 'coop-glossary:v1';
   const GLOSSARY_SEED = [
+    { term: 'Lease transition',
+  definition: 'The process of moving an aircraft from one lease or operator to another, including redelivery, technical records, maintenance status, remarketing and delivery to the next lessee.',
+  why: 'A well-managed transition reduces downtime and helps protect the aircraft’s value and future lease income.'
+},
+
+{ term: 'Lease term',
+  definition: 'The agreed length of time for which an aircraft is leased to an airline.',
+  why: 'The lease term affects revenue visibility, remarketing timing, residual-value exposure and future fleet options.'
+},
     { term: 'Commercial awareness', definition: 'Understanding how an organisation creates value, controls cost, serves customers and responds to its market.', cue: 'Business model → costs → customers → decisions.' },
     { term: 'Correlation', definition: 'A measure of the strength and direction of association between two variables.', cue: 'Association, not causation.' },
     { term: 'Discounting', definition: 'Converting future cash flows into an equivalent value today using a discount rate.', cue: 'Future cash → rate → today.' },
