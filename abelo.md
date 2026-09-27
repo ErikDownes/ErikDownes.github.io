@@ -1,6 +1,6 @@
 ---
 layout: doc
-handle: Abelo & Asset Management
+handle: Asset Management
 title: Abelo & Asset Management
 nav_order: 30
 eyebrow: Know the  job company and industry
