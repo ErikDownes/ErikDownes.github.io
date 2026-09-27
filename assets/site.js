@@ -975,8 +975,8 @@
   linkKnownGlossaryTerms(body);
 
   const sectionHeadings = () => Array.from(body.querySelectorAll(':scope > h2[data-section-heading]'));
-  // Every top-level H2 is rehearsal-capable. Pipes only control the menu handle/title split.
-  const practiceHeadings = () => sectionHeadings();
+  // Education has its own learning-cycle controls; keep the generic rehearsal chrome off that page.
+  const practiceHeadings = () => document.body.classList.contains('education-mode') ? [] : sectionHeadings();
 
   const sourceNodesFor = heading => {
     const nodes = [];
@@ -1257,6 +1257,7 @@
   addInlinePlayButtons();
 
   const addSectionMoveMenus = () => {
+    if (document.body.classList.contains('education-mode')) return;
     sectionHeadings().forEach(heading => {
       if (heading.querySelector(':scope > .section-move-menu')) return;
       const wrap = document.createElement('span');
