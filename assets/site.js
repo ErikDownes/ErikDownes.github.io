@@ -1834,19 +1834,20 @@
     ? p.title.split('—').slice(1).join('—').trim()
     : p.title;
 
-  const popupHtml = p => `
+  const popupHtml = p => {
+    const firstSentence = String(p.history || '').split(/(?<=[.!?])\s+/)[0];
+    return `
       <div class="abelo-popup-card">
-        <div class="abelo-popup-line abelo-popup-date">${escapeHtml(p.date)}</div>
-        <div class="abelo-popup-line abelo-popup-customer">${escapeHtml(customerName(p))}</div>
-        <div class="abelo-popup-line abelo-popup-ratio">
-          <strong>${escapeHtml(p.aircraftCount)} aircraft</strong>
-          <span>${escapeHtml(p.type || 'Turboprop')}</span>
+        <div class="abelo-popup-date">${escapeHtml(p.date)}</div>
+        <div class="abelo-popup-customer">${escapeHtml(customerName(p))}</div>
+        <div class="abelo-popup-ratio">
+          <strong>${escapeHtml(p.aircraftCount)}</strong>
+          <span>${escapeHtml(p.aircraftCount === 1 ? 'aircraft' : 'aircraft')} · ${escapeHtml(p.type || 'Turboprop')}</span>
         </div>
-        <div class="abelo-popup-line"><strong>${escapeHtml(p.evidence || 'PUBLIC EVIDENCE')}</strong></div>
-        <div class="abelo-popup-line">${escapeHtml(p.history)}</div>
-        <a href="${escapeHtml(p.source)}" target="_blank" rel="noopener noreferrer">Source ↗</a>
-        ${p.source2 ? ` · <a href="${escapeHtml(p.source2)}" target="_blank" rel="noopener noreferrer">Second source ↗</a>` : ''}
+        ${firstSentence ? `<p class="abelo-popup-brief">${escapeHtml(firstSentence)}</p>` : ''}
+        <a class="abelo-popup-source" href="${escapeHtml(p.source)}" target="_blank" rel="noopener noreferrer">Source ↗</a>
       </div>`;
+  };
 
     loadLeaflet().then(L => {
     const map = L.map(mapHost, { scrollWheelZoom: false, worldCopyJump: true }).setView([18, 15], 2);
@@ -1891,10 +1892,9 @@
       <div style="border:1px solid #d9dee8;border-radius:14px;padding:16px;text-align:center;"><strong style="display:block;font-size:2rem;line-height:1;">26</strong><span>Lessees</span></div>
       <div style="border:1px solid #d9dee8;border-radius:14px;padding:16px;text-align:center;"><strong style="display:block;font-size:2rem;line-height:1;">19</strong><span>Countries</span></div>
     </div>
-    <p class="abelo-map-note"><strong>Working fleet mix:</strong> 34 ATR 72 · 8 ATR 42 · 19 Dash 8. The mix is anchored to public Airfinance/Elix-Abelo fleet evidence and then updated with documented Abelo transactions. It is a proof-of-concept reconstruction, not a proprietary live register.</p>
-    <div class="abelo-map-canvas" id="abeloWorldMap" role="img" aria-label="World map of reconstructed Abelo and Elix aircraft placements"></div>
-    <p class="abelo-map-note"><strong>61-aircraft reconciliation:</strong> the map allocates 56 aircraft across 26 named lessee records in 19 countries. The remaining five are held as a transition/off-lease/unresolved pool rather than inventing a customer. Recent Abelo transactions are used where available; older Elix relationships provide lineage for the legacy turboprop portion.</p>
-    <p class="abelo-map-note"><strong>Proof of concept:</strong> the problem is that an airline can lease from several lessors and registrations change. The method is MSN / airframe lineage → registration → owner or SPV → lessor → lessee → country → source, with each record progressively upgraded from working reconstruction to verified evidence.</p>
+    <p class="abelo-map-note"><strong>Fleet mix:</strong> 34 ATR 72 · 8 ATR 42 · 19 Dash 8.</p>
+    <div class="abelo-map-canvas" id="abeloWorldMap" role="img" aria-label="World map of Abelo and Elix aircraft placements"></div>
+    <p class="abelo-map-note">Public Abelo / Elix transactions and aircraft histories reconciled into one portfolio view.</p>
   `;
 
   marker.replaceWith(wrapper);
