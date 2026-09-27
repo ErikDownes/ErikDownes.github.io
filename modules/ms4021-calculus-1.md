@@ -52,7 +52,7 @@ window.MathJax = {
 
 <p><a href="{{ '/modules-projects.html' | relative_url }}">← Modules</a></p>
 
-<div class="calc-page">
+<div class="calc-page" markdown="1">
 
 <div class="calc-hero">
 <div class="formula">
