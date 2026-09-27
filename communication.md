@@ -1,10 +1,10 @@
 ---
 layout: doc
-permalink: /presentation.html
-handle: Presentation
-title: Presentation
+handle: Home
+title: Home
 nav_order: 30
-intro: Prepare your ideas, pause, and communicate them clearly for the audience in front of you.
+intro: Prepare your ideas, pause, and communicate them clearly for the audience
+  in front of you.
 ---
 <div class="home-hero">
   <div class="home-hero-kicker">AN INTERVIEW IS A PERFORMANCE</div>
