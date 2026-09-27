@@ -42,7 +42,66 @@ const root=document.getElementById('aircraftFinanceLab');if(!root)return;
 const $=id=>document.getElementById(id);
 const euro=n=>new Intl.NumberFormat('en-IE',{style:'currency',currency:'EUR',maximumFractionDigits:0}).format(Number.isFinite(n)?n:0);
 const clamp=(n,a,b)=>Math.min(b,Math.max(a,n));
+const shortMoney=n=>{const a=Math.abs(n);if(a>=1000000)return '€'+(n/1000000).toFixed(a>=10000000?0:1)+'m';if(a>=1000)return '€'+Math.round(n/1000)+'k';return '€'+Math.round(n)};
 function pmt(P,annual,months){if(P<=0)return 0;const r=annual/1200;if(r===0)return P/months;return P*r/(1-Math.pow(1+r,-months));}
+let aircraftCurrent=null,aircraftSelected=null;
+
+function buildAircraftRows(debt,rate,debtYears,rent,leaseYears,annualCost,residual){
+  const leaseMonths=leaseYears*12,debtMonths=debtYears*12,monthlyDebt=pmt(debt,rate,debtMonths),r=rate/1200;
+  let balance=debt,cumRent=0,cumCost=0;
+  const rows=[{m:0,balance,cumRent,cumCost,residual:0}];
+  for(let m=1;m<=leaseMonths;m++){
+    if(balance>0.005&&m<=debtMonths){
+      const interest=balance*r;
+      const principal=Math.min(balance,Math.max(0,monthlyDebt-interest));
+      balance=Math.max(0,balance-principal);
+    }
+    cumRent+=rent;
+    cumCost+=annualCost/12;
+    rows.push({m,balance,cumRent,cumCost,residual:m===leaseMonths?residual:0});
+  }
+  return {rows,monthlyDebt};
+}
+
+function setupAircraftCanvas(){
+  const canvas=$('aircraftChart'),rect=canvas.getBoundingClientRect(),dpr=Math.max(1,window.devicePixelRatio||1);
+  const w=Math.max(320,Math.floor(rect.width||700)),h=w<520?320:420;
+  canvas.width=Math.floor(w*dpr);canvas.height=Math.floor(h*dpr);canvas.style.height=h+'px';
+  const ctx=canvas.getContext('2d');ctx.setTransform(dpr,0,0,dpr,0,0);return {canvas,ctx,w,h};
+}
+
+function drawAircraft(){
+  if(!aircraftCurrent)return;
+  const {ctx,w,h}=setupAircraftCanvas(),rows=aircraftCurrent.rows;
+  ctx.clearRect(0,0,w,h);
+  const pad={l:66,r:18,t:22,b:42},pw=w-pad.l-pad.r,ph=h-pad.t-pad.b;
+  const maxY=Math.max(1,...rows.flatMap(r=>[r.balance,r.cumRent,r.cumCost,r.residual]));
+  const x=i=>pad.l+(i/Math.max(1,rows.length-1))*pw,y=v=>pad.t+ph-(v/maxY)*ph;
+  ctx.strokeStyle='#e2e8f0';ctx.lineWidth=1;ctx.fillStyle='#64748b';ctx.font='11px system-ui';ctx.textAlign='right';
+  for(let i=0;i<=4;i++){const val=maxY*i/4,yy=y(val);ctx.beginPath();ctx.moveTo(pad.l,yy);ctx.lineTo(w-pad.r,yy);ctx.stroke();ctx.fillText(shortMoney(val),pad.l-8,yy+4)}
+  ctx.textAlign='center';const maxM=rows[rows.length-1].m;const ticks=Math.min(6,Math.max(1,Math.ceil(maxM/12)));
+  for(let i=0;i<=ticks;i++){const m=Math.round(maxM*i/ticks),xx=pad.l+(m/Math.max(1,maxM))*pw;ctx.fillText((m/12).toFixed(m%12?1:0)+'y',xx,h-14)}
+  [['balance','#2563eb'],['cumRent','#16a34a'],['cumCost','#f59e0b']].forEach(([key,color])=>{ctx.strokeStyle=color;ctx.lineWidth=2.5;ctx.beginPath();rows.forEach((r,i)=>{const xx=x(i),yy=y(r[key]);i?ctx.lineTo(xx,yy):ctx.moveTo(xx,yy)});ctx.stroke()});
+  const last=rows[rows.length-1];
+  if(last.residual>0){
+    const xx=x(rows.length-1),yy=y(last.residual);
+    ctx.fillStyle='#7c3aed';ctx.beginPath();ctx.arc(xx,yy,5,0,Math.PI*2);ctx.fill();
+    ctx.font='11px system-ui';ctx.textAlign='right';ctx.fillText('Residual '+shortMoney(last.residual),xx-8,Math.max(14,yy-8));
+  }
+  if(aircraftSelected!==null&&rows[aircraftSelected]){
+    const xx=x(aircraftSelected);ctx.strokeStyle='#0f172a';ctx.lineWidth=1;ctx.setLineDash([4,4]);ctx.beginPath();ctx.moveTo(xx,pad.t);ctx.lineTo(xx,pad.t+ph);ctx.stroke();ctx.setLineDash([]);
+  }
+}
+
+function inspectAircraft(ev){
+  if(!aircraftCurrent)return;
+  const canvas=$('aircraftChart'),tip=$('aircraftTooltip'),rect=canvas.getBoundingClientRect(),padL=66,padR=18,pw=rect.width-padL-padR;
+  const px=clamp(ev.clientX-rect.left-padL,0,pw),idx=Math.round(px/pw*(aircraftCurrent.rows.length-1));
+  aircraftSelected=idx;const r=aircraftCurrent.rows[idx],year=Math.floor(r.m/12),month=r.m%12;
+  tip.innerHTML='<strong>Year '+year+', month '+month+'</strong>Debt balance: '+euro(r.balance)+'<br>Cumulative lease rentals: '+euro(r.cumRent)+'<br>Cumulative owner costs: '+euro(r.cumCost)+(r.residual?'<br>Residual value: '+euro(r.residual):'');
+  tip.hidden=false;tip.style.left=clamp(ev.clientX-rect.left+12,6,rect.width-220)+'px';tip.style.top=clamp(ev.clientY-rect.top-72,6,rect.height-115)+'px';drawAircraft();
+}
+
 function updateAircraft(){
   const price=Math.max(0,(Number($('airPriceExact').value)||0)*1e6); $('airPrice').value=clamp(Math.round(price/1e6),Number($('airPrice').min),Number($('airPrice').max)); $('airPriceOut').textContent='€'+(price/1e6).toFixed(1).replace(/\.0$/,'')+'m';
   const eq=clamp(Number($('airEquity').value)||0,0,100);
@@ -59,30 +118,29 @@ function updateAircraft(){
   $('airLeaseTermOut').textContent=leaseYears+(leaseYears===1?' year':' years');
   $('airResidualOut').textContent=residualPct.toFixed(0)+'%';
 
-  const equity=price*eq/100;
-  const debt=price-equity;
-  const monthlyDebt=pmt(debt,rate,debtYears*12);
-  const leaseMonths=leaseYears*12;
-  const debtMonthsPaid=Math.min(leaseMonths,debtYears*12);
-  const debtPaidDuringLease=monthlyDebt*debtMonthsPaid;
-  const rentals=rent*leaseMonths;
-  const costs=annualCost*leaseYears;
-  const residual=price*residualPct/100;
+  const equity=price*eq/100,debt=price-equity,residual=price*residualPct/100;
+  const chart=buildAircraftRows(debt,rate,debtYears,rent,leaseYears,annualCost,residual);
+  const leaseMonths=leaseYears*12,debtMonthsPaid=Math.min(leaseMonths,debtYears*12);
+  const debtPaidDuringLease=chart.monthlyDebt*debtMonthsPaid,rentals=rent*leaseMonths,costs=annualCost*leaseYears;
   const net=rentals+residual-costs-debtPaidDuringLease-equity;
 
   $('airEquityKpi').textContent=euro(equity);
   $('airDebtKpi').textContent=euro(debt);
-  $('airDebtPayKpi').textContent=euro(monthlyDebt)+'/mo';
+  $('airDebtPayKpi').textContent=euro(chart.monthlyDebt)+'/mo';
   $('airRentKpi').textContent=euro(rentals);
   $('airResidualKpi').textContent=euro(residual);
   $('airNetKpi').textContent=euro(net);
+
+  aircraftCurrent={...chart,residual};aircraftSelected=null;drawAircraft();
 }
 $('airPrice').addEventListener('input',()=>{$('airPriceExact').value=$('airPrice').value;updateAircraft()});$('airPriceExact').addEventListener('input',updateAircraft);['airEquity','airDebtRate','airDebtTerm','airRent','airLeaseTerm','airAnnualCost','airResidual'].forEach(id=>{
   const n=$(id); if(n){n.addEventListener('input',updateAircraft);n.addEventListener('change',updateAircraft);}
 });
+const aircraftCanvas=$('aircraftChart');
+if(aircraftCanvas){aircraftCanvas.addEventListener('pointermove',inspectAircraft);aircraftCanvas.addEventListener('pointerdown',inspectAircraft);}
+window.addEventListener('resize',()=>{if(aircraftCurrent)drawAircraft()});
 updateAircraft();
 })();
-
 (()=> {
   const root=document.getElementById('pcpLab'); if(!root) return;
   const $=id=>document.getElementById(id);
