@@ -1,6 +1,6 @@
 ---
 layout: doc
-handle: Modules & Projects
+handle: Modules
 title: Financial Mathematics — Modules & Projects
 nav_order: 60
 eyebrow: Module
