@@ -1,8 +1,8 @@
 ---
 layout: doc
-handle: Workplace Skills
+handle: Workplace
 title: Workplace Skills
-nav_order: 40
+nav_order: 50
 eyebrow: INTERVIEW STRUCTURE
 intro: Teamwork, independence and judgement belong together. Use specific examples to show how you communicate, solve problems, take responsibility and make sound workplace decisions.
 ---
@@ -45,7 +45,6 @@ listen|clarify|resolve|professional
 
 &nbsp;
 
-Yes. I would keep the **three-level paradigm**, but add one compact table near the top so Erik can immediately see what changes as the audience changes.
 
 ## Explain clearly | How would you explain something technical to a non-technical person?
 
