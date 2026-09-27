@@ -1,8 +1,8 @@
 ---
 layout: doc
-handle: Finance & Lease Lab
+handle: Finance
 title: Residential & Aircraft Finance — Decision Lab
-nav_order: 65
+nav_order: 70
 eyebrow: OPEN · ONLINE · INTERACTIVE
 intro: Start with a residential mortgage, then use the same cash-flow thinking to understand aircraft ownership, financing, leasing, options and residual value.
 ---
