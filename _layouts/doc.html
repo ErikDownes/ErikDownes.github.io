@@ -54,7 +54,7 @@
     {% when 'questions.md' %}{% assign cms_url = cms_base | append: '/file/questions' %}
     {% when 'communication.md' %}{% assign cms_url = cms_base | append: '/file/communication' %}
     {% when 'glossary.md' %}{% assign cms_url = cms_base | append: '/file/glossary' %}
-    {% when 'dashboards.md' %}{% assign cms_url = cms_base | append: '/file/dashboards' %}
+    {% when 'projects.md' %}{% assign cms_url = cms_base | append: '/file/projects' %}
     {% when 'tech-theory.md' %}{% assign cms_url = cms_base | append: '/file/tech_theory' %}
     {% when 'history-of-flight.md' %}{% assign cms_url = cms_base | append: '/file/history_of_flight' %}
   {% endcase %}
@@ -63,7 +63,7 @@
     <article class="doc-paper">
       {% if page.eyebrow and page.eyebrow != "" %}<p class="doc-kicker">{{ page.eyebrow }}</p>{% endif %}
       <h1>{{ page_display_title }}</h1>
-      {% if page.intro %}<p class="doc-intro">{{ page.intro }}</p>{% endif %}
+      {% if page.intro and page.intro != "" %}<p class="doc-intro">{{ page.intro }}</p>{% endif %}
       {% if page.image %}
       <figure class="doc-page-image">
         <img src="{{ page.image | relative_url }}" alt="{{ page.image_alt | default: page_display_title | escape }}">
