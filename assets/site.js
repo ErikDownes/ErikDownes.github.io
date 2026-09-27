@@ -334,17 +334,69 @@
     });
   };
 
+  const moduleTitleForSort = label =>
+    cleanText(label).replace(/^[A-Z]{2,}(?:_?\\d+)?\\s*[—–-]\\s*/i, '').toLocaleLowerCase();
+
+  const populateModuleMenu = (item, links, pageUrl) => {
+    const menu = item.querySelector(':scope > .dropmenu');
+    if (!menu) return;
+
+    const seen = new Set();
+    const modules = links
+      .map(link => {
+        const label = cleanText(link.textContent);
+        const rawHref = link.getAttribute('href');
+        if (!label || !rawHref) return null;
+        const href = new URL(rawHref, pageUrl.href);
+        if (!/\\/modules\\/[^/]+\\.html$/.test(href.pathname)) return null;
+        const key = normalisePath(href.href);
+        if (seen.has(key)) return null;
+        seen.add(key);
+        return { label, href };
+      })
+      .filter(Boolean)
+      .sort((a, b) => {
+        const byTitle = moduleTitleForSort(a.label).localeCompare(
+          moduleTitleForSort(b.label),
+          undefined,
+          { sensitivity: 'base', numeric: true }
+        );
+        return byTitle || a.label.localeCompare(b.label, undefined, { sensitivity: 'base', numeric: true });
+      });
+
+    menu.replaceChildren();
+    item.classList.toggle('has-submenu', modules.length > 0);
+    if (!modules.length) return;
+
+    modules.forEach(module => {
+      const link = document.createElement('a');
+      link.href = module.href.href;
+      link.textContent = module.label;
+      link.addEventListener('click', () => {
+        item.classList.remove('is-open');
+        item.querySelector('[data-nav-toggle]')?.setAttribute('aria-expanded', 'false');
+        if (window.innerWidth <= 1500) topbar?.classList.remove('nav-open');
+      });
+      menu.appendChild(link);
+    });
+  };
+
   const syncQuestionMenu = async item => {
     const label = item.querySelector(':scope > .navlabel[href]');
     const menu = item.querySelector(':scope > .dropmenu');
     if (!label || !menu) return;
     const pageUrl = new URL(label.href, location.href);
     const targetPath = normalisePath(pageUrl.href);
+    const isModulesLibrary = /\\/modules-projects(?:\\.html)?$/.test(pageUrl.pathname.replace(/\\/+$/, ''));
 
     try {
       if (targetPath === currentPath && body) {
-        const headings = Array.from(body.querySelectorAll(':scope > h2')).filter(heading => headingInfo(heading));
-        populateQuestionMenu(item, headings, pageUrl);
+        if (isModulesLibrary) {
+          populateModuleMenu(item, Array.from(body.querySelectorAll('a[href]')), pageUrl);
+        } else {
+          const headings = Array.from(body.querySelectorAll(':scope > h2')).filter(heading => headingInfo(heading));
+          populateQuestionMenu(item, headings, pageUrl);
+        }
         return;
       }
 
@@ -352,6 +404,12 @@
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
       const html = await response.text();
       const parsed = new DOMParser().parseFromString(html, 'text/html');
+
+      if (isModulesLibrary) {
+        populateModuleMenu(item, Array.from(parsed.querySelectorAll('#docBody a[href]')), pageUrl);
+        return;
+      }
+
       const headings = Array.from(parsed.querySelectorAll('#docBody > h2')).filter(heading => headingInfo(heading));
       populateQuestionMenu(item, headings, pageUrl);
     } catch (_) {
