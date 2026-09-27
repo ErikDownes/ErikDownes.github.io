@@ -1,31 +1,5 @@
-title: UL Co-op Interview Preparation
-description: Focused interview preparation for Financial Mathematics co-op and graduate roles.
+title: Erik Downes | Financial Mathematics
+description: Erik's profile, aviation learning, mathematics modules and applied projects.
 url: https://ronandownes.github.io
 baseurl: /coop
 markdown: kramdown
-
-defaults:
-  - scope: { path: "candidate-profile.md" }
-    values: { nav_order: 10 }
-  - scope: { path: "company-role.md" }
-    values: { nav_order: 20 }
-  - scope: { path: "workplace-skills.md" }
-    values: { nav_order: 30 }
-  - scope: { path: "problem-solving.md" }
-    values: { nav_order: 40 }
-  - scope: { path: "financial-maths.md" }
-    values: { nav_order: 50 }
-  - scope: { path: "work-readiness.md" }
-    values: { nav_order: 60 }
-  - scope: { path: "miscellaneous.md" }
-    values: { nav_order: 70 }
-  - scope: { path: "spare-1.md" }
-    values: { nav_order: 80 }
-  - scope: { path: "spare-2.md" }
-    values: { nav_order: 90 }
-  - scope: { path: "spare-3.md" }
-    values: { nav_order: 100 }
-  - scope: { path: "questions-for-them.md" }
-    values: { nav_order: 110 }
-  - scope: { path: "word-wall.md" }
-    values: { nav_order: 120 }
