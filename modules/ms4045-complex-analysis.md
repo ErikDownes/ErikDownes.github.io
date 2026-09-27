@@ -14,6 +14,27 @@ intro: "A concise interview-ready page for MS4045 — Complex Analysis."
 
 Complex Analysis extends calculus from real-valued functions to functions of a **complex variable**. The module focuses on the special structure of complex-differentiable functions and on integration in the complex plane.
 
+## UL module overview
+
+**Syllabus**
+
+- Review of the basics
+- Multivalued functions
+- Analytic functions, the Cauchy–Riemann equations, Cauchy's theorem
+- Integration on the complex plane
+
+**Recommended textbooks**
+
+- E. Kreyszig, *Advanced Engineering Mathematics*, 10th edition
+- D. G. Zill and P. D. Shanahan, *A First Course in Complex Analysis*
+- M. J. Ablowitz and A. S. Fokas, *Complex Variables: Introduction and Applications*, 2nd edition
+
+**Assessment**
+
+- Two mid-semester tests: **2 × 10% = 20%**
+- End-of-year examination: **80%**
+- Repeat examination: **as above or 100% for the repeat exam, whichever is higher**
+
 ## Core concepts
 
 - Review of complex numbers and the complex plane
