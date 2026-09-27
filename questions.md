@@ -1,6 +1,6 @@
 ---
 layout: doc
-handle: Questions Questions for us
+handle: Questions for us
 title: Questions for us
 nav_order: 80
 eyebrow: FINISH THE INTERVIEW WELL_ Reiterate your tell us about yourself
