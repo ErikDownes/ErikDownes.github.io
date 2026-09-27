@@ -69,7 +69,8 @@ content:
           format: html
 
   - { name: about_erik, label: "About Erik", type: file, path: about-erik.md, format: yaml-frontmatter, fields: *docfields }
-  - { name: abelo, label: "Abelo & Aircraft Leasing", type: file, path: abelo.md, format: yaml-frontmatter, fields: *docfields }\n  - { name: education, label: "Education", type: file, path: education.md, format: yaml-frontmatter, fields: *docfields }
+  - { name: abelo, label: "Abelo & Aircraft Leasing", type: file, path: abelo.md, format: yaml-frontmatter, fields: *docfields }
+  - { name: education, label: "Education", type: file, path: education.md, format: yaml-frontmatter, fields: *docfields }
   - { name: working_with_others, label: "Workplace Skills", type: file, path: working-with-others.md, format: yaml-frontmatter, fields: *docfields }
   - { name: modules_projects, label: "Modules & Projects", type: file, path: modules-projects.md, format: yaml-frontmatter, fields: *docfields }
 

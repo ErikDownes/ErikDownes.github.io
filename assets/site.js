@@ -89,6 +89,46 @@
     ,{ term: 'EVP', definition: 'Executive Vice President; a senior executive title above vice-president level in many organisations.', cue: 'Executive Vice President.' }
   ];
 
+  // Aircraft leasing entries feed both the inline Education layer and the A–Z glossary.
+  const AERCAP_GLOSSARY_SEED = [
+    { term: 'Lessor', definition: 'The company that owns an aircraft and leases it to an airline.', why: 'It receives rent but must preserve the aircraft’s value across customers and lease transitions.' },
+    { term: 'Lessee', definition: 'The airline or operator that leases, flies and maintains an aircraft it does not own.', why: 'Its payments, use and return obligations determine much of the owner’s risk.' },
+    { term: 'Utilisation', definition: 'How intensively an airline flies its aircraft, often tracked through flight hours and flight cycles.', why: 'It determines PBH rent and many maintenance-reserve payments.' },
+    { term: 'OEM', definition: 'Original Equipment Manufacturer; the maker of an aircraft or major component, such as Airbus, Boeing or ATR.', why: 'Production slots, support and fleet demand shape what a lessor can buy and place.' },
+    { term: 'Credit risk', definition: 'The risk that an airline customer will fail to pay rent or meet its lease obligations.', why: 'Lease protections and an aircraft that can be remarketed limit the lessor’s exposure.' },
+    { term: 'Power-by-the-Hour', definition: 'A lease arrangement in which rent during an initial period depends on how much the airline flies the aircraft; it may later revert to fixed rent.', why: 'AerCap used PBH during Covid to accommodate uncertain flying while protecting later lease rates.' },
+    { term: 'PBH', definition: 'Power-by-the-Hour: usage-linked rent for an initial period of an aircraft lease.', why: 'Cash from PBH and straight-line accounting revenue can move in different directions.' },
+    { term: 'Lease rate', definition: 'The rent payable by an airline for an aircraft under its lease.', why: 'Contracted rent, aircraft condition and financing costs all affect a lessor’s return.' },
+    { term: 'Fixed-rate', definition: 'A lease rent or borrowing rate set for a stated period instead of moving with a market rate.', why: 'Fixed lease income works best when the lessor also manages exposure to changing funding costs.' },
+    { term: 'Straight-line rental', definition: 'Recognition of fixed contractual lease revenue evenly over the lease term, even when cash payments vary by year.', why: 'It explains why a PBH contract can show an accounting headwind while cash collections rise.' },
+    { term: 'Maintenance reserves', definition: 'Usage-linked cash payments by an airline to the aircraft owner to help fund major future maintenance.', why: 'The lessor owns the asset and needs protection as the airline consumes maintenance life.' },
+    { term: 'Maintenance reserve', definition: 'A usage-linked payment an airline makes to the aircraft owner towards major future maintenance.', why: 'The lessor needs protection as the operator consumes the aircraft’s maintenance life.' },
+    { term: 'Maintenance Rights Asset', definition: 'An accounting asset recognised when an acquired aircraft lease promises better maintenance condition at redelivery than at purchase.', why: 'Acquisition accounting separates that right from the aircraft’s metal value and amortises it on a different timetable.' },
+    { term: 'MRA', definition: 'Maintenance Rights Asset: the value of a maintenance-condition right recognised when an aircraft is bought with a lease attached.', why: 'An MRA affects reported asset value and profit after a portfolio acquisition.' },
+    { term: 'Shop visit', definition: 'A major scheduled maintenance event, especially for an aircraft engine.', why: 'Its timing affects cash reimbursement and maintenance reserve liabilities.' },
+    { term: 'Redelivery condition', definition: 'The aircraft’s required maintenance and technical state when an airline returns it at lease end.', why: 'It protects the owner’s ability to place or sell the aircraft again.' },
+    { term: 'End-of-lease', definition: 'The point when an aircraft lease expires and the airline returns the aircraft or agrees an extension.', why: 'Return condition and compensation are settled as ownership and operation separate again.' },
+    { term: 'EOL', definition: 'End of lease; EOL compensation pays for a maintenance shortfall when the airline returns the aircraft.', why: 'It is an alternative to collecting monthly maintenance reserves.' },
+    { term: 'Flight hours', definition: 'Hours flown by the aircraft, used to measure utilisation and charge some maintenance reserves.', why: 'Engine maintenance is often tied to operating hours.' },
+    { term: 'Flight cycles', definition: 'Take-off and landing cycles, another measure of aircraft use for maintenance and reserve charges.', why: 'A short route can produce many cycles even with relatively few flight hours.' },
+    { term: 'Return condition', definition: 'The physical and maintenance state required under the lease when the aircraft is handed back.', why: 'A shortfall can lead to remedial work or cash compensation.' },
+    { term: 'Remarketing', definition: 'Finding a new airline customer or buyer for an aircraft after a lease or sale decision.', why: 'An in-demand type with many operators gives the asset manager more placement options.' },
+    { term: 'Security deposit', definition: 'Cash or other security an airline provides against lease obligations or default.', why: 'It is one contractual protection for the lessor if collections or return obligations fail.' },
+    { term: 'P/E', definition: 'Price-to-earnings: a company’s market value divided by annual earnings.', why: 'AerCap argues it can better reflect predictable leasing earnings than book value alone.' },
+    { term: 'P/B', definition: 'Price-to-book: market value divided by the accounting value of shareholders’ equity.', why: 'Different aircraft purchase prices can make identical fleets show different book values.' },
+    { term: 'Book value', definition: 'The value recorded in the accounts after acquisition cost, depreciation and other accounting adjustments.', why: 'For lessors, book value can differ materially from the current market value of a fleet.' },
+    { term: 'Return on equity', definition: 'Annual profit divided by shareholders’ equity.', why: 'The same earnings produce a higher ROE when an equivalent fleet was bought for less.' },
+    { term: 'Leverage', definition: 'Debt used relative to equity to finance a lessor’s aircraft portfolio.', why: 'It can raise equity returns while increasing pressure on liquidity and bondholders.' },
+    { term: 'Liquidity', definition: 'Cash and available funding to pay obligations when due.', why: 'Aircraft purchases, debt maturities and maintenance needs cannot wait for favourable markets.' },
+    { term: 'Secured debt', definition: 'Borrowing backed by specified aircraft or other pledged assets.', why: 'It is one source in a lessor’s funding mix.' },
+    { term: 'Unsecured debt', definition: 'Borrowing supported by the lessor’s credit without pledging a particular aircraft.', why: 'Access to unsecured bonds adds flexibility across the fleet.' },
+    { term: 'Asset-liability matching', definition: 'Aligning the timing and interest-rate structure of lease income with the debt used to fund the aircraft.', why: 'It reduces the chance that financing costs rise sharply against fixed lease rent.' },
+    { term: 'Duration risk', definition: 'Risk that assets and funding mature or reprice on different timetables.', why: 'A long fixed lease funded by short floating debt exposes the owner to refinancing and rate changes.' },
+    { term: 'Hedge', definition: 'An arrangement used to reduce exposure to a financial risk such as changing interest rates.', why: 'Lessors use hedges so floating debt does not undermine predictable lease cash flows.' },
+    { term: 'Swap', definition: 'A contract that can exchange floating interest-rate payments for fixed-rate payments.', why: 'It can turn variable borrowing costs into more predictable funding costs.' },
+    { term: 'Interest-rate cap', definition: 'A contract limiting how high a floating borrowing rate can rise.', why: 'It protects the lessor from extreme increases in financing cost.' }
+  ];
+
   const cleanText = value => (value || '')
     .replace(/\s+/g, ' ')
     .replace(/^[\s,.;:!?–—-]+|[\s,.;:!?–—-]+$/g, '')
@@ -150,7 +190,7 @@
           item = document.createElement('div');
           item.className = 'navitem nav-dynamic';
           item.dataset.questionMenu = '';
-          item.innerHTML = '<a class="navlabel"><span></span></a><div class="dropmenu"><a>Open page</a></div>';
+          item.innerHTML = '<a class="navlabel"><span></span></a><div class="dropmenu"></div>';
         }
         const label = item.querySelector(':scope > .navlabel');
         const span = label?.querySelector('span');
@@ -159,8 +199,6 @@
         if (label) label.href = href;
         if (span) span.textContent = menuTitle;
         else if (label) label.textContent = menuTitle;
-        const fallback = item.querySelector(':scope > .dropmenu > a');
-        if (fallback && !fallback.hash) fallback.href = href;
         fragment.appendChild(item);
 
         if (path === currentPath) {
@@ -228,7 +266,7 @@
       if (window.innerWidth > 1500) return;
       const item = label.closest('.navitem');
       const menu = item?.querySelector(':scope > .dropmenu');
-      if (!item || !menu || item.classList.contains('is-open')) return;
+      if (!item || !menu || !item.classList.contains('has-submenu') || item.classList.contains('is-open')) return;
       event.preventDefault();
       event.stopPropagation();
       closeNavMenus(item);
@@ -278,14 +316,8 @@
     if (!menu) return;
     const questions = headings.map(headingInfo).filter(Boolean);
     menu.replaceChildren();
-
-    if (!questions.length) {
-      const fallback = document.createElement('a');
-      fallback.href = pageUrl.href;
-      fallback.textContent = 'Open section';
-      menu.appendChild(fallback);
-      return;
-    }
+    item.classList.toggle('has-submenu', questions.length > 0);
+    if (!questions.length) return;
 
     questions.forEach((question, index) => {
       const link = document.createElement('a');
@@ -324,10 +356,7 @@
       populateQuestionMenu(item, headings, pageUrl);
     } catch (_) {
       menu.replaceChildren();
-      const fallback = document.createElement('a');
-      fallback.href = pageUrl.href;
-      fallback.textContent = 'Open section';
-      menu.appendChild(fallback);
+      item.classList.remove('has-submenu');
     }
   };
 
@@ -348,7 +377,7 @@
       custom = [];
     }
     const merged = new Map();
-    GLOSSARY_SEED.forEach(item => merged.set(item.term.toLowerCase(), { ...item, builtIn: true }));
+    [...GLOSSARY_SEED, ...AERCAP_GLOSSARY_SEED].forEach(item => merged.set(item.term.toLowerCase(), { ...item, builtIn: true }));
     custom.forEach(item => {
       if (!item?.term) return;
       merged.set(cleanText(item.term).toLowerCase(), { ...item, builtIn: false });
@@ -544,6 +573,13 @@
           cue.append(document.createTextNode(item.cue));
           card.appendChild(cue);
         }
+        if (item.why) {
+          const why = document.createElement('p');
+          why.className = 'recall';
+          why.innerHTML = '<strong>Why it matters:</strong> ';
+          why.append(document.createTextNode(item.why));
+          card.appendChild(why);
+        }
 
         const tools = document.createElement('div');
         tools.className = 'glossary-entry-tools';
@@ -601,9 +637,16 @@
       cue.append(document.createTextNode(item.cue));
       glossaryDialogBody.appendChild(cue);
     }
+    if (item.why) {
+      const why = document.createElement('p');
+      why.className = 'recall';
+      why.innerHTML = '<strong>Why it matters:</strong> ';
+      why.append(document.createTextNode(item.why));
+      glossaryDialogBody.appendChild(why);
+    }
   };
 
-  const linkKnownGlossaryTerms = root => {
+  const linkKnownGlossaryTerms = (root, onTerm = showGlossaryDefinition) => {
     if (!root) return;
     const entries = readGlossary().filter(item => item.term && item.term.length > 1);
     const terms = entries.map(item => item.term).sort((a, b) => b.length - a.length);
@@ -616,7 +659,7 @@
     while (walker.nextNode()) {
       const node = walker.currentNode;
       const parent = node.parentElement;
-      if (!parent || parent.closest('a,button,script,style,textarea,input,.glossary-term')) continue;
+      if (!parent || parent.closest('a,button,script,style,textarea,input,.glossary-term,h2') || (root === body && parent.closest('.aercap-beamer'))) continue;
       matcher.lastIndex = 0;
       if (matcher.test(node.nodeValue || '')) nodes.push(node);
     }
@@ -635,7 +678,7 @@
         button.addEventListener('click', event => {
           event.preventDefault();
           event.stopPropagation();
-          showGlossaryDefinition(match);
+          onTerm(match);
         });
         fragment.appendChild(button);
         last = offset + match.length;
@@ -646,6 +689,7 @@
     });
   };
 
+  window.coopEducationGlossary = { readGlossary, linkKnownGlossaryTerms };
   linkKnownGlossaryTerms(body);
 
   const sectionHeadings = () => Array.from(body.querySelectorAll(':scope > h2[data-section-heading]'));
@@ -668,7 +712,7 @@
 
   const answerTextFor = heading => sourceNodesFor(heading)
     .filter(node => !node.matches?.('.answer-focus-chain'))
-    .map(node => node.textContent || '')
+    .map(node => node.querySelector?.('.aercap-source')?.textContent || node.textContent || '')
     .join(' ')
     .replace(/\s+/g, ' ')
     .trim();
@@ -1003,6 +1047,11 @@
       return wrapper;
     }
     sourceNodesFor(heading).forEach(node => {
+      const educationSource = node.querySelector?.('.aercap-source');
+      if (educationSource) {
+        Array.from(educationSource.children).forEach(paragraph => wrapper.appendChild(paragraph.cloneNode(true)));
+        return;
+      }
       const clone = node.cloneNode(true);
       clone.querySelectorAll?.('script,style,button,.cm-question-play,a[href*="pagescms.org"]').forEach(el => el.remove());
       if (cleanText(clone.textContent) || clone.matches?.('img,table,ul,ol,blockquote,.key-vocab,.recall')) wrapper.appendChild(clone);
@@ -1436,6 +1485,7 @@
   });
   window.addEventListener('pagehide', resetAudio);
   window.addEventListener('beforeunload', resetAudio);
+  document.dispatchEvent(new Event('coop-site-ready'));
 })();
 
 
@@ -1742,25 +1792,4 @@
 
   // Fire a custom event so the map initializer can run after the map container exists.
   document.dispatchEvent(new CustomEvent('abeloResearchRendered'));
-})();
-
-
-/* Education - AerCap progressive-reveal presentations */
-(() => {
-  const glossary={"PBH":"Power-by-the-Hour: rent varies with aircraft utilisation for a defined period.","Power-by-the-Hour":"A lease structure in which rent varies with aircraft utilisation rather than being fully fixed.","utilisation":"How much the aircraft is flown or used, commonly measured through flight hours and flight cycles.","straight-line rental":"An accounting method that spreads fixed contractual lease revenue evenly across the lease term.","lessor":"The aircraft owner that leases the aircraft to an airline.","lessee":"The airline or operator that leases and operates the aircraft.","fixed-rate":"A payment or financing rate that is set rather than moving with a market reference rate.","lease rate":"The rental amount charged for use of the aircraft under the lease.","capital expenditure":"Money spent to acquire long-term assets such as aircraft; often shortened to capex.","interest-rate cap":"A hedge that limits how high a floating interest rate can rise.","swap":"A derivative often used to exchange floating-rate interest exposure for fixed-rate exposure.","MRA":"Maintenance Rights Asset: an accounting asset representing rights to improved aircraft maintenance condition under an acquired lease.","Maintenance Rights Asset":"An accounting asset created when an acquired lease entitles the new owner to receive the aircraft back in better maintenance condition than at acquisition.","M&A":"Mergers and acquisitions: transactions in which businesses or portfolios are bought, sold or combined.","purchase accounting":"Accounting rules used to recognise and allocate the value of assets and liabilities acquired in a business combination.","depreciated cost":"The recorded acquisition cost of a physical asset after accumulated depreciation.","amortised":"Recognised as an expense over time or when specified events occur.","shop visit":"A major scheduled maintenance event, especially for an aircraft engine.","redelivery condition":"The contractual technical and maintenance condition in which an aircraft must be returned at lease end.","maintenance reserves":"Usage-related cash payments made by a lessee to help fund future major maintenance obligations.","maintenance reserve":"A usage-related cash payment made by a lessee to help fund future major maintenance obligations.","EOL":"End of lease. EOL compensation is a payment for a maintenance-condition shortfall at return.","flight hours":"A utilisation measure based on the number of hours an aircraft is flown.","flight cycles":"A utilisation measure based mainly on take-off and landing cycles.","sinking fund":"Money accumulated progressively for a known future cost or obligation.","maintenance liability":"An accounting liability representing maintenance-reserve cash received that may need to be reimbursed for qualifying work.","OEM":"Original Equipment Manufacturer - for airframes, companies such as Airbus, Boeing or ATR.","credit-adjusted":"Adjusted for the risk that the customer may not meet its contractual obligations.","remarket":"To place an aircraft with a new customer or sell it into the market.","security deposits":"Cash or other security provided by a lessee to protect the lessor against contractual default or other obligations.","return conditions":"Lease clauses defining the condition required when the aircraft is returned.","P/E":"Price-to-earnings ratio: market value divided by earnings.","P/B":"Price-to-book ratio: market value divided by accounting book value.","book value":"The accounting value of a company’s net assets or an asset recorded on the balance sheet.","return on equity":"Profit relative to shareholders’ equity; commonly shortened to ROE.","mark-to-market":"Revaluing an asset or liability to its current observable market value.","leverage":"The amount of debt used relative to equity or another capital measure.","liquidity":"The ability to meet cash obligations when they fall due.","secured debt":"Borrowing backed by specific collateral.","unsecured debt":"Borrowing supported by the borrower’s credit rather than pledged specific collateral.","asset-liability matching":"Aligning the timing, duration and rate characteristics of assets and funding so financial risks are reduced.","duration risk":"Risk that the timing or interest-rate sensitivity of assets and liabilities is mismatched.","hedge":"A financial position used to reduce exposure to an unwanted market risk such as interest-rate movements."};
-  const keys=Object.keys(glossary).sort((a,b)=>b.length-a.length);
-  const esc=s=>s.replace(/[-/\\^$*+?.()|[\]{}]/g,'\\$&');
-  const rx=new RegExp('\\b('+keys.map(esc).join('|')+')\\b','gi');
-  const mark=root=>{const w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,{acceptNode(n){if(!n.nodeValue.trim()||n.parentElement.closest('button,.glossary-term'))return NodeFilter.FILTER_REJECT;return keys.some(k=>n.nodeValue.toLowerCase().includes(k.toLowerCase()))?NodeFilter.FILTER_ACCEPT:NodeFilter.FILTER_REJECT}}),nodes=[];while(w.nextNode())nodes.push(w.currentNode);nodes.forEach(n=>{const t=n.nodeValue,f=document.createDocumentFragment();let last=0,m;rx.lastIndex=0;while((m=rx.exec(t))){if(m.index>last)f.append(document.createTextNode(t.slice(last,m.index)));const key=keys.find(k=>k.toLowerCase()===m[0].toLowerCase()),b=document.createElement('button');b.type='button';b.className='glossary-term';b.textContent=m[0];b.dataset.definition=glossary[key];f.append(b);last=m.index+m[0].length}if(last<t.length)f.append(document.createTextNode(t.slice(last)));n.replaceWith(f)})};
-  const split=ps=>{const out=[];ps.forEach(p=>{const t=p.textContent.replace(/\s+/g,' ').trim();if(!t)return;const ss=t.match(/[^.!?]+[.!?]+(?:[”’"']+)?|[^.!?]+$/g)||[t];for(let i=0;i<ss.length;i+=2)out.push(ss.slice(i,i+2).join(' ').trim())});return out};
-  document.querySelectorAll('[data-aercap-beamer]').forEach(box=>{const src=box.querySelector('.aercap-source');if(!src)return;const ps=[...src.querySelectorAll('p')],beats=split(ps);let i=0,readMode=false,gOn=true;
-    const head=document.createElement('div');head.className='aercap-beamer-head';head.innerHTML='<div class="aercap-beamer-brand">AERCAP · LEARNING DECK</div><div class="aercap-progress"><span></span></div><div class="aercap-counter"></div>';
-    const ctl=document.createElement('div');ctl.className='aercap-controls';ctl.innerHTML='<button type="button" data-mode="learn" class="is-on">Learn</button><button type="button" data-mode="read">Read</button><button type="button" data-glossary class="is-on">Glossary</button><span class="aercap-spacer"></span><button type="button" data-prev>←</button><button type="button" data-next>Next →</button>';
-    const stage=document.createElement('div');stage.className='aercap-stage';stage.tabIndex=0;const read=document.createElement('div');read.className='aercap-read';read.hidden=true;ps.forEach(p=>read.append(p.cloneNode(true)));const pop=document.createElement('div');pop.className='aercap-glossary-pop';pop.hidden=true;src.hidden=true;box.prepend(head,ctl);box.append(stage,read,pop);mark(read);
-    const render=()=>{stage.innerHTML='';const start=Math.max(0,i-3);beats.slice(start,i+1).forEach((t,j)=>{const p=document.createElement('p');p.className='aercap-beat';if(start+j===i)p.classList.add('is-active');else if(start+j>=i-1)p.classList.add('is-recent');p.textContent=t;stage.append(p)});mark(stage);head.querySelector('.aercap-counter').textContent=(i+1)+' / '+beats.length;head.querySelector('.aercap-progress span').style.width=((i+1)/beats.length*100)+'%';ctl.querySelector('[data-prev]').disabled=i===0;ctl.querySelector('[data-next]').textContent=i===beats.length-1?'Replay ↺':'Next →';pop.hidden=true};
-    const next=()=>{i=i===beats.length-1?0:i+1;render()},prev=()=>{if(i>0){i--;render()}};
-    ctl.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;if(b.hasAttribute('data-next'))next();else if(b.hasAttribute('data-prev'))prev();else if(b.dataset.mode){readMode=b.dataset.mode==='read';stage.hidden=readMode;read.hidden=!readMode;ctl.querySelectorAll('[data-mode]').forEach(x=>x.classList.toggle('is-on',x===b))}else if(b.hasAttribute('data-glossary')){gOn=!gOn;box.classList.toggle('aercap-glossary-off',!gOn);b.classList.toggle('is-on',gOn);pop.hidden=true}});
-    box.addEventListener('click',e=>{const term=e.target.closest('.glossary-term');if(!term||!gOn)return;pop.innerHTML='<strong>'+term.textContent+'</strong><p>'+term.dataset.definition+'</p>';pop.hidden=false});
-    stage.addEventListener('click',e=>{if(!e.target.closest('.glossary-term'))next()});box.addEventListener('mouseenter',()=>box.dataset.keyboard='true');box.addEventListener('mouseleave',()=>delete box.dataset.keyboard);box.addEventListener('focusin',()=>box.dataset.keyboard='true');
-    document.addEventListener('keydown',e=>{if(box.dataset.keyboard!=='true'||readMode)return;if(e.key==='ArrowRight'||e.key===' '){e.preventDefault();next()}if(e.key==='ArrowLeft'){e.preventDefault();prev()}if(e.key.toLowerCase()==='g'){gOn=!gOn;box.classList.toggle('aercap-glossary-off',!gOn)}});render()});
 })();
