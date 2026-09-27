@@ -4,7 +4,7 @@ handle: Aviation
 title: Aviation
 nav_order: 20
 eyebrow: ABELO · AIRCRAFT LEASING · ASSET MANAGEMENT
-intro: Sector learning for aircraft leasing: Abelo, turboprops, asset management, finance, data, risk and the questions Erik wants to ask.
+intro: "Sector learning for aircraft leasing: Abelo, turboprops, asset management, finance, data, risk and the questions Erik wants to ask."
 study_mode: true
 ---
 ## Intern Job | Asset Management Intern
