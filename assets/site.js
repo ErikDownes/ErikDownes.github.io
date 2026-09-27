@@ -1829,6 +1829,56 @@
     {lat:-23.55,lng:-46.63,title:'Brazil — VoePass / MAP lineage',source:'https://www.planespotters.net/airframe/atr-72-pr-pdw-voepass/3v49jy',source2:'https://www.planespotters.net/airframe/atr-72-pr-pdy-voepass/r75o4y',date:'2022–2026',aircraftCount:2,type:'ATR 72-500',evidence:'AIRFRAME LINEAGE',history:'Two former Elix ATR 72-500 airframes are documented in the VoePass / MAP lineage.'}
   ];
 
+  const firstDocumentedYear = p => {
+    const years = String(p.date || '').match(/\b(?:19|20)\d{2}\b/g);
+    return years && years.length ? Number(years[0]) : 0;
+  };
+
+  // Rank customers by the first documented year in this public-record reconstruction.
+  // Same-year customers keep their source order; that tie-break is display-only.
+  const rankedPlacements = placements
+    .map((p, sourceIndex) => ({
+      ...p,
+      sourceIndex,
+      customerYear: firstDocumentedYear(p)
+    }))
+    .sort((a, b) => (b.customerYear - a.customerYear) || (a.sourceIndex - b.sourceIndex))
+    .map((p, index) => ({ ...p, recencyRank: index + 1 }));
+
+  // Keep the geographic anchor exact, but visually separate customers sharing a city.
+  // A small proximity threshold also catches slightly different city-centre coordinates.
+  const pinOffsets = (() => {
+    const clusters = [];
+    rankedPlacements.forEach(p => {
+      let cluster = clusters.find(c =>
+        Math.abs(c.lat - p.lat) <= 0.35 && Math.abs(c.lng - p.lng) <= 0.35
+      );
+      if (!cluster) {
+        cluster = { lat: p.lat, lng: p.lng, items: [] };
+        clusters.push(cluster);
+      }
+      cluster.items.push(p);
+    });
+
+    const offsets = new Map();
+    clusters.forEach(cluster => {
+      const n = cluster.items.length;
+      if (n === 1) {
+        offsets.set(cluster.items[0].sourceIndex, { x: 0, y: 0 });
+        return;
+      }
+      const radius = n === 2 ? 18 : 22;
+      cluster.items.forEach((p, i) => {
+        const angle = -Math.PI / 2 + (2 * Math.PI * i / n);
+        offsets.set(p.sourceIndex, {
+          x: Math.round(Math.cos(angle) * radius),
+          y: Math.round(Math.sin(angle) * radius)
+        });
+      });
+    });
+    return offsets;
+  })();
+
   const loadLeaflet = () => new Promise((resolve, reject) => {
     if (window.L) return resolve(window.L);
 
@@ -1869,7 +1919,7 @@
     const firstSentence = String(p.history || '').split(/(?<=[.!?])\s+/)[0];
     return `
       <div class="abelo-popup-card">
-        <div class="abelo-popup-date">${escapeHtml(p.date)}</div>
+        <div class="abelo-popup-date">Customer recency #${escapeHtml(p.recencyRank)} · ${escapeHtml(p.date)}</div>
         <div class="abelo-popup-customer">${escapeHtml(customerName(p))}</div>
         <div class="abelo-popup-ratio">
           <strong>${escapeHtml(p.aircraftCount)}</strong>
@@ -1888,13 +1938,26 @@
       attribution: '&copy; OpenStreetMap contributors'
     }).addTo(map);
 
-    placements.forEach(p => {
-      L.marker([p.lat, p.lng])
+    rankedPlacements.forEach(p => {
+      const offset = pinOffsets.get(p.sourceIndex) || { x: 0, y: 0 };
+      const icon = L.divIcon({
+        className: 'abelo-numbered-marker',
+        html: `<span class="abelo-numbered-marker__badge" style="--pin-x:${offset.x}px;--pin-y:${offset.y}px">${escapeHtml(p.recencyRank)}</span>`,
+        iconSize: [30, 30],
+        iconAnchor: [15, 15],
+        popupAnchor: [offset.x, offset.y - 18]
+      });
+
+      L.marker([p.lat, p.lng], {
+        icon,
+        title: `#${p.recencyRank} · ${customerName(p)}`,
+        riseOnHover: true
+      })
         .addTo(map)
         .bindPopup(popupHtml(p), { maxWidth: 460, minWidth: 360 });
     });
 
-    const group = L.featureGroup(placements.map(p => L.marker([p.lat, p.lng])));
+    const group = L.featureGroup(rankedPlacements.map(p => L.marker([p.lat, p.lng])));
     map.fitBounds(group.getBounds().pad(0.18), { maxZoom: 2 });
   }).catch(() => {
     mapHost.innerHTML = '<p style="padding:1rem">Interactive map unavailable. The placement list below remains available.</p>';
@@ -1923,6 +1986,7 @@
       <div style="border:1px solid #d9dee8;border-radius:14px;padding:16px;text-align:center;"><strong style="display:block;font-size:2rem;line-height:1;">26</strong><span>Lessees</span></div>
       <div style="border:1px solid #d9dee8;border-radius:14px;padding:16px;text-align:center;"><strong style="display:block;font-size:2rem;line-height:1;">19</strong><span>Countries</span></div>
     </div>
+    <p class="abelo-map-note"><strong>How to read the pins:</strong> 1 is the newest documented customer relationship in this reconstruction. Pins then run newest → oldest by first documented year; same-year ordering is display-only. Customers sharing a city are offset slightly so every pin remains visible and clickable.</p>
     <p class="abelo-map-note"><strong>Fleet mix:</strong> 34 ATR 72 · 8 ATR 42 · 19 Dash 8.</p>
     <div class="abelo-map-canvas" id="abeloWorldMap" role="img" aria-label="World map of Abelo and Elix aircraft placements"></div>
     <p class="abelo-map-note">Public Abelo / Elix transactions and aircraft histories reconciled into one portfolio view.</p>
@@ -1992,10 +2056,10 @@
 
     <h3>ATR fleet map | Type, age and fleet history</h3>
     <p>The map below shows <strong>documented Abelo-linked ATR placements</strong>. It is a portfolio-learning map, <strong>not live aircraft tracking</strong>.</p>
-    <p><strong>Click a marker for a deliberately simple fleet card</strong>: ATR 42 count, ATR 72 count, age or vintage, and a short fleet-history note. Counts refer to the Abelo-linked aircraft identified in the public material shown here, <strong>not the airline’s total fleet</strong>.</p>
+    <p><strong>Click a numbered marker for a deliberately simple fleet card</strong>. Pin 1 is the newest documented customer relationship in this reconstruction; the sequence then runs newest → oldest by first documented year. Same-city customers are offset slightly so their pins do not sit on top of one another. Counts refer to the Abelo-linked aircraft identified in the public material shown here, <strong>not the airline’s total fleet</strong>.</p>
     <div class="abelo-map" data-abelo-map>
       <div class="abelo-map-canvas" id="abeloWorldMap" role="img" aria-label="World map of documented Abelo aircraft placements"></div>
-      <p class="abelo-map-note"><strong>Map key:</strong> each marker shows only ATR 42 / ATR 72 cardinality, age or vintage, and a short Abelo fleet-history note. Locations are operating markets, not live aircraft positions.</p>
+      <p class="abelo-map-note"><strong>Map key:</strong> numbered pins show customer recency in this reconstruction (newest first). Same-city pins are visually offset but retain their original geographic anchor. Locations are operating markets, not live aircraft positions.</p>
     </div>
 
     <h3>What one transaction actually involves</h3>
