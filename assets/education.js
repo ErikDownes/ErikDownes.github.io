@@ -160,6 +160,7 @@
           why.append(lead, document.createTextNode(entry.why || entry.cue));
           pop.append(why);
         }
+        glossary.renderGlossaryLearningContent?.(pop, entry, { compact: true });
         pop.hidden = false;
         close.focus({ preventScroll: true });
       };
