@@ -335,7 +335,7 @@
   };
 
   const moduleTitleForSort = label =>
-    cleanText(label).replace(/^[A-Z]{2,}(?:_?\\d+)?\\s*[—–-]\\s*/i, '').toLocaleLowerCase();
+    cleanText(label).replace(/^[A-Z]{2,}(?:_?\d+)?\s*[—–-]\s*/i, '').toLocaleLowerCase();
 
   const populateModuleMenu = (item, links, pageUrl) => {
     const menu = item.querySelector(':scope > .dropmenu');
@@ -348,7 +348,7 @@
         const rawHref = link.getAttribute('href');
         if (!label || !rawHref) return null;
         const href = new URL(rawHref, pageUrl.href);
-        if (!/\\/modules\\/[^/]+\\.html$/.test(href.pathname)) return null;
+        if (!/\/modules\/[^/]+\.html$/.test(href.pathname)) return null;
         const key = normalisePath(href.href);
         if (seen.has(key)) return null;
         seen.add(key);
@@ -387,7 +387,7 @@
     if (!label || !menu) return;
     const pageUrl = new URL(label.href, location.href);
     const targetPath = normalisePath(pageUrl.href);
-    const isModulesLibrary = /\\/modules-projects(?:\\.html)?$/.test(pageUrl.pathname.replace(/\\/+$/, ''));
+    const isModulesLibrary = /\/modules-projects(?:\.html)?$/.test(pageUrl.pathname.replace(/\/+$/, ''));
 
     try {
       if (targetPath === currentPath && body) {
