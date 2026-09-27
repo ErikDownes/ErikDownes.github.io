@@ -47,7 +47,9 @@ Other teams you may Liase with are
 
 ## Internship | What does Abelo say about students?
 
-![Abelo internship](/assets/uploads/image-3.png)
+
+
+&nbsp;
 
 Abelo says interns are given **responsibility**, **exposure** and are **fully integrated into the team**.
 
@@ -83,7 +85,9 @@ Abelo’s purpose is built around **regional connectivity**: connecting people, 
 
 Its strategy focuses on modern turboprop aircraft and newer technologies that can make regional routes more efficient and economical.
 
-![Abelo purpose and mission](/assets/uploads/image.png)
+
+
+&nbsp;
 
 **Interview wording:**  
 “What stood out to me is that Abelo is not just leasing aircraft. It has a clear focus on regional connectivity and on moving towards newer, more efficient aircraft.”
@@ -690,9 +694,6 @@ The same ATR can simultaneously be viewed as:
 **A commercial asset** — airline demand, regional markets and opportunities for re-leasing.
 
 That is why an Asset Management role can involve information coming from finance, engineering, contracts, commercial teams and data analysis rather than belonging to only one narrow discipline.  
-  
-  
-
 
 ## Introduction | History Introduction
 
