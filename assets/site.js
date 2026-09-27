@@ -117,14 +117,16 @@
     { term: 'Lease rate', definition: 'The rent payable by an airline for an aircraft under its lease.', why: 'Contracted rent, aircraft condition and financing costs all affect a lessor’s return.' },
     { term: 'Fixed-rate', definition: 'A lease rent or borrowing rate set for a stated period instead of moving with a market rate.', why: 'Fixed lease income works best when the lessor also manages exposure to changing funding costs.' },
     { term: 'Straight-line rental', definition: 'Recognition of fixed contractual lease revenue evenly over the lease term, even when cash payments vary by year.', why: 'It explains why a PBH contract can show an accounting headwind while cash collections rise.' },
-    { term: 'Maintenance reserves', definition: 'Usage-linked cash payments by an airline to the aircraft owner to help fund major future maintenance.', why: 'The lessor owns the asset and needs protection as the airline consumes maintenance life.' },
-    { term: 'Maintenance reserve', definition: 'A usage-linked payment an airline makes to the aircraft owner towards major future maintenance.', why: 'The lessor needs protection as the operator consumes the aircraft’s maintenance life.' },
+    { term: 'Maintenance reserves', definition: 'Payments an airline makes in addition to base rent under certain leases, usually linked to flight hours or cycles, for agreed major maintenance.', why: 'They collect cash ahead of expensive work and help attribute use to the airline responsible for it.' },
+    { term: 'Maintenance reserve', definition: 'A payment beyond base rent under certain leases, usually calculated from hours flown or take-off and landing cycles.', why: 'The lease defines which major work can be paid or reimbursed from the reserves.' },
     { term: 'Maintenance Rights Asset', definition: 'An accounting asset recognised when an acquired aircraft lease promises better maintenance condition at redelivery than at purchase.', why: 'Acquisition accounting separates that right from the aircraft’s metal value and amortises it on a different timetable.' },
     { term: 'MRA', definition: 'Maintenance Rights Asset: the value of a maintenance-condition right recognised when an aircraft is bought with a lease attached.', why: 'An MRA affects reported asset value and profit after a portfolio acquisition.' },
-    { term: 'Shop visit', definition: 'A major scheduled maintenance event, especially for an aircraft engine.', why: 'Its timing affects cash reimbursement and maintenance reserve liabilities.' },
+    { term: 'Shop visit', definition: 'When an engine is taken to a maintenance facility for significant inspection, repair or overhaul.', why: 'An engine shop visit can be expensive and may be eligible for reimbursement under the lease’s reserve terms. It is more substantial than a routine check on the aircraft.' },
     { term: 'Redelivery condition', definition: 'The aircraft’s required maintenance and technical state when an airline returns it at lease end.', why: 'It protects the owner’s ability to place or sell the aircraft again.' },
     { term: 'End-of-lease', definition: 'The point when an aircraft lease expires and the airline returns the aircraft or agrees an extension.', why: 'Return condition and compensation are settled as ownership and operation separate again.' },
     { term: 'EOL', definition: 'End of lease; EOL compensation pays for a maintenance shortfall when the airline returns the aircraft.', why: 'It is an alternative to collecting monthly maintenance reserves.' },
+    { term: 'EOL compensation', definition: 'End-of-lease cash paid when an aircraft’s maintenance condition falls short of the return condition agreed in the lease.', why: 'The airline may complete the work or settle the difference when it hands the aircraft back.' },
+    { term: 'End-of-lease compensation', definition: 'Cash paid to settle the difference when the aircraft’s maintenance condition falls short of the agreed return condition.', why: 'Some leases use this settlement instead of monthly maintenance reserves.' },
     { term: 'Flight hours', definition: 'Hours flown by the aircraft, used to measure utilisation and charge some maintenance reserves.', why: 'Engine maintenance is often tied to operating hours.' },
     { term: 'Flight cycles', definition: 'Take-off and landing cycles, another measure of aircraft use for maintenance and reserve charges.', why: 'A short route can produce many cycles even with relatively few flight hours.' },
     { term: 'Return condition', definition: 'The physical and maintenance state required under the lease when the aircraft is handed back.', why: 'A shortfall can lead to remedial work or cash compensation.' },
@@ -941,7 +943,7 @@
     while (walker.nextNode()) {
       const node = walker.currentNode;
       const parent = node.parentElement;
-      if (!parent || parent.closest('a,button,script,style,textarea,input,.glossary-term,h2') || (root === body && parent.closest('.aercap-beamer'))) continue;
+      if (!parent || parent.closest('a,button,script,style,textarea,input,svg,.glossary-term,h2') || (root === body && parent.closest('.aercap-beamer'))) continue;
       matcher.lastIndex = 0;
       if (matcher.test(node.nodeValue || '')) nodes.push(node);
     }

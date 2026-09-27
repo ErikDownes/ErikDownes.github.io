@@ -5,7 +5,7 @@
   const recall = {
     'Aircraft Leasing 101': [{ after: 1, prompt: 'What two things must the lessor judge?', answer: 'Whether the lease works for this airline and whether the aircraft retains value and placement options later.' }],
     'The Lifecycle of an Aircraft': [{ after: 1, prompt: 'What choices arise at a lease transition?', answer: 'Extend, re-lease or sell, taking account of condition, demand and likely return.' }],
-    'Maintenance Reserves': [{ after: 1, prompt: 'Why track both utilisation and future work?', answer: 'Flying consumes maintenance life, so reporting should connect usage, payments and the work ahead.' }],
+    'Maintenance Reserves': [{ after: 2, prompt: 'Why collect reserves before a shop visit?', answer: 'Monthly collections support agreed major work and help attribute use to each airline if the aircraft changes operators.' }],
     'Managing Credit Risk in Aircraft Leasing': [{ after: 1, prompt: 'What makes monitoring useful?', answer: 'Changes in payments or aircraft use may call for action before a larger problem develops.' }],
     'Power-by-the-Hour': [{ after: 1, prompt: 'What trade-off does flexible rent create?', answer: 'It gives an airline breathing space when flying is uncertain, while the lessor still needs to protect long-term value.' }],
     'Balance Sheet Discipline in Aircraft Leasing': [{ after: 1, prompt: 'Why does funding need to fit the lease?', answer: 'The timing and cost of borrowing can affect the return from long-term lease income.' }],
@@ -16,7 +16,7 @@
   const questions = {
     'Aircraft Leasing 101': [{ prompt: 'How would you explain a lessor’s central decision?', options: ['Set the airline’s ticket prices', 'Assess both the lease income and the aircraft’s future usefulness', 'Guarantee the airline’s profit'], correct: 1, explain: 'The lessor needs income from the current lease and options for the aircraft afterwards.' }],
     'The Lifecycle of an Aircraft': [{ prompt: 'A lease is nearing its end. What should the lessor compare?', options: ['Only the original purchase price', 'Extending, re-leasing and selling in light of condition and demand', 'Only the age of the aircraft'], correct: 1, explain: 'The next decision depends on the likely value of each available route.' }],
-    'Maintenance Reserves': [{ prompt: 'Why might a lease link maintenance payments to flight hours?', options: ['Use consumes maintenance life', 'Hours determine the aircraft’s owner', 'The aircraft needs no other reporting'], correct: 0, explain: 'Utilisation helps connect the operator’s use with future major work.' }],
+    'Maintenance Reserves': [{ prompt: 'What can an airline do under an end-of-lease compensation arrangement?', options: ['Pay monthly reserves regardless of the contract', 'Complete required work before redelivery or pay the agreed maintenance shortfall', 'Stop maintaining an aircraft when it is parked'], correct: 1, explain: 'EOL compensation is settled against the lease’s return condition; it differs from monthly reserve collections.' }],
     'Managing Credit Risk in Aircraft Leasing': [{ prompt: 'An airline’s payments begin arriving late. What is the useful asset-management response?', options: ['Wait until the lease ends', 'Check the position promptly alongside aircraft and lease information', 'Assume the aircraft has lost all value'], correct: 1, explain: 'Accurate, timely monitoring can identify an issue while choices remain.' }],
     'Power-by-the-Hour': [{ prompt: 'When might usage-linked rent be useful?', options: ['When short-term flying is uncertain', 'When aircraft ownership must transfer', 'When no lease agreement exists'], correct: 0, explain: 'It can align some rent with actual use during a disruption.' }],
     'Balance Sheet Discipline in Aircraft Leasing': [{ prompt: 'Why consider the timing of debt and lease cash flows together?', options: ['To avoid all aircraft maintenance', 'To manage financing and liquidity risk over the lease term', 'To decide ticket prices'], correct: 1, explain: 'Funding costs and maturities can alter the return from a long-term lease.' }],
@@ -85,6 +85,7 @@
       const read = document.createElement('div');
       read.className = 'aercap-read';
       paragraphs.forEach(p => read.appendChild(p.cloneNode(true)));
+      source.querySelectorAll(':scope > .education-source-visual').forEach(item => read.appendChild(item.cloneNode(true)));
       const test = document.createElement('div');
       test.className = 'aercap-test';
       test.hidden = true;
@@ -103,7 +104,7 @@
       const modelLabel = document.createElement('summary');
       modelLabel.textContent = 'Example wording';
       const modelText = document.createElement('p');
-      modelText.textContent = (beats.find(beat => /^say it:/i.test(beat)) || beats[beats.length - 1]).replace(/^say it:\s*/i, '');
+      modelText.textContent = box.dataset.performModel || (beats.find(beat => /^say it:/i.test(beat)) || beats[beats.length - 1]).replace(/^say it:\s*/i, '');
       model.append(modelLabel, modelText);
       const performance = window.coopPractice.create(modelText.textContent, { title: 'Perform aloud' });
       perform.append(performHeading, performCue, performance.panel, model);

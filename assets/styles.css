@@ -1418,6 +1418,16 @@ body.answer-focus-open{overflow:hidden}
 .aercap-perform-model{border-top:1px solid #d9e4ee;padding-top:12px}
 .aercap-perform-model summary{color:#176db2;font-weight:800;cursor:pointer}
 .aercap-perform-model p{margin:10px 0 0;line-height:1.55}
+.education-source-visual{margin:1.3rem 0 0;border-top:1px solid #d9e4ee;padding-top:1rem}
+.education-source-visual summary{color:#176db2;font-weight:800;cursor:pointer}
+.education-source-visual figure{margin:1rem 0 0}
+.education-source-visual svg{display:block;width:100%;max-width:640px;height:auto;border-radius:12px;background:#f2f8fa}
+.education-source-visual svg text{font:600 14px/1.2 system-ui,sans-serif;fill:#244660}
+.education-source-visual .reserve-axis{stroke:#a4b7c5;stroke-width:2}
+.education-source-visual .reserve-balance{fill:none;stroke:#1883b6;stroke-width:5;stroke-linecap:round;stroke-linejoin:round}
+.education-source-visual .reserve-event{fill:#0f8b73}
+.education-source-visual figcaption{font-size:.86rem;line-height:1.5;color:#526980;margin-top:.65rem}
+.education-source-visual .education-accounting-note{font-size:.9rem!important;line-height:1.55!important;margin:1rem 0 0!important}
 .education-mode .aercap-glossary-pop{max-height:45vh}
 .aercap-glossary-pop .aercap-score-term{
   display:block;

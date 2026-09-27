@@ -29,10 +29,29 @@ study_mode: true
 </div></div>
 
 ## Maintenance Reserves
-<div class="aercap-beamer" data-aercap-beamer data-title="Maintenance Reserves" data-concepts="Maintenance reserve|Utilisation|Flight cycle"><div class="aercap-source">
-<p>Flying uses up maintenance life. A lease may require the airline to pay reserves as it flies, often linked to hours or cycles.</p>
-<p>Those payments help fund future major work. The lease may instead settle a maintenance shortfall when the aircraft is returned.</p>
-<p><strong>Say it:</strong> “I would want reporting that shows how the aircraft is being used, what maintenance is due and whether the lease payments and return conditions match that exposure.”</p>
+<div class="aercap-beamer" data-aercap-beamer data-title="Maintenance Reserves" data-concepts="Maintenance reserve|Shop visit|Flight cycles|EOL compensation" data-perform-model="Maintenance reserves are payments beyond rent, usually linked to hours or cycles, that help cover agreed major maintenance. Other leases settle a maintenance shortfall against their return conditions at the end."><div class="aercap-source">
+<p>Maintenance comes due with flight hours, take-off and landing cycles, and calendar time. Even a parked aircraft can need inspections or preservation work.</p>
+<p>During the lease, the airline operates and maintains the aircraft. A major engine <strong>shop visit</strong> takes an engine into a maintenance facility for inspection, repair or overhaul. That can be a large expense.</p>
+<p>Some leases collect <strong>maintenance reserves</strong> each month on top of base rent, usually based on flight hours or cycles. The lessor tracks the cash and its obligations for agreed work. If the aircraft moves to another airline before a shop visit, each operator's payments reflect its own use.</p>
+<p>When qualifying work is done, the airline pays for it and can claim reimbursement under the lease. The reserve balance and the corresponding maintenance liability then fall.</p>
+<p>Other leases use <strong>end-of-lease compensation</strong>: the airline completes the work needed to meet the agreed return condition or pays for the shortfall. The lease terms determine which approach applies.</p>
+<details class="education-source-visual"><summary>See the reserves over time</summary>
+<figure>
+<svg viewBox="0 0 640 235" role="img" aria-label="Illustrative reserve balance grows with payments, then falls after a shop visit. It grows again before another major maintenance event.">
+<line x1="72" y1="178" x2="610" y2="178" class="reserve-axis"/>
+<line x1="72" y1="28" x2="72" y2="178" class="reserve-axis"/>
+<text x="75" y="22">Reserve balance</text>
+<text x="572" y="202">Time →</text>
+<path d="M78 174 L320 43 L320 115 L565 52 L565 158" class="reserve-balance"/>
+<circle cx="320" cy="115" r="5" class="reserve-event"/><circle cx="565" cy="158" r="5" class="reserve-event"/>
+<text x="103" y="95">Monthly payments build up</text>
+<text x="253" y="143">Shop visit</text>
+<text x="461" y="140">Major work</text>
+</svg>
+<figcaption>Schematic based on AerCap’s example: collections build up, while eligible major maintenance can reduce the balance. The amount and timing depend on the contract.</figcaption>
+</figure>
+<p class="education-accounting-note"><strong>Optional accounting detail:</strong> AerCap illustrates a separate 12-year lease collecting $1m a year towards an expected $10m shop visit. Cash collected for that work is initially matched by a maintenance liability; money held for work is not all profit. <a href="https://www.aercap.com/_assets/_ba7b1252fe9802aff093ee06c12f4a8e/aercap/db/680/14467/pdf/4.+Maintenance+Reserves+script+%28For+Website%29.pdf" target="_blank" rel="noopener">See the original chart and accounting tables ↗</a></p>
+</details>
 </div></div>
 
 
