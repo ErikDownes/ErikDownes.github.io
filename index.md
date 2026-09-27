@@ -43,6 +43,67 @@ intro: Interviews are not about inventing brilliant answers on the spot. They
   Learn the same material at different lengths. The aim is not a fixed speech — it is the ability to expand or contract a prepared answer to fit the question.
 </p>
 
+## How to Speak | Patrick Winston
+
+<p class="home-section-lead">
+  Patrick Winston's MIT talk <strong>How to Speak</strong> ran for decades and is still one of the clearest lessons in how communication works. Winston died in 2019, but MIT has preserved the talk and its teaching materials.
+</p>
+
+<div class="home-video" style="margin: 1.5rem 0 2rem;">
+  <iframe
+    src="https://www.youtube.com/embed/023APoktRzY"
+    title="Patrick Winston — How to Speak"
+    style="width:100%; aspect-ratio:16/9; border:0; border-radius:12px;"
+    loading="lazy"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen>
+  </iframe>
+</div>
+
+<p>
+  <a href="https://ocw.mit.edu/courses/res-tll-005-how-to-speak-january-iap-2018/" target="_blank" rel="noopener noreferrer">
+    MIT OpenCourseWare — How to Speak
+  </a>
+</p>
+
+<div class="home-performance">
+  <div class="home-performance-line">Good ideas are not enough.</div>
+  <div class="home-performance-line">People have to understand them.</div>
+  <div class="home-performance-line home-performance-line-strong">Communication changes what people notice, remember and value.</div>
+  <p>
+    Winston's opening argument is deliberately strong: professional success depends heavily on the ability to <strong>speak</strong>, the ability to <strong>write</strong>, and the quality of your ideas. The useful lesson is not the exact ranking — it is that communication is a skill that can be learned and practised.
+  </p>
+</div>
+
+### Why I like it
+
+<p>
+  I like this talk because it shows the <strong>power of storytelling, prompts and simple heuristics</strong>. Winston does not just tell you to “be confident”. He gives concrete things to do: cycle back to an idea, build a fence around a concept, use props, use the board, give the audience something to look at, and control how you start and finish.
+</p>
+
+<p>
+  One small example is surprisingly powerful: he describes Seymour Papert repeatedly <strong>pointing at the board</strong> even when the exact thing being pointed at was not important. The gesture still helped the audience follow the speaker. That is the kind of practical human heuristic I like — small behaviours can change attention, engagement and recall.
+</p>
+
+<div class="practice-rule home-practice">
+  <strong>For interviews:</strong> do not memorise a speech. Build a few prompts and heuristics that help you retrieve the story, make the point and stop.
+</div>
+
+### Speaking and writing in the AI age
+
+<p>
+  The ability to communicate still means being able to <strong>speak clearly</strong>. But the ability to write now includes something new: recognising good writing, giving a strong prompt, iterating, editing and knowing when the result is actually good.
+</p>
+
+<p>
+  AI is a fantastic writing tool. It does not remove the need for writing judgement — it makes that judgement more important. You still need to know what you mean, what good writing sounds like, what to keep, what to cut and what you are willing to stand over.
+</p>
+
+<div class="home-dont">
+  <span>USE AI TO ITERATE.</span>
+  <strong>Keep the judgement human.</strong>
+</div>
+
 <div class="home-three">
   <div class="home-panel">
     <span class="home-panel-number">40</span>
