@@ -2,7 +2,7 @@
 layout: doc
 handle: Education
 title: Education
-nav_order: 35
+nav_order: 40
 eyebrow: LEARN THE INDUSTRY
 intro: "Read the expert explanation, learn it one idea at a time, then test your understanding. Aircraft-leasing terms stay within reach throughout."
 study_mode: true
