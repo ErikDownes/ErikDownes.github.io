@@ -72,7 +72,7 @@ content:
   - { name: abelo, label: "Abelo & Aircraft Leasing", type: file, path: abelo.md, format: yaml-frontmatter, fields: *docfields }
   - { name: education, label: "Education", type: file, path: education.md, format: yaml-frontmatter, fields: *docfields }
   - { name: workplace_skills, label: "Workplace Skills", type: file, path: workplace-skills.md, format: yaml-frontmatter, fields: *docfields }
-  - { name: modules_projects, label: "Modules & Projects", type: file, path: modules-projects.md, format: yaml-frontmatter, fields: *docfields }
+  - { name: modules_projects, label: "Modules", type: file, path: modules-projects.md, format: yaml-frontmatter, fields: *docfields }
 
   - name: modules
     label: "Modules"
@@ -113,5 +113,5 @@ content:
         order: asc
 
   - { name: questions, label: "Questions", type: file, path: questions.md, format: yaml-frontmatter, fields: *docfields }
-  - { name: dashboards, label: "Dashboards", type: file, path: dashboards.md, format: yaml-frontmatter, fields: *docfields }
+  - { name: dashboards, label: "Projects", type: file, path: dashboards.md, format: yaml-frontmatter, fields: *docfields }
   - { name: glossary, label: "Glossary (A–Z)", type: file, path: glossary.md, format: yaml-frontmatter, fields: *docfields }

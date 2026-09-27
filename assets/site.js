@@ -1950,3 +1950,24 @@
   // Fire a custom event so the map initializer can run after the map container exists.
   document.dispatchEvent(new CustomEvent('abeloResearchRendered'));
 })();
+
+  // Interview planning tool lives on Projects with the other interactive work.
+  (() => {
+    const output = document.getElementById('abeloCountdown');
+    if (!output) return;
+    const interview = new Date('2026-09-29T11:10:00+01:00');
+    function updateCountdown() {
+      const ms = interview.getTime() - Date.now();
+      if (ms <= 0) {
+        output.textContent = 'Interview time';
+        return;
+      }
+      const totalMinutes = Math.ceil(ms / 60000);
+      const days = Math.floor(totalMinutes / 1440);
+      const hours = Math.floor((totalMinutes % 1440) / 60);
+      const minutes = totalMinutes % 60;
+      output.textContent = days + 'd ' + String(hours).padStart(2, '0') + 'h ' + String(minutes).padStart(2, '0') + 'm';
+    }
+    updateCountdown();
+    setInterval(updateCountdown, 15000);
+  })();

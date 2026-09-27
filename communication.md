@@ -80,7 +80,7 @@ intro: Retrieve what you know, structure it and communicate it clearly under pre
   <strong>Say it:</strong> “I want to learn how the lease and the aircraft are managed together. I can bring quantitative skills, careful checking and a willingness to make reporting more useful.”
 </div>
 
-<p><a href="{{ '/abelo.html' | relative_url }}">Understand Abelo and the role</a> · <a href="{{ '/dashboards.html' | relative_url }}">Explore the aircraft and finance dashboards</a></p>
+<p><a href="{{ '/abelo.html' | relative_url }}">Understand Abelo and the role</a> · <a href="{{ '/dashboards.html' | relative_url }}">Explore the aircraft and finance projects</a></p>
 
 ## 40 · 60 · 80 Seconds | Control the length
 
@@ -249,7 +249,8 @@ intro: Retrieve what you know, structure it and communicate it clearly under pre
   <a class="section-card" href="{{ '/abelo.html' | relative_url }}"><strong>Abelo</strong><span>Aircraft leasing, role fit, turboprops and what you want to learn.</span><span class="cue">Company-specific</span></a>
   <a class="section-card" href="{{ '/workplace-skills.html' | relative_url }}"><strong>Workplace Skills</strong><span>Teamwork, disagreement, explanation and feedback.</span><span class="cue">Use evidence</span></a>
   <a class="section-card" href="{{ '/working-independently.html' | relative_url }}"><strong>Work Independently</strong><span>Problem solving, initiative, accuracy and knowing when to ask for help.</span><span class="cue">STAR where useful</span></a>
-  <a class="section-card" href="{{ '/modules-projects.html' | relative_url }}"><strong>Modules & Projects</strong><span>Technical concepts, coursework and project evidence.</span><span class="cue">Core technical section</span></a>
+  <a class="section-card" href="{{ '/modules-projects.html' | relative_url }}"><strong>Modules</strong><span>Financial Mathematics coursework and technical concepts.</span><span class="cue">Core technical section</span></a>
+  <a class="section-card" href="{{ '/dashboards.html' | relative_url }}"><strong>Projects</strong><span>Fleet map, leasing lab and finance tools built for this preparation.</span><span class="cue">Explore the work</span></a>
   <a class="section-card" href="{{ '/judgement.html' | relative_url }}"><strong>Judgement</strong><span>Priorities, deadlines, confidentiality, errors and AI oversight.</span><span class="cue">Can they trust you?</span></a>
   <a class="section-card" href="{{ '/questions.html' | relative_url }}"><strong>Questions</strong><span>Questions to ask the employer.</span><span class="cue">Finish strongly</span></a>
   <a class="section-card" href="{{ '/glossary.html' | relative_url }}"><strong>Glossary</strong><span>Key interview and technical vocabulary for rapid recall.</span><span class="cue">Recall language fast</span></a>

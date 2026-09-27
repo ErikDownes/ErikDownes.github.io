@@ -1,7 +1,7 @@
 ---
 layout: doc
-handle: Dashboards
-title: Dashboards — Aircraft & Finance
+handle: Projects
+title: Projects — Aircraft & Finance
 nav_order: 70
 eyebrow: EXPLORE · EXPLAIN · APPLY
 intro: Explore the aircraft portfolio, test a leasing decision and follow the financial ideas from a simple loan to an aircraft. Use the results to practise explaining what matters in an Asset Management role.
@@ -9,11 +9,11 @@ intro: Explore the aircraft portfolio, test a leasing decision and follow the fi
 
 ## The placement in one view
 
-Abelo asks the intern to help prepare **lease reports**, keep **aircraft and contract data accurate**, support **billing**, and improve **reporting and processes**. Commercial, Finance and Legal may all use that work. These dashboards are practice tools for thinking through those tasks; their figures and scenarios are not Abelo's internal data or decisions.
+Abelo asks the intern to help prepare **lease reports**, keep **aircraft and contract data accurate**, support **billing**, and improve **reporting and processes**. Commercial, Finance and Legal may all use that work. These projects are practice tools for thinking through those tasks; their figures and scenarios are not Abelo's internal data or decisions.
 
 **Interview answer:** “I would start by learning the lease requirements and checking the underlying data. I could then help make reporting and billing more reliable, and use my quantitative skills to explain what a change in the numbers means.”
 
-[Explore the fleet](#fleet-map) · [Test a leasing decision](#aircraft-leasing-decision-lab) · [Use the finance lab](#finance-learning-lab)
+[Explore the fleet](#fleet-map) · [Test a leasing decision](#aircraft-leasing-decision-lab) · [Use the finance lab](#finance-learning-lab) · [Interview day](#interview-day)
 
 <a id="fleet-map"></a>
 ## Fleet map | Ask what the records tell us
@@ -363,6 +363,31 @@ The mathematics became richer, but the underlying questions did not change:
 A friend loan makes **credit risk** visible. Simple and compound interest price the **time value of money**. PCP adds a **balloon payment and end-of-contract choice**. A mortgage adds **security and amortisation**. Aircraft finance adds **lease income, counterparty risk, asset management and residual value**.
 
 That is the bridge from basic financial mathematics to the kind of asset-finance thinking used in aircraft leasing.
+
+<a id="interview-day"></a>
+## Interview day | Countdown & location
+
+This small planning tool keeps the interview time and location together.
+
+<div id="abeloInterviewTools" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:18px;margin:20px 0 28px;">
+  <section style="border:1px solid rgba(127,127,127,.28);border-radius:16px;padding:22px;text-align:center;display:flex;flex-direction:column;justify-content:center;min-height:220px;">
+    <time datetime="2026-09-29T11:10:00+01:00" style="font-size:1rem;font-weight:800;margin-bottom:.55rem;">Tuesday 29 September · 11:10 AM</time>
+    <span style="font-size:.875rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;opacity:.75;">Interview countdown</span>
+    <output id="abeloCountdown" aria-live="off" style="font-size:clamp(2.2rem,6vw,4rem);font-weight:850;line-height:1.05;margin:.45rem 0;">—</output>
+  </section>
+  <section style="border:1px solid rgba(127,127,127,.28);border-radius:16px;overflow:hidden;min-height:340px;">
+    <iframe
+      title="Abelo Aviation Limerick interview location — V94 KW28"
+      src="https://www.google.com/maps?q=52.6670293,-8.5753877&z=18&t=k&output=embed"
+      width="100%"
+      height="360"
+      style="border:0;display:block;"
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      allowfullscreen>
+    </iframe>
+  </section>
+</div>
 
 <link rel="stylesheet" href="{{ '/assets/mortgage-calculator.css' | relative_url }}">
 <script defer src="{{ '/assets/mortgage-calculator.js' | relative_url }}"></script>
