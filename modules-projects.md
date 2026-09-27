@@ -1,7 +1,7 @@
 ---
 layout: doc
 handle: Modules
-title: Financial Mathematics — Modules & Projects
+title: Financial Mathematics — Modules
 nav_order: 60
 eyebrow: Module
 intro: Use concise explanations. Show that you can calculate, interpret,
