@@ -20,6 +20,7 @@
   definition: 'The agreed length of time for which an aircraft is leased to an airline.',
   why: 'The lease term affects revenue visibility, remarketing timing, residual-value exposure and future fleet options.'
 },
+    { term: 'Esperanto', definition: 'A constructed international language created to help people with different native languages communicate.', cue: 'A shared language across language backgrounds.' },
     { term: 'Commercial awareness', definition: 'Understanding how an organisation creates value, controls cost, serves customers and responds to its market.', cue: 'Business model → costs → customers → decisions.' },
     { term: 'Correlation', definition: 'A measure of the strength and direction of association between two variables.', cue: 'Association, not causation.' },
     { term: 'Discounting', definition: 'Converting future cash flows into an equivalent value today using a discount rate.', cue: 'Future cash → rate → today.' },
