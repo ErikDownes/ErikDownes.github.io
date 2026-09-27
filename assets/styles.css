@@ -1148,3 +1148,283 @@ body.answer-focus-open{overflow:hidden}
 .education-source-note{margin:48px 0 0;padding:16px 18px;border-left:4px solid #77bdea;background:#f2f8fd;color:#526476;font-size:.88rem;line-height:1.55}
 @media(max-width:600px){.education-aercap-intro{margin-left:-8px;margin-right:-8px;padding:26px 22px;border-radius:16px}.aercap-beamer{border-radius:16px}.aercap-beamer-head{padding:12px 13px}.aercap-stage{min-height:360px;padding:24px 20px}.aercap-controls{padding:9px 10px}.aercap-controls .aercap-spacer{display:none}.aercap-read{padding:22px 20px}.aercap-glossary-pop{left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));width:auto;max-height:55vh;padding:20px 44px 20px 20px}}
 @media(max-width:600px){.aercap-recall{padding:14px 15px}.aercap-recall button{min-height:44px}}
+
+
+/* Education learning-cycle refresh */
+.education-mode .doc-paper > .doc-kicker,
+.education-mode .doc-paper > h1,
+.education-mode .doc-paper > .doc-intro{
+  display:none;
+}
+.education-mode .doc-body{
+  padding-top:4px;
+}
+.education-mode .education-aercap-intro{
+  margin:6px 0 34px;
+  padding:30px 32px 28px;
+  border:1px solid #d7e4f0;
+  border-radius:20px;
+  background:
+    radial-gradient(circle at 92% 8%,rgba(61,153,220,.18),transparent 28%),
+    linear-gradient(145deg,#071f46 0%,#0b3568 62%,#0d5f9f 100%);
+  box-shadow:0 12px 32px rgba(8,38,78,.12);
+}
+.education-mode .education-aercap-title{
+  font-size:clamp(2.6rem,6vw,5.2rem);
+  line-height:.88;
+  margin-bottom:20px;
+}
+.education-mode .education-aercap-intro p{
+  max-width:760px;
+  font-size:.98rem;
+  line-height:1.6;
+}
+.education-mode .doc-body > h2.interview-question-heading{
+  margin:34px 0 10px;
+  padding:0;
+  border:0;
+  background:transparent!important;
+  box-shadow:none!important;
+  color:#102f55;
+  font-size:clamp(1.2rem,2vw,1.55rem);
+  line-height:1.25;
+  letter-spacing:-.018em;
+  cursor:default;
+}
+.education-mode .doc-body > h2.interview-question-heading.cm-audio-speaking{
+  background:transparent!important;
+}
+.education-mode .doc-body > h2 .cm-question-play,
+.education-mode .doc-body > h2 .section-move-menu{
+  display:none!important;
+}
+.education-mode .aercap-beamer{
+  margin:0 0 38px;
+  border:1px solid #d9e4ee;
+  border-radius:18px;
+  box-shadow:0 10px 28px rgba(20,49,83,.07);
+}
+.education-mode .aercap-beamer-head{
+  gap:12px;
+  padding:12px 16px;
+  border-bottom:1px solid #e4ebf2;
+  background:#fff;
+  color:#31506f;
+}
+.education-mode .aercap-beamer-brand{
+  max-width:260px;
+  white-space:normal;
+  color:#31506f;
+  font-size:.62rem;
+  line-height:1.25;
+  letter-spacing:.11em;
+}
+.education-mode .aercap-progress{
+  min-width:70px;
+  background:#e7edf3;
+}
+.education-mode .aercap-progress > span{
+  background:#1874bd;
+}
+.education-mode .aercap-counter{
+  color:#667a8f;
+  opacity:1;
+}
+.education-mode .aercap-controls{
+  gap:6px;
+  padding:10px 12px;
+  border-bottom:1px solid #e7edf3;
+  background:#fbfcfe;
+}
+.education-mode .aercap-controls button{
+  border:1px solid #d5e0ea;
+  border-radius:9px;
+  background:#fff;
+  color:#36536e;
+  padding:8px 11px;
+  font-size:.74rem;
+  box-shadow:none;
+}
+.education-mode .aercap-controls button:hover,
+.education-mode .aercap-controls button:focus-visible{
+  border-color:#8eb6d7;
+  background:#f1f7fc;
+}
+.education-mode .aercap-controls button.is-on{
+  border-color:#176db2;
+  background:#176db2;
+  color:#fff;
+}
+.education-mode .aercap-controls [data-practise]{
+  margin-left:0;
+  border:1px solid #163f68;
+  background:#163f68;
+  color:#fff;
+}
+.education-mode .aercap-controls [data-practise]:hover,
+.education-mode .aercap-controls [data-practise]:focus-visible{
+  border-color:#0c3157;
+  background:#0c3157;
+}
+.education-mode .aercap-stage{
+  min-height:230px;
+  justify-content:center;
+  padding:clamp(26px,4vw,42px);
+  background:linear-gradient(180deg,#fff 0%,#fbfdff 100%);
+}
+.education-mode .aercap-read,
+.education-mode .aercap-test,
+.education-mode .aercap-reflect{
+  min-height:230px;
+  box-sizing:border-box;
+}
+.education-mode .aercap-read{
+  padding:clamp(26px,4vw,38px);
+}
+.education-mode .aercap-test{
+  padding:clamp(26px,4vw,38px);
+}
+.aercap-reflect[hidden]{
+  display:none!important;
+}
+.aercap-reflect{
+  padding:clamp(26px,4vw,38px);
+  background:linear-gradient(180deg,#fff 0%,#fbfdff 100%);
+}
+.aercap-reflect-eyebrow{
+  margin-bottom:12px;
+  color:#59748d;
+  font-size:.68rem;
+  font-weight:900;
+  letter-spacing:.13em;
+}
+.aercap-reflect h3{
+  max-width:720px;
+  margin:0 0 10px;
+  color:#102f55;
+  font-size:clamp(1.18rem,2vw,1.5rem);
+  line-height:1.4;
+}
+.aercap-reflect-intro{
+  max-width:700px;
+  margin:0 0 22px!important;
+  color:#5b6f82!important;
+  font-size:.94rem!important;
+  line-height:1.55!important;
+}
+.aercap-confidence-scale{
+  display:grid;
+  grid-template-columns:repeat(5,minmax(0,1fr));
+  gap:8px;
+  max-width:760px;
+}
+.aercap-confidence-button{
+  min-width:0;
+  min-height:82px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:5px;
+  border:1px solid #d4e0eb;
+  border-radius:12px;
+  background:#fff;
+  color:#36536e;
+  padding:10px 7px;
+  font:inherit;
+  cursor:pointer;
+}
+.aercap-confidence-button:hover,
+.aercap-confidence-button:focus-visible{
+  border-color:#76a9d1;
+  background:#f2f8fd;
+  outline:none;
+}
+.aercap-confidence-button strong{
+  color:#153f69;
+  font-size:1.35rem;
+  line-height:1;
+}
+.aercap-confidence-button span{
+  font-size:.72rem;
+  font-weight:750;
+  line-height:1.2;
+  text-align:center;
+}
+.aercap-confidence-button.is-selected{
+  border-color:#176db2;
+  background:#eaf4fc;
+  box-shadow:inset 0 0 0 1px #176db2;
+}
+.aercap-confidence-button.is-selected strong{
+  color:#0f5f9f;
+}
+.aercap-reflect-feedback{
+  max-width:720px;
+  margin-top:20px;
+  padding:14px 16px;
+  border-left:3px solid #1874bd;
+  border-radius:0 10px 10px 0;
+  background:#eef6fc;
+  color:#284b6c;
+}
+.aercap-reflect-feedback strong{
+  display:block;
+  margin-bottom:4px;
+  color:#164f80;
+}
+.aercap-reflect-feedback p{
+  margin:0!important;
+  color:#36536e!important;
+  line-height:1.5!important;
+}
+.aercap-reflect-next{
+  margin-top:18px;
+  border:1px solid #176db2;
+  border-radius:10px;
+  background:#176db2;
+  color:#fff;
+  padding:10px 14px;
+  font:inherit;
+  font-weight:800;
+  cursor:pointer;
+}
+.aercap-reflect-next:hover,
+.aercap-reflect-next:focus-visible{
+  background:#0f5f9f;
+  border-color:#0f5f9f;
+  outline:none;
+}
+@media(max-width:700px){
+  .education-mode .education-aercap-intro{
+    margin-left:-4px;
+    margin-right:-4px;
+    padding:24px 20px 22px;
+  }
+  .education-mode .aercap-beamer-brand{
+    max-width:150px;
+    font-size:.56rem;
+  }
+  .education-mode .aercap-controls{
+    overflow-x:auto;
+    flex-wrap:nowrap;
+    scrollbar-width:thin;
+  }
+  .education-mode .aercap-controls button{
+    flex:0 0 auto;
+    min-height:40px;
+  }
+  .education-mode .aercap-controls .aercap-spacer{
+    display:none;
+  }
+  .aercap-confidence-scale{
+    gap:5px;
+  }
+  .aercap-confidence-button{
+    min-height:72px;
+    padding:8px 3px;
+  }
+  .aercap-confidence-button span{
+    font-size:.62rem;
+  }
+}
