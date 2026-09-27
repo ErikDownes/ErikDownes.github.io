@@ -1,8 +1,8 @@
 ---
 layout: doc
 handle: Projects
-title: Projects — Focusing on the  Turboprop Aircraft Sector Asset management
-nav_order: 70
+title: Projects
+nav_order: 50
 eyebrow: EXPLORE · EXPLAIN · APPLY
 ---
 ## Projects / Portfolio
@@ -156,6 +156,16 @@ The same idea becomes much more important when rates, terms and balances are lar
 
 
 
+
+## Vehicle finance | Look past the headline monthly payment
+
+Comparing several vehicle-finance offers was a simple but revealing example of applied financial mathematics. The headline monthly payments made the offers look more similar than they really were, so I compared the **total cash cost and contract structure** instead of relying on the most visible number.
+
+The calculation was straightforward enough to check on a handheld scientific calculator using school-level mathematics, but it identified an option worth roughly **€800 less overall**. I also checked whether a final balloon payment applied rather than assuming the monthly payment told the whole story.
+
+What interested me was how much useful information can be hidden by presentation. The mathematics was not difficult; the value came from **asking the right comparison question, checking the full cash-flow structure and making the result visible**. The scale is very different, but the same habit carries into asset finance: understand the cash flows, terms, assumptions and value at the end before comparing alternatives.
+
+
 ## PCP | Buy a car with a final choice
 
 PCP is useful because it separates the decision into an **up-front deposit**, a stream of **monthly payments** and an **optional final payment / GMFV**.
@@ -166,50 +176,7 @@ Use the model to compare structures rather than focusing on the monthly payment 
 
 ### PCP assumptions
 
-```
-  <label>Car price <output id="pcpPriceOut">€30,000</output>
-    <input id="pcpPrice" type="range" min="10000" max="80000" step="1000" value="30000">
-  </label>
-  <div class="money-input"><span>€</span><input id="pcpPriceExact" type="number" min="0" step="100" value="30000"></div>
 
-  <label>Deposit <output id="pcpDepositOut">€6,000</output>
-    <input id="pcpDeposit" type="range" min="0" max="30000" step="500" value="6000">
-  </label>
-
-  <label>APR <output id="pcpRateOut">6.0%</output>
-    <input id="pcpRate" type="range" min="0" max="15" step="0.25" value="6">
-  </label>
-
-  <label>Term <output id="pcpTermOut">36 months</output>
-    <input id="pcpTerm" type="range" min="24" max="60" step="6" value="36">
-  </label>
-
-  <label>Optional final payment / GMFV <output id="pcpBalloonOut">€12,000</output>
-    <input id="pcpBalloon" type="range" min="0" max="40000" step="500" value="12000">
-  </label>
-</section>
-
-<section class="mortgage-output" aria-label="PCP results">
-  <div class="mortgage-kpis">
-    <div><span>Amount financed</span><strong id="pcpFinancedKpi">—</strong></div>
-    <div><span>Monthly payment</span><strong id="pcpMonthlyKpi">—</strong></div>
-    <div><span>Total monthly payments</span><strong id="pcpMonthlyTotalKpi">—</strong></div>
-    <div><span>Total if car is bought</span><strong id="pcpBuyKpi">—</strong></div>
-    <div><span>Total finance cost</span><strong id="pcpCostKpi">—</strong></div>
-    <div><span>Final payment</span><strong id="pcpBalloonKpi">—</strong></div>
-  </div>
-
-  <div class="mortgage-chart-card">
-    <h3>The PCP cash-flow shape</h3>
-    <div class="pcp-flow">
-      <div><strong>Deposit</strong><span>cash now</span></div><b>→</b>
-      <div><strong>Monthly payments</strong><span>finance the middle</span></div><b>→</b>
-      <div><strong>GMFV / balloon</strong><span>buy, return or change car</span></div>
-    </div>
-    <p class="mortgage-help">The calculator is illustrative. Real PCP agreements can include fees, mileage limits, condition requirements and manufacturer/dealer terms.</p>
-  </div>
-</section>
-```
 
 
 
@@ -227,57 +194,7 @@ Move across the chart or tap it to inspect exact monthly values.
 
 Balance Principal repaid Interest paid
 
-```
-<section class="mortgage-controls" aria-label="Mortgage assumptions">
-  <h3>Mortgage assumptions</h3>
 
-  <label for="housePrice">House price <output id="housePriceOut">€400,000</output>
-    <input id="housePrice" type="range" min="100000" max="1500000" step="5000" value="400000">
-  </label>
-  <div class="money-input"><span>€</span><input id="housePriceExact" type="number" min="0" step="1000" value="400000" inputmode="decimal"></div>
-
-  <label for="depositPct">Deposit <output id="depositPctOut">10.0%</output>
-    <input id="depositPct" type="range" min="10" max="100" step="0.5" value="10">
-  </label>
-
-  <div class="mortgage-inline-readout">
-    <span>Deposit cash</span><strong id="depositCash">€40,000</strong>
-  </div>
-
-  <label for="interestRate">Interest rate <output id="interestRateOut">2.2%</output>
-    <input id="interestRate" type="range" min="0" max="9.9" step="0.1" value="2.2">
-  </label>
-
-  <label for="termYears">Mortgage term <output id="termYearsOut">30 years</output>
-    <input id="termYears" type="range" min="0" max="35" step="1" value="30">
-  </label>
-
-  <label for="annualExtra">Annual top-up / overpayment
-    <div class="money-input"><span>€</span><input id="annualExtra" type="number" min="0" step="100" value="0" inputmode="decimal"></div>
-  </label>
-  <p class="mortgage-help">Applied after every 12 scheduled monthly payments and automatically capped at the remaining balance.</p>
-
-  <button type="button" id="resetMortgage" class="mortgage-reset">Reset assumptions</button>
-  <p id="mortgageValidation" class="mortgage-validation" role="status" aria-live="polite"></p>
-</section>
-
-<section class="mortgage-output" aria-label="Mortgage results">
-  <div class="mortgage-kpis">
-    <div><span>Mortgage required</span><strong id="loanKpi">—</strong></div>
-    <div><span>Monthly repayment</span><strong id="monthlyKpi">—</strong></div>
-    <div><span>Payoff time</span><strong id="payoffKpi">—</strong></div>
-    <div><span>Total interest</span><strong id="interestKpi">—</strong></div>
-    <div><span>Total mortgage payments</span><strong id="totalPaidKpi">—</strong></div>
-    <div><span>Interest saved by top-ups</span><strong id="savedKpi">—</strong></div>
-  </div>
-
-  <div class="mortgage-summary-grid">
-    <div><span>House price</span><strong id="houseKpi">—</strong></div>
-    <div><span>Initial deposit</span><strong id="depositKpi">—</strong></div>
-    <div><span>Top-ups actually used</span><strong id="extraUsedKpi">—</strong></div>
-  </div>
-</section>
-```
 
 
 
@@ -301,83 +218,7 @@ The model below is deliberately illustrative. It is **not Abelo pricing**. It is
 
 ### Illustrative lessor assumptions
 
-```
-  <label>Aircraft acquisition price <output id="airPriceOut">€20m</output>
-    <input id="airPrice" type="range" min="5" max="100" step="1" value="20">
-  </label>
-  <div class="money-input"><span>€m</span><input id="airPriceExact" type="number" min="0" step="0.1" value="20"></div>
 
-  <label>Equity contribution <output id="airEquityOut">30%</output>
-    <input id="airEquity" type="range" min="0" max="100" step="5" value="30">
-  </label>
-
-  <label>Debt interest rate <output id="airDebtRateOut">5.0%</output>
-    <input id="airDebtRate" type="range" min="0" max="12" step="0.25" value="5">
-  </label>
-
-  <label>Debt amortisation term <output id="airDebtTermOut">10 years</output>
-    <input id="airDebtTerm" type="range" min="1" max="20" step="1" value="10">
-  </label>
-
-  <label>Monthly airline lease rental
-    <div class="money-input"><span>€k</span><input id="airRent" type="number" min="0" step="5" value="180"></div>
-  </label>
-
-  <label>Airline lease term <output id="airLeaseTermOut">8 years</output>
-    <input id="airLeaseTerm" type="range" min="1" max="15" step="1" value="8">
-  </label>
-
-  <label>Annual owner / asset cost
-    <div class="money-input"><span>€k</span><input id="airAnnualCost" type="number" min="0" step="25" value="350"></div>
-  </label>
-
-  <label>Illustrative residual value <output id="airResidualOut">45%</output>
-    <input id="airResidual" type="range" min="0" max="100" step="5" value="45">
-  </label>
-</section>
-
-<section class="mortgage-output" aria-label="Aircraft finance results">
-  <div class="mortgage-chart-card aircraft-chart-card">
-    <div class="mortgage-chart-heading">
-      <div>
-        <h3>Aircraft economics over time</h3>
-        <p>See debt fall while lease income and owner costs accumulate. Move across the chart or tap it for exact values.</p>
-      </div>
-      <div class="mortgage-legend" aria-hidden="true">
-        <span><i class="air-debt-dot"></i>Debt balance</span>
-        <span><i class="air-rent-dot"></i>Lease rentals</span>
-        <span><i class="air-cost-dot"></i>Owner costs</span>
-      </div>
-    </div>
-    <div class="mortgage-canvas-wrap">
-      <canvas id="aircraftChart" width="960" height="460" aria-label="Interactive aircraft debt, lease rental and owner cost curves"></canvas>
-      <div id="aircraftTooltip" class="mortgage-tooltip" hidden></div>
-    </div>
-    <p class="mortgage-help"><strong>Residual value is shown at the lease-end point</strong> because it is an end-of-period asset value rather than recurring income.</p>
-  </div>
-
-  <div class="mortgage-kpis">
-    <div><span>Equity invested</span><strong id="airEquityKpi">—</strong></div>
-    <div><span>Acquisition debt</span><strong id="airDebtKpi">—</strong></div>
-    <div><span>Illustrative debt payment</span><strong id="airDebtPayKpi">—</strong></div>
-    <div><span>Lease rentals over term</span><strong id="airRentKpi">—</strong></div>
-    <div><span>Residual value</span><strong id="airResidualKpi">—</strong></div>
-    <div><span>Cash before tax / sale costs</span><strong id="airNetKpi">—</strong></div>
-  </div>
-
-  <div class="mortgage-chart-card">
-    <h3>The capital stack</h3>
-    <div class="capital-stack">
-      <div><strong>Banks / investors</strong><span>provide debt + equity capital</span></div>
-      <b>→</b>
-      <div><strong>Aircraft lessor</strong><span>buys & manages the aircraft</span></div>
-      <b>→</b>
-      <div><strong>Airline</strong><span>pays lease rentals</span></div>
-    </div>
-    <p class="mortgage-help">The debt-payment output assumes a conventional amortising loan purely for illustration. Real aviation facilities may use different advance rates, repayment profiles, covenants, security packages and refinancing structures.</p>
-  </div>
-</section>
-```
 
 
 
