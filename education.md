@@ -23,7 +23,7 @@ study_mode: true
 
 ## Aircraft Leasing 101
 <div class="aercap-beamer" data-aercap-beamer data-title="Aircraft Leasing 101"><div class="aercap-source">
-<p>An airline can lease an aircraft rather than fund its full purchase. A lessor buys the asset and earns rent while the airline operates it.</p>
+<p>An airline can lease rather than buy an aircraft. A lessor buys the asset and earns rent while the airline operates it.</p>
 <p>The lessor has to judge the airline, the aircraft, the lease terms and what the aircraft may be worth when the lease ends.</p>
 <p><strong>Say it:</strong> “What interests me is that a lease is both a financing decision and an asset decision. The aircraft must work for the airline now and remain attractive to another operator later.”</p>
 </div></div>
