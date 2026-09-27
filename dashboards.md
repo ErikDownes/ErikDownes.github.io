@@ -10,13 +10,21 @@ intro: Explore the aircraft portfolio, test a leasing decision and follow the
 ---
 ## Projects / Portfolio
 
-I am interested in mathematics, but it is the **application of mathematics** that interests me most. Pure mathematics can begin with curiosity and sometimes find an application decades later; what I particularly enjoy is the point where a mathematical idea becomes useful — in finance, data, modelling or a real decision.
+I am interested in mathematics, but it is the **application of mathematics** that interests me most.
 
-That interest also runs through my family. My grandfather was an accountant at a time when desktop computers and spreadsheets were only beginning to transform financial work. My father studied mathematics and later data analytics, so I grew up around an enthusiasm for mathematics, data and technology.
+Some mathematical ideas can initially seem extremely abstract. Take an infinite convergent series: adding smaller and smaller amounts indefinitely can feel like mathematics pursued purely for its own sake. But the same idea becomes very real in financial mathematics. A finite geometric series helps us value an **annuity**, while an infinite convergent series leads naturally to the valuation of a **perpetuity**.
+
+That is the part of mathematics I particularly enjoy — seeing an abstract idea become a calculation that answers a real question. Better still, when the calculation becomes the output of a program, dashboard or interactive model, I can change the assumptions and immediately see what happens.
+
+For example, instead of simply learning a formula for the present value of an annuity, I can ask what happens when the interest rate changes, when the payment changes, or when the term extends by five years. The mathematics is the same, but programming makes the behaviour of the model visible.
+
+**That is what this page is about: moving from mathematical ideas, to calculations, to code, and ultimately to something useful.**
+
+That interest also runs through my family. My grandfather was an accountant at a time when desktop computers and spreadsheets were beginning to transform financial work. My father studied mathematics and later data analytics, so I grew up around an enthusiasm for mathematics, data and technology.
 
 That has influenced how I approach my own university work. I do not want a project to end simply because the assignment has been submitted. If I analyse something in R or SPSS, I am interested in rebuilding or extending it in Python, putting the work into a reproducible Jupyter notebook, running it in Google Colab, and asking whether the analysis could become a useful application or decision-support tool.
 
-This portfolio is therefore a **work in progress by design**. It combines selected university coursework with projects that I am extending beyond the original assignment — through better visualisation, alternative tools, interactive applications and practical business questions.
+This portfolio is therefore a **work in progress by design**. It combines selected university coursework with projects that I am extending beyond the original assignment — through alternative tools, better visualisation, interactive applications and practical business questions.
 
 
 
