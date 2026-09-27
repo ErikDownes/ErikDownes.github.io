@@ -1279,20 +1279,68 @@
 
   const addSectionMoveMenus = () => {
     if (document.body.classList.contains('education-mode')) return;
+    let dragging = null;
+    let dropTarget = null;
+    let dropAfter = false;
+    let justDragged = false;
+
+    const currentSectionMenu = () => {
+      document.querySelectorAll('[data-question-menu]').forEach(item => {
+        const label = item.querySelector(':scope > .navlabel[href]');
+        if (label && normalisePath(label.href) === normalisePath(location.href)) syncQuestionMenu(item);
+      });
+    };
+
+    const sectionAt = element => {
+      let node = element;
+      while (node && node.parentElement !== body) node = node.parentElement;
+      if (!node || node.parentElement !== body) return null;
+      while (node && !node.matches('h2[data-section-heading]')) node = node.previousElementSibling;
+      return node;
+    };
+
+    const clearDropTarget = () => {
+      dropTarget?.classList.remove('section-drop-before', 'section-drop-after');
+      dropTarget = null;
+    };
+
+    const positionFor = event => {
+      const target = sectionAt(event.target);
+      if (!target || target === dragging) return null;
+      const bounds = target.getBoundingClientRect();
+      const after = event.clientY >= bounds.top + bounds.height / 2;
+      return { target, after };
+    };
+
+    const moveSectionTo = (heading, target, after) => {
+      if (!heading || !target || heading === target) return;
+      const targetBlock = sectionBlockFor(target);
+      const reference = after ? targetBlock[targetBlock.length - 1].nextSibling : target;
+      sectionBlockFor(heading).forEach(node => body.insertBefore(node, reference));
+      saveSectionOrder();
+      currentSectionMenu();
+      heading.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    };
+
     sectionHeadings().forEach(heading => {
       if (heading.querySelector(':scope > .section-move-menu')) return;
       const wrap = document.createElement('span');
       wrap.className = 'section-move-menu';
-      const toggle = document.createElement('button');
-      toggle.type = 'button';
-      toggle.className = 'section-move-toggle';
-      toggle.textContent = '⋮';
-      toggle.title = 'Reorder this section';
+      const grip = document.createElement('button');
+      grip.type = 'button';
+      grip.className = 'section-drag-handle';
+      grip.draggable = true;
+      grip.setAttribute('aria-label', 'Drag to reorder: ' + (heading.dataset.questionText || heading.textContent.trim()));
+      grip.setAttribute('aria-expanded', 'false');
+      grip.title = 'Drag to reorder · click for move options';
+      grip.textContent = '≡';
+
       const menu = document.createElement('span');
       menu.className = 'section-move-actions';
+      menu.setAttribute('role', 'group');
+      menu.setAttribute('aria-label', 'Move section');
       menu.hidden = true;
-
-      [['↑ Up','up'], ['↓ Down','down'], ['⇧ Top','top'], ['⇩ Bottom','bottom']].forEach(pair => {
+      [['↑ Up', 'up'], ['↓ Down', 'down'], ['⇧ Top', 'top'], ['⇩ Bottom', 'bottom']].forEach(pair => {
         const button = document.createElement('button');
         button.type = 'button';
         button.textContent = pair[0];
@@ -1300,21 +1348,70 @@
           event.preventDefault();
           event.stopPropagation();
           if (moveSectionWithinPage(heading, pair[1])) {
+            currentSectionMenu();
             heading.scrollIntoView({ behavior: 'smooth', block: 'center' });
           }
           menu.hidden = true;
+          grip.setAttribute('aria-expanded', 'false');
         });
         menu.appendChild(button);
       });
 
-      toggle.addEventListener('click', event => {
+      grip.addEventListener('click', event => {
         event.preventDefault();
         event.stopPropagation();
+        if (justDragged) return;
+        document.querySelectorAll('.section-move-actions').forEach(actions => {
+          if (actions !== menu) actions.hidden = true;
+        });
         menu.hidden = !menu.hidden;
+        grip.setAttribute('aria-expanded', String(!menu.hidden));
+      });
+      grip.addEventListener('dragstart', event => {
+        dragging = heading;
+        justDragged = true;
+        event.stopPropagation();
+        event.dataTransfer.effectAllowed = 'move';
+        event.dataTransfer.setData('text/plain', sectionIdFor(heading));
+        heading.classList.add('section-dragging');
+      });
+      grip.addEventListener('dragend', () => {
+        dragging?.classList.remove('section-dragging');
+        dragging = null;
+        clearDropTarget();
+        setTimeout(() => { justDragged = false; }, 150);
       });
 
-      wrap.append(toggle, menu);
-      heading.appendChild(wrap);
+      wrap.append(grip, menu);
+      heading.prepend(wrap);
+    });
+
+    body.addEventListener('dragover', event => {
+      if (!dragging) return;
+      event.preventDefault();
+      event.dataTransfer.dropEffect = 'move';
+      const position = positionFor(event);
+      clearDropTarget();
+      if (!position) return;
+      dropTarget = position.target;
+      dropAfter = position.after;
+      dropTarget.classList.add(dropAfter ? 'section-drop-after' : 'section-drop-before');
+    });
+
+    body.addEventListener('drop', event => {
+      if (!dragging) return;
+      event.preventDefault();
+      const position = positionFor(event) || (dropTarget ? { target: dropTarget, after: dropAfter } : null);
+      clearDropTarget();
+      if (position) moveSectionTo(dragging, position.target, position.after);
+      dragging.classList.remove('section-dragging');
+      dragging = null;
+    });
+
+    document.addEventListener('click', event => {
+      if (event.target.closest('.section-move-menu')) return;
+      document.querySelectorAll('.section-move-actions').forEach(actions => { actions.hidden = true; });
+      document.querySelectorAll('.section-drag-handle').forEach(grip => grip.setAttribute('aria-expanded', 'false'));
     });
   };
 
