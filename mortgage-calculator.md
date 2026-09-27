@@ -7,6 +7,9 @@ eyebrow: OPEN · ONLINE · INTERACTIVE
 intro: Start with a residential mortgage, then use the same cash-flow thinking to understand aircraft ownership, financing, leasing, options and residual value.
 ---
 
+<div class="mortgage-note"><strong>Interactive app page:</strong> This page is maintained as a browser application rather than a normal Pages CMS document. Use the controls directly here; edit the source in GitHub when the application itself needs to change.</div>
+
+
 ## Financial instruments | Same questions, different contracts
 
 The easiest way to understand finance is not to memorise products. Ask the same questions every time:
@@ -32,13 +35,13 @@ The easiest way to understand finance is not to memorise products. Ask the same 
   <article><h3>Aircraft lessor finance</h3><p>The lessor may combine debt and equity to buy the aircraft before leasing it to an airline.</p><strong>Idea:</strong> capital stack, lease income and residual value.</article>
 </div>
 
-## PCP | Eric's first real financial decision
+## PCP | Compare financing structures
 
-Eric has already used financial mathematics in a real decision. His mother was offered **three PCP structures** with different deposit and monthly-payment combinations while the optional final payment was fixed.
+PCP is useful because it separates the decision into an **up-front deposit**, a stream of **monthly payments** and an **optional final payment / GMFV**.
 
-Eric checked the figures, compared the total cash outlay and showed that, provided the up-front capital was available, the middle structure was about **€600 cheaper overall**.
+Use the model to compare structures rather than focusing on the monthly payment alone.
 
-**Check the numbers → compare alternatives → recognise the capital constraint → choose the lower-cost structure.**
+**Check the numbers → compare total cash outlay → recognise the capital constraint → understand the end-of-contract choice.**
 
 <div id="pcpLab" class="mortgage-lab">
   <div class="mortgage-grid">
@@ -98,6 +101,24 @@ Use the slider for fast exploration and the number box for precision. The house-
 
 <div id="mortgageLab" class="mortgage-lab">
   <div class="mortgage-grid">
+      <div class="mortgage-chart-card">
+        <div class="mortgage-chart-heading">
+          <div>
+            <h3>Repayment curves</h3>
+            <p>Move across the chart or tap it to inspect exact monthly values.</p>
+          </div>
+          <div class="mortgage-legend" aria-hidden="true">
+            <span><i class="balance-dot"></i>Balance</span>
+            <span><i class="principal-dot"></i>Principal repaid</span>
+            <span><i class="interest-dot"></i>Interest paid</span>
+          </div>
+        </div>
+        <div class="mortgage-canvas-wrap">
+          <canvas id="mortgageChart" width="960" height="460" aria-label="Interactive mortgage balance, principal and interest curves"></canvas>
+          <div id="mortgageTooltip" class="mortgage-tooltip" hidden></div>
+        </div>
+      </div>
+
     <section class="mortgage-controls" aria-label="Mortgage assumptions">
       <h3>Mortgage assumptions</h3>
 
@@ -139,24 +160,6 @@ Use the slider for fast exploration and the number box for precision. The house-
         <div><span>Total interest</span><strong id="interestKpi">—</strong></div>
         <div><span>Total mortgage payments</span><strong id="totalPaidKpi">—</strong></div>
         <div><span>Interest saved by top-ups</span><strong id="savedKpi">—</strong></div>
-      </div>
-
-      <div class="mortgage-chart-card">
-        <div class="mortgage-chart-heading">
-          <div>
-            <h3>Repayment curves</h3>
-            <p>Move across the chart or tap it to inspect exact monthly values.</p>
-          </div>
-          <div class="mortgage-legend" aria-hidden="true">
-            <span><i class="balance-dot"></i>Balance</span>
-            <span><i class="principal-dot"></i>Principal repaid</span>
-            <span><i class="interest-dot"></i>Interest paid</span>
-          </div>
-        </div>
-        <div class="mortgage-canvas-wrap">
-          <canvas id="mortgageChart" width="960" height="460" aria-label="Interactive mortgage balance, principal and interest curves"></canvas>
-          <div id="mortgageTooltip" class="mortgage-tooltip" hidden></div>
-        </div>
       </div>
 
       <div class="mortgage-summary-grid">
