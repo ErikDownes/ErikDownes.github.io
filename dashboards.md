@@ -12,55 +12,25 @@ intro: Explore the aircraft portfolio, test a leasing decision and follow the
 
 I am interested in mathematics, but it is the **application of mathematics** that interests me most.
 
-Some mathematical ideas can initially seem extremely abstract. Take an infinite convergent series: adding smaller and smaller amounts indefinitely can feel like mathematics pursued purely for its own sake. But the same idea becomes very real in financial mathematics. A finite geometric series helps us value an **annuity**, while an infinite convergent series leads naturally to the valuation of a **perpetuity**.
+Some mathematical ideas can initially seem very abstract. An infinite convergent series, for example, is the idea of adding smaller and smaller amounts indefinitely. In financial mathematics that same structure becomes very practical: it helps explain the mathematics behind annuities, perpetuities and the value of future cash flows.
 
-That is the part of mathematics I particularly enjoy — seeing an abstract idea become a calculation that answers a real question. Better still, when the calculation becomes the output of a program, dashboard or interactive model, I can change the assumptions and immediately see what happens.
-
-For example, instead of simply learning a formula for the present value of an annuity, I can ask what happens when the interest rate changes, when the payment changes, or when the term extends by five years. The mathematics is the same, but programming makes the behaviour of the model visible.
+For me, mathematics becomes even more interesting when I can see the result of the calculation — and more interesting again when I can turn it into a program where assumptions can be changed and the consequences immediately explored.
 
 **That is what this page is about: moving from mathematical ideas, to calculations, to code, and ultimately to something useful.**
 
-That interest also runs through my family. My grandfather was an accountant at a time when desktop computers and spreadsheets were beginning to transform financial work. My father studied mathematics and later data analytics, so I grew up around an enthusiasm for mathematics, data and technology.
+I have also used this portfolio to demonstrate skills that are directly relevant to the type of work I would like to do. Rather than simply saying that I can work with data, financial mathematics or programming, I have tried to **show it by building things**.
 
-That has influenced how I approach my own university work. I do not want a project to end simply because the assignment has been submitted. If I analyse something in R or SPSS, I am interested in rebuilding or extending it in Python, putting the work into a reproducible Jupyter notebook, running it in Google Colab, and asking whether the analysis could become a useful application or decision-support tool.
+For example, for an aircraft-leasing internship I put together a fleet map using public aircraft records and developed small financial and decision-support tools around aircraft leasing. The purpose is not to reproduce a company's internal systems or data. It is to demonstrate how I approach a problem: **find the relevant information, clean and check it, decide what matters, build something useful from it, and communicate the result clearly.**
 
-This portfolio is therefore a **work in progress by design**. It combines selected university coursework with projects that I am extending beyond the original assignment — through alternative tools, better visualisation, interactive applications and practical business questions.
+Some of these tools are deliberately connected to the work I could encounter as an intern — aircraft and lessee data, reporting, financial calculations, lease cash flows, filtering, dashboards and identifying inconsistencies in source data.
+
+My portfolio therefore combines university coursework with projects that I have **extended beyond the assignment**. If I complete an analysis in R or SPSS, I may reproduce it in Python, make it reproducible in a Jupyter notebook or Google Colab, build an interactive version, or ask a different question of the same data.
+
+The aim is not to present myself as an expert before I have worked in the industry. It is to show **how I learn, how I use quantitative ideas, and the kind of value I would like to learn to contribute in the workplace.**
 
 
 
-&nbsp;
 
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-## The placement in one view
-
-Abelo asks the intern to help prepare **lease reports**, keep **aircraft and contract data accurate**, support **billing**, and improve **reporting and processes**. Commercial, Finance and Legal may all use that work. These projects are practice tools for thinking through those tasks; their figures and scenarios are not Abelo's internal data or decisions.
-
-**Interview answer:** “I would start by learning the lease requirements and checking the underlying data. I could then help make reporting and billing more reliable, and use my quantitative skills to explain what a change in the numbers means.”
-
-[Explore the fleet](#fleet-map) · [Test a leasing decision](#aircraft-leasing-decision-lab) · [Use the finance lab](#finance-learning-lab) · [Interview day](#interview-day)
 
 
 
