@@ -8,11 +8,15 @@ intro: Build a confident academic and personal introduction without sounding scr
 ---
 ## Tell me Ab... || Tell me about yourself.
 
-I am studying Financial Mathematics at the University of Limerick. I enjoy work that combines mathematics, data and practical decision-making, and I have been strongest in areas such as probability and statistics, finance, data analysis and numerical methods. I am looking for a co-op role where I can apply that quantitative background in a real workplace, learn from experienced colleagues and become more commercially aware.
+I've always had a very analytical mind and I've always loved maths. That showed up in school, where I got H1s in Maths, Applied Maths and Physics, and it naturally led me into Financial Mathematics at the University of Limerick.
 
+What I enjoy most about the course is not just learning the theory, but seeing where the maths can actually be applied — to finance, data, risk and real decisions.
 
+As I've started preparing for co-op, aviation has really caught my interest. I find the industry genuinely exciting: the technology, the scale of it and the freedom it creates. I still think there is something amazing about an aircraft taking off.
 
-**Recall cue:** Course → strongest areas → practical application → what I want from co-op.
+So what I'm looking for now is a placement where I can bring that analytical background into a real business, learn quickly and start understanding how those decisions are made in practice.
+
+**Recall cue:** Analytical mind → H1s → Financial Mathematics → applications → aviation → real business.
 
 ## Why this course || Why did you choose Financial Mathematics?
 
