@@ -196,18 +196,19 @@ The job specification says the intern will help with:
 **Interview wording:**  
 “What attracts me to Asset Management is that the analysis becomes operational. The data and reports are connected to real aircraft, real lease obligations and real commercial decisions.”
 
-## AerCap Videos | Aircraft lifecycle & maintenance reserves
+## AerCap Investor Education | Learn the leasing business
 
-AerCap's **Investor Education** series is a strong starting point because it explains aircraft leasing from the lessor's perspective.
+The full AerCap Investor Education material now lives in **Education** as interactive learning decks rather than long transcript pages.
 
-Watch these two videos on the same page:
+Each video has its own section with:
 
-- **The Lifecycle of an Aircraft** — ordering, placing with an airline, transitions between operators and eventual part-out.
-- **Maintenance Reserves** — why airlines make usage-related maintenance payments and how those payments protect the aircraft owner.
+- progressive Beamer-style reveal,
+- a full readable transcript,
+- embedded aircraft-leasing glossary,
+- keyboard / click navigation,
+- and the repeated AerCap introduction removed.
 
-**For this interview:** connect the videos to the Abelo duties involving **lease-agreement reporting, billing, aircraft data and Asset Management**.
-
-[AerCap — Investor Education](https://www.aercap.com/investors/investor-education)
+[Open AerCap Investor Education]({{ '/education.html' | relative_url }})
 
 ## AEROPODA Video | Maintenance reserves & asset protection
 
