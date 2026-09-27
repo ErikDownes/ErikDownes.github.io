@@ -16,7 +16,7 @@ Each module has its own page. The library is kept in one **alphabetical list** s
 - [AC4214 — Accounting for Financial Decision Making]({{ '/modules/ac4214-accounting-for-financial-decision-making.html' | relative_url }})
 - [MS4215 — Advanced Data Analysis]({{ '/modules/ms4215-advanced-data-analysis.html' | relative_url }})
 - [MS4034 — Applied Data Analysis]({{ '/modules/ms4034-applied-data-analysis.html' | relative_url }})
-- [MS4021 — Calculus 1]({{ '/modules/ms4021-calculus-1.html' | relative_url }})
+- **[MS4021 — Calculus 1]({{ '/modules/ms4021-calculus-1.html' | relative_url }})**
 - [MS4022 — Calculus 2]({{ '/modules/ms4022-calculus-2.html' | relative_url }})
 - [MS4045 — Complex Analysis]({{ '/modules/ms4045-complex-analysis.html' | relative_url }})
 - [CE4701 — Computer Software 1]({{ '/modules/ce4701-computer-software-1.html' | relative_url }})
