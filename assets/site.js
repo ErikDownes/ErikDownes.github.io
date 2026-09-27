@@ -126,13 +126,213 @@
     { term: 'Duration risk', definition: 'Risk that assets and funding mature or reprice on different timetables.', why: 'A long fixed lease funded by short floating debt exposes the owner to refinancing and rate changes.' },
     { term: 'Hedge', definition: 'An arrangement used to reduce exposure to a financial risk such as changing interest rates.', why: 'Lessors use hedges so floating debt does not undermine predictable lease cash flows.' },
     { term: 'Swap', definition: 'A contract that can exchange floating interest-rate payments for fixed-rate payments.', why: 'It can turn variable borrowing costs into more predictable funding costs.' },
-    { term: 'Interest-rate cap', definition: 'A contract limiting how high a floating borrowing rate can rise.', why: 'It protects the lessor from extreme increases in financing cost.' }
+    { term: 'Interest-rate cap', definition: 'A contract limiting how high a floating borrowing rate can rise.', why: 'It protects the lessor from extreme increases in financing cost.' },
+    {
+      term: 'Marginal cost',
+      definition: 'The additional cost caused by producing or providing one more unit. On a flight that is already going to operate, the unit might be one more passenger in an otherwise empty seat.',
+      cue: 'Ask: what extra cost happens only because this one extra unit is added?',
+      why: 'Airlines have large fixed and committed costs, while the incremental cost of filling one otherwise empty seat can be relatively small. That helps explain price competition, cyclicality and why a lessor watches airline credit closely.',
+      formula: 'MC ≈ ΔTotal Cost ÷ ΔQuantity. With a smooth cost function, MC(q) = C′(q).',
+      characteristics: [
+        'Incremental: include only costs caused by the extra unit.',
+        'Decision-specific: a cost is marginal only if it changes because of the decision being analysed.',
+        'Not automatically small: marginal cost can rise sharply when capacity becomes constrained.',
+        'Different from average cost: average cost spreads total cost across all units.'
+      ],
+      examples: [
+        'Extra catering or consumables for one additional passenger.',
+        'Passenger-dependent airport, handling or transaction charges.',
+        'The small additional fuel burn caused by carrying the extra passenger and baggage.'
+      ],
+      nonExamples: [
+        'Aircraft lease rent that is due whether the seat is occupied or empty.',
+        'Crew salaries for a flight that was already scheduled to operate.',
+        'The whole flight’s fuel bill or the airline’s total operating cost.',
+        'Average cost per passenger.'
+      ],
+      misconceptions: [
+        '“Marginal” does not mean “unimportant” or “tiny”; it means caused by one additional unit.',
+        'An empty seat is not literally free to fill. The marginal cost may be low, but it is not necessarily zero.',
+        'Marginal cost is not the same thing as average cost.'
+      ],
+      workedExample: 'Hypothetical example: suppose a flight will operate anyway. One extra passenger causes €4 of catering, €3 of payment/distribution cost, €2 of extra fuel burn and €16 of passenger-dependent charges. The marginal cost of that passenger is €25. The aircraft lease and already-committed crew cost do not enter this one-passenger calculation.',
+      transfer: 'Aircraft-leasing link: when demand weakens, an airline may cut fares aggressively because selling an otherwise empty seat can still contribute cash above its marginal cost. The airline still has to cover its much larger fixed and committed cost base, which is one reason the sector can be cyclical.',
+      check: {
+        prompt: 'A flight is definitely operating. Which item is most clearly part of the marginal cost of carrying one extra passenger?',
+        options: [
+          'The annual aircraft lease payment',
+          'The pilots’ salaries for the already-scheduled flight',
+          'Passenger-dependent charges plus the extra catering and fuel caused by that passenger',
+          'The entire fuel bill for the flight'
+        ],
+        correct: 2,
+        explain: 'Only costs that change because the extra passenger is carried belong in this marginal calculation.'
+      },
+      selfCheck: [
+        'I can define marginal cost without using the word “average”.',
+        'I can explain why an aircraft lease payment is not marginal to filling one seat on an already-scheduled flight.',
+        'I can explain why “low marginal cost” does not mean “zero cost”.',
+        'I can connect low seat-level marginal cost to airline pricing pressure and credit risk.'
+      ]
+    }
   ];
 
   const cleanText = value => (value || '')
     .replace(/\s+/g, ' ')
     .replace(/^[\s,.;:!?–—-]+|[\s,.;:!?–—-]+$/g, '')
     .trim();
+
+  const renderGlossaryLearningContent = (container, item, options = {}) => {
+    const rich = Boolean(
+      item?.formula ||
+      item?.workedExample ||
+      item?.transfer ||
+      item?.characteristics?.length ||
+      item?.examples?.length ||
+      item?.nonExamples?.length ||
+      item?.misconceptions?.length ||
+      item?.check ||
+      item?.selfCheck?.length
+    );
+    if (!container || !rich) return null;
+
+    const deep = document.createElement('details');
+    deep.className = 'glossary-deep-dive';
+    if (options.compact) deep.classList.add('is-compact');
+
+    const summary = document.createElement('summary');
+    summary.textContent = 'Learn this properly';
+    deep.appendChild(summary);
+
+    const body = document.createElement('div');
+    body.className = 'glossary-learning-body';
+
+    if (item.formula) {
+      const formula = document.createElement('div');
+      formula.className = 'glossary-formula';
+      const label = document.createElement('strong');
+      label.textContent = 'Core relationship';
+      const value = document.createElement('div');
+      value.textContent = item.formula;
+      formula.append(label, value);
+      body.appendChild(formula);
+    }
+
+    const frayerData = [
+      ['Characteristics', item.characteristics],
+      ['Examples', item.examples],
+      ['Non-examples', item.nonExamples],
+      ['Misconceptions', item.misconceptions]
+    ].filter(([, values]) => Array.isArray(values) && values.length);
+
+    if (frayerData.length) {
+      const grid = document.createElement('div');
+      grid.className = 'glossary-frayer';
+      frayerData.forEach(([title, values]) => {
+        const card = document.createElement('section');
+        card.className = 'glossary-frayer-card';
+        const heading = document.createElement('h4');
+        heading.textContent = title;
+        const list = document.createElement('ul');
+        values.forEach(value => {
+          const li = document.createElement('li');
+          li.textContent = value;
+          list.appendChild(li);
+        });
+        card.append(heading, list);
+        grid.appendChild(card);
+      });
+      body.appendChild(grid);
+    }
+
+    if (item.workedExample) {
+      const worked = document.createElement('details');
+      worked.className = 'glossary-mini-section';
+      const workedSummary = document.createElement('summary');
+      workedSummary.textContent = 'Worked example';
+      const workedText = document.createElement('p');
+      workedText.textContent = item.workedExample;
+      worked.append(workedSummary, workedText);
+      body.appendChild(worked);
+    }
+
+    if (item.transfer) {
+      const transfer = document.createElement('details');
+      transfer.className = 'glossary-mini-section';
+      const transferSummary = document.createElement('summary');
+      transferSummary.textContent = 'Why this matters here';
+      const transferText = document.createElement('p');
+      transferText.textContent = item.transfer;
+      transfer.append(transferSummary, transferText);
+      body.appendChild(transfer);
+    }
+
+    if (item.check?.prompt && Array.isArray(item.check.options)) {
+      const check = document.createElement('section');
+      check.className = 'glossary-learning-check';
+      const label = document.createElement('span');
+      label.className = 'glossary-learning-label';
+      label.textContent = 'CHECK UNDERSTANDING · AfL';
+      const prompt = document.createElement('p');
+      prompt.className = 'glossary-check-prompt';
+      prompt.textContent = item.check.prompt;
+      const options = document.createElement('div');
+      options.className = 'glossary-check-options';
+      const feedback = document.createElement('p');
+      feedback.className = 'glossary-check-feedback';
+      feedback.hidden = true;
+
+      item.check.options.forEach((option, optionIndex) => {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.textContent = option;
+        button.addEventListener('click', event => {
+          event.preventDefault();
+          event.stopPropagation();
+          const buttons = Array.from(options.querySelectorAll('button'));
+          buttons.forEach((candidate, i) => {
+            candidate.disabled = true;
+            if (i === item.check.correct) candidate.classList.add('is-correct');
+          });
+          if (optionIndex !== item.check.correct) button.classList.add('is-incorrect');
+          feedback.hidden = false;
+          feedback.textContent = `${optionIndex === item.check.correct ? 'Yes. ' : 'Not quite. '}${item.check.explain || ''}`;
+        });
+        options.appendChild(button);
+      });
+
+      check.append(label, prompt, options, feedback);
+      body.appendChild(check);
+    }
+
+    if (Array.isArray(item.selfCheck) && item.selfCheck.length) {
+      const self = document.createElement('section');
+      self.className = 'glossary-self-check';
+      const label = document.createElement('span');
+      label.className = 'glossary-learning-label';
+      label.textContent = 'KNOW THAT YOU KNOW · AaL';
+      const intro = document.createElement('p');
+      intro.textContent = 'Close the definition, then tick these only when you can do them from memory:';
+      const list = document.createElement('div');
+      list.className = 'glossary-self-check-list';
+      item.selfCheck.forEach((statement, index) => {
+        const row = document.createElement('label');
+        const input = document.createElement('input');
+        input.type = 'checkbox';
+        input.setAttribute('aria-label', statement);
+        const text = document.createElement('span');
+        text.textContent = statement;
+        row.append(input, text);
+        list.appendChild(row);
+      });
+      self.append(label, intro, list);
+      body.appendChild(self);
+    }
+
+    deep.appendChild(body);
+    container.appendChild(deep);
+    return deep;
+  };
 
   const normalisePath = value => {
     try {
@@ -438,7 +638,9 @@
     [...GLOSSARY_SEED, ...AERCAP_GLOSSARY_SEED].forEach(item => merged.set(item.term.toLowerCase(), { ...item, builtIn: true }));
     custom.forEach(item => {
       if (!item?.term) return;
-      merged.set(cleanText(item.term).toLowerCase(), { ...item, builtIn: false });
+      const key = cleanText(item.term).toLowerCase();
+      const seeded = merged.get(key) || {};
+      merged.set(key, { ...seeded, ...item, builtIn: false });
     });
     return Array.from(merged.values()).sort((a, b) => a.term.localeCompare(b.term, 'en', { sensitivity: 'base' }));
   };
@@ -623,6 +825,7 @@
         const p = document.createElement('p');
         p.textContent = item.definition;
         card.append(summary, p);
+        renderGlossaryLearningContent(card, item);
 
         if (item.cue) {
           const cue = document.createElement('p');
@@ -702,6 +905,7 @@
       why.append(document.createTextNode(item.why));
       glossaryDialogBody.appendChild(why);
     }
+    renderGlossaryLearningContent(glossaryDialogBody, item);
   };
 
   const linkKnownGlossaryTerms = (root, onTerm = showGlossaryDefinition) => {
@@ -747,7 +951,7 @@
     });
   };
 
-  window.coopEducationGlossary = { readGlossary, linkKnownGlossaryTerms };
+  window.coopEducationGlossary = { readGlossary, linkKnownGlossaryTerms, renderGlossaryLearningContent };
   linkKnownGlossaryTerms(body);
 
   const sectionHeadings = () => Array.from(body.querySelectorAll(':scope > h2[data-section-heading]'));
