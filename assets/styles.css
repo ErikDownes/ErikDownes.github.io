@@ -1494,3 +1494,21 @@ body.answer-focus-open{overflow:hidden}
     font-size:.62rem;
   }
 }
+
+
+/* A small left-edge grip keeps section ordering out of the reading line. */
+.doc-body > h2.interview-question-heading{position:relative;padding-left:38px}
+.doc-body > h2.interview-question-heading:first-child{padding-left:38px}
+.section-move-menu{position:absolute;left:0;top:21px;z-index:8;display:block;width:30px;height:30px}
+.doc-body > h2.interview-question-heading:first-child .section-move-menu{top:0}
+.section-drag-handle{display:grid;place-items:center;width:30px;height:30px;padding:0;border:1px solid transparent;border-radius:7px;background:transparent;color:#8393a7;font:700 23px/1 system-ui,sans-serif;cursor:grab;user-select:none}
+.section-drag-handle:active{cursor:grabbing}
+.section-drag-handle:hover,.section-drag-handle:focus-visible{background:#edf3fa;border-color:#c7d8e8;color:#24518a;outline:none}
+.section-move-actions[hidden]{display:none!important}
+.section-move-actions{position:absolute;top:34px;left:0;z-index:30;display:grid;grid-template-columns:repeat(2,max-content);gap:5px;padding:8px;border:1px solid #d4dfea;border-radius:10px;background:#fff;box-shadow:0 8px 24px rgba(18,48,80,.16)}
+.section-move-actions button{padding:5px 9px;border:1px solid #d8e3ec;border-radius:6px;background:#f8fbfe;color:#31506f;font:600 12px/1.2 system-ui,sans-serif;white-space:nowrap;cursor:pointer}
+.section-move-actions button:hover,.section-move-actions button:focus-visible{background:#eaf3fc;border-color:#8eabc9;outline:none}
+.section-dragging{opacity:.54}
+.doc-body > h2.section-drop-before{box-shadow:inset 0 3px #4a86c4}
+.doc-body > h2.section-drop-after{box-shadow:inset 0 -3px #4a86c4}
+@media print{.section-move-menu{display:none!important}}
