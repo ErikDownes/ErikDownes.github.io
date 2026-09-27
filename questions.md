@@ -10,6 +10,26 @@ intro: Choose two or three. Ask questions that help you understand the work and
 ---
 # Questions
 
+
+
+## Maintenance | How does Abelo protect an aircraft operating far from home?
+
+**I understand an ATR operating in a place such as the Philippines can be maintained by approved teams locally or elsewhere in the region. As the lessor, how much visibility does Abelo have over that work, and how do maintenance reporting, inspection rights and reserves help protect the aircraft’s value?**
+
+Possible follow-up: **If a major check or engine shop visit is coming up, what would the Asset Management team need to know or do?**
+
+### What they might say
+
+- The airline arranges maintenance under an approved programme; the lease sets out what it must report to Abelo.
+- Abelo tracks flying hours, take-off and landing cycles, upcoming checks and maintenance records.
+- Inspection rights give the lessor a way to verify the aircraft’s condition.
+- Reserves and return conditions address the cost of major work and the aircraft’s condition when the lease ends.
+- The team works with technical specialists when a check, repair or lease return needs closer attention.
+
+
+
+&nbsp;
+
 ## Growth | How far does Abelo want to grow?
 
 **When you think about growth, is the strategy essentially to keep expanding within the turboprop market, or are there circumstances where Abelo would consider moving into other aircraft types?**
