@@ -1,6 +1,6 @@
 ---
 layout: doc
-handle: About Erik
+handle: Erik
 title: About Erik
 nav_order: 20
 eyebrow: INTERVIEW STRUCTURE
@@ -41,3 +41,17 @@ I want to understand how quantitative work is actually used inside an organisati
 real workplacejudgementcommunicationuncertainty
 
 **Recall cue:** Apply learning → learn workplace judgement → contribute.
+
+## Skills | What skills would you bring to the placement?
+
+I would bring a strong quantitative base, practical data-analysis experience and a willingness to learn quickly. My course has developed my mathematical and financial reasoning, while projects and part-time work have also given me experience with software, data and dealing with people.
+
+**Quantitative:** Financial Mathematics, probability, statistics, data analysis and modelling.
+
+**Software:** Excel, RStudio, SPSS and basic Java, together with experience learning new technical tools independently.
+
+**Workplace:** Customer service, teamwork, clear communication, accuracy and taking responsibility for getting work finished properly.
+
+**Communication:** I am comfortable taking a technical idea, identifying what the other person actually needs to know, and explaining it at the appropriate level.
+
+**Recall cue:** Quantitative → software → people → explain clearly.
