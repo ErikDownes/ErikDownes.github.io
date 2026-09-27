@@ -97,3 +97,39 @@ intro: Interviews are not about inventing brilliant answers on the spot. They
   <span>YOU ARE NOT LEARNING A SCRIPT.</span>
   <strong>You are training retrieval, language and performance.</strong>
 </div>
+
+
+
+Language worth noticing
+
+Erik does not need to sound ornate. He should start noticing why some language is easier to remember and easier to say.
+
+Useful things to notice include:
+
+
+
+
+
+alliteration — repeated starting sounds
+
+
+
+assonance — repeated vowel sounds
+
+
+
+rhythm — sentence shape that makes a phrase easier to retrieve
+
+
+
+analogy — explaining an unfamiliar idea through a familiar one
+
+
+
+contrast — setting two ideas beside each other so the distinction becomes clear
+
+
+
+precision — choosing the word that says exactly what is meant
+
+The point is not decoration. The point is clarity, recall and confidence.
