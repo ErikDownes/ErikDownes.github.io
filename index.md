@@ -244,9 +244,9 @@ intro: Interviews are not about inventing brilliant answers on the spot. They ar
 <p class="home-section-lead">Prepare more than you say. Use the sections below to build evidence, vocabulary and examples, then practise retrieving only what the question needs.</p>
 
 <div class="section-grid">
-  <a class="section-card" href="{{ '/about-erik.html' | relative_url }}"><strong>About Erik</strong><span>Course, strengths, academic story, motivation and co-op goals.</span><span class="cue">Start here</span></a>
+  <a class="section-card" href="{{ '/candidate-profile.html' | relative_url }}"><strong>Candidate Profile</strong><span>Course, strengths, academic story, motivation and co-op goals.</span><span class="cue">Start here</span></a>
   <a class="section-card" href="{{ '/abelo.html' | relative_url }}"><strong>Abelo</strong><span>Aircraft leasing, role fit, turboprops and what you want to learn.</span><span class="cue">Company-specific</span></a>
-  <a class="section-card" href="{{ '/working-with-others.html' | relative_url }}"><strong>Work with Others</strong><span>Teamwork, disagreement, explanation and feedback.</span><span class="cue">Use evidence</span></a>
+  <a class="section-card" href="{{ '/workplace-skills.html' | relative_url }}"><strong>Workplace Skills</strong><span>Teamwork, disagreement, explanation and feedback.</span><span class="cue">Use evidence</span></a>
   <a class="section-card" href="{{ '/working-independently.html' | relative_url }}"><strong>Work Independently</strong><span>Problem solving, initiative, accuracy and knowing when to ask for help.</span><span class="cue">STAR where useful</span></a>
   <a class="section-card" href="{{ '/modules-projects.html' | relative_url }}"><strong>Modules & Projects</strong><span>Technical concepts, coursework and project evidence.</span><span class="cue">Core technical section</span></a>
   <a class="section-card" href="{{ '/judgement.html' | relative_url }}"><strong>Judgement</strong><span>Priorities, deadlines, confidentiality, errors and AI oversight.</span><span class="cue">Can they trust you?</span></a>

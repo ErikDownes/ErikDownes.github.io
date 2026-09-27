@@ -5,11 +5,11 @@ baseurl: /coop
 markdown: kramdown
 
 defaults:
-  - scope: { path: "about-you.md" }
+  - scope: { path: "candidate-profile.md" }
     values: { nav_order: 10 }
   - scope: { path: "company-role.md" }
     values: { nav_order: 20 }
-  - scope: { path: "teamwork.md" }
+  - scope: { path: "workplace-skills.md" }
     values: { nav_order: 30 }
   - scope: { path: "problem-solving.md" }
     values: { nav_order: 40 }

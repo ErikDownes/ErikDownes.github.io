@@ -536,6 +536,9 @@
     menu.replaceChildren();
     item.classList.toggle('has-submenu', questions.length > 0);
     if (!questions.length) return;
+    menu.classList.toggle('menu-columns-2', questions.length >= 5 && questions.length < 22);
+    menu.classList.toggle('menu-columns-3', questions.length >= 22);
+    menu.style.setProperty('--menu-left', `${Math.round(item.getBoundingClientRect().left)}px`);
 
     questions.forEach((question, index) => {
       const link = document.createElement('a');
@@ -585,6 +588,9 @@
     menu.replaceChildren();
     item.classList.toggle('has-submenu', modules.length > 0);
     if (!modules.length) return;
+    menu.classList.toggle('menu-columns-2', modules.length >= 5 && modules.length < 22);
+    menu.classList.toggle('menu-columns-3', modules.length >= 22);
+    menu.style.setProperty('--menu-left', `${Math.round(item.getBoundingClientRect().left)}px`);
 
     modules.forEach(module => {
       const link = document.createElement('a');
@@ -641,6 +647,18 @@
   };
 
   document.querySelectorAll('[data-question-menu]').forEach(syncQuestionMenu);
+
+  // A fixed menu can be wider than its tab; keep it inside the viewport.
+  const positionMenus = () => document.querySelectorAll('.navitem.has-submenu').forEach(item => {
+    const menu = item.querySelector(':scope > .dropmenu');
+    if (menu) menu.style.setProperty('--menu-left', `${Math.round(item.getBoundingClientRect().left)}px`);
+  });
+  document.querySelectorAll('.navitem').forEach(item => {
+    item.addEventListener('pointerenter', positionMenus);
+    item.addEventListener('focusin', positionMenus);
+  });
+  window.addEventListener('resize', positionMenus);
+  positionMenus();
 
   pagePrint?.addEventListener('click', () => window.print());
 

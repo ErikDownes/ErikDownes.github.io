@@ -1,6 +1,6 @@
 ---
 layout: doc
-handle: Workplace
+handle: Workplace Skills
 title: Workplace Skills
 nav_order: 50
 eyebrow: INTERVIEW STRUCTURE

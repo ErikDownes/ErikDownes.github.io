@@ -1,12 +1,12 @@
 ---
 layout: doc
-handle: Erik
-title: About Erik
+handle: Candidate Profile
+title: Candidate Profile
 nav_order: 20
 eyebrow: INTERVIEW STRUCTURE
 intro: Build a confident academic and personal introduction without sounding scripted.
 ---
-## Tell me Ab... || Tell me about yourself.
+## About me | Tell me about yourself.
 
 I've always had a very analytical mind and I've always loved maths. That showed up in school, where I got H1s in Maths, Applied Maths and Physics, and it naturally led me into Financial Mathematics at the University of Limerick.
 
