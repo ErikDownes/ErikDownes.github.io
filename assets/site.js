@@ -113,7 +113,7 @@
     return handle && question ? {
       handle,
       question,
-      entryType: delimiter === '||' ? 'interview' : 'information'
+      entryType: 'section'
     } : null;
   };
 
@@ -649,7 +649,8 @@
   linkKnownGlossaryTerms(body);
 
   const sectionHeadings = () => Array.from(body.querySelectorAll(':scope > h2[data-section-heading]'));
-  const interviewHeadings = () => Array.from(body.querySelectorAll(':scope > h2[data-entry-type="interview"]'));
+  // Every top-level H2 is rehearsal-capable. Pipes only control the menu handle/title split.
+  const practiceHeadings = () => sectionHeadings();
 
   const sourceNodesFor = heading => {
     const nodes = [];
@@ -905,7 +906,7 @@
   };
 
   const addInlinePlayButtons = () => {
-    interviewHeadings().forEach(heading => {
+    practiceHeadings().forEach(heading => {
       if (heading.querySelector(':scope > .cm-question-play')) return;
       const button = document.createElement('button');
       button.type = 'button';
@@ -1262,12 +1263,12 @@
     focusCard.focus({ preventScroll: true });
   };
 
-  interviewHeadings().forEach(heading => {
+  practiceHeadings().forEach(heading => {
     heading.tabIndex = 0;
     heading.setAttribute('role', 'button');
     heading.setAttribute('aria-haspopup', 'dialog');
-    heading.title = 'Click the question to open focus view';
-    heading.addEventListener('click', event => {
+    heading.title = 'Double-click the section heading to open focus view';
+    heading.addEventListener('dblclick', event => {
       if (event.target.closest('button,a,input,textarea,select,summary')) return;
       openFocus(heading);
     });
@@ -1332,7 +1333,7 @@
           }
           return;
         }
-        const questions = interviewHeadings();
+        const questions = practiceHeadings();
         const text = questions.length
           ? questions.map(heading => `${heading.dataset.questionText}. ${answerTextFor(heading)}`).join(' ')
           : `${document.querySelector('.doc-paper > h1')?.textContent || ''}. ${body.innerText}`;
