@@ -20,7 +20,7 @@
   definition: 'The agreed length of time for which an aircraft is leased to an airline.',
   why: 'The lease term affects revenue visibility, remarketing timing, residual-value exposure and future fleet options.'
 },
-    { term: 'Esperanto', definition: 'A constructed international language first published by L. L. Zamenhof in 1887 to help people with different native languages communicate. Earlier constructed languages existed, including Volapük.', cue: 'A widely adopted shared language, but not the first constructed language.' },
+    { term: 'Esperanto', definition: 'An artificial, or constructed, language introduced by L. L. Zamenhof in 1887 for international communication. It draws features from European languages. Earlier constructed languages, including Volapük, already existed.', cue: 'A planned bridge language; 1887, but not the first.' },
     { term: 'Commercial awareness', definition: 'Understanding how an organisation creates value, controls cost, serves customers and responds to its market.', cue: 'Business model → costs → customers → decisions.' },
     { term: 'Correlation', definition: 'A measure of the strength and direction of association between two variables.', cue: 'Association, not causation.' },
     { term: 'Discounting', definition: 'Converting future cash flows into an equivalent value today using a discount rate.', cue: 'Future cash → rate → today.' },
