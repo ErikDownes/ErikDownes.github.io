@@ -1,10 +1,10 @@
 ---
 layout: doc
-handle: Abelo & Aircraft Leasing
-title: Abelo & Aircraft Leasing
+handle: Abelo & Asset Management
+title: Abelo & Asset Management
 nav_order: 30
-eyebrow: "Know the  job and the company. "
-intro: "Company knowledge for the Abelo interview. "
+eyebrow: Know the  job company and industry
+intro: "Company and sector  knowledge for the Abelo interview. "
 ---
 ## Intern Job | Asset Management Intern
 
