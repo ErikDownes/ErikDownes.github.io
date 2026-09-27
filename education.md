@@ -14,12 +14,7 @@ study_mode: true
   <p>Each card is a short idea you could explain in an interview. Read it, reveal one idea at a time, then speak without looking. The questions check whether you can use the idea. Follow the source link if you want the full industry explanation.</p>
 </div>
 
-## Power-by-the-Hour
-<div class="aercap-beamer" data-aercap-beamer data-title="Power-by-the-Hour"><div class="aercap-source">
-<p>Under a power-by-the-hour arrangement, some rent follows how much an aircraft flies. That can help an airline through a period of uncertain demand such as covid.</p>
-<p>The lessor must weigh that flexibility against its need for predictable income. The exact contract determines when payments return to a fixed basis.</p>
-<p><strong>Say it:</strong> “It is a useful example of lease terms responding to a shock. I would be interested in how the team decides when flexibility protects value.”</p>
-</div></div>
+
 
 ## The Lifecycle of an Aircraft
 <div class="aercap-beamer" data-aercap-beamer data-title="The Lifecycle of an Aircraft"><div class="aercap-source">
@@ -69,11 +64,29 @@ study_mode: true
 <p><strong>Say it:</strong> “I would ask what condition we acquired, what condition the lease requires at return and how that difference is reflected in the deal.”</p>
 </div></div>
 
+
+
+
 ## Valuation Practices in Aircraft Leasing
 <div class="aercap-beamer" data-aercap-beamer data-title="Valuation Practices in Aircraft Leasing"><div class="aercap-source">
 <p>An aircraft’s book value reflects its purchase and depreciation history. Its market value can differ as demand, supply and condition change.</p>
 <p>That is why a sale or lease-extension decision needs more than one accounting figure. The likely future cash flows and alternatives matter.</p>
 <p><strong>Say it:</strong> “I would want to understand the assumptions behind a valuation, especially the aircraft’s condition and its prospects with other operators.”</p>
 </div></div>
+
+
+## Power-by-the-Hour
+
+<div class="aercap-beamer" data-aercap-beamer data-title="Power-by-the-Hour">
+<div class="aercap-source">
+
+<p>Under a power-by-the-hour arrangement, some rent follows how much an aircraft flies. That can help an airline through a period of uncertain demand such as covid.</p>
+
+<p>The lessor must weigh that flexibility against its need for predictable income. The exact contract determines when payments return to a fixed basis.</p>
+
+<p><strong>Say it:</strong> “It is a useful example of lease terms responding to a shock. I would be interested in how the team decides when flexibility protects value.”</p>
+
+</div>
+</div>
 
 <div class="education-source-note">These are interview practice notes drawn from broader industry material, not descriptions of Abelo’s internal policies. <a href="https://www.aercap.com/investors/investor-education" target="_blank" rel="noopener">Explore the original AerCap Investor Education series</a> for the full explanations.</div>
