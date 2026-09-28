@@ -5,7 +5,7 @@ eyebrow: AVIATION · AIRCRAFT · ENGINES
 study_mode: true
 ---
 
-# Aircraft and Engine Maintenance Schedules
+## Aircraft and Engine Maintenance Schedules
 
 **The short version:** the airline keeps the aircraft airworthy, plans the work and arranges qualified engineers. The lessor monitors the aircraft and the lease. If the lease includes maintenance reserves, the airline pays an additional amount linked to use; after qualifying major work, it can submit the records and seek reimbursement. Think **rainy day provision for agreed major events**, but not the airline's own savings account: reimbursement and any unused balance follow the lease. It is not a fee for the lessor to send mechanics or a substitute for ordinary maintenance. [AerCap describes the airline's maintenance responsibility and reserve reimbursements in its annual report](https://www.aercap.com/investors/shareholder-services/sec-filings/content/0001378789-25-000007/aer-20241231.htm).
 
