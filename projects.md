@@ -21,7 +21,7 @@ For example, for an aircraft-leasing internship I put together a fleet map using
 
 Some of these tools are deliberately connected to the work I could encounter as an intern — aircraft and lessee data, reporting, financial calculations, lease cash flows, filtering, dashboards and identifying inconsistencies in source data.
 
-My portfolio therefore combines university coursework with projects that I have **extended beyond the assignment**. If I complete an analysis in R or SPSS, I may reproduce it in Python, make it reproducible in a Jupyter notebook or Google Colab, build an interactive version, or ask a different question of the same data.
+My portfolio therefore combines university studies with projects that I have **extended beyond the assignment**. If I complete an analysis in R or SPSS, I may reproduce it in Python, make it reproducible in a Jupyter notebook or Google Colab, build an interactive version, or ask a different question of the same data.
 
 The aim is not to present myself as an expert before I have worked in the industry. It is to show **how I learn, how I use quantitative ideas, and the kind of value I would like to learn to contribute in the workplace.**
 
