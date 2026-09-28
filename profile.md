@@ -45,6 +45,20 @@ eyebrow: FINANCIAL MATHEMATICS · DATA ANALYSIS · UNIVERSITY OF LIMERICK
   </div>
 </div>
 
+
+
+## Career Direction
+
+I am building toward analytical roles where **mathematics, finance, data and technology** are used to make practical decisions.
+
+Aviation is one area that particularly interests me. When this co-op opportunity arose, I began learning about **regional aviation, aircraft leasing and asset management**, including how aircraft such as the ATR 42, ATR 72 and Dash 8 are financed, leased, maintained, monitored and remarketed. That work is collected in the **[Aviation]({{ '/aviation.html' | relative_url }})** section.
+
+For co-op, the common thread matters more than the job title: I want to work on real problems, learn from experienced people and become useful quickly.
+
+
+
+
+
 ## Academic Results
 
 **Current QCA:** 3.40 · **Credits completed:** 120 · **Results through:** 2025/26 Semester 2
@@ -105,10 +119,4 @@ eyebrow: FINANCIAL MATHEMATICS · DATA ANALYSIS · UNIVERSITY OF LIMERICK
 | Applied Mathematics | **H1** |
 | Physics | **H1** |
 
-## Career Direction
 
-I am building toward analytical roles where **mathematics, finance, data and technology** are used to make practical decisions.
-
-Aviation is one area that particularly interests me. When this co-op opportunity arose, I began learning about **regional aviation, aircraft leasing and asset management**, including how aircraft such as the ATR 42, ATR 72 and Dash 8 are financed, leased, maintained, monitored and remarketed. That work is collected in the **[Aviation]({{ '/aviation.html' | relative_url }})** section.
-
-For co-op, the common thread matters more than the job title: I want to work on real problems, learn from experienced people and become useful quickly.
