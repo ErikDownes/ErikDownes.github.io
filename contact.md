@@ -10,13 +10,13 @@ public_mode: true
 
 ## Contact
 
-For co-op, project or professional enquiries, the easiest way to reach me is by email.
+For co-op, project or professional enquiries, you can reach me by email or connect with me on LinkedIn.
 
 **Email**  
-[erikdownes2307@gmail.com](mailto:erikdownes2307@gmail.com)
+<a href="#" class="protected-email" data-user="erikdownes2307" data-domain="gmail.com">erikdownes2307 [at] gmail [dot] com</a>
 
 **University email**  
-[24434582@studentmail.ul.ie](mailto:24434582@studentmail.ul.ie)
+<a href="#" class="protected-email" data-user="24434582" data-domain="studentmail.ul.ie">24434582 [at] studentmail [dot] ul [dot] ie</a>
 
 **Website / URL**  
 [{{ site.url }}{{ site.baseurl }}/]({{ site.url }}{{ site.baseurl }}/)
@@ -26,3 +26,13 @@ For co-op, project or professional enquiries, the easiest way to reach me is by 
 
 **GitHub**  
 [github.com/ErikDownes](https://github.com/ErikDownes)
+
+<script>
+document.querySelectorAll('.protected-email').forEach(function (link) {
+  link.addEventListener('click', function (event) {
+    event.preventDefault();
+    var address = link.dataset.user + '@' + link.dataset.domain;
+    window.location.href = 'mailto:' + address;
+  });
+});
+</script>
