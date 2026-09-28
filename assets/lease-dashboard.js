@@ -14,6 +14,134 @@
     'd8-400': {value:12, lease:145, decline:6.0}
   };
 
+  const acquisitionDefaults = {
+    'atr42': {
+      price: 22,
+      note: 'Illustrative ATR 42-600 acquisition assumption. Adjust the value rather than treating it as a manufacturer list price.'
+    },
+    'atr72': {
+      price: 25,
+      note: 'ATR announced 40 ATR 72-600 aircraft for around $1bn in September 2026 — roughly $25m each as a headline transaction proxy, not an official list price.'
+    },
+    'd8-400': {
+      price: 12,
+      note: 'Illustrative refurbished Dash 8-400 acquisition assumption. De Havilland Canada is publicly selling OEM-refurbished Dash 8-400 aircraft in 2026; transaction prices are not disclosed.'
+    }
+  };
+
+  const industryEvents = {
+    paris: {
+      name: 'Paris Air Show 2027',
+      dateLabel: '14–20 June 2027 · Paris-Le Bourget',
+      start: new Date('2027-06-14T09:00:00+02:00'),
+      end: new Date('2027-06-20T18:00:00+02:00')
+    },
+    dubai: {
+      name: 'Dubai Airshow 2027',
+      dateLabel: '15–19 November 2027 · DWC, Dubai Airshow Site',
+      start: new Date('2027-11-15T10:00:00+04:00'),
+      end: new Date('2027-11-19T18:00:00+04:00')
+    }
+  };
+
+  function selectedIndustryEvent() {
+    const choice = $('acqEventSelect') ? $('acqEventSelect').value : 'auto';
+    if (choice !== 'auto') return industryEvents[choice];
+    const now = new Date();
+    if (now <= industryEvents.paris.end) return industryEvents.paris;
+    return industryEvents.dubai;
+  }
+
+  function countdownLabel(target, now = new Date()) {
+    const ms = target - now;
+    if (ms <= 0) return 'NOW';
+    const totalHours = Math.floor(ms / 3600000);
+    const days = Math.floor(totalHours / 24);
+    const hours = totalHours % 24;
+    return days + 'd ' + hours + 'h';
+  }
+
+  function formatShortDate(date) {
+    return new Intl.DateTimeFormat('en-IE', {day:'numeric', month:'short', year:'numeric'}).format(date);
+  }
+
+  function updateAcquisition() {
+    if (!$('acqAircraft')) return;
+    const type = $('acqAircraft').value;
+    const price = +$('acqUnitPrice').value || 0;
+    const firm = +$('acqFirmQty').value;
+    const options = +$('acqOptionQty').value;
+    const exercise = Math.min(+$('acqExerciseQty').value, options);
+    const factor = +$('acqOptionPriceFactor').value;
+    const depositPct = +$('acqDepositPct').value;
+    const leadDays = +$('acqDecisionLead').value;
+    const optionPrice = price * factor / 100;
+    const firmValue = price * firm;
+    const exerciseValue = optionPrice * exercise;
+    const programmeValue = firmValue + exerciseValue;
+    const maxValue = firmValue + optionPrice * options;
+    const upfront = programmeValue * depositPct / 100;
+    const remaining = options - exercise;
+
+    $('acqExerciseQty').max = String(options);
+    $('acqExerciseQty').value = String(exercise);
+    setOut('acqFirmOut', firm + (firm === 1 ? ' aircraft' : ' aircraft'));
+    setOut('acqOptionsOut', options + ' available');
+    setOut('acqExerciseOut', exercise + ' exercised');
+    setOut('acqOptionFactorOut', factor + '% of base price');
+    setOut('acqDepositOut', depositPct + '%');
+    setOut('acqLeadOut', leadDays + ' days');
+
+    setOut('acqFirmValue', moneyM(firmValue));
+    setOut('acqExerciseValue', moneyM(exerciseValue));
+    setOut('acqProgramValue', moneyM(programmeValue));
+    setOut('acqMaxValue', moneyM(maxValue));
+    setOut('acqUpfrontValue', moneyM(upfront));
+    setOut('acqRemaining', String(remaining));
+
+    const event = selectedIndustryEvent();
+    const now = new Date();
+    const decisionDate = new Date(event.start.getTime() - leadDays * 86400000);
+    setOut('acqEventName', event.name);
+    setOut('acqEventDate', event.dateLabel);
+    setOut('acqCountdown', countdownLabel(event.start, now));
+
+    const decisionMs = decisionDate - now;
+    const decisionText = decisionMs > 0
+      ? countdownLabel(decisionDate, now) + ' to decision gate'
+      : 'decision gate reached';
+
+    const summary = exercise === 0
+      ? 'Firm order: ' + firm + ' aircraft. ' + options + ' purchase options remain available.'
+      : 'Firm order: ' + firm + ' aircraft plus ' + exercise + ' exercised option' + (exercise === 1 ? '' : 's') + '. ' + remaining + ' remain.';
+    setOut('acqDecisionSummary', summary + ' ' + decisionText + '.');
+
+    const pill = $('acqStatusPill');
+    if (pill) {
+      pill.textContent = exercise === 0 ? 'OPTIONS HELD' : (remaining === 0 ? 'ALL OPTIONS EXERCISED' : 'OPTIONS PARTLY EXERCISED');
+    }
+
+    const timeline = $('acqTimeline');
+    if (timeline) {
+      const eventState = now >= event.start && now <= event.end ? 'UNDERWAY' : (now > event.end ? 'COMPLETED' : countdownLabel(event.start, now));
+      timeline.innerHTML =
+        '<article><span>TODAY</span><strong>' + formatShortDate(now) + '</strong><small>Current model date</small></article>' +
+        '<article><span>DECISION GATE</span><strong>' + formatShortDate(decisionDate) + '</strong><small>' + decisionText + '</small></article>' +
+        '<article><span>INDUSTRY MILESTONE</span><strong>' + formatShortDate(event.start) + '</strong><small>' + event.name + ' · ' + eventState + '</small></article>';
+    }
+  }
+
+  function chooseAcquisitionAircraft(type) {
+    if (!acquisitionDefaults[type] || !$('acqAircraft')) return;
+    $('acqAircraft').value = type;
+    $('acqUnitPrice').value = acquisitionDefaults[type].price;
+    setOut('acqPriceNote', acquisitionDefaults[type].note);
+    document.querySelectorAll('[data-acq-aircraft]').forEach(function(btn){
+      btn.classList.toggle('active', btn.dataset.acqAircraft === type);
+    });
+    updateAcquisition();
+  }
+
   function setOut(id, value){ const el=$(id); if(el) el.textContent=value; }
 
   function model({value, leaseK, horizon, discount, decline, annualCost}) {
@@ -135,9 +263,24 @@
   document.querySelectorAll('.lease-tab').forEach(btn=>btn.addEventListener('click',()=>{
     document.querySelectorAll('.lease-tab').forEach(b=>b.classList.toggle('active',b===btn));
     document.querySelectorAll('.lease-panel').forEach(p=>p.classList.toggle('active',p.dataset.panel===btn.dataset.tab));
+    if(btn.dataset.tab==='acquisition') updateAcquisition();
     if(btn.dataset.tab==='scenarios') updateScenarios();
     if(btn.dataset.tab==='portfolio') initPortfolioMap();
   }));
+
+  ['acqUnitPrice','acqFirmQty','acqOptionQty','acqExerciseQty','acqOptionPriceFactor','acqDepositPct','acqDecisionLead'].forEach(id=>$(id)?.addEventListener('input',updateAcquisition));
+  $('acqEventSelect')?.addEventListener('change', updateAcquisition);
+  document.querySelectorAll('[data-acq-aircraft]').forEach(function(btn){
+    btn.addEventListener('click', function(){ chooseAcquisitionAircraft(btn.dataset.acqAircraft); });
+  });
+  document.querySelectorAll('[data-acq-exercise]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      const options = +$('acqOptionQty').value;
+      const mode = btn.dataset.acqExercise;
+      $('acqExerciseQty').value = mode === 'all' ? options : (mode === 'half' ? Math.ceil(options / 2) : 0);
+      updateAcquisition();
+    });
+  });
 
   ['startAge','startValue','monthlyLease','horizon','discountRate','valueDecline','annualCost'].forEach(id=>$(id)?.addEventListener('input',updateSingle));
   $('aircraftType')?.addEventListener('change',()=>{
@@ -247,5 +390,6 @@
   $('portfolioEvidence')?.addEventListener('change', initPortfolioMap);
   renderPortfolioList();
 
-  updateSingle();updateRelet();
+  updateAcquisition();updateSingle();updateRelet();
+  setInterval(updateAcquisition, 60000);
 })();
