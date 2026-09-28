@@ -520,7 +520,9 @@
   });
 
   document.querySelectorAll('.navitem > .navlabel[href]').forEach(label => {
-    const isCurrent = normalisePath(label.href) === currentPath;
+    const labelPath = normalisePath(label.href);
+    const isCareerParent = /\/career\.html$/.test(labelPath) && /\/career\//.test(currentPath);
+    const isCurrent = labelPath === currentPath || isCareerParent;
     const item = label.closest('.navitem');
     item?.classList.toggle('is-current', isCurrent);
     if (isCurrent) label.setAttribute('aria-current', 'page');
@@ -529,19 +531,20 @@
 
   const headingInfo = heading => {
     if (!heading) return null;
+    const navHref = cleanText(heading.dataset?.navHref);
     const handle = cleanText(heading.dataset?.menuLabel);
     const question = cleanText(heading.dataset?.questionText);
-    if (handle && question) return { handle, question, id: heading.id };
+    if (handle && question) return { handle, question, id: heading.id, navHref };
 
     const raw = cleanText(heading.textContent);
     if (!raw) return null;
 
     const parsed = splitQuestionHeading(raw);
-    if (parsed) return { ...parsed, id: heading.id };
+    if (parsed) return { ...parsed, id: heading.id, navHref };
 
     // Legacy H2: no pipe means the same text is both the menu handle
     // and the visible section title.
-    return { handle: raw, question: raw, id: heading.id };
+    return { handle: raw, question: raw, id: heading.id, navHref };
   };
 
   const populateQuestionMenu = (item, headings, pageUrl) => {
@@ -558,7 +561,7 @@
     questions.forEach((question, index) => {
       const link = document.createElement('a');
       const id = question.id || `question-${index + 1}`;
-      link.href = `${pageUrl.pathname}${pageUrl.search}#${id}`;
+      link.href = question.navHref ? new URL(question.navHref, pageUrl.href).href : `${pageUrl.pathname}${pageUrl.search}#${id}`;
       link.textContent = question.handle;
       link.title = question.question;
       link.addEventListener('click', () => {
