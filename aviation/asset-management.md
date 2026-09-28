@@ -5,8 +5,6 @@ title: What do you know about  Airline Asset Management?
 eyebrow: AVIATION · PROTECTING VALUE THROUGH THE LEASE
 study_mode: true
 ---
-
-
 It’s about protecting the value and condition of your aircraft, and making sure the lessee meets the requirements of the lease.
 
 Abelo owns a very valuable asset, but somebody else is operating it every day. So you need to know that the aircraft is being maintained correctly, that the reporting is accurate, and that the technical records are complete.
@@ -17,7 +15,7 @@ I’ve been learning about flight hours, cycles, engine shop visits, maintenance
 
 I also came across power-by-the-hour arrangements during COVID. When aircraft were hardly flying, some lessors temporarily linked payments more closely to how much the aircraft were actually being used. I thought that was a really interesting example of asset management responding to a major shock.
 
-**Did Abelo or Elix use power-by-the-hour arrangements with any of your airlines during COVID?**
+Did Abelo or Elix use power-by-the-hour arrangements with any of your airlines during COVID?
 
 That’s what interests me about asset management — keeping the aircraft flying and earning, while protecting the condition and value of the asset.
 
