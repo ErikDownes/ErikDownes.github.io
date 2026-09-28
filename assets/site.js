@@ -2338,25 +2338,25 @@
   filterHost.innerHTML = `
     <div class="abelo-filter-head">
       <div>
-        <strong>Explore the portfolio</strong>
+        <strong>Filters</strong>
         <span class="abelo-filter-status" data-abelo-filter-status></span>
       </div>
       <button type="button" class="abelo-filter-clear" data-abelo-clear>Clear filters</button>
     </div>
     <details class="abelo-filter-details" open>
-      <summary><span>5 continents</span><small>Choose a region</small></summary>
+      <summary><span>Region</span></summary>
       <div class="abelo-filter-grid abelo-filter-grid--regions" data-abelo-region-filters></div>
     </details>
     <details class="abelo-filter-details">
-      <summary><span>Aircraft models</span><small>Filter map + airframes</small></summary>
+      <summary><span>Airframe</span></summary>
       <div class="abelo-filter-grid abelo-filter-grid--models" data-abelo-model-filters></div>
     </details>
     <details class="abelo-filter-details">
-      <summary><span>19 countries</span><small>Choose a country directly</small></summary>
+      <summary><span>Country</span></summary>
       <div class="abelo-filter-grid abelo-filter-grid--countries" data-abelo-country-filters></div>
     </details>
     <details class="abelo-filter-details">
-      <summary><span>26 lessees</span><small>Choose a lessee directly · # = customer recency</small></summary>
+      <summary><span>Lessee</span></summary>
       <div class="abelo-filter-grid abelo-filter-grid--lessees" data-abelo-lessee-filters></div>
     </details>
   `;
@@ -2385,6 +2385,19 @@
     </div>
   `;
   filterHost.insertAdjacentElement('afterend', airframeHost);
+
+  const dataNote = document.createElement('details');
+  dataNote.className = 'abelo-app-notes';
+  dataNote.innerHTML = `
+    <summary>About the data</summary>
+    <div>
+      <p><strong>61-aircraft control total:</strong> 34 ATR 72 + 8 ATR 42 + 19 Dash 8.</p>
+      <p>The lessee map is the reconciliation layer. MSN and registration are attached only where public evidence supports them; unresolved airframes remain flagged rather than guessed.</p>
+      <p>Sources include public Abelo / Elix announcements and aircraft-history records including Planespotters.</p>
+      <p><a href="https://www.planespotters.net/aircraft/production/atr-42-72" target="_blank" rel="noopener noreferrer">ATR 42/72 production list ↗</a> · <a href="https://www.planespotters.net/aircraft/production/de-havilland-canada-dhc-8" target="_blank" rel="noopener noreferrer">Dash 8 production list ↗</a></p>
+    </div>
+  `;
+  airframeHost.insertAdjacentElement('afterend', dataNote);
 
   const airframeTitle = airframeHost.querySelector('[data-abelo-airframe-title]');
   const airframeStatus = airframeHost.querySelector('[data-abelo-airframe-status]');
@@ -3027,13 +3040,11 @@
   wrapper.dataset.abeloMap = '';
   wrapper.innerHTML = `
     <div class="abelo-map-canvas" id="abeloWorldMap" role="img" aria-label="World map of Abelo and Elix aircraft placements"></div>
-    <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:14px 0 16px;">
-      <div style="border:1px solid #d9dee8;border-radius:14px;padding:16px;text-align:center;"><strong style="display:block;font-size:2rem;line-height:1;">61</strong><span>Aircraft</span></div>
-      <div style="border:1px solid #d9dee8;border-radius:14px;padding:16px;text-align:center;"><strong style="display:block;font-size:2rem;line-height:1;">26</strong><span>Lessees</span></div>
-      <div style="border:1px solid #d9dee8;border-radius:14px;padding:16px;text-align:center;"><strong style="display:block;font-size:2rem;line-height:1;">19</strong><span>Countries</span></div>
+    <div class="abelo-map-kpis">
+      <div><strong>61</strong><span>Aircraft</span></div>
+      <div><strong>26</strong><span>Lessees</span></div>
+      <div><strong>19</strong><span>Countries</span></div>
     </div>
-    <p class="abelo-map-note"><strong>61-aircraft control total:</strong> 34 ATR 72 + 8 ATR 42 + 19 Dash 8. This is the current dated public-data control total used for the project. The lessee map is a separate reconciliation layer, and individual MSN / registration identities are being progressively attached rather than guessed.</p>
-    <p class="abelo-map-note">Public Abelo / Elix announcements and Planespotters production lists: <a href="https://www.planespotters.net/aircraft/production/atr-42-72" target="_blank" rel="noopener noreferrer">ATR 42/72 ↗</a> · <a href="https://www.planespotters.net/aircraft/production/de-havilland-canada-dhc-8" target="_blank" rel="noopener noreferrer">Dash 8 ↗</a>.</p>
   `;
 
   marker.replaceWith(wrapper);
