@@ -2701,18 +2701,36 @@ body.answer-focus-open{overflow:hidden}
   font-size:1.2rem!important;
   line-height:1.5!important;
 }
-.profile-intro-grid{
+.profile-about-grid{
   display:grid;
-  grid-template-columns:minmax(0,1.12fr) minmax(320px,.88fr);
-  gap:56px;
+  grid-template-columns:180px minmax(0,1fr);
+  gap:30px;
   align-items:start;
-  margin:14px 0 42px;
+  margin:14px 0 30px;
+}
+.profile-portrait{
+  margin:0;
+  width:180px;
+}
+.profile-portrait img{
+  display:block;
+  width:100%;
+  aspect-ratio:4/5;
+  object-fit:cover;
+  border-radius:8px;
+  box-shadow:0 1px 4px rgba(34,40,46,.14);
+}
+.profile-intro-copy p:first-child{
+  margin-top:0;
 }
 .profile-skill-groups{
-  padding-top:2px;
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:24px;
+  margin:0 0 42px;
 }
 .profile-skill-group{
-  margin:0 0 24px;
+  margin:0;
 }
 .profile-skill-group h3{
   margin:0 0 9px;
@@ -2738,17 +2756,27 @@ body.answer-focus-open{overflow:hidden}
   font-size:.8rem;
   line-height:1.15;
 }
-.profile-mode .profile-intro-grid + h2{
+.profile-mode .profile-skill-groups + h2{
   margin-top:30px;
 }
 @media(max-width:760px){
-  .profile-intro-grid{
-    grid-template-columns:1fr;
-    gap:28px;
+  .profile-about-grid{
+    grid-template-columns:150px minmax(0,1fr);
+    gap:24px;
   }
-  .profile-skill-groups{padding-top:0}
+  .profile-portrait{width:150px}
+  .profile-skill-groups{
+    grid-template-columns:1fr;
+    gap:22px;
+  }
 }
-
+@media(max-width:540px){
+  .profile-about-grid{
+    grid-template-columns:1fr;
+    gap:20px;
+  }
+  .profile-portrait{width:145px}
+}
 
 /* Fleet map interaction refinements: UI controls are controls, not glossary prose. */
 .abelo-filter-details > summary {
