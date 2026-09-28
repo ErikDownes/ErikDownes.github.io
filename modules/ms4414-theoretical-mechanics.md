@@ -6,7 +6,6 @@ year: "2nd"
 semester: "Sem2"
 status: "Core"
 eyebrow: "2ND YEAR · SEM2"
-intro: "A concise interview-ready page for MS4414 — Theoretical Mechanics."
 ---
 <p><a href="{{ '/modules-projects.html' | relative_url }}">← Modules & Projects</a></p>
 
