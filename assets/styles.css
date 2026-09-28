@@ -2412,3 +2412,217 @@ body.answer-focus-open{overflow:hidden}
     flex-direction: column;
   }
 }
+
+
+/* Fleet map display modes: lessees / aircraft / countries */
+.abelo-map-mode {
+  min-width: 220px;
+  border: 1px solid rgba(15,23,42,.16);
+  border-radius: 12px;
+  background: rgba(255,255,255,.94);
+  padding: 9px;
+  box-shadow: 0 8px 22px rgba(15,23,42,.16);
+  backdrop-filter: blur(8px);
+}
+.abelo-map-mode__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 7px;
+  color: #172033;
+  font-size: .72rem;
+}
+.abelo-map-fullscreen {
+  width: 30px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #cfd8e2;
+  border-radius: 7px;
+  background: #fff;
+  color: #334155;
+  font-size: 1rem;
+  font-weight: 900;
+  cursor: pointer;
+}
+.abelo-map-mode__buttons {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 5px;
+}
+.abelo-map-mode__buttons button {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  align-items: center;
+  border: 1px solid #d7dfe7;
+  border-radius: 7px;
+  background: #fff;
+  color: #334155;
+  padding: 6px 8px;
+  font: inherit;
+  font-size: .7rem;
+  font-weight: 750;
+  cursor: pointer;
+}
+.abelo-map-mode__buttons button.is-active {
+  border-color: #4f78a2;
+  background: #edf5fb;
+  color: #174f7d;
+  box-shadow: inset 3px 0 0 #4f78a2;
+}
+.abelo-map-mode__buttons b {
+  font-size: .65rem;
+  color: #64748b;
+}
+.abelo-aircraft-marker,
+.abelo-country-marker {
+  background: transparent;
+  border: 0;
+  overflow: visible !important;
+}
+.abelo-aircraft-marker__badge {
+  position: relative;
+  width: 58px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  transform: translate(var(--pin-x,0), var(--pin-y,0));
+  background: var(--aircraft-color,#315f8c);
+  color: #fff;
+  clip-path: polygon(
+    50% 0%,
+    60% 24%,
+    94% 39%,
+    98% 50%,
+    94% 61%,
+    60% 58%,
+    68% 94%,
+    52% 76%,
+    48% 76%,
+    32% 94%,
+    40% 58%,
+    6% 61%,
+    2% 50%,
+    6% 39%,
+    40% 24%
+  );
+  filter: drop-shadow(0 2px 4px rgba(15,23,42,.35));
+  cursor: pointer;
+  user-select: none;
+}
+.abelo-aircraft-marker__badge b {
+  position: relative;
+  z-index: 2;
+  margin-top: 1px;
+  font-size: .72rem;
+  line-height: 1;
+  text-shadow: 0 1px 2px rgba(0,0,0,.35);
+}
+.abelo-aircraft-marker__wing {
+  display: none;
+}
+.abelo-aircraft-marker__badge:hover {
+  transform: translate(var(--pin-x,0), var(--pin-y,0)) scale(1.12);
+}
+.abelo-country-marker__badge {
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  background: var(--pin-color,#315f8c);
+  color: #fff;
+  font-size: .72rem;
+  font-weight: 900;
+  line-height: 1;
+  box-shadow: 0 2px 7px rgba(32,33,36,.28);
+  cursor: pointer;
+  user-select: none;
+}
+.abelo-country-marker__badge:hover {
+  transform: scale(1.08);
+}
+.abelo-popup-aircraft-facts {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 6px;
+  margin-top: 8px;
+}
+.abelo-popup-aircraft-facts > div {
+  padding: 7px 8px;
+  border-radius: 8px;
+  background: #f4f7f9;
+}
+.abelo-popup-aircraft-facts span,
+.abelo-popup-aircraft-facts strong {
+  display: block;
+}
+.abelo-popup-aircraft-facts span {
+  margin-bottom: 2px;
+  color: #64748b;
+  font-size: .62rem;
+  font-weight: 800;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+.abelo-popup-aircraft-facts strong {
+  color: #263445;
+  font-size: .75rem;
+}
+.abelo-unlocated-aircraft {
+  max-width: 310px;
+  border: 1px solid rgba(15,23,42,.18);
+  border-radius: 10px;
+  background: rgba(255,255,255,.94);
+  padding: 8px 9px;
+  box-shadow: 0 6px 18px rgba(15,23,42,.15);
+}
+.abelo-unlocated-aircraft > strong {
+  display: block;
+  margin-bottom: 6px;
+  color: #475569;
+  font-size: .65rem;
+}
+.abelo-unlocated-aircraft > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+.abelo-unlocated-aircraft .abelo-aircraft-marker__badge {
+  width: 42px;
+  height: 32px;
+  transform: none;
+}
+.abelo-unlocated-aircraft .abelo-aircraft-marker__badge:hover {
+  transform: scale(1.08);
+}
+.abelo-map-canvas:fullscreen {
+  width: 100vw !important;
+  height: 100vh !important;
+  min-height: 100vh !important;
+  background: #e9eef3;
+}
+.abelo-map-canvas.is-map-fullscreen-fallback {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 9999 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  min-height: 100vh !important;
+}
+@media (max-width: 620px) {
+  .abelo-map-mode {
+    min-width: 170px;
+    padding: 7px;
+  }
+  .abelo-map-mode__buttons button {
+    font-size: .64rem;
+  }
+  .abelo-aircraft-marker__badge {
+    width: 50px;
+    height: 38px;
+  }
+}
