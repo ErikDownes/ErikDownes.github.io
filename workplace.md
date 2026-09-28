@@ -1,10 +1,11 @@
 ---
 layout: doc
-handle: Competencies
-title: Competencies
+permalink: /career.html
+handle: Career
+title: Career
 nav_order: 30
 eyebrow: WORK WITH OTHERS · WORK INDEPENDENTLY · COMMUNICATE · LEARN
-intro: Evidence of how Erik works with others, works independently, communicates, uses technology and exercises professional judgement.
+intro: Career planning, interview preparation and evidence of how Erik works with others, works independently, communicates, uses technology and exercises professional judgement.
 ---
 
 ## Successful team | Tell me about a time you worked successfully in a team.
