@@ -48,6 +48,18 @@ Other teams you may Liase with are
 
 ## Internship | What does Abelo say about students?
 
+**Megan Fay**  
+Placement Officer
+
+1. **Key Skills Profile**
+2. **CV Headers**
+3. **Teamwork**
+4. **Communication Skills**
+5. **Problem Solving & Analytics**
+6. **Using Initiative**
+7. **Projects / Portfolio / Volunteering**
+8. **Additional Information**
+
 
 
 &nbsp;
