@@ -7,14 +7,18 @@ study_mode: true
 ---
 ## What do you know about aircraft leasing?
 
-Aircraft leasing is where the lessor owns or finances the aircraft and the airline operates it and pays rent.
 
-The cycle I keep in mind is **acquire → finance → lease → manage → remarket**.
 
-What interests me is the constant interaction between **risk, valuation and maintenance**. The lessor has to understand the airline’s credit risk, the aircraft’s value, utilisation, maintenance status and records. **Maintenance reserves** are important because they help protect the value and condition of the aircraft through the lease.
+An airline can either buy or lease an aircraft. Modern aircraft leasing really took off with Tony Ryan and GPA in Shannon in the 1970s.
 
-I also learned from AerCap about **power-by-the-hour during Covid**, where lease payments could reflect actual aircraft usage.
+Leasing means an airline can get aircraft, start flying passengers and earning revenue, without having hundreds of millions tied up in owning a fleet.
 
-And over an aircraft’s life, it may move between airlines, be remarketed, converted to cargo or eventually retired.
+According to Aircraft Leasing Ireland in 2025, 41% of the world’s aircraft are leased. And 64% of those are managed from Ireland.
 
-One thing I’d be interested to ask is: **do you generally work with something like a 10–12 year initial lease, and how do you decide when an older aircraft should stay in passenger service, move to cargo, or be retired?**
+For the lessor, you also have to protect the aircraft. Maintenance, inspections and records have to be managed throughout the lease to protect the aircraft and its value.
+
+That’s where leasing and asset management come together.
+
+Can I tell you what I know about asset management?
+
+  
