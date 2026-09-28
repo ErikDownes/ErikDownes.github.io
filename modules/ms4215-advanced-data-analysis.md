@@ -9,7 +9,7 @@ eyebrow: "3RD YEAR · SEM1"
 study_mode: true
 ---
 
-[← Modules & Projects]({{ '/modules-projects.html' | relative_url }})
+[← Modules & Projects]({{ '/coursework.html' | relative_url }})
 
 ## Start here
 
