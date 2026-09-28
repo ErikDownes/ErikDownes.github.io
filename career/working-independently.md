@@ -4,7 +4,6 @@ handle: Learning & Development
 title: Learning & Development
 eyebrow: CAREER · LEARNING · INDEPENDENCE · ADAPTABILITY
 ---
-
 [← Career]({{ '/career.html' | relative_url }})
 
 ## New system | How would you learn a new system or piece of software?
@@ -25,9 +24,15 @@ I would first make a reasonable attempt myself, check the available instructions
 
 first attempt | research | specific question | independence
 
-## Quiet period | What would you do during a quiet period if you had finished your work?
+## Workload | How do you manage the ebb and flow of work?
 
-I would check that my current work is complete, ask whether there is anything else that needs attention, and use the time constructively to learn systems, review documentation or understand the wider work of the team rather than waiting passively.
+I would work around **priorities, deadlines and longer-term responsibilities**. At busy times, the focus is on what is urgent, important and dependent on other people. When the pressure eases, I can move attention to work that is valuable but less time-critical.
+
+That might mean checking data quality, improving documentation, learning systems in more depth, developing reporting, or identifying a repetitive process that could be improved through **automation or responsible use of AI**.
+
+It is also the time to make progress on **longer-term goals**: taking on a more ambitious project, trying out a new technology, or developing an idea that needs space to explore properly.
+
+I would see that as part of managing professional work well — balancing short-term delivery with continuous improvement and longer-term development.
 
 ## AI adaptability | How would you respond if AI changed part of your role?
 
