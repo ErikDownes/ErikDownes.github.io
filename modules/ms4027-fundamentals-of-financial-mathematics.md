@@ -6,7 +6,6 @@ year: "3rd"
 semester: "Sem1"
 status: "Core"
 eyebrow: "3RD YEAR · AUTUMN · 6 CREDITS"
-intro: "Price a future promise, explain its risk, and choose a sensible hedge."
 ---
 
 <style>
