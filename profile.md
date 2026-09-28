@@ -8,17 +8,9 @@ profile_mode: true
 eyebrow: FINANCIAL MATHEMATICS · UNIVERSITY OF LIMERICK
 ---
 
-<div class="profile-hero">
-  <p class="profile-hero-label">FINANCIAL MATHEMATICS · UNIVERSITY OF LIMERICK</p>
-  <p class="profile-hero-title">Quantitative thinking for real decisions.</p>
-  <p class="profile-hero-copy">I am a Financial Mathematics student combining mathematics, statistics, finance and programming. I like turning information into a checked analysis, understanding what the result means, and communicating it clearly enough to support a real decision.</p>
-  <div class="profile-actions">
-    <a href="mailto:erikdownes2307@gmail.com">Email</a>
-    <a href="mailto:24434582@studentmail.ul.ie">UL Email</a>
-    <a href="https://www.linkedin.com/in/erik-downes-7b312127a/" target="_blank" rel="noopener">LinkedIn</a>
-    <a href="https://github.com/ErikDownes" target="_blank" rel="noopener">GitHub</a>
-  </div>
-</div>
+## Quantitative thinking for real decisions
+
+I am a Financial Mathematics student combining mathematics, statistics, finance and programming. I like turning information into a checked analysis, understanding what the result means, and communicating it clearly enough to support a real decision.
 
 <div class="profile-evidence" aria-label="Academic evidence">
   <div><strong>H1</strong><span>Mathematics</span></div>
@@ -80,8 +72,3 @@ When this co-op opportunity arose, that general interest became much more focuse
 
 That combination is what attracts me. For co-op, I am particularly interested in **aviation, asset management, finance and analytics**. The common thread matters more than the job title: I want to work on real problems, learn from experienced people and become useful quickly.
 
-<div class="profile-contact">
-  <strong>Erik Downes</strong>
-  <span>Financial Mathematics · University of Limerick</span>
-  <span><a href="mailto:erikdownes2307@gmail.com">Email</a> · <a href="mailto:24434582@studentmail.ul.ie">UL email</a> · <a href="https://www.linkedin.com/in/erik-downes-7b312127a/" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://github.com/ErikDownes" target="_blank" rel="noopener">GitHub</a></span>
-</div>
