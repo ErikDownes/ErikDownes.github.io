@@ -13,26 +13,18 @@ I would identify deadlines, importance and dependencies, then organise the work 
 
 prioritise | deadlines | dependencies | clarify
 
-## Deadline | What would you do if you thought you might miss a deadline?
+## Deadlines | What would you do if you thought you might miss a deadline?
 
 I would raise the issue early, explain what remains to be done, identify the obstacle and agree the best way to complete the work or adjust priorities.
 
 early communication | obstacle | priorities | completion
 
-## Workload | How do you manage the ebb and flow of work?
+### When work is quieter
 
-I focus on immediate priorities when deadlines are tight. When there is more capacity, I use it constructively for longer-term work, process improvement or learning that will make me more useful to the team.
+I would use spare capacity constructively for longer-term work, process improvement or learning that will make me more useful to the team.
 
-delivery | capacity | improvement | learning
+## Reliability | What does professionalism look like in day-to-day work?
 
-## Administration | How do you approach routine administrative work?
+Follow the process, keep records current, complete routine work on time, communicate clearly, respect confidentiality and produce work that colleagues can trust.
 
-I would treat routine work as part of the control system of the business: follow the process, keep records current, complete it on time and look for patterns that indicate where the process could be improved.
-
-process | records | timeliness | improvement
-
-## Professionalism | What does professionalism mean to you?
-
-Being reliable, communicating clearly, respecting confidentiality, meeting commitments, taking feedback seriously and producing work that colleagues can trust.
-
-reliable | clear | confidential | accountable
+process | records | timeliness | accountability
