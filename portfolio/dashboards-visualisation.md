@@ -7,10 +7,10 @@ study_mode: true
 ---
 [← Portfolio]({{ '/portfolio.html' | relative_url }})
 
-## Fleet intelligence map | Public records into an interactive portfolio
+## Turboprop Fleet Intelligence | Public records into an interactive portfolio
 The aircraft map combines public Abelo/Elix transaction evidence with aircraft-history research and geographic filtering.
 
-[Open Fleet Map →]({{ '/fleet-map.html' | relative_url }})
+[Open Turboprop Fleet Intelligence →]({{ '/fleet-map.html' | relative_url }})
 
 ## Aircraft leasing decision lab | Change one assumption
 An interactive decision-support exercise explores how financing and aircraft assumptions alter the commercial picture.
