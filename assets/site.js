@@ -545,7 +545,7 @@
   document.querySelectorAll('.navitem > .navlabel[href]').forEach(label => {
     const labelPath = normalisePath(label.href);
     const rootPath = normalisePath(document.querySelector('.brand')?.href || '/');
-    const isAboutParent = labelPath === rootPath && /\/(?:academic-record|about-asset-management|questions-for-abelo)\.html$/.test(currentPath);
+    const isAboutParent = labelPath === rootPath && /\/(?:academic-record|about-asset-management|questions-for-abelo|skills-profile)\.html$/.test(currentPath);
     const isCareerParent = /\/career\.html$/.test(labelPath) && /\/career\//.test(currentPath);
     const isAviationParent = /\/aviation\.html$/.test(labelPath) && /\/aviation\//.test(currentPath);
     const isCourseworkParent = /\/coursework\.html$/.test(labelPath) && /\/modules\//.test(currentPath);
@@ -770,6 +770,7 @@
 
   const ABOUT_SUBPAGES = [
     { label: 'About Me', path: '' },
+    { label: 'Skills Profile', path: 'skills-profile.html' },
     { label: 'Why This Role', path: 'about-asset-management.html' },
     { label: 'Questions for Abelo', path: 'questions-for-abelo.html' },
     { label: 'Academic Record', path: 'academic-record.html' }
