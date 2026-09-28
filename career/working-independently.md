@@ -3,7 +3,6 @@ layout: doc
 handle: Working Independently
 title: Working Independently
 eyebrow: CAREER · INITIATIVE · LEARNING · ACCURACY
-intro: How Erik approaches unfamiliar work, learns independently, checks accuracy and uses quiet time constructively.
 ---
 
 [← Career]({{ '/career.html' | relative_url }})
