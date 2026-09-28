@@ -748,9 +748,9 @@
 
   const AVIATION_SUBPAGES = [
     { label: 'Aircraft', path: 'aviation/aircraft.html' },
+    { label: 'Abelo', path: 'aviation/abelo.html' },
     { label: 'Aircraft Leasing', path: 'aviation/aircraft-leasing.html' },
-    { label: 'Asset Management', path: 'aviation/asset-management.html' },
-    { label: 'Abelo', path: 'aviation/abelo.html' }
+    { label: 'Asset Management', path: 'aviation/asset-management.html' }
   ];
 
   const populateAviationMenu = async (item, pageUrl) => {
