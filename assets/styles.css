@@ -2753,3 +2753,147 @@ body.answer-focus-open{overflow:hidden}
   }
   .profile-skill-groups{padding-top:0}
 }
+
+
+/* Fleet map interaction refinements: UI controls are controls, not glossary prose. */
+.abelo-filter-details > summary {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 5px 3px;
+  border-radius: 7px;
+}
+.abelo-filter-details > summary:hover,
+.abelo-filter-details > summary:focus-visible {
+  background: #f1f5f9;
+  color: #243b53;
+  outline: none;
+}
+
+/* Compact multi-layer chooser. */
+.abelo-map-mode {
+  min-width: 236px;
+}
+.abelo-map-mode__head {
+  margin-bottom: 0;
+}
+.abelo-map-mode__head-actions {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.abelo-map-layers-toggle,
+.abelo-map-filter-toggle {
+  border: 1px solid #cfd8e2;
+  border-radius: 7px;
+  background: #fff;
+  color: #334155;
+  padding: 6px 8px;
+  font: inherit;
+  font-size: .7rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+.abelo-map-layers-toggle {
+  min-width: 128px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 7px;
+  text-align: left;
+}
+.abelo-map-layers-toggle b {
+  max-width: 110px;
+  overflow: hidden;
+  color: #64748b;
+  font-size: .62rem;
+  font-weight: 750;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.abelo-map-filter-toggle {
+  display: none;
+}
+.abelo-map-filter-toggle.is-active {
+  border-color: #4f78a2;
+  background: #edf5fb;
+  color: #174f7d;
+}
+.abelo-map-layer-popover {
+  display: grid;
+  gap: 5px;
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid #e2e8f0;
+}
+.abelo-map-layer-popover[hidden] {
+  display: none;
+}
+.abelo-map-layer-popover label {
+  display: grid;
+  grid-template-columns: auto minmax(0,1fr) auto;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 7px;
+  border: 1px solid #e2e8f0;
+  border-radius: 7px;
+  background: #fff;
+  color: #334155;
+  font-size: .7rem;
+  font-weight: 750;
+  cursor: pointer;
+}
+.abelo-map-layer-popover input {
+  margin: 0;
+}
+.abelo-map-layer-popover b {
+  color: #64748b;
+  font-size: .64rem;
+}
+.abelo-map-layer-apply {
+  justify-self: end;
+  min-width: 54px;
+  border: 0;
+  border-radius: 7px;
+  background: #174f7d;
+  color: #fff;
+  padding: 6px 11px;
+  font: inherit;
+  font-size: .7rem;
+  font-weight: 850;
+  cursor: pointer;
+}
+.abelo-map-layer-apply:disabled {
+  opacity: .4;
+  cursor: default;
+}
+
+/* The original filter panel becomes an on/off drawer only while the map is fullscreen. */
+.abelo-filter-panel.is-map-overlay {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 1100;
+  width: min(430px, calc(100vw - 300px));
+  max-height: calc(100vh - 24px);
+  margin: 0;
+  overflow: auto;
+  overscroll-behavior: contain;
+  background: rgba(251,252,253,.97);
+  box-shadow: 0 12px 34px rgba(15,23,42,.22);
+  backdrop-filter: blur(10px);
+}
+.abelo-map-canvas:fullscreen .abelo-map-filter-toggle,
+.abelo-map-canvas.is-map-fullscreen-fallback .abelo-map-filter-toggle {
+  display: inline-flex;
+}
+@media (max-width: 760px) {
+  .abelo-filter-panel.is-map-overlay {
+    top: 58px;
+    left: 8px;
+    width: calc(100vw - 16px);
+    max-height: calc(100vh - 70px);
+  }
+  .abelo-map-mode {
+    min-width: 200px;
+  }
+}
