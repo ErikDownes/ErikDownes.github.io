@@ -18,15 +18,15 @@ As a Financial Mathematics student, I immediately wanted to know what was behind
 
 ## Finding the Data
 
-I went through about 20 Abelo PDFs — press releases, aircraft announcements, leases and financing announcements — as well as pages on the website.
+The data did not come from one clean source.
 
-I used AI to help extract the useful information and started building a dataset.
+I started with Abelo’s own public material — press releases, aircraft announcements, lease announcements, financing news and other pages. Across the research, I used AI-assisted OCR on roughly 70 pages so that information trapped inside PDFs and page images could be turned into usable text and checked against the aircraft records.
 
-But I hit a major problem: I was missing almost half the fleet.
+I also found a public aviation master dataset containing about 520,000 aircraft records and 27 variables. That gave me a large structured dataset, but it was far broader than I needed and some of the fields I wanted were incomplete or inconsistent.
 
-I found a public aviation master dataset containing exactly 520,000 aircraft records and 27 variables — everything from helicopters and private aircraft to commercial airliners.
+PlaneSpotters gave me another route. Its ATR 42 and ATR 72 filters produced a fleet view that also came back to 61 aircraft. It was useful reference data, but it was effectively read-only rather than a clean downloadable CSV source.
 
-The problem had changed: how do I find Abelo’s aircraft inside 520,000 records?
+So the job became a data-consolidation exercise: use the large structured dataset for scale, use the PlaneSpotters filtered records for cross-checking and missing fields, and use OCR-extracted public material to fill gaps and validate what I was seeing.
 
 ## Python, Pandas and Notebooks
 
@@ -34,11 +34,11 @@ This was a natural application of what I had learned in Data Analytics.
 
 I used Python and Pandas in Google Colab. Colab gives me a Jupyter-style notebook, so I can combine small blocks of Python code with notes and outputs and build the analysis step by step.
 
-Pandas was the main library for handling the data. Rather than manually filtering 520,000 rows in Excel, I could write code to filter, sort, clean, count and compare records.
+Pandas was the main library for handling the data. Rather than manually working through 520,000 rows, I could filter, sort, clean, count and compare records programmatically.
 
-I reduced the master dataset to the aircraft families relevant to the project — ATR 42s, ATR 72s and Dash 8s — and then investigated registrations, operators and other fields.
+I reduced the master dataset to the aircraft families relevant to the project — ATR 42s, ATR 72s and Dash 8s — and then investigated registrations, operators, MSNs, variants and other fields.
 
-The process is reproducible. If the source data changes, I can run the notebook again rather than repeating hundreds of manual filters.
+The process was not simply “download a finished fleet list”. The different sources had different strengths, so I had to match and reconcile them.
 
 ## Learning Through the Data
 
@@ -48,29 +48,35 @@ I did not begin by memorising definitions. I encountered fields I did not unders
 
 For example, I came across MSN and learned that it means Manufacturer Serial Number — the manufacturer’s unique number for an individual airframe.
 
-I also found that the public data was not equally complete. Some aircraft could be identified through an MSN or registration; others could not. The Dash 8 records in my dataset did not provide the same identification fields.
+I also found that the public data was not equally complete. Some aircraft could be identified cleanly through an MSN or registration; others could not. In several cases, one source supplied a field that another source was missing.
 
-That reminded me of something I enjoyed in Data Analytics: unsupervised learning. You do not necessarily begin with all the answers or labels. You explore the data, find structure and keep asking: “What am I actually looking at here?”
+That is what made the cleaning interesting. I was not just removing duplicates or correcting spelling. I was deciding which source could best support each field and then consolidating the evidence into one usable record.
+
+It reminded me of something I enjoyed in Data Analytics: unsupervised learning. You do not necessarily begin with all the answers or labels. You explore the data, find structure and keep asking: “What am I actually looking at here?”
 
 ## Roadblocks and Tools
 
 I got stuck plenty of times, and that was part of the learning.
 
-Pandas handled the tabular data and filtering. Python let me clean and transform the records programmatically. When I moved to the web application, JavaScript handled the interaction and filtering in the browser.
+PlaneSpotters was useful to inspect, but it did not simply hand me the data in a CSV that I could drop into Pandas. Some of the information had to be read, compared and reconstructed from the public pages.
 
-For the geographical visualisation, I used a mapping library rather than trying to build a map engine from scratch. That let me concentrate on connecting my aircraft, lessee and country data to the map.
+That is where newer AI tools made a real difference. OCRing around 70 pages and turning that material into searchable, comparable text would have been painfully slow only a few years ago.
 
-The pattern was often simple: I knew what I wanted the application to do, but not yet how to do it. I researched the problem, found the appropriate library or technique, tested it, fixed what did not work and moved on.
+Pandas handled the structured data and filtering. Python let me clean and transform the records programmatically. AI-assisted OCR helped recover information from PDFs and page images. JavaScript later handled the interaction and filtering in the browser.
+
+The pattern was often simple: I knew what I wanted the application to do, but not yet how to do it. I found the appropriate tool or technique, tested it, checked the result and moved on.
 
 ## Validating the Result
 
 I did not want a good-looking dashboard built on bad data.
 
-I went back to the aircraft I had originally identified from Abelo’s own public announcements and checked that they appeared in the larger dataset.
+The strongest check was that two very different routes converged on the same number.
 
-Then came the strongest validation: I counted the portfolio and got 61 aircraft.
+The PlaneSpotters ATR filter gave me 61 aircraft. After filtering, cleaning and consolidating the broader dataset and the other public evidence, I also arrived at 61.
 
-I also got 26 lessees and 19 countries — the same three figures that had started the project.
+I then checked the wider portfolio structure against Abelo’s published figures: 61 aircraft, 26 lessees and 19 countries.
+
+The sources were not identical. That was useful rather than inconvenient. When one source was missing a field, another could sometimes supply it. The final dataset therefore came from reconciliation across sources rather than blind trust in one table.
 
 There are still five aircraft that I can associate with Abelo but where I cannot confidently establish the current lessee from the public information. I leave those unresolved rather than guessing — my five “floaters”.
 
@@ -101,11 +107,13 @@ The repository is stored on GitHub and the live application is published through
 The workflow is:
 
 Abelo public information  
-→ AI-assisted extraction  
-→ 520,000-row aviation dataset  
+→ AI-assisted OCR of roughly 70 pages  
+→ 520,000-row aviation master dataset  
+→ PlaneSpotters ATR 42 / ATR 72 filtered records  
 → Python and Pandas  
 → Google Colab / Jupyter-style notebook  
-→ cleaning, filtering and validation  
+→ matching, cleaning and consolidation  
+→ validation against 61 aircraft / 26 lessees / 19 countries  
 → HTML, CSS and JavaScript  
 → mapping and interactive filters  
 → Git and GitHub  
