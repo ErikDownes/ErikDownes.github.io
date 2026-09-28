@@ -2255,7 +2255,7 @@
   document.dispatchEvent(new CustomEvent('abeloResearchRendered'));
 })();
 
-  // Interview planning tool lives on Projects with the other interactive work.
+  // Interview planning tool lives in the Portfolio with the other interactive work.
   (() => {
     const output = document.getElementById('abeloCountdown');
     if (!output) return;
