@@ -6,7 +6,6 @@ title: Erik Downes
 nav_order: 10
 profile_mode: true
 eyebrow: FINANCIAL MATHEMATICS · UNIVERSITY OF LIMERICK
-intro: Quantitative thinking, data, finance and real-world problem solving — with the judgement to explain the result clearly.
 ---
 
 <div class="profile-hero">
