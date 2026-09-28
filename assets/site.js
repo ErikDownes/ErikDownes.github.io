@@ -613,6 +613,40 @@
     return match ? match[1].toUpperCase() : '';
   };
 
+  const createFlyoutToggle = (row, label) => {
+    const toggle = document.createElement('button');
+    toggle.type = 'button';
+    toggle.className = 'nav-flyout-toggle';
+    toggle.textContent = '›';
+    toggle.setAttribute('aria-label', `Keep ${label} submenu open`);
+    toggle.setAttribute('aria-expanded', 'false');
+
+    toggle.addEventListener('click', event => {
+      event.preventDefault();
+      event.stopPropagation();
+
+      const willOpen = !row.classList.contains('is-flyout-open');
+      row.parentElement?.querySelectorAll(':scope > .nav-flyout-item.is-flyout-open').forEach(other => {
+        if (other === row) return;
+        other.classList.remove('is-flyout-open');
+        other.querySelector(':scope > .nav-flyout-toggle')?.setAttribute('aria-expanded', 'false');
+      });
+
+      row.classList.toggle('is-flyout-open', willOpen);
+      toggle.setAttribute('aria-expanded', String(willOpen));
+    });
+
+    return toggle;
+  };
+
+  document.addEventListener('click', event => {
+    document.querySelectorAll('.nav-flyout-item.is-flyout-open').forEach(row => {
+      if (row.contains(event.target)) return;
+      row.classList.remove('is-flyout-open');
+      row.querySelector(':scope > .nav-flyout-toggle')?.setAttribute('aria-expanded', 'false');
+    });
+  });
+
   const populateModuleMenu = (item, links, pageUrl) => {
     const menu = item.querySelector(':scope > .dropmenu');
     if (!menu) return;
@@ -684,6 +718,7 @@
       const panel = document.createElement('div');
       panel.className = 'nav-flyout-panel';
       panel.setAttribute('aria-label', group.label);
+      row.appendChild(createFlyoutToggle(row, group.label));
 
       group.modules.forEach(module => {
         const link = document.createElement('a');
@@ -737,7 +772,8 @@
       const panel = document.createElement('div');
       panel.className = 'nav-flyout-panel';
       panel.setAttribute('aria-label', category.label);
-      row.appendChild(panel);
+      const toggle = createFlyoutToggle(row, category.label);
+      row.append(toggle, panel);
       menu.appendChild(row);
 
       try {
@@ -758,9 +794,13 @@
           panel.appendChild(link);
         });
 
-        if (!headings.length) row.classList.add('has-no-flyout');
+        if (!headings.length) {
+          row.classList.add('has-no-flyout');
+          toggle.hidden = true;
+        }
       } catch (_) {
         row.classList.add('has-no-flyout');
+        toggle.hidden = true;
       }
     }
   };
