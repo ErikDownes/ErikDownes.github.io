@@ -34,6 +34,12 @@ I am studying **Financial Mathematics at the University of Limerick**. The degre
 
 I am most interested when the calculation connects to a practical question: **What assumptions are being made? Is the data reliable? What does the result mean? What decision could it support?**
 
+I learn best by **doing**. I like taking a mathematical or statistical idea and turning it into something I can test: a calculation, a dataset, a notebook, a small program or an interactive tool. That project-based approach is how I build confidence with **ICT, programming and data analysis** — not just learning the software, but using it to answer a real question.
+
+Mathematics becomes more interesting to me when I can see what the calculation is doing and then change the assumptions to see what happens. That is why I often extend coursework beyond the original assignment: reproducing an analysis in Python, making it reproducible in Jupyter or Colab, cleaning and checking data, or building a simple visual or interactive version.
+
+Rather than simply saying that I can work with data, financial mathematics or programming, I prefer to **show it by building things**. My portfolio is the evidence: university work combined with practical projects where I find the relevant information, clean and check it, decide what matters, build something useful from it, and communicate the result clearly.
+
 <div class="profile-links-grid">
   <a href="{{ '/coursework.html' | relative_url }}"><strong>Financial Mathematics</strong><span>See the modules, methods and quantitative ideas behind the degree.</span></a>
   <a href="{{ '/portfolio.html' | relative_url }}"><strong>Analytics & Programming</strong><span>Projects that turn data, models and code into usable outputs.</span></a>
