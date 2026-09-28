@@ -838,7 +838,7 @@ The sector is specialised, but the underlying habits are familiar: understand th
 <p><a href="{{ '/modules/ms4303-operations-research-1.html' | relative_url }}">MS4303 · Operations Research 1</a> · <a href="{{ '/modules/ms4014-introduction-to-numerical-analysis.html' | relative_url }}">MS4014 · Numerical Analysis</a></p>
 </div></div>
 
-[Open the full Modules page]({{ '/modules.html' | relative_url }}) for Erik's UL coursework and the modules most relevant to this internship.
+[Open the full Studies page]({{ '/studies.html' | relative_url }}) for Erik's UL studies and the modules most relevant to this internship.
 
 ## Questions to ask | What do I want to learn from Abelo?
 
