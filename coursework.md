@@ -5,7 +5,6 @@ handle: Coursework
 title: Coursework
 nav_order: 40
 eyebrow: UNIVERSITY OF LIMERICK · FINANCIAL MATHEMATICS
-intro: Erik's Financial Mathematics coursework at the University of Limerick, connecting mathematics, finance, statistics, data and computing to practical analytical work.
 study_mode: true
 ---
 
