@@ -2276,7 +2276,7 @@
       <div style="border:1px solid #d9dee8;border-radius:14px;padding:16px;text-align:center;"><strong style="display:block;font-size:2rem;line-height:1;">19</strong><span>Countries</span></div>
     </div>
     <p class="abelo-map-note"><strong>Fleet mix:</strong> 34 ATR 72 + 8 ATR 42 + 19 Dash 8 = <strong>61 aircraft</strong>.</p>
-    <p class="abelo-map-note">Public Abelo / Elix announcements and <a href="https://www.planespotters.net/" target="_blank" rel="noopener noreferrer">Planespotters aircraft histories ↗</a> reconciled into one portfolio view.</p>
+    <p class="abelo-map-note">Public Abelo / Elix announcements and Planespotters production lists: <a href="https://www.planespotters.net/aircraft/production/atr-42-72" target="_blank" rel="noopener noreferrer">ATR 42/72 ↗</a> · <a href="https://www.planespotters.net/aircraft/production/de-havilland-canada-dhc-8" target="_blank" rel="noopener noreferrer">Dash 8 ↗</a>.</p>
   `;
 
   marker.replaceWith(wrapper);
