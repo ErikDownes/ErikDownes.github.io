@@ -3,7 +3,6 @@ layout: doc
 permalink: /philosophy.html
 handle: Philosophy
 title: Philosophy
-nav_order: 20
 eyebrow: HOW I WORK
 intro: The principles I want to bring to a placement: prepare carefully, communicate clearly, agree expectations, follow through and be honest about uncertainty.
 ---
@@ -28,4 +27,4 @@ A calculation, report or dashboard is useful only if someone can rely on it. I w
 
 I would distinguish a verified fact from an estimate or an assumption. If I found an error, I would correct it and tell the people affected. Trust depends on making limitations visible, especially when the work may inform a decision.
 
-<p><a href="{{ '/' | relative_url }}">Profile</a> · <a href="{{ '/presentation.html' | relative_url }}">Presentation</a> · <a href="{{ '/workplace-skills.html' | relative_url }}">Examples of workplace skills</a></p>
+<p><a href="{{ '/' | relative_url }}">Profile</a> · <a href="{{ '/presentation.html' | relative_url }}">Presentation</a> · <a href="{{ '/workplace.html' | relative_url }}">Examples of workplace skills</a></p>
