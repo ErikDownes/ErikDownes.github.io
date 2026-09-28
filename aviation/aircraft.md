@@ -26,9 +26,17 @@ Turboprops can offer:
 
 **Remember:** the route drives the aircraft choice.
 
-![atr.png](blob:https:/app.pagescms.org/07722da5-000c-4c10-9e9d-dc299db4acb7)
-
 ## ATR | What are the ATR 42 and ATR 72?
+
+
+
+&nbsp;
+
+![atr.png](/assets/uploads/atr-1.png)
+
+
+
+&nbsp;
 
 The **ATR 42** is the smaller aircraft for thinner regional routes; the **ATR 72** provides greater capacity where demand supports it.
 
