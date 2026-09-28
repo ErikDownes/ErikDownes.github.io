@@ -3,7 +3,6 @@ layout: doc
 handle: Technology & AI
 title: Technology & AI
 eyebrow: CAREER · AI · DATA · AUTOMATION · HUMAN JUDGEMENT
-intro: A practical view of AI-enabled work: use the technology, verify important outputs and keep human responsibility in the loop.
 ---
 
 [← Career]({{ '/career.html' | relative_url }})
