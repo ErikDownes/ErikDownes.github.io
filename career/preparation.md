@@ -3,7 +3,6 @@ layout: doc
 handle: Preparation
 title: Career Preparation
 eyebrow: CURRENT FOCUS · ABELO · ASSET MANAGEMENT INTERN
-intro: Connecting Abelo, aircraft leasing, Financial Mathematics coursework and practical evidence for the Asset Management Intern role.
 public_mode: true
 ---
 
