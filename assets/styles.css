@@ -36,16 +36,18 @@ body{margin:0;background:var(--page);color:var(--ink);font-family:Arial,Helvetic
 .dropmenu .dropmenu-empty{color:#70757a;cursor:default}
 
 /* Two-level navigation: downward category menu with a second-level flyout. */
-.aviation-menu,.coursework-menu,.career-menu{--menu-width:min(260px,calc(100vw - 24px));grid-template-columns:1fr!important;overflow:visible;max-height:none}
+.aviation-menu,.coursework-menu,.career-menu,.portfolio-menu{--menu-width:min(260px,calc(100vw - 24px));grid-template-columns:1fr!important;overflow:visible;max-height:none}
 .coursework-menu{--menu-width:min(320px,calc(100vw - 24px))}
+.portfolio-menu{--menu-width:min(300px,calc(100vw - 24px))}
 .nav-flyout-item{position:relative}
-.aviation-menu .nav-flyout-parent,.coursework-menu .nav-flyout-parent,.career-menu .nav-flyout-parent{position:relative;padding-right:42px;font-weight:750}
+.aviation-menu .nav-flyout-parent,.coursework-menu .nav-flyout-parent,.career-menu .nav-flyout-parent,.portfolio-menu .nav-flyout-parent{position:relative;padding-right:42px;font-weight:750}
 .nav-flyout-toggle{position:absolute;z-index:2;right:4px;top:4px;bottom:4px;width:31px;border:0;border-left:1px solid #e1e5ea;border-radius:0 5px 5px 0;background:transparent;color:#70757a;font:inherit;font-size:1.2rem;line-height:1;cursor:pointer}
 .nav-flyout-toggle:hover,.nav-flyout-toggle:focus-visible{background:#e9eef6;color:#174ea6;outline:none}
 .nav-flyout-item.is-flyout-open>.nav-flyout-toggle{background:#e9eef6;color:#174ea6}
 .nav-flyout-item.has-no-flyout>.nav-flyout-toggle{display:none}
 .nav-flyout-panel{display:none;position:absolute;z-index:30;top:-10px;left:calc(100% + 10px);width:min(390px,calc(100vw - 310px));max-height:calc(100vh - 100px);overflow-y:auto;background:#fff;border:1px solid var(--line);box-shadow:0 8px 24px rgba(60,64,67,.18);padding:10px}
 .coursework-menu .nav-flyout-panel{width:min(520px,calc(100vw - 370px))}
+.portfolio-menu .nav-flyout-panel{width:min(480px,calc(100vw - 350px))}
 .nav-flyout-panel a{font-weight:500}
 .nav-flyout-item.is-flyout-open>.nav-flyout-panel{display:block}
 @media(min-width:1501px){
