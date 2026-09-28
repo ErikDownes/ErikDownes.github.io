@@ -2363,7 +2363,7 @@
         <strong data-abelo-airframe-title>61-aircraft control table</strong>
         <small data-abelo-airframe-status>Loading aircraft-level records…</small>
       </div>
-      <a href="${new URL('atr-global-dashboard.html', document.baseURI).href}" class="abelo-airframes__global-link">Open global ATR dashboard →</a>
+      <a href="${new URL('atr-fleet-dashboard.html', document.baseURI).href}" class="abelo-airframes__global-link">Open global ATR dashboard →</a>
     </div>
     <div class="abelo-airframes__table-wrap" data-abelo-airframe-table>
       <p class="abelo-airframes__loading">Loading the aircraft reconciliation layer…</p>
@@ -2652,10 +2652,11 @@
           .bindPopup(() => popupHtml(p), { maxWidth: 520, minWidth: 390 });
 
         marker.on('click', () => {
+          if (!airframeRows.length) return;
           activeRegion = null;
           activeCountry = null;
           activeLessee = p.customer;
-          syncFilterUi();
+          renderAirframes();
         });
       });
 
