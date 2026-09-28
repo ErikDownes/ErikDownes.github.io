@@ -526,7 +526,8 @@
     const isAboutParent = labelPath === rootPath && /\/academic-record\.html$/.test(currentPath);
     const isCareerParent = /\/career\.html$/.test(labelPath) && /\/career\//.test(currentPath);
     const isAviationParent = /\/aviation\.html$/.test(labelPath) && /\/aviation\//.test(currentPath);
-    const isCurrent = labelPath === currentPath || isAboutParent || isCareerParent || isAviationParent;
+    const isCourseworkParent = /\/coursework\.html$/.test(labelPath) && /\/modules\//.test(currentPath);
+    const isCurrent = labelPath === currentPath || isAboutParent || isCareerParent || isAviationParent || isCourseworkParent;
     const item = label.closest('.navitem');
     item?.classList.toggle('is-current', isCurrent);
     if (isCurrent) label.setAttribute('aria-current', 'page');
@@ -580,6 +581,38 @@
   const moduleTitleForSort = label =>
     cleanText(label).replace(/^[A-Z]{2,}(?:_?\d+)?\s*[—–-]\s*/i, '').toLocaleLowerCase();
 
+  const COURSEWORK_GROUPS = [
+    {
+      label: 'Computer Science',
+      codes: ['CE4701', 'CE4702']
+    },
+    {
+      label: 'Accounting & Finance',
+      codes: ['AC4214', 'AC4213', 'FI4003', 'MS4027', 'MS4528', 'MS4028']
+    },
+    {
+      label: 'Data, Statistics & Probability',
+      codes: ['MS4215', 'MS4034', 'MS4222', 'MS4035', 'MS4037', 'MS4038', 'MS4214', 'MS4217', 'MS4218']
+    },
+    {
+      label: 'Core Mathematics & Analysis',
+      codes: ['MS4021', 'MS4022', 'MS4045', 'MS4117', 'MS4122', 'MB4017', 'MS4131', 'MS4105', 'MS4043', 'MS4613']
+    },
+    {
+      label: 'Applied Mathematics & Modelling',
+      codes: ['MA4617', 'MS4014', 'MS4101', 'MS4008', 'MS4303', 'MS4315', 'MS4403', 'MS4404', 'MS4407', 'MS4414']
+    },
+    {
+      label: 'Co-operative Education',
+      codes: ['COOP_1']
+    }
+  ];
+
+  const moduleCode = label => {
+    const match = cleanText(label).match(/^([A-Z]{2,}(?:_?\d+)?)/i);
+    return match ? match[1].toUpperCase() : '';
+  };
+
   const populateModuleMenu = (item, links, pageUrl) => {
     const menu = item.querySelector(':scope > .dropmenu');
     if (!menu) return;
@@ -595,39 +628,81 @@
         const key = normalisePath(href.href);
         if (seen.has(key)) return null;
         seen.add(key);
-        return { label, href, completed: Boolean(link.closest('strong')) };
+        return {
+          label,
+          href,
+          code: moduleCode(label),
+          completed: Boolean(link.closest('strong'))
+        };
       })
-      .filter(Boolean)
-      .sort((a, b) => {
-        const byTitle = moduleTitleForSort(a.label).localeCompare(
-          moduleTitleForSort(b.label),
-          undefined,
-          { sensitivity: 'base', numeric: true }
-        );
-        return byTitle || a.label.localeCompare(b.label, undefined, { sensitivity: 'base', numeric: true });
-      });
+      .filter(Boolean);
+
+    const grouped = COURSEWORK_GROUPS
+      .map(group => ({
+        ...group,
+        modules: modules
+          .filter(module => group.codes.includes(module.code))
+          .sort((a, b) => {
+            const byTitle = moduleTitleForSort(a.label).localeCompare(
+              moduleTitleForSort(b.label),
+              undefined,
+              { sensitivity: 'base', numeric: true }
+            );
+            return byTitle || a.label.localeCompare(b.label, undefined, { sensitivity: 'base', numeric: true });
+          })
+      }))
+      .filter(group => group.modules.length > 0);
+
+    const knownCodes = new Set(COURSEWORK_GROUPS.flatMap(group => group.codes));
+    const uncategorised = modules
+      .filter(module => !knownCodes.has(module.code))
+      .sort((a, b) => moduleTitleForSort(a.label).localeCompare(
+        moduleTitleForSort(b.label),
+        undefined,
+        { sensitivity: 'base', numeric: true }
+      ));
+    if (uncategorised.length) grouped.push({ label: 'Other Coursework', modules: uncategorised });
 
     menu.replaceChildren();
-    item.classList.toggle('has-submenu', modules.length > 0);
-    if (!modules.length) return;
-    menu.classList.toggle('menu-columns-2', modules.length >= 5 && modules.length < 22);
-    menu.classList.toggle('menu-columns-3', modules.length >= 22);
+    menu.classList.remove('menu-columns-2', 'menu-columns-3', 'aviation-menu');
+    menu.classList.add('coursework-menu');
+    item.classList.toggle('has-submenu', grouped.length > 0);
+    item.classList.toggle('has-flyout-menu', grouped.length > 0);
+    if (!grouped.length) return;
     menu.style.setProperty('--menu-left', `${Math.round(item.getBoundingClientRect().left)}px`);
 
-    modules.forEach(module => {
-      const link = document.createElement('a');
-      link.href = module.href.href;
-      link.textContent = module.label;
-      if (module.completed) {
-        link.style.fontWeight = '800';
-        link.setAttribute('aria-label', module.label + ' — completed');
-      }
-      link.addEventListener('click', () => {
-        item.classList.remove('is-open');
-        item.querySelector('[data-nav-toggle]')?.setAttribute('aria-expanded', 'false');
-        if (window.innerWidth <= 1500) topbar?.classList.remove('nav-open');
+    grouped.forEach(group => {
+      const row = document.createElement('div');
+      row.className = 'nav-flyout-item';
+
+      const parent = document.createElement('a');
+      parent.className = 'nav-flyout-parent';
+      parent.href = pageUrl.href;
+      parent.textContent = group.label;
+      row.appendChild(parent);
+
+      const panel = document.createElement('div');
+      panel.className = 'nav-flyout-panel';
+      panel.setAttribute('aria-label', group.label);
+
+      group.modules.forEach(module => {
+        const link = document.createElement('a');
+        link.href = module.href.href;
+        link.textContent = module.label;
+        if (module.completed) {
+          link.style.fontWeight = '800';
+          link.setAttribute('aria-label', module.label + ' — completed');
+        }
+        link.addEventListener('click', () => {
+          item.classList.remove('is-open');
+          item.querySelector('[data-nav-toggle]')?.setAttribute('aria-expanded', 'false');
+          if (window.innerWidth <= 1500) topbar?.classList.remove('nav-open');
+        });
+        panel.appendChild(link);
       });
-      menu.appendChild(link);
+
+      row.appendChild(panel);
+      menu.appendChild(row);
     });
   };
 
