@@ -6,7 +6,6 @@ year: "3rd"
 semester: "Sem1"
 status: "Core"
 eyebrow: "3RD YEAR · SEM1"
-intro: "A concise interview-ready page for MS4214 — Statistical Inference."
 ---
 <p><a href="{{ '/modules-projects.html' | relative_url }}">← Modules & Projects</a></p>
 
