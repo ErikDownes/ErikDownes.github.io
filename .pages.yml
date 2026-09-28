@@ -40,9 +40,9 @@ components:
           rename: safe
 
 content:
-  - { name: profile, label: "Profile", type: file, path: index.md, format: yaml-frontmatter, fields: *docfields }
+  - { name: profile, label: "Profile", type: file, path: profile.md, format: yaml-frontmatter, fields: *docfields }
   - { name: aviation, label: "Aviation", type: file, path: aviation.md, format: yaml-frontmatter, fields: *docfields }
-  - { name: coursework, label: "Coursework", type: file, path: coursework.md, format: yaml-frontmatter, fields: *docfields }
+  - { name: studies, label: "Studies", type: file, path: studies.md, format: yaml-frontmatter, fields: *docfields }
   - { name: workplace, label: "Workplace", type: file, path: workplace.md, format: yaml-frontmatter, fields: *docfields }
 
   - name: modules
