@@ -1,7 +1,7 @@
 ---
 layout: doc
 handle: Aviation
-title: Aviation
+title: My Passion for the Aviation Industry and Asset management
 nav_order: 20
 eyebrow: AIRCRAFT · LEASING · ASSET MANAGEMENT · ABELO
 ---
