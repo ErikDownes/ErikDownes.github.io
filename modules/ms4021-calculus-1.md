@@ -6,7 +6,6 @@ year: "1st"
 semester: "Sem1"
 status: "Completed"
 eyebrow: "1ST YEAR · SEM1 · COMPLETED"
-intro: "Limits, continuity and differentiation — the mathematics of local change."
 study_mode: true
 ---
 
