@@ -5,7 +5,7 @@ title: Aircraft
 eyebrow: AVIATION · THE PHYSICAL ASSET
 study_mode: true
 ---
-## Flight | Why do turboprops still matter in a jet age?
+## Turboprops  Application | Why do turboprops still matter in a jet age?
 
 Powered flight began with piston engines and propellers. Gas turbines later produced two important paths: **jets**, which favour speed and longer-range travel, and **turboprops**, where a turbine drives a propeller for efficient shorter sectors.
 
