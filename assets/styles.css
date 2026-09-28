@@ -2626,3 +2626,68 @@ body.answer-focus-open{overflow:hidden}
     height: 38px;
   }
 }
+
+
+/* App-first fleet page: keep explanation out of the working surface */
+.abelo-map-kpis {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 10px;
+  margin: 12px 0 0;
+}
+.abelo-map-kpis > div {
+  border: 1px solid #d9dee8;
+  border-radius: 12px;
+  background: #fff;
+  padding: 12px 14px;
+  text-align: center;
+}
+.abelo-map-kpis strong,
+.abelo-map-kpis span {
+  display: block;
+}
+.abelo-map-kpis strong {
+  font-size: 1.7rem;
+  line-height: 1;
+  color: #172033;
+}
+.abelo-map-kpis span {
+  margin-top: 4px;
+  font-size: .76rem;
+  color: #526170;
+}
+.abelo-app-notes {
+  margin: 12px 0 0;
+  border: 1px solid #dde4ea;
+  border-radius: 12px;
+  background: #fbfcfd;
+  overflow: hidden;
+}
+.abelo-app-notes > summary {
+  cursor: pointer;
+  padding: 10px 13px;
+  color: #526170;
+  font-size: .76rem;
+  font-weight: 800;
+}
+.abelo-app-notes > div {
+  padding: 0 13px 12px;
+  color: #526170;
+  font-size: .8rem;
+  line-height: 1.45;
+}
+.abelo-app-notes p {
+  margin: .45rem 0;
+}
+@media (max-width: 560px) {
+  .abelo-map-kpis {
+    grid-template-columns: repeat(3,minmax(0,1fr));
+    gap: 6px;
+  }
+  .abelo-map-kpis > div {
+    padding: 10px 6px;
+  }
+  .abelo-map-kpis strong {
+    font-size: 1.35rem;
+  }
+}
