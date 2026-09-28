@@ -1,13 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 78" role="img" aria-labelledby="title desc">
-  <title id="title">Erik Downes — Financial Mathematics, University of Limerick</title>
-  <desc id="desc">Four coloured dots beside Erik Downes, Financial Mathematics at the University of Limerick, student number 24434582</desc>
-  <g transform="translate(4 13)">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 104" role="img" aria-labelledby="title desc">
+  <title id="title">Erik Downes — Professional Portfolio</title>
+  <desc id="desc">Erik Downes, Financial Mathematics, University of Limerick, Professional Portfolio</desc>
+  <g transform="translate(4 24)">
     <circle cx="10" cy="10" r="9" fill="#E63329"/>
     <circle cx="34" cy="10" r="9" fill="#3FAE49"/>
     <circle cx="10" cy="34" r="9" fill="#2D7DD2"/>
     <circle cx="34" cy="34" r="9" fill="#1A1A1A"/>
   </g>
-  <text x="60" y="29" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700" fill="#202124">Erik Downes</text>
-  <text x="60" y="49" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="500" fill="#3c4043">Financial Mathematics · University of Limerick</text>
-  <text x="60" y="67" font-family="Arial, Helvetica, sans-serif" font-size="11.5" font-weight="500" fill="#6b7280">Student No. 24434582</text>
+  <text x="62" y="28" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#202124">Erik Downes</text>
+  <text x="62" y="49" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="600" fill="#3c4043">Financial Mathematics</text>
+  <text x="62" y="68" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="500" fill="#5f6368">University of Limerick</text>
+  <text x="62" y="87" font-family="Arial, Helvetica, sans-serif" font-size="11.5" font-weight="600" letter-spacing=".6" fill="#7a8188">PROFESSIONAL PORTFOLIO</text>
 </svg>
