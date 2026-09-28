@@ -1922,14 +1922,15 @@
   const regionCountries = {
     'Europe': ['Ireland', 'Spain', 'Sweden', 'Greece'],
     'Africa': ['DR Congo', 'Madagascar', 'Kenya', 'Gabon'],
-    'Asia-Pacific': ['Bangladesh', 'Indonesia', 'Australia', 'Philippines', 'Maldives', 'India', 'Malaysia'],
+    'Asia': ['Bangladesh', 'Indonesia', 'Philippines', 'Maldives', 'India', 'Malaysia'],
+    'Oceania': ['Australia'],
     'Americas': ['Colombia', 'Brazil', 'Canada', 'United States']
   };
   const regionForCountry = country => {
     const match = Object.entries(regionCountries).find(([, countries]) => countries.includes(country));
     return match ? match[0] : 'Other';
   };
-  const regionOrder = ['Europe', 'Africa', 'Asia-Pacific', 'Americas'];
+  const regionOrder = ['Europe', 'Africa', 'Asia', 'Oceania', 'Americas'];
 
   const countries = [...new Set(rankedPlacements.map(countryName))];
   const regions = regionOrder.filter(region =>
@@ -1959,7 +1960,7 @@
       <button type="button" class="abelo-filter-clear" data-abelo-clear>Clear filters</button>
     </div>
     <div class="abelo-filter-group">
-      <div class="abelo-filter-label">4 regions</div>
+      <div class="abelo-filter-label">5 continents</div>
       <div class="abelo-filter-grid abelo-filter-grid--regions" data-abelo-region-filters></div>
     </div>
     <details class="abelo-filter-details">
