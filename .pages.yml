@@ -63,7 +63,7 @@ content:
   - { name: profile, label: "Profile", type: file, path: profile.md, format: yaml-frontmatter, fields: *docfields }
   - { name: aviation, label: "Aviation", type: file, path: aviation.md, format: yaml-frontmatter, fields: *docfields }
   - { name: coursework, label: "Coursework", type: file, path: coursework.md, format: yaml-frontmatter, fields: *docfields }
-  - { name: career, label: "Career", type: file, path: career.md, format: yaml-frontmatter, fields: *docfields }
+  - { name: career, label: "Career", type: file, path: career.md, format: code }
   - { name: career_preparation, label: "Career · Preparation", type: file, path: career/preparation.md, format: yaml-frontmatter, fields: *careerfields }
 
   - { name: career_working_with_others, label: "Career · Working with Others", type: file, path: career/working-with-others.md, format: yaml-frontmatter, fields: *careerfields }
