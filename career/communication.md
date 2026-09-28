@@ -3,7 +3,6 @@ layout: doc
 handle: Communication
 title: Communication
 eyebrow: CAREER · AUDIENCE · CLARITY · TECHNICAL COMMUNICATION
-intro: How to adapt a technical explanation to the audience without changing the underlying idea.
 ---
 
 [← Career]({{ '/career.html' | relative_url }})
