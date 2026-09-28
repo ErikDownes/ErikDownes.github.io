@@ -1,10 +1,10 @@
 ---
 layout: doc
-title: Credit Risk and How It Is Managed
+handle: Credit Risk
+title: Managing Credit Risk
 eyebrow: AVIATION · ASSET MANAGEMENT · CREDIT RISK
 study_mode: true
 ---
-
 I’ve been thinking about what happens if an airline comes under financial pressure and struggles to make a lease payment. A sharp rise in fuel costs could put pressure on its finances. War, sanctions or political instability could also affect where an aircraft can operate.
 
 I imagine the first step is to talk with the airline, understand the difficulty and see whether there’s a workable solution. The relationship matters, but the lessor also has to protect its financial position and the aircraft.
