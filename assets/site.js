@@ -792,8 +792,31 @@
 
         headings.forEach((question, index) => {
           const link = document.createElement('a');
-          const id = question.id || `section-${index + 1}`;
-          link.href = `${categoryUrl.pathname}${categoryUrl.search}#${id}`;
+          const heading = Array.from(parsed.querySelectorAll('#docBody > h2'))[index];
+          let directHref = '';
+
+          // Portfolio flyout items should open the actual project/app/evidence page
+          // when the category section already contains a clear destination link.
+          // Only fall back to the category-page anchor when there is no destination.
+          if (heading) {
+            let node = heading.nextElementSibling;
+            while (node && node.tagName !== 'H2') {
+              const candidate = node.matches?.('a[href]') ? node : node.querySelector?.('a[href]');
+              if (candidate?.getAttribute('href')) {
+                directHref = candidate.getAttribute('href');
+                break;
+              }
+              node = node.nextElementSibling;
+            }
+          }
+
+          if (directHref) {
+            link.href = new URL(directHref, categoryUrl.href).href;
+          } else {
+            const id = question.id || `section-${index + 1}`;
+            link.href = `${categoryUrl.pathname}${categoryUrl.search}#${id}`;
+          }
+
           link.textContent = question.handle;
           link.title = question.question;
           panel.appendChild(link);
@@ -880,10 +903,10 @@
 
 
   const PORTFOLIO_SUBPAGES = [
+    { label: 'Dashboards & Visualisation', path: 'portfolio/dashboards-visualisation.html' },
     { label: 'Data & Analytics', path: 'portfolio/data-analytics.html' },
     { label: 'Financial Modelling', path: 'portfolio/financial-modelling.html' },
     { label: 'Software & Apps', path: 'portfolio/software-apps.html' },
-    { label: 'Dashboards & Visualisation', path: 'portfolio/dashboards-visualisation.html' },
     { label: 'Sector Projects', path: 'portfolio/sector-projects.html' },
     { label: 'Academic Projects', path: 'portfolio/academic-projects.html' }
   ];
