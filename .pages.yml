@@ -82,5 +82,5 @@ content:
       default:
         sort: title
         order: asc
-  - { name: projects, label: "Projects", type: file, path: projects.md, format: yaml-frontmatter, fields: *docfields }
+  - { name: portfolio, label: "Portfolio", type: file, path: portfolio.md, format: yaml-frontmatter, fields: *docfields }
   - { name: glossary, label: "Glossary (A–Z)", type: file, path: glossary.md, format: yaml-frontmatter, fields: *docfields }
