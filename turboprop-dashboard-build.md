@@ -3,9 +3,7 @@ layout: doc
 handle: Project Build
 title: How I Built the Turboprop Asset Reporting Dashboard
 eyebrow: PORTFOLIO · DATA ANALYSIS · WEB APPLICATION
-public_mode: true
 ---
-
 ## Why I started
 
 Abelo’s public figures — 61 aircraft, 26 lessees and 19 countries — made me curious. Which aircraft were they, and where were they operating? I wanted to see the fleet on a map rather than just read the headline numbers.
@@ -18,8 +16,14 @@ I captured the relevant public pages and used AI-assisted text extraction to tur
 
 ## From notebook to app
 
-The analysis first ran in Google Colab, using Python and Pandas in a Jupyter-style notebook to filter, clean and compare records. AI tools also helped me assemble and refine parts of the code, which I checked against the data and the working app.
+The analysis first ran in **Google Colab**, using **Python and Pandas** in a Jupyter-style notebook to filter, clean and compare aircraft records.
 
-I then built the interactive page with HTML, CSS and JavaScript. The map and filters make the aircraft, operators and countries easier to explore.
+I then used **VS Code** to build the interactive web app with **HTML, CSS and JavaScript**, with **Leaflet** powering the interactive map and geographic layers.
 
-**All the information used here is publicly available.** I have not used Abelo’s internal data or any confidential records.
+**AI-assisted development was part of the workflow.** I used AI tools in a **vibe-coding / agentic collaboration** approach — describing what I wanted the application to do, using AI to help generate, debug and refine code, then testing the output against the source data and the working application.
+
+For me, that is one of the strengths of modern development: I do not need to pretend that every line was written manually. The important skills are being able to **define the problem, work effectively with AI, understand and test the output, spot errors, and iterate until the application works correctly**.
+
+The final app brings the analysis and visualisation together, making the aircraft, operators, countries and underlying data much easier to explore.
+
+**All information used here is publicly available. No Abelo internal data or confidential records have been used.**
