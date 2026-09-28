@@ -2,99 +2,110 @@
 layout: doc
 permalink: /
 handle: Profile
-title: Profile
+title: Erik Downes
 nav_order: 10
-eyebrow: ERIK DOWNES · FINANCIAL MATHEMATICS
-intro: Financial Mathematics student at the University of Limerick, applying quantitative skills to finance, data and real business decisions.
+profile_mode: true
+eyebrow: FINANCIAL MATHEMATICS · UNIVERSITY OF LIMERICK
+intro: Quantitative thinking, data, finance and real-world problem solving — with the judgement to explain the result clearly.
 ---
-## About Me | Tell me about yourself.
 
-I've always had a very analytical mind and I've always loved maths. That showed up in school, where I got H1s in Maths, Applied Maths and Physics, and it naturally led me into Financial Mathematics at the University of Limerick.
-
-What I enjoy most about the course is not just learning the theory, but seeing where the maths can actually be applied — to finance, data, risk and real decisions.
-
-As I've started preparing for co-op, aviation has really caught my interest. I find the industry genuinely exciting: the technology, the scale of it and the freedom it creates. I still think there is something amazing about an aircraft taking off.
-
-So what I'm looking for now is a placement where I can bring that analytical background into a real business, learn quickly and start understanding how those decisions are made in practice.
-
-**Recall cue:** Analytical mind → H1s → Financial Mathematics → applications → aviation → real business.
-
-
-## Why Financial Mathematics | Why did you choose this course?
-
-I wanted a course that kept the rigour of mathematics but connected it to finance, probability, data and real decision-making. The course suits me because I enjoy analytical problems, but I also like understanding what the answer means in practice rather than stopping at the calculation.
-
-
-
-**Recall cue:** Maths + real decisions + interpretation.
-
-## Academic Strengths | What are your academic strengths?
-
-My strongest areas are probability and statistics, finance, data analysis and applied quantitative work. I achieved an A1 in Introduction to Probability and Statistics and A2 grades in modules including Finance, Applied Data Analysis, Numerical Analysis and Operations Research. I think the common thread is that I am comfortable moving from a mathematical method to interpreting what the result means.
-
-**Recall cue:** Evidence, not vague claims.
-
-## Co-op Goals | What are you hoping to get from co-op?
-
-I want to understand how quantitative work is actually used inside an organisation: how problems are framed, how data is checked, how results are communicated and how decisions are made when there is uncertainty. I also want to improve my professional judgement, communication and ability to contribute as part of a team.
-
-**Recall cue:** Apply learning → learn workplace judgement → contribute.
-
-## Skills | What skills would you bring to the placement?
-
-I would bring a strong quantitative base, practical data-analysis experience and a willingness to learn quickly. My course has developed my mathematical and financial reasoning, while projects and part-time work have also given me experience with software, data and dealing with people.
-
-**Quantitative:** Financial Mathematics, probability, statistics, data analysis and modelling.
-
-**Software:** Excel, RStudio, SPSS and basic Java, together with experience learning new technical tools independently.
-
-**Workplace:** Customer service, teamwork, clear communication, accuracy and taking responsibility for getting work finished properly.
-
-**Communication:** I am comfortable taking a technical idea, identifying what the other person actually needs to know, and explaining it at the appropriate level.
-
-**Recall cue:** Quantitative → software → people → explain clearly.
-
-
-## Interview Approach | How do you prepare for an interview?
-
-I prepare **ideas and evidence rather than memorised scripts**. I want to hear the question, pause, choose the point I actually want to make, support it with evidence, explain why it matters and then stop.
-
-**Default structure:** Point → evidence → relevance → stop.
-
-I practise the same answer at different lengths — roughly **40, 60 and 80 seconds** — so I can expand or contract an answer naturally rather than forcing every question into a fixed speech.
-
-**Recall cue:** Hear → pause → point → evidence → relevance → stop.
-
-## Communication Practice | How do you improve the way you communicate?
-
-Clear communication depends on the audience. I try to identify what the other person needs to know, choose the right level of technical detail and make the structure easy to follow.
-
-Two resources I use for deliberate speaking practice are Kara Ronin's communication work and Patrick Winston's MIT talk *How to Speak*.
-
-<div class="home-video" style="margin: 1.5rem 0 2rem;">
-  <iframe
-    src="https://www.youtube.com/embed/9Ha0YN2CAHI"
-    title="Kara Ronin articulation and communication practice"
-    style="width:100%; aspect-ratio:16/9; border:0; border-radius:12px;"
-    loading="lazy"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    allowfullscreen>
-  </iframe>
+<div class="profile-hero">
+  <p class="profile-hero-label">FINANCIAL MATHEMATICS · UNIVERSITY OF LIMERICK</p>
+  <p class="profile-hero-title">Mathematics that goes somewhere.</p>
+  <p class="profile-hero-copy">I am a Financial Mathematics student at the University of Limerick. I enjoy taking a technical problem, understanding the mathematics behind it, working carefully with data and then explaining what the result means for a real decision.</p>
+  <div class="profile-actions">
+    <a href="mailto:24434582@studentmail.ul.ie">Email</a>
+    <a href="https://www.linkedin.com/in/erik-downes-7b312127a/" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://github.com/ErikDownes" target="_blank" rel="noopener">GitHub</a>
+    <span>Student No. 24434582</span>
+  </div>
 </div>
 
-<div class="home-video" style="margin: 1.5rem 0 2rem;">
-  <iframe
-    src="https://www.youtube.com/embed/023APoktRzY"
-    title="Patrick Winston — How to Speak"
-    style="width:100%; aspect-ratio:16/9; border:0; border-radius:12px;"
-    loading="lazy"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    allowfullscreen>
-  </iframe>
+<div class="profile-evidence" aria-label="Academic evidence">
+  <div><strong>H1</strong><span>Mathematics</span></div>
+  <div><strong>H1</strong><span>Applied Mathematics</span></div>
+  <div><strong>H1</strong><span>Physics</span></div>
+  <div><strong>A1</strong><span>Probability &amp; Statistics</span></div>
+  <div><strong>A2</strong><span>Finance · Data Analysis · Numerical Analysis · Operations Research</span></div>
 </div>
 
-## AI and Communication | Where does human judgement fit?
+## About Me
 
-AI is a powerful tool for drafting, testing alternatives and improving clarity, but it does not remove responsibility for the result. I still need to know what I mean, check what is accurate, decide what to keep or cut and be willing to stand over the final work.
+I have always been drawn to analytical problems. Financial Mathematics gave me a way to keep the rigour of mathematics while connecting it to finance, probability, statistics, data and decisions under uncertainty.
 
-**Recall cue:** Use AI to extend capability; keep judgement and responsibility human.
+What matters to me is not stopping at the calculation. I want to understand **what the model assumes, whether the data are reliable, what the result means, and how confidently it can be used**.
+
+As I have prepared for co-op, aviation has become a particularly interesting application. It brings finance, long-lived assets, maintenance, risk, customers and data together in one industry — exactly the kind of setting where quantitative thinking has practical value.
+
+## What I Bring
+
+<div class="profile-strengths">
+  <div><strong>Quantitative reasoning</strong><span>Financial Mathematics, probability, statistics, modelling and numerical methods.</span></div>
+  <div><strong>Data discipline</strong><span>Comfort working from raw information toward a checked, interpretable result rather than treating software output as the answer.</span></div>
+  <div><strong>Communication</strong><span>I try to identify what the audience needs to know, choose the right level of detail and explain technical ideas without hiding behind jargon.</span></div>
+  <div><strong>Learning mindset</strong><span>I am willing to enter an unfamiliar domain, use documentation and primary sources, ask good questions and build enough understanding to contribute.</span></div>
+</div>
+
+## Portfolio | Learning by Building
+
+This site is not only a collection of notes. It is a working portfolio showing how I learn a new domain and turn that learning into something useful.
+
+My aviation work moves from **industry research → structured data → visualisation → interpretation**. The aircraft portfolio map, for example, brings public information about aircraft, lessees and countries into a single explorable view. The aim is not to pretend to know an industry before entering it; it is to demonstrate how I would get up to speed, test my understanding and communicate what I find.
+
+<div class="profile-links-grid">
+  <a href="{{ '/aviation.html' | relative_url }}"><strong>Aviation</strong><span>Industry knowledge, aircraft leasing, maintenance, risk and commercial questions.</span></a>
+  <a href="{{ '/portfolio.html' | relative_url }}"><strong>Portfolio</strong><span>Interactive work and projects that turn research or data into something usable.</span></a>
+  <a href="{{ '/studies.html' | relative_url }}"><strong>Studies</strong><span>Financial Mathematics, statistics, finance, numerical methods and operations research.</span></a>
+  <a href="{{ '/competencies.html' | relative_url }}"><strong>Competencies</strong><span>How I approach teamwork, judgement, technology, communication and independent work.</span></a>
+</div>
+
+## How I Work
+
+I want to become the person who can be trusted with a problem, not simply the person waiting to be shown the next step. That means working independently where I can, documenting what I do, checking my assumptions and knowing when a question should be escalated rather than guessed.
+
+I use technology aggressively when it adds value. That can mean spreadsheets for quick inspection, code for reproducible analysis, GitHub for versioned work, or AI for research support, drafting and testing alternatives. **The tool can accelerate the work; responsibility for the work stays with me.**
+
+My standard is simple: understand enough to explain it, verify what matters, and leave the work in a form that another person can follow.
+
+## Communication & Development
+
+Communication is a skill I practise deliberately. I try to prepare ideas rather than memorised speeches: listen to the question, pause, choose the main point, support it with evidence, explain why it matters and stop.
+
+<details class="profile-details">
+  <summary>Communication resources I use</summary>
+  <p>I use strong external material as a starting point, then practise applying the ideas in my own words and to my own work.</p>
+
+  <div class="home-video" style="margin: 1.25rem 0 1.5rem;">
+    <iframe
+      src="https://www.youtube.com/embed/9Ha0YN2CAHI"
+      title="Kara Ronin articulation and communication practice"
+      style="width:100%; aspect-ratio:16/9; border:0; border-radius:12px;"
+      loading="lazy"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen>
+    </iframe>
+  </div>
+
+  <div class="home-video" style="margin: 1.25rem 0 .5rem;">
+    <iframe
+      src="https://www.youtube.com/embed/023APoktRzY"
+      title="Patrick Winston — How to Speak"
+      style="width:100%; aspect-ratio:16/9; border:0; border-radius:12px;"
+      loading="lazy"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen>
+    </iframe>
+  </div>
+</details>
+
+## What I Am Looking For
+
+I am looking for a co-op opportunity where I can apply a strong quantitative foundation, learn how experienced professionals make decisions with imperfect information, and become useful quickly.
+
+Finance, data, analytics and aviation are natural areas of interest, but the wider goal is the same: **work on real problems, learn from good people and turn mathematical thinking into practical value.**
+
+<div class="profile-contact">
+  <strong>Erik Downes</strong>
+  <span>Financial Mathematics · University of Limerick · Student No. 24434582</span>
+  <span><a href="mailto:24434582@studentmail.ul.ie">24434582@studentmail.ul.ie</a> · <a href="https://www.linkedin.com/in/erik-downes-7b312127a/" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://github.com/ErikDownes" target="_blank" rel="noopener">GitHub</a></span>
+</div>
