@@ -79,10 +79,10 @@
       {% unless page.profile_mode %}
       <div class="doc-toolbar" aria-label="Document controls">
         <button type="button" data-action="print">Print</button>
-        {% if page.study_mode %}
-        <a class="edit-link" href="https://github.com/ronandownes/coop/edit/main/{{ page.path }}" target="_blank" rel="noopener">Edit this page</a>
-        {% else %}
+        {% if cms_url != cms_base %}
         <a class="edit-link" href="{{ cms_url }}" target="_blank" rel="noopener">Edit this page</a>
+        {% else %}
+        <a class="edit-link" href="https://github.com/ronandownes/coop/edit/main/{{ page.path }}" target="_blank" rel="noopener">Edit this page</a>
         {% endif %}
       </div>
       {% endunless %}
