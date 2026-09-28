@@ -1,7 +1,7 @@
 ---
 layout: doc
-handle: Aircraft Leasing
-title: Aircraft Leasing
+handle: " Leasing"
+title: Leasing
 eyebrow: AVIATION · COMMERCIAL MODEL
 study_mode: true
 ---
