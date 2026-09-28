@@ -54,13 +54,17 @@ ABEL0_MAP_APP
 
 
 
-## Aircraft leasing decision lab | Change one assumption
+## Aircraft leasing decision lab | Acquisition, options and asset decisions
 
-Try an aircraft age or lease income, then compare the value of extending a lease with re-leasing after downtime and transition cost. The model uses **illustrative assumptions** and is designed for discussion, not Abelo pricing.
+Start with an **ATR 72-600** acquisition case: change the unit-price assumption, choose a firm order, add purchase options and decide how many options to exercise. The dashboard then carries the aircraft into lease cash flow, residual-value and re-lease scenarios.
 
-**Open the aircraft leasing lab**
+The default ATR 72-600 acquisition assumption is **$25m per aircraft**, based on ATR's September 2026 announcement of 40 aircraft for around $1bn. It is used as a headline public transaction proxy, not as an official list price or a claim about Abelo's purchase cost.
 
-**Job connection:** A clean dashboard should make a change visible and explainable. Which assumption drove the result: rent, downtime, maintenance cost or residual value? State what you checked before drawing a conclusion.
+The same page includes a live industry-event clock. It counts down to the **Paris Air Show, 14–20 June 2027**, then automatically rolls forward to the **Dubai Airshow, 15–19 November 2027**. A decision-gate control lets the user model an option-exercise deadline a chosen number of days before the show.
+
+[Open the Aircraft Leasing Decision Lab →]({{ '/lease-dashboard.html' | relative_url }})
+
+**Job connection:** Separate what is committed from what is optional, quantify the capital effect of exercising options, then explain how timing, financing, lease income and residual value change the decision.
 
 
 
