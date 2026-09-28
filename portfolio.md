@@ -6,24 +6,6 @@ nav_order: 50
 eyebrow: EXPLORE · EXPLAIN · APPLY
 ---
 ## Portfolio
-I am interested in mathematics, but it is the **application of mathematics** that interests me most.
-
-Some mathematical ideas can initially seem very abstract. An infinite convergent series, for example, is the idea of adding smaller and smaller amounts indefinitely. In financial mathematics that same structure becomes very practical: it helps explain the mathematics behind annuities, perpetuities and the value of future cash flows.
-
-For me, mathematics becomes even more interesting when I can see the result of the calculation — and more interesting again when I can turn it into a program where assumptions can be changed and the consequences immediately explored.
-
-**That is what this page is about: moving from mathematical ideas, to calculations, to code, and ultimately to something useful.**
-
-I have also used this portfolio to demonstrate skills that are directly relevant to the type of work I would like to do. Rather than simply saying that I can work with data, financial mathematics or programming, I have tried to **show it by building things**.
-
-For example, for an aircraft-leasing internship I put together a fleet map using public aircraft records and developed small financial and decision-support tools around aircraft leasing. The purpose is not to reproduce a company's internal systems or data. It is to demonstrate how I approach a problem: **find the relevant information, clean and check it, decide what matters, build something useful from it, and communicate the result clearly.**
-
-Some of these tools are deliberately connected to the work I could encounter as an intern — aircraft and lessee data, reporting, financial calculations, lease cash flows, filtering, dashboards and identifying inconsistencies in source data.
-
-My portfolio therefore combines university studies with projects that I have **extended beyond the assignment**. If I complete an analysis in R or SPSS, I may reproduce it in Python, make it reproducible in a Jupyter notebook or Google Colab, build an interactive version, or ask a different question of the same data.
-
-The aim is not to present myself as an expert before I have worked in the industry. It is to show **how I learn, how I use quantitative ideas, and the kind of value I would like to learn to contribute in the workplace.**
-
 
 ## Explore the portfolio | What can I actually build and analyse?
 
