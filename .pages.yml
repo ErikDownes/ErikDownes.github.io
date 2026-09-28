@@ -60,7 +60,7 @@ components:
           rename: safe
 
 content:
-  - { name: profile, label: "Profile", type: file, path: profile.md, format: yaml-frontmatter, fields: *docfields }
+  - { name: about_me, label: "About Me", type: file, path: profile.md, format: yaml-frontmatter, fields: *docfields }
   - { name: aviation, label: "Aviation", type: file, path: aviation.md, format: yaml-frontmatter, fields: *docfields }
   - { name: coursework, label: "Coursework", type: file, path: coursework.md, format: yaml-frontmatter, fields: *docfields }
   - { name: career, label: "Career", type: file, path: career.md, format: code }
