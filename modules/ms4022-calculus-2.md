@@ -6,7 +6,6 @@ year: "1st"
 semester: "Sem2"
 status: "Core"
 eyebrow: "1ST YEAR · SEM2"
-intro: "A concise interview-ready page for MS4022 — Calculus 2."
 ---
 <p><a href="{{ '/modules-projects.html' | relative_url }}">← Modules & Projects</a></p>
 
