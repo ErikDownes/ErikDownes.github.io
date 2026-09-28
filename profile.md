@@ -48,15 +48,3 @@ eyebrow: FINANCIAL MATHEMATICS · DATA ANALYSIS · UNIVERSITY OF LIMERICK
     </div>
   </div>
 </div>
-
-## Why This Role
-
-The aviation and asset management answer has its own page: <a href="{{ '/about-asset-management.html' | relative_url }}">Why Abelo Asset Management? →</a>
-
-## Questions for Abelo
-
-A short selection of interview questions about the fleet, purchase options, airline customers and the team's priorities: <a href="{{ '/questions-for-abelo.html' | relative_url }}">Open Questions for Abelo →</a>
-
-## Academic Record
-
-My module results and Leaving Certificate highlights are on the <a href="{{ '/academic-record.html' | relative_url }}">Academic Record →</a>
