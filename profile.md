@@ -55,7 +55,7 @@ My standard is simple: **understand enough to explain it, verify what matters, a
 
 The homepage keeps the academic story short. The separate **[Academic Record]({{ '/academic-record.html' | relative_url }})** contains the module-by-module results to date and can be updated as new results are released.
 
-## Career Direction
+## Career Direction towards Asset Management
 
 I am building toward analytical roles where **mathematics, finance, data and technology** are used to make practical decisions.
 
