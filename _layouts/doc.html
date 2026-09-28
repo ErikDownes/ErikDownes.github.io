@@ -76,7 +76,6 @@
         <img src="{{ page.image | relative_url }}" alt="{{ page.image_alt | default: page_display_title | escape }}">
       </figure>
       {% endif %}
-      {% unless page.profile_mode %}
       <div class="doc-toolbar" aria-label="Document controls">
         <button type="button" data-action="print">Print</button>
         {% if cms_url != cms_base %}
@@ -85,7 +84,6 @@
         <a class="edit-link" href="https://github.com/ronandownes/coop/edit/main/{{ page.path }}" target="_blank" rel="noopener">Edit this page</a>
         {% endif %}
       </div>
-      {% endunless %}
 
       <div class="doc-body" id="docBody">{{ content }}</div>
       <script>
