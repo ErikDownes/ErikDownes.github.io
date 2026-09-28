@@ -5,7 +5,7 @@ title: Aircraft
 eyebrow: AVIATION · THE PHYSICAL ASSET
 study_mode: true
 ---
-## Turboprops | From the Wright Brothers to modern regional aircraft
+## Turboprops | How do turboprops fit in with other airplanes and Jets?
 
 The first powered aircraft, including the **Wright Flyer**, used propellers driven by piston engines.
 
