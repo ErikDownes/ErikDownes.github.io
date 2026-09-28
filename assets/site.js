@@ -559,8 +559,13 @@
     menu.replaceChildren();
     item.classList.toggle('has-submenu', questions.length > 0);
     if (!questions.length) return;
-    menu.classList.toggle('menu-columns-2', questions.length >= 5 && questions.length < 22);
-    menu.classList.toggle('menu-columns-3', questions.length >= 22);
+
+    // Keep About Me as a simple single-column dropdown. Other question menus
+    // can still expand to two or three columns when they contain many entries.
+    const rootPath = normalisePath(document.querySelector('.brand')?.href || '/');
+    const isAboutMenu = normalisePath(pageUrl.href) === rootPath;
+    menu.classList.toggle('menu-columns-2', !isAboutMenu && questions.length >= 5 && questions.length < 22);
+    menu.classList.toggle('menu-columns-3', !isAboutMenu && questions.length >= 22);
     menu.style.setProperty('--menu-left', `${Math.round(item.getBoundingClientRect().left)}px`);
 
     questions.forEach((question, index) => {
