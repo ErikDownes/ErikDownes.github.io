@@ -6,7 +6,6 @@ year: "1st"
 semester: "Sem1"
 status: "Core"
 eyebrow: "1ST YEAR · SEM1"
-intro: "A concise interview-ready page for MS4101 — Mathematical Laboratory."
 ---
 <p><a href="{{ '/modules-projects.html' | relative_url }}">← Modules & Projects</a></p>
 
