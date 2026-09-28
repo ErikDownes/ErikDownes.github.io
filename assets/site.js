@@ -1919,7 +1919,22 @@
     ? p.title.split('—')[0].trim()
     : 'Other';
 
+  const regionCountries = {
+    'Europe': ['Ireland', 'Spain', 'Sweden', 'Greece'],
+    'Africa': ['DR Congo', 'Madagascar', 'Kenya', 'Gabon'],
+    'Asia-Pacific': ['Bangladesh', 'Indonesia', 'Australia', 'Philippines', 'Maldives', 'India', 'Malaysia'],
+    'Americas': ['Colombia', 'Brazil', 'Canada', 'United States']
+  };
+  const regionForCountry = country => {
+    const match = Object.entries(regionCountries).find(([, countries]) => countries.includes(country));
+    return match ? match[0] : 'Other';
+  };
+  const regionOrder = ['Europe', 'Africa', 'Asia-Pacific', 'Americas'];
+
   const countries = [...new Set(rankedPlacements.map(countryName))];
+  const regions = regionOrder.filter(region =>
+    rankedPlacements.some(p => regionForCountry(countryName(p)) === region)
+  );
   const countryHue = new Map(
     countries.map((country, index) => [country, Math.round((index * 360) / countries.length)])
   );
@@ -1930,6 +1945,7 @@
   rankedPlacements.forEach(p => {
     p.country = countryName(p);
     p.customer = customerName(p);
+    p.region = regionForCountry(p.country);
   });
 
   const filterHost = document.createElement('div');
@@ -1937,26 +1953,49 @@
   filterHost.innerHTML = `
     <div class="abelo-filter-head">
       <div>
-        <strong>Filter the portfolio</strong>
+        <strong>Explore the portfolio</strong>
         <span class="abelo-filter-status" data-abelo-filter-status></span>
       </div>
       <button type="button" class="abelo-filter-clear" data-abelo-clear>Clear filters</button>
     </div>
     <div class="abelo-filter-group">
-      <div class="abelo-filter-label">19 countries</div>
+      <div class="abelo-filter-label">4 regions</div>
+      <div class="abelo-filter-grid abelo-filter-grid--regions" data-abelo-region-filters></div>
+    </div>
+    <details class="abelo-filter-details">
+      <summary><span>19 countries</span><small>Open for country filters</small></summary>
       <div class="abelo-filter-grid abelo-filter-grid--countries" data-abelo-country-filters></div>
-    </div>
-    <div class="abelo-filter-group">
-      <div class="abelo-filter-label">26 lessees</div>
+    </details>
+    <details class="abelo-filter-details">
+      <summary><span>26 lessees</span><small># = customer recency · aircraft count shown</small></summary>
       <div class="abelo-filter-grid abelo-filter-grid--lessees" data-abelo-lessee-filters></div>
-    </div>
+    </details>
   `;
-  mapHost.parentElement.insertBefore(filterHost, mapHost);
+  mapHost.after(filterHost);
 
+  const regionFilterHost = filterHost.querySelector('[data-abelo-region-filters]');
   const countryFilterHost = filterHost.querySelector('[data-abelo-country-filters]');
   const lesseeFilterHost = filterHost.querySelector('[data-abelo-lessee-filters]');
   const statusHost = filterHost.querySelector('[data-abelo-filter-status]');
   const clearButton = filterHost.querySelector('[data-abelo-clear]');
+
+  const regionHue = new Map(
+    regions.map((region, index) => [region, Math.round((index * 300) / Math.max(regions.length, 1))])
+  );
+
+  regions.forEach(region => {
+    const rows = rankedPlacements.filter(p => p.region === region);
+    const aircraft = rows.reduce((sum, p) => sum + Number(p.aircraftCount || 0), 0);
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'abelo-filter-chip abelo-filter-chip--region';
+    button.dataset.region = region;
+    const hue = regionHue.get(region) ?? 210;
+    button.style.setProperty('--country-color', `hsl(${hue} 58% 40%)`);
+    button.style.setProperty('--country-tint', `hsl(${hue} 65% 96%)`);
+    button.innerHTML = `<span class="abelo-filter-swatch"></span><span>${escapeHtml(region)}</span><small>${rows.length} lessees · ${aircraft} aircraft</small>`;
+    regionFilterHost.appendChild(button);
+  });
 
   countries.forEach(country => {
     const count = rankedPlacements.filter(p => p.country === country).length;
@@ -1964,6 +2003,7 @@
     button.type = 'button';
     button.className = 'abelo-filter-chip abelo-filter-chip--country';
     button.dataset.country = country;
+    button.dataset.region = regionForCountry(country);
     button.style.setProperty('--country-color', countryColor(country));
     button.style.setProperty('--country-tint', countryTint(country));
     button.innerHTML = `<span class="abelo-filter-swatch"></span><span>${escapeHtml(country)}</span><small>${count}</small>`;
@@ -1975,12 +2015,14 @@
     button.type = 'button';
     button.className = 'abelo-filter-chip abelo-filter-chip--lessee';
     button.dataset.lessee = p.customer;
+    button.dataset.region = p.region;
     button.style.setProperty('--country-color', countryColor(p.country));
     button.style.setProperty('--country-tint', countryTint(p.country));
-    button.innerHTML = `<span class="abelo-filter-swatch"></span><span>#${escapeHtml(p.recencyRank)} ${escapeHtml(p.customer)}</span><small>${escapeHtml(p.country)}</small>`;
+    button.innerHTML = `<span class="abelo-filter-swatch"></span><span>#${escapeHtml(p.recencyRank)} ${escapeHtml(p.customer)}</span><small>${escapeHtml(p.aircraftCount)} aircraft · ${escapeHtml(p.country)}</small>`;
     lesseeFilterHost.appendChild(button);
   });
 
+  let activeRegion = null;
   let activeCountry = null;
   let activeLessee = null;
 
@@ -2010,12 +2052,22 @@
     const markerLayer = L.layerGroup().addTo(map);
 
     const filteredPlacements = () => rankedPlacements.filter(p =>
+      (!activeRegion || p.region === activeRegion) &&
       (!activeCountry || p.country === activeCountry) &&
       (!activeLessee || p.customer === activeLessee)
     );
 
     const syncFilterUi = () => {
+      filterHost.querySelectorAll('[data-region]').forEach(button => {
+        if (!button.classList.contains('abelo-filter-chip--region')) return;
+        const selected = button.dataset.region === activeRegion;
+        button.classList.toggle('is-active', selected);
+        button.setAttribute('aria-pressed', selected ? 'true' : 'false');
+      });
+
       filterHost.querySelectorAll('[data-country]').forEach(button => {
+        const regionCompatible = !activeRegion || button.dataset.region === activeRegion;
+        button.hidden = !regionCompatible;
         const selected = button.dataset.country === activeCountry;
         button.classList.toggle('is-active', selected);
         button.setAttribute('aria-pressed', selected ? 'true' : 'false');
@@ -2024,9 +2076,11 @@
       filterHost.querySelectorAll('[data-lessee]').forEach(button => {
         const selected = button.dataset.lessee === activeLessee;
         const p = rankedPlacements.find(item => item.customer === button.dataset.lessee);
-        const compatible = !activeCountry || (p && p.country === activeCountry);
+        const regionCompatible = !activeRegion || (p && p.region === activeRegion);
+        const countryCompatible = !activeCountry || (p && p.country === activeCountry);
+        button.hidden = !regionCompatible;
         button.classList.toggle('is-active', selected);
-        button.classList.toggle('is-muted', !compatible);
+        button.classList.toggle('is-muted', !countryCompatible);
         button.setAttribute('aria-pressed', selected ? 'true' : 'false');
       });
 
@@ -2069,11 +2123,25 @@
       }
     };
 
+    regionFilterHost.addEventListener('click', event => {
+      const button = event.target.closest('.abelo-filter-chip--region[data-region]');
+      if (!button) return;
+      const next = button.dataset.region;
+      activeRegion = activeRegion === next ? null : next;
+      if (activeCountry && activeRegion && regionForCountry(activeCountry) !== activeRegion) activeCountry = null;
+      if (activeLessee) {
+        const selected = rankedPlacements.find(p => p.customer === activeLessee);
+        if (selected && activeRegion && selected.region !== activeRegion) activeLessee = null;
+      }
+      renderMarkers();
+    });
+
     countryFilterHost.addEventListener('click', event => {
       const button = event.target.closest('[data-country]');
       if (!button) return;
       const next = button.dataset.country;
       activeCountry = activeCountry === next ? null : next;
+      if (activeCountry) activeRegion = regionForCountry(activeCountry);
       if (activeLessee) {
         const selected = rankedPlacements.find(p => p.customer === activeLessee);
         if (selected && activeCountry && selected.country !== activeCountry) activeLessee = null;
@@ -2090,12 +2158,16 @@
       } else {
         activeLessee = next;
         const selected = rankedPlacements.find(p => p.customer === next);
-        if (selected) activeCountry = selected.country;
+        if (selected) {
+          activeRegion = selected.region;
+          activeCountry = selected.country;
+        }
       }
       renderMarkers();
     });
 
     clearButton.addEventListener('click', () => {
+      activeRegion = null;
       activeCountry = null;
       activeLessee = null;
       renderMarkers();
