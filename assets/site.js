@@ -433,7 +433,7 @@
         const pageTitle = entry.page_title || entry.title || '';
         if (label) {
           label.href = href;
-          if (menuTitle === 'Aviation' || menuTitle === 'Portfolio') {
+          if (menuTitle === 'About Me' || menuTitle === 'Aviation' || menuTitle === 'Portfolio') {
             label.setAttribute('aria-haspopup', 'true');
             label.setAttribute('aria-expanded', 'false');
           }
@@ -506,7 +506,8 @@
   document.querySelectorAll('.navitem > .navlabel').forEach(label => {
     label.addEventListener('click', event => {
       const targetPath = normalisePath(label.href);
-      const isPageMenu = /\/(?:aviation|portfolio)\.html$/.test(targetPath);
+      const rootPath = normalisePath(document.querySelector('.brand')?.href || '/');
+      const isPageMenu = targetPath === rootPath || /\/(?:aviation|portfolio)\.html$/.test(targetPath);
       if (isPageMenu) {
         event.preventDefault();
         event.stopPropagation();
@@ -767,6 +768,29 @@
     });
   };
 
+  const ABOUT_SUBPAGES = [
+    { label: 'About Me', path: '' },
+    { label: 'Why This Role', path: 'about-asset-management.html' },
+    { label: 'Questions for Abelo', path: 'questions-for-abelo.html' },
+    { label: 'Academic Record', path: 'academic-record.html' }
+  ];
+
+  const populateAboutMenu = (item, pageUrl) => {
+    const menu = item.querySelector(':scope > .dropmenu');
+    if (!menu) return;
+    menu.replaceChildren();
+    menu.classList.remove('menu-columns-2', 'menu-columns-3', 'aviation-menu', 'career-menu', 'coursework-menu', 'portfolio-menu');
+    item.classList.add('has-submenu');
+    item.classList.remove('has-flyout-menu');
+    menu.style.setProperty('--menu-left', `${Math.round(item.getBoundingClientRect().left)}px`);
+    ABOUT_SUBPAGES.forEach(entry => {
+      const link = document.createElement('a');
+      link.href = entry.path ? new URL(entry.path, pageUrl.href).href : pageUrl.href;
+      link.textContent = entry.label;
+      menu.appendChild(link);
+    });
+  };
+
   const AVIATION_SUBPAGES = [
     { label: 'Aircraft', path: 'aviation/aircraft.html' },
     { label: 'Abelo', path: 'aviation/abelo.html' },
@@ -902,12 +926,18 @@
     const pageUrl = new URL(label.href, location.href);
     const targetPath = normalisePath(pageUrl.href);
     const cleanPagePath = pageUrl.pathname.replace(/\/+$/, '');
+    const rootPath = normalisePath(document.querySelector('.brand')?.href || '/');
+    const isAboutLibrary = targetPath === rootPath;
     const isStudiesLibrary = /\/coursework(?:\.html)?$/.test(cleanPagePath);
     const isAviationLibrary = /\/aviation(?:\.html)?$/.test(cleanPagePath);
     const isCareerLibrary = /\/career(?:\.html)?$/.test(cleanPagePath);
     const isPortfolioLibrary = /\/portfolio(?:\.html)?$/.test(cleanPagePath);
 
     try {
+      if (isAboutLibrary) {
+        populateAboutMenu(item, pageUrl);
+        return;
+      }
       if (isPortfolioLibrary) {
         await populatePortfolioMenu(item, pageUrl);
         return;
