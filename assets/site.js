@@ -1851,7 +1851,8 @@
     return years && years.length ? Number(years[0]) : 0;
   };
 
-  // Rank customers by the first documented year in this public-record reconstruction.
+  // Order customers newest -> oldest for display, but number them oldest -> newest.
+  // Pin 1 is the oldest documented relationship; the highest pin number is the newest.
   // Same-year customers keep their source order; that tie-break is display-only.
   const rankedPlacements = placements
     .map((p, sourceIndex) => ({
@@ -1860,7 +1861,7 @@
       customerYear: firstDocumentedYear(p)
     }))
     .sort((a, b) => (b.customerYear - a.customerYear) || (a.sourceIndex - b.sourceIndex))
-    .map((p, index) => ({ ...p, recencyRank: index + 1 }));
+    .map((p, index, ordered) => ({ ...p, recencyRank: ordered.length - index }));
 
   // Keep the geographic anchor exact, but visually separate customers sharing a city.
   // A small proximity threshold also catches slightly different city-centre coordinates.
@@ -2207,7 +2208,7 @@
       <div style="border:1px solid #d9dee8;border-radius:14px;padding:16px;text-align:center;"><strong style="display:block;font-size:2rem;line-height:1;">26</strong><span>Lessees</span></div>
       <div style="border:1px solid #d9dee8;border-radius:14px;padding:16px;text-align:center;"><strong style="display:block;font-size:2rem;line-height:1;">19</strong><span>Countries</span></div>
     </div>
-    <p class="abelo-map-note"><strong>How to read the pins:</strong> 1 is the newest documented customer relationship in this reconstruction. Pins run newest → oldest by first documented year, are colour-coded by country, and same-city pins are offset slightly so every customer remains visible and clickable.</p>
+    <p class="abelo-map-note"><strong>How to read the pins:</strong> 1 is the oldest documented customer relationship in this reconstruction. Pin numbers increase oldest → newest by first documented year, are colour-coded by country, and same-city pins are offset slightly so every customer remains visible and clickable.</p>
     <p class="abelo-map-note"><strong>Fleet mix:</strong> 34 ATR 72 · 8 ATR 42 · 19 Dash 8.</p>
     <p class="abelo-map-note">Public Abelo / Elix transactions and aircraft histories reconciled into one portfolio view.</p>
   `;
@@ -2276,10 +2277,10 @@
 
     <h3>ATR fleet map | Type, age and fleet history</h3>
     <p>The map below shows <strong>documented Abelo-linked ATR placements</strong>. It is a portfolio-learning map, <strong>not live aircraft tracking</strong>.</p>
-    <p><strong>Click a numbered marker for a deliberately simple fleet card</strong>. Pin 1 is the newest documented customer relationship in this reconstruction; the sequence then runs newest → oldest by first documented year. Same-city customers are offset slightly so their pins do not sit on top of one another. Counts refer to the Abelo-linked aircraft identified in the public material shown here, <strong>not the airline’s total fleet</strong>.</p>
+    <p><strong>Click a numbered marker for a deliberately simple fleet card</strong>. Pin 1 is the oldest documented customer relationship in this reconstruction; pin numbers increase oldest → newest by first documented year. Same-city customers are offset slightly so their pins do not sit on top of one another. Counts refer to the Abelo-linked aircraft identified in the public material shown here, <strong>not the airline’s total fleet</strong>.</p>
     <div class="abelo-map" data-abelo-map>
       <div class="abelo-map-canvas" id="abeloWorldMap" role="img" aria-label="World map of documented Abelo aircraft placements"></div>
-      <p class="abelo-map-note"><strong>Map key:</strong> numbered pins show customer recency (newest first) and are colour-coded by country. Same-city pins are visually offset but retain their original geographic anchor. Locations are operating markets, not live aircraft positions.</p>
+      <p class="abelo-map-note"><strong>Map key:</strong> numbered pins show customer chronology (1 = oldest; highest number = newest) and are colour-coded by country. Same-city pins are visually offset but retain their original geographic anchor. Locations are operating markets, not live aircraft positions.</p>
     </div>
 
     <h3>What one transaction actually involves</h3>
