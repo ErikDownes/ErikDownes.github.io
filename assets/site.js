@@ -1,6 +1,3 @@
-Warning: truncated output (original token count: 47300)
-Total output lines: 3562
-
 (async () => {
   const body = document.getElementById('docBody');
   const topbar = document.querySelector('.topbar');
@@ -756,6 +753,7 @@ Total output lines: 3562
     { label: 'Aircraft Leasing', path: 'aviation/aircraft-leasing.html' },
     { label: 'Asset Management', path: 'aviation/asset-management.html' },
     { label: 'Aircraft Options', path: 'aviation/aircraft-options.html' },
+    { label: 'External Shocks and Risk to the Sector', path: 'aviation/external-shocks-risk.html' },
     { label: 'Credit Risk', path: 'aviation/credit-risk.html' },
     { label: 'Maintenance Reserves', path: 'aviation/maintenance-reserves.html' }
   ];
@@ -819,7 +817,1544 @@ Total output lines: 3562
       menu.appendChild(row);
 
       try {
-        const response = await fetch(categoryUrl.href, { cache: 'no-store' }…17300 tokens truncated… if (!visible.length) {
+        const response = await fetch(categoryUrl.href, { cache: 'no-store' });
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        const html = await response.text();
+        const parsed = new DOMParser().parseFromString(html, 'text/html');
+        const headings = Array.from(parsed.querySelectorAll('#docBody > h2'))
+          .map(headingInfo)
+          .filter(Boolean);
+
+        headings.forEach((question, index) => {
+          const link = document.createElement('a');
+          const id = question.id || `section-${index + 1}`;
+          link.href = `${categoryUrl.pathname}${categoryUrl.search}#${id}`;
+          link.textContent = question.handle;
+          link.title = question.question;
+          panel.appendChild(link);
+        });
+
+        if (!headings.length) {
+          row.classList.add('has-no-flyout');
+          toggle.hidden = true;
+        }
+      } catch (_) {
+        row.classList.add('has-no-flyout');
+        toggle.hidden = true;
+      }
+    }
+  };
+
+
+  const PORTFOLIO_SUBPAGES = [
+    { label: 'Turboprop Asset Reporting', path: 'fleet-map.html' },
+    { label: 'Global Fleet Maintenance Dashboard', path: 'atr-fleet-dashboard.html' },
+    { label: 'Mortgage Calculator', path: 'mortgage-calculator.html' },
+    { label: 'PCP Car Finance Calculator', path: 'pcp-calculator.html' },
+    { label: 'ATR 42 / ATR 72 Lease Calculator', path: 'lease-dashboard.html' }
+  ];
+
+  const populatePortfolioMenu = async (item, pageUrl) => {
+    const menu = item.querySelector(':scope > .dropmenu');
+    if (!menu) return;
+
+    menu.replaceChildren();
+    menu.classList.remove('menu-columns-2', 'menu-columns-3', 'aviation-menu', 'coursework-menu', 'career-menu');
+    menu.classList.add('portfolio-menu');
+    item.classList.add('has-submenu');
+    item.classList.remove('has-flyout-menu');
+    menu.style.setProperty('--menu-left', `${Math.round(item.getBoundingClientRect().left)}px`);
+
+    PORTFOLIO_SUBPAGES.forEach(project => {
+      const link = document.createElement('a');
+      link.href = new URL(project.path, pageUrl.href).href;
+      link.textContent = project.label;
+      menu.appendChild(link);
+    });
+  };
+
+  const syncQuestionMenu = async item => {
+    const label = item.querySelector(':scope > .navlabel[href]');
+    const menu = item.querySelector(':scope > .dropmenu');
+    if (!label || !menu) return;
+    const pageUrl = new URL(label.href, location.href);
+    const targetPath = normalisePath(pageUrl.href);
+    const cleanPagePath = pageUrl.pathname.replace(/\/+$/, '');
+    const isStudiesLibrary = /\/coursework(?:\.html)?$/.test(cleanPagePath);
+    const isAviationLibrary = /\/aviation(?:\.html)?$/.test(cleanPagePath);
+    const isCareerLibrary = /\/career(?:\.html)?$/.test(cleanPagePath);
+    const isPortfolioLibrary = /\/portfolio(?:\.html)?$/.test(cleanPagePath);
+
+    try {
+      if (isPortfolioLibrary) {
+        await populatePortfolioMenu(item, pageUrl);
+        return;
+      }
+      if (isCareerLibrary) {
+        await populateCareerMenu(item, pageUrl);
+        return;
+      }
+      if (isAviationLibrary) {
+        await populateAviationMenu(item, pageUrl);
+        return;
+      }
+      if (targetPath === currentPath && body) {
+        if (isStudiesLibrary) {
+          populateModuleMenu(item, Array.from(body.querySelectorAll('a[href]')), pageUrl);
+        } else {
+          const headings = Array.from(body.querySelectorAll(':scope > h2')).filter(heading => headingInfo(heading));
+          populateQuestionMenu(item, headings, pageUrl);
+        }
+        return;
+      }
+
+      const response = await fetch(pageUrl.href, { cache: 'no-store' });
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      const html = await response.text();
+      const parsed = new DOMParser().parseFromString(html, 'text/html');
+
+      if (isStudiesLibrary) {
+        populateModuleMenu(item, Array.from(parsed.querySelectorAll('#docBody a[href]')), pageUrl);
+        return;
+      }
+
+      const headings = Array.from(parsed.querySelectorAll('#docBody > h2')).filter(heading => headingInfo(heading));
+      populateQuestionMenu(item, headings, pageUrl);
+    } catch (_) {
+      menu.replaceChildren();
+      item.classList.remove('has-submenu');
+    }
+  };
+
+  document.querySelectorAll('[data-question-menu]').forEach(syncQuestionMenu);
+
+  // A fixed menu can be wider than its tab; keep it inside the viewport.
+  const positionMenus = () => document.querySelectorAll('.navitem.has-submenu').forEach(item => {
+    const menu = item.querySelector(':scope > .dropmenu');
+    if (menu) menu.style.setProperty('--menu-left', `${Math.round(item.getBoundingClientRect().left)}px`);
+  });
+  document.querySelectorAll('.navitem').forEach(item => {
+    item.addEventListener('pointerenter', positionMenus);
+    item.addEventListener('focusin', positionMenus);
+  });
+  window.addEventListener('resize', positionMenus);
+  positionMenus();
+
+  pagePrint?.addEventListener('click', () => window.print());
+
+  /* -----------------------------------------------------------------------
+     Glossary — available from every page and automatically alphabetical.
+     User-added entries are stored locally in this browser.
+     ----------------------------------------------------------------------- */
+  const readGlossary = () => {
+    let custom = [];
+    try {
+      custom = JSON.parse(localStorage.getItem(GLOSSARY_PREFIX) || '[]');
+      if (!Array.isArray(custom)) custom = [];
+    } catch (_) {
+      custom = [];
+    }
+    const merged = new Map();
+    [...GLOSSARY_SEED, ...AERCAP_GLOSSARY_SEED].forEach(item => merged.set(item.term.toLowerCase(), { ...item, builtIn: true }));
+    custom.forEach(item => {
+      if (!item?.term) return;
+      const key = cleanText(item.term).toLowerCase();
+      const seeded = merged.get(key) || {};
+      merged.set(key, { ...seeded, ...item, builtIn: false });
+    });
+    return Array.from(merged.values()).sort((a, b) => a.term.localeCompare(b.term, 'en', { sensitivity: 'base' }));
+  };
+
+  const writeCustomGlossary = items => {
+    localStorage.setItem(GLOSSARY_PREFIX, JSON.stringify(items));
+    renderGlossaryPage();
+  };
+
+  const customGlossary = () => readGlossary().filter(item => !item.builtIn);
+
+  const glossaryDialog = document.createElement('div');
+  glossaryDialog.className = 'glossary-dialog-overlay';
+  glossaryDialog.hidden = true;
+  glossaryDialog.innerHTML = `
+    <section class="glossary-dialog" role="dialog" aria-modal="true" aria-label="Glossary term">
+      <button type="button" class="glossary-dialog-close" aria-label="Close glossary">×</button>
+      <div class="glossary-dialog-body"></div>
+    </section>
+  `;
+  document.body.appendChild(glossaryDialog);
+  const glossaryDialogBody = glossaryDialog.querySelector('.glossary-dialog-body');
+
+  const closeGlossaryDialog = () => {
+    glossaryDialog.hidden = true;
+    glossaryDialogBody.replaceChildren();
+  };
+
+  glossaryDialog.addEventListener('click', event => {
+    if (event.target === glossaryDialog || event.target.closest('.glossary-dialog-close')) closeGlossaryDialog();
+  });
+
+  const lookupDefinition = async raw => {
+    const term = cleanText(raw);
+    if (!term) return '';
+    const existing = readGlossary().find(item => item.term.toLowerCase() === term.toLowerCase());
+    if (existing) return existing.definition || '';
+    try {
+      if (!term.includes(' ')) {
+        const response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${encodeURIComponent(term)}`);
+        if (response.ok) {
+          const data = await response.json();
+          const found = data?.[0]?.meanings?.flatMap(m => m.definitions || [])?.find(d => d.definition);
+          if (found?.definition) return found.definition;
+        }
+      }
+    } catch (_) {}
+    try {
+      const response = await fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(term)}`);
+      if (response.ok) {
+        const data = await response.json();
+        if (data?.extract) return data.extract.split(/(?<=[.!?])\s+/).slice(0, 2).join(' ');
+      }
+    } catch (_) {}
+    return '';
+  };
+
+  const openGlossaryTerm = async rawTerm => {
+    const term = cleanText(rawTerm);
+    if (!term) {
+      const page = new URL('glossary.html', document.querySelector('.brand')?.href || location.href);
+      location.href = page.href;
+      return;
+    }
+
+    glossaryDialog.hidden = false;
+    glossaryDialogBody.innerHTML = '<p class="glossary-looking-up">Looking up definition…</p>';
+
+    const existing = readGlossary().find(item => item.term.toLowerCase() === term.toLowerCase());
+    const suggested = existing?.definition || await lookupDefinition(term);
+
+    const form = document.createElement('form');
+    form.className = 'glossary-term-form';
+
+    const h2 = document.createElement('h2');
+    h2.textContent = existing ? term : 'Add to Glossary';
+
+    const termLabel = document.createElement('label');
+    termLabel.textContent = 'Term';
+    const termInput = document.createElement('input');
+    termInput.type = 'text';
+    termInput.value = existing?.term || term;
+
+    const defLabel = document.createElement('label');
+    defLabel.textContent = 'Plain-English meaning';
+    const defInput = document.createElement('textarea');
+    defInput.rows = 5;
+    defInput.value = suggested || '';
+
+    const cueLabel = document.createElement('label');
+    cueLabel.textContent = 'Recall cue';
+    const cueInput = document.createElement('input');
+    cueInput.type = 'text';
+    cueInput.value = existing?.cue || '';
+
+    const actions = document.createElement('div');
+    actions.className = 'glossary-term-actions';
+
+    const save = document.createElement('button');
+    save.type = 'submit';
+    save.textContent = existing?.builtIn ? 'Save my version' : 'Save';
+
+    const view = document.createElement('a');
+    view.href = new URL('glossary.html', document.querySelector('.brand')?.href || location.href).href;
+    view.textContent = 'Open A–Z Glossary';
+
+    actions.append(save, view);
+    form.append(h2, termLabel, termInput, defLabel, defInput, cueLabel, cueInput, actions);
+
+    form.addEventListener('submit', event => {
+      event.preventDefault();
+      const item = {
+        term: cleanText(termInput.value),
+        definition: cleanText(defInput.value),
+        cue: cleanText(cueInput.value)
+      };
+      if (!item.term || !item.definition) return;
+      const items = customGlossary().filter(x => x.term.toLowerCase() !== item.term.toLowerCase());
+      items.push(item);
+      writeCustomGlossary(items);
+      save.textContent = 'Saved ✓';
+      window.setTimeout(closeGlossaryDialog, 500);
+    });
+
+    glossaryDialogBody.replaceChildren(form);
+    defInput.focus();
+    defInput.setSelectionRange(defInput.value.length, defInput.value.length);
+  };
+
+  const renderGlossaryPage = () => {
+    const app = document.getElementById('glossary-app');
+    if (!app) return;
+
+    const entries = readGlossary();
+    const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+    const present = new Set(entries.map(item => item.term[0]?.toUpperCase()).filter(Boolean));
+
+    const search = document.createElement('input');
+    search.type = 'search';
+    search.className = 'glossary-search';
+    search.placeholder = 'Search glossary…';
+    search.setAttribute('aria-label', 'Search glossary');
+
+    const alphabet = document.createElement('nav');
+    alphabet.className = 'glossary-alphabet';
+    alphabet.setAttribute('aria-label', 'Glossary alphabet');
+
+    letters.forEach(letter => {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.textContent = letter;
+      button.disabled = !present.has(letter);
+      button.addEventListener('click', () => document.getElementById(`glossary-${letter}`)?.scrollIntoView({ behavior: 'smooth', block: 'start' }));
+      alphabet.appendChild(button);
+    });
+
+    const list = document.createElement('div');
+    list.className = 'glossary-az';
+
+    const draw = query => {
+      list.replaceChildren();
+      const q = cleanText(query).toLowerCase();
+      const filtered = entries.filter(item =>
+        !q || item.term.toLowerCase().includes(q) || (item.definition || '').toLowerCase().includes(q)
+      );
+      let current = '';
+      filtered.forEach(item => {
+        const letter = item.term[0]?.toUpperCase() || '#';
+        if (letter !== current) {
+          current = letter;
+          const heading = document.createElement('h2');
+          heading.id = `glossary-${letter}`;
+          heading.className = 'glossary-letter';
+          heading.textContent = letter;
+          list.appendChild(heading);
+        }
+
+        const card = document.createElement('details');
+        card.className = 'glossary-entry';
+        const summary = document.createElement('summary');
+        summary.textContent = item.term;
+        const p = document.createElement('p');
+        p.textContent = item.definition;
+        card.append(summary, p);
+        renderGlossaryLearningContent(card, item);
+
+        if (item.cue) {
+          const cue = document.createElement('p');
+          cue.className = 'recall';
+          cue.innerHTML = '<strong>Recall cue:</strong> ';
+          cue.append(document.createTextNode(item.cue));
+          card.appendChild(cue);
+        }
+        if (item.why) {
+          const why = document.createElement('p');
+          why.className = 'recall';
+          why.innerHTML = '<strong>Why it matters:</strong> ';
+          why.append(document.createTextNode(item.why));
+          card.appendChild(why);
+        }
+
+        const tools = document.createElement('div');
+        tools.className = 'glossary-entry-tools';
+        const edit = document.createElement('button');
+        edit.type = 'button';
+        edit.textContent = item.builtIn ? 'Adapt' : 'Edit';
+        edit.addEventListener('click', () => openGlossaryTerm(item.term));
+        tools.appendChild(edit);
+
+        if (!item.builtIn) {
+          const remove = document.createElement('button');
+          remove.type = 'button';
+          remove.textContent = 'Remove';
+          remove.addEventListener('click', () => {
+            const items = customGlossary().filter(x => x.term.toLowerCase() !== item.term.toLowerCase());
+            writeCustomGlossary(items);
+          });
+          tools.appendChild(remove);
+        }
+        card.appendChild(tools);
+        list.appendChild(card);
+      });
+
+      if (!filtered.length) {
+        const empty = document.createElement('p');
+        empty.className = 'glossary-empty';
+        empty.textContent = 'No matching terms yet.';
+        list.appendChild(empty);
+      }
+    };
+
+    search.addEventListener('input', () => draw(search.value));
+    app.replaceChildren(search, alphabet, list);
+    draw('');
+  };
+
+  renderGlossaryPage();
+
+  if (!body) return;
+
+  const showGlossaryDefinition = rawTerm => {
+    const term = cleanText(rawTerm);
+    const item = readGlossary().find(entry => entry.term.toLowerCase() === term.toLowerCase());
+    if (!item) return;
+    glossaryDialog.hidden = false;
+    const heading = document.createElement('h2');
+    heading.textContent = item.term;
+    const definition = document.createElement('p');
+    definition.textContent = item.definition || '';
+    glossaryDialogBody.replaceChildren(heading, definition);
+    if (item.cue) {
+      const cue = document.createElement('p');
+      cue.className = 'recall';
+      cue.innerHTML = '<strong>Recall cue:</strong> ';
+      cue.append(document.createTextNode(item.cue));
+      glossaryDialogBody.appendChild(cue);
+    }
+    if (item.why) {
+      const why = document.createElement('p');
+      why.className = 'recall';
+      why.innerHTML = '<strong>Why it matters:</strong> ';
+      why.append(document.createTextNode(item.why));
+      glossaryDialogBody.appendChild(why);
+    }
+    renderGlossaryLearningContent(glossaryDialogBody, item);
+  };
+
+  const linkKnownGlossaryTerms = (root, onTerm = showGlossaryDefinition) => {
+    if (!root) return;
+    const entries = readGlossary().filter(item => item.term && item.term.length > 1);
+    const terms = entries.map(item => item.term).sort((a, b) => b.length - a.length);
+    const escapeRegExp = value => value.replace(/[.*+?^$()|[\]\\]/g, '\\$&');
+    const pattern = terms.map(escapeRegExp).join('|');
+    if (!pattern) return;
+    const matcher = new RegExp('\\b(' + pattern + ')\\b', 'gi');
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+    const nodes = [];
+    while (walker.nextNode()) {
+      const node = walker.currentNode;
+      const parent = node.parentElement;
+      if (!parent || parent.closest('a,button,summary,label,select,option,script,style,textarea,input,svg,.glossary-term,h2,[role="button"],[role="tab"],[data-no-glossary]') || (root === body && parent.closest('.aercap-beamer'))) continue;
+      matcher.lastIndex = 0;
+      if (matcher.test(node.nodeValue || '')) nodes.push(node);
+    }
+    nodes.forEach(node => {
+      const value = node.nodeValue || '';
+      const fragment = document.createDocumentFragment();
+      let last = 0;
+      matcher.lastIndex = 0;
+      value.replace(matcher, (match, _group, offset) => {
+        fragment.append(document.createTextNode(value.slice(last, offset)));
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'glossary-term';
+        button.textContent = match;
+        button.title = 'Show definition';
+        button.addEventListener('click', event => {
+          event.preventDefault();
+          event.stopPropagation();
+          onTerm(match);
+        });
+        fragment.appendChild(button);
+        last = offset + match.length;
+        return match;
+      });
+      fragment.append(document.createTextNode(value.slice(last)));
+      node.replaceWith(fragment);
+    });
+  };
+
+  window.coopEducationGlossary = { readGlossary, linkKnownGlossaryTerms, renderGlossaryLearningContent };
+  linkKnownGlossaryTerms(body);
+
+  const sectionHeadings = () => Array.from(body.querySelectorAll(':scope > h2[data-section-heading]'));
+  // Education has its own learning-cycle controls; keep the generic rehearsal chrome off that page.
+  const practiceHeadings = () => document.body.classList.contains('education-mode') ? [] : sectionHeadings();
+
+  const sourceNodesFor = heading => {
+    const nodes = [];
+    let node = heading.nextElementSibling;
+    while (node && node.tagName !== 'H2') {
+      nodes.push(node);
+      node = node.nextElementSibling;
+    }
+    return nodes;
+  };
+
+  const sourceHeadingText = heading => cleanText(
+    heading.dataset.sourceHeading || `${heading.dataset.menuLabel || ''} | ${heading.dataset.questionText || heading.textContent}`
+  );
+
+  const answerTextFor = heading => sourceNodesFor(heading)
+    .filter(node => !node.matches?.('.answer-focus-chain'))
+    .map(node => node.querySelector?.('.aercap-source')?.textContent || node.textContent || '')
+    .join(' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+
+  const editKeyFor = heading => `${EDIT_PREFIX}${location.pathname}:${sourceHeadingText(heading).toLowerCase()}`;
+
+  const applySavedToSource = (heading, html) => {
+    const current = sourceNodesFor(heading);
+    const template = document.createElement('template');
+    template.innerHTML = html;
+    const replacement = Array.from(template.content.childNodes);
+    if (current.length) {
+      const anchor = current[0];
+      replacement.forEach(node => anchor.parentNode.insertBefore(node, anchor));
+      current.forEach(node => node.remove());
+    } else {
+      replacement.forEach(node => heading.parentNode.insertBefore(node, heading.nextSibling));
+    }
+  };
+
+  const sectionIdFor = heading => {
+    if (!heading.dataset.sectionMoveId) {
+      heading.dataset.sectionMoveId = `${normalisePath(location.pathname)}::${sourceHeadingText(heading).toLowerCase()}`;
+    }
+    return heading.dataset.sectionMoveId;
+  };
+
+  const sectionBlockFor = heading => [heading, ...sourceNodesFor(heading)];
+
+  const readSectionMoves = () => {
+    try {
+      const value = JSON.parse(localStorage.getItem(MOVE_PREFIX) || '[]');
+      return Array.isArray(value) ? value : [];
+    } catch (_) {
+      return [];
+    }
+  };
+
+  const writeSectionMoves = moves => {
+    localStorage.setItem(MOVE_PREFIX, JSON.stringify(moves));
+  };
+
+  const saveSectionOrder = () => {
+    const order = sectionHeadings().map(sectionIdFor);
+    localStorage.setItem(`${ORDER_PREFIX}${normalisePath(location.pathname)}`, JSON.stringify(order));
+  };
+
+  const restoreSectionOrder = () => {
+    let saved = [];
+    try {
+      saved = JSON.parse(localStorage.getItem(`${ORDER_PREFIX}${normalisePath(location.pathname)}`) || '[]');
+      if (!Array.isArray(saved)) saved = [];
+    } catch (_) {
+      saved = [];
+    }
+    if (!saved.length) return;
+
+    const headings = sectionHeadings();
+    const byId = new Map(headings.map(heading => [sectionIdFor(heading), heading]));
+    const currentIds = headings.map(sectionIdFor);
+    const desired = [
+      ...saved.filter(id => byId.has(id)),
+      ...currentIds.filter(id => !saved.includes(id))
+    ];
+
+    desired.forEach(id => {
+      const heading = byId.get(id);
+      if (!heading) return;
+      sectionBlockFor(heading).forEach(node => body.appendChild(node));
+    });
+  };
+
+  const restoreMovedSections = () => {
+    const currentPath = normalisePath(location.pathname);
+    const moves = readSectionMoves();
+
+    // Remove any original/local copy that now belongs on another page.
+    sectionHeadings().forEach(heading => {
+      const id = sectionIdFor(heading);
+      const move = moves.find(item => item?.id === id);
+      if (move && normalisePath(move.to) !== currentPath) {
+        sectionBlockFor(heading).forEach(node => node.remove());
+      }
+    });
+
+    // Add sections moved onto this page. New arrivals default to the bottom.
+    moves
+      .filter(item => item?.id && normalisePath(item.to) === currentPath)
+      .forEach(move => {
+        const existing = sectionHeadings().find(heading => sectionIdFor(heading) === move.id);
+        if (existing) {
+          if (move.bodyHtml) applySavedToSource(existing, move.bodyHtml);
+          return;
+        }
+
+        const template = document.createElement('template');
+        template.innerHTML = `${move.headingHtml || ''}${move.bodyHtml || ''}`;
+        Array.from(template.content.childNodes).forEach(node => body.appendChild(node));
+      });
+
+    restoreSectionOrder();
+  };
+
+  const moveSectionWithinPage = (heading, where) => {
+    const headings = sectionHeadings();
+    const index = headings.indexOf(heading);
+    if (index < 0 || headings.length < 2) return false;
+
+    let targetIndex = index;
+    if (where === 'up') targetIndex = Math.max(0, index - 1);
+    if (where === 'down') targetIndex = Math.min(headings.length - 1, index + 1);
+    if (where === 'top') targetIndex = 0;
+    if (where === 'bottom') targetIndex = headings.length - 1;
+    if (targetIndex === index) return false;
+
+    const block = sectionBlockFor(heading);
+    if (targetIndex < index) {
+      const target = headings[targetIndex];
+      block.forEach(node => body.insertBefore(node, target));
+    } else {
+      const target = headings[targetIndex];
+      const targetBlock = sectionBlockFor(target);
+      const afterTarget = targetBlock[targetBlock.length - 1]?.nextSibling || null;
+      block.forEach(node => body.insertBefore(node, afterTarget));
+    }
+
+    saveSectionOrder();
+    return true;
+  };
+
+  const moveSectionToPage = (heading, destinationUrl) => {
+    const destination = new URL(destinationUrl, location.href);
+    const destinationPath = normalisePath(destination.pathname);
+    const currentPath = normalisePath(location.pathname);
+    if (destinationPath === currentPath) return;
+
+    const id = sectionIdFor(heading);
+    const headingClone = heading.cloneNode(true);
+    headingClone.querySelectorAll?.('button,.cm-question-play').forEach(node => node.remove());
+    headingClone.dataset.sectionMoveId = id;
+
+    const answer = cloneAnswer(heading);
+    const moves = readSectionMoves().filter(item => item?.id !== id);
+    moves.push({
+      id,
+      from: currentPath,
+      to: destinationPath,
+      headingHtml: headingClone.outerHTML,
+      bodyHtml: answer.innerHTML,
+      movedAt: new Date().toISOString()
+    });
+    writeSectionMoves(moves);
+
+    sectionBlockFor(heading).forEach(node => node.remove());
+    saveSectionOrder();
+    location.href = destination.href;
+  };
+
+  const populateMovePageSelect = async select => {
+    try {
+      const base = document.querySelector('.brand')?.href || location.href;
+      const response = await fetch(new URL('nav.json', base), { cache: 'no-store' });
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      const pages = await response.json();
+      const currentPath = normalisePath(location.pathname);
+
+      pages.forEach(page => {
+        if (!page?.url) return;
+        const url = new URL(page.url, location.origin);
+        if (normalisePath(url.pathname) === currentPath) return;
+        const option = document.createElement('option');
+        option.value = url.href;
+        option.textContent = page.title || page.page_title || url.pathname;
+        select.appendChild(option);
+      });
+    } catch (_) {
+      const option = document.createElement('option');
+      option.disabled = true;
+      option.textContent = 'Pages unavailable';
+      select.appendChild(option);
+    }
+  };
+
+  const restoreSavedAnswers = () => {
+    sectionHeadings().forEach(heading => {
+      const saved = localStorage.getItem(editKeyFor(heading));
+      if (saved) applySavedToSource(heading, saved);
+    });
+  };
+
+  restoreMovedSections();
+  restoreSavedAnswers();
+
+  /* -----------------------------------------------------------------------
+     Audio state shared by inline play, focus play and page Listen.
+     ----------------------------------------------------------------------- */
+  let activeAudioButton = null;
+  let activeAudioTarget = null;
+  let activeUtterance = null;
+
+  const resetAudio = () => {
+    if (synth) synth.cancel();
+    activeAudioButton?.classList.remove('is-active', 'is-paused');
+    activeAudioTarget?.classList.remove('cm-audio-speaking');
+    activeAudioButton = null;
+    activeAudioTarget = null;
+    activeUtterance = null;
+  };
+
+  const speak = ({ text, button = null, target = null, rate = 0.92, restart = false }) => {
+    if (!hasSpeech || !cleanText(text)) return;
+
+    if (!restart && button && activeAudioButton === button && synth.speaking) {
+      if (synth.paused) {
+        synth.resume();
+        button.classList.remove('is-paused');
+      } else {
+        synth.pause();
+        button.classList.add('is-paused');
+      }
+      return;
+    }
+
+    resetAudio();
+    activeAudioButton = button;
+    activeAudioTarget = target;
+    button?.classList.add('is-active');
+    target?.classList.add('cm-audio-speaking');
+    activeUtterance = new SpeechSynthesisUtterance(text);
+    activeUtterance.lang = 'en-IE';
+    activeUtterance.rate = rate;
+    activeUtterance.onend = resetAudio;
+    activeUtterance.onerror = resetAudio;
+    synth.speak(activeUtterance);
+  };
+
+  const addInlinePlayButtons = () => {
+    practiceHeadings().forEach(heading => {
+      if (heading.querySelector(':scope > .cm-question-play')) return;
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'cm-question-play';
+      button.setAttribute('aria-label', `Play question and answer: ${heading.dataset.questionText}`);
+      button.title = 'Play question and answer · double-click to restart';
+      const text = () => `${heading.dataset.questionText}. ${answerTextFor(heading)}`;
+      button.addEventListener('click', event => {
+        event.preventDefault();
+        event.stopPropagation();
+        speak({ text: text(), button, target: heading });
+      });
+      button.addEventListener('dblclick', event => {
+        event.preventDefault();
+        event.stopPropagation();
+        speak({ text: text(), button, target: heading, restart: true });
+      });
+      heading.prepend(button);
+    });
+  };
+
+  addInlinePlayButtons();
+
+  const addSectionMoveMenus = () => {
+    if (document.body.classList.contains('education-mode')) return;
+    let dragging = null;
+    let dropTarget = null;
+    let dropAfter = false;
+    let justDragged = false;
+
+    const currentSectionMenu = () => {
+      document.querySelectorAll('[data-question-menu]').forEach(item => {
+        const label = item.querySelector(':scope > .navlabel[href]');
+        if (label && normalisePath(label.href) === normalisePath(location.href)) syncQuestionMenu(item);
+      });
+    };
+
+    const sectionAt = element => {
+      let node = element;
+      while (node && node.parentElement !== body) node = node.parentElement;
+      if (!node || node.parentElement !== body) return null;
+      while (node && !node.matches('h2[data-section-heading]')) node = node.previousElementSibling;
+      return node;
+    };
+
+    const clearDropTarget = () => {
+      dropTarget?.classList.remove('section-drop-before', 'section-drop-after');
+      dropTarget = null;
+    };
+
+    const positionFor = event => {
+      const target = sectionAt(event.target);
+      if (!target || target === dragging) return null;
+      const bounds = target.getBoundingClientRect();
+      const after = event.clientY >= bounds.top + bounds.height / 2;
+      return { target, after };
+    };
+
+    const moveSectionTo = (heading, target, after) => {
+      if (!heading || !target || heading === target) return;
+      const targetBlock = sectionBlockFor(target);
+      const reference = after ? targetBlock[targetBlock.length - 1].nextSibling : target;
+      sectionBlockFor(heading).forEach(node => body.insertBefore(node, reference));
+      saveSectionOrder();
+      currentSectionMenu();
+      heading.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    };
+
+    sectionHeadings().forEach(heading => {
+      if (heading.querySelector(':scope > .section-move-menu')) return;
+      const wrap = document.createElement('span');
+      wrap.className = 'section-move-menu';
+      const grip = document.createElement('button');
+      grip.type = 'button';
+      grip.className = 'section-drag-handle';
+      grip.draggable = true;
+      grip.setAttribute('aria-label', 'Drag to reorder: ' + (heading.dataset.questionText || heading.textContent.trim()));
+      grip.setAttribute('aria-expanded', 'false');
+      grip.title = 'Drag to reorder · click for move options';
+      grip.textContent = '≡';
+
+      const menu = document.createElement('span');
+      menu.className = 'section-move-actions';
+      menu.setAttribute('role', 'group');
+      menu.setAttribute('aria-label', 'Move section');
+      menu.hidden = true;
+      [['↑ Up', 'up'], ['↓ Down', 'down'], ['⇧ Top', 'top'], ['⇩ Bottom', 'bottom']].forEach(pair => {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.textContent = pair[0];
+        button.addEventListener('click', event => {
+          event.preventDefault();
+          event.stopPropagation();
+          if (moveSectionWithinPage(heading, pair[1])) {
+            currentSectionMenu();
+            heading.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+          menu.hidden = true;
+          grip.setAttribute('aria-expanded', 'false');
+        });
+        menu.appendChild(button);
+      });
+
+      grip.addEventListener('click', event => {
+        event.preventDefault();
+        event.stopPropagation();
+        if (justDragged) return;
+        document.querySelectorAll('.section-move-actions').forEach(actions => {
+          if (actions !== menu) actions.hidden = true;
+        });
+        menu.hidden = !menu.hidden;
+        grip.setAttribute('aria-expanded', String(!menu.hidden));
+      });
+      grip.addEventListener('dragstart', event => {
+        dragging = heading;
+        justDragged = true;
+        event.stopPropagation();
+        event.dataTransfer.effectAllowed = 'move';
+        event.dataTransfer.setData('text/plain', sectionIdFor(heading));
+        heading.classList.add('section-dragging');
+      });
+      grip.addEventListener('dragend', () => {
+        dragging?.classList.remove('section-dragging');
+        dragging = null;
+        clearDropTarget();
+        setTimeout(() => { justDragged = false; }, 150);
+      });
+
+      wrap.append(grip, menu);
+      heading.prepend(wrap);
+    });
+
+    body.addEventListener('dragover', event => {
+      if (!dragging) return;
+      event.preventDefault();
+      event.dataTransfer.dropEffect = 'move';
+      const position = positionFor(event);
+      clearDropTarget();
+      if (!position) return;
+      dropTarget = position.target;
+      dropAfter = position.after;
+      dropTarget.classList.add(dropAfter ? 'section-drop-after' : 'section-drop-before');
+    });
+
+    body.addEventListener('drop', event => {
+      if (!dragging) return;
+      event.preventDefault();
+      const position = positionFor(event) || (dropTarget ? { target: dropTarget, after: dropAfter } : null);
+      clearDropTarget();
+      if (position) moveSectionTo(dragging, position.target, position.after);
+      dragging.classList.remove('section-dragging');
+      dragging = null;
+    });
+
+    document.addEventListener('click', event => {
+      if (event.target.closest('.section-move-menu')) return;
+      document.querySelectorAll('.section-move-actions').forEach(actions => { actions.hidden = true; });
+      document.querySelectorAll('.section-drag-handle').forEach(grip => grip.setAttribute('aria-expanded', 'false'));
+    });
+  };
+
+  addSectionMoveMenus();
+
+  /* -----------------------------------------------------------------------
+     Focus answer overlay — clicking a question produces the same blocking,
+     distraction-free rehearsal view as the Education site.
+     ----------------------------------------------------------------------- */
+  const overlay = document.createElement('div');
+  overlay.className = 'answer-focus-overlay';
+  overlay.hidden = true;
+  overlay.setAttribute('role', 'dialog');
+  overlay.setAttribute('aria-modal', 'true');
+  overlay.setAttribute('aria-label', 'Focused interview answer');
+  overlay.innerHTML = `
+    <article class="answer-focus-card" tabindex="-1">
+      <button class="answer-focus-close" type="button" data-focus-close aria-label="Close focused answer">×</button>
+      <div class="answer-focus-content" data-focus-content></div>
+    </article>
+  `;
+  document.body.appendChild(overlay);
+
+  const focusCard = overlay.querySelector('.answer-focus-card');
+  const focusContent = overlay.querySelector('[data-focus-content]');
+  let lastTrigger = null;
+
+  const cloneAnswer = heading => {
+    const wrapper = document.createElement('div');
+    wrapper.className = 'answer-focus-copy';
+    const saved = localStorage.getItem(editKeyFor(heading));
+    if (saved) {
+      wrapper.innerHTML = saved;
+      return wrapper;
+    }
+    sourceNodesFor(heading).forEach(node => {
+      const educationSource = node.querySelector?.('.aercap-source');
+      if (educationSource) {
+        Array.from(educationSource.children).forEach(paragraph => wrapper.appendChild(paragraph.cloneNode(true)));
+        return;
+      }
+      const clone = node.cloneNode(true);
+      // Keep words that the glossary has turned into buttons.
+      clone.querySelectorAll?.('button.glossary-term').forEach(el => el.replaceWith(document.createTextNode(el.textContent)));
+      clone.querySelectorAll?.('script,style,button,.cm-question-play,a[href*="pagescms.org"]').forEach(el => el.remove());
+      if (cleanText(clone.textContent) || clone.matches?.('img,table,ul,ol,blockquote,.key-vocab,.recall')) wrapper.appendChild(clone);
+    });
+    return wrapper;
+  };
+
+  const selectContent = content => {
+    const selection = window.getSelection();
+    if (!selection) return;
+    const range = document.createRange();
+    range.selectNodeContents(content);
+    selection.removeAllRanges();
+    selection.addRange(range);
+  };
+
+  const closeFocus = () => {
+    if (overlay.hidden) return;
+    if (overlay.dataset.unsaved === 'true' && !window.confirm('Discard unsaved changes?')) return;
+    resetAudio();
+    focusContent.querySelector('.answer-practice-record.is-recording')?.click();
+    delete overlay.dataset.unsaved;
+    overlay.hidden = true;
+    focusContent.replaceChildren();
+    document.body.classList.remove('answer-focus-open');
+    lastTrigger?.focus({ preventScroll: true });
+    lastTrigger = null;
+  };
+
+  const openFocus = heading => {
+    delete overlay.dataset.unsaved;
+    const copy = cloneAnswer(heading);
+    if (!cleanText(copy.textContent)) return;
+
+    const title = document.createElement('h2');
+    title.textContent = heading.dataset.questionText || cleanText(heading.textContent);
+    title.dataset.focusClose = '';
+    title.title = 'Click the question to close';
+
+    const controls = document.createElement('div');
+    controls.className = 'answer-focus-tools';
+
+    const play = document.createElement('button');
+    play.type = 'button';
+    play.textContent = '▶ Play';
+    play.title = 'Play or pause this question and answer';
+    play.addEventListener('click', event => {
+      event.stopPropagation();
+      if (activeAudioButton === play && synth?.speaking) {
+        if (synth.paused) {
+          synth.resume();
+          play.textContent = '⏸ Pause';
+        } else {
+          synth.pause();
+          play.textContent = '▶ Resume';
+        }
+        return;
+      }
+      resetAudio();
+      if (!hasSpeech) return;
+      activeAudioButton = play;
+      play.classList.add('is-active');
+      play.textContent = '⏸ Pause';
+      activeUtterance = new SpeechSynthesisUtterance(`${title.textContent}. ${cleanText(copy.innerText)}`);
+      activeUtterance.lang = 'en-IE';
+      activeUtterance.rate = 0.92;
+      activeUtterance.onend = () => { play.textContent = '▶ Play'; resetAudio(); };
+      activeUtterance.onerror = () => { play.textContent = '▶ Play'; resetAudio(); };
+      synth.speak(activeUtterance);
+    });
+
+    const stop = document.createElement('button');
+    stop.type = 'button';
+    stop.textContent = '■ Stop';
+    stop.addEventListener('click', event => {
+      event.stopPropagation();
+      resetAudio();
+      play.textContent = '▶ Play';
+    });
+
+    const outline = document.createElement('div');
+    outline.className = 'answer-focus-outline';
+
+    const outlineItems = Array.from(copy.querySelectorAll('p,li,blockquote'))
+      .map(node => cleanText(node.textContent))
+      .filter(value => /^(key idea|key line|recall cue|cue|remember|outline|why this works)\s*:/i.test(value))
+      .slice(0, 6);
+
+    if (outlineItems.length) {
+      const label = document.createElement('strong');
+      label.textContent = 'Outline';
+      const list = document.createElement('ul');
+      outlineItems.forEach(value => {
+        const li = document.createElement('li');
+        li.textContent = value.replace(/^(key idea|key line|recall cue|cue|remember|outline|why this works)\s*:\s*/i, '');
+        list.appendChild(li);
+      });
+      outline.append(label, list);
+    } else {
+      outline.hidden = true;
+    }
+
+    const outlineButton = document.createElement('button');
+    outlineButton.type = 'button';
+    outlineButton.textContent = outline.hidden ? 'Outline unavailable' : 'Hide Outline';
+    outlineButton.disabled = outline.hidden;
+    outlineButton.addEventListener('click', event => {
+      event.preventDefault();
+      event.stopPropagation();
+      outline.hidden = !outline.hidden;
+      outlineButton.textContent = outline.hidden ? 'Show Outline' : 'Hide Outline';
+    });
+
+    const answerButton = document.createElement('button');
+    answerButton.type = 'button';
+    answerButton.textContent = 'Hide Answer';
+    answerButton.addEventListener('click', event => {
+      event.preventDefault();
+      event.stopPropagation();
+      copy.hidden = !copy.hidden;
+      answerButton.textContent = copy.hidden ? 'Show Answer' : 'Hide Answer';
+    });
+
+    const movePage = document.createElement('select');
+    movePage.className = 'answer-focus-move-page';
+    movePage.title = 'Move this section to another page (it will be placed at the bottom)';
+    movePage.setAttribute('aria-label', 'Move section to another page');
+    const movePrompt = document.createElement('option');
+    movePrompt.value = '';
+    movePrompt.textContent = 'Move to Page…';
+    movePrompt.selected = true;
+    movePrompt.disabled = true;
+    movePage.appendChild(movePrompt);
+    populateMovePageSelect(movePage);
+    movePage.addEventListener('change', event => {
+      event.stopPropagation();
+      if (!movePage.value) return;
+      moveSectionToPage(heading, movePage.value);
+    });
+
+    controls.append(play, stop, outlineButton, answerButton, movePage);
+
+    const { panel: practice } = window.coopPractice.create(copy.innerText);
+    copy.querySelectorAll('ul,ol').forEach(list => {
+      if (list.children.length >= 5) list.classList.add('answer-columns');
+    });
+    // Keep the rehearsal controls visible when a section has a long reference answer.
+    if (cleanText(copy.textContent).length > 350) {
+      copy.hidden = true;
+      answerButton.textContent = 'Show Answer';
+    }
+
+    focusContent.replaceChildren(title, controls, outline, practice, copy);
+    linkKnownGlossaryTerms(copy);
+    lastTrigger = heading;
+    overlay.hidden = false;
+    document.body.classList.add('answer-focus-open');
+    focusCard.scrollTop = 0;
+    focusCard.focus({ preventScroll: true });
+  };
+
+  practiceHeadings().forEach(heading => {
+    heading.tabIndex = 0;
+    heading.setAttribute('role', 'button');
+    heading.setAttribute('aria-haspopup', 'dialog');
+    heading.title = 'Double-click the section heading to open focus view';
+    heading.addEventListener('dblclick', event => {
+      if (event.target.closest('button,a,input,textarea,select,summary')) return;
+      openFocus(heading);
+    });
+    heading.addEventListener('keydown', event => {
+      if (event.key !== 'Enter' && event.key !== ' ') return;
+      if (event.target.closest('button,a,input,textarea,select,summary')) return;
+      event.preventDefault();
+      openFocus(heading);
+    });
+  });
+
+  overlay.addEventListener('click', event => {
+    if (event.target === overlay || event.target.closest('[data-focus-close]')) closeFocus();
+  });
+
+  /* -----------------------------------------------------------------------
+     Floating page tools: Edit here, Print, Listen.
+     ----------------------------------------------------------------------- */
+  const setupFloatingTools = () => {
+    if (!pageEdit && !pagePrint) return;
+    const rail = document.createElement('div');
+    rail.id = 'floating-page-tools';
+    rail.setAttribute('aria-label', 'Page tools');
+
+    let floatingEdit = null;
+    if (pageEdit?.href) {
+      floatingEdit = document.createElement('a');
+      floatingEdit.id = 'floating-section-edit';
+      floatingEdit.href = pageEdit.href;
+      floatingEdit.target = '_blank';
+      floatingEdit.rel = 'noopener';
+      floatingEdit.textContent = 'Edit here';
+      floatingEdit.setAttribute('aria-label', 'Edit the section currently in view');
+      floatingEdit.dataset.cmsBase = pageEdit.href.split('#')[0];
+      rail.appendChild(floatingEdit);
+      pageEdit.hidden = true;
+    }
+
+    const print = document.createElement('button');
+    print.id = 'floating-page-print';
+    print.type = 'button';
+    print.textContent = 'Print';
+    print.setAttribute('aria-label', 'Print this page');
+    print.addEventListener('click', () => window.print());
+    rail.appendChild(print);
+    if (pagePrint) pagePrint.hidden = true;
+
+    if (hasSpeech) {
+      const listen = document.createElement('button');
+      listen.id = 'floating-page-listen';
+      listen.type = 'button';
+      listen.textContent = 'Listen';
+      listen.setAttribute('aria-label', 'Listen to this page');
+      listen.addEventListener('click', () => {
+        if (activeAudioButton === listen && synth.speaking) {
+          if (synth.paused) {
+            synth.resume();
+            listen.textContent = 'Pause';
+          } else {
+            synth.pause();
+            listen.textContent = 'Resume';
+          }
+          return;
+        }
+        const questions = practiceHeadings();
+        const text = questions.length
+          ? questions.map(heading => `${heading.dataset.questionText}. ${answerTextFor(heading)}`).join(' ')
+          : `${document.querySelector('.doc-paper > h1')?.textContent || ''}. ${body.innerText}`;
+        resetAudio();
+        activeAudioButton = listen;
+        listen.classList.add('is-active');
+        listen.textContent = 'Pause';
+        activeUtterance = new SpeechSynthesisUtterance(cleanText(text));
+        activeUtterance.lang = 'en-IE';
+        activeUtterance.rate = 0.92;
+        activeUtterance.onend = () => { listen.textContent = 'Listen'; resetAudio(); };
+        activeUtterance.onerror = () => { listen.textContent = 'Listen'; resetAudio(); };
+        synth.speak(activeUtterance);
+      });
+      rail.appendChild(listen);
+    }
+
+    document.body.appendChild(rail);
+
+    if (!floatingEdit) return;
+    let ticking = false;
+    const updateEditTarget = () => {
+      ticking = false;
+      const headings = sectionHeadings();
+      if (!headings.length) {
+        floatingEdit.href = floatingEdit.dataset.cmsBase;
+        return;
+      }
+      const marker = Math.min(window.innerHeight * 0.38, 300);
+      let active = headings[0];
+      headings.forEach(heading => {
+        if (heading.getBoundingClientRect().top <= marker) active = heading;
+      });
+      const source = sourceHeadingText(active);
+      floatingEdit.href = source ? `${floatingEdit.dataset.cmsBase}#:~:text=${encodeURIComponent(source)}` : floatingEdit.dataset.cmsBase;
+      floatingEdit.title = source ? `Edit near “${source}”` : 'Edit this page';
+    };
+    const queue = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(updateEditTarget);
+    };
+    window.addEventListener('scroll', queue, { passive: true });
+    window.addEventListener('resize', queue);
+    updateEditTarget();
+  };
+
+  setupFloatingTools();
+
+  /* -----------------------------------------------------------------------
+     Hash target alignment: give the last section enough temporary scroll
+     runway to sit below the sticky navigation, without dummy headings or
+     permanent blank space at the end of every page.
+     ----------------------------------------------------------------------- */
+  const alignHashTarget = () => {
+    if (!location.hash) {
+      body.style.removeProperty('padding-bottom');
+      return;
+    }
+
+    let id = '';
+    try {
+      id = decodeURIComponent(location.hash.slice(1));
+    } catch (_) {
+      id = location.hash.slice(1);
+    }
+
+    const target = document.getElementById(id);
+    if (!target || !body.contains(target)) {
+      body.style.removeProperty('padding-bottom');
+      return;
+    }
+
+    // Recalculate from the page's natural height first, then add only the
+    // extra space needed for this target to reach its normal anchored position.
+    body.style.removeProperty('padding-bottom');
+
+    requestAnimationFrame(() => {
+      const topOffset = (topbar?.getBoundingClientRect().height || 0) + 20;
+      const targetTop = Math.max(0, window.scrollY + target.getBoundingClientRect().top - topOffset);
+      const maxScrollTop = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
+      const shortfall = Math.ceil(targetTop - maxScrollTop);
+
+      if (shortfall > 0) {
+        body.style.paddingBottom = `${shortfall + 24}px`;
+      }
+
+      requestAnimationFrame(() => {
+        window.scrollTo({ top: targetTop, behavior: 'auto' });
+      });
+    });
+  };
+
+  window.addEventListener('hashchange', alignHashTarget);
+  if (document.readyState === 'complete') alignHashTarget();
+  else window.addEventListener('load', alignHashTarget, { once: true });
+
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && !overlay.hidden) closeFocus();
+  });
+  window.addEventListener('pagehide', resetAudio);
+  window.addEventListener('beforeunload', resetAudio);
+  document.dispatchEvent(new Event('coop-site-ready'));
+})();
+
+
+// Abelo global footprint map
+(() => {
+  const initAbeloMap = () => {
+  const mapHost = document.querySelector('[data-abelo-map] #abeloWorldMap');
+  if (!mapHost || mapHost.dataset.mapReady === 'true') return;
+  mapHost.dataset.mapReady = 'true';
+
+  const placements = [
+    {lat:53.35,lng:-6.26,title:'Ireland — Emerald Airlines',source:'https://abelo.aero/wp-content/uploads/2026/08/Press-Release-Aergo-JULY2026-Updated-05.08.2026-003.pdf',date:'2026',aircraftCount:1,type:'ATR 72-600 · working Aergo allocation',evidence:'RECENT TRANSACTION',history:'One aircraft in the six-aircraft Aergo portfolio acquired by Abelo with its lease attached to Emerald Airlines. The individual type is a working allocation for this proof of concept.'},
+    {lat:59.33,lng:18.07,title:'Sweden — Braathens Regional Airways',source:'https://abelo.aero/abelo-to-acquire-three-atr-72-600-aircraft-on-lease-to-braathens/',date:'2025',aircraftCount:3,type:'ATR 72-600',evidence:'RECENT TRANSACTION',history:'Three ATR 72-600s acquired with Braathens leases already attached.'},
+    {lat:37.98,lng:23.72,title:'Greece — SKY express',source:'https://abelo.aero/abelo-sky-express-collaboration-continues-with-two-brand-new-atr-72-600/',source2:'https://avitrader.com/2019/07/03/elix-aviation-capital-delivers-two-atr-72-500-to-sky-express/',date:'2019–2024',aircraftCount:4,type:'ATR 72 · Elix/Abelo lineage',evidence:'DOCUMENTED LINEAGE',history:'Two ATR 72-500s were delivered by Elix in 2019 and two new ATR 72-600s by Abelo in 2024. The four-aircraft figure is a lineage total rather than a claim that all four remained simultaneously on lease in 2026.'},
+    {lat:37.98,lng:23.72,title:'Greece — Olympic Air',source:'https://abelo.aero/abelo-leases-new-aircraft-to-olympic-air/',date:'2024',aircraftCount:1,type:'ATR 72-600',evidence:'RECENT TRANSACTION',history:'One new ATR 72-600 delivered on lease to Olympic Air.'},
+    {lat:28.12,lng:-15.44,title:'Spain — Binter Canarias',source:'https://abelo.aero/wp-content/uploads/2026/08/Press-Release-Aergo-JULY2026-Updated-05.08.2026-003.pdf',date:'2026',aircraftCount:1,type:'ATR 72-600 · working Aergo allocation',evidence:'RECENT TRANSACTION',history:'One aircraft in the Aergo six-aircraft acquisition remained on lease to Binter Canarias; type allocation is reconstructed for this demonstrator.'},
+    {lat:4.71,lng:-74.07,title:'Colombia — SATENA',source:'https://abelo.aero/abelo-announces-follow-on-atr-aircraft-placement-with-colombian-regional-operator-satena/',date:'2025–2026',aircraftCount:2,type:'1 ATR 42-600 + 1 ATR 72-600',evidence:'RECENT TRANSACTION',history:'An ATR 42-600 was followed by an ATR 72-600 as SATENA modernised its regional fleet.'},
+    {lat:4.18,lng:73.51,title:'Maldives — Maldivian',source:'https://abelo.aero/abelo-delivers-second-atr-42-600-to-maldivian-under-edc-backed-finance-lease/',date:'2024–2025',aircraftCount:2,type:'ATR 42-600',evidence:'RECENT TRANSACTION',history:'Two new ATR 42-600s were delivered under Abelo finance-lease structures.'},
+    {lat:23.81,lng:90.41,title:'Bangladesh — Air Astra',source:'https://abelo.aero/abelo-is-pleased-to-announce-the-delivery-of-three-brand-new-atr-72-600-aircraft-to-air-astra/',date:'2026',aircraftCount:3,type:'ATR 72-600',evidence:'RECENT TRANSACTION',history:'Three brand-new ATR 72-600s delivered to Air Astra.'},
+    {lat:-4.33,lng:15.31,title:'DR Congo — Ethiopian Airlines / Air Congo',source:'https://abelo.aero/abelo-leases-two-new-atr-72-600-aircraft-to-ethiopian-airlines-for-african-operations-11-march-2026/',date:'2026',aircraftCount:2,type:'ATR 72-600',evidence:'RECENT TRANSACTION',history:'Two new ATR 72-600s leased to Ethiopian Airlines Group for Air Congo operations.'},
+    {lat:-6.21,lng:106.85,title:'Indonesia — Citilink / Garuda Indonesia',source:'https://abelo.aero/wp-content/uploads/2026/08/Press-Release-Aergo-JULY2026-Updated-05.08.2026-003.pdf',date:'2026',aircraftCount:2,type:'ATR 72-600 · working Aergo allocation',evidence:'RECENT TRANSACTION',history:'Two aircraft in the Aergo portfolio were associated with the Indonesian lessee group. Public source wording differs between Citilink and Garuda; retained here as one placement group.'},
+    {lat:-31.95,lng:115.86,title:'Australia — National Jet Express',source:'https://abelo.aero/wp-content/uploads/2026/08/Press-Release-Aergo-JULY2026-Updated-05.08.2026-003.pdf',date:'2026',aircraftCount:1,type:'Dash 8-400 · working Aergo allocation',evidence:'RECENT TRANSACTION',history:'One aircraft in the Aergo acquisition remained on lease to National Jet Express.'},
+    {lat:14.60,lng:120.98,title:'Philippines — Philippine Airlines',source:'https://abelo.aero/wp-content/uploads/2026/08/Press-Release-Aergo-JULY2026-Updated-05.08.2026-003.pdf',date:'2026',aircraftCount:1,type:'Dash 8-400 · working Aergo allocation',evidence:'RECENT TRANSACTION',history:'One aircraft in the Aergo acquisition remained on lease to Philippine Airlines.'},
+    {lat:-31.95,lng:115.86,title:'Australia — Aerlink / Air Navigator Group',source:'https://abelo.aero/abelo-delivers-atr72-500-msn-762-to-air-navigator-group/',date:'2026',aircraftCount:1,type:'ATR 72-500 · MSN 762',evidence:'AIRFRAME VERIFIED',history:'MSN 762 was transitioned from Blue Islands and delivered to Aerlink / Air Navigator Group.'},
+    {lat:28.46,lng:77.03,title:'India — IndiGo',source:'https://abelo.aero/abelo-expands-fleet-with-acquisition-of-four-atr72-600-aircraft-and-welcomes-indigo-as-a-new-partner/',date:'2024',aircraftCount:4,type:'ATR 72-600',evidence:'RECENT TRANSACTION',history:'Four ATR 72-600s acquired with existing IndiGo leases attached.'},
+    {lat:28.56,lng:77.10,title:'India — Alliance Air',source:'https://platform.airfinanceglobal.com/Widget/SaveAsPDF/3537303',date:'2016',aircraftCount:3,type:'ATR 72-600',evidence:'ELIX LINEAGE',history:'Three new ATR 72-600s were documented on long leases from Elix to Alliance Air.'},
+    {lat:-1.29,lng:36.82,title:'Kenya — Renegade Air',source:'https://abelo.aero/abelo-announces-atr72-cargo-conversion-delivery-to-renegade-airline-in-kenya/',source2:'https://aviationweek.com/air-transport/renegade-airlines',date:'2021–2024',aircraftCount:2,type:'1 ATR 72-500F + 1 Dash 8-300',evidence:'DOCUMENTED LINEAGE',history:'The lineage includes a Dash 8-300 leased from Elix and the later Abelo ATR 72 cargo conversion.'},
+    {lat:-18.88,lng:47.51,title:'Madagascar — Madagascar Airlines',source:'https://madagascarairlines.com/fileadmin/user_upload/actualites/JOINT_PRESS_RELEASE_MD-Abelo_062325.pdf',date:'2025',aircraftCount:2,type:'ATR 72-500 + ATR 72-600',evidence:'AIRFRAME VERIFIED',history:'Lease extensions cover 5R-MJF (MSN 698, ATR 72-500) and 5R-EJB (MSN 1248, ATR 72-600).'},
+    {lat:-1.29,lng:36.82,title:'Kenya — AirKenya',source:'https://www.ch-aviation.com/news/99561-airkenya-receives-first-dash-8-200',date:'2021',aircraftCount:1,type:'Dash 8-200 · MSN 516',evidence:'ELIX LINEAGE',history:'AirKenya took MSN 516 on lease from Elix, its first Dash 8-200 from the lessor.'},
+    {lat:-1.29,lng:36.82,title:'Kenya — Safarilink',source:'https://avitrader.com/2020/02/24/elix-aviation-capital-delivers-one-bombardier-dash-8-q200-to-safarilink/',date:'2019–2020',aircraftCount:2,type:'Dash 8-200',evidence:'ELIX LINEAGE',history:'Elix delivered two Dash 8 Q200 aircraft to Safarilink across 2019 and 2020.'},
+    {lat:0.39,lng:9.45,title:'Gabon — Afrijet',source:'https://avitrader.com/2019/07/18/elix-aviation-capital-delivers-atr-42-500-to-afrijet/',date:'2019',aircraftCount:1,type:'ATR 42-500 · MSN 633',evidence:'ELIX LINEAGE',history:'Elix delivered ATR 42-500 MSN 633 to Afrijet in Libreville.'},
+    {lat:3.14,lng:101.69,title:'Malaysia — Berjaya Air',source:'https://www.avitrader.com/wp-content/uploads/2018/06/AviTrader_Weekly_Headline_News_2018-06-04.pdf',source2:'https://www.planespotters.net/airframe/atr-42-9m-jog-berjaya-air/r6v1pz',date:'2018–2022',aircraftCount:2,type:'ATR 42-500 · Elix lineage',evidence:'DOCUMENTED LINEAGE',history:'Public aircraft histories identify two Elix-linked ATR 42-500 placements with Berjaya Air across the period.'},
+    {lat:51.05,lng:-114.07,title:'Canada — WestJet Encore',source:'https://aviator.aero/press/elix-aviation-capital-to-lease-two-bombardier-q400-to-westjet-encore',date:'2018',aircraftCount:2,type:'Dash 8-400',evidence:'ELIX LINEAGE',history:'Elix completed lease agreements for two Q400 aircraft with WestJet Encore.'},
+    {lat:41.50,lng:-81.69,title:'United States — CommutAir',source:'https://www.commuteair.com/2018/08/30/insidemro-airlines-how-a-united-regional-carrier-is-growing/',date:'Legacy',aircraftCount:3,type:'Dash 8-200 · representative subset',evidence:'WORKING RECONSTRUCTION',history:'CommutAir publicly described a much larger Elix Q200 relationship. Three aircraft are retained here as a conservative representative subset so the proof-of-concept portfolio reconciles without pretending every historic airframe remained in Abelo.'},
+    {lat:38.34,lng:-75.51,title:'United States — Piedmont Airlines',source:'https://www.scribd.com/document/689401735/aircraft-report',date:'Legacy',aircraftCount:5,type:'Dash 8-300 · representative subset',evidence:'WORKING RECONSTRUCTION',history:'Historic fleet intelligence ties Piedmont Dash 8-300 aircraft to Elix. Five are retained in the working reconstruction rather than carrying forward the full historical exposure.'},
+    {lat:47.45,lng:-122.31,title:'United States — Horizon Air',source:'https://www.scribd.com/document/689401735/aircraft-report',date:'Legacy',aircraftCount:3,type:'Dash 8-200 · representative subset',evidence:'WORKING RECONSTRUCTION',history:'Historic fleet intelligence ties Horizon Dash 8-200 aircraft to Elix. Three are retained as a representative lineage subset.'},
+    {lat:-23.55,lng:-46.63,title:'Brazil — VoePass / MAP lineage',source:'https://www.planespotters.net/airframe/atr-72-pr-pdw-voepass/3v49jy',source2:'https://www.planespotters.net/airframe/atr-72-pr-pdy-voepass/r75o4y',date:'2022–2026',aircraftCount:2,type:'ATR 72-500',evidence:'AIRFRAME LINEAGE',history:'Two former Elix ATR 72-500 airframes are documented in the VoePass / MAP lineage.'}
+  ];
+
+  const firstDocumentedYear = p => {
+    const years = String(p.date || '').match(/\b(?:19|20)\d{2}\b/g);
+    return years && years.length ? Number(years[0]) : 0;
+  };
+
+  // Order customers newest -> oldest for display, but number them oldest -> newest.
+  // Pin 1 is the oldest documented relationship; the highest pin number is the newest.
+  // Same-year customers keep their source order; that tie-break is display-only.
+  const rankedPlacements = placements
+    .map((p, sourceIndex) => ({
+      ...p,
+      sourceIndex,
+      customerYear: firstDocumentedYear(p)
+    }))
+    .sort((a, b) => (b.customerYear - a.customerYear) || (a.sourceIndex - b.sourceIndex))
+    .map((p, index, ordered) => ({ ...p, recencyRank: ordered.length - index }));
+
+  // Keep the geographic anchor exact, but visually separate customers sharing a city.
+  // A small proximity threshold also catches slightly different city-centre coordinates.
+  const pinOffsets = (() => {
+    const clusters = [];
+    rankedPlacements.forEach(p => {
+      let cluster = clusters.find(c =>
+        Math.abs(c.lat - p.lat) <= 0.35 && Math.abs(c.lng - p.lng) <= 0.35
+      );
+      if (!cluster) {
+        cluster = { lat: p.lat, lng: p.lng, items: [] };
+        clusters.push(cluster);
+      }
+      cluster.items.push(p);
+    });
+
+    const offsets = new Map();
+    clusters.forEach(cluster => {
+      const n = cluster.items.length;
+      if (n === 1) {
+        offsets.set(cluster.items[0].sourceIndex, { x: 0, y: 0 });
+        return;
+      }
+      const radius = n === 2 ? 18 : 22;
+      cluster.items.forEach((p, i) => {
+        const angle = -Math.PI / 2 + (2 * Math.PI * i / n);
+        offsets.set(p.sourceIndex, {
+          x: Math.round(Math.cos(angle) * radius),
+          y: Math.round(Math.sin(angle) * radius)
+        });
+      });
+    });
+    return offsets;
+  })();
+
+  const loadLeaflet = () => new Promise((resolve, reject) => {
+    if (window.L) return resolve(window.L);
+
+    if (!document.querySelector('link[data-leaflet-css]')) {
+      const link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
+      link.crossOrigin = '';
+      link.dataset.leafletCss = 'true';
+      document.head.appendChild(link);
+    }
+
+    const existing = document.querySelector('script[data-leaflet-js]');
+    if (existing) {
+      existing.addEventListener('load', () => resolve(window.L), { once: true });
+      existing.addEventListener('error', reject, { once: true });
+      return;
+    }
+
+    const script = document.createElement('script');
+    script.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+    script.crossOrigin = '';
+    script.dataset.leafletJs = 'true';
+    script.onload = () => resolve(window.L);
+    script.onerror = reject;
+    document.head.appendChild(script);
+  });
+
+  const escapeHtml = value => String(value).replace(/[&<>"']/g, ch => ({
+    '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'
+  }[ch]));
+
+  const customerName = p => p.title.includes('—')
+    ? p.title.split('—').slice(1).join('—').trim()
+    : p.title;
+
+  const countryName = p => p.title.includes('—')
+    ? p.title.split('—')[0].trim()
+    : 'Other';
+
+  const regionCountries = {
+    'Europe': ['Ireland', 'Spain', 'Sweden', 'Greece'],
+    'Africa': ['DR Congo', 'Madagascar', 'Kenya', 'Gabon'],
+    'Asia': ['Bangladesh', 'Indonesia', 'Philippines', 'Maldives', 'India', 'Malaysia'],
+    'Oceania': ['Australia'],
+    'Americas': ['Colombia', 'Brazil', 'Canada', 'United States']
+  };
+  const regionForCountry = country => {
+    const match = Object.entries(regionCountries).find(([, countries]) => countries.includes(country));
+    return match ? match[0] : 'Other';
+  };
+  const regionOrder = ['Europe', 'Africa', 'Asia', 'Oceania', 'Americas'];
+
+  const countries = [...new Set(rankedPlacements.map(countryName))];
+  const regions = regionOrder.filter(region =>
+    rankedPlacements.some(p => regionForCountry(countryName(p)) === region)
+  );
+  const countryHue = new Map(
+    countries.map((country, index) => [country, Math.round((index * 360) / countries.length)])
+  );
+
+  const countryColor = country => `hsl(${countryHue.get(country) ?? 210} 68% 43%)`;
+  const countryTint = country => `hsl(${countryHue.get(country) ?? 210} 70% 96%)`;
+  const countryNumber = new Map(
+    [...countries].sort((a,b) => a.localeCompare(b)).map((country, index) => [country, index + 1])
+  );
+  const AIRFRAME_COLOURS = new Map([
+    ['ATR 42-500', '#0f766e'],
+    ['ATR 42-600', '#16a34a'],
+    ['ATR 72-500', '#d97706'],
+    ['ATR 72-500F', '#7c3aed'],
+    ['ATR 72-600', '#2563eb'],
+    ['Dash 8-200', '#be123c'],
+    ['Dash 8-300', '#c026d3'],
+    ['Dash 8-400', '#ea580c']
+  ]);
+  const aircraftColor = model => AIRFRAME_COLOURS.get(String(model || '')) || '#64748b';
+  const aircraftTint = model => {
+    const value = String(model || '');
+    const tints = {
+      'ATR 42-500': '#ecfdf9',
+      'ATR 42-600': '#f0fdf4',
+      'ATR 72-500': '#fff7ed',
+      'ATR 72-500F': '#f5f3ff',
+      'ATR 72-600': '#eff6ff',
+      'Dash 8-200': '#fff1f2',
+      'Dash 8-300': '#fdf4ff',
+      'Dash 8-400': '#fff7ed'
+    };
+    return tints[value] || '#f8fafc';
+  };
+
+  rankedPlacements.forEach(p => {
+    p.country = countryName(p);
+    p.customer = customerName(p);
+    p.region = regionForCountry(p.country);
+  });
+
+  const filterHost = document.createElement('div');
+  filterHost.className = 'abelo-filter-panel';
+  filterHost.dataset.noGlossary = '';
+  filterHost.innerHTML = `
+    <div class="abelo-filter-head">
+      <div>
+        <strong>Filters</strong>
+        <span class="abelo-filter-status" data-abelo-filter-status></span>
+      </div>
+      <button type="button" class="abelo-filter-clear" data-abelo-clear>Clear filters</button>
+    </div>
+    <details class="abelo-filter-details" open>
+      <summary><span>Region</span></summary>
+      <div class="abelo-filter-grid abelo-filter-grid--regions" data-abelo-region-filters></div>
+    </details>
+    <details class="abelo-filter-details">
+      <summary><span>Airframe</span></summary>
+      <div class="abelo-filter-grid abelo-filter-grid--models" data-abelo-model-filters></div>
+    </details>
+    <details class="abelo-filter-details">
+      <summary><span>Country</span></summary>
+      <div class="abelo-filter-grid abelo-filter-grid--countries" data-abelo-country-filters></div>
+    </details>
+    <details class="abelo-filter-details">
+      <summary><span>Lessee</span></summary>
+      <div class="abelo-filter-grid abelo-filter-grid--lessees" data-abelo-lessee-filters></div>
+    </details>
+  `;
+  mapHost.parentElement.appendChild(filterHost);
+
+  const regionFilterHost = filterHost.querySelector('[data-abelo-region-filters]');
+  const modelFilterHost = filterHost.querySelector('[data-abelo-model-filters]');
+  const countryFilterHost = filterHost.querySelector('[data-abelo-country-filters]');
+  const lesseeFilterHost = filterHost.querySelector('[data-abelo-lessee-filters]');
+  const statusHost = filterHost.querySelector('[data-abelo-filter-status]');
+  const clearButton = filterHost.querySelector('[data-abelo-clear]');
+
+  const airframeHost = document.createElement('section');
+  airframeHost.className = 'abelo-airframes';
+  airframeHost.innerHTML = `
+    <div class="abelo-airframes__head">
+      <div>
+        <span class="abelo-airframes__eyebrow">AIRFRAME DETAIL</span>
+        <strong data-abelo-airframe-title>61-aircraft control table</strong>
+        <small data-abelo-airframe-status>Loading aircraft-level records…</small>
+      </div>
+      <a href="${new URL('atr-fleet-dashboard.html', document.baseURI).href}" class="abelo-airframes__global-link">Open global ATR dashboard →</a>
+    </div>
+    <div class="abelo-airframes__table-wrap" data-abelo-airframe-table>
+      <p class="abelo-airframes__loading">Loading the aircraft reconciliation layer…</p>
+    </div>
+  `;
+  filterHost.insertAdjacentElement('afterend', airframeHost);
+
+  const dataNote = document.createElement('details');
+  dataNote.className = 'abelo-app-notes';
+  dataNote.innerHTML = `
+    <summary>About the data</summary>
+    <div>
+      <p><strong>61-aircraft control total:</strong> 34 ATR 72 + 8 ATR 42 + 19 Dash 8.</p>
+      <p>The lessee map is the reconciliation layer. MSN and registration are attached only where public evidence supports them; unresolved airframes remain flagged rather than guessed.</p>
+      <p>Sources include public Abelo / Elix announcements and aircraft-history records including Planespotters.</p>
+      <p><a href="https://www.planespotters.net/aircraft/production/atr-42-72" target="_blank" rel="noopener noreferrer">ATR 42/72 production list ↗</a> · <a href="https://www.planespotters.net/aircraft/production/de-havilland-canada-dhc-8" target="_blank" rel="noopener noreferrer">Dash 8 production list ↗</a></p>
+    </div>
+  `;
+  airframeHost.insertAdjacentElement('afterend', dataNote);
+
+  const airframeTitle = airframeHost.querySelector('[data-abelo-airframe-title]');
+  const airframeStatus = airframeHost.querySelector('[data-abelo-airframe-status]');
+  const airframeTable = airframeHost.querySelector('[data-abelo-airframe-table]');
+  let airframeRows = [];
+  let airframeLoadError = false;
+
+  const safeLink = (url, label) => url
+    ? `<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(label)} ↗</a>`
+    : '';
+
+  const renderAirframes = () => {
+    if (airframeLoadError) {
+      airframeTable.innerHTML = '<p class="abelo-airframes__loading">Aircraft detail could not be loaded. The map remains available.</p>';
+      return;
+    }
+    if (!airframeRows.length) return;
+
+    const visible = filteredAirframes();
+
+    const identified = visible.filter(r => r.msn || r.registration).length;
+    const psMatched = visible.filter(r => r.planespotters).length;
+    const gaps = visible.filter(r => r.mapped_or_gap === 'RECONCILIATION GAP').length;
+
+    const scopeParts = [activeModel, activeLessee, activeCountry, activeRegion].filter(Boolean);
+    airframeTitle.textContent = scopeParts.length ? scopeParts.join(' · ') + ' · aircraft records' : '61-aircraft control table';
+
+    airframeStatus.textContent = activeRegion || activeCountry || activeLessee || activeModel
+      ? `${visible.length} record${visible.length === 1 ? '' : 's'} · ${identified} identified by MSN/registration · ${psMatched} Planespotters match${psMatched === 1 ? '' : 'es'}`
+      : `61 control records · 56 mapped to lessees · 5 reconciliation gaps · ${identified} currently identified by MSN/registration`;
+
+    if (!visible.length) {
       airframeTable.innerHTML = '<p class="abelo-airframes__loading">No aircraft records match this filter.</p>';
       return;
     }
