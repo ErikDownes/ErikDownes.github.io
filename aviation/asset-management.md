@@ -1,12 +1,10 @@
 ---
 layout: doc
 handle: Asset Management
-title: Asset Management
+title: What do you know about  Airline Asset Management?
 eyebrow: AVIATION · PROTECTING VALUE THROUGH THE LEASE
 study_mode: true
 ---
-# What do you know about  Airline Asset Management?
-
 
 
 It’s about protecting the value and condition of your aircraft, and making sure the lessee meets the requirements of the lease.
@@ -23,8 +21,6 @@ I also came across power-by-the-hour arrangements during COVID. When aircraft we
 
 That’s what interests me about asset management — keeping the aircraft flying and earning, while protecting the condition and value of the asset.
 
-  
-  
 
 
 **Flight Hours** — Total time the aircraft or engine spends operating in flight.
@@ -49,5 +45,3 @@ That’s what interests me about asset management — keeping the aircraft flyin
 
 **Residual Value** — The expected value of the aircraft at the end of a lease or later in its economic life.
 
-  
-  
