@@ -842,12 +842,11 @@
 
 
   const PORTFOLIO_SUBPAGES = [
-    { label: 'Dashboards & Visualisation', path: 'portfolio/dashboards-visualisation.html' },
-    { label: 'Data & Analytics', path: 'portfolio/data-analytics.html' },
-    { label: 'Financial Modelling', path: 'portfolio/financial-modelling.html' },
-    { label: 'Software & Apps', path: 'portfolio/software-apps.html' },
-    { label: 'Sector Projects', path: 'portfolio/sector-projects.html' },
-    { label: 'Academic Projects', path: 'portfolio/academic-projects.html' }
+    { label: 'Turboprop Asset Reporting', path: 'fleet-map.html' },
+    { label: 'Global Fleet Maintenance Dashboard', path: 'atr-fleet-dashboard.html' },
+    { label: 'Mortgage Calculator', path: 'mortgage-calculator.html' },
+    { label: 'PCP Car Finance Calculator', path: 'pcp-calculator.html' },
+    { label: 'ATR 42 / ATR 72 Lease Calculator', path: 'lease-dashboard.html' }
   ];
 
   const populatePortfolioMenu = async (item, pageUrl) => {
@@ -857,76 +856,16 @@
     menu.replaceChildren();
     menu.classList.remove('menu-columns-2', 'menu-columns-3', 'aviation-menu', 'coursework-menu', 'career-menu');
     menu.classList.add('portfolio-menu');
-    item.classList.add('has-submenu', 'has-flyout-menu');
+    item.classList.add('has-submenu');
+    item.classList.remove('has-flyout-menu');
     menu.style.setProperty('--menu-left', `${Math.round(item.getBoundingClientRect().left)}px`);
 
-    for (const category of PORTFOLIO_SUBPAGES) {
-      const categoryUrl = new URL(category.path, pageUrl.href);
-      const row = document.createElement('div');
-      row.className = 'nav-flyout-item';
-
-      const parent = document.createElement('a');
-      parent.className = 'nav-flyout-parent';
-      parent.href = categoryUrl.href;
-      parent.textContent = category.label;
-      row.appendChild(parent);
-
-      const panel = document.createElement('div');
-      panel.className = 'nav-flyout-panel';
-      panel.setAttribute('aria-label', category.label);
-      const toggle = createFlyoutToggle(row, category.label);
-      row.append(toggle, panel);
-      menu.appendChild(row);
-
-      try {
-        const response = await fetch(categoryUrl.href, { cache: 'no-store' });
-        if (!response.ok) throw new Error(`HTTP ${response.status}`);
-        const html = await response.text();
-        const parsed = new DOMParser().parseFromString(html, 'text/html');
-        const headings = Array.from(parsed.querySelectorAll('#docBody > h2'))
-          .map(headingInfo)
-          .filter(Boolean);
-
-        headings.forEach((question, index) => {
-          const link = document.createElement('a');
-          const heading = Array.from(parsed.querySelectorAll('#docBody > h2'))[index];
-          let directHref = '';
-
-          // Portfolio flyout items open the actual project/app/evidence page
-          // whenever the category section contains a clear destination link.
-          if (heading) {
-            let node = heading.nextElementSibling;
-            while (node && node.tagName !== 'H2') {
-              const candidate = node.matches?.('a[href]') ? node : node.querySelector?.('a[href]');
-              if (candidate?.getAttribute('href')) {
-                directHref = candidate.getAttribute('href');
-                break;
-              }
-              node = node.nextElementSibling;
-            }
-          }
-
-          if (directHref) {
-            link.href = new URL(directHref, categoryUrl.href).href;
-          } else {
-            const id = question.id || `section-${index + 1}`;
-            link.href = `${categoryUrl.pathname}${categoryUrl.search}#${id}`;
-          }
-
-          link.textContent = question.handle;
-          link.title = question.question;
-          panel.appendChild(link);
-        });
-
-        if (!headings.length) {
-          row.classList.add('has-no-flyout');
-          toggle.hidden = true;
-        }
-      } catch (_) {
-        row.classList.add('has-no-flyout');
-        toggle.hidden = true;
-      }
-    }
+    PORTFOLIO_SUBPAGES.forEach(project => {
+      const link = document.createElement('a');
+      link.href = new URL(project.path, pageUrl.href).href;
+      link.textContent = project.label;
+      menu.appendChild(link);
+    });
   };
 
   const syncQuestionMenu = async item => {
