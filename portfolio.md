@@ -25,6 +25,18 @@ My portfolio therefore combines university studies with projects that I have **e
 The aim is not to present myself as an expert before I have worked in the industry. It is to show **how I learn, how I use quantitative ideas, and the kind of value I would like to learn to contribute in the workplace.**
 
 
+## Explore the portfolio | What can I actually build and analyse?
+
+The portfolio is organised around **work**, not just module codes:
+
+- [Data & Analytics]({{ '/portfolio/data-analytics.html' | relative_url }}) — statistics, modelling, forecasting and reproducible analysis.
+- [Financial Modelling]({{ '/portfolio/financial-modelling.html' | relative_url }}) — cash flows, loans, valuation and financing decisions.
+- [Software & Apps]({{ '/portfolio/software-apps.html' | relative_url }}) — Java, Python, notebooks and small decision tools.
+- [Dashboards & Visualisation]({{ '/portfolio/dashboards-visualisation.html' | relative_url }}) — maps, reporting and interactive analysis.
+- [Sector Projects]({{ '/portfolio/sector-projects.html' | relative_url }}) — aviation, aircraft leasing, banking/credit and investments.
+- [Academic Projects]({{ '/portfolio/academic-projects.html' | relative_url }}) — substantial assignments and project evidence from the degree.
+
+
 
 &nbsp;
 
@@ -32,7 +44,7 @@ The aim is not to present myself as an expert before I have worked in the indust
 
 ## Fleet map | Ask what the records tell us
 
-The interactive map brings together a public-record reconstruction of **61 aircraft, 26 lessees and 19 countries**. Treat the individual placements as research leads where records are incomplete.
+The interactive map currently reconciles **56 documented aircraft across 26 lessees and 19 countries**. An earlier working total reached 61, but five aircraft remain unresolved at airframe/transaction level and are deliberately not forced into the dataset. Treat the individual placements as research leads where records are incomplete.
 
 ABEL0_MAP_APP
 
