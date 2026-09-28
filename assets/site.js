@@ -2549,17 +2549,29 @@
 
   const popupHtml = p => {
     const firstSentence = String(p.history || '').split(/(?<=[.!?])\s+/)[0];
+    const popupAircraft = airframeRows.filter(r => r.lessee === p.customer && r.mapped_or_gap === 'MAPPED');
+    const miniRows = popupAircraft.length ? `
+      <table class="abelo-popup-mini-table">
+        <tbody>
+          ${popupAircraft.map(r => `<tr>
+            <td>${escapeHtml(r.model || r.family || 'Aircraft')}</td>
+            <td>MSN ${escapeHtml(r.msn || '—')}</td>
+            <td>${escapeHtml(r.registration || '—')}</td>
+          </tr>`).join('')}
+        </tbody>
+      </table>` : '';
     return `
       <div class="abelo-popup-card">
         <div class="abelo-popup-date">Customer recency #${escapeHtml(p.recencyRank)} · ${escapeHtml(p.date)}</div>
         <div class="abelo-popup-customer">${escapeHtml(customerName(p))}</div>
         <div class="abelo-popup-ratio">
           <strong>${escapeHtml(p.aircraftCount)}</strong>
-          <span>${escapeHtml(p.aircraftCount === 1 ? 'aircraft' : 'aircraft')} · ${escapeHtml(p.type || 'Turboprop')}</span>
+          <span>aircraft · ${escapeHtml(p.type || 'Turboprop')}</span>
         </div>
         ${firstSentence ? `<p class="abelo-popup-brief">${escapeHtml(firstSentence)}</p>` : ''}
+        ${miniRows}
         <div class="abelo-popup-actions">
-          <button type="button" class="abelo-popup-airframes" data-abelo-show-aircraft="${escapeHtml(p.customer)}">Aircraft table ↓</button>
+          <button type="button" class="abelo-popup-airframes" data-abelo-show-aircraft="${escapeHtml(p.customer)}">Open aircraft records ↓</button>
           <a class="abelo-popup-source" href="${escapeHtml(p.source)}" target="_blank" rel="noopener noreferrer">Primary source ↗</a>
         </div>
       </div>`;
@@ -2637,7 +2649,7 @@
           riseOnHover: true
         })
           .addTo(markerLayer)
-          .bindPopup(popupHtml(p), { maxWidth: 460, minWidth: 360 });
+          .bindPopup(() => popupHtml(p), { maxWidth: 520, minWidth: 390 });
 
         marker.on('click', () => {
           activeRegion = null;
