@@ -19,13 +19,3 @@ So I can see the value: you can exercise the options as demand develops and then
 I know this might be slightly above my pay grade if I get the internship, but can I ask — with Paris and Dubai coming up again in 2027, would you be looking to secure more options or future delivery positions around events like those?
 
 And how do you decide when you've got enough options in the orderbook versus when it's time to secure more?
-
-## External Shocks and Risk to the Sector
-
-One thing I’ve been thinking about is how Asset Management deals with things outside anyone’s control.
-
-You have aircraft operating across different countries, so things like war, sanctions, tariffs or political instability can suddenly change the risk around an aircraft and an airline.
-
-Fuel is another one. It’s an airline cost rather than directly your cost, but a big rise in fuel prices could affect the airline’s profitability and therefore its credit risk and ability to meet its lease obligations.
-
-So how do you manage those situations? Is that where the relationship side of Asset Management becomes really important — working with the airline to find a commercial solution, while at the same time protecting the aircraft, the lease and its residual value?
