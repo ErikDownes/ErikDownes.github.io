@@ -469,7 +469,7 @@ Topics to develop:
 
 A useful dashboard should let a user change assumptions and see the financial consequences rather than stare at a fixed calculation.
 
-[Open the Aircraft Leasing Decision Lab on Dashboards]({{ '/projects.html' | relative_url }}#aircraft-leasing-decision-lab)
+[Open the Aircraft Leasing Decision Lab in the Portfolio]({{ '/portfolio.html' | relative_url }}#aircraft-leasing-decision-lab)
 
 The lab includes:
 
@@ -483,7 +483,7 @@ The lab includes:
 
 This project is useful because the **technology choice is part of the evidence**.
 
-[Open the finance learning lab on Dashboards]({{ '/projects.html' | relative_url }}#finance-learning-lab)
+[Open the finance learning lab in the Portfolio]({{ '/portfolio.html' | relative_url }}#finance-learning-lab)
 
 ### Technology stack
 
