@@ -3037,3 +3037,229 @@
   [modelEl, sectorsEl, hoursEl, daysEl].forEach(el => el.addEventListener('input', update));
   update();
 })();
+
+
+// Data-driven global ATR production-list browser.
+(() => {
+  const dashboard = document.querySelector('.atr-reporting-dashboard');
+  if (!dashboard || dashboard.dataset.globalFleetReady === 'true') return;
+  dashboard.dataset.globalFleetReady = 'true';
+
+  const escapeAtr = value => String(value ?? '').replace(/[&<>"']/g, ch => ({
+    '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'
+  }[ch]));
+
+  const section = document.createElement('section');
+  section.className = 'atr-fleet-browser';
+  section.innerHTML = `
+    <div class="atr-fleet-browser__head">
+      <div>
+        <span class="abelo-airframes__eyebrow">GLOBAL ATR AIRFRAME DATA</span>
+        <h3>Production-list browser</h3>
+        <p>Search the captured ATR 42 / ATR 72 production list by MSN, registration, operator, model, delivery date or status.</p>
+      </div>
+      <div class="atr-data-boundary">
+        <strong>Evidence boundary</strong>
+        <span>Planespotters is a secondary aircraft-history source. Rows carrying an OCR review flag should be checked against the source page before publication.</span>
+      </div>
+    </div>
+
+    <div class="atr-data-kpis" data-atr-data-kpis></div>
+
+    <div class="atr-fleet-controls">
+      <label>Search
+        <input type="search" data-atr-search placeholder="MSN, registration, operator…">
+      </label>
+      <label>Family
+        <select data-atr-family>
+          <option value="">All ATR</option>
+          <option value="ATR 42">ATR 42</option>
+          <option value="ATR 72">ATR 72</option>
+        </select>
+      </label>
+      <label>Status
+        <select data-atr-status><option value="">All statuses</option></select>
+      </label>
+      <label>Delivery decade
+        <select data-atr-decade><option value="">All decades</option></select>
+      </label>
+      <label>Data quality
+        <select data-atr-quality>
+          <option value="">All rows</option>
+          <option value="clear">No review flag</option>
+          <option value="review">Review flagged</option>
+        </select>
+      </label>
+    </div>
+
+    <div class="atr-data-visuals">
+      <div class="atr-data-card">
+        <strong>Status mix</strong>
+        <div data-atr-status-bars></div>
+      </div>
+      <div class="atr-data-card">
+        <strong>Model mix</strong>
+        <div data-atr-model-bars></div>
+      </div>
+    </div>
+
+    <div class="atr-fleet-result-head">
+      <span data-atr-result-count>Loading global ATR records…</span>
+      <div>
+        <button type="button" data-atr-prev>← Previous</button>
+        <span data-atr-page></span>
+        <button type="button" data-atr-next>Next →</button>
+      </div>
+    </div>
+    <div class="atr-fleet-table-wrap" data-atr-table></div>
+  `;
+  dashboard.appendChild(section);
+
+  const search = section.querySelector('[data-atr-search]');
+  const family = section.querySelector('[data-atr-family]');
+  const status = section.querySelector('[data-atr-status]');
+  const decade = section.querySelector('[data-atr-decade]');
+  const quality = section.querySelector('[data-atr-quality]');
+  const resultCount = section.querySelector('[data-atr-result-count]');
+  const tableHost = section.querySelector('[data-atr-table]');
+  const kpiHost = section.querySelector('[data-atr-data-kpis]');
+  const statusBars = section.querySelector('[data-atr-status-bars]');
+  const modelBars = section.querySelector('[data-atr-model-bars]');
+  const prev = section.querySelector('[data-atr-prev]');
+  const next = section.querySelector('[data-atr-next]');
+  const pageLabel = section.querySelector('[data-atr-page]');
+
+  let rows = [];
+  let page = 1;
+  const pageSize = 60;
+
+  const familyName = row => {
+    const type = String(row.aircraft_type || '').toUpperCase();
+    if (type.includes('ATR 42')) return 'ATR 42';
+    if (type.includes('ATR 72')) return 'ATR 72';
+    return 'Other ATR';
+  };
+
+  const statusName = row => {
+    const s = String(row.status || '').toLowerCase();
+    if (s.includes('active')) return 'Active';
+    if (s.includes('stored')) return 'Stored';
+    if (s.includes('scrap')) return 'Scrapped';
+    if (s.includes('written')) return 'Written Off';
+    if (s.includes('preserv')) return 'Preserved';
+    if (s.includes('order')) return 'On Order';
+    if (!s.trim()) return 'Unknown';
+    return 'Other';
+  };
+
+  const modelName = row => {
+    const type = String(row.aircraft_type || '');
+    const m = type.match(/ATR\s*(42|72)[-\s]?(200|300|320|400|500|600)/i);
+    return m ? `ATR ${m[1]}-${m[2]}` : familyName(row);
+  };
+
+  const decadeName = row => {
+    const y = Number(row.delivery_year);
+    return Number.isFinite(y) && y >= 1980 ? `${Math.floor(y / 10) * 10}s` : 'Unknown';
+  };
+
+  const filtered = () => {
+    const q = search.value.trim().toLowerCase();
+    return rows.filter(row => {
+      if (family.value && familyName(row) !== family.value) return false;
+      if (status.value && statusName(row) !== status.value) return false;
+      if (decade.value && decadeName(row) !== decade.value) return false;
+      if (quality.value === 'clear' && row.review_flag) return false;
+      if (quality.value === 'review' && !row.review_flag) return false;
+      if (!q) return true;
+      return [row.msn,row.aircraft_type,row.registration,row.operator,row.delivered,row.status,row.remark]
+        .some(v => String(v || '').toLowerCase().includes(q));
+    });
+  };
+
+  const drawBars = (host, entries) => {
+    const max = Math.max(1, ...entries.map(([,n]) => n));
+    host.innerHTML = entries.map(([label,n]) => `
+      <div class="atr-data-bar">
+        <span>${escapeAtr(label)}</span>
+        <div><i style="width:${Math.max(2,(n/max)*100).toFixed(1)}%"></i></div>
+        <strong>${Number(n).toLocaleString()}</strong>
+      </div>`).join('');
+  };
+
+  const render = () => {
+    const current = filtered();
+    const pages = Math.max(1, Math.ceil(current.length / pageSize));
+    if (page > pages) page = pages;
+    const start = (page - 1) * pageSize;
+    const shown = current.slice(start, start + pageSize);
+
+    resultCount.textContent = `${current.length.toLocaleString()} matching airframes · showing ${current.length ? start + 1 : 0}–${Math.min(start + pageSize,current.length)}`;
+    pageLabel.textContent = `Page ${page} of ${pages}`;
+    prev.disabled = page <= 1;
+    next.disabled = page >= pages;
+
+    tableHost.innerHTML = shown.length ? `
+      <table class="atr-fleet-table">
+        <thead><tr><th>MSN</th><th>Aircraft type</th><th>Registration</th><th>Operator</th><th>Delivered</th><th>Status</th><th>Quality</th><th>Source</th></tr></thead>
+        <tbody>
+          ${shown.map(row => `
+            <tr>
+              <td><strong>${escapeAtr(row.msn || '—')}</strong></td>
+              <td>${escapeAtr(row.aircraft_type || '—')}</td>
+              <td>${escapeAtr(row.registration || '—')}</td>
+              <td>${escapeAtr(row.operator || '—')}</td>
+              <td>${escapeAtr(row.delivered || '—')}</td>
+              <td>${escapeAtr(statusName(row))}</td>
+              <td>${row.review_flag ? `<span class="abelo-data-badge is-review">${escapeAtr(row.review_flag)}</span>` : '<span class="abelo-data-badge is-identified">clear</span>'}</td>
+              <td>${row.source_url ? `<a href="${escapeAtr(row.source_url)}" target="_blank" rel="noopener noreferrer">Planespotters ↗</a>` : '—'}</td>
+            </tr>`).join('')}
+        </tbody>
+      </table>`
+      : '<p class="abelo-airframes__loading">No ATR records match these filters.</p>';
+  };
+
+  const initialise = data => {
+    rows = Array.isArray(data) ? data : [];
+
+    const statuses = [...new Set(rows.map(statusName))].sort();
+    status.insertAdjacentHTML('beforeend', statuses.map(v => `<option value="${escapeAtr(v)}">${escapeAtr(v)}</option>`).join(''));
+
+    const decades = [...new Set(rows.map(decadeName).filter(v => v !== 'Unknown'))].sort();
+    decade.insertAdjacentHTML('beforeend', decades.map(v => `<option value="${escapeAtr(v)}">${escapeAtr(v)}</option>`).join(''));
+
+    const count42 = rows.filter(r => familyName(r) === 'ATR 42').length;
+    const count72 = rows.filter(r => familyName(r) === 'ATR 72').length;
+    const active = rows.filter(r => statusName(r) === 'Active').length;
+    const review = rows.filter(r => r.review_flag).length;
+
+    kpiHost.innerHTML = `
+      <div><span>Captured airframes</span><strong>${rows.length.toLocaleString()}</strong></div>
+      <div><span>ATR 42</span><strong>${count42.toLocaleString()}</strong></div>
+      <div><span>ATR 72</span><strong>${count72.toLocaleString()}</strong></div>
+      <div><span>Active rows</span><strong>${active.toLocaleString()}</strong></div>
+      <div><span>Review flagged</span><strong>${review.toLocaleString()}</strong></div>
+    `;
+
+    const statusCounts = [...new Set(rows.map(statusName))].map(s => [s, rows.filter(r => statusName(r) === s).length]).sort((a,b)=>b[1]-a[1]).slice(0,7);
+    const modelCounts = [...new Set(rows.map(modelName))].map(s => [s, rows.filter(r => modelName(r) === s).length]).sort((a,b)=>b[1]-a[1]).slice(0,8);
+    drawBars(statusBars,statusCounts);
+    drawBars(modelBars,modelCounts);
+    render();
+  };
+
+  [search,family,status,decade,quality].forEach(el => el.addEventListener('input', () => { page = 1; render(); }));
+  prev.addEventListener('click', () => { if (page > 1) { page -= 1; render(); section.scrollIntoView({behavior:'smooth',block:'start'}); } });
+  next.addEventListener('click', () => { const pages=Math.max(1,Math.ceil(filtered().length/pageSize)); if(page<pages){page+=1;render();section.scrollIntoView({behavior:'smooth',block:'start'});} });
+
+  fetch(new URL('assets/data/atr-global.json', document.baseURI))
+    .then(response => {
+      if (!response.ok) throw new Error('ATR dataset HTTP ' + response.status);
+      return response.json();
+    })
+    .then(initialise)
+    .catch(() => {
+      resultCount.textContent = 'Global ATR dataset unavailable.';
+      tableHost.innerHTML = '<p class="abelo-airframes__loading">The maintenance model above remains available.</p>';
+    });
+})();
