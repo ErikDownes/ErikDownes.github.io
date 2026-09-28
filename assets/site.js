@@ -1335,7 +1335,7 @@
     while (walker.nextNode()) {
       const node = walker.currentNode;
       const parent = node.parentElement;
-      if (!parent || parent.closest('a,button,script,style,textarea,input,svg,.glossary-term,h2') || (root === body && parent.closest('.aercap-beamer'))) continue;
+      if (!parent || parent.closest('a,button,summary,label,select,option,script,style,textarea,input,svg,.glossary-term,h2,[role="button"],[role="tab"],[data-no-glossary]') || (root === body && parent.closest('.aercap-beamer'))) continue;
       matcher.lastIndex = 0;
       if (matcher.test(node.nodeValue || '')) nodes.push(node);
     }
@@ -2319,12 +2319,30 @@
   const countryNumber = new Map(
     [...countries].sort((a,b) => a.localeCompare(b)).map((country, index) => [country, index + 1])
   );
-  const aircraftColor = model => {
+  const AIRFRAME_COLOURS = new Map([
+    ['ATR 42-500', '#0f766e'],
+    ['ATR 42-600', '#16a34a'],
+    ['ATR 72-500', '#d97706'],
+    ['ATR 72-500F', '#7c3aed'],
+    ['ATR 72-600', '#2563eb'],
+    ['Dash 8-200', '#be123c'],
+    ['Dash 8-300', '#c026d3'],
+    ['Dash 8-400', '#ea580c']
+  ]);
+  const aircraftColor = model => AIRFRAME_COLOURS.get(String(model || '')) || '#64748b';
+  const aircraftTint = model => {
     const value = String(model || '');
-    if (value.startsWith('ATR 72')) return '#1f5f99';
-    if (value.startsWith('ATR 42')) return '#2b7a57';
-    if (value.startsWith('Dash 8')) return '#a14355';
-    return '#64748b';
+    const tints = {
+      'ATR 42-500': '#ecfdf9',
+      'ATR 42-600': '#f0fdf4',
+      'ATR 72-500': '#fff7ed',
+      'ATR 72-500F': '#f5f3ff',
+      'ATR 72-600': '#eff6ff',
+      'Dash 8-200': '#fff1f2',
+      'Dash 8-300': '#fdf4ff',
+      'Dash 8-400': '#fff7ed'
+    };
+    return tints[value] || '#f8fafc';
   };
 
   rankedPlacements.forEach(p => {
@@ -2335,6 +2353,7 @@
 
   const filterHost = document.createElement('div');
   filterHost.className = 'abelo-filter-panel';
+  filterHost.dataset.noGlossary = '';
   filterHost.innerHTML = `
     <div class="abelo-filter-head">
       <div>
@@ -2531,6 +2550,8 @@
         button.type = 'button';
         button.className = 'abelo-filter-chip abelo-filter-chip--model';
         button.dataset.model = model;
+        button.style.setProperty('--country-color', aircraftColor(model));
+        button.style.setProperty('--country-tint', aircraftTint(model));
         button.innerHTML = `<span class="abelo-filter-swatch"></span><span>${escapeHtml(model)}</span><small>${count} aircraft</small>`;
         modelFilterHost.appendChild(button);
       });
@@ -2589,7 +2610,7 @@
   let activeCountry = null;
   let activeLessee = null;
   let activeModel = null;
-  let mapMode = 'lessees';
+  let activeModes = new Set(['lessees']);
 
   const filteredAirframes = () => airframeRows.filter(r => {
     if (r.mapped_or_gap !== 'MAPPED' && (activeRegion || activeCountry || activeLessee || activeModel)) return false;
@@ -2681,15 +2702,22 @@
     const modeControl = L.control({ position: 'topright' });
     modeControl.onAdd = () => {
       const div = L.DomUtil.create('div', 'abelo-map-mode');
+      div.dataset.noGlossary = '';
       div.innerHTML = `
         <div class="abelo-map-mode__head">
-          <strong>Map view</strong>
-          <button type="button" class="abelo-map-fullscreen" data-abelo-fullscreen aria-label="Toggle full screen">⛶</button>
+          <button type="button" class="abelo-map-layers-toggle" data-abelo-layers-toggle aria-expanded="false">
+            <span>Layers</span><b data-abelo-layer-summary>Lessees</b>
+          </button>
+          <div class="abelo-map-mode__head-actions">
+            <button type="button" class="abelo-map-filter-toggle" data-abelo-map-filter aria-pressed="true">Filters</button>
+            <button type="button" class="abelo-map-fullscreen" data-abelo-fullscreen aria-label="Toggle full screen">⛶</button>
+          </div>
         </div>
-        <div class="abelo-map-mode__buttons">
-          <button type="button" data-abelo-map-mode="lessees" aria-pressed="true">Lessees <b>1–26</b></button>
-          <button type="button" data-abelo-map-mode="aircraft" aria-pressed="false">Aircraft <b>1–61</b></button>
-          <button type="button" data-abelo-map-mode="countries" aria-pressed="false">Countries <b>1–19</b></button>
+        <div class="abelo-map-layer-popover" data-abelo-layer-popover hidden>
+          <label><input type="checkbox" value="lessees" checked> <span>Lessees</span><b>1–26</b></label>
+          <label><input type="checkbox" value="aircraft"> <span>Aircraft</span><b>1–61</b></label>
+          <label><input type="checkbox" value="countries"> <span>Countries</span><b>1–19</b></label>
+          <button type="button" class="abelo-map-layer-apply" data-abelo-layer-apply>OK</button>
         </div>
       `;
       L.DomEvent.disableClickPropagation(div);
@@ -2698,6 +2726,32 @@
     };
     modeControl.addTo(map);
     const modeHost = modeControl.getContainer();
+    const layerPopover = modeHost.querySelector('[data-abelo-layer-popover]');
+    const layerToggle = modeHost.querySelector('[data-abelo-layers-toggle]');
+    const layerApply = modeHost.querySelector('[data-abelo-layer-apply]');
+    const filterToggle = modeHost.querySelector('[data-abelo-map-filter]');
+    const filterHome = document.createComment('abelo-filter-home');
+    filterHost.parentNode.insertBefore(filterHome, filterHost);
+    let fullscreenFilterVisible = true;
+
+    const setFilterOverlay = active => {
+      const isFallback = mapHost.classList.contains('is-map-fullscreen-fallback');
+      if (active || isFallback) {
+        if (filterHost.parentNode !== mapHost) mapHost.appendChild(filterHost);
+        filterHost.classList.add('is-map-overlay');
+        filterHost.hidden = !fullscreenFilterVisible;
+        filterToggle.hidden = false;
+        filterToggle.classList.toggle('is-active', fullscreenFilterVisible);
+        filterToggle.setAttribute('aria-pressed', fullscreenFilterVisible ? 'true' : 'false');
+        L.DomEvent.disableClickPropagation(filterHost);
+        L.DomEvent.disableScrollPropagation(filterHost);
+      } else {
+        if (filterHome.parentNode) filterHome.parentNode.insertBefore(filterHost, filterHome.nextSibling);
+        filterHost.classList.remove('is-map-overlay');
+        filterHost.hidden = false;
+        filterToggle.hidden = true;
+      }
+    };
 
     const unlocatedControl = L.control({ position: 'bottomleft' });
     unlocatedControl.onAdd = () => {
@@ -2811,11 +2865,14 @@
     };
 
     const syncModeButtons = () => {
-      modeHost.querySelectorAll('[data-abelo-map-mode]').forEach(button => {
-        const selected = button.dataset.abeloMapMode === mapMode;
-        button.classList.toggle('is-active', selected);
-        button.setAttribute('aria-pressed', selected ? 'true' : 'false');
+      const labels = { lessees: 'Lessees', aircraft: 'Aircraft', countries: 'Countries' };
+      modeHost.querySelectorAll('[data-abelo-layer-popover] input[type="checkbox"]').forEach(input => {
+        input.checked = activeModes.has(input.value);
       });
+      const selected = [...activeModes].map(mode => labels[mode]).filter(Boolean);
+      const summary = modeHost.querySelector('[data-abelo-layer-summary]');
+      if (summary) summary.textContent = selected.join(' + ') || 'Choose';
+      if (layerApply) layerApply.disabled = activeModes.size === 0;
     };
 
     const renderMarkers = ({ fit = true } = {}) => {
@@ -2823,40 +2880,42 @@
       syncModeButtons();
 
       const fitPoints = [];
+      let unlocated = [];
 
-      if (mapMode === 'aircraft' && airframeRows.length) {
-        const items = aircraftItems();
-        const offsets = aircraftOffsets(items);
-
-        items.forEach(({ row, placement }) => {
-          const offset = offsets.get(row.slot_id) || { x: 0, y: 0 };
+      if (activeModes.has('lessees')) {
+        const visible = filteredPlacements();
+        visible.forEach(p => {
+          const offset = pinOffsets.get(p.sourceIndex) || { x: 0, y: 0 };
+          const color = countryColor(p.country);
           const icon = L.divIcon({
-            className: 'abelo-aircraft-marker',
-            html: `<span class="abelo-aircraft-marker__badge" style="--pin-x:${offset.x}px;--pin-y:${offset.y}px;--aircraft-color:${aircraftColor(row.model)}"><span class="abelo-aircraft-marker__wing">✈</span><b>${escapeHtml(row.aircraftNumber)}</b></span>`,
-            iconSize: [52, 38],
-            iconAnchor: [26, 19],
-            popupAnchor: [offset.x, offset.y - 22]
+            className: 'abelo-numbered-marker',
+            html: `<span class="abelo-numbered-marker__badge" style="--pin-x:${offset.x}px;--pin-y:${offset.y}px;--pin-color:${color}">${escapeHtml(p.recencyRank)}</span>`,
+            iconSize: [30, 30],
+            iconAnchor: [15, 15],
+            popupAnchor: [offset.x, offset.y - 18]
           });
-          const marker = L.marker([placement.lat, placement.lng], {
+
+          const marker = L.marker([p.lat, p.lng], {
             icon,
-            title: `Aircraft #${row.aircraftNumber} · ${row.model || row.family || ''} · ${row.lessee || ''}`,
-            riseOnHover: true
+            title: `Lessee #${p.recencyRank} · ${p.customer} · ${p.country}`,
+            riseOnHover: true,
+            zIndexOffset: 100
           })
             .addTo(markerLayer)
-            .bindPopup(() => aircraftPopupHtml(row), { maxWidth: 520, minWidth: 390 });
-          fitPoints.push([placement.lat, placement.lng]);
-        });
+            .bindPopup(() => popupHtml(p), { maxWidth: 520, minWidth: 390 });
 
-        const unlocated = filteredAirframes().filter(row =>
-          row.mapped_or_gap === 'RECONCILIATION GAP' || !row.lessee || !placementForLessee(row.lessee)
-        );
-        unlocatedHost.hidden = !unlocated.length;
-        unlocatedHost.innerHTML = unlocated.length ? `
-          <strong>Unlocated / reconciliation</strong>
-          <div>${unlocated.map(row => `<span class="abelo-aircraft-marker__badge is-unlocated" style="--aircraft-color:${aircraftColor(row.model)}"><span class="abelo-aircraft-marker__wing">✈</span><b>${escapeHtml(row.aircraftNumber)}</b></span>`).join('')}</div>
-        ` : '';
-      } else if (mapMode === 'countries') {
-        unlocatedHost.hidden = true;
+          marker.on('click', () => {
+            if (!airframeRows.length) return;
+            activeRegion = null;
+            activeCountry = null;
+            activeLessee = p.customer;
+            renderAirframes();
+          });
+          fitPoints.push([p.lat,p.lng]);
+        });
+      }
+
+      if (activeModes.has('countries')) {
         const visible = filteredPlacements();
         const grouped = new Map();
         visible.forEach(p => {
@@ -2878,44 +2937,49 @@
           L.marker([lat,lng], {
             icon,
             title: `Country #${countryNumber.get(country) || ''} · ${country}`,
-            riseOnHover: true
+            riseOnHover: true,
+            zIndexOffset: 200
           })
             .addTo(markerLayer)
             .bindPopup(() => countryPopupHtml(country), { maxWidth: 420, minWidth: 320 });
           fitPoints.push([lat,lng]);
         });
-      } else {
-        unlocatedHost.hidden = true;
-        const visible = filteredPlacements();
-        visible.forEach(p => {
-          const offset = pinOffsets.get(p.sourceIndex) || { x: 0, y: 0 };
-          const color = countryColor(p.country);
-          const icon = L.divIcon({
-            className: 'abelo-numbered-marker',
-            html: `<span class="abelo-numbered-marker__badge" style="--pin-x:${offset.x}px;--pin-y:${offset.y}px;--pin-color:${color}">${escapeHtml(p.recencyRank)}</span>`,
-            iconSize: [30, 30],
-            iconAnchor: [15, 15],
-            popupAnchor: [offset.x, offset.y - 18]
-          });
+      }
 
-          const marker = L.marker([p.lat, p.lng], {
+      if (activeModes.has('aircraft') && airframeRows.length) {
+        const items = aircraftItems();
+        const offsets = aircraftOffsets(items);
+
+        items.forEach(({ row, placement }) => {
+          const offset = offsets.get(row.slot_id) || { x: 0, y: 0 };
+          const icon = L.divIcon({
+            className: 'abelo-aircraft-marker',
+            html: `<span class="abelo-aircraft-marker__badge" style="--pin-x:${offset.x}px;--pin-y:${offset.y}px;--aircraft-color:${aircraftColor(row.model)}"><span class="abelo-aircraft-marker__wing">✈</span><b>${escapeHtml(row.aircraftNumber)}</b></span>`,
+            iconSize: [52, 38],
+            iconAnchor: [26, 19],
+            popupAnchor: [offset.x, offset.y - 22]
+          });
+          L.marker([placement.lat, placement.lng], {
             icon,
-            title: `Lessee #${p.recencyRank} · ${p.customer} · ${p.country}`,
-            riseOnHover: true
+            title: `Aircraft #${row.aircraftNumber} · ${row.model || row.family || ''} · ${row.lessee || ''}`,
+            riseOnHover: true,
+            zIndexOffset: 300
           })
             .addTo(markerLayer)
-            .bindPopup(() => popupHtml(p), { maxWidth: 520, minWidth: 390 });
-
-          marker.on('click', () => {
-            if (!airframeRows.length) return;
-            activeRegion = null;
-            activeCountry = null;
-            activeLessee = p.customer;
-            renderAirframes();
-          });
-          fitPoints.push([p.lat,p.lng]);
+            .bindPopup(() => aircraftPopupHtml(row), { maxWidth: 520, minWidth: 390 });
+          fitPoints.push([placement.lat, placement.lng]);
         });
+
+        unlocated = filteredAirframes().filter(row =>
+          row.mapped_or_gap === 'RECONCILIATION GAP' || !row.lessee || !placementForLessee(row.lessee)
+        );
       }
+
+      unlocatedHost.hidden = !activeModes.has('aircraft') || !unlocated.length;
+      unlocatedHost.innerHTML = (!unlocatedHost.hidden && unlocated.length) ? `
+        <strong>Unlocated / reconciliation</strong>
+        <div>${unlocated.map(row => `<span class="abelo-aircraft-marker__badge is-unlocated" style="--aircraft-color:${aircraftColor(row.model)}"><span class="abelo-aircraft-marker__wing">✈</span><b>${escapeHtml(row.aircraftNumber)}</b></span>`).join('')}</div>
+      ` : '';
 
       syncFilterUi();
 
@@ -2926,10 +2990,34 @@
     };
 
     modeHost.addEventListener('click', event => {
-      const modeButton = event.target.closest('[data-abelo-map-mode]');
-      if (modeButton) {
-        mapMode = modeButton.dataset.abeloMapMode;
+      const toggleButton = event.target.closest('[data-abelo-layers-toggle]');
+      if (toggleButton) {
+        const opening = layerPopover.hidden;
+        layerPopover.hidden = !opening;
+        layerToggle.setAttribute('aria-expanded', opening ? 'true' : 'false');
+        if (opening) syncModeButtons();
+        return;
+      }
+
+      const applyButton = event.target.closest('[data-abelo-layer-apply]');
+      if (applyButton) {
+        const selected = new Set(
+          Array.from(layerPopover.querySelectorAll('input[type="checkbox"]:checked')).map(input => input.value)
+        );
+        if (!selected.size) return;
+        activeModes = selected;
+        layerPopover.hidden = true;
+        layerToggle.setAttribute('aria-expanded', 'false');
         renderMarkers();
+        return;
+      }
+
+      const filterButton = event.target.closest('[data-abelo-map-filter]');
+      if (filterButton) {
+        fullscreenFilterVisible = !fullscreenFilterVisible;
+        filterHost.hidden = !fullscreenFilterVisible;
+        filterButton.classList.toggle('is-active', fullscreenFilterVisible);
+        filterButton.setAttribute('aria-pressed', fullscreenFilterVisible ? 'true' : 'false');
         return;
       }
 
@@ -2941,20 +3029,29 @@
       } else if (mapHost.requestFullscreen) {
         mapHost.requestFullscreen();
       } else {
-        mapHost.classList.toggle('is-map-fullscreen-fallback');
-        fullButton.textContent = mapHost.classList.contains('is-map-fullscreen-fallback') ? '×' : '⛶';
+        const entering = !mapHost.classList.contains('is-map-fullscreen-fallback');
+        mapHost.classList.toggle('is-map-fullscreen-fallback', entering);
+        fullButton.textContent = entering ? '×' : '⛶';
+        setFilterOverlay(entering);
         window.setTimeout(() => map.invalidateSize(), 80);
       }
     });
 
+    layerPopover.addEventListener('change', () => {
+      const checked = layerPopover.querySelectorAll('input[type="checkbox"]:checked').length;
+      layerApply.disabled = checked === 0;
+    });
+
     document.addEventListener('fullscreenchange', () => {
+      const isFullscreen = document.fullscreenElement === mapHost;
       const fullButton = modeHost.querySelector('[data-abelo-fullscreen]');
-      if (fullButton) fullButton.textContent = document.fullscreenElement === mapHost ? '×' : '⛶';
+      if (fullButton) fullButton.textContent = isFullscreen ? '×' : '⛶';
+      setFilterOverlay(isFullscreen);
       window.setTimeout(() => map.invalidateSize(), 80);
     });
 
     document.addEventListener('abeloAirframesLoaded', () => {
-      if (mapMode === 'aircraft') renderMarkers({ fit: false });
+      if (activeModes.has('aircraft')) renderMarkers({ fit: false });
     });
 
     regionFilterHost.addEventListener('click', event => {
@@ -3038,6 +3135,7 @@
   const wrapper = document.createElement('div');
   wrapper.className = 'abelo-map';
   wrapper.dataset.abeloMap = '';
+  wrapper.dataset.noGlossary = '';
   wrapper.innerHTML = `
     <div class="abelo-map-canvas" id="abeloWorldMap" role="img" aria-label="World map of Abelo and Elix aircraft placements"></div>
     <div class="abelo-map-kpis">
