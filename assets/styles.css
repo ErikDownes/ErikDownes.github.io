@@ -1067,6 +1067,13 @@ body.answer-focus-open{overflow:hidden}
 .abelo-filter-grid--countries {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
+.abelo-filter-grid--models {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.abelo-filter-chip--model {
+  --country-color: #315f8c;
+  --country-tint: #eef5fb;
+}
 .abelo-filter-grid--lessees {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
@@ -1126,6 +1133,7 @@ body.answer-focus-open{overflow:hidden}
 }
 @media (max-width: 760px) {
   .abelo-filter-grid--regions,
+  .abelo-filter-grid--models,
   .abelo-filter-grid--countries,
   .abelo-filter-grid--lessees {
     grid-template-columns: repeat(2, minmax(0, 1fr));
