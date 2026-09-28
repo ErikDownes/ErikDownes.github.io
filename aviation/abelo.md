@@ -5,82 +5,39 @@ title: Abelo
 eyebrow: AVIATION · COMPANY CASE STUDY
 study_mode: true
 ---
-## What Abelo Does | What kind of company is Abelo?
 
-**Abelo is an Irish aircraft leasing company specialising in regional turboprop aircraft, particularly the ATR 42 and ATR 72.**
 
-Its work extends beyond placing aircraft with airlines. The business brings together leasing, finance, technical oversight, asset management and aircraft transitions across the ownership cycle.
+# Abelo
 
-A useful summary is:
+## What kind of company is Abelo?
 
-**specialist lessor → turboprops → regional aviation → global customers → full asset lifecycle**
+**Abelo is an Irish aircraft leasing company specialising in regional turboprops.**
 
-## Elix + ADARE | How was Abelo formed?
+It manages a global portfolio of around **61 aircraft, 26 leases and 19 countries**.
 
-- **2013:** **Elix Aviation** was established as a regional aircraft leasing platform with a turboprop portfolio.
-- **2020:** **ADARE Aviation Capital** was established, bringing specialist regional-aviation management expertise.
-- **2022:** **Elix + ADARE** were combined to create **Abelo**.
-- **2025:** Abelo entered a new ownership phase when it was acquired by an affiliate of Cerberus Capital Management.
+**Remember:** **Irish → Turboprops → Global leasing**
 
-**The distinction is worth remembering:**  
-**Elix brought the leasing platform and fleet; ADARE brought management expertise.**
+## How was Abelo formed?
 
-That is also why **Aircraft Leasing** and **Asset Management** are separate but connected areas on this site.
+- **2013:** Elix Aviation established.
+- **2020:** ADARE Aviation Capital established.
+- **2022:** **Elix + ADARE = Abelo**
+- **2025:** acquired by an affiliate of Cerberus Capital Management.
 
-## Internship | What would Erik actually be supporting?
+**Elix brought the leasing platform and fleet; ADARE brought asset-management expertise.**
 
-The Asset Management internship is based in **Limerick** and includes:
+## Why specialise in turboprops?
 
-- reports required under lease agreements;
-- data entry and internal data-management systems;
-- billing support;
-- Power BI and other reporting systems;
-- support for Commercial, Finance and Legal;
-- day-to-day Asset Management administration;
-- process improvement.
+It is a deliberate business strategy: **focus on one aircraft sector and become expert in it.**
 
-Abelo says interns are given **responsibility, exposure and integration into the team**.
+That means deep knowledge of the aircraft, regional airlines, leasing, maintenance and aircraft values.
 
-**Interview connection:** the role sits where aircraft, contracts, data, finance and operational follow-through meet.
+**Specialise → expertise → better decisions**
 
-## Strategy | Why specialise in turboprops?
+## People, Culture & Erik’s Connection
 
-Abelo has deliberately focused on regional turboprops rather than trying to cover every commercial aircraft type.
+Abelo is a relatively small company, with about **37 employees**, and has a strong **University of Limerick connection**.
 
-The strategic case is based on:
+The Asset Management team includes **Niamh O’Dwyer, AVP Asset Management**, and **Liam Duffy, VP Asset Management**.
 
-- deep technical and commercial knowledge of a specific asset class;
-- long-term relationships with ATR and regional airlines;
-- expertise in aircraft transitions and residual values;
-- a distinctive position in a market with different economics from large narrow-body jets;
-- efficient aircraft for shorter regional routes.
-
-Its purpose also connects this strategy with **regional connectivity** and the transition toward more efficient aircraft.
-
-## Fleet & Customers | What does the portfolio look like?
-
-Abelo's portfolio is centred on regional turboprops and an international customer base.
-
-The useful learning task is not to memorise a list of airlines. It is to see how aircraft move across **different operators, countries, lease structures and stages of the ownership cycle**.
-
-[Open the interactive Aircraft Portfolio Map]({{ '/fleet-map.html' | relative_url }})
-
-Recent public transactions on this site include examples from Europe, Africa, Asia, Latin America and Australia.
-
-## Team & Business | Who would Asset Management work with?
-
-The placement connects most directly with:
-
-- **Niamh O'Dwyer — AVP Asset Management**
-- **Liam Duffy — VP Asset Management**
-- **Finance / FP&A and Pricing**
-- **Digital Innovation**
-- **Legal**
-- **Commercial**
-- **Technical and Risk**
-
-That cross-functional structure is important: Asset Management has to reconcile what the **aircraft is doing**, what the **lease requires**, what the **numbers show** and what the **business should do next**.
-
-For current company activity, use a few transactions as evidence rather than memorising an archive.
-
-[Abelo News](https://abelo.aero/our-news/)
+Erik has also built an **interactive reporting dashboard** using Abelo’s public portfolio data, showing the **61 aircraft, 26 leases and 19 countries**. It is included in his portfolio and gives him something concrete to discuss at interview.
