@@ -6,7 +6,6 @@ year: "4th"
 semester: "Sem1"
 status: "Option — choose 3"
 eyebrow: "4TH YEAR · SEM1"
-intro: "A concise interview-ready page for MS4008 — Mathematical Methods 2: Numerical Methods for Partial Differential Equations."
 ---
 <p><a href="{{ '/modules-projects.html' | relative_url }}">← Modules & Projects</a></p>
 
