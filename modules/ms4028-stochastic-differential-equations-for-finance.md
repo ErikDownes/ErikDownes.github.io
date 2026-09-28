@@ -6,7 +6,6 @@ year: "4th"
 semester: "Sem2"
 status: "Core"
 eyebrow: "4TH YEAR · SEM2"
-intro: "A concise interview-ready page for MS4028 — Stochastic Differential Equations for Finance."
 ---
 <p><a href="{{ '/modules-projects.html' | relative_url }}">← Modules & Projects</a></p>
 
