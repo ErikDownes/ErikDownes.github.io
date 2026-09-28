@@ -17,7 +17,9 @@ I suppose there is a very simple analogy with a car. If I leased you a car, I wo
 
 I've been learning about **flight hours, cycles, engine shop visits, maintenance reserves and aircraft records**. With regional aircraft, cycles are particularly important because an ATR might take off and land six or eight times in a day.
 
-One thing I found particularly interesting is the newer **PW127XT engine on the ATR -600s**. Pratt & Whitney quote about **40% more time on wing, taking the overhaul interval to 20,000 hours**, which means fewer engine events and lower maintenance cost.
+Pratt & Whitney quote **20,000 hours on wing for the PW127XT engine used on the newer ATR 600 series — about a 40% increase in time on wing**.
+
+That is massive from an asset-management point of view: **fewer engine removals, fewer shop visits, lower maintenance costs, less downtime, and more time with the aircraft out earning revenue.** 
 
 And then you see why this matters commercially. Abelo has aircraft operating somewhere like the **Maldives**, where the ATR 42-600 is being used to connect an island network. Leasing allows an airline to access a modern aircraft without necessarily tying up the capital required to purchase it outright.
 
