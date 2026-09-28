@@ -431,7 +431,13 @@
         const span = label?.querySelector('span');
         const menuTitle = entry.title || '';
         const pageTitle = entry.page_title || entry.title || '';
-        if (label) label.href = href;
+        if (label) {
+          label.href = href;
+          if (menuTitle === 'Aviation' || menuTitle === 'Portfolio') {
+            label.setAttribute('aria-haspopup', 'true');
+            label.setAttribute('aria-expanded', 'false');
+          }
+        }
         if (span) span.textContent = menuTitle;
         else if (label) label.textContent = menuTitle;
         fragment.appendChild(item);
@@ -459,6 +465,7 @@
       if (item === except) return;
       item.classList.remove('is-open');
       item.querySelectorAll('[data-nav-toggle]').forEach(button => button.setAttribute('aria-expanded', 'false'));
+      item.querySelector('.navlabel[aria-haspopup]')?.setAttribute('aria-expanded', 'false');
     });
   };
 
@@ -498,6 +505,19 @@
   // section menu and a second tap follows the page link.
   document.querySelectorAll('.navitem > .navlabel').forEach(label => {
     label.addEventListener('click', event => {
+      const targetPath = normalisePath(label.href);
+      const isPageMenu = /\/(?:aviation|portfolio)\.html$/.test(targetPath);
+      if (isPageMenu) {
+        event.preventDefault();
+        event.stopPropagation();
+        const item = label.closest('.navitem');
+        if (!item?.classList.contains('has-submenu')) return;
+        const willOpen = !item.classList.contains('is-open');
+        closeNavMenus(item);
+        item.classList.toggle('is-open', willOpen);
+        label.setAttribute('aria-expanded', String(willOpen));
+        return;
+      }
       if (window.innerWidth > 1500) return;
       const item = label.closest('.navitem');
       const menu = item?.querySelector(':scope > .dropmenu');
@@ -848,6 +868,7 @@
 
   const PORTFOLIO_SUBPAGES = [
     { label: 'Turboprop Asset Reporting', path: 'fleet-map.html' },
+    { label: 'How I Built It', path: 'turboprop-dashboard-build.html' },
     { label: 'Global Fleet Maintenance Dashboard', path: 'atr-fleet-dashboard.html' },
     { label: 'Mortgage Calculator', path: 'mortgage-calculator.html' },
     { label: 'PCP Car Finance Calculator', path: 'pcp-calculator.html' },
