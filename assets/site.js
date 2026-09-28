@@ -1964,11 +1964,11 @@
       <div class="abelo-filter-grid abelo-filter-grid--regions" data-abelo-region-filters></div>
     </div>
     <details class="abelo-filter-details">
-      <summary><span>19 countries</span><small>Open for country filters</small></summary>
+      <summary><span>19 countries</span><small>Choose a country directly</small></summary>
       <div class="abelo-filter-grid abelo-filter-grid--countries" data-abelo-country-filters></div>
     </details>
     <details class="abelo-filter-details">
-      <summary><span>26 lessees</span><small># = customer recency · aircraft count shown</small></summary>
+      <summary><span>26 lessees</span><small>Choose a lessee directly · # = customer recency</small></summary>
       <div class="abelo-filter-grid abelo-filter-grid--lessees" data-abelo-lessee-filters></div>
     </details>
   `;
@@ -2053,9 +2053,10 @@
     const markerLayer = L.layerGroup().addTo(map);
 
     const filteredPlacements = () => rankedPlacements.filter(p =>
-      (!activeRegion || p.region === activeRegion) &&
-      (!activeCountry || p.country === activeCountry) &&
-      (!activeLessee || p.customer === activeLessee)
+      activeLessee ? p.customer === activeLessee :
+      activeCountry ? p.country === activeCountry :
+      activeRegion ? p.region === activeRegion :
+      true
     );
 
     const syncFilterUi = () => {
@@ -2067,21 +2068,17 @@
       });
 
       filterHost.querySelectorAll('[data-country]').forEach(button => {
-        const regionCompatible = !activeRegion || button.dataset.region === activeRegion;
-        button.hidden = !regionCompatible;
+        button.hidden = false;
         const selected = button.dataset.country === activeCountry;
         button.classList.toggle('is-active', selected);
         button.setAttribute('aria-pressed', selected ? 'true' : 'false');
       });
 
       filterHost.querySelectorAll('[data-lessee]').forEach(button => {
+        button.hidden = false;
         const selected = button.dataset.lessee === activeLessee;
-        const p = rankedPlacements.find(item => item.customer === button.dataset.lessee);
-        const regionCompatible = !activeRegion || (p && p.region === activeRegion);
-        const countryCompatible = !activeCountry || (p && p.country === activeCountry);
-        button.hidden = !regionCompatible;
         button.classList.toggle('is-active', selected);
-        button.classList.toggle('is-muted', !countryCompatible);
+        button.classList.remove('is-muted');
         button.setAttribute('aria-pressed', selected ? 'true' : 'false');
       });
 
@@ -2089,7 +2086,7 @@
       const aircraft = visible.reduce((sum, p) => sum + Number(p.aircraftCount || 0), 0);
       const visibleCountries = new Set(visible.map(p => p.country)).size;
       statusHost.textContent = `${visible.length} lessee${visible.length === 1 ? '' : 's'} · ${visibleCountries} countr${visibleCountries === 1 ? 'y' : 'ies'} · ${aircraft} aircraft`;
-      clearButton.disabled = !activeCountry && !activeLessee;
+      clearButton.disabled = !activeRegion && !activeCountry && !activeLessee;
     };
 
     const renderMarkers = ({ fit = true } = {}) => {
@@ -2128,12 +2125,10 @@
       const button = event.target.closest('.abelo-filter-chip--region[data-region]');
       if (!button) return;
       const next = button.dataset.region;
-      activeRegion = activeRegion === next ? null : next;
-      if (activeCountry && activeRegion && regionForCountry(activeCountry) !== activeRegion) activeCountry = null;
-      if (activeLessee) {
-        const selected = rankedPlacements.find(p => p.customer === activeLessee);
-        if (selected && activeRegion && selected.region !== activeRegion) activeLessee = null;
-      }
+      const turningOff = activeRegion === next && !activeCountry && !activeLessee;
+      activeRegion = turningOff ? null : next;
+      activeCountry = null;
+      activeLessee = null;
       renderMarkers();
     });
 
@@ -2141,12 +2136,10 @@
       const button = event.target.closest('[data-country]');
       if (!button) return;
       const next = button.dataset.country;
-      activeCountry = activeCountry === next ? null : next;
-      if (activeCountry) activeRegion = regionForCountry(activeCountry);
-      if (activeLessee) {
-        const selected = rankedPlacements.find(p => p.customer === activeLessee);
-        if (selected && activeCountry && selected.country !== activeCountry) activeLessee = null;
-      }
+      const turningOff = activeCountry === next && !activeRegion && !activeLessee;
+      activeRegion = null;
+      activeCountry = turningOff ? null : next;
+      activeLessee = null;
       renderMarkers();
     });
 
@@ -2154,16 +2147,10 @@
       const button = event.target.closest('[data-lessee]');
       if (!button) return;
       const next = button.dataset.lessee;
-      if (activeLessee === next) {
-        activeLessee = null;
-      } else {
-        activeLessee = next;
-        const selected = rankedPlacements.find(p => p.customer === next);
-        if (selected) {
-          activeRegion = selected.region;
-          activeCountry = selected.country;
-        }
-      }
+      const turningOff = activeLessee === next && !activeRegion && !activeCountry;
+      activeRegion = null;
+      activeCountry = null;
+      activeLessee = turningOff ? null : next;
       renderMarkers();
     });
 
