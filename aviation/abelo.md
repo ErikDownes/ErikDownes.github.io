@@ -11,6 +11,6 @@ Abelo is an **Irish aircraft leasing and asset management company specialising i
 
 What interested me was that focus on turboprops — building real expertise around the aircraft, operators, maintenance and asset values.
 
-As part of my preparation, **I built an interactive dashboard myself** using public Planespotters ATR and Dash 8 data, covering **61 aircraft, 26 lessees and 19 countries**.
+As part of my preparation, **I built an interactive dashboard** using public Planespotters ATR and Dash 8 data. What was amazing was that when I compared it with Abelo’s published figures, it almost exactly matched — **61 aircraft, 26 lessees and 19 countries**. There are five aircraft listed under Abelo where I haven’t yet been able to identify the lessee, which is actually an interesting data problem in itself.
 
-That gave me a much better practical understanding of the market and of how data and reporting can support asset-management decisions.
+I think it’s quite close to the type of reporting and analysis I could bring to the role. **I have it here on my laptop if you’d like to see it.**
