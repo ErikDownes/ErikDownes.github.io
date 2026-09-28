@@ -6,7 +6,6 @@ year: "4th"
 semester: "Sem1"
 status: "Core"
 eyebrow: "4TH YEAR · SEM1"
-intro: "A concise interview-ready page for MS4037 — Statistical Data Science Project 1."
 ---
 <p><a href="{{ '/modules-projects.html' | relative_url }}">← Modules & Projects</a></p>
 
