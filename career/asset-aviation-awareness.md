@@ -4,7 +4,6 @@ handle: Asset & Aviation Awareness
 title: Asset & Aviation Awareness
 eyebrow: CAREER · AIRCRAFT · LEASES · ASSET VALUE
 ---
-
 [← Career]({{ '/career.html' | relative_url }})
 
 ## Asset management | What does asset management mean in aircraft leasing?
