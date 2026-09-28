@@ -10,15 +10,15 @@ eyebrow: FINANCIAL MATHEMATICS · DATA ANALYSIS · UNIVERSITY OF LIMERICK
 
 <div class="profile-hero-grid">
   <div class="profile-hero-copy">
-    <p class="profile-tagline">Quantitative thinking for real decisions.</p>
+    <p class="profile-tagline">I like seeing mathematics at work in the real world.</p>
 
     <h2>About Me</h2>
 
-    <p>I am studying <strong>Financial Mathematics at the University of Limerick</strong>, combining mathematics, probability, statistics, finance, numerical methods and computing.</p>
+    <p>I'm from Limerick and I'm studying <strong>Financial Mathematics at the University of Limerick</strong>. I enjoy the mix of mathematics, statistics, finance and computing, especially when I can use it to understand a real decision.</p>
 
-    <p>I am most interested when the calculation connects to a practical question: what assumptions are being made, is the data reliable, what does the result mean, and what decision could it support?</p>
+    <p>I'm curious about both sides of aviation: the mathematics and engineering that get an aircraft into the sky, and the finance behind an airline making regular lease payments. A calculation becomes much more interesting to me when I can ask whether the data is reliable, what the result means and what someone could do with it.</p>
 
-    <p>I learn best by <strong>doing</strong>. I like taking an idea from a module and turning it into something I can test — a calculation, dataset, notebook, program or interactive tool. That is how I build confidence with programming and data analysis: not by listing software, but by using it to solve a real problem.</p>
+    <p>I learn best by <strong>doing</strong>. I enjoy turning an idea from a module into a calculation, a Python notebook or a small interactive tool, then improving it as I learn more. I use Jupyter, Git and GitHub to work through and share those projects. I'm enjoying university and looking forward to applying those skills during co-op.</p>
   </div>
 
   <figure class="profile-portrait">
@@ -30,7 +30,7 @@ eyebrow: FINANCIAL MATHEMATICS · DATA ANALYSIS · UNIVERSITY OF LIMERICK
   <div class="profile-skill-group">
     <h3>Programming & tools</h3>
     <div class="profile-skill-tags">
-      <span>Python</span><span>Java</span><span>SQL</span><span>R</span><span>Bash</span><span>SPSS</span><span>Rust</span>
+      <span>Python</span><span>Jupyter</span><span>Git</span><span>GitHub</span><span>Java</span><span>SQL</span><span>R</span><span>Bash</span><span>SPSS</span><span>Rust</span>
     </div>
   </div>
 
@@ -48,6 +48,14 @@ eyebrow: FINANCIAL MATHEMATICS · DATA ANALYSIS · UNIVERSITY OF LIMERICK
     </div>
   </div>
 </div>
+
+## Extended About Me
+
+I live in Annacotty with my parents, my sister and our cat. I like university life in Limerick, and a co-op role based mainly here would suit me well. I would also enjoy travelling to Dublin to meet and work with the wider team.
+
+What appeals to me about an asset management role is the chance to bring the technical and commercial sides together. I like working with data and asking why a number looks the way it does. Building my aircraft dashboard from public sources has made that especially tangible: a missing field or an unexpected pattern is a question to investigate, not just a blank cell to ignore.
+
+I would bring curiosity, care with the details and a willingness to learn from people who know the business. And if a Paris or Dubai air show happens to be part of the job one day, I would be delighted to go.
 
 ## Academic Results
 
