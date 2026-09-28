@@ -7,7 +7,7 @@ study_mode: true
 ---
 # What do you know about Abelo?
 
-Abelo is an Irish aircraft leasing and asset management company specialising in regional turboprops. It was formed in 2022 from Elix Aviation and ADARE Aviation Capital, and was acquired by an affiliate of Cerberus in 2025.
+Abelo was formed in 2022 by bringing together Elix Aviation, an aircraft lessor, and ADARE Aviation Capital, an asset manager — combining the commercial and technical sides of aircraft ownership under one platform.
 
 What interested me was the specialist focus on turboprops. They’re building expertise around the aircraft, the airlines operating them, maintenance, leasing and asset values.
 
@@ -17,5 +17,5 @@ There are five aircraft where I still haven’t identified the lessee, which is 
 
 I think that is quite close to the type of work I could bring to the role — checking data, organising it and turning it into useful reporting. I have the dashboard here on my laptop if you’d like to see it.
 
->
+
 
