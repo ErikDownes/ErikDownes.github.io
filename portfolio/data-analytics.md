@@ -7,27 +7,39 @@ study_mode: true
 ---
 [← Portfolio]({{ '/portfolio.html' | relative_url }})
 
-## Advanced data analysis | Regression, diagnostics and model choice
-Coursework from **MS4215** developed practical work with regression, ANOVA, generalised linear models and model diagnostics.
+## MS4215 · R → Python · statsmodels | Regression, GLMs and model diagnostics
+**Advanced Data Analysis** develops regression, ANOVA, generalised linear models, diagnostics and model selection.
+
+The original course material uses **R**. Portfolio versions can preserve the statistical method while rebuilding selected work in **Python**, principally with **pandas**, **statsmodels**, **SciPy** and visualisation libraries.
 
 [Open MS4215 →]({{ '/modules/ms4215-advanced-data-analysis.html' | relative_url }})
 
-## Applied data analysis | Rebuild the statistics in Python
-**MS4034** is being treated as a reproducible Python/Colab laboratory: question → data → method → code → interpretation.
+## MS4034 · SPSS/R → Python · pandas · scikit-learn | Applied analysis, regression and classification
+**Applied Data Analysis** is being treated as a reproducible Python/Colab laboratory:
+
+**question → data → method → code → interpretation**
+
+The taught material may use **SPSS or R**; portfolio work can reproduce the analysis transparently with **Python**, including regression, logistic classification, decision trees and other applied methods.
 
 [Open MS4034 →]({{ '/modules/ms4034-applied-data-analysis.html' | relative_url }})
 
-## Statistical data science projects | Project-based evidence
-The two fourth-year project modules provide a natural home for substantial analysis, modelling and reporting work as the original assignments are reconstructed.
+## MS4037/38 · Python · Jupyter/Colab · GitHub | Statistical data science projects
+The two fourth-year **Statistical Data Science Project** modules provide the natural home for larger end-to-end work: data preparation, modelling, validation, interpretation and reporting.
+
+The working portfolio stack is intended to be **Python + Jupyter/Google Colab + GitHub**, with the exact libraries determined by the project.
 
 [Project 1 →]({{ '/modules/ms4037-statistical-data-science-project-1.html' | relative_url }}) · [Project 2 →]({{ '/modules/ms4038-statistical-data-science-project-2.html' | relative_url }})
 
-## Time series & forecasting | Analyse data through time
-Time-series work connects statistical modelling directly to forecasting, changing conditions and financial or operational decisions.
+## MS4218 · Python · pandas · statsmodels | Time series and forecasting
+**Time Series Analysis** connects statistical modelling to data observed through time, forecasting and changing conditions.
+
+For portfolio work, the natural implementation is **Python** using tools such as **pandas** and **statsmodels**, with notebooks that make assumptions, diagnostics and forecasts visible.
 
 [Open MS4218 →]({{ '/modules/ms4218-time-series-analysis.html' | relative_url }})
 
-## Probability & inference | Quantify uncertainty
-Probability models, statistical inference and stochastic processes provide the mathematical base beneath the applied analysis.
+## MS4035 / MS4214 · Python · NumPy · SciPy | Probability, inference and uncertainty
+**Probability Models** and **Statistical Inference** provide the mathematical base beneath the applied analysis: distributions, estimation, uncertainty and formal inference.
+
+Portfolio implementations can use **NumPy**, **SciPy**, simulation and visualisation to make the mathematics inspectable rather than hiding it behind a software interface.
 
 [Probability Models →]({{ '/modules/ms4035-probability-models.html' | relative_url }}) · [Statistical Inference →]({{ '/modules/ms4214-statistical-inference.html' | relative_url }}) · [Stochastic Processes →]({{ '/modules/ms4217-stochastic-processes.html' | relative_url }})
