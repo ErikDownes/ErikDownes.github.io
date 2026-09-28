@@ -8,22 +8,22 @@ profile_mode: true
 eyebrow: FINANCIAL MATHEMATICS · DATA ANALYSIS · UNIVERSITY OF LIMERICK
 ---
 
-<p class="profile-tagline">Quantitative thinking for real decisions.</p>
+<div class="profile-hero-grid">
+  <div class="profile-hero-copy">
+    <p class="profile-tagline">Quantitative thinking for real decisions.</p>
 
-## About Me
+    <h2>About Me</h2>
 
-<div class="profile-about-grid">
-  <figure class="profile-portrait">
-    <img src="{{ '/assets/erik-profile.jpg' | relative_url }}" alt="Erik Downes">
-  </figure>
-
-  <div class="profile-intro-copy">
     <p>I am studying <strong>Financial Mathematics at the University of Limerick</strong>, combining mathematics, probability, statistics, finance, numerical methods and computing.</p>
 
     <p>I am most interested when the calculation connects to a practical question: what assumptions are being made, is the data reliable, what does the result mean, and what decision could it support?</p>
 
     <p>I learn best by <strong>doing</strong>. I like taking an idea from a module and turning it into something I can test — a calculation, dataset, notebook, program or interactive tool. That is how I build confidence with programming and data analysis: not by listing software, but by using it to solve a real problem.</p>
   </div>
+
+  <figure class="profile-portrait">
+    <img src="{{ '/assets/erik-profile.jpg' | relative_url }}" alt="Erik Downes">
+  </figure>
 </div>
 
 <div class="profile-skill-groups" aria-label="Technical skills" data-no-glossary>
