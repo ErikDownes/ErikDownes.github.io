@@ -1,0 +1,60 @@
+---
+layout: doc
+handle: PCP Calculator
+title: PCP Car Finance Calculator
+eyebrow: CAR FINANCE · CASH FLOW · GMFV
+public_mode: true
+---
+
+<div class="simple-calc" id="pcpSimple">
+  <div class="simple-calc-grid">
+    <label>Car price (€)<input id="pPrice" type="number" value="40000" min="0" step="500"></label>
+    <label>Deposit (€)<input id="pDeposit" type="number" value="5000" min="0" step="500"></label>
+    <label>APR (%)<input id="pApr" type="number" value="5.9" min="0" max="30" step="0.1"></label>
+    <label>Term (months)<input id="pMonths" type="number" value="36" min="12" max="60" step="1"></label>
+    <label>GMFV / final payment (€)<input id="pFinal" type="number" value="16000" min="0" step="500"></label>
+  </div>
+  <div class="simple-calc-results">
+    <div><span>Amount financed</span><strong id="pFinance">—</strong></div>
+    <div><span>Monthly payment</span><strong id="pMonthly">—</strong></div>
+    <div><span>Final payment</span><strong id="pFinalOut">—</strong></div>
+    <div><span>Total cash outlay</span><strong id="pTotal">—</strong></div>
+  </div>
+</div>
+
+<style>
+.simple-calc{margin:1rem 0;padding:1.25rem;border:1px solid #dbe2ea;border-radius:14px;background:#fff}
+.simple-calc-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.simple-calc label{display:grid;gap:6px;font-weight:700;color:#334155}
+.simple-calc input{width:100%;box-sizing:border-box;padding:10px 11px;border:1px solid #cbd5e1;border-radius:8px;font:inherit}
+.simple-calc-results{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:18px}
+.simple-calc-results div{padding:14px;border:1px solid #e2e8f0;border-radius:10px;background:#f8fafc}
+.simple-calc-results span,.simple-calc-results strong{display:block}
+.simple-calc-results span{font-size:.75rem;color:#64748b;text-transform:uppercase;font-weight:800}
+.simple-calc-results strong{margin-top:4px;font-size:1.15rem}
+@media(max-width:700px){.simple-calc-grid,.simple-calc-results{grid-template-columns:1fr}}
+</style>
+
+<script>
+(()=>{
+ const ids=['pPrice','pDeposit','pApr','pMonths','pFinal'];
+ const euro=n=>new Intl.NumberFormat('en-IE',{style:'currency',currency:'EUR',maximumFractionDigits:0}).format(n||0);
+ function update(){
+  const price=Math.max(0,+document.getElementById('pPrice').value||0);
+  const deposit=Math.max(0,+document.getElementById('pDeposit').value||0);
+  const months=Math.max(1,+document.getElementById('pMonths').value||1);
+  const final=Math.max(0,+document.getElementById('pFinal').value||0);
+  const r=Math.max(0,+document.getElementById('pApr').value||0)/1200;
+  const financed=Math.max(0,price-deposit);
+  let monthly;
+  if(r===0) monthly=Math.max(0,(financed-final)/months);
+  else monthly=Math.max(0,(financed-final/Math.pow(1+r,months))*r/(1-Math.pow(1+r,-months)));
+  const total=deposit+monthly*months+final;
+  document.getElementById('pFinance').textContent=euro(financed);
+  document.getElementById('pMonthly').textContent=euro(monthly);
+  document.getElementById('pFinalOut').textContent=euro(final);
+  document.getElementById('pTotal').textContent=euro(total);
+ }
+ ids.forEach(id=>document.getElementById(id).addEventListener('input',update)); update();
+})();
+</script>
