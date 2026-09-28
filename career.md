@@ -4,60 +4,36 @@ permalink: /career.html
 handle: Career
 title: Career
 nav_order: 30
-eyebrow: PREPARATION · COMPETENCIES · DEVELOPMENT · PROFESSIONAL PRACTICE
+eyebrow: ASSET MANAGEMENT · ROLE PREPARATION · COMPETENCIES
 public_mode: true
 ---
 
 <div class="career-door-hero">
   <span class="career-door-kicker">CAREER</span>
-  <strong>Prepare for the role. Build the evidence. Rehearse the questions.</strong>
-  <p>Career is organised around the recurring domains employers use to test workplace readiness. Each area connects interview questions to evidence from Coursework, Portfolio and Aviation.</p>
+  <strong>Prepare for the role. Understand the work. Build the evidence.</strong>
+  <p>The competency structure now follows the actual Asset Management Intern work: lease reporting, asset data, billing, Power BI, cross-functional support, administration and process improvement.</p>
 </div>
 
 <h2 data-nav-href="{{ '/career/preparation.html' | relative_url }}">Preparation</h2>
+<div class="career-door-card"><strong>Role · company · sector · evidence</strong><p>Application-specific preparation for Abelo and the Asset Management internship.</p><a href="{{ '/career/preparation.html' | relative_url }}">Open Preparation →</a></div>
 
-<div class="career-door-card">
-  <strong>Role · company · sector · evidence</strong>
-  <p>Current role preparation, skills profile, coursework links and application-specific evidence.</p>
-  <a href="{{ '/career/preparation.html' | relative_url }}">Open Preparation →</a>
-</div>
+<h2 data-nav-href="{{ '/career/asset-aviation-awareness.html' | relative_url }}">Asset & Aviation Awareness</h2>
+<div class="career-door-card"><strong>Aircraft · leases · maintenance · value</strong><p>Understanding the physical asset, the lease and the regional aviation context.</p><a href="{{ '/career/asset-aviation-awareness.html' | relative_url }}">Open Asset & Aviation Awareness →</a></div>
 
-<h2 data-nav-href="{{ '/career/communication.html' | relative_url }}">Competencies</h2>
+<h2 data-nav-href="{{ '/career/accuracy-data-systems.html' | relative_url }}">Accuracy, Data & Systems</h2>
+<div class="career-door-card"><strong>Data quality · internal systems · billing · controls</strong><p>Accurate information and dependable systems are foundational to asset management work.</p><a href="{{ '/career/accuracy-data-systems.html' | relative_url }}">Open Accuracy, Data & Systems →</a></div>
 
-<div class="career-door-card">
-  <strong>Communication · problem solving · initiative · accuracy</strong>
-  <p>Core employer competencies with concrete questions and evidence prompts.</p>
-  <a href="{{ '/career/communication.html' | relative_url }}">Open Competencies →</a>
-</div>
+<h2 data-nav-href="{{ '/career/reporting-analysis.html' | relative_url }}">Reporting & Analysis</h2>
+<div class="career-door-card"><strong>Lease reports · Excel · Power BI · quantitative reasoning</strong><p>Producing reliable reports and turning data into useful information.</p><a href="{{ '/career/reporting-analysis.html' | relative_url }}">Open Reporting & Analysis →</a></div>
 
-<h2 data-nav-href="{{ '/career/working-independently.html' | relative_url }}">Learning & Development</h2>
+<h2 data-nav-href="{{ '/career/finance-commercial-awareness.html' | relative_url }}">Finance & Commercial Awareness</h2>
+<div class="career-door-card"><strong>Billing · cash flows · residual value · commercial context</strong><p>Connecting Financial Mathematics to the economics of a leased aircraft.</p><a href="{{ '/career/finance-commercial-awareness.html' | relative_url }}">Open Finance & Commercial Awareness →</a></div>
 
-<div class="career-door-card">
-  <strong>Learning · independence · adaptability · development</strong>
-  <p>How I approach unfamiliar work, build capability and keep learning without waiting to be shown every step.</p>
-  <a href="{{ '/career/working-independently.html' | relative_url }}">Open Learning & Development →</a>
-</div>
+<h2 data-nav-href="{{ '/career/organisation-delivery.html' | relative_url }}">Organisation & Delivery</h2>
+<div class="career-door-card"><strong>Deadlines · priorities · administration · reliability</strong><p>Delivering accurate work within Lease Agreement and team timeframes.</p><a href="{{ '/career/organisation-delivery.html' | relative_url }}">Open Organisation & Delivery →</a></div>
 
-<h2 data-nav-href="{{ '/career/technology-ai.html' | relative_url }}">Digital & Technology</h2>
+<h2 data-nav-href="{{ '/career/teamwork-stakeholders.html' | relative_url }}">Teamwork & Stakeholders</h2>
+<div class="career-door-card"><strong>Asset Management · Commercial · Finance · Legal</strong><p>Working effectively across teams and communicating information people can use.</p><a href="{{ '/career/teamwork-stakeholders.html' | relative_url }}">Open Teamwork & Stakeholders →</a></div>
 
-<div class="career-door-card">
-  <strong>AI · data · automation · judgement</strong>
-  <p>Using technology productively while retaining verification, confidentiality and human responsibility.</p>
-  <a href="{{ '/career/technology-ai.html' | relative_url }}">Open Digital & Technology →</a>
-</div>
-
-<h2 data-nav-href="{{ '/career/working-with-others.html' | relative_url }}">Working With People</h2>
-
-<div class="career-door-card">
-  <strong>Teamwork · disagreement · feedback · customers</strong>
-  <p>Questions about collaboration, different working styles and professional interaction.</p>
-  <a href="{{ '/career/working-with-others.html' | relative_url }}">Open Working With People →</a>
-</div>
-
-<h2 data-nav-href="{{ '/career/problem-solving-judgement.html' | relative_url }}">Professional Practice</h2>
-
-<div class="career-door-card">
-  <strong>Professionalism · priorities · deadlines · confidentiality</strong>
-  <p>Reliability, accountability and judgement in day-to-day professional work.</p>
-  <a href="{{ '/career/problem-solving-judgement.html' | relative_url }}">Open Professional Practice →</a>
-</div>
+<h2 data-nav-href="{{ '/career/initiative-process-improvement.html' | relative_url }}">Initiative & Process Improvement</h2>
+<div class="career-door-card"><strong>Learning · automation · improvement · ownership</strong><p>Becoming useful quickly and improving repeated work without bypassing controls.</p><a href="{{ '/career/initiative-process-improvement.html' | relative_url }}">Open Initiative & Process Improvement →</a></div>
