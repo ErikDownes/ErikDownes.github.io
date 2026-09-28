@@ -2290,17 +2290,13 @@
       </div>
       <button type="button" class="abelo-filter-clear" data-abelo-clear>Clear filters</button>
     </div>
-    <details class="abelo-filter-details" open>
+    <details class="abelo-filter-details">
       <summary><span>Region</span></summary>
       <div class="abelo-filter-grid abelo-filter-grid--regions" data-abelo-region-filters></div>
     </details>
     <details class="abelo-filter-details">
       <summary><span>Airframe</span></summary>
       <div class="abelo-filter-grid abelo-filter-grid--models" data-abelo-model-filters></div>
-    </details>
-    <details class="abelo-filter-details">
-      <summary><span>Country</span></summary>
-      <div class="abelo-filter-grid abelo-filter-grid--countries" data-abelo-country-filters></div>
     </details>
     <details class="abelo-filter-details">
       <summary><span>Lessee</span></summary>
@@ -2311,7 +2307,6 @@
 
   const regionFilterHost = filterHost.querySelector('[data-abelo-region-filters]');
   const modelFilterHost = filterHost.querySelector('[data-abelo-model-filters]');
-  const countryFilterHost = filterHost.querySelector('[data-abelo-country-filters]');
   const lesseeFilterHost = filterHost.querySelector('[data-abelo-lessee-filters]');
   const statusHost = filterHost.querySelector('[data-abelo-filter-status]');
   const clearButton = filterHost.querySelector('[data-abelo-clear]');
@@ -2507,19 +2502,6 @@
     button.style.setProperty('--country-tint', `hsl(${hue} 65% 96%)`);
     button.innerHTML = `<span class="abelo-filter-swatch"></span><span>${escapeHtml(region)}</span><small>${rows.length} lessees · ${aircraft} mapped aircraft</small>`;
     regionFilterHost.appendChild(button);
-  });
-
-  countries.forEach(country => {
-    const count = rankedPlacements.filter(p => p.country === country).length;
-    const button = document.createElement('button');
-    button.type = 'button';
-    button.className = 'abelo-filter-chip abelo-filter-chip--country';
-    button.dataset.country = country;
-    button.dataset.region = regionForCountry(country);
-    button.style.setProperty('--country-color', countryColor(country));
-    button.style.setProperty('--country-tint', countryTint(country));
-    button.innerHTML = `<span class="abelo-filter-swatch"></span><span>${escapeHtml(country)}</span><small>${count}</small>`;
-    countryFilterHost.appendChild(button);
   });
 
   rankedPlacements.forEach(p => {
@@ -2989,17 +2971,6 @@
       const turningOff = activeRegion === next && !activeCountry && !activeLessee;
       activeRegion = turningOff ? null : next;
       activeCountry = null;
-      activeLessee = null;
-      renderMarkers();
-    });
-
-    countryFilterHost.addEventListener('click', event => {
-      const button = event.target.closest('[data-country]');
-      if (!button) return;
-      const next = button.dataset.country;
-      const turningOff = activeCountry === next && !activeRegion && !activeLessee;
-      activeRegion = null;
-      activeCountry = turningOff ? null : next;
       activeLessee = null;
       renderMarkers();
     });
