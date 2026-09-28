@@ -812,11 +812,13 @@
 
   const CAREER_SUBPAGES = [
     { label: 'Preparation', path: 'career/preparation.html' },
-    { label: 'Competencies', path: 'career/communication.html' },
-    { label: 'Learning & Development', path: 'career/working-independently.html' },
-    { label: 'Digital & Technology', path: 'career/technology-ai.html' },
-    { label: 'Working With People', path: 'career/working-with-others.html' },
-    { label: 'Professional Practice', path: 'career/problem-solving-judgement.html' }
+    { label: 'Asset & Aviation Awareness', path: 'career/asset-aviation-awareness.html' },
+    { label: 'Accuracy, Data & Systems', path: 'career/accuracy-data-systems.html' },
+    { label: 'Reporting & Analysis', path: 'career/reporting-analysis.html' },
+    { label: 'Finance & Commercial Awareness', path: 'career/finance-commercial-awareness.html' },
+    { label: 'Organisation & Delivery', path: 'career/organisation-delivery.html' },
+    { label: 'Teamwork & Stakeholders', path: 'career/teamwork-stakeholders.html' },
+    { label: 'Initiative & Process Improvement', path: 'career/initiative-process-improvement.html' }
   ];
 
   const populateCareerMenu = async (item, pageUrl) => {
