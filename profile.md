@@ -1,7 +1,7 @@
 ---
 layout: doc
 permalink: /
-handle: Profile
+handle: About Me
 title: Erik Downes
 nav_order: 10
 profile_mode: true
