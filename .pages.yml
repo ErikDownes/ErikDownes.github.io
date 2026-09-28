@@ -153,4 +153,5 @@ content:
         sort: title
         order: asc
   - { name: portfolio, label: "Portfolio", type: file, path: portfolio.md, format: yaml-frontmatter, fields: *docfields }
+  - { name: atr_fleet_dashboard, label: "Portfolio · ATR Fleet & Maintenance Dashboard", type: file, path: atr-fleet-dashboard.md, format: yaml-frontmatter, fields: *docfields }
   - { name: glossary, label: "Glossary (A–Z)", type: file, path: glossary.md, format: yaml-frontmatter, fields: *docfields }
