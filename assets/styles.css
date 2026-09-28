@@ -1231,6 +1231,211 @@ body.answer-focus-open{overflow:hidden}
   }
 }
 
+/* Fleet intelligence: airframe-level drilldown */
+.abelo-popup-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .45rem;
+  align-items: center;
+  margin-top: .65rem;
+}
+.abelo-popup-airframes {
+  border: 1px solid #bfd0df;
+  border-radius: 999px;
+  background: #f4f9fd;
+  color: #125b91;
+  padding: .38rem .62rem;
+  font: inherit;
+  font-size: .74rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+.abelo-popup-mini-table {
+  width: 100%;
+  margin-top: .65rem;
+  border-collapse: collapse;
+  font-size: .72rem;
+}
+.abelo-popup-mini-table td {
+  padding: .28rem .2rem;
+  border-top: 1px solid #e3e9ee;
+  vertical-align: top;
+}
+.abelo-popup-mini-table td:first-child {
+  font-weight: 800;
+  color: #263445;
+}
+.abelo-airframes {
+  scroll-margin-top: 96px;
+  margin: 16px 0 22px;
+  border: 1px solid #d9dee8;
+  border-radius: 16px;
+  background: #fff;
+  overflow: hidden;
+}
+.abelo-airframes__head {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 16px 18px;
+  border-bottom: 1px solid #e2e7ed;
+  background: #f8fafc;
+}
+.abelo-airframes__head > div {
+  display: grid;
+  gap: 2px;
+}
+.abelo-airframes__eyebrow {
+  font-size: .66rem;
+  font-weight: 900;
+  letter-spacing: .1em;
+  color: #64748b;
+}
+.abelo-airframes__head strong {
+  color: #172033;
+  font-size: 1.05rem;
+}
+.abelo-airframes__head small {
+  color: #607080;
+  line-height: 1.4;
+}
+.abelo-airframes__global-link {
+  flex: 0 0 auto;
+  font-size: .78rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+.abelo-airframes__table-wrap {
+  width: 100%;
+  max-height: 600px;
+  overflow: auto;
+}
+.abelo-airframes__loading {
+  margin: 0;
+  padding: 18px;
+  color: #607080;
+}
+.abelo-airframe-table {
+  width: 100%;
+  min-width: 920px;
+  border-collapse: collapse;
+  font-size: .78rem;
+}
+.abelo-airframe-table th,
+.abelo-airframe-table td {
+  padding: 10px 11px;
+  border-bottom: 1px solid #e6ebf0;
+  text-align: left;
+  vertical-align: top;
+}
+.abelo-airframe-table th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: #f4f7fa;
+  color: #475569;
+  font-size: .67rem;
+  letter-spacing: .045em;
+  text-transform: uppercase;
+}
+.abelo-airframe-table tbody tr:hover > td {
+  background: #fbfdff;
+}
+.abelo-data-badge {
+  display: inline-block;
+  margin-top: .22rem;
+  border: 1px solid #d4dce5;
+  border-radius: 999px;
+  background: #f8fafc;
+  color: #64748b;
+  padding: .15rem .4rem;
+  font-size: .6rem;
+  font-weight: 850;
+  line-height: 1.2;
+}
+.abelo-data-badge.is-identified {
+  border-color: #a9d5c7;
+  background: #eef9f5;
+  color: #176750;
+}
+.abelo-data-badge.is-gap,
+.abelo-data-badge.is-review {
+  border-color: #e7c7a1;
+  background: #fff8ed;
+  color: #8a5319;
+}
+.abelo-data-badge.is-secondary {
+  border-color: #bcd4e8;
+  background: #f2f8fd;
+  color: #255f8f;
+}
+.abelo-airframe-detail summary {
+  cursor: pointer;
+  white-space: nowrap;
+  font-weight: 800;
+  color: #1268a5;
+}
+.abelo-airframe-detail__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(260px, 1fr));
+  gap: 10px;
+  width: min(720px, 72vw);
+  margin-top: 8px;
+}
+.abelo-airframe-source-card {
+  border: 1px solid #dde4ea;
+  border-radius: 11px;
+  background: #fbfcfd;
+  padding: 10px;
+}
+.abelo-airframe-source-card.is-muted {
+  color: #64748b;
+}
+.abelo-airframe-source-card > strong {
+  display: block;
+  margin-bottom: .45rem;
+  color: #263445;
+}
+.abelo-airframe-source-card dl {
+  display: grid;
+  gap: .28rem;
+  margin: 0;
+}
+.abelo-airframe-source-card dl > div {
+  display: grid;
+  grid-template-columns: 88px 1fr;
+  gap: 8px;
+}
+.abelo-airframe-source-card dt {
+  color: #718096;
+  font-size: .66rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+.abelo-airframe-source-card dd {
+  margin: 0;
+  font-weight: 650;
+}
+.abelo-airframe-source-card p {
+  margin: .55rem 0;
+  line-height: 1.4;
+}
+.abelo-airframe-source-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .6rem;
+}
+@media (max-width: 720px) {
+  .abelo-airframes__head {
+    flex-direction: column;
+  }
+  .abelo-airframe-detail__grid {
+    grid-template-columns: 1fr;
+    width: min(560px, 78vw);
+  }
+}
+
 
 .answer-format-toolbar{
   display:flex;
