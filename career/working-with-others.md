@@ -1,7 +1,7 @@
 ---
 layout: doc
-handle: Working with Others
-title: Working with Others
+handle: Working With People
+title: Working With People
 eyebrow: CAREER · TEAMWORK · COLLABORATION · FEEDBACK
 ---
 
