@@ -44,7 +44,7 @@ The portfolio is organised around **work**, not just module codes:
 
 ## Fleet map | Ask what the records tell us
 
-The interactive map currently reconciles **56 documented aircraft across 26 lessees and 19 countries**. An earlier working total reached 61, but five aircraft remain unresolved at airframe/transaction level and are deliberately not forced into the dataset. Treat the individual placements as research leads where records are incomplete.
+The project now uses a **61-aircraft public-data control total across 26 lessees and 19 countries**. The control mix is **34 ATR 72 + 8 ATR 42 + 19 Dash 8**. The map and airframe table are the reconciliation layer beneath that total: MSN, registration and aircraft-history fields are attached only where the evidence supports them, rather than being guessed.
 
 ABEL0_MAP_APP
 
