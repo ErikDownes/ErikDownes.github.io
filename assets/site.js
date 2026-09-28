@@ -522,9 +522,11 @@
 
   document.querySelectorAll('.navitem > .navlabel[href]').forEach(label => {
     const labelPath = normalisePath(label.href);
+    const rootPath = normalisePath(document.querySelector('.brand')?.href || '/');
+    const isAboutParent = labelPath === rootPath && /\/academic-record\.html$/.test(currentPath);
     const isCareerParent = /\/career\.html$/.test(labelPath) && /\/career\//.test(currentPath);
     const isAviationParent = /\/aviation\.html$/.test(labelPath) && /\/aviation\//.test(currentPath);
-    const isCurrent = labelPath === currentPath || isCareerParent || isAviationParent;
+    const isCurrent = labelPath === currentPath || isAboutParent || isCareerParent || isAviationParent;
     const item = label.closest('.navitem');
     item?.classList.toggle('is-current', isCurrent);
     if (isCurrent) label.setAttribute('aria-current', 'page');
