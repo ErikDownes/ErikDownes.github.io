@@ -5,12 +5,6 @@ title: Aircraft
 eyebrow: AVIATION · THE PHYSICAL ASSET
 study_mode: true
 ---
-
-
-
-
-&nbsp;
-
 ## Turboprops | From the Wright Brothers to modern regional aircraft
 
 The first powered aircraft, including the **Wright Flyer**, used propellers driven by piston engines.
