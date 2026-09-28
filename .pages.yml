@@ -43,7 +43,7 @@ content:
   - { name: profile, label: "Profile", type: file, path: profile.md, format: yaml-frontmatter, fields: *docfields }
   - { name: aviation, label: "Aviation", type: file, path: aviation.md, format: yaml-frontmatter, fields: *docfields }
   - { name: studies, label: "Studies", type: file, path: studies.md, format: yaml-frontmatter, fields: *docfields }
-  - { name: workplace, label: "Workplace", type: file, path: workplace.md, format: yaml-frontmatter, fields: *docfields }
+  - { name: workplace, label: "Career", type: file, path: workplace.md, format: yaml-frontmatter, fields: *docfields }
 
   - name: modules
     label: "Study Modules"
