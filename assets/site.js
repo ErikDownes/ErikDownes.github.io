@@ -2274,9 +2274,8 @@
       <div style="border:1px solid #d9dee8;border-radius:14px;padding:16px;text-align:center;"><strong style="display:block;font-size:2rem;line-height:1;">26</strong><span>Lessees</span></div>
       <div style="border:1px solid #d9dee8;border-radius:14px;padding:16px;text-align:center;"><strong style="display:block;font-size:2rem;line-height:1;">19</strong><span>Countries</span></div>
     </div>
-    <p class="abelo-map-note"><strong>How to read the pins:</strong> 1 is the oldest documented customer relationship in this reconstruction. Pin numbers increase oldest → newest by first documented year, are colour-coded by country, and same-city pins are offset slightly so every customer remains visible and clickable.</p>
-    <p class="abelo-map-note"><strong>Fleet mix:</strong> 34 ATR 72 · 8 ATR 42 · 19 Dash 8.</p>
-    <p class="abelo-map-note">Public Abelo / Elix transactions and aircraft histories reconciled into one portfolio view.</p>
+    <p class="abelo-map-note"><strong>Fleet mix:</strong> 34 ATR 72 + 8 ATR 42 + 19 Dash 8 = <strong>61 aircraft</strong>.</p>
+    <p class="abelo-map-note">Public Abelo / Elix announcements and Planespotters aircraft histories reconciled into one portfolio view.</p>
   `;
 
   marker.replaceWith(wrapper);
