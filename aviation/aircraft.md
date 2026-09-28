@@ -7,6 +7,10 @@ study_mode: true
 ---
 ## Turboprops | Why do turboprops still matter in a jet age?
 
+
+
+&nbsp;
+
 Turboprops trade some speed for efficiency on shorter sectors. Rather than aviation simply progressing from propeller to jet, **the right propulsion system depends on the route and the job the aircraft has to do.**
 
 ## Regional Aviation | Why do regional routes favour turboprops?
@@ -21,6 +25,8 @@ Turboprops can offer:
 - frequent services without requiring large passenger volumes.
 
 **Remember:** the route drives the aircraft choice.
+
+![atr.png](blob:https:/app.pagescms.org/07722da5-000c-4c10-9e9d-dc299db4acb7)
 
 ## ATR | What are the ATR 42 and ATR 72?
 
