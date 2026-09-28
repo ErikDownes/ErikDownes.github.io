@@ -49,7 +49,7 @@ window.MathJax = {
 @media(max-width:700px){.calc-grid,.calc-two{grid-template-columns:1fr}.calc-hero{padding:19px}.calc-path i{display:none}}
 </style>
 
-<p><a href="{{ '/modules-projects.html' | relative_url }}">← Modules</a></p>
+<p><a href="{{ '/coursework.html' | relative_url }}">← Modules</a></p>
 
 <div class="calc-page" markdown="1">
 
