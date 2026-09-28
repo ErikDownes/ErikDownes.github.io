@@ -56,7 +56,7 @@ My aviation work moves from **industry research → structured data → visualis
   <a href="{{ '/aviation.html' | relative_url }}"><strong>Aviation</strong><span>Industry knowledge, aircraft leasing, maintenance, risk and commercial questions.</span></a>
   <a href="{{ '/portfolio.html' | relative_url }}"><strong>Portfolio</strong><span>Interactive work and projects that turn research or data into something usable.</span></a>
   <a href="{{ '/studies.html' | relative_url }}"><strong>Studies</strong><span>Financial Mathematics, statistics, finance, numerical methods and operations research.</span></a>
-  <a href="{{ '/competencies.html' | relative_url }}"><strong>Competencies</strong><span>How I approach teamwork, judgement, technology, communication and independent work.</span></a>
+  <a href="{{ '/workplace.html' | relative_url }}"><strong>Competencies</strong><span>How I approach teamwork, judgement, technology, communication and independent work.</span></a>
 </div>
 
 ## How I Work
