@@ -616,7 +616,7 @@
     if (!label || !menu) return;
     const pageUrl = new URL(label.href, location.href);
     const targetPath = normalisePath(pageUrl.href);
-    const isStudiesLibrary = /\/studies(?:\.html)?$/.test(pageUrl.pathname.replace(/\/+$/, ''));
+    const isStudiesLibrary = /\/coursework(?:\.html)?$/.test(pageUrl.pathname.replace(/\/+$/, ''));
 
     try {
       if (targetPath === currentPath && body) {
