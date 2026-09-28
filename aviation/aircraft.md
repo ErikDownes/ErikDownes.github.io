@@ -19,7 +19,7 @@ A turboprop can be attractive because it offers:
 
 - right-sized capacity;
 - lower trip cost on suitable short sectors;
-- good access to smaller regional airports;
+- good access to smaller regional airports, including many with shorter runways;
 - high frequency without needing a large number of passengers on every flight.
 
 **Remember:** the route drives the aircraft choice.
