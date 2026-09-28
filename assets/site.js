@@ -144,6 +144,7 @@ Total output lines: 3562
     { term: 'Redelivery condition', definition: 'The aircraft’s required maintenance and technical state when an airline returns it at lease end.', why: 'It protects the owner’s ability to place or sell the aircraft again.' },
     { term: 'End-of-lease', definition: 'The point when an aircraft lease expires and the airline returns the aircraft or agrees an extension.', why: 'Return condition and compensation are settled as ownership and operation separate again.' },
     { term: 'EOL', definition: 'End of lease; EOL compensation pays for a maintenance shortfall when the airline returns the aircraft.', why: 'It is an alternative to collecting monthly maintenance reserves.' },
+    { term: 'Strong credit', definition: 'An airline judged likely to meet its financial obligations, including a large payment or maintenance settlement later.', why: 'A lessor takes more credit exposure when it waits until the end of the lease instead of collecting monthly maintenance reserves.' },
     { term: 'EOL compensation', definition: 'End-of-lease cash paid when an aircraft’s maintenance condition falls short of the return condition agreed in the lease.', why: 'The airline may complete the work or settle the difference when it hands the aircraft back.' },
     { term: 'End-of-lease compensation', definition: 'Cash paid to settle the difference when the aircraft’s maintenance condition falls short of the agreed return condition.', why: 'Some leases use this settlement instead of monthly maintenance reserves.' },
     { term: 'Flight hours', definition: 'Hours flown by the aircraft, used to measure utilisation and charge some maintenance reserves.', why: 'Engine maintenance is often tied to operating hours.' },
@@ -755,7 +756,8 @@ Total output lines: 3562
     { label: 'Aircraft Leasing', path: 'aviation/aircraft-leasing.html' },
     { label: 'Asset Management', path: 'aviation/asset-management.html' },
     { label: 'Aircraft Options', path: 'aviation/aircraft-options.html' },
-    { label: 'Credit Risk', path: 'aviation/credit-risk.html' }
+    { label: 'Credit Risk', path: 'aviation/credit-risk.html' },
+    { label: 'Maintenance Reserves', path: 'aviation/maintenance-reserves.html' }
   ];
 
   const populateAviationMenu = async (item, pageUrl) => {
