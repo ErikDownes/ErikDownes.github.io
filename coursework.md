@@ -3,7 +3,7 @@ layout: doc
 permalink: /coursework.html
 handle: Coursework
 title: Coursework
-nav_order: 40
+nav_order: 50
 eyebrow: UNIVERSITY OF LIMERICK · FINANCIAL MATHEMATICS
 study_mode: true
 ---
