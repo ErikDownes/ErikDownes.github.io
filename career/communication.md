@@ -1,8 +1,8 @@
 ---
 layout: doc
-handle: Communication
-title: Communication
-eyebrow: CAREER · AUDIENCE · CLARITY · TECHNICAL COMMUNICATION
+handle: Competencies
+title: Competencies
+eyebrow: CAREER · COMMUNICATION · PROBLEM SOLVING · INITIATIVE · ACCURACY
 ---
 
 [← Career]({{ '/career.html' | relative_url }})
@@ -17,7 +17,7 @@ I would then **scaffold the explanation** from something familiar, using a pract
 
 **Recall cue:** Profile → prerequisites → level → scaffold → example → check.
 
-## Example | Explaining aircraft leasing at three levels
+### Example | Explaining aircraft leasing at three levels
 
 Suppose an airline needs an aircraft but does not want to purchase it outright. A leasing company owns the aircraft and leases it to the airline.
 
@@ -29,7 +29,7 @@ Suppose an airline needs an aircraft but does not want to purchase it outright. 
 | **Middle-tech** | How the business works | Asset, lease income, condition, future value | Introduce commercial concepts |
 | **High-tech** | How it is valued | Cash flows, discounting, risk, residual value | Add quantitative analysis |
 
-## Low-tech audience | Completely non-technical person
+### Low-tech audience | Completely non-technical person
 
 I would focus on the basic relationship.
 
@@ -39,7 +39,7 @@ I would avoid terms such as **residual value, discounted cash flow, credit risk 
 
 **Recall cue:** Owner → airline uses → payments → aircraft returns.
 
-## Middle-tech audience | Commercially aware non-specialist
+### Middle-tech audience | Commercially aware non-specialist
 
 I could introduce the aircraft as a **valuable income-producing asset**.
 
@@ -57,7 +57,7 @@ At this level, I would begin connecting the lease to the wider commercial decisi
 
 **Recall cue:** Asset → income → condition → future value → next lease.
 
-## High-tech audience | Financial or quantitative colleague
+### High-tech audience | Financial or quantitative colleague
 
 I could discuss the underlying valuation problem.
 
@@ -77,3 +77,29 @@ At this level, I could use the quantitative language from Financial Mathematics:
 **Recall cue:** Cash flows → discounting → risk → residual value → return.
 
 The advantage of this version is that the **same example demonstrates three things simultaneously**: communication, understanding of an aircraft lessor's business, and the ability to connect Financial Mathematics to a real commercial asset.
+
+## Difficult problem | Tell me about a difficult problem you solved.
+
+Choose a problem where you had to diagnose the issue rather than simply follow instructions. Explain the information available, the options you considered, the method you chose and how you checked the outcome.
+
+diagnose | assumptions | method | validation
+
+**Recall cue:** Problem → method → check → result.
+
+## Unknown problem | How do you approach a problem when you do not immediately know the answer?
+
+I break the problem into smaller parts, identify what is known and unknown, check whether I have seen a similar structure before, make reasonable assumptions explicit and test the result. If I am still blocked, I would ask for help with a clear explanation of what I have already tried.
+
+**Recall cue:** Break down → assumptions → test → ask intelligently.
+
+## Initiative | Give an example of how you would show initiative.
+
+If I noticed a recurring problem or an inefficient process, I would first understand why it was happening and then suggest a practical improvement. I would take initiative within my role while checking with others where a change could affect their work.
+
+observe | improve | practical | consult
+
+## Accuracy | How would you make sure your work was accurate?
+
+I would work systematically, check important details before completing the task, and use any available validation or review process. For repetitive work, I would look for a consistent checking method rather than relying on memory.
+
+systematic | check | validation | consistency
