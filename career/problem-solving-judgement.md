@@ -1,31 +1,11 @@
 ---
 layout: doc
-handle: Problem Solving & Judgement
-title: Problem Solving & Judgement
-eyebrow: CAREER · PROBLEM SOLVING · RESPONSIBILITY · PROFESSIONAL JUDGEMENT
+handle: Professional Practice
+title: Professional Practice
+eyebrow: CAREER · PROFESSIONALISM · PRIORITIES · RESPONSIBILITY
 ---
 
 [← Career]({{ '/career.html' | relative_url }})
-
-## Difficult problem | Tell me about a difficult problem you solved.
-
-Choose a problem where you had to diagnose the issue rather than simply follow instructions. Explain the information available, the options you considered, the method you chose and how you checked the outcome.
-
-diagnose | assumptions | method | validation
-
-**Recall cue:** Problem → method → check → result.
-
-## Unknown problem | How do you approach a problem when you do not immediately know the answer?
-
-I break the problem into smaller parts, identify what is known and unknown, check whether I have seen a similar structure before, make reasonable assumptions explicit and test the result. If I am still blocked, I would ask for help with a clear explanation of what I have already tried.
-
-**Recall cue:** Break down → assumptions → test → ask intelligently.
-
-## New task | How would you deal with a task you had never done before?
-
-I would clarify the expected outcome, check available instructions or examples, break the task into steps, make a first attempt, and ask focused questions where needed. I would rather ask a precise question early than continue with a wrong assumption.
-
-clarify | independent first attempt | focused questions | feedback
 
 ## Error | What would you do if you realised you had made an error?
 
