@@ -3,7 +3,6 @@ layout: doc
 handle: Problem Solving & Judgement
 title: Problem Solving & Judgement
 eyebrow: CAREER · PROBLEM SOLVING · RESPONSIBILITY · PROFESSIONAL JUDGEMENT
-intro: How Erik approaches difficult tasks, makes decisions, handles errors and takes responsibility for his work.
 ---
 
 [← Career]({{ '/career.html' | relative_url }})
