@@ -6,7 +6,6 @@ year: "2nd"
 semester: "Sem1"
 status: "Core"
 eyebrow: "2ND YEAR · SEM1"
-intro: "A concise interview-ready page for MS4043 — Methods of Linear Analysis."
 ---
 <p><a href="{{ '/modules-projects.html' | relative_url }}">← Modules & Projects</a></p>
 
