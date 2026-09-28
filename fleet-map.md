@@ -6,7 +6,7 @@ eyebrow: PUBLIC DATA · ASSET REPORTING · AIRFRAME RECONCILIATION
 permalink: /fleet-map.html
 ---
 
-## Live dashboard | Explore the reconstructed turboprop portfolio
+## Live dashboard | Explore the planesptters data reconstructed turboprop portfolio
 
 ABEL0_MAP_APP
 
