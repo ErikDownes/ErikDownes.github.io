@@ -698,7 +698,7 @@
     if (uncategorised.length) grouped.push({ label: 'Other Coursework', modules: uncategorised });
 
     menu.replaceChildren();
-    menu.classList.remove('menu-columns-2', 'menu-columns-3', 'aviation-menu');
+    menu.classList.remove('menu-columns-2', 'menu-columns-3', 'aviation-menu', 'career-menu');
     menu.classList.add('coursework-menu');
     item.classList.toggle('has-submenu', grouped.length > 0);
     item.classList.toggle('has-flyout-menu', grouped.length > 0);
@@ -805,6 +805,72 @@
     }
   };
 
+  const CAREER_SUBPAGES = [
+    { label: 'Preparation', path: 'career/preparation.html' },
+    { label: 'Competencies', path: 'career/communication.html' },
+    { label: 'Learning & Development', path: 'career/working-independently.html' },
+    { label: 'Digital & Technology', path: 'career/technology-ai.html' },
+    { label: 'Working With People', path: 'career/working-with-others.html' },
+    { label: 'Professional Practice', path: 'career/problem-solving-judgement.html' }
+  ];
+
+  const populateCareerMenu = async (item, pageUrl) => {
+    const menu = item.querySelector(':scope > .dropmenu');
+    if (!menu) return;
+
+    menu.replaceChildren();
+    menu.classList.remove('menu-columns-2', 'menu-columns-3', 'aviation-menu', 'coursework-menu');
+    menu.classList.add('career-menu');
+    item.classList.add('has-submenu', 'has-flyout-menu');
+    menu.style.setProperty('--menu-left', `${Math.round(item.getBoundingClientRect().left)}px`);
+
+    for (const category of CAREER_SUBPAGES) {
+      const categoryUrl = new URL(category.path, pageUrl.href);
+      const row = document.createElement('div');
+      row.className = 'nav-flyout-item';
+
+      const parent = document.createElement('a');
+      parent.className = 'nav-flyout-parent';
+      parent.href = categoryUrl.href;
+      parent.textContent = category.label;
+      row.appendChild(parent);
+
+      const panel = document.createElement('div');
+      panel.className = 'nav-flyout-panel';
+      panel.setAttribute('aria-label', category.label);
+      const toggle = createFlyoutToggle(row, category.label);
+      row.append(toggle, panel);
+      menu.appendChild(row);
+
+      try {
+        const response = await fetch(categoryUrl.href, { cache: 'no-store' });
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        const html = await response.text();
+        const parsed = new DOMParser().parseFromString(html, 'text/html');
+        const headings = Array.from(parsed.querySelectorAll('#docBody > h2'))
+          .map(headingInfo)
+          .filter(Boolean);
+
+        headings.forEach((question, index) => {
+          const link = document.createElement('a');
+          const id = question.id || `section-${index + 1}`;
+          link.href = `${categoryUrl.pathname}${categoryUrl.search}#${id}`;
+          link.textContent = question.handle;
+          link.title = question.question;
+          panel.appendChild(link);
+        });
+
+        if (!headings.length) {
+          row.classList.add('has-no-flyout');
+          toggle.hidden = true;
+        }
+      } catch (_) {
+        row.classList.add('has-no-flyout');
+        toggle.hidden = true;
+      }
+    }
+  };
+
   const syncQuestionMenu = async item => {
     const label = item.querySelector(':scope > .navlabel[href]');
     const menu = item.querySelector(':scope > .dropmenu');
@@ -814,8 +880,13 @@
     const cleanPagePath = pageUrl.pathname.replace(/\/+$/, '');
     const isStudiesLibrary = /\/coursework(?:\.html)?$/.test(cleanPagePath);
     const isAviationLibrary = /\/aviation(?:\.html)?$/.test(cleanPagePath);
+    const isCareerLibrary = /\/career(?:\.html)?$/.test(cleanPagePath);
 
     try {
+      if (isCareerLibrary) {
+        await populateCareerMenu(item, pageUrl);
+        return;
+      }
       if (isAviationLibrary) {
         await populateAviationMenu(item, pageUrl);
         return;
