@@ -98,6 +98,8 @@ components:
 
 content:
   - { name: about_me, label: "About Me", type: file, path: profile.md, format: code }
+  - { name: about_asset_management, label: "About Me · Why This Role", type: file, path: about-asset-management.md, format: yaml-frontmatter, fields: *aboutsubfields }
+  - { name: questions_for_abelo, label: "About Me · Questions for Abelo", type: file, path: questions-for-abelo.md, format: yaml-frontmatter, fields: *aboutsubfields }
   - { name: academic_record, label: "About Me · Academic Record", type: file, path: academic-record.md, format: yaml-frontmatter, fields: *aboutsubfields }
   - { name: aviation, label: "Aviation", type: file, path: aviation.md, format: yaml-frontmatter, fields: *docfields }
   - { name: aviation_aircraft, label: "Aviation · Aircraft", type: file, path: aviation/aircraft.md, format: yaml-frontmatter, fields: *aviationfields }
