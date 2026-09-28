@@ -51,11 +51,13 @@ eyebrow: FINANCIAL MATHEMATICS · DATA ANALYSIS · UNIVERSITY OF LIMERICK
 
 ## Extended About Me
 
-I live in Annacotty with my parents, my sister and our cat. I like university life in Limerick, and a co-op role based mainly here would suit me well. I would also enjoy travelling to Dublin to meet and work with the wider team.
+I live in Annacotty with my parents, my sister and our cat. I enjoy university life in Limerick, and a co-op role based mainly here would suit me well. I would also enjoy travelling to Dublin to work with the wider team.
 
-What appeals to me about an asset management role is the chance to bring the technical and commercial sides together. I like working with data and asking why a number looks the way it does. Building my aircraft dashboard from public sources has made that especially tangible: a missing field or an unexpected pattern is a question to investigate, not just a blank cell to ignore.
+What appeals to me about asset management is how many things come together: the aircraft, the airline, the lease, the finances and the data used to make decisions. I have always enjoyed finding patterns and logic in problems that seem complicated at first. That is part of what draws me to mathematics, physics and applied maths, and it feeds my fascination with aircraft even though I am not studying to become an aeronautical engineer.
 
-I would bring curiosity, care with the details and a willingness to learn from people who know the business. And if a Paris or Dubai air show happens to be part of the job one day, I would be delighted to go.
+I learn by exploring things for myself. Abelo’s published figure of 61 aircraft prompted me to build an interactive dashboard from public data. It gave me a practical way to investigate the fleet, including gaps and inconsistencies in the sources. I would be happy to show you a quick example if there is time.
+
+I would bring curiosity, care with the details and a willingness to learn from people who know the business. And if a Paris or Dubai air show happens to be part of the job one day, I would be delighted to go there too!
 
 ## Academic Results
 
