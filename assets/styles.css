@@ -1031,7 +1031,10 @@ body.answer-focus-open{overflow:hidden}
   gap: 6px;
 }
 .abelo-filter-grid--regions {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.abelo-filter-grid--regions .abelo-filter-chip--region:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
 }
 .abelo-filter-grid--countries {
   grid-template-columns: repeat(3, minmax(0, 1fr));
