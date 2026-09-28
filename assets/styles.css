@@ -2691,3 +2691,65 @@ body.answer-focus-open{overflow:hidden}
     font-size: 1.35rem;
   }
 }
+
+
+/* Compact About page */
+.profile-tagline{
+  max-width:760px;
+  margin:18px 0 34px!important;
+  color:#4f5965;
+  font-size:1.2rem!important;
+  line-height:1.5!important;
+}
+.profile-intro-grid{
+  display:grid;
+  grid-template-columns:minmax(0,1.15fr) minmax(280px,.85fr);
+  gap:64px;
+  align-items:start;
+  margin:0 0 42px;
+}
+.profile-intro-copy > h2{
+  margin-top:0!important;
+  padding-top:0!important;
+  border-top:0!important;
+}
+.profile-skill-groups{
+  padding-top:8px;
+}
+.profile-skill-group{
+  margin:0 0 24px;
+}
+.profile-skill-group h3{
+  margin:0 0 9px;
+  color:#7a838d;
+  font-size:.72rem;
+  font-weight:800;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+.profile-skill-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+}
+.profile-skill-tags span{
+  display:inline-flex;
+  align-items:center;
+  padding:5px 9px;
+  border:1px solid #e1e5e9;
+  border-radius:5px;
+  background:#f6f7f8;
+  color:#3d4650;
+  font-size:.8rem;
+  line-height:1.15;
+}
+.profile-mode .profile-intro-grid + h2{
+  margin-top:28px;
+}
+@media(max-width:760px){
+  .profile-intro-grid{
+    grid-template-columns:1fr;
+    gap:28px;
+  }
+  .profile-skill-groups{padding-top:0}
+}
