@@ -6,7 +6,6 @@ year: "1st"
 semester: "Sem1"
 status: "Core"
 eyebrow: "JAVA · PROGRAMMING · TESTING · SOFTWARE ENGINEERING"
-intro: "A reconstructed study and portfolio map from the CE4701 source pack: what was taught, what the code demonstrates, what is worth preserving, and how to process the archive with AI."
 study_mode: true
 ---
 
