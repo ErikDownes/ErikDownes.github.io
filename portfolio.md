@@ -29,10 +29,10 @@ The aim is not to present myself as an expert before I have worked in the indust
 
 The portfolio is organised around **work**, not just module codes:
 
+- [Dashboards & Visualisation]({{ '/portfolio/dashboards-visualisation.html' | relative_url }}) — maps, reporting and interactive analysis.
 - [Data & Analytics]({{ '/portfolio/data-analytics.html' | relative_url }}) — statistics, modelling, forecasting and reproducible analysis.
 - [Financial Modelling]({{ '/portfolio/financial-modelling.html' | relative_url }}) — cash flows, loans, valuation and financing decisions.
 - [Software & Apps]({{ '/portfolio/software-apps.html' | relative_url }}) — Java, Python, notebooks and small decision tools.
-- [Dashboards & Visualisation]({{ '/portfolio/dashboards-visualisation.html' | relative_url }}) — maps, reporting and interactive analysis.
 - [Sector Projects]({{ '/portfolio/sector-projects.html' | relative_url }}) — aviation, aircraft leasing, banking/credit and investments.
 - [Academic Projects]({{ '/portfolio/academic-projects.html' | relative_url }}) — substantial assignments and project evidence from the degree.
 
