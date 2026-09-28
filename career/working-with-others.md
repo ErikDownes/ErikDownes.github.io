@@ -3,7 +3,6 @@ layout: doc
 handle: Working with Others
 title: Working with Others
 eyebrow: CAREER · TEAMWORK · COLLABORATION · FEEDBACK
-intro: Evidence and interview preparation for teamwork, collaboration, feedback and dealing professionally with other people.
 ---
 
 [← Career]({{ '/career.html' | relative_url }})
