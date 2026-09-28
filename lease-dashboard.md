@@ -12,7 +12,7 @@ This is a **decision-support project**, not an attempt to reproduce Abelo's conf
 
 It connects Financial Mathematics, statistics, accounting and asset management by letting a user change assumptions and immediately see the consequences.
 
-**Model chain:** aircraft age → lease cash flow → costs → discounting → residual value → NPV → decision.
+**Model chain:** acquisition price → firm order → purchase options → lease cash flow → costs → discounting → residual value → decision.
 
 <div class="lease-note">
 <strong>Important:</strong> All monetary defaults are illustrative assumptions for interview practice. They are not Abelo lease rates, aircraft valuations or internal forecasts.
@@ -20,14 +20,129 @@ It connects Financial Mathematics, statistics, accounting and asset management b
 
 <div id="leaseLab" class="lease-lab">
   <div class="lease-tabs" role="tablist" aria-label="Aircraft leasing dashboards">
-    <button class="lease-tab active" data-tab="single" type="button">Single aircraft</button>
+    <button class="lease-tab active" data-tab="acquisition" type="button">Acquisition & options</button>
+    <button class="lease-tab" data-tab="single" type="button">Single aircraft</button>
     <button class="lease-tab" data-tab="relet" type="button">Re-lease decision</button>
     <button class="lease-tab" data-tab="scenarios" type="button">Scenario comparison</button>
     <button class="lease-tab" data-tab="lineage" type="button">Fleet lineage</button>
     <button class="lease-tab" data-tab="portfolio" type="button">Abelo fleet map</button>
   </div>
 
-  <section class="lease-panel active" data-panel="single">
+  <section class="lease-panel active" data-panel="acquisition">
+    <div class="acq-event-bar">
+      <div>
+        <span class="acq-kicker">NEXT INDUSTRY MILESTONE</span>
+        <strong id="acqEventName">Paris Air Show 2027</strong>
+        <small id="acqEventDate">14–20 June 2027 · Paris-Le Bourget</small>
+      </div>
+      <div class="acq-countdown">
+        <span id="acqCountdown">—</span>
+        <small>to show opening</small>
+      </div>
+    </div>
+
+    <div class="acq-aircraft-strip" aria-label="Choose aircraft reference">
+      <button class="acq-aircraft-card" data-acq-aircraft="atr42" type="button">
+        <span>ATR 42-600</span><strong>50-seat class</strong><small>illustrative acquisition case</small>
+      </button>
+      <button class="acq-aircraft-card active" data-acq-aircraft="atr72" type="button">
+        <span>ATR 72-600</span><strong>70-seat class</strong><small>2026 public order anchor</small>
+      </button>
+      <button class="acq-aircraft-card" data-acq-aircraft="d8-400" type="button">
+        <span>Dash 8-400</span><strong>refurbished reference</strong><small>illustrative acquisition case</small>
+      </button>
+      <input id="acqAircraft" type="hidden" value="atr72">
+    </div>
+
+    <div class="lease-grid">
+      <div class="lease-controls">
+        <h3>Build an acquisition case</h3>
+        <p>Start with a unit-price assumption, choose how many aircraft to commit to now, then decide whether to exercise purchase options later.</p>
+
+        <label>Unit acquisition assumption
+          <input id="acqUnitPrice" type="number" min="2" max="60" step="0.5" value="25">
+          <small id="acqPriceNote" class="control-note">ATR announced 40 ATR 72-600 aircraft for around $1bn in September 2026 — roughly $25m each as a headline transaction proxy, not an official list price.</small>
+        </label>
+
+        <label>Firm aircraft <output id="acqFirmOut"></output>
+          <input id="acqFirmQty" type="range" min="1" max="12" step="1" value="3">
+        </label>
+
+        <label>Purchase options available <output id="acqOptionsOut"></output>
+          <input id="acqOptionQty" type="range" min="0" max="12" step="1" value="3">
+        </label>
+
+        <label>Options exercised <output id="acqExerciseOut"></output>
+          <input id="acqExerciseQty" type="range" min="0" max="3" step="1" value="0">
+        </label>
+
+        <div class="acq-action-row" aria-label="Option exercise shortcuts">
+          <button type="button" data-acq-exercise="0">Hold options</button>
+          <button type="button" data-acq-exercise="half">Exercise half</button>
+          <button type="button" data-acq-exercise="all">Exercise all</button>
+        </div>
+
+        <label>Option exercise price <output id="acqOptionFactorOut"></output>
+          <input id="acqOptionPriceFactor" type="range" min="80" max="120" step="1" value="100">
+        </label>
+
+        <label>Up-front cash / PDP assumption <output id="acqDepositOut"></output>
+          <input id="acqDepositPct" type="range" min="0" max="30" step="1" value="10">
+        </label>
+
+        <label>Industry milestone
+          <select id="acqEventSelect">
+            <option value="auto" selected>Auto · next show</option>
+            <option value="paris">Paris Air Show · 14–20 Jun 2027</option>
+            <option value="dubai">Dubai Airshow · 15–19 Nov 2027</option>
+          </select>
+        </label>
+
+        <label>Decision gate before show <output id="acqLeadOut"></output>
+          <input id="acqDecisionLead" type="range" min="30" max="180" step="15" value="90">
+        </label>
+      </div>
+
+      <div class="lease-output">
+        <div class="lease-kpis acq-kpis">
+          <div><span>Firm commitment</span><strong id="acqFirmValue">—</strong></div>
+          <div><span>Exercised options</span><strong id="acqExerciseValue">—</strong></div>
+          <div><span>Current programme</span><strong id="acqProgramValue">—</strong></div>
+          <div><span>All options exercised</span><strong id="acqMaxValue">—</strong></div>
+          <div><span>Up-front cash</span><strong id="acqUpfrontValue">—</strong></div>
+          <div><span>Options remaining</span><strong id="acqRemaining">—</strong></div>
+        </div>
+
+        <div class="lease-chart-card">
+          <div class="acq-heading-row">
+            <div>
+              <h3>Firm order → option decision → industry milestone</h3>
+              <p id="acqDecisionSummary">—</p>
+            </div>
+            <span id="acqStatusPill" class="acq-status-pill">OPTIONS HELD</span>
+          </div>
+          <div id="acqTimeline" class="acq-timeline"></div>
+        </div>
+
+        <div class="lease-mini-grid">
+          <div>
+            <h3>Why options matter</h3>
+            <p>A firm order commits capital now. Purchase options preserve flexibility: add aircraft later if demand, financing, placement opportunities and market conditions support the decision.</p>
+          </div>
+          <div>
+            <h3>What Erik can explain</h3>
+            <p><strong>“I separated the firm commitment from optional capacity, then made the price, quantity and timing assumptions adjustable so I could see the capital effect of exercising the options.”</strong></p>
+          </div>
+        </div>
+
+        <div class="lease-note">
+          <strong>Public-data boundary:</strong> the ATR 72-600 default uses a September 2026 public order announcement as a headline reference. Other defaults are deliberately labelled illustrative. The model does not claim access to manufacturer list prices, Abelo acquisition costs or confidential option terms.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="lease-panel" data-panel="single">
     <div class="lease-grid">
       <div class="lease-controls">
         <h3>Single-aircraft lease & value curve</h3>
@@ -252,7 +367,7 @@ It connects Financial Mathematics, statistics, accounting and asset management b
 
 ## What Erik can say in the interview
 
-**“I wanted to go beyond reading about aircraft leasing, so I built an interactive decision-support model. It lets me start with an aircraft at a particular age, model lease cash flows and residual value, stress the assumptions, and compare an extension with a re-lease decision. The figures are illustrative, but the project shows how I approach a commercial problem: model it, test the assumptions and communicate the result clearly.”**
+**“I wanted to go beyond reading about aircraft leasing, so I built an interactive decision-support model. I can start with an ATR 72-600 acquisition assumption, choose a firm order, add purchase options and decide how many to exercise. I can then move into lease cash flow, residual value and re-lease scenarios. The figures are illustrative, but the project shows how I approach a commercial problem: separate commitments from flexibility, test assumptions and communicate the result clearly.”**
 
 ## Technical stack
 
