@@ -6,7 +6,6 @@ year: "3rd"
 semester: "Sem2"
 status: "Core"
 eyebrow: "3RD YEAR · SEM2"
-intro: "A concise interview-ready page for COOP_1 — Cooperative Education."
 ---
 <p><a href="{{ '/modules-projects.html' | relative_url }}">← Modules & Projects</a></p>
 
