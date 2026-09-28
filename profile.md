@@ -14,10 +14,9 @@ intro: Quantitative thinking, data, finance and real-world problem solving — w
   <p class="profile-hero-title">Mathematics that goes somewhere.</p>
   <p class="profile-hero-copy">I am a Financial Mathematics student at the University of Limerick. I enjoy taking a technical problem, understanding the mathematics behind it, working carefully with data and then explaining what the result means for a real decision.</p>
   <div class="profile-actions">
-    <a href="mailto:24434582@studentmail.ul.ie">Email</a>
+    <a href="mailto:24434582@studentmail.ul.ie">UL Email</a>
     <a href="https://www.linkedin.com/in/erik-downes-7b312127a/" target="_blank" rel="noopener">LinkedIn</a>
     <a href="https://github.com/ErikDownes" target="_blank" rel="noopener">GitHub</a>
-    <span>Student No. 24434582</span>
   </div>
 </div>
 
@@ -56,7 +55,7 @@ My aviation work moves from **industry research → structured data → visualis
   <a href="{{ '/aviation.html' | relative_url }}"><strong>Aviation</strong><span>Industry knowledge, aircraft leasing, maintenance, risk and commercial questions.</span></a>
   <a href="{{ '/portfolio.html' | relative_url }}"><strong>Portfolio</strong><span>Interactive work and projects that turn research or data into something usable.</span></a>
   <a href="{{ '/studies.html' | relative_url }}"><strong>Studies</strong><span>Financial Mathematics, statistics, finance, numerical methods and operations research.</span></a>
-  <a href="{{ '/workplace.html' | relative_url }}"><strong>Competencies</strong><span>How I approach teamwork, judgement, technology, communication and independent work.</span></a>
+  <a href="{{ '/career.html' | relative_url }}"><strong>Career</strong><span>Career planning, interview preparation, competencies, professional judgement and development.</span></a>
 </div>
 
 ## How I Work
@@ -106,6 +105,6 @@ Finance, data, analytics and aviation are natural areas of interest, but the wid
 
 <div class="profile-contact">
   <strong>Erik Downes</strong>
-  <span>Financial Mathematics · University of Limerick · Student No. 24434582</span>
-  <span><a href="mailto:24434582@studentmail.ul.ie">24434582@studentmail.ul.ie</a> · <a href="https://www.linkedin.com/in/erik-downes-7b312127a/" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://github.com/ErikDownes" target="_blank" rel="noopener">GitHub</a></span>
+  <span>Financial Mathematics · University of Limerick</span>
+  <span><a href="mailto:24434582@studentmail.ul.ie">UL email</a> · <a href="https://www.linkedin.com/in/erik-downes-7b312127a/" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://github.com/ErikDownes" target="_blank" rel="noopener">GitHub</a></span>
 </div>
