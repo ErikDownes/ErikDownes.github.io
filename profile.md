@@ -14,11 +14,11 @@ eyebrow: FINANCIAL MATHEMATICS · DATA ANALYSIS · UNIVERSITY OF LIMERICK
 
     <h2>About Me</h2>
 
-    <p>I'm from Limerick and I'm studying <strong>Financial Mathematics at the University of Limerick</strong>. I enjoy the mix of mathematics, statistics, finance and computing, especially when I can use it to understand a real decision.</p>
+<p>I'm from Limerick and studying <strong>Financial Mathematics at the University of Limerick</strong>. I enjoy turning mathematical ideas into practical tools that help people understand a decision.</p>
 
-    <p>I'm curious about both sides of aviation: the mathematics and engineering that get an aircraft into the sky, and the finance behind an airline making regular lease payments. A calculation becomes much more interesting to me when I can ask whether the data is reliable, what the result means and what someone could do with it.</p>
+<p>That is what drew me to aircraft asset management. Aviation brings together the engineering that gets an aircraft into the sky and the finance that keeps it operating. When I saw Abelo's published figure of 61 aircraft, I wanted to explore the fleet more closely. I used public data to build an interactive dashboard that makes it easier to ask questions about the aircraft and where they operate.</p>
 
-    <p>I learn best by <strong>doing</strong>. I enjoy turning an idea from a module into a calculation, a Python notebook or a small interactive tool, then improving it as I learn more. I use Jupyter, Git and GitHub to work through and share those projects. I'm enjoying university and looking forward to applying those skills during co-op.</p>
+<p>I learn best by <strong>doing</strong>. I use Python and Jupyter notebooks to work through ideas, and Git and GitHub to develop and share projects. Building the dashboard was enjoyable, but it also taught me to question missing data and check what a result really means. I'd love to apply that approach during my co-op.</p>
   </div>
 
   <figure class="profile-portrait">
