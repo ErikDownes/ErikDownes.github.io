@@ -36,10 +36,10 @@ body{margin:0;background:var(--page);color:var(--ink);font-family:Arial,Helvetic
 .dropmenu .dropmenu-empty{color:#70757a;cursor:default}
 
 /* Two-level navigation: downward category menu with a second-level flyout. */
-.aviation-menu,.coursework-menu{--menu-width:min(260px,calc(100vw - 24px));grid-template-columns:1fr!important;overflow:visible;max-height:none}
+.aviation-menu,.coursework-menu,.career-menu{--menu-width:min(260px,calc(100vw - 24px));grid-template-columns:1fr!important;overflow:visible;max-height:none}
 .coursework-menu{--menu-width:min(320px,calc(100vw - 24px))}
 .nav-flyout-item{position:relative}
-.aviation-menu .nav-flyout-parent,.coursework-menu .nav-flyout-parent{position:relative;padding-right:42px;font-weight:750}
+.aviation-menu .nav-flyout-parent,.coursework-menu .nav-flyout-parent,.career-menu .nav-flyout-parent{position:relative;padding-right:42px;font-weight:750}
 .nav-flyout-toggle{position:absolute;z-index:2;right:4px;top:4px;bottom:4px;width:31px;border:0;border-left:1px solid #e1e5ea;border-radius:0 5px 5px 0;background:transparent;color:#70757a;font:inherit;font-size:1.2rem;line-height:1;cursor:pointer}
 .nav-flyout-toggle:hover,.nav-flyout-toggle:focus-visible{background:#e9eef6;color:#174ea6;outline:none}
 .nav-flyout-item.is-flyout-open>.nav-flyout-toggle{background:#e9eef6;color:#174ea6}
@@ -169,11 +169,11 @@ body.answer-focus-open{overflow:hidden}
   .nav-questions,.nav-wordwall{grid-template-columns:1fr}
   .navlabel,.navtoggle{min-height:48px}.navlabel{justify-content:flex-start;text-align:left;font-size:.94rem;line-height:1.25;white-space:normal;padding:0 12px}.navlabel br{display:none}.navtoggle{padding:0;border-left:1px solid #eceff1;font-size:.8rem}
   .dropmenu,.nav-right .dropmenu{position:static;grid-column:1/-1;top:auto;left:auto;right:auto;width:100%;max-width:none;max-height:none;border:0;border-top:1px solid #eceff1;box-shadow:none;padding:8px;background:#f8f9fa}.dropmenu a{padding:10px 12px;font-size:.9rem}
-  .aviation-menu{overflow:visible}
+  .aviation-menu,.coursework-menu,.career-menu{overflow:visible}
   .nav-flyout-item{border-bottom:1px solid #e5e7eb}
   .nav-flyout-item:last-child{border-bottom:0}
-  .aviation-menu .nav-flyout-parent{font-weight:800}
-  .aviation-menu .nav-flyout-parent::after{content:""}
+  .aviation-menu .nav-flyout-parent,.coursework-menu .nav-flyout-parent,.career-menu .nav-flyout-parent{font-weight:800}
+  .aviation-menu .nav-flyout-parent::after,.coursework-menu .nav-flyout-parent::after,.career-menu .nav-flyout-parent::after{content:""}
   .nav-flyout-panel{display:block;position:static;width:auto;max-height:none;overflow:visible;border:0;border-left:2px solid #d9dee8;box-shadow:none;background:#fff;margin:0 0 8px 14px;padding:2px 0 4px 8px}
   .nav-flyout-panel a{padding:8px 10px;font-size:.86rem}
   .nav-right{margin-left:0}
