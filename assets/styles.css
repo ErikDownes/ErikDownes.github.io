@@ -35,6 +35,20 @@ body{margin:0;background:var(--page);color:var(--ink);font-family:Arial,Helvetic
 .dropmenu a:hover,.dropmenu a:focus-visible{background:#f1f3f4;outline:none}
 .dropmenu .dropmenu-empty{color:#70757a;cursor:default}
 
+/* Aviation: one downward category menu with a second-level flyout. */
+.aviation-menu{--menu-width:min(260px,calc(100vw - 24px));grid-template-columns:1fr!important;overflow:visible;max-height:none}
+.nav-flyout-item{position:relative}
+.aviation-menu .nav-flyout-parent{position:relative;padding-right:34px;font-weight:750}
+.aviation-menu .nav-flyout-parent::after{content:"›";position:absolute;right:12px;top:50%;transform:translateY(-50%);font-size:1.2rem;color:#70757a}
+.nav-flyout-item.has-no-flyout>.nav-flyout-parent::after{content:""}
+.nav-flyout-panel{display:none;position:absolute;z-index:30;top:-10px;left:calc(100% + 10px);width:min(390px,calc(100vw - 310px));max-height:calc(100vh - 100px);overflow-y:auto;background:#fff;border:1px solid var(--line);box-shadow:0 8px 24px rgba(60,64,67,.18);padding:10px}
+.nav-flyout-panel a{font-weight:500}
+@media(min-width:1501px){
+  .nav-flyout-item:hover>.nav-flyout-panel,
+  .nav-flyout-item:focus-within>.nav-flyout-panel{display:block}
+}
+
+
 /* Paper / document layout. */
 .page-stage{padding:32px 18px 72px}
 .doc-paper{width:min(900px,100%);margin:0 auto;background:var(--paper);border:1px solid #e0e0e0;box-shadow:0 1px 3px rgba(60,64,67,.16);padding:58px 72px 84px;min-height:1080px}
@@ -149,6 +163,13 @@ body.answer-focus-open{overflow:hidden}
   .nav-questions,.nav-wordwall{grid-template-columns:1fr}
   .navlabel,.navtoggle{min-height:48px}.navlabel{justify-content:flex-start;text-align:left;font-size:.94rem;line-height:1.25;white-space:normal;padding:0 12px}.navlabel br{display:none}.navtoggle{padding:0;border-left:1px solid #eceff1;font-size:.8rem}
   .dropmenu,.nav-right .dropmenu{position:static;grid-column:1/-1;top:auto;left:auto;right:auto;width:100%;max-width:none;max-height:none;border:0;border-top:1px solid #eceff1;box-shadow:none;padding:8px;background:#f8f9fa}.dropmenu a{padding:10px 12px;font-size:.9rem}
+  .aviation-menu{overflow:visible}
+  .nav-flyout-item{border-bottom:1px solid #e5e7eb}
+  .nav-flyout-item:last-child{border-bottom:0}
+  .aviation-menu .nav-flyout-parent{font-weight:800}
+  .aviation-menu .nav-flyout-parent::after{content:""}
+  .nav-flyout-panel{display:block;position:static;width:auto;max-height:none;overflow:visible;border:0;border-left:2px solid #d9dee8;box-shadow:none;background:#fff;margin:0 0 8px 14px;padding:2px 0 4px 8px}
+  .nav-flyout-panel a{padding:8px 10px;font-size:.86rem}
   .nav-right{margin-left:0}
   .doc-paper{padding:40px 38px 64px;min-height:0}
 }
