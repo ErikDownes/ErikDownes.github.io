@@ -423,7 +423,7 @@
         if (path === currentPath) {
           const h1 = document.querySelector('.doc-paper > h1');
           if (h1 && pageTitle) h1.textContent = pageTitle;
-          if (pageTitle) document.title = pageTitle + ' | UL Co-op Interview';
+          if (pageTitle) document.title = pageTitle + ' | Erik Downes · Financial Mathematics';
         }
       });
       nav.replaceChildren(fragment);
