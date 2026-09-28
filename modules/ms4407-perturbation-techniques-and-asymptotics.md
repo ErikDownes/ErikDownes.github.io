@@ -6,7 +6,6 @@ year: "4th"
 semester: "Sem1"
 status: "Option — choose 3"
 eyebrow: "4TH YEAR · SEM1"
-intro: "A concise interview-ready page for MS4407 — Perturbation Techniques and Asymptotics."
 ---
 <p><a href="{{ '/modules-projects.html' | relative_url }}">← Modules & Projects</a></p>
 
