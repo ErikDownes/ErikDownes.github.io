@@ -6,7 +6,6 @@ year: "2nd"
 semester: "Sem2"
 status: "Core"
 eyebrow: "APPLIED STATISTICS · PYTHON · GOOGLE COLAB"
-intro: "Learn the statistical ideas properly, then implement them in Python. SPSS is not the skill; applied statistical reasoning is."
 ---
 <p><a href="{{ '/modules-projects.html' | relative_url }}">← Modules & Projects</a></p>
 
