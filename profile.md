@@ -30,21 +30,21 @@ eyebrow: FINANCIAL MATHEMATICS · DATA ANALYSIS · UNIVERSITY OF LIMERICK
   <div class="profile-skill-group">
     <h3>Programming & tools</h3>
     <div class="profile-skill-tags">
-      <span>Excel</span><span>Python</span><span>Jupyter</span><span>Git</span><span>GitHub</span><span>Java</span><span>SQL</span><span>R</span><span>Bash</span><span>SPSS</span><span>Rust</span>
+      <span>Excel</span><span>Power BI (learning)</span><span>Python</span><span>Jupyter</span><span>Git</span><span>GitHub</span><span>Java</span><span>SQL</span><span>R</span><span>Bash</span><span>SPSS</span><span>Rust</span>
     </div>
   </div>
 
   <div class="profile-skill-group">
     <h3>AI / ML</h3>
     <div class="profile-skill-tags">
-      <span>PyTorch</span><span>Transformers</span><span>Scikit-learn</span><span>Prompt Engineering</span>
+      <span>PyTorch</span><span>TensorFlow</span><span>Transformers</span><span>Scikit-learn</span><span>Prompt Engineering</span>
     </div>
   </div>
 
   <div class="profile-skill-group">
     <h3>Data & Quant</h3>
     <div class="profile-skill-tags">
-      <span>Power BI (learning)</span><span>R</span><span>Pandas</span><span>NumPy</span><span>SciPy</span><span>Matplotlib</span><span>Seaborn</span><span>Plotly</span><span>Statsmodels</span><span>Polars</span><span>PyArrow</span><span>OpenPyXL</span><span>Statistics</span>
+      <span>R</span><span>Pandas</span><span>NumPy</span><span>SciPy</span><span>Statsmodels</span><span>Polars</span><span>PyArrow</span><span>OpenPyXL</span><span>Statistics</span><span>Matplotlib</span><span>Seaborn</span><span>Plotly</span><span>Bokeh</span><span>Altair</span><span>Leaflet</span><span>Streamlit</span><span>Dash</span>
     </div>
   </div>
 </div>
