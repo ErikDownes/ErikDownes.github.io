@@ -7,7 +7,7 @@ semester: "Sem1"
 status: "Option — choose 3"
 eyebrow: "4TH YEAR · SEM1"
 ---
-<p><a href="{{ '/modules-projects.html' | relative_url }}">← Modules & Projects</a></p>
+<p><a href="{{ '/coursework.html' | relative_url }}">← Modules & Projects</a></p>
 
 ## Module overview
 
