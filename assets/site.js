@@ -2333,10 +2333,14 @@
       </div>
       <button type="button" class="abelo-filter-clear" data-abelo-clear>Clear filters</button>
     </div>
-    <div class="abelo-filter-group">
-      <div class="abelo-filter-label">5 continents</div>
+    <details class="abelo-filter-details" open>
+      <summary><span>5 continents</span><small>Choose a region</small></summary>
       <div class="abelo-filter-grid abelo-filter-grid--regions" data-abelo-region-filters></div>
-    </div>
+    </details>
+    <details class="abelo-filter-details">
+      <summary><span>Aircraft models</span><small>Filter map + airframes</small></summary>
+      <div class="abelo-filter-grid abelo-filter-grid--models" data-abelo-model-filters></div>
+    </details>
     <details class="abelo-filter-details">
       <summary><span>19 countries</span><small>Choose a country directly</small></summary>
       <div class="abelo-filter-grid abelo-filter-grid--countries" data-abelo-country-filters></div>
@@ -2349,6 +2353,7 @@
   mapHost.parentElement.appendChild(filterHost);
 
   const regionFilterHost = filterHost.querySelector('[data-abelo-region-filters]');
+  const modelFilterHost = filterHost.querySelector('[data-abelo-model-filters]');
   const countryFilterHost = filterHost.querySelector('[data-abelo-country-filters]');
   const lesseeFilterHost = filterHost.querySelector('[data-abelo-lessee-filters]');
   const statusHost = filterHost.querySelector('[data-abelo-filter-status]');
@@ -2388,23 +2393,16 @@
     }
     if (!airframeRows.length) return;
 
-    const visible = airframeRows.filter(r =>
-      activeLessee ? r.lessee === activeLessee :
-      activeCountry ? r.country === activeCountry :
-      activeRegion ? regionForCountry(r.country) === activeRegion :
-      true
-    );
+    const visible = filteredAirframes();
 
     const identified = visible.filter(r => r.msn || r.registration).length;
     const psMatched = visible.filter(r => r.planespotters).length;
     const gaps = visible.filter(r => r.mapped_or_gap === 'RECONCILIATION GAP').length;
 
-    if (activeLessee) airframeTitle.textContent = activeLessee + ' · aircraft records';
-    else if (activeCountry) airframeTitle.textContent = activeCountry + ' · aircraft records';
-    else if (activeRegion) airframeTitle.textContent = activeRegion + ' · aircraft records';
-    else airframeTitle.textContent = '61-aircraft control table';
+    const scopeParts = [activeModel, activeLessee, activeCountry, activeRegion].filter(Boolean);
+    airframeTitle.textContent = scopeParts.length ? scopeParts.join(' · ') + ' · aircraft records' : '61-aircraft control table';
 
-    airframeStatus.textContent = activeRegion || activeCountry || activeLessee
+    airframeStatus.textContent = activeRegion || activeCountry || activeLessee || activeModel
       ? `${visible.length} record${visible.length === 1 ? '' : 's'} · ${identified} identified by MSN/registration · ${psMatched} Planespotters match${psMatched === 1 ? '' : 'es'}`
       : `61 control records · 56 mapped to lessees · 5 reconciliation gaps · ${identified} currently identified by MSN/registration`;
 
@@ -2493,6 +2491,24 @@
     })
     .then(rows => {
       airframeRows = Array.isArray(rows) ? rows : [];
+
+      const models = [...new Set(
+        airframeRows
+          .filter(r => r.mapped_or_gap === 'MAPPED' && r.model)
+          .map(r => r.model)
+      )].sort((a,b) => a.localeCompare(b, undefined, { numeric: true }));
+
+      modelFilterHost.replaceChildren();
+      models.forEach(model => {
+        const count = airframeRows.filter(r => r.mapped_or_gap === 'MAPPED' && r.model === model).length;
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'abelo-filter-chip abelo-filter-chip--model';
+        button.dataset.model = model;
+        button.innerHTML = `<span class="abelo-filter-swatch"></span><span>${escapeHtml(model)}</span><small>${count} aircraft</small>`;
+        modelFilterHost.appendChild(button);
+      });
+
       renderAirframes();
     })
     .catch(() => {
@@ -2546,6 +2562,16 @@
   let activeRegion = null;
   let activeCountry = null;
   let activeLessee = null;
+  let activeModel = null;
+
+  const filteredAirframes = () => airframeRows.filter(r => {
+    if (r.mapped_or_gap !== 'MAPPED' && (activeRegion || activeCountry || activeLessee || activeModel)) return false;
+    if (activeLessee && r.lessee !== activeLessee) return false;
+    if (activeCountry && r.country !== activeCountry) return false;
+    if (activeRegion && regionForCountry(r.country) !== activeRegion) return false;
+    if (activeModel && r.model !== activeModel) return false;
+    return true;
+  });
 
   const popupHtml = p => {
     const firstSentence = String(p.history || '').split(/(?<=[.!?])\s+/)[0];
@@ -2587,12 +2613,20 @@
 
     const markerLayer = L.layerGroup().addTo(map);
 
-    const filteredPlacements = () => rankedPlacements.filter(p =>
-      activeLessee ? p.customer === activeLessee :
-      activeCountry ? p.country === activeCountry :
-      activeRegion ? p.region === activeRegion :
-      true
-    );
+    const filteredPlacements = () => rankedPlacements.filter(p => {
+      if (activeLessee && p.customer !== activeLessee) return false;
+      if (activeCountry && p.country !== activeCountry) return false;
+      if (activeRegion && p.region !== activeRegion) return false;
+      if (activeModel && airframeRows.length) {
+        const hasModel = airframeRows.some(r =>
+          r.mapped_or_gap === 'MAPPED' &&
+          r.lessee === p.customer &&
+          r.model === activeModel
+        );
+        if (!hasModel) return false;
+      }
+      return true;
+    });
 
     const syncFilterUi = () => {
       filterHost.querySelectorAll('[data-region]').forEach(button => {
@@ -2617,14 +2651,23 @@
         button.setAttribute('aria-pressed', selected ? 'true' : 'false');
       });
 
+      filterHost.querySelectorAll('[data-model]').forEach(button => {
+        const selected = button.dataset.model === activeModel;
+        button.classList.toggle('is-active', selected);
+        button.setAttribute('aria-pressed', selected ? 'true' : 'false');
+      });
+
       const visible = filteredPlacements();
-      const aircraft = visible.reduce((sum, p) => sum + Number(p.aircraftCount || 0), 0);
+      const filteredAircraft = airframeRows.length ? filteredAirframes().filter(r => r.mapped_or_gap === 'MAPPED') : [];
+      const aircraft = activeModel && airframeRows.length
+        ? filteredAircraft.length
+        : visible.reduce((sum, p) => sum + Number(p.aircraftCount || 0), 0);
       const visibleCountries = new Set(visible.map(p => p.country)).size;
-      const noFilter = !activeRegion && !activeCountry && !activeLessee;
+      const noFilter = !activeRegion && !activeCountry && !activeLessee && !activeModel;
       statusHost.textContent = noFilter
         ? '26 lessees · 19 countries · 61 aircraft control total'
-        : `${visible.length} lessee${visible.length === 1 ? '' : 's'} · ${visibleCountries} countr${visibleCountries === 1 ? 'y' : 'ies'} · ${aircraft} mapped aircraft`;
-      clearButton.disabled = !activeRegion && !activeCountry && !activeLessee;
+        : `${visible.length} lessee${visible.length === 1 ? '' : 's'} · ${visibleCountries} countr${visibleCountries === 1 ? 'y' : 'ies'} · ${aircraft} mapped aircraft${activeModel ? ' · ' + activeModel : ''}`;
+      clearButton.disabled = !activeRegion && !activeCountry && !activeLessee && !activeModel;
       renderAirframes();
     };
 
@@ -2701,6 +2744,14 @@
       renderMarkers();
     });
 
+    modelFilterHost.addEventListener('click', event => {
+      const button = event.target.closest('[data-model]');
+      if (!button) return;
+      const next = button.dataset.model;
+      activeModel = activeModel === next ? null : next;
+      renderMarkers();
+    });
+
     mapHost.addEventListener('click', event => {
       const button = event.target.closest('[data-abelo-show-aircraft]');
       if (!button) return;
@@ -2715,6 +2766,7 @@
       activeRegion = null;
       activeCountry = null;
       activeLessee = null;
+      activeModel = null;
       renderMarkers();
     });
 
