@@ -2711,3 +2711,149 @@
     updateCountdown();
     setInterval(updateCountdown, 15000);
   })();
+
+
+// ATR-only public fleet and maintenance reporting dashboard.
+(() => {
+  const body = document.getElementById('docBody');
+  if (!body) return;
+
+  const marker = [...body.querySelectorAll('p')].find(p => p.textContent.trim() === 'ATR_FLEET_DASHBOARD_APP');
+  if (!marker) return;
+
+  const models = {
+    'atr42-500': {
+      label: 'ATR 42-500',
+      generation: '500 series',
+      engine: 'PW127 family',
+      role: 'Earlier-generation 50-seat-class regional turboprop',
+      watch: 'Cycles, engine / propeller condition, landing gear, structural and calendar tasks'
+    },
+    'atr42-600': {
+      label: 'ATR 42-600',
+      generation: '600 series',
+      engine: 'PW127M / PW127XT-M',
+      role: 'Current-generation smaller ATR',
+      watch: 'FH + FC + calendar, engine time on wing, LLPs, component status'
+    },
+    'atr72-500': {
+      label: 'ATR 72-500',
+      generation: '500 series',
+      engine: 'PW127 family',
+      role: 'Earlier-generation larger ATR',
+      watch: 'Transition condition, cycles, engine / propeller, landing gear and heavy-check status'
+    },
+    'atr72-600': {
+      label: 'ATR 72-600',
+      generation: '600 series',
+      engine: 'PW127M / PW127XT-M',
+      role: 'Current-generation larger ATR',
+      watch: 'FH + FC + calendar, engine events, LLPs, maintenance programme and records'
+    }
+  };
+
+  const wrapper = document.createElement('div');
+  wrapper.className = 'atr-reporting-dashboard';
+  wrapper.innerHTML = `
+    <div class="lease-kpis atr-global-kpis">
+      <div><span>ATR delivered</span><strong>1,700+</strong><small>as of Dec 2024</small></div>
+      <div><span>Aircraft sold</span><strong>1,800+</strong><small>as of Dec 2024</small></div>
+      <div><span>Backlog</span><strong>160+</strong><small>Feb 2026</small></div>
+      <div><span>2025 second-hand transactions</span><strong>90+</strong><small>public ATR figure</small></div>
+    </div>
+
+    <div class="lease-grid atr-util-grid">
+      <div class="lease-controls">
+        <h3>Utilisation model</h3>
+        <p>Change the operating pattern. The point is to keep <strong>flight hours</strong> and <strong>flight cycles</strong> separate.</p>
+
+        <label>Aircraft model
+          <select id="atrDashModel">
+            <option value="atr42-500">ATR 42-500</option>
+            <option value="atr42-600">ATR 42-600</option>
+            <option value="atr72-500">ATR 72-500</option>
+            <option value="atr72-600" selected>ATR 72-600</option>
+          </select>
+        </label>
+
+        <label>Sectors per day <output id="atrSectorsOut">6</output>
+          <input id="atrSectors" type="range" min="1" max="12" step="1" value="6">
+        </label>
+
+        <label>Average sector time <output id="atrSectorHoursOut">1.0 h</output>
+          <input id="atrSectorHours" type="range" min="0.5" max="4" step="0.1" value="1">
+        </label>
+
+        <label>Operating days per year <output id="atrDaysOut">330</output>
+          <input id="atrDays" type="range" min="250" max="365" step="5" value="330">
+        </label>
+      </div>
+
+      <div class="lease-output">
+        <div class="lease-kpis">
+          <div><span>Annual flight cycles</span><strong id="atrAnnualCycles">—</strong></div>
+          <div><span>Annual flight hours</span><strong id="atrAnnualHours">—</strong></div>
+          <div><span>A-check reference</span><strong>750 FH</strong><small>ATR manufacturer reference</small></div>
+          <div><span>C-check reference</span><strong>8,000 FH</strong><small>ATR manufacturer reference</small></div>
+        </div>
+
+        <div class="lease-mini-grid">
+          <div>
+            <h3 id="atrModelTitle">ATR 72-600</h3>
+            <p id="atrModelMeta">—</p>
+            <p><strong>Watch:</strong> <span id="atrModelWatch">—</span></p>
+          </div>
+          <div>
+            <h3>Short-haul effect</h3>
+            <p id="atrCycleMessage">—</p>
+          </div>
+        </div>
+
+        <div class="lease-note">
+          <strong>Maintenance language:</strong> FH = flight hours; FC = flight cycles; calendar = elapsed time. Individual component and airframe tasks may use different limits. Exact due dates come from the approved maintenance programme and aircraft/component records.
+        </div>
+      </div>
+    </div>
+
+    <div class="lease-mini-grid atr-maintenance-grid">
+      <div><h3>Airframe</h3><p>Structural inspections, corrosion, modifications, AD/SB status and heavy-check position.</p></div>
+      <div><h3>Engines</h3><p>Hours, cycles, time on wing, LLP remaining life, shop-visit status and records.</p></div>
+      <div><h3>Landing gear</h3><p>Cycle-sensitive usage, overhaul status and remaining interval.</p></div>
+      <div><h3>Propellers</h3><p>Hours / calendar status, overhaul history and configuration.</p></div>
+      <div><h3>Records</h3><p>Traceability matters: maintenance status is only as useful as the technical records supporting it.</p></div>
+      <div><h3>Reserves</h3><p>Technical consumption becomes a financial exposure through hour-, cycle- or event-linked reserve mechanisms.</p></div>
+    </div>
+  `;
+
+  marker.replaceWith(wrapper);
+
+  const modelEl = wrapper.querySelector('#atrDashModel');
+  const sectorsEl = wrapper.querySelector('#atrSectors');
+  const hoursEl = wrapper.querySelector('#atrSectorHours');
+  const daysEl = wrapper.querySelector('#atrDays');
+
+  const update = () => {
+    const model = models[modelEl.value] || models['atr72-600'];
+    const sectors = Number(sectorsEl.value);
+    const sectorHours = Number(hoursEl.value);
+    const days = Number(daysEl.value);
+    const annualCycles = sectors * days;
+    const annualHours = annualCycles * sectorHours;
+
+    wrapper.querySelector('#atrSectorsOut').textContent = sectors;
+    wrapper.querySelector('#atrSectorHoursOut').textContent = sectorHours.toFixed(1) + ' h';
+    wrapper.querySelector('#atrDaysOut').textContent = days;
+    wrapper.querySelector('#atrAnnualCycles').textContent = Math.round(annualCycles).toLocaleString();
+    wrapper.querySelector('#atrAnnualHours').textContent = Math.round(annualHours).toLocaleString() + ' h';
+    wrapper.querySelector('#atrModelTitle').textContent = model.label;
+    wrapper.querySelector('#atrModelMeta').textContent = model.generation + ' · ' + model.engine + ' · ' + model.role;
+    wrapper.querySelector('#atrModelWatch').textContent = model.watch;
+
+    const cyclesPerHour = annualHours ? annualCycles / annualHours : 0;
+    wrapper.querySelector('#atrCycleMessage').innerHTML =
+      `At this pattern the aircraft accumulates <strong>${cyclesPerHour.toFixed(2)} cycles per flight hour</strong>. Shorter sectors push that ratio upward: the aircraft reaches more take-offs and landings for the same amount of flying time.`;
+  };
+
+  [modelEl, sectorsEl, hoursEl, daysEl].forEach(el => el.addEventListener('input', update));
+  update();
+})();
