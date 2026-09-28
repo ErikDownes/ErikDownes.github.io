@@ -23,8 +23,8 @@ eyebrow: FINANCIAL MATHEMATICS · UNIVERSITY OF LIMERICK
   <div><strong>H1</strong><span>Mathematics</span></div>
   <div><strong>H1</strong><span>Applied Mathematics</span></div>
   <div><strong>H1</strong><span>Physics</span></div>
-  <div><strong>A1</strong><span>Probability &amp; Statistics</span></div>
-  <div><strong>A2</strong><span>Finance · Data Analysis · Numerical Analysis · Operations Research</span></div>
+  <div><strong>3.40</strong><span>UL QCA · 120 credits</span></div>
+  <div><strong>A grades</strong><span>Probability · Finance · Data Analysis · Numerical Analysis · Operations Research</span></div>
 </div>
 
 ## About Me
@@ -34,6 +34,10 @@ I have always been drawn to analytical problems. Financial Mathematics gave me a
 What matters to me is not stopping at the calculation. I want to understand **what the model assumes, whether the data are reliable, what the result means, and how confidently it can be used**.
 
 As I have prepared for co-op, aviation has become a particularly interesting application. It brings finance, long-lived assets, maintenance, risk, customers and data together in one industry — exactly the kind of setting where quantitative thinking has practical value.
+
+<h2 data-nav-href="{{ '/academic-record.html' | relative_url }}">Academic Record</h2>
+
+The homepage shows only a short academic snapshot. The separate **[Academic Record]({{ '/academic-record.html' | relative_url }})** keeps the module-by-module results to date in one place and can be updated as new results are released.
 
 ## What I Bring
 
