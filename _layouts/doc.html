@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="{{ '/assets/styles.css' | relative_url }}?v={{ site.github.build_revision }}">
   <link rel="stylesheet" href="{{ '/assets/mirror-fixes.css' | relative_url }}?v={{ site.github.build_revision }}">
 </head>
-<body class="{% if page.study_mode %}study-mode{% endif %}{% if page.path == 'studies.md' %} education-mode{% endif %}">
+<body class="{% if page.study_mode %}study-mode{% endif %}{% if page.profile_mode %} profile-mode{% endif %}{% if page.path == 'studies.md' %} education-mode{% endif %}">
   <header class="topbar">
     <a class="brand" href="{{ '/' | relative_url }}" aria-label="Erik Downes — Financial Mathematics, University of Limerick — Home">
       <img src="{{ '/assets/coop-logo.svg' | relative_url }}" alt="Erik Downes — Financial Mathematics, University of Limerick">
@@ -68,6 +68,7 @@
         <img src="{{ page.image | relative_url }}" alt="{{ page.image_alt | default: page_display_title | escape }}">
       </figure>
       {% endif %}
+      {% unless page.profile_mode %}
       <div class="doc-toolbar" aria-label="Document controls">
         <button type="button" data-action="print">Print</button>
         {% if page.study_mode %}
@@ -76,6 +77,7 @@
         <a class="edit-link" href="{{ cms_url }}" target="_blank" rel="noopener">Edit this page</a>
         {% endif %}
       </div>
+      {% endunless %}
 
       <div class="doc-body" id="docBody">{{ content }}</div>
       <script>
@@ -106,7 +108,9 @@
               ? `${menuLabel} ${delimiter} ${questionText}`
               : raw;
             heading.textContent = questionText;
-            heading.classList.add('interview-question-heading');
+            if (!document.body.classList.contains('profile-mode')) {
+              heading.classList.add('interview-question-heading');
+            }
           });
         })();
       </script>
