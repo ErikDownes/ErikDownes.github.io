@@ -2368,7 +2368,7 @@
     const hue = regionHue.get(region) ?? 210;
     button.style.setProperty('--country-color', `hsl(${hue} 58% 40%)`);
     button.style.setProperty('--country-tint', `hsl(${hue} 65% 96%)`);
-    button.innerHTML = `<span class="abelo-filter-swatch"></span><span>${escapeHtml(region)}</span><small>${rows.length} lessees · ${aircraft} aircraft</small>`;
+    button.innerHTML = `<span class="abelo-filter-swatch"></span><span>${escapeHtml(region)}</span><small>${rows.length} lessees · ${aircraft} mapped aircraft</small>`;
     regionFilterHost.appendChild(button);
   });
 
@@ -2459,7 +2459,10 @@
       const visible = filteredPlacements();
       const aircraft = visible.reduce((sum, p) => sum + Number(p.aircraftCount || 0), 0);
       const visibleCountries = new Set(visible.map(p => p.country)).size;
-      statusHost.textContent = `${visible.length} lessee${visible.length === 1 ? '' : 's'} · ${visibleCountries} countr${visibleCountries === 1 ? 'y' : 'ies'} · ${aircraft} aircraft`;
+      const noFilter = !activeRegion && !activeCountry && !activeLessee;
+      statusHost.textContent = noFilter
+        ? '26 lessees · 19 countries · 61 aircraft control total'
+        : `${visible.length} lessee${visible.length === 1 ? '' : 's'} · ${visibleCountries} countr${visibleCountries === 1 ? 'y' : 'ies'} · ${aircraft} mapped aircraft`;
       clearButton.disabled = !activeRegion && !activeCountry && !activeLessee;
     };
 
@@ -2560,11 +2563,11 @@
   wrapper.innerHTML = `
     <div class="abelo-map-canvas" id="abeloWorldMap" role="img" aria-label="World map of Abelo and Elix aircraft placements"></div>
     <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:14px 0 16px;">
-      <div style="border:1px solid #d9dee8;border-radius:14px;padding:16px;text-align:center;"><strong style="display:block;font-size:2rem;line-height:1;">56</strong><span>Aircraft</span></div>
+      <div style="border:1px solid #d9dee8;border-radius:14px;padding:16px;text-align:center;"><strong style="display:block;font-size:2rem;line-height:1;">61</strong><span>Aircraft</span></div>
       <div style="border:1px solid #d9dee8;border-radius:14px;padding:16px;text-align:center;"><strong style="display:block;font-size:2rem;line-height:1;">26</strong><span>Lessees</span></div>
       <div style="border:1px solid #d9dee8;border-radius:14px;padding:16px;text-align:center;"><strong style="display:block;font-size:2rem;line-height:1;">19</strong><span>Countries</span></div>
     </div>
-    <p class="abelo-map-note"><strong>Fleet mix:</strong> 31 ATR 72 + 6 ATR 42 + 19 Dash 8 = <strong>56 documented aircraft</strong>. Five additional aircraft from the earlier working total remain unresolved and are not forced into the reconstruction.</p>
+    <p class="abelo-map-note"><strong>61-aircraft control total:</strong> 34 ATR 72 + 8 ATR 42 + 19 Dash 8. This is the current dated public-data control total used for the project. The lessee map is a separate reconciliation layer, and individual MSN / registration identities are being progressively attached rather than guessed.</p>
     <p class="abelo-map-note">Public Abelo / Elix announcements and Planespotters production lists: <a href="https://www.planespotters.net/aircraft/production/atr-42-72" target="_blank" rel="noopener noreferrer">ATR 42/72 ↗</a> · <a href="https://www.planespotters.net/aircraft/production/de-havilland-canada-dhc-8" target="_blank" rel="noopener noreferrer">Dash 8 ↗</a>.</p>
   `;
 
