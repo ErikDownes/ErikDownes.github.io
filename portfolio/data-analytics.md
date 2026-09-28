@@ -7,19 +7,19 @@ study_mode: true
 ---
 [← Portfolio]({{ '/portfolio.html' | relative_url }})
 
-## MS4215 · R → Python · statsmodels | Regression, GLMs and model diagnostics
+## MS4215 · R + Python (pandas · statsmodels · SciPy) | Regression, GLMs and model diagnostics
 **Advanced Data Analysis** develops regression, ANOVA, generalised linear models, diagnostics and model selection.
 
-The original course material uses **R**. Portfolio versions can preserve the statistical method while rebuilding selected work in **Python**, principally with **pandas**, **statsmodels**, **SciPy** and visualisation libraries.
+The original course material uses **R**. Keep the R work visible and run selected analyses alongside it in **Python** using **pandas, statsmodels and SciPy**. The point is to show that Erik understands the statistical method across both environments.
 
 [Open MS4215 →]({{ '/modules/ms4215-advanced-data-analysis.html' | relative_url }})
 
-## MS4034 · SPSS/R → Python · pandas · scikit-learn | Applied analysis, regression and classification
+## MS4034 · SPSS + Python (pandas · SciPy · statsmodels · scikit-learn) | Applied analysis, regression and classification
 **Applied Data Analysis** is being treated as a reproducible Python/Colab laboratory:
 
 **question → data → method → code → interpretation**
 
-The taught material may use **SPSS or R**; portfolio work can reproduce the analysis transparently with **Python**, including regression, logistic classification, decision trees and other applied methods.
+The taught material uses **SPSS** for statistical procedures; keep that visible where it is part of the coursework. Run selected analyses alongside it in **Python** using **pandas, SciPy, statsmodels and scikit-learn**, including regression, logistic classification, decision trees and other applied methods.
 
 [Open MS4034 →]({{ '/modules/ms4034-applied-data-analysis.html' | relative_url }})
 
