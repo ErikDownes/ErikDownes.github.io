@@ -21,7 +21,7 @@ eyebrow: "3RD YEAR · AUTUMN · 6 CREDITS"
 @media(max-width:620px){.ms4027-facts{grid-template-columns:1fr}.ms4027-rating{align-items:flex-start;flex-direction:column}.ms4027-rating button{width:40px;height:40px}}
 </style>
 
-<p><a href="{{ '/modules-projects.html' | relative_url }}">← Modules</a></p>
+<p><a href="{{ '/coursework.html' | relative_url }}">← Modules</a></p>
 
 <div class="ms4027-facts">
 <p><strong>Module leader:</strong> Dr Eberhard Mayerhofer</p>
