@@ -53,3 +53,48 @@ I would bring a strong quantitative base, practical data-analysis experience and
 **Communication:** I am comfortable taking a technical idea, identifying what the other person actually needs to know, and explaining it at the appropriate level.
 
 **Recall cue:** Quantitative → software → people → explain clearly.
+
+
+## Interview Approach | How do you prepare for an interview?
+
+I prepare **ideas and evidence rather than memorised scripts**. I want to hear the question, pause, choose the point I actually want to make, support it with evidence, explain why it matters and then stop.
+
+**Default structure:** Point → evidence → relevance → stop.
+
+I practise the same answer at different lengths — roughly **40, 60 and 80 seconds** — so I can expand or contract an answer naturally rather than forcing every question into a fixed speech.
+
+**Recall cue:** Hear → pause → point → evidence → relevance → stop.
+
+## Communication Practice | How do you improve the way you communicate?
+
+Clear communication depends on the audience. I try to identify what the other person needs to know, choose the right level of technical detail and make the structure easy to follow.
+
+Two resources I use for deliberate speaking practice are Kara Ronin's communication work and Patrick Winston's MIT talk *How to Speak*.
+
+<div class="home-video" style="margin: 1.5rem 0 2rem;">
+  <iframe
+    src="https://www.youtube.com/embed/9Ha0YN2CAHI"
+    title="Kara Ronin articulation and communication practice"
+    style="width:100%; aspect-ratio:16/9; border:0; border-radius:12px;"
+    loading="lazy"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen>
+  </iframe>
+</div>
+
+<div class="home-video" style="margin: 1.5rem 0 2rem;">
+  <iframe
+    src="https://www.youtube.com/embed/023APoktRzY"
+    title="Patrick Winston — How to Speak"
+    style="width:100%; aspect-ratio:16/9; border:0; border-radius:12px;"
+    loading="lazy"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen>
+  </iframe>
+</div>
+
+## AI and Communication | Where does human judgement fit?
+
+AI is a powerful tool for drafting, testing alternatives and improving clarity, but it does not remove responsibility for the result. I still need to know what I mean, check what is accurate, decide what to keep or cut and be willing to stand over the final work.
+
+**Recall cue:** Use AI to extend capability; keep judgement and responsibility human.
