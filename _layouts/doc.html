@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="{{ '/assets/styles.css' | relative_url }}?v={{ site.github.build_revision }}">
   <link rel="stylesheet" href="{{ '/assets/mirror-fixes.css' | relative_url }}?v={{ site.github.build_revision }}">
 </head>
-<body class="{% if page.study_mode %}study-mode{% endif %}{% if page.profile_mode %} profile-mode{% endif %}{% if page.path == 'coursework.md' %} education-mode{% endif %}">
+<body class="{% if page.study_mode %}study-mode{% endif %}{% if page.profile_mode %} profile-mode{% endif %}{% if page.public_mode %} public-mode{% endif %}{% if page.path == 'coursework.md' %} education-mode{% endif %}">
   <header class="topbar">
     <a class="brand" href="{{ '/' | relative_url }}" aria-label="Erik Downes — Professional Portfolio — Home">
       <img src="{{ '/assets/coop-logo.svg' | relative_url }}" alt="Erik Downes — Financial Mathematics — University of Limerick — Professional Portfolio">
@@ -47,7 +47,9 @@
     {% when 'profile.md' %}{% assign cms_url = cms_base | append: '/file/profile' %}
     {% when 'aviation.md' %}{% assign cms_url = cms_base | append: '/file/aviation' %}
     {% when 'coursework.md' %}{% assign cms_url = cms_base | append: '/file/coursework' %}
-    {% when 'workplace.md' %}{% assign cms_url = cms_base | append: '/file/workplace' %}
+    {% when 'career.md' %}{% assign cms_url = cms_base | append: '/file/career' %}
+    {% when 'career/preparation.md' %}{% assign cms_url = cms_base | append: '/file/career_preparation' %}
+    {% when 'workplace.md' %}{% assign cms_url = cms_base | append: '/file/career' %}
     {% when 'career/working-with-others.md' %}{% assign cms_url = cms_base | append: '/file/career_working_with_others' %}
     {% when 'career/working-independently.md' %}{% assign cms_url = cms_base | append: '/file/career_working_independently' %}
     {% when 'career/communication.md' %}{% assign cms_url = cms_base | append: '/file/career_communication' %}
@@ -114,7 +116,7 @@
               ? `${menuLabel} ${delimiter} ${questionText}`
               : raw;
             heading.textContent = questionText;
-            if (!document.body.classList.contains('profile-mode')) {
+            if (!document.body.classList.contains('profile-mode') && !document.body.classList.contains('public-mode')) {
               heading.classList.add('interview-question-heading');
             }
           });
