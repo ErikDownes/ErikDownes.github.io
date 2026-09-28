@@ -7,21 +7,15 @@ study_mode: true
 ---
 # What do you know about our  Asset Management role.
 
-Its  about protecting the value and condition of your aircrafts and legally contracting the lessee airlines to pay for it and keep and provide detailed standardied records.
+It’s about protecting the value and condition of your aircraft, and making sure the lessee meets the requirements of the lease.
 
-The lessor owns a very valuable asset, but somebody else is operating it every day. So you need to know that the lessee is keeping their side of the agreement — maintaining the aircraft correctly, reporting properly, keeping the technical records complete, and returning the aircraft in the condition required by the lease.
+Abelo owns a very valuable asset, but somebody else is operating it every day. So you need to know that the aircraft is being maintained correctly, that the reporting is accurate, and that the technical records are complete.
 
-I suppose there is a very simple analogy with a car. If I leased you a car, I wouldn't just care that you made the monthly payment. I'd want to know it was being serviced at the correct intervals and that there was a complete service history. With an aircraft, obviously, that becomes vastly more technical and financially significant.
+I suppose there’s a simple analogy with a car. If I leased you a car, I wouldn’t just care that you made the monthly payment. I’d want it serviced properly and I’d want a complete service history. With an aircraft, obviously, that becomes vastly more technical and financially significant.
 
-I've been learning about flight hours, cycles, engine shop visits, maintenance reserves and aircraft records. With regional aircraft, cycles are particularly important because an ATR might take off and land six or eight times in a day.
+I’ve been learning about flight hours, cycles, engine shop visits, maintenance reserves and aircraft records. With regional aircraft, cycles are particularly important because they can take off and land several times a day.
 
-Pratt & Whitney quote 20,000 hours on wing for the new PW127XT — about 40% longer. Think of an ATR operating somewhere remote like the Maldives: every time you avoid an engine shop visit, that matters.
+That’s what interests me about asset management — keeping the aircraft flying and earning, while protecting the condition and value of the asset.
 
-And if an engine does have to come off, you don't necessarily want the aircraft sitting there with no engine while it is sent away for overhaul. Pratt & Whitney actually has a global pool of spare rental engines.
-
-That is the kind of thing I find interesting about asset management — how do you keep the aircraft flying while still protecting the asset?
-
-I'd actually ask you: is arranging a spare engine during a shop visit something Abelo gets involved in, or would that normally sit with the airline and the engine provider?
-
-I couldn't tell you every maintenance interval today — but if I get this job, I will.
+I couldn’t tell you every maintenance interval today — but if I get this job, I will.
 
