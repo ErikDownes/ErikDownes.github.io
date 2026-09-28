@@ -58,6 +58,14 @@ This page keeps a **module-by-module academic record** in one place. The main Ab
 
 **Semester QCA:** 3.36 · **Credits:** 30
 
+## School: Project-Based Mathematics & Science
+
+I was awarded **Exceptional** in both my Mathematics and Science CBAs. I am particularly proud of those results because the work suited how I learn best: applying mathematics and science to something I could investigate, measure and explain.
+
+Projects included an **aerodynamics investigation using falling cupcake cases and data logging**, a **thermal-cooling investigation modelled with an exponential decay curve**, and a **roller-coaster project** applying mathematics to a physical system. They strengthened my interest in applications of mathematics and science and the attention to detail needed to make a project convincing.
+
+That interest continued into the Leaving Certificate, where I achieved **H1s in Mathematics, Applied Mathematics and Physics**.
+
 ## Leaving Certificate Highlights
 
 | Subject | Result |
