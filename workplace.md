@@ -1,10 +1,10 @@
 ---
 layout: doc
-handle: Workplace
-title: Workplace
+handle: Competencies
+title: Competencies
 nav_order: 30
-eyebrow: HOW I WORK · COMMUNICATE · LEARN
-intro: Teamwork, communication, initiative, independent learning, accuracy and professional judgement.
+eyebrow: WORK WITH OTHERS · WORK INDEPENDENTLY · COMMUNICATE · LEARN
+intro: Evidence of how Erik works with others, works independently, communicates, uses technology and exercises professional judgement.
 ---
 
 ## Successful team | Tell me about a time you worked successfully in a team.
