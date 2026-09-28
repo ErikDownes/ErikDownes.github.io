@@ -5,25 +5,23 @@ handle: About Me
 title: Erik Downes
 nav_order: 10
 profile_mode: true
-eyebrow: FINANCIAL MATHEMATICS · UNIVERSITY OF LIMERICK
+eyebrow: FINANCIAL MATHEMATICS · DATA ANALYSIS · UNIVERSITY OF LIMERICK
 ---
 
 <p class="profile-tagline">Quantitative thinking for real decisions.</p>
 
-<div class="profile-intro-grid">
-  <div class="profile-intro-copy">
-
 ## About Me
 
-I am studying **Financial Mathematics at the University of Limerick**, combining mathematics, probability, statistics, finance, numerical methods and computing.
+<div class="profile-intro-grid">
+  <div class="profile-intro-copy">
+    <p>I am studying <strong>Financial Mathematics at the University of Limerick</strong>, combining mathematics, probability, statistics, finance, numerical methods and computing.</p>
 
-I am most interested when the calculation connects to a practical question: what assumptions are being made, is the data reliable, what does the result mean, and what decision could it support?
+    <p>I am most interested when the calculation connects to a practical question: what assumptions are being made, is the data reliable, what does the result mean, and what decision could it support?</p>
 
-I learn best by **doing**. I like taking an idea from a module and turning it into something I can test — a calculation, dataset, notebook, program or interactive tool. That is how I build confidence with programming and data analysis: not by listing software, but by using it to solve a real problem.
-
+    <p>I learn best by <strong>doing</strong>. I like taking an idea from a module and turning it into something I can test — a calculation, dataset, notebook, program or interactive tool. That is how I build confidence with programming and data analysis: not by listing software, but by using it to solve a real problem.</p>
   </div>
 
-  <div class="profile-skill-groups" aria-label="Technical skills">
+  <div class="profile-skill-groups" aria-label="Technical skills" data-no-glossary>
     <div class="profile-skill-group">
       <h3>Programming & tools</h3>
       <div class="profile-skill-tags">
@@ -41,7 +39,7 @@ I learn best by **doing**. I like taking an idea from a module and turning it in
     <div class="profile-skill-group">
       <h3>Data & Quant</h3>
       <div class="profile-skill-tags">
-        <span>R</span><span>Pandas</span><span>NumPy</span><span>Statistics</span><span>Option Pricing</span>
+        <span>R</span><span>Pandas</span><span>NumPy</span><span>SciPy</span><span>Matplotlib</span><span>Seaborn</span><span>Plotly</span><span>Statsmodels</span><span>Polars</span><span>PyArrow</span><span>OpenPyXL</span><span>Statistics</span>
       </div>
     </div>
   </div>
