@@ -20,7 +20,13 @@ public_mode: true
     <div><span>Final payment</span><strong id="pFinalOut">—</strong></div>
     <div><span>Total cash outlay</span><strong id="pTotal">—</strong></div>
   </div>
+  <div class="pcp-chart-wrap">
+    <div class="pcp-chart-head"><strong>PCP cash-flow over the term</strong><span>Move or tap the graph for exact values</span></div>
+    <canvas id="pcpChart" aria-label="Interactive PCP finance cash-flow chart"></canvas>
+  </div>
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
 
 <style>
 .simple-calc{margin:1rem 0;padding:1.25rem;border:1px solid #dbe2ea;border-radius:14px;background:#fff}
@@ -32,13 +38,51 @@ public_mode: true
 .simple-calc-results span,.simple-calc-results strong{display:block}
 .simple-calc-results span{font-size:.75rem;color:#64748b;text-transform:uppercase;font-weight:800}
 .simple-calc-results strong{margin-top:4px;font-size:1.15rem}
-@media(max-width:700px){.simple-calc-grid,.simple-calc-results{grid-template-columns:1fr}}
+.pcp-chart-wrap{margin-top:22px;padding-top:18px;border-top:1px solid #e2e8f0;height:430px}
+.pcp-chart-head{display:flex;justify-content:space-between;gap:12px;align-items:baseline;margin-bottom:10px;color:#334155}
+.pcp-chart-head span{font-size:.8rem;color:#64748b}
+#pcpChart{width:100%!important;height:380px!important}
+@media(max-width:700px){.simple-calc-grid,.simple-calc-results{grid-template-columns:1fr}.pcp-chart-wrap{height:360px}.pcp-chart-head{display:grid}#pcpChart{height:310px!important}}
 </style>
 
 <script>
 (()=>{
  const ids=['pPrice','pDeposit','pApr','pMonths','pFinal'];
  const euro=n=>new Intl.NumberFormat('en-IE',{style:'currency',currency:'EUR',maximumFractionDigits:0}).format(n||0);
+ let chart;
+ function buildSeries(financed,monthly,final,months){
+   const labels=[], balance=[], cumulative=[], vehicle=[];
+   const price=Math.max(0,+document.getElementById('pPrice').value||0);
+   const dep=Math.max(0,+document.getElementById('pDeposit').value||0);
+   const r=Math.max(0,+document.getElementById('pApr').value||0)/1200;
+   let bal=financed;
+   for(let m=0;m<=months;m++){
+     labels.push(m);
+     balance.push(Math.max(0,bal));
+     cumulative.push(dep + monthly*m + (m===months?final:0));
+     vehicle.push(Math.max(final, price-(price-final)*(m/months)));
+     if(m<months) bal=Math.max(final, r===0 ? bal-monthly : bal*(1+r)-monthly);
+   }
+   return {labels,balance,cumulative,vehicle};
+ }
+ function drawChart(financed,monthly,final,months){
+   if(!window.Chart)return;
+   const s=buildSeries(financed,monthly,final,months);
+   const data={labels:s.labels,datasets:[
+     {label:'Finance balance',data:s.balance,borderWidth:3,pointRadius:0,tension:.18},
+     {label:'Cumulative cash paid',data:s.cumulative,borderWidth:3,pointRadius:0,tension:.18},
+     {label:'Illustrative vehicle value',data:s.vehicle,borderWidth:3,pointRadius:0,borderDash:[7,5],tension:.18}
+   ]};
+   const options={responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},plugins:{
+     legend:{position:'top',align:'start'},
+     tooltip:{enabled:true,callbacks:{title:i=>'Month '+i[0].label,label:x=>x.dataset.label+': '+euro(x.parsed.y)}}
+   },scales:{
+     x:{title:{display:true,text:'Month'},ticks:{maxTicksLimit:13}},
+     y:{beginAtZero:true,title:{display:true,text:'€'},ticks:{callback:v=>'€'+new Intl.NumberFormat('en-IE',{notation:'compact',maximumFractionDigits:1}).format(v)}}
+   }};
+   if(chart){chart.data=data;chart.options=options;chart.update();}
+   else chart=new Chart(document.getElementById('pcpChart'),{type:'line',data,options});
+ }
  function update(){
   const price=Math.max(0,+document.getElementById('pPrice').value||0);
   const deposit=Math.max(0,+document.getElementById('pDeposit').value||0);
@@ -54,6 +98,7 @@ public_mode: true
   document.getElementById('pMonthly').textContent=euro(monthly);
   document.getElementById('pFinalOut').textContent=euro(final);
   document.getElementById('pTotal').textContent=euro(total);
+  drawChart(financed,monthly,final,months);
  }
  ids.forEach(id=>document.getElementById(id).addEventListener('input',update)); update();
 })();
