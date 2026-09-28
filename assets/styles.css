@@ -987,6 +987,37 @@ body.answer-focus-open{overflow:hidden}
 .abelo-filter-group + .abelo-filter-group {
   margin-top: 13px;
 }
+.abelo-filter-details {
+  margin-top: 13px;
+  border-top: 1px solid #e2e7ed;
+  padding-top: 10px;
+}
+.abelo-filter-details summary {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  cursor: pointer;
+  color: #526170;
+  font-size: .77rem;
+  font-weight: 800;
+  letter-spacing: .045em;
+  text-transform: uppercase;
+  list-style-position: inside;
+}
+.abelo-filter-details summary small {
+  color: #7a8794;
+  font-size: .67rem;
+  font-weight: 650;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.abelo-filter-details[open] summary {
+  margin-bottom: 8px;
+}
+.abelo-filter-chip--region small {
+  font-weight: 750;
+}
 .abelo-filter-label {
   margin-bottom: 6px;
   font-size: .77rem;
@@ -998,6 +1029,9 @@ body.answer-focus-open{overflow:hidden}
 .abelo-filter-grid {
   display: grid;
   gap: 6px;
+}
+.abelo-filter-grid--regions {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 .abelo-filter-grid--countries {
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1060,6 +1094,7 @@ body.answer-focus-open{overflow:hidden}
   font-weight: 800;
 }
 @media (max-width: 760px) {
+  .abelo-filter-grid--regions,
   .abelo-filter-grid--countries,
   .abelo-filter-grid--lessees {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1073,9 +1108,15 @@ body.answer-focus-open{overflow:hidden}
   .abelo-filter-clear {
     align-self: flex-start;
   }
+  .abelo-filter-grid--regions,
   .abelo-filter-grid--countries,
   .abelo-filter-grid--lessees {
     grid-template-columns: 1fr;
+  }
+  .abelo-filter-details summary {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 3px;
   }
 }
 
