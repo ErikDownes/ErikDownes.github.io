@@ -57,9 +57,33 @@ components:
           extensions: [jpg, jpeg, png, webp, gif]
           rename: safe
 
+  aviation_fields:
+    type: object
+    label: Aviation subpage fields
+    fields: &aviationfields
+      - { name: layout, type: string, hidden: true }
+      - { name: handle, type: string, label: "Page handle" }
+      - { name: title, type: string, label: "Page title" }
+      - { name: eyebrow, type: string, label: "Eyebrow", required: false }
+      - { name: study_mode, type: boolean, hidden: true, required: false }
+      - name: body
+        type: rich-text
+        label: "Sections (handle | question)"
+        options:
+          format: markdown
+          switcher: false
+          media: images
+          categories: [image]
+          extensions: [jpg, jpeg, png, webp, gif]
+          rename: safe
+
 content:
   - { name: about_me, label: "About Me", type: file, path: profile.md, format: yaml-frontmatter, fields: *docfields }
   - { name: aviation, label: "Aviation", type: file, path: aviation.md, format: yaml-frontmatter, fields: *docfields }
+  - { name: aviation_aircraft, label: "Aviation · Aircraft", type: file, path: aviation/aircraft.md, format: yaml-frontmatter, fields: *aviationfields }
+  - { name: aviation_aircraft_leasing, label: "Aviation · Aircraft Leasing", type: file, path: aviation/aircraft-leasing.md, format: yaml-frontmatter, fields: *aviationfields }
+  - { name: aviation_asset_management, label: "Aviation · Asset Management", type: file, path: aviation/asset-management.md, format: yaml-frontmatter, fields: *aviationfields }
+  - { name: aviation_abelo, label: "Aviation · Abelo", type: file, path: aviation/abelo.md, format: yaml-frontmatter, fields: *aviationfields }
   - { name: coursework, label: "Coursework", type: file, path: coursework.md, format: yaml-frontmatter, fields: *docfields }
   - { name: career, label: "Career", type: file, path: career.md, format: code }
   - { name: career_preparation, label: "Career · Preparation", type: file, path: career/preparation.md, format: yaml-frontmatter, fields: *careerfields }
