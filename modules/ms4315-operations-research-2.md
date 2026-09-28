@@ -6,7 +6,6 @@ year: "4th"
 semester: "Sem1"
 status: "Option — choose 3"
 eyebrow: "4TH YEAR · SEM1"
-intro: "A concise interview-ready page for MS4315 — Operations Research 2."
 ---
 <p><a href="{{ '/modules-projects.html' | relative_url }}">← Modules & Projects</a></p>
 
