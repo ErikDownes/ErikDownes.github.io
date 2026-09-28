@@ -7,10 +7,16 @@ study_mode: true
 ---
 [← Portfolio]({{ '/portfolio.html' | relative_url }})
 
-## Turboprop Fleet Intelligence | Public records into an interactive portfolio
-The aircraft map combines public Abelo/Elix transaction evidence with aircraft-history research and geographic filtering.
+## Turboprop Asset Reporting | Public records into an asset-reporting workflow
+A public-data reporting dashboard turns aircraft-history and transaction evidence into a traceable fleet view with geography, asset status and source confidence.
 
-[Open Turboprop Fleet Intelligence →]({{ '/fleet-map.html' | relative_url }})
+[Open the Turboprop Asset Reporting Dashboard →]({{ '/fleet-map.html' | relative_url }})
+
+## Global ATR Fleet & Maintenance | Fleet context, utilisation and maintenance exposure
+An ATR-only reporting dashboard separates **flight hours, flight cycles and calendar time**, compares the 500 and 600 series, and shows why short-sector utilisation matters to asset management.
+
+[Open the ATR Fleet & Maintenance Dashboard →]({{ '/atr-fleet-dashboard.html' | relative_url }})
+
 
 ## Aircraft leasing decision lab | Change one assumption
 An interactive decision-support exercise explores how financing and aircraft assumptions alter the commercial picture.
