@@ -8,12 +8,6 @@ eyebrow: UNIVERSITY OF LIMERICK · FINANCIAL MATHEMATICS
 study_mode: true
 ---
 
-<div class="education-aercap-intro">
-  <div class="education-aercap-kicker">ERIK · FINANCIAL MATHEMATICS</div>
-  <div class="education-aercap-title">LEARN.<br>APPLY.<br><span>EXPLAIN.</span></div>
-  <p>Read and listen, unpack the language, retrieve the idea, score confidence from 1–5, then explain it aloud. The academic method can be applied in aviation, finance, data and other settings.</p>
-</div>
-
 ## Financial Mathematics
 
 <div class="aercap-beamer" data-aercap-beamer data-title="Financial Mathematics" data-concepts="Cash flow|Discounting|Risk"><div class="aercap-source">
