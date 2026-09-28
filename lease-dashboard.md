@@ -6,18 +6,6 @@ eyebrow: OPEN · ONLINE · INTERACTIVE
 intro: Explore illustrative lease, re-lease and residual-value scenarios for regional turboprop aircraft. Built as a static browser app with no proprietary BI platform.
 ---
 
-## What this dashboard demonstrates
-
-This is a **decision-support project**, not an attempt to reproduce Abelo's confidential pricing or valuation models.
-
-It connects Financial Mathematics, statistics, accounting and asset management by letting a user change assumptions and immediately see the consequences.
-
-**Model chain:** acquisition price → firm order → purchase options → lease cash flow → costs → discounting → residual value → decision.
-
-<div class="lease-note">
-<strong>Important:</strong> All monetary defaults are illustrative assumptions for interview practice. They are not Abelo lease rates, aircraft valuations or internal forecasts.
-</div>
-
 <div id="leaseLab" class="lease-lab">
   <div class="lease-tabs" role="tablist" aria-label="Aircraft leasing dashboards">
     <button class="lease-tab active" data-tab="acquisition" type="button">Acquisition & options</button>
@@ -364,14 +352,6 @@ It connects Financial Mathematics, statistics, accounting and asset management b
     </div>
   </section>
 </div>
-
-## What Erik can say in the interview
-
-**“I wanted to go beyond reading about aircraft leasing, so I built an interactive decision-support model. I can start with an ATR 72-600 acquisition assumption, choose a firm order, add purchase options and decide how many to exercise. I can then move into lease cash flow, residual value and re-lease scenarios. The figures are illustrative, but the project shows how I approach a commercial problem: separate commitments from flexibility, test assumptions and communicate the result clearly.”**
-
-## Technical stack
-
-This dashboard uses **plain HTML, CSS and JavaScript in the browser**. It is static, inspectable and deployable on GitHub Pages without Power BI, a proprietary BI licence or a paid backend.
 
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 <link rel="stylesheet" href="{{ '/assets/lease-dashboard.css' | relative_url }}">
