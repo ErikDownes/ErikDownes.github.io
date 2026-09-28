@@ -1,8 +1,8 @@
 ---
 layout: doc
-handle: Turboprop Fleet Intelligence
-title: Turboprop Fleet Intelligence
-eyebrow: PUBLIC DATA · AIRFRAME RECONCILIATION · INTERACTIVE DASHBOARD
+handle: Turboprop Asset Reporting
+title: Turboprop Asset Reporting Dashboard
+eyebrow: PUBLIC DATA · ASSET REPORTING · AIRFRAME RECONCILIATION
 permalink: /fleet-map.html
 ---
 
