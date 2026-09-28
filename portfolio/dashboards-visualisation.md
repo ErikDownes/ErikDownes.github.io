@@ -15,7 +15,7 @@ The aircraft map combines public Abelo/Elix transaction evidence with aircraft-h
 ## Aircraft leasing decision lab | Change one assumption
 An interactive decision-support exercise explores how financing and aircraft assumptions alter the commercial picture.
 
-[Open the Leasing Decision Lab →]({{ '/portfolio.html#aircraft-leasing-decision-lab' | relative_url }})
+[Open the Leasing Decision Lab →]({{ '/lease-dashboard.html' | relative_url }})
 
 ## Finance learning lab | Visualise cash-flow structure
 Small interactive finance examples make changes in principal, rate, term and payment structure visible rather than leaving them as formulas.
