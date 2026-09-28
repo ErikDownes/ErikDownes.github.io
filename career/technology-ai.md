@@ -1,7 +1,7 @@
 ---
 layout: doc
-handle: Technology & AI
-title: Technology & AI
+handle: Digital & Technology
+title: Digital & Technology
 eyebrow: CAREER · AI · DATA · AUTOMATION · HUMAN JUDGEMENT
 ---
 
@@ -31,12 +31,6 @@ Judgement becomes more important, not less. People still need to define the prob
 
 judgement | context | decision-making | communication
 
-## Adaptability | How would you respond if AI changed part of your role?
-
-I would identify which parts of the role could be automated or improved and focus on learning the skills needed for the higher-value work that remains. I would see the technology as something to adapt to rather than something to ignore.
-
-adapt | learn | higher-value work | change
-
 ## AI limitations | What are the risks of relying too heavily on AI?
 
 AI can produce convincing but incorrect information, miss context or reinforce poor assumptions. I would therefore treat it as a powerful tool rather than an unquestioned authority and verify outputs in proportion to the importance of the task.
@@ -54,12 +48,6 @@ objective | constraints | prompting | clarity
 AI can reduce time spent on routine preparation and allow teams to spend more time discussing decisions, solving problems and combining different areas of expertise. It also means teams need clear standards for when AI can be used and how its work is checked.
 
 collaboration | efficiency | standards | review
-
-## Learning | How do you keep your skills relevant when technology changes quickly?
-
-I would focus on durable skills such as problem-solving, communication and domain knowledge while continuously learning new tools. I would experiment with new technology in practical situations rather than trying to learn every new platform that appears.
-
-durable skills | continuous learning | experimentation | focus
 
 ## Data literacy | Why is data literacy becoming important across different jobs?
 
