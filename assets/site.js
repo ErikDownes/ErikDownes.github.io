@@ -751,7 +751,8 @@
     { label: 'Abelo', path: 'aviation/abelo.html' },
     { label: 'Aircraft Leasing', path: 'aviation/aircraft-leasing.html' },
     { label: 'Asset Management', path: 'aviation/asset-management.html' },
-    { label: 'Aircraft Options', path: 'aviation/aircraft-options.html' }
+    { label: 'Aircraft Options', path: 'aviation/aircraft-options.html' },
+    { label: 'External Shocks and Risk to the Sector', path: 'aviation/external-shocks-risk.html' }
   ];
 
   const populateAviationMenu = async (item, pageUrl) => {
