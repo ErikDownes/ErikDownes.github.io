@@ -27,6 +27,8 @@ study_mode: true
 
 <p class="mr-lead"><strong>The simple idea:</strong> the airline is responsible for maintaining the aircraft. The lease also decides <em>when money changes hands</em> for its use and its agreed return condition. Two common approaches are monthly maintenance reserves and end-of-lease (EOL) compensation.</p>
 
+For the physical checks, hangar visits and engine shop visits, see [Aircraft and Engine Maintenance Schedules]({{ '/aviation/maintenance.html' | relative_url }}).
+
 ## Two ways to settle the maintenance obligation
 
 <div class="mr-compare">

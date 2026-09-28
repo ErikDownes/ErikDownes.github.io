@@ -775,6 +775,7 @@
     { label: 'Aircraft Options', path: 'aviation/aircraft-options.html' },
     { label: 'External Shocks and Risk to the Sector', path: 'aviation/external-shocks-risk.html' },
     { label: 'Credit Risk', path: 'aviation/credit-risk.html' },
+    { label: 'Maintenance', path: 'aviation/maintenance.html' },
     { label: 'Maintenance Reserves', path: 'aviation/maintenance-reserves.html' }
   ];
 
