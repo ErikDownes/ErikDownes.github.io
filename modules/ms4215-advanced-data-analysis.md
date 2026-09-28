@@ -6,7 +6,6 @@ year: "3rd"
 semester: "Sem1"
 status: "Core"
 eyebrow: "3RD YEAR · SEM1"
-intro: "Lecture notes and resources for advanced data analysis, organised by week and lab."
 study_mode: true
 ---
 
