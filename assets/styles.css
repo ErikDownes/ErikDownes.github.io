@@ -1779,3 +1779,161 @@ body.answer-focus-open{overflow:hidden}
   .profile-evidence,.profile-strengths,.profile-links-grid{grid-template-columns:1fr}
   .profile-evidence>div:last-child{grid-column:auto}
 }
+
+
+/* Public Career / Preparation pages */
+.public-mode .doc-body>h2{
+  padding-top:22px;
+  border-top:1px solid #e4e8ed;
+  cursor:default;
+}
+.public-mode .doc-body>h2:first-of-type{
+  padding-top:0;
+  border-top:0;
+}
+.public-mode .doc-body table{
+  width:100%;
+  border-collapse:collapse;
+  margin:16px 0 22px;
+  font-size:.94rem;
+}
+.public-mode .doc-body th,
+.public-mode .doc-body td{
+  padding:10px 12px;
+  border-bottom:1px solid #dce3e9;
+  text-align:left;
+  vertical-align:top;
+}
+.public-mode .doc-body th{
+  background:#f4f7fa;
+  color:#243b53;
+}
+.career-door-hero{
+  margin:0 0 30px;
+  padding:28px 30px;
+  border-radius:16px;
+  background:#111827;
+  color:#fff;
+}
+.career-door-hero strong{
+  display:block;
+  max-width:700px;
+  margin:8px 0 12px;
+  font-size:clamp(1.65rem,3vw,2.55rem);
+  line-height:1.06;
+  letter-spacing:-.035em;
+}
+.career-door-hero p{
+  max-width:720px;
+  margin:0;
+  color:#dbe3ec;
+}
+.career-door-kicker{
+  display:block;
+  color:#9ec5ff;
+  font-size:.74rem;
+  font-weight:800;
+  letter-spacing:.14em;
+}
+.career-door-card{
+  margin:10px 0 30px;
+  padding:22px 24px;
+  border:1px solid #d9e1e8;
+  border-radius:14px;
+  background:#f8fafc;
+}
+.career-door-card>strong{
+  display:block;
+  margin:5px 0 8px;
+  font-size:1.25rem;
+  color:#172b3d;
+}
+.career-door-card p{margin:0 0 14px;color:#566575}
+.career-door-card a{
+  display:inline-block;
+  font-weight:800;
+  color:#174ea6;
+  text-decoration:none;
+}
+.prep-context-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:12px;
+  margin:0 0 18px;
+}
+.prep-context-card{
+  display:block;
+  min-height:190px;
+  padding:19px 20px;
+  border:1px solid #d8e0e8;
+  border-radius:14px;
+  background:#fff;
+  color:#202124;
+  text-decoration:none;
+}
+.prep-context-card:hover,
+.prep-context-card:focus-visible{
+  background:#f7faff;
+  border-color:#aebfd3;
+  outline:none;
+}
+.prep-context-card span,
+.prep-role-focus span{
+  display:block;
+  margin-bottom:8px;
+  color:#174ea6;
+  font-size:.72rem;
+  font-weight:850;
+  letter-spacing:.12em;
+}
+.prep-context-card strong{
+  display:block;
+  margin-bottom:8px;
+  font-size:1.16rem;
+}
+.prep-context-card p{
+  margin:0;
+  color:#5d6975;
+  font-size:.92rem;
+  line-height:1.55;
+}
+.prep-role-focus{
+  margin:18px 0 30px;
+  padding:22px 24px;
+  border-left:5px solid #1a73e8;
+  border-radius:0 12px 12px 0;
+  background:#f3f7fc;
+}
+.prep-role-focus strong{
+  display:block;
+  margin-bottom:6px;
+  font-size:1.2rem;
+}
+.prep-role-focus p{margin:0}
+.prep-links{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin:14px 0 22px;
+}
+.prep-links a{
+  display:inline-block;
+  padding:7px 11px;
+  border:1px solid #cbd6e2;
+  border-radius:999px;
+  background:#fff;
+  color:#174ea6;
+  text-decoration:none;
+  font-size:.86rem;
+  font-weight:750;
+}
+.prep-links a:hover,
+.prep-links a:focus-visible{
+  background:#f3f7fc;
+  outline:none;
+}
+@media(max-width:760px){
+  .prep-context-grid{grid-template-columns:1fr}
+  .prep-context-card{min-height:0}
+  .career-door-hero{padding:24px 22px}
+}
