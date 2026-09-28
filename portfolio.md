@@ -15,6 +15,8 @@ Aircraft and operator reporting built from public turboprop fleet records, with 
 
 [Open Turboprop Asset Reporting →]({{ '/fleet-map.html' | relative_url }})
 
+[How I Built It →]({{ '/turboprop-dashboard-build.html' | relative_url }})
+
 ## Global Fleet Maintenance Dashboard
 
 The existing ATR fleet and maintenance dashboard is retained as a core project. It brings aircraft, utilisation and maintenance thinking together in one reporting view.
