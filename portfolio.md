@@ -36,6 +36,8 @@ The interactive map brings together a public-record reconstruction of **61 aircr
 
 ABEL0_MAP_APP
 
+[Open the fleet map directly]({{ '/fleet-map.html' | relative_url }})
+
 **Job connection:** A useful report needs consistent aircraft identities, lessee names, lease dates and source records. If two sources disagree, flag the discrepancy before using it for billing or a decision.
 
 
