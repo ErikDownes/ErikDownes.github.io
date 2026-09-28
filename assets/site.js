@@ -544,7 +544,7 @@
   document.querySelectorAll('.navitem > .navlabel[href]').forEach(label => {
     const labelPath = normalisePath(label.href);
     const rootPath = normalisePath(document.querySelector('.brand')?.href || '/');
-    const isAboutParent = labelPath === rootPath && /\/academic-record\.html$/.test(currentPath);
+    const isAboutParent = labelPath === rootPath && /\/(?:academic-record|about-asset-management|questions-for-abelo)\.html$/.test(currentPath);
     const isCareerParent = /\/career\.html$/.test(labelPath) && /\/career\//.test(currentPath);
     const isAviationParent = /\/aviation\.html$/.test(labelPath) && /\/aviation\//.test(currentPath);
     const isCourseworkParent = /\/coursework\.html$/.test(labelPath) && /\/modules\//.test(currentPath);
