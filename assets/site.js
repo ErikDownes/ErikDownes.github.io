@@ -2354,6 +2354,152 @@
   const statusHost = filterHost.querySelector('[data-abelo-filter-status]');
   const clearButton = filterHost.querySelector('[data-abelo-clear]');
 
+  const airframeHost = document.createElement('section');
+  airframeHost.className = 'abelo-airframes';
+  airframeHost.innerHTML = `
+    <div class="abelo-airframes__head">
+      <div>
+        <span class="abelo-airframes__eyebrow">AIRFRAME DETAIL</span>
+        <strong data-abelo-airframe-title>61-aircraft control table</strong>
+        <small data-abelo-airframe-status>Loading aircraft-level records…</small>
+      </div>
+      <a href="${new URL('atr-global-dashboard.html', document.baseURI).href}" class="abelo-airframes__global-link">Open global ATR dashboard →</a>
+    </div>
+    <div class="abelo-airframes__table-wrap" data-abelo-airframe-table>
+      <p class="abelo-airframes__loading">Loading the aircraft reconciliation layer…</p>
+    </div>
+  `;
+  filterHost.insertAdjacentElement('afterend', airframeHost);
+
+  const airframeTitle = airframeHost.querySelector('[data-abelo-airframe-title]');
+  const airframeStatus = airframeHost.querySelector('[data-abelo-airframe-status]');
+  const airframeTable = airframeHost.querySelector('[data-abelo-airframe-table]');
+  let airframeRows = [];
+  let airframeLoadError = false;
+
+  const safeLink = (url, label) => url
+    ? `<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(label)} ↗</a>`
+    : '';
+
+  const renderAirframes = () => {
+    if (airframeLoadError) {
+      airframeTable.innerHTML = '<p class="abelo-airframes__loading">Aircraft detail could not be loaded. The map remains available.</p>';
+      return;
+    }
+    if (!airframeRows.length) return;
+
+    const visible = airframeRows.filter(r =>
+      activeLessee ? r.lessee === activeLessee :
+      activeCountry ? r.country === activeCountry :
+      activeRegion ? regionForCountry(r.country) === activeRegion :
+      true
+    );
+
+    const identified = visible.filter(r => r.msn || r.registration).length;
+    const psMatched = visible.filter(r => r.planespotters).length;
+    const gaps = visible.filter(r => r.mapped_or_gap === 'RECONCILIATION GAP').length;
+
+    if (activeLessee) airframeTitle.textContent = activeLessee + ' · aircraft records';
+    else if (activeCountry) airframeTitle.textContent = activeCountry + ' · aircraft records';
+    else if (activeRegion) airframeTitle.textContent = activeRegion + ' · aircraft records';
+    else airframeTitle.textContent = '61-aircraft control table';
+
+    airframeStatus.textContent = activeRegion || activeCountry || activeLessee
+      ? `${visible.length} record${visible.length === 1 ? '' : 's'} · ${identified} identified by MSN/registration · ${psMatched} Planespotters match${psMatched === 1 ? '' : 'es'}`
+      : `61 control records · 56 mapped to lessees · 5 reconciliation gaps · ${identified} currently identified by MSN/registration`;
+
+    if (!visible.length) {
+      airframeTable.innerHTML = '<p class="abelo-airframes__loading">No aircraft records match this filter.</p>';
+      return;
+    }
+
+    const rows = visible.map(r => {
+      const ps = r.planespotters;
+      const identity = r.verification_status === 'AIRFRAME IDENTIFIED'
+        ? '<span class="abelo-data-badge is-identified">identified</span>'
+        : r.mapped_or_gap === 'RECONCILIATION GAP'
+          ? '<span class="abelo-data-badge is-gap">gap</span>'
+          : '<span class="abelo-data-badge">pending ID</span>';
+
+      const psQuality = ps
+        ? (ps.review_flag
+            ? `<span class="abelo-data-badge is-review">review: ${escapeHtml(ps.review_flag)}</span>`
+            : '<span class="abelo-data-badge is-secondary">secondary match</span>')
+        : '<span class="abelo-data-badge">no captured match</span>';
+
+      const psBlock = ps ? `
+        <div class="abelo-airframe-source-card">
+          <strong>Planespotters captured entry</strong>
+          <dl>
+            <div><dt>MSN</dt><dd>${escapeHtml(ps.msn || '—')}</dd></div>
+            <div><dt>Type</dt><dd>${escapeHtml(ps.aircraft_type || '—')}</dd></div>
+            <div><dt>Registration</dt><dd>${escapeHtml(ps.registration || '—')}</dd></div>
+            <div><dt>Operator</dt><dd>${escapeHtml(ps.airline_company || '—')}</dd></div>
+            <div><dt>Delivered</dt><dd>${escapeHtml(ps.delivered || '—')}</dd></div>
+            <div><dt>Status</dt><dd>${escapeHtml(ps.status || '—')}</dd></div>
+          </dl>
+          <p>${psQuality} ${ps.ocr_confidence_mean ? `<span class="abelo-data-badge">OCR ${escapeHtml(ps.ocr_confidence_mean)}%</span>` : ''}</p>
+          ${safeLink(ps.source_url, 'Planespotters production list')}
+        </div>` : `
+        <div class="abelo-airframe-source-card is-muted">
+          <strong>Planespotters captured entry</strong>
+          <p>No airframe-level match has been attached yet. This is deliberately left unresolved rather than guessed.</p>
+        </div>`;
+
+      return `
+        <tr>
+          <td><strong>${escapeHtml(r.slot_id || '—')}</strong><br>${identity}</td>
+          <td>${escapeHtml(r.model || r.family || '—')}</td>
+          <td>${escapeHtml(r.msn || '—')}</td>
+          <td>${escapeHtml(r.registration || '—')}</td>
+          <td>${escapeHtml(r.placement_date || '—')}</td>
+          <td>${escapeHtml(r.evidence_level || '—')}</td>
+          <td>
+            <details class="abelo-airframe-detail">
+              <summary>Open record</summary>
+              <div class="abelo-airframe-detail__grid">
+                <div class="abelo-airframe-source-card">
+                  <strong>Our reconciliation record</strong>
+                  <dl>
+                    <div><dt>Lessee</dt><dd>${escapeHtml(r.lessee || 'Unresolved')}</dd></div>
+                    <div><dt>Country</dt><dd>${escapeHtml(r.country || '—')}</dd></div>
+                    <div><dt>Verification</dt><dd>${escapeHtml(r.verification_status || '—')}</dd></div>
+                    <div><dt>Evidence</dt><dd>${escapeHtml(r.evidence_level || '—')}</dd></div>
+                  </dl>
+                  <p>${escapeHtml(r.notes || '')}</p>
+                  <div class="abelo-airframe-source-links">
+                    ${safeLink(r.source_url_1, 'Primary/source 1')}
+                    ${safeLink(r.source_url_2, 'Source 2')}
+                  </div>
+                </div>
+                ${psBlock}
+              </div>
+            </details>
+          </td>
+        </tr>`;
+    }).join('');
+
+    airframeTable.innerHTML = `
+      <table class="abelo-airframe-table">
+        <thead><tr><th>Asset record</th><th>Model</th><th>MSN</th><th>Registration</th><th>Placement</th><th>Evidence</th><th>Detail</th></tr></thead>
+        <tbody>${rows}</tbody>
+      </table>`;
+  };
+
+  fetch(new URL('assets/data/abelo-airframes.json', document.baseURI))
+    .then(response => {
+      if (!response.ok) throw new Error('Airframe data HTTP ' + response.status);
+      return response.json();
+    })
+    .then(rows => {
+      airframeRows = Array.isArray(rows) ? rows : [];
+      renderAirframes();
+    })
+    .catch(() => {
+      airframeLoadError = true;
+      renderAirframes();
+    });
+
   const regionHue = new Map(
     regions.map((region, index) => [region, Math.round((index * 300) / Math.max(regions.length, 1))])
   );
@@ -2412,7 +2558,10 @@
           <span>${escapeHtml(p.aircraftCount === 1 ? 'aircraft' : 'aircraft')} · ${escapeHtml(p.type || 'Turboprop')}</span>
         </div>
         ${firstSentence ? `<p class="abelo-popup-brief">${escapeHtml(firstSentence)}</p>` : ''}
-        <a class="abelo-popup-source" href="${escapeHtml(p.source)}" target="_blank" rel="noopener noreferrer">Source ↗</a>
+        <div class="abelo-popup-actions">
+          <button type="button" class="abelo-popup-airframes" data-abelo-show-aircraft="${escapeHtml(p.customer)}">Aircraft table ↓</button>
+          <a class="abelo-popup-source" href="${escapeHtml(p.source)}" target="_blank" rel="noopener noreferrer">Primary source ↗</a>
+        </div>
       </div>`;
   };
 
@@ -2464,6 +2613,7 @@
         ? '26 lessees · 19 countries · 61 aircraft control total'
         : `${visible.length} lessee${visible.length === 1 ? '' : 's'} · ${visibleCountries} countr${visibleCountries === 1 ? 'y' : 'ies'} · ${aircraft} mapped aircraft`;
       clearButton.disabled = !activeRegion && !activeCountry && !activeLessee;
+      renderAirframes();
     };
 
     const renderMarkers = ({ fit = true } = {}) => {
@@ -2481,13 +2631,20 @@
           popupAnchor: [offset.x, offset.y - 18]
         });
 
-        L.marker([p.lat, p.lng], {
+        const marker = L.marker([p.lat, p.lng], {
           icon,
           title: `#${p.recencyRank} · ${p.customer} · ${p.country}`,
           riseOnHover: true
         })
           .addTo(markerLayer)
           .bindPopup(popupHtml(p), { maxWidth: 460, minWidth: 360 });
+
+        marker.on('click', () => {
+          activeRegion = null;
+          activeCountry = null;
+          activeLessee = p.customer;
+          syncFilterUi();
+        });
       });
 
       syncFilterUi();
@@ -2529,6 +2686,16 @@
       activeCountry = null;
       activeLessee = turningOff ? null : next;
       renderMarkers();
+    });
+
+    mapHost.addEventListener('click', event => {
+      const button = event.target.closest('[data-abelo-show-aircraft]');
+      if (!button) return;
+      activeRegion = null;
+      activeCountry = null;
+      activeLessee = button.dataset.abeloShowAircraft;
+      renderMarkers();
+      window.setTimeout(() => airframeHost.scrollIntoView({ behavior: 'smooth', block: 'start' }), 80);
     });
 
     clearButton.addEventListener('click', () => {
