@@ -19,4 +19,3 @@ That combination of aviation, data, finance and relationships is what has really
 
 I didn’t want to arrive at the interview just saying I was interested in aviation. I wanted to actually do the work and start understanding the business.
 
-  
