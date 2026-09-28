@@ -14,7 +14,12 @@ ATR_FLEET_DASHBOARD_APP
 
 This is an **independent portfolio project built from public sources**. It is not an airline, lessor or manufacturer system and does not contain proprietary maintenance records.
 
-The dashboard deliberately focuses on the **ATR family only**: the 42 and 72, including the 500 and 600 generations. It connects fleet context with the utilisation measures that matter in asset management.
+The dashboard deliberately focuses on the **ATR family only**: the 42 and 72, including earlier and current generations. It now combines two layers:
+
+- a utilisation / maintenance model that keeps **flight hours, flight cycles and calendar time** separate;
+- a searchable **1,603-row ATR production-list capture** with MSN, model, registration, operator, delivery, status and source fields.
+
+The production-list layer is based on a captured Planespotters dataset and is treated as **secondary aircraft-history evidence**, not as an official manufacturer or regulator register. OCR-review flags remain visible so questionable rows are checked rather than silently promoted to fact.
 
 ## Asset view | What would a lessor want to know?
 
