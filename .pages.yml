@@ -63,14 +63,14 @@ content:
   - { name: profile, label: "Profile", type: file, path: profile.md, format: yaml-frontmatter, fields: *docfields }
   - { name: aviation, label: "Aviation", type: file, path: aviation.md, format: yaml-frontmatter, fields: *docfields }
   - { name: coursework, label: "Coursework", type: file, path: coursework.md, format: yaml-frontmatter, fields: *docfields }
-  - { name: workplace, label: "Career", type: file, path: workplace.md, format: yaml-frontmatter, fields: *docfields }
+  - { name: career, label: "Career", type: file, path: career.md, format: yaml-frontmatter, fields: *docfields }
+  - { name: career_preparation, label: "Career · Preparation", type: file, path: career/preparation.md, format: yaml-frontmatter, fields: *careerfields }
 
   - { name: career_working_with_others, label: "Career · Working with Others", type: file, path: career/working-with-others.md, format: yaml-frontmatter, fields: *careerfields }
   - { name: career_working_independently, label: "Career · Working Independently", type: file, path: career/working-independently.md, format: yaml-frontmatter, fields: *careerfields }
   - { name: career_communication, label: "Career · Communication", type: file, path: career/communication.md, format: yaml-frontmatter, fields: *careerfields }
   - { name: career_problem_solving_judgement, label: "Career · Problem Solving & Judgement", type: file, path: career/problem-solving-judgement.md, format: yaml-frontmatter, fields: *careerfields }
   - { name: career_technology_ai, label: "Career · Technology & AI", type: file, path: career/technology-ai.md, format: yaml-frontmatter, fields: *careerfields }
-  - { name: career_interview_preparation, label: "Career · Interview Preparation", type: file, path: career/interview-preparation.md, format: yaml-frontmatter, fields: *careerfields }
 
   - name: modules
     label: "Coursework Modules"
