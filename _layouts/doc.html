@@ -11,7 +11,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex,nofollow">
-  <meta name="description" content="{{ page.intro | escape }}">
+  <meta name="description" content="{{ page.title | escape }}">
   <title>{{ page_display_title }} | Erik Downes · Financial Mathematics</title>
   <link rel="icon" href="{{ '/assets/favicon.svg' | relative_url }}" type="image/svg+xml">
   <link rel="stylesheet" href="{{ '/assets/styles.css' | relative_url }}?v={{ site.github.build_revision }}">
@@ -71,7 +71,6 @@
     <article class="doc-paper">
       {% if page.eyebrow and page.eyebrow != "" %}<p class="doc-kicker">{{ page.eyebrow }}</p>{% endif %}
       <h1>{{ page_display_title }}</h1>
-      {% if page.intro and page.intro != "" %}<p class="doc-intro">{{ page.intro }}</p>{% endif %}
       {% if page.image %}
       <figure class="doc-page-image">
         <img src="{{ page.image | relative_url }}" alt="{{ page.image_alt | default: page_display_title | escape }}">
