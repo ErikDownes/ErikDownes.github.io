@@ -11,7 +11,7 @@ An airline can either buy or lease an aircraft. Modern aircraft leasing really t
 
 
 
-According to Aircraft Leasing Ireland in 2025, 41% of the world’s aircraft are leased. And 64% of those are managed from Ireland. So roughly a quarter of the world’s aircraft are managed by Irish-based leasing firms.
+According to Aircraft Leasing Ireland in 2025, 41% of the world’s aircraft are leased. And 64% of those are managed from Ireland. So roughly a quarter of the world’s aircraft are managed by Irish-based leasing firms. Leading  provides capacity certainty for the airlines and long term cash flows for Abelo
 
 
 
