@@ -45,6 +45,8 @@
   {% case page.path %}
     {% when 'communication.md' %}{% assign cms_url = cms_base | append: '/file/communication' %}
     {% when 'profile.md' %}{% assign cms_url = cms_base | append: '/file/about_me' %}
+    {% when 'about-asset-management.md' %}{% assign cms_url = cms_base | append: '/file/about_asset_management' %}
+    {% when 'questions-for-abelo.md' %}{% assign cms_url = cms_base | append: '/file/questions_for_abelo' %}
     {% when 'academic-record.md' %}{% assign cms_url = cms_base | append: '/file/academic_record' %}
     {% when 'about-me.md' %}{% assign cms_url = cms_base | append: '/file/about_me' %}
     {% when 'aviation.md' %}{% assign cms_url = cms_base | append: '/file/aviation' %}
