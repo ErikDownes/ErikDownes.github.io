@@ -11,7 +11,7 @@ eyebrow: "APPLIED STATISTICS · PYTHON · GOOGLE COLAB"
 
 ## Key Line
 
-**Eric: for our purposes, we are doing MS4034 in Python.**
+**Erik: for our purposes, we are doing MS4034 in Python.**
 
 The lecturer may demonstrate techniques in SPSS or R. That is fine. The underlying mathematics and statistical ideas are what matter.
 
@@ -117,7 +117,7 @@ For each topic:
 7. Interpret the result in plain English.
 8. Change something and rerun it so you know what the code is doing.
 
-AI can help write or explain code, but **Eric must understand the question, the method and the result**.
+AI can help write or explain code, but **Erik must understand the question, the method and the result**.
 
 ## Data files | Keep control of the source
 
