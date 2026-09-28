@@ -1,5 +1,56 @@
 ---
-layout: null
-permalink: /mortgage-calculator.html
+layout: doc
+handle: Mortgage Calculator
+title: Mortgage Calculator
+eyebrow: FINANCIAL MATHEMATICS · INTERACTIVE
+public_mode: true
 ---
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta http-equiv="refresh" content="0;url={{ '/dashboards.html' | relative_url }}"><title>Dashboards</title></head><body><p><a href="{{ '/dashboards.html' | relative_url }}">Open Dashboards</a></p><script>location.replace("{{ '/dashboards.html' | relative_url }}" + location.hash);</script></body></html>
+
+<div class="simple-calc" id="mortgageSimple">
+  <div class="simple-calc-grid">
+    <label>House price (€)<input id="mPrice" type="number" value="400000" min="0" step="5000"></label>
+    <label>Deposit (%)<input id="mDeposit" type="number" value="10" min="0" max="100" step="1"></label>
+    <label>Interest rate (%)<input id="mRate" type="number" value="3.5" min="0" max="20" step="0.1"></label>
+    <label>Term (years)<input id="mYears" type="number" value="30" min="1" max="40" step="1"></label>
+  </div>
+  <div class="simple-calc-results">
+    <div><span>Loan</span><strong id="mLoan">—</strong></div>
+    <div><span>Monthly repayment</span><strong id="mMonthly">—</strong></div>
+    <div><span>Total interest</span><strong id="mInterest">—</strong></div>
+    <div><span>Total repaid</span><strong id="mTotal">—</strong></div>
+  </div>
+</div>
+
+<style>
+.simple-calc{margin:1rem 0;padding:1.25rem;border:1px solid #dbe2ea;border-radius:14px;background:#fff}
+.simple-calc-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.simple-calc label{display:grid;gap:6px;font-weight:700;color:#334155}
+.simple-calc input{width:100%;box-sizing:border-box;padding:10px 11px;border:1px solid #cbd5e1;border-radius:8px;font:inherit}
+.simple-calc-results{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:18px}
+.simple-calc-results div{padding:14px;border:1px solid #e2e8f0;border-radius:10px;background:#f8fafc}
+.simple-calc-results span,.simple-calc-results strong{display:block}
+.simple-calc-results span{font-size:.75rem;color:#64748b;text-transform:uppercase;font-weight:800}
+.simple-calc-results strong{margin-top:4px;font-size:1.15rem}
+@media(max-width:700px){.simple-calc-grid,.simple-calc-results{grid-template-columns:1fr}}
+</style>
+
+<script>
+(()=>{
+ const ids=['mPrice','mDeposit','mRate','mYears'];
+ const euro=n=>new Intl.NumberFormat('en-IE',{style:'currency',currency:'EUR',maximumFractionDigits:0}).format(n||0);
+ function update(){
+  const price=Math.max(0,+document.getElementById('mPrice').value||0);
+  const dep=Math.min(100,Math.max(0,+document.getElementById('mDeposit').value||0));
+  const rate=Math.max(0,+document.getElementById('mRate').value||0)/1200;
+  const months=Math.max(1,Math.round((+document.getElementById('mYears').value||1)*12));
+  const loan=price*(1-dep/100);
+  const monthly=rate===0?loan/months:loan*rate/(1-Math.pow(1+rate,-months));
+  const total=monthly*months;
+  document.getElementById('mLoan').textContent=euro(loan);
+  document.getElementById('mMonthly').textContent=euro(monthly);
+  document.getElementById('mInterest').textContent=euro(total-loan);
+  document.getElementById('mTotal').textContent=euro(total);
+ }
+ ids.forEach(id=>document.getElementById(id).addEventListener('input',update)); update();
+})();
+</script>
