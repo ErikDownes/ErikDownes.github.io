@@ -16,9 +16,13 @@ eyebrow: FINANCIAL MATHEMATICS · DATA ANALYSIS · UNIVERSITY OF LIMERICK
 
     <p>I'm from Limerick and studying <strong>Financial Mathematics at the University of Limerick</strong>. I have always enjoyed the logic and patterns in mathematics, including problems that look complicated at first.</p>
 
-    <p>At school, I especially enjoyed classroom-based assessments and challenging projects. One aerodynamics project used data logging to test ideas against measurements, and I received a first-class result. I liked designing the investigation as much as working through the mathematics.</p>
+    <p>At school, I especially enjoyed classroom-based assessments and challenging projects. One aerodynamics project used data logging to collect measurements, analyse the data and test ideas against what was actually happening. I received a first-class result, but what interested me most was the full process: designing the investigation, working with the data and explaining what the results meant.</p>
 
-    <p>That curiosity connects my interests in mathematics, physics and applied maths. I enjoy symbolic work on paper, but I also like experimenting, building and seeing whether an idea works in practice. At university I use Python and Jupyter notebooks to explore problems, and Git and GitHub to develop and share projects. I learn a great deal by doing.</p>
+    <p>That curiosity connects my interests in mathematics, physics, applied maths and data analysis. I enjoy symbolic mathematics on paper, but I also like connecting mathematics to the real world and modelling problems with computers. At university that has developed further through statistical and computational project work.</p>
+
+    <p>Project work also taught me something that is easy to underestimate: the analysis is only part of the job. A strong project still has to be reported clearly, with the data, assumptions, method and conclusions organised so that someone else can understand and rely on it.</p>
+
+    <p>I can see the same principle in aircraft asset management. Good records are part of protecting the value of the asset. Scheduled maintenance, accurate maintenance documentation and disciplined financial controls such as security deposits or maintenance reserves all matter, particularly if an airline gets into financial difficulty. The aircraft itself, its condition and the quality of its records remain central to the lessor's position.</p>
   </div>
 
   <figure class="profile-portrait">
