@@ -4,11 +4,9 @@ handle: Project Build
 title: How I Built the Turboprop Asset Reporting Dashboard
 eyebrow: PORTFOLIO · DATA ANALYSIS · WEB APPLICATION
 ---
-## Interview answer  
-  
+![Turboprop Asset Reporting Dashboard map](assets/uploads/turboprop-dashboard-map.webp)
 
-
-![image.png](blob:https:/app.pagescms.org/5bed699c-ed3c-4de5-9edc-175ad307716b)
+## Interview answer
 
 I started with a simple question. Abelo says it has 61 aircraft, 26 lessees and operates across 19 countries, and I wanted to understand what that portfolio actually looked like rather than just reading the headline numbers.
 
