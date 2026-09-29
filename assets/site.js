@@ -2642,21 +2642,21 @@
 
   const aircraftPopupHtml = row => {
     const ps = row.planespotters;
+    const delivered = ps?.delivered || '';
+    const status = ps?.status || row.aircraft_status || '';
+    const registration = row.registration || ps?.registration || '';
+    const msn = row.msn || ps?.msn || '';
     return `
       <div class="abelo-popup-card abelo-popup-card--aircraft">
-        <div class="abelo-popup-date">Aircraft #${escapeHtml(row.aircraftNumber)} · ${escapeHtml(row.slot_id || '')}</div>
+        <div class="abelo-popup-date">Aircraft #${escapeHtml(row.aircraftNumber)}</div>
         <div class="abelo-popup-customer">${escapeHtml(row.model || row.family || 'Aircraft')}</div>
         <div class="abelo-popup-aircraft-facts">
-          <div><span>Lessee</span><strong>${escapeHtml(row.lessee || 'Unresolved')}</strong></div>
-          <div><span>MSN</span><strong>${escapeHtml(row.msn || '—')}</strong></div>
-          <div><span>Registration</span><strong>${escapeHtml(row.registration || '—')}</strong></div>
-          <div><span>Evidence</span><strong>${escapeHtml(row.evidence_level || '—')}</strong></div>
-        </div>
-        ${ps ? `<p class="abelo-popup-brief">Planespotters capture: ${escapeHtml(ps.aircraft_type || row.model || 'aircraft')} · ${escapeHtml(ps.status || 'status not captured')}${ps.review_flag ? ' · review flagged' : ''}.</p>` : '<p class="abelo-popup-brief">Airframe identity is still being reconciled; unresolved fields are not guessed.</p>'}
-        <div class="abelo-popup-actions">
-          ${row.lessee ? `<button type="button" class="abelo-popup-airframes" data-abelo-show-aircraft="${escapeHtml(row.lessee)}">Open lessee records ↓</button>` : ''}
-          ${row.source_url_1 ? `<a class="abelo-popup-source" href="${escapeHtml(row.source_url_1)}" target="_blank" rel="noopener noreferrer">Primary source ↗</a>` : ''}
-          ${ps?.source_url ? `<a class="abelo-popup-source" href="${escapeHtml(ps.source_url)}" target="_blank" rel="noopener noreferrer">Planespotters ↗</a>` : ''}
+          <div><span>Lessee</span><strong>${escapeHtml(row.lessee || '—')}</strong></div>
+          <div><span>Country</span><strong>${escapeHtml(row.country || '—')}</strong></div>
+          <div><span>Registration</span><strong>${escapeHtml(registration || '—')}</strong></div>
+          <div><span>MSN</span><strong>${escapeHtml(msn || '—')}</strong></div>
+          <div><span>Delivered</span><strong>${escapeHtml(delivered || row.placement_date || '—')}</strong></div>
+          <div><span>Status</span><strong>${escapeHtml(status || '—')}</strong></div>
         </div>
       </div>`;
   };
@@ -2729,6 +2729,21 @@
     const mobileMapControlHost = mobileMapControl.getContainer();
     const mobileMapFullscreen = mobileMapControlHost.querySelector('[data-abelo-mobile-map-fullscreen]');
 
+    const floatingFilter = document.createElement('div');
+    floatingFilter.className = 'abelo-floating-filter';
+    floatingFilter.dataset.noGlossary = '';
+    floatingFilter.innerHTML = `
+      <span class="abelo-floating-filter__drag" title="Drag" aria-hidden="true">⋮⋮</span>
+      <button type="button" class="abelo-floating-filter__button" data-abelo-floating-filter aria-expanded="false">
+        <strong>Fleet filters</strong>
+        <span data-abelo-floating-summary>26 lessees · 19 countries · 61 aircraft</span>
+      </button>
+    `;
+    mapHost.appendChild(floatingFilter);
+    const floatingFilterButton = floatingFilter.querySelector('[data-abelo-floating-filter]');
+    const floatingSummary = floatingFilter.querySelector('[data-abelo-floating-summary]');
+    const floatingDrag = floatingFilter.querySelector('.abelo-floating-filter__drag');
+
     const modeHost = modeControl.getContainer();
     const layerPopover = modeHost.querySelector('[data-abelo-layer-popover]');
     const layerToggle = modeHost.querySelector('[data-abelo-layers-toggle]');
@@ -2740,20 +2755,31 @@
     mobilePanel.parentNode.insertBefore(mobilePanelHome, mobilePanel);
     let fullscreenFilterVisible = true;
 
-    const setMobileFullscreenUi = active => {
+    const setMobilePanelOverlay = active => {
       if (!isMobileMapUi) return;
       if (active) {
         if (mobilePanel.parentNode !== mapHost) mapHost.appendChild(mobilePanel);
         mobilePanel.classList.add('is-map-overlay');
         mobileBody.hidden = false;
         mobileToggle.textContent = 'Hide filters';
-        mobileMapFullscreen.textContent = '× Exit';
-        mobileFullscreen.textContent = 'Exit full screen';
+        floatingFilterButton.setAttribute('aria-expanded', 'true');
         L.DomEvent.disableClickPropagation(mobilePanel);
         L.DomEvent.disableScrollPropagation(mobilePanel);
       } else {
         if (mobilePanelHome.parentNode) mobilePanelHome.parentNode.insertBefore(mobilePanel, mobilePanelHome.nextSibling);
         mobilePanel.classList.remove('is-map-overlay');
+        floatingFilterButton.setAttribute('aria-expanded', 'false');
+      }
+    };
+
+    const setMobileFullscreenUi = active => {
+      if (!isMobileMapUi) return;
+      if (active) {
+        setMobilePanelOverlay(true);
+        mobileMapFullscreen.textContent = '× Exit';
+        mobileFullscreen.textContent = 'Exit full screen';
+      } else {
+        setMobilePanelOverlay(false);
         mobileMapFullscreen.textContent = '⛶ Full screen';
         mobileFullscreen.textContent = 'Full screen';
       }
@@ -2837,6 +2863,9 @@
       const noFilter = !hasFilters();
       statusHost.textContent = noFilter
         ? '26 lessees · 19 countries · 61 aircraft control total'
+        : `${visible.length} lessee${visible.length === 1 ? '' : 's'} · ${visibleCountries} countr${visibleCountries === 1 ? 'y' : 'ies'} · ${aircraft} mapped aircraft`;
+      floatingSummary.textContent = noFilter
+        ? '26 lessees · 19 countries · 61 aircraft'
         : `${visible.length} lessee${visible.length === 1 ? '' : 's'} · ${visibleCountries} countr${visibleCountries === 1 ? 'y' : 'ies'} · ${aircraft} mapped aircraft`;
       mobileStatus.textContent = noFilter
         ? (activeModes.has('aircraft') ? 'Tap one or more aircraft types.' : activeModes.has('lessees') ? 'Tap one or more lessees.' : 'Tap one or more countries.')
@@ -3142,6 +3171,50 @@
       syncMobileTabs(mode);
       renderMarkers();
     });
+
+    floatingFilterButton.addEventListener('click', () => {
+      if (isMobileMapUi) {
+        setMobilePanelOverlay(!mobilePanel.classList.contains('is-map-overlay'));
+      } else {
+        const open = filterHost.classList.contains('is-map-overlay') && !filterHost.hidden;
+        fullscreenFilterVisible = !open;
+        setFilterOverlay(!open);
+        floatingFilterButton.setAttribute('aria-expanded', open ? 'false' : 'true');
+      }
+      window.setTimeout(() => map.invalidateSize(), 40);
+    });
+
+    let dragState = null;
+    floatingDrag.addEventListener('pointerdown', event => {
+      event.preventDefault();
+      const mapRect = mapHost.getBoundingClientRect();
+      const rect = floatingFilter.getBoundingClientRect();
+      dragState = {
+        dx: event.clientX - rect.left,
+        dy: event.clientY - rect.top,
+        mapLeft: mapRect.left,
+        mapTop: mapRect.top
+      };
+      floatingDrag.setPointerCapture?.(event.pointerId);
+    });
+    floatingDrag.addEventListener('pointermove', event => {
+      if (!dragState) return;
+      const maxX = Math.max(0, mapHost.clientWidth - floatingFilter.offsetWidth - 8);
+      const maxY = Math.max(0, mapHost.clientHeight - floatingFilter.offsetHeight - 8);
+      const left = Math.max(8, Math.min(maxX, event.clientX - dragState.mapLeft - dragState.dx));
+      const top = Math.max(8, Math.min(maxY, event.clientY - dragState.mapTop - dragState.dy));
+      floatingFilter.style.left = left + 'px';
+      floatingFilter.style.top = top + 'px';
+      floatingFilter.style.right = 'auto';
+      floatingFilter.style.bottom = 'auto';
+    });
+    const endFloatingDrag = event => {
+      if (!dragState) return;
+      dragState = null;
+      floatingDrag.releasePointerCapture?.(event.pointerId);
+    };
+    floatingDrag.addEventListener('pointerup', endFloatingDrag);
+    floatingDrag.addEventListener('pointercancel', endFloatingDrag);
 
     mobileToggle.addEventListener('click', () => {
       const hiding = !mobileBody.hidden;
