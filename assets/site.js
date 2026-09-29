@@ -801,6 +801,7 @@
     { label: 'External Shocks and Risk to the Sector', path: 'aviation/external-shocks-risk.html' },
     { label: 'Credit Risk', path: 'aviation/credit-risk.html' },
     { label: 'Stress Testing', path: 'aviation/stress-testing.html' },
+    { label: 'Valuation Practices', path: 'aviation/valuation-practices.html' },
     { label: 'Maintenance', path: 'aviation/maintenance.html' },
     { label: 'Maintenance Reserves', path: 'aviation/maintenance-reserves.html' }
   ];
