@@ -109,6 +109,7 @@ content:
   - { name: aviation_abelo, label: "Aviation · Abelo", type: file, path: aviation/abelo.md, format: yaml-frontmatter, fields: *aviationfields }
   - { name: aviation_credit_risk, label: "Aviation · Credit Risk", type: file, path: aviation/credit-risk.md, format: yaml-frontmatter, fields: *aviationfields }
   - { name: aviation_stress_testing, label: "Aviation · Stress Testing", type: file, path: aviation/stress-testing.md, format: yaml-frontmatter, fields: *aviationfields }
+  - { name: aviation_valuation_practices, label: "Aviation · Valuation Practices", type: file, path: aviation/valuation-practices.md, format: yaml-frontmatter, fields: *aviationfields }
   - { name: aviation_maintenance, label: "Aviation · Maintenance", type: file, path: aviation/maintenance.md, format: yaml-frontmatter, fields: *aviationfields }
   - { name: aviation_maintenance_reserves, label: "Aviation · Maintenance Reserves", type: file, path: aviation/maintenance-reserves.md, format: yaml-frontmatter, fields: *aviationfields }
   - { name: coursework, label: "Coursework", type: file, path: coursework.md, format: yaml-frontmatter, fields: *docfields }
