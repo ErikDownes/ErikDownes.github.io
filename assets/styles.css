@@ -997,6 +997,10 @@ body.answer-focus-open{overflow:hidden}
   font-size: .78rem;
   color: #607080;
 }
+.abelo-filter-hint {
+  font-size: .72rem;
+  color: #607080;
+}
 .abelo-filter-clear {
   border: 1px solid #cfd6de;
   border-radius: 999px;
