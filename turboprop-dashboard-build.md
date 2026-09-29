@@ -4,11 +4,7 @@ handle: Project Build
 title: How I Built the Turboprop Asset Reporting Dashboard
 eyebrow: PORTFOLIO · DATA ANALYSIS · WEB APPLICATION
 ---
-
-
 ## Interview answer
-
-
 
 I started with a simple question. Abelo says it has 61 aircraft, 26 lessees and operates across 19 countries, and I wanted to understand what that portfolio actually looked like rather than just reading the headline numbers.
 
@@ -26,42 +22,84 @@ What I liked about the project was that it started as a simple map, but it becam
 
 
 
-## Why I started
+# Turboprop Asset Reporting Dashboard — Interview Version
 
-Abelo’s public figures — 61 aircraft, 26 lessees and 19 countries — made me curious. Which aircraft were they, who was operating them, and where were they flying?
+## Key Line
 
-I wanted to go beyond the headline numbers and actually see the fleet on a map.
+I started with a simple question: **Abelo says it has 61 aircraft, 26 lessees and operates across 19 countries — what does that portfolio actually look like?**
 
-## Finding and building the data
+## Why I Built It
 
-There was no neat downloadable dataset containing the Abelo fleet.
+I wanted to go beyond the headline numbers and understand the actual portfolio.
 
-I started with public aircraft data, but some of the fields I needed were missing. PlaneSpotters was particularly useful because its public production lists could be filtered to ATR 42s, ATR 72s and Dash 8s.
+There was no single clean dataset containing the full Abelo fleet, so I treated it as a **data-reconciliation problem** rather than just a mapping exercise.
 
-The problem was that the information was spread across multiple pages rather than being available as a clean CSV.
+## How I Built the Data
 
-I captured the relevant public pages and used AI-assisted text extraction to turn the aircraft records into structured data. The individual records contained useful identifiers such as registration and manufacturer serial number (MSN), as well as operator and aircraft history information.
+I used public PlaneSpotters production lists for ATR 42s, ATR 72s and Dash 8s.
 
-That history was important. An aircraft might be operating for an airline while the record also contained information connecting it to Abelo or Elix. So finding the fleet was not simply a matter of filtering a column for the word “Abelo”.
+The information was spread across pages rather than available as a CSV, so I captured the pages and used **AI-assisted OCR** to structure them.
 
-I then cleaned and combined the records and matched aircraft across the different public sources, using registration and MSN where available. Where one source was missing information, I checked whether another source could fill the gap.
+That gave me about **2,600 aircraft records**, with fields such as:
 
-This became a data reconciliation problem rather than just a filtering exercise. Where I could not establish a match confidently, I left it unresolved rather than forcing the data to fit.
+- MSN
+- registration
+- aircraft type
+- operator
+- delivery information
+- status
+- aircraft history
 
-## From notebook to app
+I also kept the source page and OCR confidence so I could trace records back to their source.
 
-The analysis initially ran in Google Colab using Python and Pandas in a Jupyter-style notebook. That gave me a practical environment for cleaning, matching and checking the aircraft records.
+## Bringing in OpenSky
 
-Once the data made sense, I moved into VS Code and built the interactive application using HTML, CSS and JavaScript, with Leaflet powering the map and geographic layers.
+I then brought in the much larger **OpenSky aircraft database — about 520,000 records**.
 
-AI-assisted development was part of the workflow. I used AI in an agentic or “vibe-coding” approach — describing what I wanted the application to do, generating and refining code, testing it against the data, finding problems and iterating.
+The schemas were different, so I had to work out which fields actually corresponded.
 
-I think that is an important modern development skill. It is not about pretending every line of code was written manually. It is about defining the problem properly, knowing what the output should do, working effectively with AI, checking its work and recognising when something is wrong.
+For example:
 
-## The result
+**PlaneSpotters MSN ↔ OpenSky serial number**
 
-What started as a simple question — “Where are the 61 aircraft?” — became a small asset-reporting application combining data collection, cleaning, reconciliation, analysis and interactive visualisation.
+and
 
-The final dashboard makes the aircraft, operators, countries and underlying records much easier to explore, and it gave me a much better understanding of the type of aircraft and portfolio data involved in aviation asset management.
+**registration ↔ registration**
 
-All information used in the project is publicly available. No Abelo internal data or confidential records have been used.
+I used registration and MSN as the strongest identifiers, with aircraft type, operator and historical information as supporting evidence.
+
+## Reconstructing the 61 Aircraft
+
+Separately, I built a **61-record Abelo/Elix control table** from public announcements and historical information.
+
+Some records had a lessee, country and aircraft type but no actual registration or MSN.
+
+So the process became:
+
+**lessee → aircraft type → candidate aircraft → registration/MSN → OpenSky cross-check**
+
+I deliberately did not force matches. If I could not identify an airframe confidently, I left it as **pending ID**.
+
+That was probably the most useful lesson from the project: **good analysis also means knowing when the data is not strong enough to make a claim.**
+
+## From Data to the App
+
+Once the data made sense, I moved from **Google Colab and Pandas** into **VS Code**.
+
+I built the front end with:
+
+**HTML, CSS, JavaScript and Leaflet**
+
+The map shows the **geographic distribution of the portfolio by lessee and country**, not live aircraft GPS positions.
+
+I then added filters for country, aircraft type and lessee, with the detailed 61-aircraft table underneath.
+
+## If They Ask What You Learned
+
+The biggest thing I learned was that aircraft data is not static.
+
+An aircraft can change **registration, operator, owner and country**, while the MSN stays with the physical airframe.
+
+So what looked like a simple mapping project became a real exercise in **data cleaning, matching, provenance, uncertainty and asset reporting**.
+
+And AI helped throughout — particularly with OCR and coding — but I still had to decide **what constituted a valid match, test the results and recognise when something was wrong.**
