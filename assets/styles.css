@@ -2843,7 +2843,9 @@ body.answer-focus-open{overflow:hidden}
   white-space: nowrap;
 }
 .abelo-map-filter-toggle {
-  display: none;
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
 }
 .abelo-map-filter-toggle.is-active {
   border-color: #4f78a2;
@@ -2899,7 +2901,7 @@ body.answer-focus-open{overflow:hidden}
   cursor: default;
 }
 
-/* The original filter panel becomes an on/off drawer only while the map is fullscreen. */
+/* The filter panel can be hidden in normal view and becomes an on/off drawer in fullscreen. */
 .abelo-filter-panel.is-map-overlay {
   position: absolute;
   top: 12px;
