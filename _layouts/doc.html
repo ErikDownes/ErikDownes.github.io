@@ -6,40 +6,52 @@
 {% if page.handle == nil and legacy_title_parts.size > 1 %}
   {% assign page_display_title = legacy_title_parts[1] | strip %}
 {% endif %}
+{% assign erik_primary_url = 'https://erikdownes.github.io' %}
+{% assign is_erik_primary = false %}
+{% if site.url == erik_primary_url %}
+  {% assign is_erik_primary = true %}
+{% endif %}
+{% if is_erik_primary %}
+  {% assign canonical_url = page.url | absolute_url %}
+{% else %}
+  {% capture canonical_url %}{{ erik_primary_url }}{{ page.url }}{% endcapture %}
+{% endif %}
 <html lang="en">
 <head>
+  {% if is_erik_primary %}
   <meta name="google-site-verification" content="V_Uu7628puU2aGX56QFvy7PJfdNDdHTXZnVK_BZBBbU" />
+  {% endif %}
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   {% assign seo_description = page.description | default: site.description %}
-  {% if page.profile_mode %}
+  {% if page.profile_mode and is_erik_primary %}
   <meta name="robots" content="index,follow">
   {% else %}
   <meta name="robots" content="noindex,follow">
   {% endif %}
   <meta name="description" content="{{ seo_description | escape }}">
-  <link rel="canonical" href="{{ page.url | absolute_url }}">
+  <link rel="canonical" href="{{ canonical_url | strip }}">
   <meta property="og:type" content="{% if page.profile_mode %}profile{% else %}website{% endif %}">
   <meta property="og:site_name" content="Erik Downes">
   <meta property="og:title" content="{{ page_display_title | escape }} | Erik Downes · Financial Mathematics">
   <meta property="og:description" content="{{ seo_description | escape }}">
-  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta property="og:url" content="{{ canonical_url | strip }}">
   {% if page.profile_mode %}
-  <meta property="og:image" content="{{ '/assets/erik-profile-200kb.jpg' | absolute_url }}">
+  <meta property="og:image" content="{{ erik_primary_url }}/assets/erik-profile-200kb.jpg">
   {% endif %}
   <meta name="twitter:card" content="summary">
   <title>{{ page_display_title }} | Erik Downes · Financial Mathematics</title>
-  {% if page.profile_mode %}
+  {% if page.profile_mode and is_erik_primary %}
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "ProfilePage",
-    "url": "{{ '/' | absolute_url }}",
+    "url": "{{ erik_primary_url }}/",
     "mainEntity": {
       "@type": "Person",
       "name": "Erik Downes",
-      "url": "{{ '/' | absolute_url }}",
-      "image": "{{ '/assets/erik-profile-200kb.jpg' | absolute_url }}",
+      "url": "{{ erik_primary_url }}/",
+      "image": "{{ erik_primary_url }}/assets/erik-profile-200kb.jpg",
       "jobTitle": "Financial Mathematics Student",
       "affiliation": {
         "@type": "CollegeOrUniversity",
