@@ -4,11 +4,11 @@ handle: Project Build
 title: How I Built the Turboprop Asset Reporting Dashboard
 eyebrow: PORTFOLIO · DATA ANALYSIS · WEB APPLICATION
 ---
-
-
 ## 30-Second Version
 
 I used **OpenSky and PlaneSpotters** to build the aircraft database because I needed both sources to get the full picture.
+
+I used **Python and Pandas** to clean, compare and organise the data, running the code in **Google Colab** in the cloud.
 
 Then I used **Leaflet** to turn the data into an interactive map with filters.
 
@@ -16,7 +16,7 @@ You can view all **61 aircraft**, see the fleet by **lessee**, or drill down int
 
 For me, that was the value of the project — it wasn’t just building an app. It was turning a fairly complicated aircraft dataset into something you could actually explore and understand visually.
 
-The next step would be to add **EASA-approved Part-145 maintenance organisations and airport locations**. That could help connect aircraft location with scheduled maintenance requirements and give a better picture of how maintenance planning affects asset management.
+The next step would be to add **EASA-approved engine shops and airport locations**. That could help connect aircraft location with scheduled maintenance requirements and give a better picture of how maintenance planning affects asset management.
 
 
 
