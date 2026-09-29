@@ -14,15 +14,13 @@ eyebrow: FINANCIAL MATHEMATICS · DATA ANALYSIS · UNIVERSITY OF LIMERICK
 
     <h2>About Me</h2>
 
-    <p>I'm from Limerick and studying <strong>Financial Mathematics at the University of Limerick</strong>. I have always enjoyed the logic and patterns in mathematics, including problems that look complicated at first.</p>
+    <p>I'm from Limerick and studying <strong>Financial Mathematics at the University of Limerick</strong>. I have always enjoyed mathematics, especially when I can connect what I learn in the classroom to something practical.</p>
 
-    <p>At school, I especially enjoyed classroom-based assessments and challenging projects. One aerodynamics project used data logging to collect measurements, analyse the data and test ideas against what was actually happening. I received a first-class result, but what interested me most was the full process: designing the investigation, working with the data and explaining what the results meant.</p>
+    <p>At school, I particularly enjoyed project work and classroom-based assessments. One aerodynamics project used data logging to collect measurements and test ideas against real results. That suited the way I like to learn: understand the mathematics, apply it, and then see what the data is actually telling you.</p>
 
-    <p>That curiosity connects my interests in mathematics, physics, applied maths and data analysis. I enjoy symbolic mathematics on paper, but I also like connecting mathematics to the real world and modelling problems with computers. At university that has developed further through statistical and computational project work.</p>
+    <p>In college, that practical side of mathematics has become much more important. Working with statistics, data analysis and tools such as R, Python and Colab has shown me that real problems do not always have one neat answer. You are often working with uncertainty, checking assumptions, comparing models and using data to decide what is reasonable. When there are many variables involved, the computer is not an afterthought; it becomes part of the mathematics.</p>
 
-    <p>Project work also taught me something that is easy to underestimate: the analysis is only part of the job. A strong project still has to be reported clearly, with the data, assumptions, method and conclusions organised so that someone else can understand and rely on it.</p>
-
-    <p>I can see the same principle in aircraft asset management. Good records are part of protecting the value of the asset. Scheduled maintenance, accurate maintenance documentation and disciplined financial controls such as security deposits or maintenance reserves all matter, particularly if an airline gets into financial difficulty. The aircraft itself, its condition and the quality of its records remain central to the lessor's position.</p>
+    <p>I think that way of working would transfer naturally into asset management, where there can be a large amount of financial, operational and technical information to bring together. At the same time, I know the numbers are only part of the job. I enjoy working with other people, explaining ideas clearly and being part of a team, because good decisions depend on communication as well as analysis.</p>
   </div>
 
   <figure class="profile-portrait">
