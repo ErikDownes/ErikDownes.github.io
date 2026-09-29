@@ -2644,10 +2644,10 @@
       div.innerHTML = `
         <div class="abelo-map-mode__head">
           <button type="button" class="abelo-map-layers-toggle" data-abelo-layers-toggle aria-expanded="false">
-            <span>Layers</span><b data-abelo-layer-summary>Lessees</b>
+            <span>Map view</span><b data-abelo-layer-summary>Lessees</b>
           </button>
           <div class="abelo-map-mode__head-actions">
-            <button type="button" class="abelo-map-filter-toggle" data-abelo-map-filter aria-pressed="true">Filters</button>
+            <button type="button" class="abelo-map-filter-toggle is-active" data-abelo-map-filter aria-pressed="true">Hide filters</button>
             <button type="button" class="abelo-map-fullscreen" data-abelo-fullscreen aria-label="Toggle full screen">⛶</button>
           </div>
         </div>
@@ -2680,13 +2680,17 @@
         filterToggle.hidden = false;
         filterToggle.classList.toggle('is-active', fullscreenFilterVisible);
         filterToggle.setAttribute('aria-pressed', fullscreenFilterVisible ? 'true' : 'false');
+        filterToggle.textContent = fullscreenFilterVisible ? 'Hide filters' : 'Show filters';
         L.DomEvent.disableClickPropagation(filterHost);
         L.DomEvent.disableScrollPropagation(filterHost);
       } else {
         if (filterHome.parentNode) filterHome.parentNode.insertBefore(filterHost, filterHome.nextSibling);
         filterHost.classList.remove('is-map-overlay');
-        filterHost.hidden = false;
-        filterToggle.hidden = true;
+        filterHost.hidden = !fullscreenFilterVisible;
+        filterToggle.hidden = false;
+        filterToggle.classList.toggle('is-active', fullscreenFilterVisible);
+        filterToggle.setAttribute('aria-pressed', fullscreenFilterVisible ? 'true' : 'false');
+        filterToggle.textContent = fullscreenFilterVisible ? 'Hide filters' : 'Show filters';
       }
     };
 
@@ -2948,6 +2952,8 @@
         filterHost.hidden = !fullscreenFilterVisible;
         filterButton.classList.toggle('is-active', fullscreenFilterVisible);
         filterButton.setAttribute('aria-pressed', fullscreenFilterVisible ? 'true' : 'false');
+        filterButton.textContent = fullscreenFilterVisible ? 'Hide filters' : 'Show filters';
+        window.setTimeout(() => map.invalidateSize(), 40);
         return;
       }
 
