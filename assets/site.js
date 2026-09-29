@@ -2346,34 +2346,40 @@
   mobilePanel.innerHTML = `
     <div class="abelo-mobile-controls__head">
       <div>
-        <strong>Explore the fleet</strong>
-        <span data-abelo-mobile-status>Tap an aircraft type to show it on the map.</span>
+        <strong>Fleet filters</strong>
+        <span data-abelo-mobile-status>Tap one or more aircraft types.</span>
       </div>
-      <button type="button" class="abelo-filter-clear" data-abelo-mobile-clear>Clear</button>
+      <div class="abelo-mobile-controls__actions">
+        <button type="button" class="abelo-mobile-control-btn" data-abelo-mobile-toggle>Hide filters</button>
+        <button type="button" class="abelo-mobile-control-btn" data-abelo-mobile-fullscreen>Full screen</button>
+      </div>
     </div>
-    <div class="abelo-mobile-tabs" role="tablist" aria-label="Map view">
-      <button type="button" class="is-active" data-abelo-mobile-view="aircraft" aria-pressed="true">Aircraft</button>
-      <button type="button" data-abelo-mobile-view="lessees" aria-pressed="false">Lessees</button>
-      <button type="button" data-abelo-mobile-view="countries" aria-pressed="false">Countries</button>
+    <div class="abelo-mobile-controls__body" data-abelo-mobile-body>
+      <div class="abelo-mobile-tabs" role="tablist" aria-label="Fleet filter">
+        <button type="button" class="is-active" data-abelo-mobile-view="aircraft" aria-pressed="true">Aircraft type</button>
+        <button type="button" data-abelo-mobile-view="lessees" aria-pressed="false">Lessees</button>
+      </div>
+      <div class="abelo-mobile-pane" data-abelo-mobile-pane="aircraft">
+        <div class="abelo-filter-grid abelo-filter-grid--models" data-abelo-mobile-models></div>
+      </div>
+      <div class="abelo-mobile-pane" data-abelo-mobile-pane="lessees" hidden>
+        <div class="abelo-filter-grid abelo-filter-grid--lessees" data-abelo-mobile-lessees></div>
+      </div>
+      <div class="abelo-mobile-controls__footer">
+        <span>Tap several to compare. Tap again to remove.</span>
+        <button type="button" class="abelo-filter-clear" data-abelo-mobile-clear>Clear selections</button>
+      </div>
     </div>
-    <div class="abelo-mobile-pane" data-abelo-mobile-pane="aircraft">
-      <div class="abelo-filter-grid abelo-filter-grid--models" data-abelo-mobile-models></div>
-    </div>
-    <div class="abelo-mobile-pane" data-abelo-mobile-pane="lessees" hidden>
-      <div class="abelo-filter-grid abelo-filter-grid--lessees" data-abelo-mobile-lessees></div>
-    </div>
-    <div class="abelo-mobile-pane" data-abelo-mobile-pane="countries" hidden>
-      <div class="abelo-filter-grid abelo-filter-grid--countries" data-abelo-mobile-countries></div>
-    </div>
-    <p class="abelo-mobile-controls__hint">Tap several items to compare them. Tap an active item again to remove it.</p>
   `;
   filterHost.insertAdjacentElement('afterend', mobilePanel);
 
   const mobileModelHost = mobilePanel.querySelector('[data-abelo-mobile-models]');
   const mobileLesseeHost = mobilePanel.querySelector('[data-abelo-mobile-lessees]');
-  const mobileCountryHost = mobilePanel.querySelector('[data-abelo-mobile-countries]');
   const mobileStatus = mobilePanel.querySelector('[data-abelo-mobile-status]');
   const mobileClear = mobilePanel.querySelector('[data-abelo-mobile-clear]');
+  const mobileBody = mobilePanel.querySelector('[data-abelo-mobile-body]');
+  const mobileToggle = mobilePanel.querySelector('[data-abelo-mobile-toggle]');
+  const mobileFullscreen = mobilePanel.querySelector('[data-abelo-mobile-fullscreen]');
   const copyMobileFilters = (source, target) => {
     target.replaceChildren(...Array.from(source.children).map(node => node.cloneNode(true)));
   };
@@ -2587,7 +2593,6 @@
     button.innerHTML = `<span class="abelo-filter-swatch"></span><span>#${escapeHtml(p.recencyRank)} ${escapeHtml(p.customer)}</span><small>${escapeHtml(p.aircraftCount)} aircraft · ${escapeHtml(p.country)}</small>`;
     lesseeFilterHost.appendChild(button);
   });
-  copyMobileFilters(countryFilterHost, mobileCountryHost);
   copyMobileFilters(lesseeFilterHost, mobileLesseeHost);
 
   const activeCountries = new Set();
@@ -2802,11 +2807,6 @@
       clearButton.disabled = noFilter;
       mobileClear.disabled = noFilter;
 
-      mobilePanel.querySelectorAll('[data-country]').forEach(button => {
-        const selected = activeCountries.has(button.dataset.country);
-        button.classList.toggle('is-active', selected);
-        button.setAttribute('aria-pressed', selected ? 'true' : 'false');
-      });
       mobilePanel.querySelectorAll('[data-lessee]').forEach(button => {
         const selected = activeLessees.has(button.dataset.lessee);
         button.classList.toggle('is-active', selected);
@@ -3084,7 +3084,6 @@
         renderMarkers();
       });
     };
-    bindMobileFilter(mobileCountryHost, 'country', activeCountries);
     bindMobileFilter(mobileLesseeHost, 'lessee', activeLessees);
     bindMobileFilter(mobileModelHost, 'model', activeModels);
 
@@ -3106,13 +3105,39 @@
       syncMobileTabs(mode);
       renderMarkers();
     });
+
+    mobileToggle.addEventListener('click', () => {
+      const hiding = !mobileBody.hidden;
+      mobileBody.hidden = hiding;
+      mobileToggle.textContent = hiding ? 'Show filters' : 'Hide filters';
+    });
+
+    mobileFullscreen.addEventListener('click', () => {
+      if (document.fullscreenElement === mapHost) {
+        document.exitFullscreen?.();
+      } else if (mapHost.requestFullscreen) {
+        mapHost.requestFullscreen();
+      } else {
+        const entering = !mapHost.classList.contains('is-map-fullscreen-fallback');
+        mapHost.classList.toggle('is-map-fullscreen-fallback', entering);
+        mobileFullscreen.textContent = entering ? 'Exit full screen' : 'Full screen';
+        window.setTimeout(() => map.invalidateSize(), 80);
+      }
+    });
+
+    document.addEventListener('fullscreenchange', () => {
+      if (!isMobileMapUi) return;
+      mobileFullscreen.textContent = document.fullscreenElement === mapHost ? 'Exit full screen' : 'Full screen';
+      window.setTimeout(() => map.invalidateSize(), 80);
+    });
+
     mobileClear.addEventListener('click', () => {
       activeCountries.clear();
       activeLessees.clear();
       activeModels.clear();
       renderMarkers();
     });
-    syncMobileTabs(isMobileMapUi ? 'aircraft' : 'lessees');
+    syncMobileTabs('aircraft');
 
     mapHost.addEventListener('click', event => {
       const button = event.target.closest('[data-abelo-show-aircraft]');
