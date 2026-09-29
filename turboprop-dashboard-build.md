@@ -4,7 +4,11 @@ handle: Project Build
 title: How I Built the Turboprop Asset Reporting Dashboard
 eyebrow: PORTFOLIO · DATA ANALYSIS · WEB APPLICATION
 ---
-## Interview answer
+## Interview answer  
+  
+
+
+![image.png](blob:https:/app.pagescms.org/5bed699c-ed3c-4de5-9edc-175ad307716b)
 
 I started with a simple question. Abelo says it has 61 aircraft, 26 lessees and operates across 19 countries, and I wanted to understand what that portfolio actually looked like rather than just reading the headline numbers.
 
@@ -14,7 +18,7 @@ I then brought in the much larger OpenSky aircraft database, with about 520,000 
 
 Separately, I built a 61-record Abelo and Elix control table from public announcements and historical information. Some of those records gave me the lessee, country and aircraft type but not the actual registration or MSN, so I worked from lessee to aircraft type to candidate airframes, and then used registration and MSN where I could to confirm the match.
 
-I deliberately left aircraft unresolved where the evidence wasn’t strong enough rather than forcing a match.
+I deliberately left 5 aircraft unresolved where the evidence wasn’t strong enough rather than forcing a match. 
 
 Once the data made sense, I moved from Google Colab and Pandas into VS Code and built the application using HTML, CSS, JavaScript and Leaflet. The map shows the geographic distribution of the portfolio by lessee and country, not live aircraft GPS positions.
 
