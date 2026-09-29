@@ -2,10 +2,8 @@
 layout: doc
 handle: Skills Profile
 title: Skills Profile
-profile_mode: true
 eyebrow: ABOUT ME · SKILLS PROFILE
 ---
-
 ## Key Skills Profile
 
 Financial Mathematics student at the University of Limerick with strong quantitative, analytical and problem-solving skills. Academic experience includes Probability & Statistics, Finance, Applied Data Analysis, Numerical Analysis, Operations Research and Computer Software.
@@ -13,7 +11,6 @@ Financial Mathematics student at the University of Limerick with strong quantita
 Confident working with Excel, Python, pandas, R/RStudio, MATLAB and Java, alongside Git/GitHub, Jupyter, Google Colab and VS Code.
 
 Strong commercial and customer-facing experience through employment in Mr Price and O'Mahony's, combining accuracy, communication, teamwork and practical problem solving.
-
 
 
 
@@ -27,13 +24,11 @@ Aviation research has provided further experience working with incomplete real-w
 
 
 
-
 ## Technology
 
 Technical experience includes Excel, Python, pandas, R/RStudio, MATLAB, Java, Git/GitHub, Jupyter, Google Colab, VS Code, HTML, CSS, JavaScript and Leaflet.
 
 Increasingly using AI-assisted, vibe and agentic coding as part of development — using modern AI tools to help build, debug and improve applications while continuing to develop my own technical understanding.
-
 
 
 
@@ -47,7 +42,6 @@ At O'Mahony's, teamwork and accurate communication around orders, invoices and d
 
 
 
-
 ## Initiative & Learning
 
 Prepared independently for the aviation-leasing sector by researching regional aviation, turboprops, aircraft leasing, asset management, maintenance and aircraft economics.
@@ -55,7 +49,6 @@ Prepared independently for the aviation-leasing sector by researching regional a
 I have always enjoyed learning through projects as well as formal study. That has helped me become comfortable working across different timescales, deadlines and levels of complexity, learning what I need as a project develops and improving the work along the way.
 
 I am also conscious that technology is changing quickly, particularly with AI, and I want to keep up with those developments and learn how to use new tools effectively rather than stand still.
-
 
 
 
