@@ -2355,9 +2355,9 @@
       </div>
     </div>
     <div class="abelo-mobile-controls__body" data-abelo-mobile-body>
-      <div class="abelo-mobile-tabs" role="tablist" aria-label="Fleet filter">
-        <button type="button" class="is-active" data-abelo-mobile-view="aircraft" aria-pressed="true">Aircraft type</button>
-        <button type="button" data-abelo-mobile-view="lessees" aria-pressed="false">Lessees</button>
+      <div class="abelo-mobile-tabs" aria-label="Fleet filter">
+        <label class="is-active"><input type="checkbox" data-abelo-mobile-view="aircraft" checked> <span>Airframes</span></label>
+        <label><input type="checkbox" data-abelo-mobile-view="lessees"> <span>Lessees</span></label>
       </div>
       <div class="abelo-mobile-pane" data-abelo-mobile-pane="aircraft">
         <div class="abelo-filter-grid abelo-filter-grid--models" data-abelo-mobile-models></div>
@@ -2371,7 +2371,7 @@
       </div>
     </div>
   `;
-  filterHost.insertAdjacentElement('afterend', mobilePanel);
+  mapHost.insertAdjacentElement('afterend', mobilePanel);
 
   const mobileModelHost = mobilePanel.querySelector('[data-abelo-mobile-models]');
   const mobileLesseeHost = mobilePanel.querySelector('[data-abelo-mobile-lessees]');
@@ -2713,6 +2713,22 @@
       return div;
     };
     modeControl.addTo(map);
+
+    const mobileMapControl = L.control({ position: 'topright' });
+    mobileMapControl.onAdd = () => {
+      const div = L.DomUtil.create('div', 'abelo-mobile-map-control');
+      div.dataset.noGlossary = '';
+      div.innerHTML = `
+        <button type="button" data-abelo-mobile-map-fullscreen aria-label="Open map full screen">⛶ Full screen</button>
+      `;
+      L.DomEvent.disableClickPropagation(div);
+      L.DomEvent.disableScrollPropagation(div);
+      return div;
+    };
+    mobileMapControl.addTo(map);
+    const mobileMapControlHost = mobileMapControl.getContainer();
+    const mobileMapFullscreen = mobileMapControlHost.querySelector('[data-abelo-mobile-map-fullscreen]');
+
     const modeHost = modeControl.getContainer();
     const layerPopover = modeHost.querySelector('[data-abelo-layer-popover]');
     const layerToggle = modeHost.querySelector('[data-abelo-layers-toggle]');
@@ -2720,7 +2736,28 @@
     const filterToggle = modeHost.querySelector('[data-abelo-map-filter]');
     const filterHome = document.createComment('abelo-filter-home');
     filterHost.parentNode.insertBefore(filterHome, filterHost);
+    const mobilePanelHome = document.createComment('abelo-mobile-panel-home');
+    mobilePanel.parentNode.insertBefore(mobilePanelHome, mobilePanel);
     let fullscreenFilterVisible = true;
+
+    const setMobileFullscreenUi = active => {
+      if (!isMobileMapUi) return;
+      if (active) {
+        if (mobilePanel.parentNode !== mapHost) mapHost.appendChild(mobilePanel);
+        mobilePanel.classList.add('is-map-overlay');
+        mobileBody.hidden = false;
+        mobileToggle.textContent = 'Hide filters';
+        mobileMapFullscreen.textContent = '× Exit';
+        mobileFullscreen.textContent = 'Exit full screen';
+        L.DomEvent.disableClickPropagation(mobilePanel);
+        L.DomEvent.disableScrollPropagation(mobilePanel);
+      } else {
+        if (mobilePanelHome.parentNode) mobilePanelHome.parentNode.insertBefore(mobilePanel, mobilePanelHome.nextSibling);
+        mobilePanel.classList.remove('is-map-overlay');
+        mobileMapFullscreen.textContent = '⛶ Full screen';
+        mobileFullscreen.textContent = 'Full screen';
+      }
+    };
 
     const setFilterOverlay = active => {
       const isFallback = mapHost.classList.contains('is-map-fullscreen-fallback');
@@ -3088,19 +3125,19 @@
     bindMobileFilter(mobileModelHost, 'model', activeModels);
 
     const syncMobileTabs = mode => {
-      mobilePanel.querySelectorAll('[data-abelo-mobile-view]').forEach(button => {
-        const selected = button.dataset.abeloMobileView === mode;
-        button.classList.toggle('is-active', selected);
-        button.setAttribute('aria-pressed', selected ? 'true' : 'false');
+      mobilePanel.querySelectorAll('[data-abelo-mobile-view]').forEach(input => {
+        const selected = input.dataset.abeloMobileView === mode;
+        input.checked = selected;
+        input.closest('label')?.classList.toggle('is-active', selected);
       });
       mobilePanel.querySelectorAll('[data-abelo-mobile-pane]').forEach(pane => {
         pane.hidden = pane.dataset.abeloMobilePane !== mode;
       });
     };
-    mobilePanel.addEventListener('click', event => {
-      const viewButton = event.target.closest('[data-abelo-mobile-view]');
-      if (!viewButton) return;
-      const mode = viewButton.dataset.abeloMobileView;
+    mobilePanel.addEventListener('change', event => {
+      const viewInput = event.target.closest('[data-abelo-mobile-view]');
+      if (!viewInput) return;
+      const mode = viewInput.dataset.abeloMobileView;
       activeModes = new Set([mode]);
       syncMobileTabs(mode);
       renderMarkers();
@@ -3112,22 +3149,42 @@
       mobileToggle.textContent = hiding ? 'Show filters' : 'Hide filters';
     });
 
-    mobileFullscreen.addEventListener('click', () => {
-      if (document.fullscreenElement === mapHost) {
+    const toggleMobileFullscreen = () => {
+      const nativeActive = document.fullscreenElement === mapHost;
+      const fallbackActive = mapHost.classList.contains('is-map-fullscreen-fallback');
+      if (nativeActive) {
         document.exitFullscreen?.();
-      } else if (mapHost.requestFullscreen) {
-        mapHost.requestFullscreen();
+        return;
+      }
+      if (fallbackActive) {
+        mapHost.classList.remove('is-map-fullscreen-fallback');
+        setMobileFullscreenUi(false);
+        window.setTimeout(() => map.invalidateSize(), 80);
+        return;
+      }
+      if (mapHost.requestFullscreen) {
+        const result = mapHost.requestFullscreen();
+        if (result?.catch) {
+          result.catch(() => {
+            mapHost.classList.add('is-map-fullscreen-fallback');
+            setMobileFullscreenUi(true);
+            window.setTimeout(() => map.invalidateSize(), 80);
+          });
+        }
       } else {
-        const entering = !mapHost.classList.contains('is-map-fullscreen-fallback');
-        mapHost.classList.toggle('is-map-fullscreen-fallback', entering);
-        mobileFullscreen.textContent = entering ? 'Exit full screen' : 'Full screen';
+        mapHost.classList.add('is-map-fullscreen-fallback');
+        setMobileFullscreenUi(true);
         window.setTimeout(() => map.invalidateSize(), 80);
       }
-    });
+    };
+
+    mobileFullscreen.addEventListener('click', toggleMobileFullscreen);
+    mobileMapFullscreen.addEventListener('click', toggleMobileFullscreen);
 
     document.addEventListener('fullscreenchange', () => {
       if (!isMobileMapUi) return;
-      mobileFullscreen.textContent = document.fullscreenElement === mapHost ? 'Exit full screen' : 'Full screen';
+      const isFullscreen = document.fullscreenElement === mapHost;
+      setMobileFullscreenUi(isFullscreen);
       window.setTimeout(() => map.invalidateSize(), 80);
     });
 
