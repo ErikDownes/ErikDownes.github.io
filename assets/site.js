@@ -2321,6 +2321,7 @@
       <div>
         <strong>Filters</strong>
         <span class="abelo-filter-status" data-abelo-filter-status></span>
+        <span class="abelo-filter-hint">Click to add · double-click to remove a selection</span>
       </div>
       <button type="button" class="abelo-filter-clear" data-abelo-clear>Clear filters</button>
     </div>
@@ -2398,10 +2399,14 @@
     const psMatched = visible.filter(r => r.planespotters).length;
     const gaps = visible.filter(r => r.mapped_or_gap === 'RECONCILIATION GAP').length;
 
-    const scopeParts = [activeModel, activeLessee, activeCountry, activeRegion].filter(Boolean);
+    const scopeParts = [
+      activeModels.size === 1 ? [...activeModels][0] : activeModels.size ? `${activeModels.size} aircraft types` : '',
+      activeLessees.size === 1 ? [...activeLessees][0] : activeLessees.size ? `${activeLessees.size} lessees` : '',
+      activeCountries.size === 1 ? [...activeCountries][0] : activeCountries.size ? `${activeCountries.size} countries` : ''
+    ].filter(Boolean);
     airframeTitle.textContent = scopeParts.length ? scopeParts.join(' · ') + ' · aircraft records' : '61-aircraft control table';
 
-    airframeStatus.textContent = activeRegion || activeCountry || activeLessee || activeModel
+    airframeStatus.textContent = hasFilters()
       ? `${visible.length} record${visible.length === 1 ? '' : 's'} · ${identified} identified by MSN/registration · ${psMatched} Planespotters match${psMatched === 1 ? '' : 'es'}`
       : `61 control records · 56 mapped to lessees · 5 reconciliation gaps · ${identified} currently identified by MSN/registration`;
 
@@ -2544,18 +2549,17 @@
     lesseeFilterHost.appendChild(button);
   });
 
-  let activeRegion = null;
-  let activeCountry = null;
-  let activeLessee = null;
-  let activeModel = null;
+  const activeCountries = new Set();
+  const activeLessees = new Set();
+  const activeModels = new Set();
   let activeModes = new Set(['lessees']);
+  const hasFilters = () => activeCountries.size || activeLessees.size || activeModels.size;
 
   const filteredAirframes = () => airframeRows.filter(r => {
-    if (r.mapped_or_gap !== 'MAPPED' && (activeRegion || activeCountry || activeLessee || activeModel)) return false;
-    if (activeLessee && r.lessee !== activeLessee) return false;
-    if (activeCountry && r.country !== activeCountry) return false;
-    if (activeRegion && regionForCountry(r.country) !== activeRegion) return false;
-    if (activeModel && r.model !== activeModel) return false;
+    if (r.mapped_or_gap !== 'MAPPED' && hasFilters()) return false;
+    if (activeLessees.size && !activeLessees.has(r.lessee)) return false;
+    if (activeCountries.size && !activeCountries.has(r.country)) return false;
+    if (activeModels.size && !activeModels.has(r.model)) return false;
     return true;
   });
 
@@ -2705,14 +2709,13 @@
     const unlocatedHost = unlocatedControl.getContainer();
 
     const filteredPlacements = () => rankedPlacements.filter(p => {
-      if (activeLessee && p.customer !== activeLessee) return false;
-      if (activeCountry && p.country !== activeCountry) return false;
-      if (activeRegion && p.region !== activeRegion) return false;
-      if (activeModel && airframeRows.length) {
+      if (activeLessees.size && !activeLessees.has(p.customer)) return false;
+      if (activeCountries.size && !activeCountries.has(p.country)) return false;
+      if (activeModels.size && airframeRows.length) {
         const hasModel = airframeRows.some(r =>
           r.mapped_or_gap === 'MAPPED' &&
           r.lessee === p.customer &&
-          r.model === activeModel
+          activeModels.has(r.model)
         );
         if (!hasModel) return false;
       }
@@ -2722,36 +2725,36 @@
     const syncFilterUi = () => {
       filterHost.querySelectorAll('[data-country]').forEach(button => {
         button.hidden = false;
-        const selected = button.dataset.country === activeCountry;
+        const selected = activeCountries.has(button.dataset.country);
         button.classList.toggle('is-active', selected);
         button.setAttribute('aria-pressed', selected ? 'true' : 'false');
       });
 
       filterHost.querySelectorAll('[data-lessee]').forEach(button => {
         button.hidden = false;
-        const selected = button.dataset.lessee === activeLessee;
+        const selected = activeLessees.has(button.dataset.lessee);
         button.classList.toggle('is-active', selected);
         button.classList.remove('is-muted');
         button.setAttribute('aria-pressed', selected ? 'true' : 'false');
       });
 
       filterHost.querySelectorAll('[data-model]').forEach(button => {
-        const selected = button.dataset.model === activeModel;
+        const selected = activeModels.has(button.dataset.model);
         button.classList.toggle('is-active', selected);
         button.setAttribute('aria-pressed', selected ? 'true' : 'false');
       });
 
       const visible = filteredPlacements();
       const filteredAircraft = airframeRows.length ? filteredAirframes().filter(r => r.mapped_or_gap === 'MAPPED') : [];
-      const aircraft = activeModel && airframeRows.length
+      const aircraft = hasFilters() && airframeRows.length
         ? filteredAircraft.length
         : visible.reduce((sum, p) => sum + Number(p.aircraftCount || 0), 0);
       const visibleCountries = new Set(visible.map(p => p.country)).size;
-      const noFilter = !activeRegion && !activeCountry && !activeLessee && !activeModel;
+      const noFilter = !hasFilters();
       statusHost.textContent = noFilter
         ? '26 lessees · 19 countries · 61 aircraft control total'
-        : `${visible.length} lessee${visible.length === 1 ? '' : 's'} · ${visibleCountries} countr${visibleCountries === 1 ? 'y' : 'ies'} · ${aircraft} mapped aircraft${activeModel ? ' · ' + activeModel : ''}`;
-      clearButton.disabled = !activeRegion && !activeCountry && !activeLessee && !activeModel;
+        : `${visible.length} lessee${visible.length === 1 ? '' : 's'} · ${visibleCountries} countr${visibleCountries === 1 ? 'y' : 'ies'} · ${aircraft} mapped aircraft`;
+      clearButton.disabled = noFilter;
       renderAirframes();
     };
 
@@ -2840,9 +2843,7 @@
 
           marker.on('click', () => {
             if (!airframeRows.length) return;
-            activeRegion = null;
-            activeCountry = null;
-            activeLessee = p.customer;
+            activeLessees.add(p.customer);
             renderAirframes();
           });
           fitPoints.push([p.lat,p.lng]);
@@ -2990,51 +2991,39 @@
       if (activeModes.has('aircraft')) renderMarkers({ fit: false });
     });
 
-    countryFilterHost.addEventListener('click', event => {
-      const button = event.target.closest('.abelo-filter-chip--country[data-country]');
-      if (!button) return;
-      const next = button.dataset.country;
-      const turningOff = activeCountry === next && !activeRegion && !activeLessee;
-      activeRegion = null;
-      activeCountry = turningOff ? null : next;
-      activeLessee = null;
-      renderMarkers();
-    });
-
-    lesseeFilterHost.addEventListener('click', event => {
-      const button = event.target.closest('[data-lessee]');
-      if (!button) return;
-      const next = button.dataset.lessee;
-      const turningOff = activeLessee === next && !activeRegion && !activeCountry;
-      activeRegion = null;
-      activeCountry = null;
-      activeLessee = turningOff ? null : next;
-      renderMarkers();
-    });
-
-    modelFilterHost.addEventListener('click', event => {
-      const button = event.target.closest('[data-model]');
-      if (!button) return;
-      const next = button.dataset.model;
-      activeModel = activeModel === next ? null : next;
-      renderMarkers();
-    });
+    const bindMultiFilter = (host, key, selections) => {
+      host.addEventListener('click', event => {
+        const button = event.target.closest(`[data-${key}]`);
+        if (!button || !host.contains(button)) return;
+        const value = button.dataset[key];
+        // Keyboard activation has detail 0: allow a second Enter/Space to remove it.
+        if (event.detail === 0 && selections.has(value)) selections.delete(value);
+        else selections.add(value);
+        renderMarkers();
+      });
+      host.addEventListener('dblclick', event => {
+        const button = event.target.closest(`[data-${key}]`);
+        if (!button || !host.contains(button)) return;
+        selections.delete(button.dataset[key]);
+        renderMarkers();
+      });
+    };
+    bindMultiFilter(countryFilterHost, 'country', activeCountries);
+    bindMultiFilter(lesseeFilterHost, 'lessee', activeLessees);
+    bindMultiFilter(modelFilterHost, 'model', activeModels);
 
     mapHost.addEventListener('click', event => {
       const button = event.target.closest('[data-abelo-show-aircraft]');
       if (!button) return;
-      activeRegion = null;
-      activeCountry = null;
-      activeLessee = button.dataset.abeloShowAircraft;
+      activeLessees.add(button.dataset.abeloShowAircraft);
       renderMarkers();
       window.setTimeout(() => airframeHost.scrollIntoView({ behavior: 'smooth', block: 'start' }), 80);
     });
 
     clearButton.addEventListener('click', () => {
-      activeRegion = null;
-      activeCountry = null;
-      activeLessee = null;
-      activeModel = null;
+      activeCountries.clear();
+      activeLessees.clear();
+      activeModels.clear();
       renderMarkers();
     });
 
