@@ -3124,3 +3124,84 @@ body.answer-focus-open{overflow:hidden}
     grid-template-columns: 1fr;
   }
 }
+
+
+/* Mobile map: keep fullscreen access on the map and show a light overlay in fullscreen. */
+.abelo-mobile-map-control {
+  display: none;
+}
+
+@media (max-width: 720px) {
+  .abelo-mobile-map-control {
+    display: block;
+    margin: 8px 8px 0 0;
+  }
+
+  .abelo-mobile-map-control button {
+    min-height: 38px;
+    border: 1px solid #cfd8e2;
+    border-radius: 9px;
+    background: rgba(255,255,255,.96);
+    color: #1f3b57;
+    padding: 7px 10px;
+    font: inherit;
+    font-size: .74rem;
+    font-weight: 850;
+    box-shadow: 0 3px 12px rgba(15,23,42,.16);
+    backdrop-filter: blur(7px);
+  }
+
+  .abelo-mobile-tabs label {
+    min-height: 42px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    border: 1px solid #cfd8e2;
+    border-radius: 9px;
+    background: #fff;
+    color: #334155;
+    padding: 8px 9px;
+    font-size: .78rem;
+    font-weight: 800;
+    cursor: pointer;
+  }
+
+  .abelo-mobile-tabs label.is-active {
+    border-color: #174f7d;
+    background: #eaf3fa;
+    color: #174f7d;
+    box-shadow: inset 0 -3px 0 #174f7d;
+  }
+
+  .abelo-mobile-tabs input {
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    accent-color: #174f7d;
+  }
+
+  .abelo-mobile-controls.is-map-overlay {
+    position: absolute;
+    top: 54px;
+    right: 8px;
+    z-index: 1200;
+    width: min(360px, calc(100vw - 78px));
+    max-height: calc(100vh - 72px);
+    margin: 0;
+    overflow: auto;
+    overscroll-behavior: contain;
+    background: rgba(251,252,253,.97);
+    box-shadow: 0 12px 34px rgba(15,23,42,.25);
+    backdrop-filter: blur(10px);
+  }
+
+  .abelo-map-canvas:fullscreen .abelo-mobile-map-control,
+  .abelo-map-canvas.is-map-fullscreen-fallback .abelo-mobile-map-control {
+    display: block;
+  }
+
+  .abelo-map-canvas:fullscreen .abelo-unlocated-aircraft,
+  .abelo-map-canvas.is-map-fullscreen-fallback .abelo-unlocated-aircraft {
+    max-width: calc(100vw - 24px);
+  }
+}
