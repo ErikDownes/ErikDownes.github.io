@@ -108,6 +108,7 @@ content:
   - { name: aviation_asset_management, label: "Aviation · Asset Management", type: file, path: aviation/asset-management.md, format: yaml-frontmatter, fields: *aviationfields }
   - { name: aviation_abelo, label: "Aviation · Abelo", type: file, path: aviation/abelo.md, format: yaml-frontmatter, fields: *aviationfields }
   - { name: aviation_credit_risk, label: "Aviation · Credit Risk", type: file, path: aviation/credit-risk.md, format: yaml-frontmatter, fields: *aviationfields }
+  - { name: aviation_stress_testing, label: "Aviation · Stress Testing", type: file, path: aviation/stress-testing.md, format: yaml-frontmatter, fields: *aviationfields }
   - { name: aviation_maintenance, label: "Aviation · Maintenance", type: file, path: aviation/maintenance.md, format: yaml-frontmatter, fields: *aviationfields }
   - { name: aviation_maintenance_reserves, label: "Aviation · Maintenance Reserves", type: file, path: aviation/maintenance-reserves.md, format: yaml-frontmatter, fields: *aviationfields }
   - { name: coursework, label: "Coursework", type: file, path: coursework.md, format: yaml-frontmatter, fields: *docfields }
@@ -161,4 +162,5 @@ content:
   - { name: portfolio, label: "Portfolio", type: file, path: portfolio.md, format: yaml-frontmatter, fields: *docfields }
   - { name: turboprop_dashboard_build, label: "Portfolio · How I Built the Turboprop Dashboard", type: file, path: turboprop-dashboard-build.md, format: yaml-frontmatter, fields: *docfields }
   - { name: atr_fleet_dashboard, label: "Portfolio · ATR Fleet & Maintenance Dashboard", type: file, path: atr-fleet-dashboard.md, format: yaml-frontmatter, fields: *docfields }
+  - { name: lease_dashboard_build, label: "Portfolio · How I Built the Lease Calculator", type: file, path: lease-dashboard-build.md, format: yaml-frontmatter, fields: *docfields }
   - { name: glossary, label: "Glossary (A–Z)", type: file, path: glossary.md, format: yaml-frontmatter, fields: *docfields }
