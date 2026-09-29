@@ -3205,3 +3205,89 @@ body.answer-focus-open{overflow:hidden}
     max-width: calc(100vw - 24px);
   }
 }
+
+
+/* Draggable floating fleet filter summary shared by desktop and mobile. */
+.abelo-floating-filter {
+  position: absolute;
+  top: 58px;
+  right: 10px;
+  z-index: 1150;
+  display: flex;
+  align-items: stretch;
+  max-width: min(360px, calc(100% - 20px));
+  border: 1px solid #cfd8e2;
+  border-radius: 10px;
+  background: rgba(255,255,255,.96);
+  box-shadow: 0 6px 18px rgba(15,23,42,.18);
+  backdrop-filter: blur(8px);
+  overflow: hidden;
+}
+
+.abelo-floating-filter__drag {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  flex: 0 0 30px;
+  color: #64748b;
+  background: #f8fafc;
+  border-right: 1px solid #e2e8f0;
+  font-weight: 900;
+  cursor: move;
+  touch-action: none;
+  user-select: none;
+}
+
+.abelo-floating-filter__button {
+  min-width: 0;
+  display: grid;
+  gap: 1px;
+  border: 0;
+  background: transparent;
+  color: #1f2937;
+  padding: 8px 10px;
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+}
+
+.abelo-floating-filter__button strong {
+  font-size: .73rem;
+  line-height: 1.1;
+}
+
+.abelo-floating-filter__button span {
+  color: #64748b;
+  font-size: .66rem;
+  line-height: 1.15;
+  white-space: nowrap;
+}
+
+@media (max-width: 720px) {
+  .abelo-floating-filter {
+    top: 56px;
+    right: 8px;
+    max-width: calc(100% - 16px);
+  }
+
+  .abelo-floating-filter__drag {
+    width: 28px;
+    flex-basis: 28px;
+  }
+
+  .abelo-floating-filter__button {
+    padding: 7px 8px;
+  }
+
+  .abelo-floating-filter__button strong {
+    font-size: .69rem;
+  }
+
+  .abelo-floating-filter__button span {
+    font-size: .62rem;
+  }
+
+  .abelo-popup-card--aircraft {
+    cursor: pointer;
+  }
+}
