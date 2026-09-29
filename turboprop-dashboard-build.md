@@ -6,6 +6,24 @@ eyebrow: PORTFOLIO · DATA ANALYSIS · WEB APPLICATION
 ---
 
 
+## 30-Second Version
+
+I used **OpenSky and PlaneSpotters** to build the aircraft database because I needed both sources to get the full picture.
+
+Then I used **Leaflet** to turn the data into an interactive map with filters.
+
+You can view all **61 aircraft**, see the fleet by **lessee**, or drill down into individual aircraft. The map is colour-coded so you can quickly see how the fleet is distributed and where different aircraft are operating.
+
+For me, that was the value of the project — it wasn’t just building an app. It was turning a fairly complicated aircraft dataset into something you could actually explore and understand visually.
+
+The next step would be to add **EASA-approved Part-145 maintenance organisations and airport locations**. That could help connect aircraft location with scheduled maintenance requirements and give a better picture of how maintenance planning affects asset management.
+
+
+
+&nbsp;
+
+&nbsp;
+
 ## view answer
 
 I started with a simple question. Abelo says it has 61 aircraft, 26 lessees and operates across 19 countries, and I wanted to understand what that portfolio actually looked like rather than just reading the headline numbers.
