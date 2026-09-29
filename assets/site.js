@@ -800,6 +800,7 @@
     { label: 'Aircraft Options', path: 'aviation/aircraft-options.html' },
     { label: 'External Shocks and Risk to the Sector', path: 'aviation/external-shocks-risk.html' },
     { label: 'Credit Risk', path: 'aviation/credit-risk.html' },
+    { label: 'Stress Testing', path: 'aviation/stress-testing.html' },
     { label: 'Maintenance', path: 'aviation/maintenance.html' },
     { label: 'Maintenance Reserves', path: 'aviation/maintenance-reserves.html' }
   ];
@@ -898,7 +899,8 @@
     { label: 'Global Fleet Maintenance Dashboard', path: 'atr-fleet-dashboard.html' },
     { label: 'Mortgage Calculator', path: 'mortgage-calculator.html' },
     { label: 'PCP Car Finance Calculator', path: 'pcp-calculator.html' },
-    { label: 'ATR 42 / ATR 72 Lease Calculator', path: 'lease-dashboard.html' }
+    { label: 'Turboprop Lease Calculator', path: 'lease-dashboard.html' },
+    { label: 'How I Built the Lease Calculator', path: 'lease-dashboard-build.html' }
   ];
 
   const populatePortfolioMenu = async (item, pageUrl) => {
