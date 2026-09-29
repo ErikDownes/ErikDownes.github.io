@@ -3043,3 +3043,84 @@ body.answer-focus-open{overflow:hidden}
     min-height: 430px;
   }
 }
+
+
+/* Mobile fleet controls: compact proof-of-concept table below the map. */
+@media (max-width: 720px) {
+  .abelo-mobile-controls__actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 6px;
+  }
+
+  .abelo-mobile-control-btn {
+    min-height: 36px;
+    border: 1px solid #cfd8e2;
+    border-radius: 8px;
+    background: #fff;
+    color: #334155;
+    padding: 6px 9px;
+    font: inherit;
+    font-size: .72rem;
+    font-weight: 800;
+    white-space: nowrap;
+  }
+
+  .abelo-mobile-controls__body[hidden] {
+    display: none;
+  }
+
+  .abelo-mobile-tabs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .abelo-mobile-controls .abelo-filter-grid--models,
+  .abelo-mobile-controls .abelo-filter-grid--lessees {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .abelo-mobile-controls .abelo-filter-chip {
+    grid-template-columns: 9px minmax(0, 1fr);
+    align-content: center;
+    gap: 6px;
+    min-height: 50px;
+    padding: 8px;
+  }
+
+  .abelo-mobile-controls .abelo-filter-chip small {
+    grid-column: 2;
+    display: block;
+    white-space: normal;
+    line-height: 1.15;
+  }
+
+  .abelo-mobile-controls__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-top: 10px;
+    padding-top: 9px;
+    border-top: 1px solid #e2e8f0;
+  }
+
+  .abelo-mobile-controls__footer > span {
+    color: #607080;
+    font-size: .68rem;
+    line-height: 1.25;
+  }
+
+  .abelo-mobile-controls__footer .abelo-filter-clear {
+    flex: 0 0 auto;
+    min-height: 36px;
+    font-size: .7rem;
+  }
+}
+
+@media (max-width: 390px) {
+  .abelo-mobile-controls .abelo-filter-grid--models,
+  .abelo-mobile-controls .abelo-filter-grid--lessees {
+    grid-template-columns: 1fr;
+  }
+}
