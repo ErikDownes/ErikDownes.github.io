@@ -13,7 +13,6 @@ intro: Explore illustrative lease, re-lease and residual-value scenarios for reg
     <button class="lease-tab" data-tab="relet" type="button">Re-lease decision</button>
     <button class="lease-tab" data-tab="scenarios" type="button">Scenario comparison</button>
     <button class="lease-tab" data-tab="lineage" type="button">Fleet lineage</button>
-    <button class="lease-tab" data-tab="portfolio" type="button">Abelo fleet map</button>
   </div>
 
   <section class="lease-panel active" data-panel="acquisition">
@@ -124,7 +123,7 @@ intro: Explore illustrative lease, re-lease and residual-value scenarios for reg
         </div>
 
         <div class="lease-note">
-          <strong>Public-data boundary:</strong> the ATR 72-600 default uses a September 2026 public order announcement as a headline reference. Other defaults are deliberately labelled illustrative. The model does not claim access to manufacturer list prices, Abelo acquisition costs or confidential option terms.
+          <strong>Public-data boundary:</strong> the ATR 72-600 default uses a September 2026 public order announcement as a headline reference. Other defaults are deliberately labelled illustrative. The model does not claim access to manufacturer list prices, any lessor's acquisition costs or confidential option terms.
         </div>
       </div>
     </div>
@@ -247,108 +246,6 @@ intro: Explore illustrative lease, re-lease and residual-value scenarios for reg
       <div><h3>Conservative</h3><p>Higher discount rate, faster value decline and weaker lease income.</p></div>
       <div><h3>Base</h3><p>Uses the assumptions selected in the single-aircraft dashboard.</p></div>
       <div><h3>Upside</h3><p>Lower discount rate, slower value decline and stronger lease income.</p></div>
-    </div>
-  </section>
-
-  <section class="lease-panel" data-panel="lineage">
-    <h3>ATR focus with historical Dash 8 context</h3>
-    <p>Abelo's current public positioning is strongly centred on ATR aircraft, but its history comes through Elix Aviation's broader turboprop portfolio. Dash 8 aircraft therefore belong here as <strong>historical context</strong>, not as a claim about the present fleet.</p>
-
-    <div class="lineage-grid">
-      <article>
-        <span class="lineage-tag">CURRENT FOCUS</span>
-        <h3>ATR 42 family</h3>
-        <p>Smaller regional turboprop family. Useful in the dashboard for lower-capacity route and asset scenarios.</p>
-      </article>
-      <article>
-        <span class="lineage-tag">CURRENT FOCUS</span>
-        <h3>ATR 72 family</h3>
-        <p>Larger ATR family and central to Abelo's modern turboprop strategy.</p>
-      </article>
-      <article>
-        <span class="lineage-tag historical">HISTORICAL CONTEXT</span>
-        <h3>Dash 8-100 / 200 / 300</h3>
-        <p>Earlier Dash 8 variants. The family remains useful for understanding the inherited regional-turboprop market and ageing-asset decisions.</p>
-      </article>
-      <article>
-        <span class="lineage-tag historical">HISTORICAL CONTEXT</span>
-        <h3>Dash 8-400 / Q400</h3>
-        <p>The later, higher-capacity Dash 8 variant. “Q400” is a widely recognised Bombardier-era name; De Havilland Canada now markets the aircraft as the Dash 8-400.</p>
-      </article>
-    </div>
-
-    <div class="lease-note">
-      <strong>Historical anchor:</strong> Abelo announced the sale of a Dash 8-100 in July 2022, shortly after the Elix–ADARE combination created Abelo. This makes Dash 8 a legitimate part of the historical asset-management story while keeping the present-day ATR focus clear.
-    </div>
-  </section>
-
-  <section class="lease-panel" data-panel="portfolio">
-    <div class="portfolio-heading">
-      <div>
-        <h3>Abelo public fleet map</h3>
-        <p>Turn the portfolio into something you can see. Abelo currently describes itself as supporting a fleet of <strong>more than 60 turboprop aircraft</strong>. This map plots aircraft and placements that can be tied to public Abelo, airline, regulator or transaction evidence.</p>
-      </div>
-    </div>
-
-    <div class="lease-note">
-      <strong>Evidence rule:</strong> this is not presented as Abelo's confidential live fleet database. A marker can represent an individually identified airframe or a publicly announced multi-aircraft transaction. Where an MSN is not public, the app says so rather than inventing one.
-    </div>
-
-    <div class="lease-kpis portfolio-kpis">
-      <div><span>Aircraft</span><strong>61</strong></div>
-      <div><span>Lessees</span><strong>26</strong></div>
-      <div><span>Countries</span><strong>19</strong></div>
-      <div><span>Publicly mapped here</span><strong id="portfolioMapped">—</strong></div>
-    </div>
-
-    <div class="lease-note">
-      <strong>Working reconstruction:</strong> 61 aircraft · 26 lessees · 19 countries. These are a public-data working estimate for the proof of concept, not a claim that Abelo has published a complete live fleet register. The map below shows the documented subset currently tied to public transaction evidence.
-    </div>
-
-    <div class="lease-mini-grid">
-      <div>
-        <h3>The problem</h3>
-        <p>Abelo says it supports more than 60 turboprops, but there is no complete public aircraft-by-aircraft register to download. A customer airline may lease aircraft from several different lessors, registrations can change, and aircraft may sit inside Elix/Abelo special-purpose companies rather than carrying an obvious “Abelo” owner name.</p>
-      </div>
-      <div>
-        <h3>The challenge</h3>
-        <p>Reconstruct the portfolio without confusing an airline’s whole fleet with Abelo’s exposure. The durable key is the aircraft MSN, then registration history, owner/SPV, lessor or manager, lessee, country and transaction date. Public announcements establish the lease relationship; the large aircraft database is used to enrich and cross-check the airframe record.</p>
-      </div>
-    </div>
-
-    <div class="lease-note">
-      <strong>Proof of concept:</strong> start with the 61 · 26 · 19 working portfolio, classify each relationship as verified, strong inference or assumed, and progressively replace assumptions with aircraft-level evidence. The value of the app is the reconciliation process and audit trail — not pretending uncertain public data is exact.
-    </div>
-
-    <div class="portfolio-controls">
-      <label>Region
-        <select id="portfolioRegion">
-          <option value="all">All regions</option>
-          <option value="Europe">Europe</option>
-          <option value="Africa">Africa</option>
-          <option value="Asia">Asia</option>
-          <option value="Oceania">Oceania</option>
-          <option value="Americas">Americas</option>
-        </select>
-      </label>
-      <label>Evidence
-        <select id="portfolioEvidence">
-          <option value="all">All public records</option>
-          <option value="msn">Includes identified MSN</option>
-          <option value="transaction">Transaction-level only</option>
-        </select>
-      </label>
-    </div>
-
-    <div id="abeloFleetMap" class="abelo-fleet-map" aria-label="Map of publicly documented Abelo aircraft placements"></div>
-    <div class="lease-note portfolio-map-note">
-      <strong>Map meaning:</strong> pins show the airline/operator geography associated with the lease or placement — <em>not</em> a live aircraft position.
-    </div>
-
-    <div id="portfolioList" class="portfolio-list"></div>
-
-    <div class="lease-note">
-      <strong>Research trail:</strong> the current map starts with recent, verifiable transactions including IndiGo, SKY express, Olympic Air, Renegade Air, Maldivian, Madagascar Airlines, Braathens, SATENA, Ethiopian/Air Congo, Aerlink, Air Astra and the six-aircraft Aergo portfolio. It is deliberately extensible as further MSNs and registrations are verified.
     </div>
   </section>
 </div>
