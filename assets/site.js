@@ -3022,14 +3022,27 @@
             iconAnchor: [26, 19],
             popupAnchor: [offset.x, offset.y - 22]
           });
-          L.marker([placement.lat, placement.lng], {
+          const aircraftMarker = L.marker([placement.lat, placement.lng], {
             icon,
             title: `Aircraft #${row.aircraftNumber} · ${row.model || row.family || ''} · ${row.lessee || ''}`,
             riseOnHover: true,
             zIndexOffset: 300
           })
             .addTo(markerLayer)
-            .bindPopup(() => aircraftPopupHtml(row), { maxWidth: 520, minWidth: 390 });
+            .bindPopup(() => aircraftPopupHtml(row), { maxWidth: 520, minWidth: 300 });
+
+          aircraftMarker.on('popupopen', event => {
+            const popupEl = event.popup.getElement();
+            const card = popupEl?.querySelector('.abelo-popup-card--aircraft');
+            if (!card) return;
+            card.style.cursor = 'pointer';
+            card.setAttribute('title', 'Tap to close');
+            card.addEventListener('click', closeEvent => {
+              if (closeEvent.target.closest('a, button')) return;
+              map.closePopup(event.popup);
+            }, { once: true });
+          });
+
           fitPoints.push([placement.lat, placement.lng]);
         });
 
