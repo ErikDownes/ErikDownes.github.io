@@ -12,7 +12,6 @@ intro: Explore illustrative lease, re-lease and residual-value scenarios for reg
     <button class="lease-tab" data-tab="single" type="button">Single aircraft</button>
     <button class="lease-tab" data-tab="relet" type="button">Re-lease decision</button>
     <button class="lease-tab" data-tab="scenarios" type="button">Scenario comparison</button>
-    <button class="lease-tab" data-tab="lineage" type="button">Fleet lineage</button>
   </div>
 
   <section class="lease-panel active" data-panel="acquisition">
