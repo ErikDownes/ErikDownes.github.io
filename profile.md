@@ -22,7 +22,7 @@ eyebrow: FINANCIAL MATHEMATICS · DATA ANALYSIS · UNIVERSITY OF LIMERICK
   </div>
 
   <figure class="profile-portrait">
-    <img src="{{ '/assets/erikdownes_portrait.jpg' | relative_url }}?v={{ site.github.build_revision }}" alt="Erik Downes">
+    <img src="{{ '/assets/erik-profile.jpg' | relative_url }}?v={{ site.github.build_revision }}" alt="Erik Downes">
   </figure>
 </div>
 
