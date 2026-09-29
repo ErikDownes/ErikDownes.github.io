@@ -3031,16 +3031,42 @@
             .addTo(markerLayer)
             .bindPopup(() => aircraftPopupHtml(row), { maxWidth: 520, minWidth: 300 });
 
+          // Make aircraft popups easy to dismiss on touch devices.
+          // Record whether the popup was already open before a marker tap so a
+          // second tap closes it instead of Leaflet immediately reopening it.
+          const markerEl = aircraftMarker.getElement();
+          let popupWasOpenAtTapStart = false;
+          if (markerEl) {
+            const rememberPopupState = () => {
+              popupWasOpenAtTapStart = aircraftMarker.isPopupOpen();
+            };
+            markerEl.addEventListener('pointerdown', rememberPopupState, true);
+            markerEl.addEventListener('touchstart', rememberPopupState, { capture: true, passive: true });
+            markerEl.addEventListener('click', markerEvent => {
+              if (!popupWasOpenAtTapStart) return;
+              markerEvent.preventDefault();
+              markerEvent.stopPropagation();
+              markerEvent.stopImmediatePropagation();
+              aircraftMarker.closePopup();
+              popupWasOpenAtTapStart = false;
+            }, true);
+          }
+
           aircraftMarker.on('popupopen', event => {
             const popupEl = event.popup.getElement();
             const card = popupEl?.querySelector('.abelo-popup-card--aircraft');
-            if (!card) return;
+            if (!popupEl || !card) return;
+            L.DomEvent.disableClickPropagation(popupEl);
             card.style.cursor = 'pointer';
             card.setAttribute('title', 'Tap to close');
-            card.addEventListener('click', closeEvent => {
-              if (closeEvent.target.closest('a, button')) return;
+
+            const closeCard = closeEvent => {
+              closeEvent.preventDefault();
+              closeEvent.stopPropagation();
               map.closePopup(event.popup);
-            }, { once: true });
+            };
+            card.addEventListener('pointerup', closeCard, { once: true });
+            card.addEventListener('click', closeCard, { once: true });
           });
 
           fitPoints.push([placement.lat, placement.lng]);
