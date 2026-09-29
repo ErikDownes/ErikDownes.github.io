@@ -2942,3 +2942,104 @@ body.answer-focus-open{overflow:hidden}
 .profile-mode .doc-kicker{margin-bottom:8px}
 .profile-mode .profile-tagline{margin-top:14px!important;margin-bottom:28px!important}
 .profile-mode .doc-body>h2:first-of-type{margin-top:18px}
+
+
+/* Mobile-first fleet map controls. Desktop interface remains unchanged. */
+.abelo-mobile-controls {
+  display: none;
+}
+
+@media (max-width: 720px) {
+  .abelo-filter-panel,
+  .abelo-map-mode {
+    display: none !important;
+  }
+
+  .abelo-mobile-controls {
+    display: block;
+    margin: 12px 0 16px;
+    padding: 12px;
+    border: 1px solid #d9dee8;
+    border-radius: 14px;
+    background: #fbfcfd;
+  }
+
+  .abelo-mobile-controls__head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  .abelo-mobile-controls__head > div {
+    display: grid;
+    gap: 2px;
+  }
+
+  .abelo-mobile-controls__head strong {
+    color: #172033;
+    font-size: .92rem;
+  }
+
+  .abelo-mobile-controls__head span,
+  .abelo-mobile-controls__hint {
+    color: #607080;
+    font-size: .72rem;
+  }
+
+  .abelo-mobile-tabs {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 6px;
+    margin-bottom: 10px;
+  }
+
+  .abelo-mobile-tabs button {
+    min-height: 42px;
+    border: 1px solid #cfd8e2;
+    border-radius: 9px;
+    background: #fff;
+    color: #334155;
+    padding: 8px 6px;
+    font: inherit;
+    font-size: .78rem;
+    font-weight: 800;
+  }
+
+  .abelo-mobile-tabs button.is-active {
+    border-color: #174f7d;
+    background: #eaf3fa;
+    color: #174f7d;
+    box-shadow: inset 0 -3px 0 #174f7d;
+  }
+
+  .abelo-mobile-pane[hidden] {
+    display: none;
+  }
+
+  .abelo-mobile-controls .abelo-filter-grid--models,
+  .abelo-mobile-controls .abelo-filter-grid--lessees,
+  .abelo-mobile-controls .abelo-filter-grid--countries {
+    grid-template-columns: 1fr;
+  }
+
+  .abelo-mobile-controls .abelo-filter-chip {
+    min-height: 44px;
+    padding: 9px 10px;
+    font-size: .82rem;
+    touch-action: manipulation;
+  }
+
+  .abelo-mobile-controls .abelo-filter-chip small {
+    font-size: .68rem;
+  }
+
+  .abelo-mobile-controls__hint {
+    margin: 10px 0 0;
+  }
+
+  .abelo-map-canvas {
+    min-height: 430px;
+  }
+}
