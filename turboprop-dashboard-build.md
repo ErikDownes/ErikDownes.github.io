@@ -4,6 +4,28 @@ handle: Project Build
 title: How I Built the Turboprop Asset Reporting Dashboard
 eyebrow: PORTFOLIO · DATA ANALYSIS · WEB APPLICATION
 ---
+
+
+## Interview answer
+
+
+
+I started with a simple question. Abelo says it has 61 aircraft, 26 lessees and operates across 19 countries, and I wanted to understand what that portfolio actually looked like rather than just reading the headline numbers.
+
+There wasn’t one clean dataset, so I combined several public sources. I used PlaneSpotters production lists for ATRs and Dash 8s, captured the pages and used AI-assisted OCR to turn them into about 2,600 structured aircraft records. That gave me things like MSN, registration, aircraft type, operator, delivery information and status.
+
+I then brought in the much larger OpenSky aircraft database, with about 520,000 records. The fields weren’t identical, so I had to reconcile them rather than just merge them blindly. MSN matched to serial number, registration matched directly, and I used aircraft type, operator and aircraft history as supporting evidence.
+
+Separately, I built a 61-record Abelo and Elix control table from public announcements and historical information. Some of those records gave me the lessee, country and aircraft type but not the actual registration or MSN, so I worked from lessee to aircraft type to candidate airframes, and then used registration and MSN where I could to confirm the match.
+
+I deliberately left aircraft unresolved where the evidence wasn’t strong enough rather than forcing a match.
+
+Once the data made sense, I moved from Google Colab and Pandas into VS Code and built the application using HTML, CSS, JavaScript and Leaflet. The map shows the geographic distribution of the portfolio by lessee and country, not live aircraft GPS positions.
+
+What I liked about the project was that it started as a simple map, but it became a real data-reconciliation exercise involving incomplete data, different schemas, historical aircraft changes and uncertainty. That gave me a much better understanding of the kind of asset data you would actually have to work with in aircraft leasing.
+
+
+
 ## Why I started
 
 Abelo’s public figures — 61 aircraft, 26 lessees and 19 countries — made me curious. Which aircraft were they, who was operating them, and where were they flying?
