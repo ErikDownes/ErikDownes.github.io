@@ -2322,11 +2322,11 @@
       <button type="button" class="abelo-filter-clear" data-abelo-clear>Clear filters</button>
     </div>
     <details class="abelo-filter-details">
-      <summary><span>Region</span></summary>
-      <div class="abelo-filter-grid abelo-filter-grid--regions" data-abelo-region-filters></div>
+      <summary><span>Countries</span></summary>
+      <div class="abelo-filter-grid abelo-filter-grid--countries" data-abelo-country-filters></div>
     </details>
     <details class="abelo-filter-details">
-      <summary><span>Airframe</span></summary>
+      <summary><span>Aircraft type</span></summary>
       <div class="abelo-filter-grid abelo-filter-grid--models" data-abelo-model-filters></div>
     </details>
     <details class="abelo-filter-details">
@@ -2336,7 +2336,7 @@
   `;
   mapHost.parentElement.appendChild(filterHost);
 
-  const regionFilterHost = filterHost.querySelector('[data-abelo-region-filters]');
+  const countryFilterHost = filterHost.querySelector('[data-abelo-country-filters]');
   const modelFilterHost = filterHost.querySelector('[data-abelo-model-filters]');
   const lesseeFilterHost = filterHost.querySelector('[data-abelo-lessee-filters]');
   const statusHost = filterHost.querySelector('[data-abelo-filter-status]');
@@ -2517,22 +2517,16 @@
       renderAirframes();
     });
 
-  const regionHue = new Map(
-    regions.map((region, index) => [region, Math.round((index * 300) / Math.max(regions.length, 1))])
-  );
-
-  regions.forEach(region => {
-    const rows = rankedPlacements.filter(p => p.region === region);
-    const aircraft = rows.reduce((sum, p) => sum + Number(p.aircraftCount || 0), 0);
+  countries.forEach(country => {
+    const count = rankedPlacements.filter(p => p.country === country).length;
     const button = document.createElement('button');
     button.type = 'button';
-    button.className = 'abelo-filter-chip abelo-filter-chip--region';
-    button.dataset.region = region;
-    const hue = regionHue.get(region) ?? 210;
-    button.style.setProperty('--country-color', `hsl(${hue} 58% 40%)`);
-    button.style.setProperty('--country-tint', `hsl(${hue} 65% 96%)`);
-    button.innerHTML = `<span class="abelo-filter-swatch"></span><span>${escapeHtml(region)}</span><small>${rows.length} lessees · ${aircraft} mapped aircraft</small>`;
-    regionFilterHost.appendChild(button);
+    button.className = 'abelo-filter-chip abelo-filter-chip--country';
+    button.dataset.country = country;
+    button.style.setProperty('--country-color', countryColor(country));
+    button.style.setProperty('--country-tint', countryTint(country));
+    button.innerHTML = `<span class="abelo-filter-swatch"></span><span>${escapeHtml(country)}</span><small>${count} lessee${count === 1 ? '' : 's'}</small>`;
+    countryFilterHost.appendChild(button);
   });
 
   rankedPlacements.forEach(p => {
@@ -2657,7 +2651,6 @@
         <div class="abelo-map-layer-popover" data-abelo-layer-popover hidden>
           <label><input type="checkbox" value="lessees" checked> <span>Lessees</span><b>1–26</b></label>
           <label><input type="checkbox" value="aircraft"> <span>Aircraft</span><b>1–61</b></label>
-          <label><input type="checkbox" value="countries"> <span>Countries</span><b>1–19</b></label>
           <button type="button" class="abelo-map-layer-apply" data-abelo-layer-apply>OK</button>
         </div>
       `;
@@ -2720,13 +2713,6 @@
     });
 
     const syncFilterUi = () => {
-      filterHost.querySelectorAll('[data-region]').forEach(button => {
-        if (!button.classList.contains('abelo-filter-chip--region')) return;
-        const selected = button.dataset.region === activeRegion;
-        button.classList.toggle('is-active', selected);
-        button.setAttribute('aria-pressed', selected ? 'true' : 'false');
-      });
-
       filterHost.querySelectorAll('[data-country]').forEach(button => {
         button.hidden = false;
         const selected = button.dataset.country === activeCountry;
@@ -2806,7 +2792,7 @@
     };
 
     const syncModeButtons = () => {
-      const labels = { lessees: 'Lessees', aircraft: 'Aircraft', countries: 'Countries' };
+      const labels = { lessees: 'Lessees', aircraft: 'Aircraft' };
       modeHost.querySelectorAll('[data-abelo-layer-popover] input[type="checkbox"]').forEach(input => {
         input.checked = activeModes.has(input.value);
       });
@@ -2995,13 +2981,13 @@
       if (activeModes.has('aircraft')) renderMarkers({ fit: false });
     });
 
-    regionFilterHost.addEventListener('click', event => {
-      const button = event.target.closest('.abelo-filter-chip--region[data-region]');
+    countryFilterHost.addEventListener('click', event => {
+      const button = event.target.closest('.abelo-filter-chip--country[data-country]');
       if (!button) return;
-      const next = button.dataset.region;
-      const turningOff = activeRegion === next && !activeCountry && !activeLessee;
-      activeRegion = turningOff ? null : next;
-      activeCountry = null;
+      const next = button.dataset.country;
+      const turningOff = activeCountry === next && !activeRegion && !activeLessee;
+      activeRegion = null;
+      activeCountry = turningOff ? null : next;
       activeLessee = null;
       renderMarkers();
     });
