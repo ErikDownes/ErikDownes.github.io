@@ -16,7 +16,7 @@ You can view all **61 aircraft**, see the fleet by **lessee**, or drill down int
 
 For me, that was the value of the project — it wasn’t just building an app. It was turning a fairly complicated aircraft dataset into something you could actually explore and understand visually.
 
-The next step would be to add **EASA-approved engine shops and airport locations**. That could help connect aircraft location with scheduled maintenance requirements and give a better picture of how maintenance planning affects asset management.
+The next step would be to add **EASA-approved maintenance organisations and airport locations**. That could help connect aircraft location with scheduled maintenance requirements and give a better picture of how maintenance planning affects asset management.
 
 
 
