@@ -20,7 +20,7 @@ Enjoy getting stuck into a problem and working it through, whether it is a short
 
 University work has involved statistical analysis, regression, financial modelling, numerical methods, data cleaning and visualisation, often requiring several stages from understanding the problem through to checking and presenting the result.
 
-Aviation research has provided further experience working with incomplete real-world data, comparing public sources and turning the results into a usable interactive application.
+Aviation research has provided further experience working with incomplete real-world data, comparing public sources and turning the results into a usable interactive application. [Open the interactive Turboprop Asset Reporting Dashboard →]({{ '/fleet-map.html' | relative_url }})
 
 
 
@@ -56,7 +56,7 @@ I am also conscious that technology is changing quickly, particularly with AI, a
 
 Developed a web-based portfolio bringing together financial mathematics, data analysis, programming and aviation research.
 
-Projects include an interactive turboprop fleet and leasing dashboard, financial calculators, regression and statistical analysis, Java programming and mathematical modelling.
+Projects include an [interactive turboprop fleet and leasing dashboard]({{ '/fleet-map.html' | relative_url }}), financial calculators, regression and statistical analysis, Java programming and mathematical modelling.
 
 Earlier project work includes a rollercoaster mathematical model incorporating air resistance, alongside school science and mathematics investigations.
 
