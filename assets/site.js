@@ -2340,6 +2340,44 @@
   `;
   mapHost.parentElement.appendChild(filterHost);
 
+  const mobilePanel = document.createElement('section');
+  mobilePanel.className = 'abelo-mobile-controls';
+  mobilePanel.dataset.noGlossary = '';
+  mobilePanel.innerHTML = `
+    <div class="abelo-mobile-controls__head">
+      <div>
+        <strong>Explore the fleet</strong>
+        <span data-abelo-mobile-status>Tap an aircraft type to show it on the map.</span>
+      </div>
+      <button type="button" class="abelo-filter-clear" data-abelo-mobile-clear>Clear</button>
+    </div>
+    <div class="abelo-mobile-tabs" role="tablist" aria-label="Map view">
+      <button type="button" class="is-active" data-abelo-mobile-view="aircraft" aria-pressed="true">Aircraft</button>
+      <button type="button" data-abelo-mobile-view="lessees" aria-pressed="false">Lessees</button>
+      <button type="button" data-abelo-mobile-view="countries" aria-pressed="false">Countries</button>
+    </div>
+    <div class="abelo-mobile-pane" data-abelo-mobile-pane="aircraft">
+      <div class="abelo-filter-grid abelo-filter-grid--models" data-abelo-mobile-models></div>
+    </div>
+    <div class="abelo-mobile-pane" data-abelo-mobile-pane="lessees" hidden>
+      <div class="abelo-filter-grid abelo-filter-grid--lessees" data-abelo-mobile-lessees></div>
+    </div>
+    <div class="abelo-mobile-pane" data-abelo-mobile-pane="countries" hidden>
+      <div class="abelo-filter-grid abelo-filter-grid--countries" data-abelo-mobile-countries></div>
+    </div>
+    <p class="abelo-mobile-controls__hint">Tap several items to compare them. Tap an active item again to remove it.</p>
+  `;
+  filterHost.insertAdjacentElement('afterend', mobilePanel);
+
+  const mobileModelHost = mobilePanel.querySelector('[data-abelo-mobile-models]');
+  const mobileLesseeHost = mobilePanel.querySelector('[data-abelo-mobile-lessees]');
+  const mobileCountryHost = mobilePanel.querySelector('[data-abelo-mobile-countries]');
+  const mobileStatus = mobilePanel.querySelector('[data-abelo-mobile-status]');
+  const mobileClear = mobilePanel.querySelector('[data-abelo-mobile-clear]');
+  const copyMobileFilters = (source, target) => {
+    target.replaceChildren(...Array.from(source.children).map(node => node.cloneNode(true)));
+  };
+
   const countryFilterHost = filterHost.querySelector('[data-abelo-country-filters]');
   const modelFilterHost = filterHost.querySelector('[data-abelo-model-filters]');
   const lesseeFilterHost = filterHost.querySelector('[data-abelo-lessee-filters]');
@@ -2518,6 +2556,7 @@
         modelFilterHost.appendChild(button);
       });
 
+      copyMobileFilters(modelFilterHost, mobileModelHost);
       renderAirframes();
     })
     .catch(() => {
@@ -2548,11 +2587,14 @@
     button.innerHTML = `<span class="abelo-filter-swatch"></span><span>#${escapeHtml(p.recencyRank)} ${escapeHtml(p.customer)}</span><small>${escapeHtml(p.aircraftCount)} aircraft · ${escapeHtml(p.country)}</small>`;
     lesseeFilterHost.appendChild(button);
   });
+  copyMobileFilters(countryFilterHost, mobileCountryHost);
+  copyMobileFilters(lesseeFilterHost, mobileLesseeHost);
 
   const activeCountries = new Set();
   const activeLessees = new Set();
   const activeModels = new Set();
-  let activeModes = new Set(['lessees']);
+  const isMobileMapUi = window.matchMedia('(max-width: 720px)').matches;
+  let activeModes = new Set([isMobileMapUi ? 'aircraft' : 'lessees']);
   const hasFilters = () => activeCountries.size || activeLessees.size || activeModels.size;
 
   const filteredAirframes = () => airframeRows.filter(r => {
@@ -2754,7 +2796,27 @@
       statusHost.textContent = noFilter
         ? '26 lessees · 19 countries · 61 aircraft control total'
         : `${visible.length} lessee${visible.length === 1 ? '' : 's'} · ${visibleCountries} countr${visibleCountries === 1 ? 'y' : 'ies'} · ${aircraft} mapped aircraft`;
+      mobileStatus.textContent = noFilter
+        ? (activeModes.has('aircraft') ? 'Tap one or more aircraft types.' : activeModes.has('lessees') ? 'Tap one or more lessees.' : 'Tap one or more countries.')
+        : statusHost.textContent;
       clearButton.disabled = noFilter;
+      mobileClear.disabled = noFilter;
+
+      mobilePanel.querySelectorAll('[data-country]').forEach(button => {
+        const selected = activeCountries.has(button.dataset.country);
+        button.classList.toggle('is-active', selected);
+        button.setAttribute('aria-pressed', selected ? 'true' : 'false');
+      });
+      mobilePanel.querySelectorAll('[data-lessee]').forEach(button => {
+        const selected = activeLessees.has(button.dataset.lessee);
+        button.classList.toggle('is-active', selected);
+        button.setAttribute('aria-pressed', selected ? 'true' : 'false');
+      });
+      mobilePanel.querySelectorAll('[data-model]').forEach(button => {
+        const selected = activeModels.has(button.dataset.model);
+        button.classList.toggle('is-active', selected);
+        button.setAttribute('aria-pressed', selected ? 'true' : 'false');
+      });
       renderAirframes();
     };
 
@@ -2802,7 +2864,7 @@
     };
 
     const syncModeButtons = () => {
-      const labels = { lessees: 'Lessees', aircraft: 'Aircraft' };
+      const labels = { lessees: 'Lessees', aircraft: 'Aircraft', countries: 'Countries' };
       modeHost.querySelectorAll('[data-abelo-layer-popover] input[type="checkbox"]').forEach(input => {
         input.checked = activeModes.has(input.value);
       });
@@ -3011,6 +3073,46 @@
     bindMultiFilter(countryFilterHost, 'country', activeCountries);
     bindMultiFilter(lesseeFilterHost, 'lessee', activeLessees);
     bindMultiFilter(modelFilterHost, 'model', activeModels);
+
+    const bindMobileFilter = (host, key, selections) => {
+      host.addEventListener('click', event => {
+        const button = event.target.closest(`[data-${key}]`);
+        if (!button || !host.contains(button)) return;
+        const value = button.dataset[key];
+        if (selections.has(value)) selections.delete(value);
+        else selections.add(value);
+        renderMarkers();
+      });
+    };
+    bindMobileFilter(mobileCountryHost, 'country', activeCountries);
+    bindMobileFilter(mobileLesseeHost, 'lessee', activeLessees);
+    bindMobileFilter(mobileModelHost, 'model', activeModels);
+
+    const syncMobileTabs = mode => {
+      mobilePanel.querySelectorAll('[data-abelo-mobile-view]').forEach(button => {
+        const selected = button.dataset.abeloMobileView === mode;
+        button.classList.toggle('is-active', selected);
+        button.setAttribute('aria-pressed', selected ? 'true' : 'false');
+      });
+      mobilePanel.querySelectorAll('[data-abelo-mobile-pane]').forEach(pane => {
+        pane.hidden = pane.dataset.abeloMobilePane !== mode;
+      });
+    };
+    mobilePanel.addEventListener('click', event => {
+      const viewButton = event.target.closest('[data-abelo-mobile-view]');
+      if (!viewButton) return;
+      const mode = viewButton.dataset.abeloMobileView;
+      activeModes = new Set([mode]);
+      syncMobileTabs(mode);
+      renderMarkers();
+    });
+    mobileClear.addEventListener('click', () => {
+      activeCountries.clear();
+      activeLessees.clear();
+      activeModels.clear();
+      renderMarkers();
+    });
+    syncMobileTabs(isMobileMapUi ? 'aircraft' : 'lessees');
 
     mapHost.addEventListener('click', event => {
       const button = event.target.closest('[data-abelo-show-aircraft]');
