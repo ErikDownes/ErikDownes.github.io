@@ -85,7 +85,7 @@
       {% assign nav_legacy_title = nav_title_parts[0] | strip %}
       {% assign nav_menu_title = navpage.handle | default: nav_legacy_title | strip %}
       <div class="navitem nav-dynamic" data-question-menu>
-        <a class="navlabel" href="{{ navpage.url | relative_url }}"{% if nav_menu_title == 'About Me' or nav_menu_title == 'Aviation' or nav_menu_title == 'Portfolio' %} aria-haspopup="true" aria-expanded="false"{% endif %}><span>{{ nav_menu_title }}</span></a>
+        <a class="navlabel" href="{{ navpage.url | relative_url }}"{% if nav_menu_title == 'About Me' or nav_menu_title == 'Blog' or nav_menu_title == 'Portfolio' %} aria-haspopup="true" aria-expanded="false"{% endif %}><span>{{ nav_menu_title }}</span></a>
         <div class="dropmenu"></div>
       </div>
       {% endfor %}
