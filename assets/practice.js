@@ -13,20 +13,20 @@
       const head = document.createElement('div');
       head.className = 'answer-practice-head';
       const label = document.createElement('strong');
-      label.textContent = options.title || 'Practice answer';
+      label.textContent = options.title || 'Optional recording';
       const suggested = document.createElement('span');
       suggested.textContent = `Suggested time ${formatTime(fast)}–${formatTime(slow)}`;
       head.append(label, suggested);
       const reminder = document.createElement('p');
       reminder.className = 'answer-practice-reminder';
-      reminder.textContent = 'Pause before answering. Use the idea, not a script.';
+      reminder.textContent = 'Use your breadcrumbs, then say the answer in your own words. Recording is optional.';
       const timer = document.createElement('div');
       timer.className = 'answer-practice-timer';
       timer.textContent = `0:00 / ~${formatTime(target)} target`;
       const record = document.createElement('button');
       record.type = 'button';
       record.className = 'answer-practice-record';
-      record.textContent = '● Record answer';
+      record.textContent = '● Record';
       const attempts = document.createElement('div');
       attempts.className = 'answer-practice-attempts';
       panel.append(head, reminder, timer, record, attempts);
@@ -41,7 +41,7 @@
       const stop = () => {
         if (recorder?.state === 'recording') recorder.stop();
         else stream?.getTracks().forEach(track => track.stop());
-        record.textContent = '● Record answer';
+        record.textContent = '● Record';
         record.classList.remove('is-recording');
         stopClock();
       };
@@ -84,7 +84,7 @@
           const update = () => { timer.textContent = `${formatTime(Math.floor((Date.now() - startedAt) / 1000))} / ~${formatTime(target)} target`; };
           update();
           tick = setInterval(update, 250);
-          record.textContent = '■ Stop recording';
+          record.textContent = '■ Stop';
           record.classList.add('is-recording');
         } catch (_) {
           stream?.getTracks().forEach(track => track.stop());
