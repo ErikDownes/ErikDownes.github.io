@@ -92,55 +92,6 @@
     </nav>
   </header>
 
-  {% assign cms_base = 'https://app.pagescms.org/ErikDownes/ErikDownes.github.io/main' %}
-  {% assign cms_url = cms_base %}
-  {% case page.path %}
-    {% when 'communication.md' %}{% assign cms_url = cms_base | append: '/file/communication' %}
-    {% when 'profile.md' %}{% assign cms_url = cms_base | append: '/file/about_me' %}
-    {% when 'about-asset-management.md' %}{% assign cms_url = cms_base | append: '/file/about_asset_management' %}
-    {% when 'questions-for-abelo.md' %}{% assign cms_url = cms_base | append: '/file/questions_for_abelo' %}
-    {% when 'academic-record.md' %}{% assign cms_url = cms_base | append: '/file/academic_record' %}
-    {% when 'skills-profile.md' %}{% assign cms_url = cms_base | append: '/file/skills_profile' %}
-    {% when 'about-me.md' %}{% assign cms_url = cms_base | append: '/file/about_me' %}
-    {% when 'aviation.md' %}{% assign cms_url = cms_base | append: '/file/aviation' %}
-    {% when 'aviation/aircraft.md' %}{% assign cms_url = cms_base | append: '/file/aviation_aircraft' %}
-    {% when 'aviation/aircraft-leasing.md' %}{% assign cms_url = cms_base | append: '/file/aviation_aircraft_leasing' %}
-    {% when 'aviation/asset-management.md' %}{% assign cms_url = cms_base | append: '/file/aviation_asset_management' %}
-    {% when 'aviation/abelo.md' %}{% assign cms_url = cms_base | append: '/file/aviation_abelo' %}
-    {% when 'aviation/credit-risk.md' %}{% assign cms_url = cms_base | append: '/file/aviation_credit_risk' %}
-    {% when 'aviation/stress-testing.md' %}{% assign cms_url = cms_base | append: '/file/aviation_stress_testing' %}
-    {% when 'aviation/valuation-practices.md' %}{% assign cms_url = cms_base | append: '/file/aviation_valuation_practices' %}
-    {% when 'aviation/maintenance.md' %}{% assign cms_url = cms_base | append: '/file/aviation_maintenance' %}
-    {% when 'aviation/maintenance-reserves.md' %}{% assign cms_url = cms_base | append: '/file/aviation_maintenance_reserves' %}
-    {% when 'coursework.md' %}{% assign cms_url = cms_base | append: '/file/coursework' %}
-    {% when 'career.md' %}{% assign cms_url = cms_base | append: '/file/career' %}
-    {% when 'career/preparation.md' %}{% assign cms_url = cms_base | append: '/file/career_preparation' %}
-    {% when 'career/asset-aviation-awareness.md' %}{% assign cms_url = cms_base | append: '/file/career_asset_aviation_awareness' %}
-    {% when 'career/accuracy-data-systems.md' %}{% assign cms_url = cms_base | append: '/file/career_accuracy_data_systems' %}
-    {% when 'career/reporting-analysis.md' %}{% assign cms_url = cms_base | append: '/file/career_reporting_analysis' %}
-    {% when 'career/finance-commercial-awareness.md' %}{% assign cms_url = cms_base | append: '/file/career_finance_commercial_awareness' %}
-    {% when 'career/organisation-delivery.md' %}{% assign cms_url = cms_base | append: '/file/career_organisation_delivery' %}
-    {% when 'career/teamwork-stakeholders.md' %}{% assign cms_url = cms_base | append: '/file/career_teamwork_stakeholders' %}
-    {% when 'career/initiative-process-improvement.md' %}{% assign cms_url = cms_base | append: '/file/career_initiative_process_improvement' %}
-    {% when 'workplace.md' %}{% assign cms_url = cms_base | append: '/file/career' %}
-    {% when 'career/working-with-others.md' %}{% assign cms_url = cms_base | append: '/file/career_working_with_others' %}
-    {% when 'career/working-independently.md' %}{% assign cms_url = cms_base | append: '/file/career_working_independently' %}
-    {% when 'career/communication.md' %}{% assign cms_url = cms_base | append: '/file/career_communication' %}
-    {% when 'career/problem-solving-judgement.md' %}{% assign cms_url = cms_base | append: '/file/career_problem_solving_judgement' %}
-    {% when 'career/technology-ai.md' %}{% assign cms_url = cms_base | append: '/file/career_technology_ai' %}
-    {% when 'career/interview-preparation.md' %}{% assign cms_url = cms_base | append: '/file/career_interview_preparation' %}
-    {% when 'working-independently.md' %}{% assign cms_url = cms_base | append: '/file/working_independently' %}
-        {% when 'judgement.md' %}{% assign cms_url = cms_base | append: '/file/judgement' %}
-    {% when 'questions.md' %}{% assign cms_url = cms_base | append: '/file/questions' %}
-    {% when 'communication.md' %}{% assign cms_url = cms_base | append: '/file/communication' %}
-    {% when 'glossary.md' %}{% assign cms_url = cms_base | append: '/file/glossary' %}
-    {% when 'portfolio.md' %}{% assign cms_url = cms_base | append: '/file/portfolio' %}
-    {% when 'turboprop-dashboard-build.md' %}{% assign cms_url = cms_base | append: '/file/turboprop_dashboard_build' %}
-    {% when 'atr-fleet-dashboard.md' %}{% assign cms_url = cms_base | append: '/file/atr_fleet_dashboard' %}
-    {% when 'lease-dashboard-build.md' %}{% assign cms_url = cms_base | append: '/file/lease_dashboard_build' %}
-    {% when 'tech-theory.md' %}{% assign cms_url = cms_base | append: '/file/tech_theory' %}
-    {% when 'history-of-flight.md' %}{% assign cms_url = cms_base | append: '/file/history_of_flight' %}
-  {% endcase %}
 
   <main class="page-stage">
     <article class="doc-paper">
@@ -153,11 +104,7 @@
       {% endif %}
       <div class="doc-toolbar" aria-label="Document controls">
         <button type="button" data-action="print">Print</button>
-        {% if cms_url != cms_base %}
-        <a class="edit-link" href="{{ cms_url }}" target="_blank" rel="noopener">Edit this page</a>
-        {% else %}
-        <a class="edit-link" href="https://github.com/ErikDownes/ErikDownes.github.io/edit/main/{{ page.path }}" target="_blank" rel="noopener">Edit this page</a>
-        {% endif %}
+        <a class="edit-link" href="https://github.com/ErikDownes/ErikDownes.github.io/edit/main/{{ page.path }}" target="_blank" rel="noopener">Edit in GitHub</a>
       </div>
 
       <div class="doc-body" id="docBody">{{ content }}</div>
