@@ -7,6 +7,7 @@
   const pageEdit = document.querySelector('.doc-toolbar .edit-link[href]');
   const pagePrint = document.querySelector('.doc-toolbar [data-action="print"]');
   const EDIT_PREFIX = 'coop-answer-edit:v1:';
+  const BREADCRUMB_PREFIX = 'coop-breadcrumbs:v1:';
   const MOVE_PREFIX = 'coop-section-moves:v1';
   const ORDER_PREFIX = 'coop-section-order:v1:';
   const GLOSSARY_PREFIX = 'coop-glossary:v1';
@@ -1789,7 +1790,7 @@
       const clone = node.cloneNode(true);
       // Keep words that the glossary has turned into buttons.
       clone.querySelectorAll?.('button.glossary-term').forEach(el => el.replaceWith(document.createTextNode(el.textContent)));
-      clone.querySelectorAll?.('script,style,button,.cm-question-play,a[href*="pagescms.org"]').forEach(el => el.remove());
+      clone.querySelectorAll?.('script,style,button,.cm-question-play,.edit-link').forEach(el => el.remove());
       if (cleanText(clone.textContent) || clone.matches?.('img,table,ul,ol,blockquote,.key-vocab,.recall')) wrapper.appendChild(clone);
     });
     return wrapper;
@@ -1830,6 +1831,62 @@
     const controls = document.createElement('div');
     controls.className = 'answer-focus-tools';
 
+    const answerButton = document.createElement('button');
+    answerButton.type = 'button';
+    answerButton.textContent = 'Hide Answer';
+    answerButton.addEventListener('click', event => {
+      event.preventDefault();
+      event.stopPropagation();
+      copy.hidden = !copy.hidden;
+      answerButton.textContent = copy.hidden ? 'Show Answer' : 'Hide Answer';
+    });
+
+    const breadcrumbBox = document.createElement('div');
+    breadcrumbBox.className = 'answer-focus-breadcrumbs';
+    breadcrumbBox.hidden = true;
+
+    const breadcrumbLabel = document.createElement('strong');
+    breadcrumbLabel.textContent = 'Breadcrumbs';
+    const breadcrumbHint = document.createElement('p');
+    breadcrumbHint.className = 'answer-focus-breadcrumbs-hint';
+    breadcrumbHint.textContent = 'Use a few cues in your own words — enough to reconstruct the answer, not a script.';
+
+    const seedItems = Array.from(copy.querySelectorAll('p,li,blockquote'))
+      .map(node => cleanText(node.textContent))
+      .filter(value => /^(key idea|key line|recall cue|cue|remember|outline|why this works)\s*:/i.test(value))
+      .map(value => value.replace(/^(key idea|key line|recall cue|cue|remember|outline|why this works)\s*:\s*/i, ''))
+      .slice(0, 8);
+
+    const breadcrumbKey = `${BREADCRUMB_PREFIX}${location.pathname}:${sourceHeadingText(heading).toLowerCase()}`;
+    const breadcrumbInput = document.createElement('textarea');
+    breadcrumbInput.rows = 4;
+    breadcrumbInput.setAttribute('aria-label', 'Breadcrumb cues for this answer');
+    breadcrumbInput.placeholder = 'One cue per line';
+    try {
+      const savedBreadcrumbs = localStorage.getItem(breadcrumbKey);
+      breadcrumbInput.value = savedBreadcrumbs !== null ? savedBreadcrumbs : seedItems.join('\n');
+    } catch (_) {
+      breadcrumbInput.value = seedItems.join('\n');
+    }
+    breadcrumbInput.addEventListener('input', () => {
+      try {
+        if (breadcrumbInput.value.trim()) localStorage.setItem(breadcrumbKey, breadcrumbInput.value);
+        else localStorage.removeItem(breadcrumbKey);
+      } catch (_) {}
+    });
+    breadcrumbBox.append(breadcrumbLabel, breadcrumbHint, breadcrumbInput);
+
+    const breadcrumbButton = document.createElement('button');
+    breadcrumbButton.type = 'button';
+    breadcrumbButton.textContent = 'Breadcrumbs';
+    breadcrumbButton.addEventListener('click', event => {
+      event.preventDefault();
+      event.stopPropagation();
+      breadcrumbBox.hidden = !breadcrumbBox.hidden;
+      breadcrumbButton.textContent = breadcrumbBox.hidden ? 'Breadcrumbs' : 'Hide Breadcrumbs';
+      if (!breadcrumbBox.hidden) breadcrumbInput.focus({ preventScroll: true });
+    });
+
     const play = document.createElement('button');
     play.type = 'button';
     play.textContent = '▶ Play';
@@ -1868,49 +1925,6 @@
       play.textContent = '▶ Play';
     });
 
-    const outline = document.createElement('div');
-    outline.className = 'answer-focus-outline';
-
-    const outlineItems = Array.from(copy.querySelectorAll('p,li,blockquote'))
-      .map(node => cleanText(node.textContent))
-      .filter(value => /^(key idea|key line|recall cue|cue|remember|outline|why this works)\s*:/i.test(value))
-      .slice(0, 6);
-
-    if (outlineItems.length) {
-      const label = document.createElement('strong');
-      label.textContent = 'Outline';
-      const list = document.createElement('ul');
-      outlineItems.forEach(value => {
-        const li = document.createElement('li');
-        li.textContent = value.replace(/^(key idea|key line|recall cue|cue|remember|outline|why this works)\s*:\s*/i, '');
-        list.appendChild(li);
-      });
-      outline.append(label, list);
-    } else {
-      outline.hidden = true;
-    }
-
-    const outlineButton = document.createElement('button');
-    outlineButton.type = 'button';
-    outlineButton.textContent = outline.hidden ? 'Outline unavailable' : 'Hide Outline';
-    outlineButton.disabled = outline.hidden;
-    outlineButton.addEventListener('click', event => {
-      event.preventDefault();
-      event.stopPropagation();
-      outline.hidden = !outline.hidden;
-      outlineButton.textContent = outline.hidden ? 'Show Outline' : 'Hide Outline';
-    });
-
-    const answerButton = document.createElement('button');
-    answerButton.type = 'button';
-    answerButton.textContent = 'Hide Answer';
-    answerButton.addEventListener('click', event => {
-      event.preventDefault();
-      event.stopPropagation();
-      copy.hidden = !copy.hidden;
-      answerButton.textContent = copy.hidden ? 'Show Answer' : 'Hide Answer';
-    });
-
     const movePage = document.createElement('select');
     movePage.className = 'answer-focus-move-page';
     movePage.title = 'Move this section to another page (it will be placed at the bottom)';
@@ -1928,19 +1942,17 @@
       moveSectionToPage(heading, movePage.value);
     });
 
-    controls.append(play, stop, outlineButton, answerButton, movePage);
+    controls.append(answerButton, breadcrumbButton, play, stop, movePage);
 
-    const { panel: practice } = window.coopPractice.create(copy.innerText);
     copy.querySelectorAll('ul,ol').forEach(list => {
       if (list.children.length >= 5) list.classList.add('answer-columns');
     });
-    // Keep the rehearsal controls visible when a section has a long reference answer.
-    if (cleanText(copy.textContent).length > 350) {
-      copy.hidden = true;
-      answerButton.textContent = 'Show Answer';
-    }
 
-    focusContent.replaceChildren(title, controls, outline, practice, copy);
+    const { panel: practice } = window.coopPractice.create(copy.innerText, { title: 'Optional recording' });
+
+    // The answer is the primary learning object: show it immediately.
+    // Breadcrumbs are optional and editable; recording stays at the bottom.
+    focusContent.replaceChildren(title, controls, copy, breadcrumbBox, practice);
     linkKnownGlossaryTerms(copy);
     lastTrigger = heading;
     overlay.hidden = false;
@@ -1979,16 +1991,14 @@
     rail.id = 'floating-page-tools';
     rail.setAttribute('aria-label', 'Page tools');
 
-    let floatingEdit = null;
     if (pageEdit?.href) {
-      floatingEdit = document.createElement('a');
+      const floatingEdit = document.createElement('a');
       floatingEdit.id = 'floating-section-edit';
       floatingEdit.href = pageEdit.href;
       floatingEdit.target = '_blank';
       floatingEdit.rel = 'noopener';
-      floatingEdit.textContent = 'Edit here';
-      floatingEdit.setAttribute('aria-label', 'Edit the section currently in view');
-      floatingEdit.dataset.cmsBase = pageEdit.href.split('#')[0];
+      floatingEdit.textContent = 'Edit in GitHub';
+      floatingEdit.setAttribute('aria-label', 'Edit this page in GitHub');
       rail.appendChild(floatingEdit);
       pageEdit.hidden = true;
     }
@@ -2038,33 +2048,6 @@
     }
 
     document.body.appendChild(rail);
-
-    if (!floatingEdit) return;
-    let ticking = false;
-    const updateEditTarget = () => {
-      ticking = false;
-      const headings = sectionHeadings();
-      if (!headings.length) {
-        floatingEdit.href = floatingEdit.dataset.cmsBase;
-        return;
-      }
-      const marker = Math.min(window.innerHeight * 0.38, 300);
-      let active = headings[0];
-      headings.forEach(heading => {
-        if (heading.getBoundingClientRect().top <= marker) active = heading;
-      });
-      const source = sourceHeadingText(active);
-      floatingEdit.href = source ? `${floatingEdit.dataset.cmsBase}#:~:text=${encodeURIComponent(source)}` : floatingEdit.dataset.cmsBase;
-      floatingEdit.title = source ? `Edit near “${source}”` : 'Edit this page';
-    };
-    const queue = () => {
-      if (ticking) return;
-      ticking = true;
-      requestAnimationFrame(updateEditTarget);
-    };
-    window.addEventListener('scroll', queue, { passive: true });
-    window.addEventListener('resize', queue);
-    updateEditTarget();
   };
 
   setupFloatingTools();
