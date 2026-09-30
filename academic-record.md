@@ -72,15 +72,17 @@ Projects included an **aerodynamics investigation using falling cupcake cases an
 
 That interest continued into the Leaving Certificate, where I achieved **H1s in Mathematics, Applied Mathematics and Physics**.
 
-## Leaving Certificate Highlights
+## Leaving Certificate Results
 
+**579 CAO points**
 
 | Subject | Result |
 | ------------------- | ------ |
 | Mathematics | **H1** |
-| Applied Mathematics | **H1** |
 | Physics | **H1** |
-
-
-
+| Applied Mathematics | **H1** |
+| Business | **H1** |
+| Spanish | **H3** |
+| English | **H3** |
+| Irish | **O3** |
 
