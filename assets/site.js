@@ -771,8 +771,7 @@
   const ABOUT_SUBPAGES = [
     { label: 'About Me', path: '' },
     { label: 'Skills Profile', path: 'skills-profile.html' },
-    { label: 'Academic Record', path: 'academic-record.html' },
-    { label: 'Contact', path: '#contact' }
+    { label: 'Academic Record', path: 'academic-record.html' }
   ];
 
   const populateAboutMenu = (item, pageUrl) => {
