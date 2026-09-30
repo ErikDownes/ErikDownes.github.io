@@ -80,6 +80,8 @@ My work experience adds a different side. At O'Mahony's I have dealt with orders
 
 **Accuracy and data:** the turboprop data project required combining records from several public sources, checking identities and leaving uncertain matches unresolved rather than forcing an answer.
 
+**Small end-to-end data project:** the Cycling / Strava Data Lab starts with raw activity data, keeps the source traceable, derives metrics, checks outputs against Strava and turns the result into a clear report. [Open the project →]({{ '/cycling.html' | relative_url }})
+
 **Teamwork:** a Java project involved dividing work with another student, integrating separate parts of the code and testing the final solution together.
 
 **Commercial administration:** work at O'Mahony's involves orders, invoices, dispatch and accurate communication between stages.
