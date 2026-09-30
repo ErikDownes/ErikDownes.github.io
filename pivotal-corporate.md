@@ -33,7 +33,7 @@ The specification includes work such as journals and reconciliations, accounts p
 
 The common thread is dependable information: transactions have to be recorded correctly, supporting documents have to be complete, deadlines matter and the work must stand up to review.
 
-## Fit | Why does Financial Mathematics fit this role?
+## Fit | Why does Financial Maths fit this role?
 
 Financial Mathematics gives me a strong base in quantitative reasoning, finance, probability, statistics and structured problem solving. That is useful in a role where accuracy, reconciliations, financial records and careful checking matter.
 
