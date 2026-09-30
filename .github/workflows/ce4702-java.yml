@@ -1,0 +1,33 @@
+name: CE4702 Java checks
+
+on:
+  push:
+    paths:
+      - "learning/ce4702/code/**/*.java"
+      - ".github/workflows/ce4702-java.yml"
+  pull_request:
+    paths:
+      - "learning/ce4702/code/**/*.java"
+      - ".github/workflows/ce4702-java.yml"
+  workflow_dispatch:
+
+jobs:
+  lab01:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+
+      - name: Compile Lab 01
+        working-directory: learning/ce4702/code/lab01
+        run: javac DataTypesLab.java
+
+      - name: Run Lab 01 self-checks
+        working-directory: learning/ce4702/code/lab01
+        run: java DataTypesLab
