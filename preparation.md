@@ -3,7 +3,6 @@ layout: doc
 permalink: /preparation.html
 handle: Preparation
 title: Preparation
-nav_order: 50
 eyebrow: ASSET MANAGEMENT · ROLE PREPARATION · COMPETENCIES
 public_mode: true
 ---
