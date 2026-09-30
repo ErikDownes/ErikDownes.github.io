@@ -8,7 +8,13 @@ eyebrow: DASHBOARDS · CALCULATORS · APPLIED WORK
 public_mode: true
 ---
 
-This projects section is deliberately small. It contains a short set of working dashboards and calculators that can be developed further without burying the useful work under layers of categories.
+This projects section is deliberately small. It contains a short set of working dashboards, calculators and applied data projects that can be developed further without burying the useful work under layers of categories.
+
+## Cycling / Strava Data Lab
+
+A personal-interest dataset turned into a reproducible analysis project: activity exports, ride statistics, milestones, route mapping and a plan to analyse the full ride history.
+
+[Open Cycling Data Lab →]({{ '/cycling.html' | relative_url }})
 
 ## Turboprop Asset Reporting
 
