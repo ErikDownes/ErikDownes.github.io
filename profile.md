@@ -3,7 +3,7 @@ layout: doc
 permalink: /
 handle: Profile
 title: Erik Downes
-description: Erik Downes is a Financial Mathematics student at the University of Limerick with interests in data analysis, quantitative modelling, aviation and asset management.
+description: Erik Downes is a Financial Mathematics student at the University of Limerick with interests in data analysis, quantitative modelling, finance and applied problem solving.
 nav_order: 10
 profile_mode: true
 eyebrow: FINANCIAL MATHEMATICS · DATA ANALYSIS · UNIVERSITY OF LIMERICK
@@ -17,7 +17,7 @@ eyebrow: FINANCIAL MATHEMATICS · DATA ANALYSIS · UNIVERSITY OF LIMERICK
     <p>
       I am a <strong>Financial Mathematics student at the University of Limerick</strong>,
       with a particular interest in <strong>data analysis, quantitative modelling,
-      aviation and asset management</strong>.
+      finance and applied problem solving</strong>.
     </p>
 
     <p>
@@ -219,7 +219,51 @@ eyebrow: FINANCIAL MATHEMATICS · DATA ANALYSIS · UNIVERSITY OF LIMERICK
 
 </div>
 
-## Profile Documents
+## Skills & Academic Record
 
-- [Academic Record]({{ '/academic-record.html' | relative_url }})
-- [Skills Profile]({{ '/skills-profile.html' | relative_url }})
+<div class="profile-doc-links" data-no-glossary>
+  <a href="{{ '/skills-profile.html' | relative_url }}">
+    <span>Skills Profile</span>
+    <small>Quantitative, technical and workplace strengths</small>
+  </a>
+  <a href="{{ '/academic-record.html' | relative_url }}">
+    <span>Academic Record</span>
+    <small>University modules, results and academic evidence</small>
+  </a>
+</div>
+
+<section class="profile-contact" id="contact" aria-label="Contact and professional links" data-no-glossary>
+  <div class="profile-contact-copy">
+    <p class="profile-contact-kicker">CONTACT & LINKS</p>
+    <h2>Contact</h2>
+    <p>For co-op, project or professional enquiries.</p>
+  </div>
+
+  <div class="profile-contact-links">
+    <a href="#" class="profile-contact-link protected-email" data-user="erikdownes2307" data-domain="gmail.com">
+      <span>Email</span><strong>erikdownes2307 [at] gmail [dot] com</strong>
+    </a>
+    <a href="#" class="profile-contact-link protected-email" data-user="24434582" data-domain="studentmail.ul.ie">
+      <span>UL Email</span><strong>24434582 [at] studentmail [dot] ul [dot] ie</strong>
+    </a>
+    <a class="profile-contact-link" href="https://www.linkedin.com/in/erik-downes-7b312127a/" target="_blank" rel="noopener">
+      <span>LinkedIn</span><strong>Erik Downes</strong>
+    </a>
+    <a class="profile-contact-link" href="https://github.com/ErikDownes" target="_blank" rel="noopener">
+      <span>GitHub</span><strong>github.com/ErikDownes</strong>
+    </a>
+    <a class="profile-contact-link" href="https://erikdownes.github.io/">
+      <span>Website</span><strong>erikdownes.github.io</strong>
+    </a>
+  </div>
+</section>
+
+<script>
+document.querySelectorAll('.protected-email').forEach(function (link) {
+  link.addEventListener('click', function (event) {
+    event.preventDefault();
+    var address = link.dataset.user + '@' + link.dataset.domain;
+    window.location.href = 'mailto:' + address;
+  });
+});
+</script>
