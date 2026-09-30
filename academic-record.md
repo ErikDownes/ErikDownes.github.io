@@ -64,7 +64,9 @@ This page keeps a **module-by-module academic record** in one place. The main Ab
 
 **Semester QCA:** 3.36 · **Credits:** 30
 
-## School: Project-Based Mathematics & Science
+## Crescent College Comprehensive S.J. · 2018–2024
+
+I attended **Crescent College Comprehensive S.J., Limerick, from September 2018 to May 2024**, completing six years of secondary education before progressing directly to **BSc Financial Mathematics at the University of Limerick in September 2024**.
 
 I was awarded **Exceptional** in both my Mathematics and Science CBAs. I am particularly proud of those results because the work suited how I learn best: applying mathematics and science to something I could investigate, measure and explain.
 
