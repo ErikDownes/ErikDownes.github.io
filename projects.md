@@ -1,5 +1,6 @@
 ---
 layout: doc
+permalink: /projects.html
 handle: Projects
 title: Projects
 nav_order: 40
@@ -7,7 +8,7 @@ eyebrow: DASHBOARDS · CALCULATORS · APPLIED WORK
 public_mode: true
 ---
 
-This project collection is deliberately small. It contains a short set of working dashboards, calculators and earlier applied work without burying the useful material under layers of categories.
+This projects section is deliberately small. It contains a short set of working dashboards and calculators that can be developed further without burying the useful work under layers of categories.
 
 ## Turboprop Asset Reporting
 
@@ -40,14 +41,3 @@ A car-finance calculator built around deposit, monthly payment, term and the opt
 An aircraft-leasing calculator for ATR 42 and ATR 72 scenarios, connecting acquisition assumptions, lease income, financing, residual value and asset-management decisions.
 
 [Open ATR Lease Calculator →]({{ '/lease-dashboard.html' | relative_url }})
-
-
-## School CBA — Cooling of Hot Drinks
-
-**2022 · Mathematical Investigation · School project**
-
-An earlier investigation into how a hot drink cools over time. The project used experimental temperature data to compare cooling behaviour and connect a familiar physical process with graphs, variables and exponential modelling.
-
-It is included here at the bottom of the project timeline as an example of the kind of practical mathematics I was interested in before university.
-
-[Open the reconstructed HTML project →]({{ '/cooling-hot-drinks.html' | relative_url }})
