@@ -2,10 +2,44 @@
 layout: doc
 handle: Competencies
 title: Competencies
-eyebrow: PREPARATION · COMMUNICATION · PROBLEM SOLVING · INITIATIVE · ACCURACY
+eyebrow: PREPARATION · COMMUNICATION · CLIENT SERVICE · PROBLEM SOLVING
 ---
 
 [← Preparation]({{ '/preparation.html' | relative_url }})
+
+## Communication | Know the audience
+
+For me, good communication is not about saying everything I know. It is about working out what the other person actually needs.
+
+That matters in interviews as well as in work. I try to identify the **sound bite first** — the one useful idea I want the other person to remember — and then add enough explanation and evidence to support it.
+
+I am comfortable listening and thinking before I speak. I do not mind silence, and I would rather give a useful answer than fill the space for the sake of it.
+
+**Recall cue:** Audience → useful point → evidence → check understanding.
+
+## PCP example | Turn the calculation into a decision
+
+A good example was helping a family member compare three PCP finance options.
+
+All three were feasible. One had a higher deposit and lower monthly repayments, another did the opposite, and the third sat somewhere in between. Looking only at the deposit or only at the monthly payment could easily push someone towards one option without answering the real question.
+
+I calculated the overall cost of each structure and then graphed the results.
+
+The graph made the important point obvious: two options were effectively the same, while one was about **€800 cheaper**.
+
+The mathematics was not particularly difficult. The useful part was deciding how to communicate it.
+
+**Key lesson:** the analysis is only finished when the person receiving it can understand the result and use it.
+
+## Service | Warm but professional
+
+I think good service is about balancing professionalism with being approachable.
+
+I try to be accurate and dependable without becoming overly formal or distant. In customer-facing work, that can mean listening properly, explaining something clearly, judging how much detail is useful and following through on what I said I would do.
+
+A friendly interaction still needs to be professional. A professional interaction does not need to feel cold.
+
+**Recall cue:** Listen → understand → explain → follow through.
 
 ## Explain clearly | How would you explain something technical to a non-technical person?
 
