@@ -2,64 +2,66 @@
 layout: doc
 handle: Skills Profile
 title: Skills Profile
-eyebrow: ABOUT ME · SKILLS PROFILE
+eyebrow: PROFILE · SKILLS & EVIDENCE
+public_mode: true
 ---
-## Key Skills Profile
 
-Financial Mathematics student at the University of Limerick with strong quantitative, analytical and problem-solving skills. Academic experience includes Probability & Statistics, Finance, Applied Data Analysis, Numerical Analysis, Operations Research and Computer Software.
+Financial Mathematics student at the University of Limerick with strong quantitative, analytical and problem-solving skills, supported by practical experience in data analysis, programming, customer-facing work and logistics.
 
-Confident working with Excel, Python, pandas, R/RStudio, MATLAB and Java, alongside Git/GitHub, Jupyter, Google Colab and VS Code.
+<div class="profile-skill-groups" aria-label="Skills summary" data-no-glossary>
+  <div class="profile-skill-group">
+    <h3>Quantitative</h3>
+    <div class="profile-skill-tags">
+      <span>Probability</span><span>Statistics</span><span>Financial Mathematics</span>
+      <span>Numerical Analysis</span><span>Operations Research</span><span>Modelling</span>
+    </div>
+  </div>
+  <div class="profile-skill-group">
+    <h3>Data & Software</h3>
+    <div class="profile-skill-tags">
+      <span>Python</span><span>Pandas</span><span>R</span><span>MATLAB</span>
+      <span>Java</span><span>SQL</span><span>Excel</span><span>Git/GitHub</span>
+    </div>
+  </div>
+  <div class="profile-skill-group">
+    <h3>Workplace</h3>
+    <div class="profile-skill-tags">
+      <span>Accuracy</span><span>Teamwork</span><span>Communication</span>
+      <span>Problem Solving</span><span>Initiative</span><span>Organisation</span>
+    </div>
+  </div>
+</div>
 
-Strong commercial and customer-facing experience through employment in Mr Price and O'Mahony's, combining accuracy, communication, teamwork and practical problem solving.
+## Quantitative & Analytical
 
+University work includes Probability & Statistics, Finance, Applied Data Analysis, Numerical Analysis, Operations Research and Computer Software. I enjoy moving from a mathematical idea to a practical model, testing assumptions and checking whether the result makes sense.
 
+## Data & Technology
 
-## Problem Solving & Analytics
+I work with Excel, Python, Pandas, R/RStudio, MATLAB and Java, alongside Git/GitHub, Jupyter, Google Colab and VS Code. My project work has also used HTML, CSS, JavaScript and Leaflet.
 
-silly test
+I am developing further experience with Power BI, machine learning tools and AI-assisted development, while keeping the underlying analysis, data quality and validation explicit.
 
-Enjoy getting stuck into a problem and working it through, whether it is a short task completed in a few hours or a larger project developed over days or weeks.
+## Problem Solving
 
-University work has involved statistical analysis, regression, financial modelling, numerical methods, data cleaning and visualisation, often requiring several stages from understanding the problem through to checking and presenting the result.
+I am comfortable breaking a larger problem into smaller stages: defining the question, finding or preparing the data, choosing an appropriate method, checking the result and communicating it clearly.
 
-Aviation research has provided further experience working with incomplete real-world data, comparing public sources and turning the results into a usable interactive application. [Open the interactive Turboprop Asset Reporting Dashboard →]({{ '/fleet-map.html' | relative_url }})
-
-
-
-## Technology
-
-Technical experience includes Excel, Python, pandas, R/RStudio, MATLAB, Java, Git/GitHub, Jupyter, Google Colab, VS Code, HTML, CSS, JavaScript and Leaflet.
-
-Increasingly using AI-assisted, vibe and agentic coding as part of development — using modern AI tools to help build, debug and improve applications while continuing to develop my own technical understanding.
-
-
+A recent data project required reconciling aircraft records from several public sources. I used Python and Pandas to clean and compare the data and deliberately left records unresolved where the evidence was not strong enough to support a match.
 
 ## Teamwork & Communication
 
-Worked with another student on a Java programming project, dividing the work into manageable tasks, meeting to solve problems and combining individual code into the final solution.
+A Java programming project involved working with another student, dividing the work, integrating separate pieces of code and testing the final solution together.
 
-Customer-facing work at Mr Price developed confidence answering queries, explaining information and resolving problems professionally.
-
-At O'Mahony's, teamwork and accurate communication around orders, invoices and dispatch are important to keeping work moving and meeting deadlines.
-
-
+Customer-facing work at Mr Price developed confidence answering queries and resolving problems professionally. At O'Mahony's, accurate communication around orders, invoices and dispatch is important to keeping work moving and meeting deadlines.
 
 ## Initiative & Learning
 
-Prepared independently for the aviation-leasing sector by researching regional aviation, turboprops, aircraft leasing, asset management, maintenance and aircraft economics.
+I learn best by combining theory with application. When a project requires a tool or concept I have not used before, I am comfortable researching it, testing it on a small example and building from there.
 
-I have always enjoyed learning through projects as well as formal study. That has helped me become comfortable working across different timescales, deadlines and levels of complexity, learning what I need as a project develops and improving the work along the way.
+This website is part of that approach: it brings together coursework, applied projects and interview preparation in a form that can be reviewed, improved and demonstrated.
 
-I am also conscious that technology is changing quickly, particularly with AI, and I want to keep up with those developments and learn how to use new tools effectively rather than stand still.
+## Evidence
 
-
-
-## Projects & Portfolio
-
-Developed a web-based portfolio bringing together financial mathematics, data analysis, programming and aviation research.
-
-Projects include an [interactive turboprop fleet and leasing dashboard]({{ '/fleet-map.html' | relative_url }}), financial calculators, regression and statistical analysis, Java programming and mathematical modelling.
-
-Earlier project work includes a rollercoaster mathematical model incorporating air resistance, alongside school science and mathematics investigations.
-
-I particularly enjoy projects where mathematics, data and technology connect to something practical.
+- [Projects]({{ '/projects.html' | relative_url }}) — applied data, modelling and interactive tools.
+- [Academic Record]({{ '/academic-record.html' | relative_url }}) — modules and academic evidence.
+- [Education]({{ '/education.html' | relative_url }}) — Financial Mathematics concepts and coursework.
