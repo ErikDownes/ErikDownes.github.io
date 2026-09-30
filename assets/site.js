@@ -433,7 +433,7 @@
         const pageTitle = entry.page_title || entry.title || '';
         if (label) {
           label.href = href;
-          if (menuTitle === 'About Me' || menuTitle === 'Aviation' || menuTitle === 'Portfolio') {
+          if (menuTitle === 'About Me' || menuTitle === 'Blog' || menuTitle === 'Portfolio') {
             label.setAttribute('aria-haspopup', 'true');
             label.setAttribute('aria-expanded', 'false');
           }
@@ -507,7 +507,7 @@
     label.addEventListener('click', event => {
       const targetPath = normalisePath(label.href);
       const rootPath = normalisePath(document.querySelector('.brand')?.href || '/');
-      const isPageMenu = targetPath === rootPath || /\/(?:aviation|portfolio)\.html$/.test(targetPath);
+      const isPageMenu = targetPath === rootPath || /\/(?:blog|portfolio)\.html$/.test(targetPath);
       if (isPageMenu) {
         event.preventDefault();
         event.stopPropagation();
@@ -793,6 +793,7 @@
   };
 
   const AVIATION_SUBPAGES = [
+    { label: 'Aviation Overview', path: 'aviation.html' },
     { label: 'Aircraft', path: 'aviation/aircraft.html' },
     { label: 'Abelo', path: 'aviation/abelo.html' },
     { label: 'Aircraft Leasing', path: 'aviation/aircraft-leasing.html' },
@@ -933,6 +934,7 @@
     const rootPath = normalisePath(document.querySelector('.brand')?.href || '/');
     const isAboutLibrary = targetPath === rootPath;
     const isStudiesLibrary = /\/coursework(?:\.html)?$/.test(cleanPagePath);
+    const isBlogLibrary = /\/blog(?:\.html)?$/.test(cleanPagePath);
     const isAviationLibrary = /\/aviation(?:\.html)?$/.test(cleanPagePath);
     const isCareerLibrary = /\/career(?:\.html)?$/.test(cleanPagePath);
     const isPortfolioLibrary = /\/portfolio(?:\.html)?$/.test(cleanPagePath);
@@ -950,7 +952,7 @@
         await populateCareerMenu(item, pageUrl);
         return;
       }
-      if (isAviationLibrary) {
+      if (isBlogLibrary || isAviationLibrary) {
         await populateAviationMenu(item, pageUrl);
         return;
       }
