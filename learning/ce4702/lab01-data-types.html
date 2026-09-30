@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lab 01 · Data types are contracts · CE4702</title>
+<style>
+body{margin:0;font:16px/1.65 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:#172033;background:#fff}
+main{max-width:900px;margin:auto;padding:38px 22px 80px}a{color:#214f9b}h1{font-size:clamp(2rem,5vw,3.8rem);line-height:1.05}
+h2{margin-top:2.5rem}pre{overflow:auto;background:#111827;color:#f8fafc;padding:18px;border-radius:12px}
+details{border:1px solid #dbe1ea;border-radius:12px;padding:12px 15px;margin:12px 0;background:#f8fafc}summary{font-weight:750;cursor:pointer}
+.callout{border-left:4px solid #214f9b;padding:10px 16px;background:#f6f8fb}.btn{display:inline-block;padding:9px 14px;border-radius:9px;background:#172033;color:#fff;text-decoration:none;font-weight:700;margin-right:8px}
+code{background:#eef2f7;padding:.1em .3em;border-radius:4px}
+</style>
+</head>
+<body>
+<main>
+<p><a href="/learning/ce4702/">← CE4702 Learning Lab</a></p>
+<p><strong>LAB 01 · FOUNDATION</strong></p>
+<h1>Data types are contracts</h1>
+<p>Before statistics, algorithms or machine learning, a computer needs an exact representation of the thing you mean. A value is not simply “data”: it has a type, a valid range, a representation and permitted operations.</p>
+
+<div class="callout"><strong>Learning target:</strong> explain why <code>"87"</code> and <code>87</code> are different, convert text safely, validate ranges, and recognise that bad representation creates bad analysis before any sophisticated method begins.</div>
+
+<h2>Start with a record</h2>
+<p>Suppose one line from a CSV file is:</p>
+<pre>1001,12,87</pre>
+<p>We decide that it means:</p>
+<ul>
+<li><strong>ID</strong> = 1001</li>
+<li><strong>attendance</strong> = 12</li>
+<li><strong>score</strong> = 87</li>
+</ul>
+
+<details><summary>Predict · What type is the CSV line when Java first reads it?</summary>
+<p>Text. The whole line is initially a <code>String</code>. Splitting it gives more strings. We still have to parse the numeric fields.</p>
+</details>
+
+<details><summary>Predict · Why not leave attendance as the string "12"?</summary>
+<p>Because arithmetic and numeric comparisons should operate on a numeric representation. The string is the input representation; <code>int</code> is the representation we want for calculation.</p>
+</details>
+
+<h2>The runnable program</h2>
+<p><a class="btn" href="https://github.com/ErikDownes/ErikDownes.github.io/blob/main/learning/ce4702/code/lab01/DataTypesLab.java">View Java source</a>
+<a class="btn" href="https://codespaces.new/ErikDownes/ErikDownes.github.io?quickstart=1">Run in Codespaces</a></p>
+
+<pre>cd learning/ce4702/code/lab01
+javac DataTypesLab.java
+java DataTypesLab</pre>
+
+<h2>Expected output</h2>
+<pre>CE4702 Lab 01 — Data types are contracts
+Raw CSV: 1001,12,87
+ID: 1001
+Attendance: 12
+Score: 87
+Passed threshold 40: true
+Average of 12 and 87: 49.50
+Rejected invalid record: attendance must be an integer
+All self-checks passed.</pre>
+
+<h2>Read the program as a data pipeline</h2>
+<p>The program performs a tiny version of a real data pipeline:</p>
+<p><strong>raw text → split fields → parse types → validate → calculate → report</strong></p>
+
+<details><summary>Explain · Where could the program fail?</summary>
+<p>Wrong number of fields; text where an integer is expected; values outside the allowed range; assumptions about what each column means. Each failure should be explicit rather than silently producing a misleading answer.</p>
+</details>
+
+<details><summary>Change · What happens if score becomes 105?</summary>
+<p>The parser can still convert <code>"105"</code> to an integer, but conversion is not the same as validation. The program should reject it because the score rule is 0–100.</p>
+</details>
+
+<details><summary>Deeper question · Why is this relevant to data analysis?</summary>
+<p>A statistical method cannot repair a variable whose meaning, type or valid range was misunderstood. Data quality begins with representation and validation.</p>
+</details>
+
+<h2>Erik's task</h2>
+<ol>
+<li>Run the original program.</li>
+<li>Before changing anything, predict the result for <code>1002,0,40</code>.</li>
+<li>Change the record and run it.</li>
+<li>Try <code>1003,twelve,70</code>. Explain the failure.</li>
+<li>Add a fourth field called <code>year</code>.</li>
+<li>Decide its type and validation rule.</li>
+<li>Add one self-check that proves your new rule works.</li>
+<li>Commit the change with a message that explains what you learned.</li>
+</ol>
+
+<h2>What to be able to say afterwards</h2>
+<p><strong>“When data comes into a program it often arrives as text. I need to decide what each field means, convert it to an appropriate type, validate it, and only then calculate with it. Parsing tells me whether a conversion is possible; validation tells me whether the value is acceptable.”</strong></p>
+
+<p><a href="/learning/ce4702/">Next: Learning Lab index</a></p>
+</main>
+</body>
+</html>
