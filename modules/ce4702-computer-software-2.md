@@ -21,6 +21,17 @@ Java is the teaching language, but the transferable ideas are broader:
 
 The academic record shows a **B1** in CE4702.
 
+## Public Learning Lab
+
+The module now has a separate **[CE4702 Learning Lab]({{ '/learning/ce4702/' | relative_url }})**.
+
+This is the working layer rather than the summary layer:
+
+**predict → run → change → test → explain**
+
+Each lab publishes the explanation, Java source, test/output evidence and a browser-based route to a real cloud development environment. The learning pages themselves use static HTML/CSS with no custom JavaScript.
+
+
 ## What this module is really about
 
 Computer Software 2 builds directly on the programming foundations from CE4701.
