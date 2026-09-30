@@ -41,6 +41,25 @@ I also have practical experience with Excel, Python and data cleaning. The tools
 
 My work experience adds a different side. At O'Mahony's I have dealt with orders, invoices and dispatch, where accuracy and communication affect the next stage of the process. At Mr Price I developed confidence dealing with customers and resolving everyday problems.
 
+## Buzzwords | What terms should I recognise quickly?
+
+<div class="profile-skill-tags" data-no-glossary>
+  <span>SPV</span><span>KYC</span><span>CDD</span><span>Reconciliation</span>
+  <span>Journal</span><span>Accounts Payable</span><span>Accounts Receivable</span>
+  <span>Regulatory Reporting</span><span>Company Secretarial</span><span>Compliance</span>
+  <span>Beneficial Ownership</span><span>Corporate Governance</span><span>VAT</span>
+  <span>Due Diligence</span><span>Financial Records</span><span>Internal Controls</span>
+</div>
+
+**SPV** — a separate company created for a specific transaction or purpose.  
+**KYC / CDD** — identifying the client, ownership and relevant risk information.  
+**Reconciliation** — comparing two records and explaining any difference.  
+**Journal** — an accounting entry used to record a transaction.  
+**AP / AR** — money the business owes / money owed to the business.  
+**Beneficial ownership** — identifying the person who ultimately owns or controls an entity.  
+**Company secretarial** — statutory filings, company records, board documents and governance administration.  
+**Internal controls** — checks designed to reduce errors, omissions and inappropriate transactions.
+
 ## Concepts | What should I understand before the interview?
 
 **Journal** — a formal accounting entry recording a transaction.
