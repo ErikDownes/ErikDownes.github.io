@@ -8,11 +8,15 @@ eyebrow: CYCLING · COOKING · INTERESTS
 public_mode: true
 ---
 
-A place for interests and experiences outside formal coursework and project work.
+A place for interests, experiences and occasional projects that begin outside formal coursework.
 
 ## Cycling
 
-Cycling belongs here rather than in the project portfolio. It can hold rides, routes, milestones and occasional reflections as the material is added.
+Cycling is personal first: fresh air, movement and time away from a screen. But Strava also turns every ride into a useful dataset of distance, time, speed, elevation, route and milestones.
+
+I have started a small **Cycling / Strava Data Lab** that combines ride history, personal reflections and reproducible data analysis.
+
+[Open Cycling | Ride, Data & Memory →]({{ '/cycling.html' | relative_url }})
 
 ## Cooking
 
