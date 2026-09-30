@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CE4702 Learning Lab · Erik Downes</title>
+<style>
+:root{--ink:#172033;--muted:#5c6678;--line:#dbe1ea;--soft:#f6f8fb;--accent:#214f9b}
+*{box-sizing:border-box} body{margin:0;font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:white}
+main{max-width:980px;margin:auto;padding:42px 22px 80px} a{color:var(--accent)}
+.eyebrow{font-size:.78rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+h1{font-size:clamp(2.2rem,5vw,4.4rem);line-height:1.02;margin:.2rem 0 1rem} h2{margin-top:2.5rem}
+.lead{font-size:1.2rem;max-width:760px;color:#39445a}
+.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:26px 0}
+.flow span,.card{border:1px solid var(--line);border-radius:14px;padding:14px;background:var(--soft)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
+.card h3{margin:.2rem 0}.tag{font-size:.78rem;font-weight:700;color:var(--muted)}
+.btn{display:inline-block;padding:10px 15px;border-radius:10px;background:var(--ink);color:white;text-decoration:none;font-weight:700;margin:4px 8px 4px 0}
+.btn.secondary{background:white;color:var(--ink);border:1px solid var(--line)}
+.note{border-left:4px solid var(--accent);padding:10px 16px;background:var(--soft)}
+code{background:#f0f3f7;padding:.12em .35em;border-radius:5px}
+@media(max-width:720px){.flow{grid-template-columns:1fr}.flow span{text-align:center}}
+</style>
+</head>
+<body id="top">
+<main>
+<div class="eyebrow">University of Limerick · Financial Mathematics · CE4702</div>
+<h1>Computer Software 2<br>Learning Lab</h1>
+<p class="lead">A public, executable learning record. The aim is not to collect notes. It is to understand each idea well enough to predict behaviour, run the code, change it, test it and explain it.</p>
+
+<div class="flow">
+<span><strong>1 · Predict</strong><br>What should happen?</span>
+<span><strong>2 · Run</strong><br>Execute the Java.</span>
+<span><strong>3 · Change</strong><br>Alter one assumption.</span>
+<span><strong>4 · Test</strong><br>Try an edge case.</span>
+<span><strong>5 · Explain</strong><br>Say why it worked.</span>
+</div>
+
+<p>
+<a class="btn" href="https://codespaces.new/ErikDownes/ErikDownes.github.io?quickstart=1">Run in GitHub Codespaces</a>
+<a class="btn secondary" href="https://github.com/ErikDownes/ErikDownes.github.io/tree/main/learning/ce4702">View all source</a>
+<a class="btn secondary" href="/modules/ce4702-computer-software-2.html">Module summary</a>
+</p>
+
+<p><a href="https://github.com/ErikDownes/ErikDownes.github.io/actions/workflows/ce4702-java.yml"><img alt="CE4702 Java checks" src="https://github.com/ErikDownes/ErikDownes.github.io/actions/workflows/ce4702-java.yml/badge.svg"></a></p>
+
+<div class="note"><strong>No custom JavaScript.</strong> These pages are static HTML/CSS. The Java source is public in GitHub; execution happens in a real cloud development environment. Answer reveals use native HTML <code>&lt;details&gt;</code>.</div>
+
+<h2>Learning path</h2>
+<div class="grid">
+  <article class="card"><div class="tag">FOUNDATION</div><h3><a href="lab01-data-types.html">Lab 01 · Data types are contracts</a></h3><p>Primitive vs reference data, parsing text, validation, boolean decisions and why representation matters.</p></article>
+  <article class="card"><div class="tag">OBJECTS</div><h3>Lab 02 · Classes, state & invariants</h3><p>Constructors, getters/setters, encapsulation and testing valid object state.</p></article>
+  <article class="card"><div class="tag">OOP</div><h3>Lab 03 · Inheritance & polymorphism</h3><p>Superclass/subclass design, overriding, abstract methods and dynamic dispatch.</p></article>
+  <article class="card"><div class="tag">ROBUSTNESS</div><h3>Lab 04 · Exceptions & bad input</h3><p>Design for failure rather than assuming every input is correct.</p></article>
+  <article class="card"><div class="tag">INTERFACES</div><h3>Lab 05 · GUI & events</h3><p>Event-driven thinking, Swing components, layout and use-case testing. Source plus captured runs.</p></article>
+  <article class="card"><div class="tag">TEXT DATA</div><h3>Lab 06 · Strings & regular expressions</h3><p>Patterns, parsing and validation of structured text.</p></article>
+  <article class="card"><div class="tag">DATA PIPELINE</div><h3>Lab 07 · Files & CSV</h3><p>Read, parse, structure, summarise and write data. This is the bridge to later data analysis.</p></article>
+  <article class="card"><div class="tag">ALGORITHMS</div><h3>Lab 08 · Search & sort</h3><p>Linear/binary search, selection/insertion sort and explicit test cases.</p></article>
+  <article class="card"><div class="tag">RECURSION</div><h3>Lab 09 · Problems that call themselves</h3><p>Factorial, Fibonacci and recursive decomposition.</p></article>
+  <article class="card"><div class="tag">COMPLEXITY</div><h3>Lab 10 · Big-O & capstone</h3><p>Move from “it works” to “how does the cost grow?” and combine the module in a final public project.</p></article>
+</div>
+
+<h2>What makes this different from ordinary revision?</h2>
+<p>Every lab will contain four kinds of evidence: <strong>conceptual explanation</strong>, <strong>runnable Java</strong>, <strong>tests/output</strong>, and <strong>Erik's own reflection</strong>. Lecturer examples remain source material; they are not represented as Erik's code.</p>
+
+<h2>Cloud workflow</h2>
+<p>Open the Codespaces link, then use the terminal. For Lab 01:</p>
+<pre>cd learning/ce4702/code/lab01
+javac DataTypesLab.java
+java DataTypesLab</pre>
+<p>The repository is the permanent record. Codespaces is the temporary computer. GitHub Actions recompiles the published lab automatically whenever the Java source changes.</p>
+
+<p><a href="#top">Back to top</a></p>
+</main>
+</body>
+</html>
