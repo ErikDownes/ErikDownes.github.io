@@ -3,7 +3,7 @@ layout: doc
 permalink: /education.html
 handle: Education
 title: Education
-nav_order: 30
+nav_order: 20
 eyebrow: UNIVERSITY OF LIMERICK · FINANCIAL MATHEMATICS
 study_mode: true
 ---
