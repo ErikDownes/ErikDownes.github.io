@@ -3,3 +3,11 @@ description: Erik Downes is a Financial Mathematics student at the University of
 url: https://erikdownes.github.io
 baseurl: ""
 markdown: kramdown
+
+# University-specific module context is deliberately centralised here.
+# Set show_university_context: false (or remove this block) to detach reusable teaching notes from UL presentation.
+education:
+  institution: "University of Limerick"
+  programme: "Financial Mathematics"
+  context_label: "Original university context"
+  show_university_context: true
