@@ -10,6 +10,35 @@ eyebrow: GENERAL INTERVIEW PREPARATION · REUSABLE ANSWERS
 
 This page is deliberately employer-neutral. Company-specific preparation belongs on the relevant company page; these are the core questions and examples that can be reused across interviews.
 
+## Interview Schedule
+
+### Friday 2 October 2026 · UL Hospitals Group
+
+**11:40 AM · Online via MS Teams**
+
+- **Interviewer:** Eimear Laffan
+- **Role area:** Health & Wellbeing Department
+- **Location:** Limerick-based co-op opportunity
+- **Opportunities:** 1
+- **Teams link:** To be added when it arrives in Erik's UL student email
+
+<div class="prep-links" data-no-glossary>
+  <a href="https://about.hse.ie/organisation/hse-mid-west/about-hse-mid-west/" target="_blank" rel="noopener">HSE Mid West →</a>
+</div>
+
+### Monday 5 October 2026 · Pivotal Corporate
+
+**11:30 AM · In person at UL**
+
+- **Venue:** Main Building, CG052
+- **Interviewer:** Catherine Wixted
+- **Opportunities:** Potentially 5 — 4 in Shannon, Co. Clare and 1 in Dublin
+
+<div class="prep-links" data-no-glossary>
+  <a href="/pivotal-corporate.html">Pivotal interview preparation →</a>
+  <a href="https://www.pivotalcorporate.com/" target="_blank" rel="noopener">Pivotal Corporate →</a>
+</div>
+
 ## Introduction | Tell me about yourself
 
 I'm studying Financial Mathematics at the University of Limerick. What I enjoy most is taking mathematics, statistics and computing and using them on practical problems.
