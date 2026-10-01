@@ -509,7 +509,7 @@
     label.addEventListener('click', event => {
       const targetPath = normalisePath(label.href);
       const rootPath = normalisePath(document.querySelector('.brand')?.href || '/');
-      const isPageMenu = targetPath === rootPath || /\/(?:aviation|portfolio)\.html$/.test(targetPath);
+      const isPageMenu = /\/(?:aviation|portfolio)\.html$/.test(targetPath);
       if (isPageMenu) {
         event.preventDefault();
         event.stopPropagation();
