@@ -1,5 +1,5 @@
 (async () => {
-  const MENU_SINGLE_COLUMN_MAX = 9; // Change this number to control when menus split into 2 columns.
+  const MENU_SINGLE_COLUMN_MAX = 19; // Change this number to control when menus split into 2 columns.
   const body = document.getElementById('docBody');
   const topbar = document.querySelector('.topbar');
   const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
