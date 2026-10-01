@@ -21,7 +21,7 @@ ac4214_course: true
 - **Tutorial questions and solutions** become worked patterns and assessment-for-learning.
 - **Exam papers and solutions** drive the revision/performance chapter.
 - **Skeleton + solution duplicates** are consolidated, not treated as extra topics.
-- **Narrated PPSX copies** map to the same topic as their corresponding decks; the academic slide content is represented without putting more than 100 MB of duplicate media into the public GitHub site.
+- **Narrated PPSX copies** contain embedded MP4 narration as well as the visible slide content. The slide content is represented in the relevant chapter without putting more than 100 MB of media into the public GitHub site. The spoken narration has **not yet been separately transcribed**, so it remains the one explicit completeness check before claiming a literal word-for-word audit of everything spoken.
 - **Two formal learning outcomes have no dedicated source pack in this ZIP:** full absorption cost and sources of finance. Chapter 7 transparently supplements those stated outcomes.
 - <code>1. AC4214 2025 - Revision slides Part 2.pptx</code> is a zero-byte/unrecoverable file in the upload; there is no recoverable academic content to reproduce from it.
 - The two Revision Questions PDFs have effectively no extractable text layer, but they remain accounted for as revision practice and the extractable revision slides/exam papers/solutions cover the assessed topic families.
@@ -162,6 +162,6 @@ These are not accounting materials and are intentionally excluded from the cours
 
 It does **not** mean copying every slide sentence onto a webpage. That would preserve presentation clutter rather than learning. It means every recoverable academic source has a destination, every formal learning outcome is covered, repeated source versions are consolidated, calculations and decision rules are represented, and assessment forces active recall.
 
-The original ZIP remains the source archive. This site is the **learning layer** built from it.
+The original ZIP remains the source archive. This site is the **learning layer** built from it. The source audit is intentionally conservative: it claims complete coverage of the recoverable document/slide material, while separately flagging the embedded spoken narration until that audio has been transcript-audited.
 
 </div>
