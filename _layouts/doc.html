@@ -74,6 +74,7 @@
   <link rel="icon" href="{{ '/assets/favicon.svg' | relative_url }}" type="image/svg+xml">
   <link rel="stylesheet" href="{{ '/assets/styles.css' | relative_url }}?v={{ site.github.build_revision }}">
   <link rel="stylesheet" href="{{ '/assets/mirror-fixes.css' | relative_url }}?v={{ site.github.build_revision }}">
+  {% if page.ac4214_course %}<link rel="stylesheet" href="{{ '/assets/ac4214-course.css' | relative_url }}?v={{ site.github.build_revision }}">{% endif %}
   {% if page.code %}
   <style>
     .module-source-context{margin:0 0 18px;padding:12px 14px;border:1px solid #dfe5ea;border-radius:12px;background:#f8fafb;color:#53606b;font-size:.92rem}
@@ -209,5 +210,6 @@
   <script src="{{ '/assets/practice.js' | relative_url }}?v={{ site.github.build_revision }}"></script>
   <script src="{{ '/assets/site.js' | relative_url }}?v={{ site.github.build_revision }}"></script>
   {% if page.path == 'coursework.md' %}<script src="{{ '/assets/education.js' | relative_url }}?v={{ site.github.build_revision }}"></script>{% endif %}
+  {% if page.ac4214_course %}<script src="{{ '/assets/ac4214-course.js' | relative_url }}?v={{ site.github.build_revision }}"></script>{% endif %}
 </body>
 </html>
