@@ -3,7 +3,7 @@ layout: doc
 permalink: /interview.html
 handle: Interview
 title: Interview Preparation
-description: Reusable interview preparation for Erik Downes, with core questions, evidence and answer structures.
+description: Reusable interview preparation with core questions, evidence and answer structures.
 nav_order: 50
 eyebrow: GENERAL INTERVIEW PREPARATION · REUSABLE ANSWERS
 ---
@@ -20,7 +20,7 @@ This page is deliberately employer-neutral. Company-specific preparation belongs
 - **Role area:** Health & Wellbeing Department
 - **Location:** Limerick-based co-op opportunity
 - **Opportunities:** 1
-- **Teams link:** To be added when it arrives in Erik's UL student email
+- **Teams link:** To be added when it arrives in my UL student email
 
 <div class="prep-links" data-no-glossary>
   <a href="https://about.hse.ie/organisation/hse-mid-west/about-hse-mid-west/" target="_blank" rel="noopener">HSE Mid West →</a>
