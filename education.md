@@ -49,7 +49,7 @@ The important point is not that an intern arrives knowing aircraft leasing alrea
 
 ## Module Library
 
-Each module has its own page. The library is kept in one **alphabetical list** so Erik can get to any subject quickly without thinking about year or semester.
+Each module has its own page. The library is kept in one **alphabetical list** so any subject is easy to reach without thinking about year or semester.
 
 - [AC4214 — Accounting for Financial Decision Making]({{ '/modules/ac4214-accounting-for-financial-decision-making.html' | relative_url }})
 - [MS4215 — Advanced Data Analysis]({{ '/modules/ms4215-advanced-data-analysis.html' | relative_url }})
