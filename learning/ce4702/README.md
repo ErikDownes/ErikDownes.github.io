@@ -1,6 +1,6 @@
 # CE4702 Computer Software 2 — Learning Lab
 
-This folder is a public learning record for Erik Downes.
+This folder is my public learning record.
 
 The structure is deliberately different from a normal set of lecture notes:
 
@@ -10,11 +10,11 @@ The structure is deliberately different from a normal set of lecture notes:
 
 The University of Limerick teaching pack is used to identify topics, terminology and assessment context.
 
-Lecturer examples, textbook examples and supplied templates are not presented as Erik's work.
+Lecturer examples, textbook examples and supplied templates are not presented as my work.
 
 Code in this learning lab is either:
 - written specifically as a learning reconstruction,
-- written or modified by Erik,
+- written or modified by me,
 - or clearly labelled otherwise.
 
 ## Run online
