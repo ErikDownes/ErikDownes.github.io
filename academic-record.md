@@ -92,10 +92,10 @@ For my Leaving Certificate Applied Mathematics project, I modelled the minimum h
 
 ## Junior Cycle & Classroom-Based Assessments
 
-At Crescent College, I received **Exceptional** in both my **Mathematics** and **Science** Classroom-Based Assessments.
+Because my Junior Cycle cohort (2018–2021) was affected by the Covid-19 school closures, the revised national arrangements required students to complete **one Classroom-Based Assessment in each subject**. In both **Mathematics** and **Science**, I achieved **Exceptional — the highest CBA descriptor**.
 
-The project-based work suited how I learn: investigating a problem, collecting or interpreting evidence, modelling it mathematically and explaining the result clearly.
+That is significant to me because these were not conventional written examinations. They were **project-based investigations** that required me to explore a question, work with evidence and data, apply mathematical or scientific ideas, and communicate a conclusion clearly.
 
-Projects included an **aerodynamics investigation using falling cupcake cases and data logging** and a **thermal-cooling investigation modelled with an exponential decay curve**.
+My projects included an **aerodynamics investigation using falling cupcake cases and data logging** and a **thermal-cooling investigation modelled with an exponential decay curve**.
 
-These early investigations helped develop the same interests that later led me towards Applied Mathematics, Physics, data analysis and Financial Mathematics.
+Looking back, those projects show a clear line through the way I learn. I am strongest when theory is connected to something I can **investigate, model, compute, test and explain**. That same approach now sits at the centre of my work in **Financial Mathematics, data analysis and computer-based projects**.
