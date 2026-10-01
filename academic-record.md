@@ -4,12 +4,15 @@ handle: Academic Record
 title: Academic Record
 eyebrow: FINANCIAL MATHEMATICS · UNIVERSITY OF LIMERICK
 ---
-This page keeps a **module-by-module academic record** in one place. The main About Me page stays deliberately concise; this page can be updated as new results are released.
+This page brings together my **undergraduate performance, Leaving Certificate results and earlier academic highlights**. The main About Me page stays deliberately concise; this page can be updated as new university results are released.
+
+## Undergraduate Performance
+
+**BSc Financial Mathematics · University of Limerick**
 
 **Current QCA:** 3.40 · **Credits completed:** 120 · **Results through:** 2025/26 Semester 2
 
-## 2025/26 Semester 2
-
+### 2025/26 Semester 2
 
 | Code | Module | Grade |
 | ------ | ---------------------------------- | ------ |
@@ -19,11 +22,9 @@ This page keeps a **module-by-module academic record** in one place. The main Ab
 | MS4404 | Partial Differential Equations | **B1** |
 | MS4414 | Theoretical Mechanics | **B1** |
 
-
 **Semester QCA:** 3.44 · **Cumulative QCA:** 3.40 · **Credits completed:** 120
 
-## 2025/26 Semester 1
-
+### 2025/26 Semester 1
 
 | Code | Module | Grade |
 | ------ | ------------------------------- | ------ |
@@ -33,11 +34,9 @@ This page keeps a **module-by-module academic record** in one place. The main Ab
 | MS4403 | Ordinary Differential Equations | **A2** |
 | MS4613 | Vector Analysis | **A2** |
 
-
 **Semester QCA:** 3.36 · **Credits:** 30
 
-## 2024/25 Semester 2
-
+### 2024/25 Semester 2
 
 | Code | Module | Grade |
 | ------ | ------------------------------------------ | ------ |
@@ -47,11 +46,9 @@ This page keeps a **module-by-module academic record** in one place. The main Ab
 | MS4122 | Further Linear Algebra | **B3** |
 | MS4222 | Introduction to Probability and Statistics | **A1** |
 
-
 **Semester QCA:** 3.32 · **Cumulative QCA:** 3.34 · **Credits completed:** 60
 
-## 2024/25 Semester 1
-
+### 2024/25 Semester 1
 
 | Code | Module | Grade |
 | ------ | ----------------------- | ------ |
@@ -61,22 +58,23 @@ This page keeps a **module-by-module academic record** in one place. The main Ab
 | MS4101 | Mathematical Laboratory | **A2** |
 | MS4131 | Linear Algebra 1 | **B1** |
 
-
 **Semester QCA:** 3.36 · **Credits:** 30
 
-## Crescent College Comprehensive S.J. · 2018–2024
+## Leaving Certificate
 
-I attended **Crescent College Comprehensive S.J., Limerick, from September 2018 to May 2024**, completing six years of secondary education before progressing directly to **BSc Financial Mathematics at the University of Limerick in September 2024**.
-
-I was awarded **Exceptional** in both my Mathematics and Science CBAs. I am particularly proud of those results because the work suited how I learn best: applying mathematics and science to something I could investigate, measure and explain.
-
-Projects included an **aerodynamics investigation using falling cupcake cases and data logging**, a **thermal-cooling investigation modelled with an exponential decay curve**, and a **roller-coaster project** applying mathematics to a physical system. They strengthened my interest in applications of mathematics and science and the attention to detail needed to make a project convincing.
-
-That interest continued into the Leaving Certificate, where I achieved **H1s in Mathematics, Applied Mathematics and Physics**.
-
-## Leaving Certificate Results
+**Crescent College Comprehensive S.J., Limerick · 2024**
 
 **579 CAO points**
+
+### Academic Recognition
+
+**Kolvenbach Medal for Business · May 2024**  
+Awarded for achieving the **highest Leaving Certificate Business grade at Crescent College**.
+
+**Certificate of Academic Excellence · September 2023**  
+Awarded for outstanding academic performance at Crescent College.
+
+### Results
 
 | Subject | Result |
 | ------------------- | ------ |
@@ -88,3 +86,16 @@ That interest continued into the Leaving Certificate, where I achieved **H1s in 
 | English | **H3** |
 | Irish | **O3** |
 
+My strongest Leaving Certificate results were in the quantitative subjects: **H1 Mathematics, H1 Applied Mathematics and H1 Physics**, alongside **H1 Business**.
+
+For my Leaving Certificate Applied Mathematics project, I modelled the minimum height required for a roller-coaster cart to complete a loop. I independently researched air resistance beyond the course material and incorporated it into the model, achieving **86% in the project**.
+
+## Junior Cycle & Classroom-Based Assessments
+
+At Crescent College, I received **Exceptional** in both my **Mathematics** and **Science** Classroom-Based Assessments.
+
+The project-based work suited how I learn: investigating a problem, collecting or interpreting evidence, modelling it mathematically and explaining the result clearly.
+
+Projects included an **aerodynamics investigation using falling cupcake cases and data logging** and a **thermal-cooling investigation modelled with an exponential decay curve**.
+
+These early investigations helped develop the same interests that later led me towards Applied Mathematics, Physics, data analysis and Financial Mathematics.
