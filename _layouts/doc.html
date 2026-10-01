@@ -118,7 +118,8 @@
       {% if page.eyebrow and page.eyebrow != "" %}<p class="doc-kicker">{{ page.eyebrow }}</p>{% endif %}
       <h1>{{ page_display_title }}</h1>
       {% if page.code %}
-      <details class="module-source-context"{% if site.education.show_university_context %} open{% endif %}>
+      {% unless site.education.show_university_context == false %}
+      <details class="module-source-context" open>
         <summary>{{ site.education.context_label | default: "Original university context" }}</summary>
         <div class="module-source-grid">
           {% if site.education.institution %}<span><strong>Institution:</strong> {{ site.education.institution }}</span>{% endif %}
@@ -128,6 +129,7 @@
           {% if page.semester %}<span><strong>Semester:</strong> {{ page.semester }}</span>{% endif %}
         </div>
       </details>
+      {% endunless %}
       <nav class="module-toc" id="moduleToc" aria-label="On this page" hidden>
         <strong>On this page</strong>
         <ol id="moduleTocList"></ol>
