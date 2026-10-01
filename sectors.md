@@ -10,47 +10,54 @@ public_mode: true
 
 <div class="career-door-hero">
   <span class="career-door-kicker">SECTORS</span>
-  <strong>Where Financial Mathematics can lead — and how my modules, skills and projects connect to the work.</strong>
-  <p>This section links industry context to roles, companies, university learning, technical skills and project evidence. A company is treated as an example inside its professional sector rather than as a top-level topic.</p>
+  <strong>Six sectors where a Financial Mathematics student can apply quantitative, financial and analytical skills.</strong>
+  <p>Each sector connects to relevant roles, companies, university modules, technical skills, projects and interview evidence.</p>
 </div>
 
-## Career map
+## The Six Sectors
+
+1. [**Aircraft Leasing & Aviation Finance**]({{ '/sectors/aircraft-leasing-aviation-finance.html' | relative_url }})
+2. [**Corporate Services & Financial Operations**]({{ '/sectors/corporate-services-financial-operations.html' | relative_url }})
+3. [**Banking & Financial Services**]({{ '/sectors/banking-financial-services.html' | relative_url }})
+4. [**Insurance & Actuarial**]({{ '/sectors/insurance-actuarial.html' | relative_url }})
+5. [**Investment & Asset Management**]({{ '/sectors/investment-asset-management.html' | relative_url }})
+6. [**Data, Analytics & FinTech**]({{ '/sectors/data-analytics-fintech.html' | relative_url }})
 
 <div class="education-view-grid">
 
 <a class="education-view-card" href="{{ '/sectors/aircraft-leasing-aviation-finance.html' | relative_url }}">
-<strong>Aircraft Leasing & Aviation Finance</strong>
-<span>Aircraft as both financial assets and physical machines: leasing, valuation, maintenance, risk and asset management.</span>
+<strong>1. Aircraft Leasing & Aviation Finance</strong>
+<span>Aircraft as both financial assets and physical machines: leasing, valuation, maintenance, risk and asset management. Abelo is the current company case study.</span>
 </a>
 
 <a class="education-view-card" href="{{ '/sectors/corporate-services-financial-operations.html' | relative_url }}">
-<strong>Corporate Services & Financial Operations</strong>
+<strong>2. Corporate Services & Financial Operations</strong>
 <span>SPVs, accounting, reporting, governance, cash management, compliance and client delivery. Pivotal Corporate is the current company case study.</span>
 </a>
 
 <a class="education-view-card" href="{{ '/sectors/banking-financial-services.html' | relative_url }}">
-<strong>Banking & Financial Services</strong>
+<strong>3. Banking & Financial Services</strong>
 <span>Credit, treasury, financial analysis, risk, lending and quantitative decision support.</span>
 </a>
 
 <a class="education-view-card" href="{{ '/sectors/insurance-actuarial.html' | relative_url }}">
-<strong>Insurance & Actuarial</strong>
+<strong>4. Insurance & Actuarial</strong>
 <span>Probability, uncertainty, pricing, reserving, modelling and risk.</span>
 </a>
 
 <a class="education-view-card" href="{{ '/sectors/investment-asset-management.html' | relative_url }}">
-<strong>Investment & Asset Management</strong>
+<strong>5. Investment & Asset Management</strong>
 <span>Portfolio analysis, valuation, performance, markets, investment modelling and risk.</span>
 </a>
 
 <a class="education-view-card" href="{{ '/sectors/data-analytics-fintech.html' | relative_url }}">
-<strong>Data, Analytics & FinTech</strong>
+<strong>6. Data, Analytics & FinTech</strong>
 <span>Data analysis, automation, software, modelling and decision-support tools across financial organisations.</span>
 </a>
 
 </div>
 
-## The connection model
+## How the mesh works
 
 The same evidence can be viewed from several directions:
 
@@ -60,14 +67,20 @@ or in reverse:
 
 **Module → skill → project → sector application → company need**
 
-That means [Education]({{ '/education.html' | relative_url }}), [Skills Profile]({{ '/skills-profile.html' | relative_url }}), [Projects]({{ '/projects.html' | relative_url }}) and this Sectors section are different views of the same developing capability.
+That means [Education]({{ '/education.html' | relative_url }}), [Skills Profile]({{ '/skills-profile.html' | relative_url }}), [Projects]({{ '/projects.html' | relative_url }}) and **Sectors** are different views of the same developing capability.
 
-## Company case studies
+## Company examples belong inside sectors
 
-**Pivotal Corporate** belongs under **Corporate Services & Financial Operations**. It may administer structures that own or finance aircraft, but its professional function is corporate and financial administration.
+**1. Aircraft Leasing & Aviation Finance → Abelo**
 
-**Abelo** belongs under **Aircraft Leasing & Aviation Finance**. The aircraft is both an investment and a physical machine whose condition, maintenance, lease status and future value must be actively managed.
+Abelo belongs here because its business is aircraft leasing and asset management. The aircraft is both a financial asset and a physical machine whose condition, maintenance, lease status and future value must be actively managed.
+
+[Open Aircraft Leasing & Aviation Finance →]({{ '/sectors/aircraft-leasing-aviation-finance.html' | relative_url }})
+
+**2. Corporate Services & Financial Operations → Pivotal Corporate**
+
+Pivotal belongs here because its professional function is corporate services and financial operations. It may administer structures involving aircraft, but aviation is a client industry or asset class rather than Pivotal's sector.
+
+[Open Corporate Services & Financial Operations →]({{ '/sectors/corporate-services-financial-operations.html' | relative_url }})
 
 [Open Pivotal Corporate case study →]({{ '/pivotal-corporate.html' | relative_url }})
-
-[Open Aviation & Abelo preparation →]({{ '/aviation.html' | relative_url }})
