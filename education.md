@@ -311,6 +311,6 @@ The degree map shows **what was studied**. The next layer is evidence of what ca
 - [Academic Record]({{ '/academic-record.html' | relative_url }}) — verified results and academic performance.
 - [Skills Profile]({{ '/skills-profile.html' | relative_url }}) — quantitative, technical and workplace capabilities.
 - [Projects]({{ '/projects.html' | relative_url }}) — applied analysis, modelling, software and communication.
-- [Pivotal Corporate preparation]({{ '/pivotal-corporate.html' | relative_url }}) — an example of matching course evidence to a specific role and employer.
+- [Sectors]({{ '/sectors.html' | relative_url }}) — connect modules and skills to industries, roles and company case studies such as Pivotal Corporate and Abelo.
 
 The public programme structure is based on the University of Limerick **BSc Financial Mathematics (LM058)** course-content page. Elective offerings can change, so future-year choices should be checked against the current UL programme information when they are selected.
