@@ -1,4 +1,5 @@
 (async () => {
+  const MENU_SINGLE_COLUMN_MAX = 9; // Change this number to control when menus split into 2 columns.
   const body = document.getElementById('docBody');
   const topbar = document.querySelector('.topbar');
   const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
@@ -587,7 +588,7 @@
     // can still expand to two or three columns when they contain many entries.
     const rootPath = normalisePath(document.querySelector('.brand')?.href || '/');
     const isAboutMenu = normalisePath(pageUrl.href) === rootPath;
-    menu.classList.toggle('menu-columns-2', !isAboutMenu && questions.length >= 5 && questions.length < 22);
+    menu.classList.toggle('menu-columns-2', !isAboutMenu && questions.length > MENU_SINGLE_COLUMN_MAX && questions.length < 22);
     menu.classList.toggle('menu-columns-3', !isAboutMenu && questions.length >= 22);
     menu.style.setProperty('--menu-left', `${Math.round(item.getBoundingClientRect().left)}px`);
 
