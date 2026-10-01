@@ -29,3 +29,8 @@ The page is deliberately more personal than technical: bolognese, roast chicken,
 ## Archive
 
 As the blog grows, this page can also become a simple chronological archive of posts.
+
+
+## Test Article
+
+[Open Test Article →]({{ '/test-article.html' | relative_url }})
