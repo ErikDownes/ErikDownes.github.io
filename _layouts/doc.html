@@ -6,6 +6,12 @@
 {% if page.handle == nil and legacy_title_parts.size > 1 %}
   {% assign page_display_title = legacy_title_parts[1] | strip %}
 {% endif %}
+{% if page.code %}
+  {% assign module_title_parts = page.title | split: ' — ' %}
+  {% if module_title_parts.size > 1 and module_title_parts[0] == page.code %}
+    {% assign page_display_title = module_title_parts[1] | strip %}
+  {% endif %}
+{% endif %}
 {% assign erik_primary_url = 'https://erikdownes.github.io' %}
 {% assign is_erik_primary = false %}
 {% if site.url == erik_primary_url %}
@@ -68,6 +74,20 @@
   <link rel="icon" href="{{ '/assets/favicon.svg' | relative_url }}" type="image/svg+xml">
   <link rel="stylesheet" href="{{ '/assets/styles.css' | relative_url }}?v={{ site.github.build_revision }}">
   <link rel="stylesheet" href="{{ '/assets/mirror-fixes.css' | relative_url }}?v={{ site.github.build_revision }}">
+  {% if page.code %}
+  <style>
+    .module-source-context{margin:0 0 18px;padding:12px 14px;border:1px solid #dfe5ea;border-radius:12px;background:#f8fafb;color:#53606b;font-size:.92rem}
+    .module-source-context summary{cursor:pointer;font-weight:800;color:#2f3e4c}
+    .module-source-grid{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:10px}
+    .module-source-grid span{white-space:nowrap}
+    .module-toc{margin:0 0 22px;padding:16px 18px;border:1px solid #dfe5ea;border-radius:14px;background:#fff}
+    .module-toc strong{display:block;margin-bottom:8px}
+    .module-toc ol{margin:0;padding-left:1.25rem;columns:2;column-gap:28px}
+    .module-toc li{break-inside:avoid;margin:.25rem 0}
+    .module-toc a{text-decoration:none}
+    @media(max-width:700px){.module-toc ol{columns:1}.module-source-grid{display:grid;gap:5px}}
+  </style>
+  {% endif %}
 </head>
 <body class="{% if page.study_mode %}study-mode{% endif %}{% if page.profile_mode %} profile-mode{% endif %}{% if page.public_mode %} public-mode{% endif %}{% if page.path == 'coursework.md' %} education-mode{% endif %}">
   <header class="topbar">
@@ -97,6 +117,22 @@
     <article class="doc-paper">
       {% if page.eyebrow and page.eyebrow != "" %}<p class="doc-kicker">{{ page.eyebrow }}</p>{% endif %}
       <h1>{{ page_display_title }}</h1>
+      {% if page.code %}
+      <details class="module-source-context"{% if site.education.show_university_context %} open{% endif %}>
+        <summary>{{ site.education.context_label | default: "Original university context" }}</summary>
+        <div class="module-source-grid">
+          {% if site.education.institution %}<span><strong>Institution:</strong> {{ site.education.institution }}</span>{% endif %}
+          {% if site.education.programme %}<span><strong>Programme:</strong> {{ site.education.programme }}</span>{% endif %}
+          <span><strong>Module code:</strong> {{ page.code }}</span>
+          {% if page.year %}<span><strong>Year:</strong> {{ page.year }}</span>{% endif %}
+          {% if page.semester %}<span><strong>Semester:</strong> {{ page.semester }}</span>{% endif %}
+        </div>
+      </details>
+      <nav class="module-toc" id="moduleToc" aria-label="On this page" hidden>
+        <strong>On this page</strong>
+        <ol id="moduleTocList"></ol>
+      </nav>
+      {% endif %}
       {% if page.image %}
       <figure class="doc-page-image">
         <img src="{{ page.image | relative_url }}" alt="{{ page.image_alt | default: page_display_title | escape }}">
@@ -112,6 +148,9 @@
         (() => {
           const body = document.getElementById('docBody');
           if (!body) return;
+          const moduleToc = document.getElementById('moduleToc');
+          const moduleTocList = document.getElementById('moduleTocList');
+          const usedIds = new Set();
           body.querySelectorAll(':scope > h2').forEach(heading => {
             const raw = heading.textContent.replace(/\s+/g, ' ').trim();
             if (!raw) return;
@@ -139,7 +178,27 @@
             if (!document.body.classList.contains('profile-mode') && !document.body.classList.contains('public-mode')) {
               heading.classList.add('interview-question-heading');
             }
+
+            if (moduleToc && moduleTocList) {
+              let slug = (menuLabel || questionText)
+                .toLowerCase()
+                .normalize('NFKD')
+                .replace(/[^a-z0-9]+/g, '-')
+                .replace(/^-+|-+$/g, '') || 'section';
+              let uniqueSlug = slug;
+              let suffix = 2;
+              while (usedIds.has(uniqueSlug) || document.getElementById(uniqueSlug)) uniqueSlug = `${slug}-${suffix++}`;
+              usedIds.add(uniqueSlug);
+              heading.id = heading.id || uniqueSlug;
+              const item = document.createElement('li');
+              const link = document.createElement('a');
+              link.href = `#${heading.id}`;
+              link.textContent = menuLabel;
+              item.appendChild(link);
+              moduleTocList.appendChild(item);
+            }
           });
+          if (moduleToc && moduleTocList && moduleTocList.children.length) moduleToc.hidden = false;
         })();
       </script>
     </article>
