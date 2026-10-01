@@ -3,7 +3,7 @@ layout: doc
 permalink: /pivotal-corporate.html
 handle: Pivotal Corporate
 title: Pivotal Corporate | Corporate Services & Financial Operations
-description: Preparation for Erik Downes's Pivotal Corporate co-op interview, covering the company, Corporate Administrator role, relevant skills and interview evidence.
+description: Preparation for the Pivotal Corporate co-op interview, covering the company, Corporate Administrator role, relevant skills and interview evidence.
 nav_order: 40
 eyebrow: COMPANY DEEP DIVE · CORPORATE SERVICES · CO-OP PREPARATION
 ---
