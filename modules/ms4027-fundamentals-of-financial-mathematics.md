@@ -52,7 +52,7 @@ A **derivative** is a contract whose value depends on something else, such as a 
 3. **Hedge:** choose an offsetting position, then explain what risk remains. Hull’s airline fuel example makes a cross hedge and basis risk concrete.
 4. **Extend:** conditional expectation, martingales and risk-neutral valuation deepen the model; American options and simple ARMA time series extend it to exercise decisions and historical data.
 
-The supplied Hull chapters and slides emphasise **derivatives, futures mechanics and hedging**. The later topics come from UL’s 2026/27 syllabus, so this is a **study map**, not a claim about the order of Erik’s lectures.
+The supplied Hull chapters and slides emphasise **derivatives, futures mechanics and hedging**. The later topics come from UL’s 2026/27 syllabus, so this is a **study map**, not a claim about the order used in lectures.
 
 ## Check | Explain before revealing
 
