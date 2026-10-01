@@ -3353,9 +3353,9 @@
   const wrapper = document.createElement('div');
   wrapper.className = 'abelo-research-widget';
   wrapper.innerHTML = `
-    <h3>Erik's 30-second summary</h3>
+    <h3>30-second summary</h3>
     <p><strong>Abelo is a Dublin-based B2B aircraft lessor specialising in regional turboprop aircraft.</strong> It does not sell tickets to passengers. It owns or finances aircraft and places them with airlines, then manages the commercial, financial and technical life of those assets.</p>
-    <p>The business sits at the intersection of <strong>finance, aircraft, data, asset management, risk and sustainability</strong>. For Erik, that is the important connection: a Financial Mathematics degree can be applied to real assets with long lives, large capital values and uncertain future cash flows.</p>
+    <p>The business sits at the intersection of <strong>finance, aircraft, data, asset management, risk and sustainability</strong>. The important connection is that a Financial Mathematics degree can be applied to real assets with long lives, large capital values and uncertain future cash flows.</p>
 
     <h3>What has changed since Abelo was founded?</h3>
     <p>Abelo was created in <strong>2022</strong> and has moved quickly from a relatively new platform into a growing specialist lessor.</p>
@@ -3431,7 +3431,7 @@
     <p>Abelo repeatedly describes turboprops as part of the transition toward lower-emission regional aviation. ATR states that its aircraft emit <strong>about 45% less CO₂ than similar-size regional jets</strong>.</p>
     <p><strong>Right-sized aircraft + lower fuel burn on suitable regional routes + access to smaller airports + replacement of older aircraft = a commercial as well as environmental proposition.</strong></p>
 
-    <h3>What Erik should be able to say</h3>
+    <h3>What I should be able to explain</h3>
     <p><strong>Specialist lessor → turboprops → global placements → finance → asset management → sustainable regional connectivity.</strong></p>
     <blockquote><p>“Abelo is a Dublin-based specialist turboprop lessor rather than an airline. What interests me is that the business combines aircraft with finance and asset management. It has been growing quickly, including a major ATR orderbook and international placements across Europe, Latin America, Africa, Asia and Australia. From a Financial Mathematics perspective, I can see direct links to cash flows, valuation, credit risk, financing, portfolio decisions and residual values.”</p></blockquote>
 
