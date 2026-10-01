@@ -174,20 +174,20 @@ Course Work 6 also revises loops and methods through a **divisors** problem and 
 
 ## Evidence | Assignments, code and examinations
 
-The uploaded source pack is **course material**, not proof that Erik personally wrote every program in it. Lecturer examples and templates must never be presented as Erik's own work.
+The uploaded source pack is **course material**, not evidence that I personally wrote every program in it. Lecturer examples and templates must never be presented as my own work.
 
-The strongest evidence becomes portfolio material only when we have **Erik's own submitted or reconstructed version**, can run it, and can explain the changes.
+The strongest evidence becomes portfolio material only when there is **my own submitted or reconstructed version**, can run it, and can explain the changes.
 
 ### Strong portfolio candidates
 
 | Candidate | Why it is useful | What must be verified |
 | --- | --- | --- |
-| **FindMin3** | Input, conditionals, methods, edge-case testing | Erik's own submitted `.java` file |
-| **MyMath / MyMathTest** | Modular methods, mathematical functions, explicit test cases | Erik's completed Challenge 3 code |
-| **ExploreArrays** | Arrays + methods + Javadoc + testing + Taylor series for `exp(x)` | Erik's completed Challenge 5 code |
-| **Card / CardTest** | Classes, fields, constructors, getters/setters, `toString` | Whether Erik completed the exercise |
-| **ArrayIntRandom extension** | Arrays, random values, frequencies, user-controlled ranges | Erik's modified version |
-| **Divisors program** | Loops, modulus, refactoring into a reusable method | Erik's version or a fresh reconstruction |
+| **FindMin3** | Input, conditionals, methods, edge-case testing | My own submitted `.java` file |
+| **MyMath / MyMathTest** | Modular methods, mathematical functions, explicit test cases | My completed Challenge 3 code |
+| **ExploreArrays** | Arrays + methods + Javadoc + testing + Taylor series for `exp(x)` | My completed Challenge 5 code |
+| **Card / CardTest** | Classes, fields, constructors, getters/setters, `toString` | Whether I completed the exercise |
+| **ArrayIntRandom extension** | Arrays, random values, frequencies, user-controlled ranges | My modified version |
+| **Divisors program** | Loops, modulus, refactoring into a reusable method | My version or a fresh reconstruction |
 
 **Challenge 5 is especially interesting for Financial Mathematics.** It approximates the exponential function using a finite Taylor/Maclaurin series, stores partial estimates in arrays, compares results with `Math.exp`, and asks about numerical error. That creates a natural bridge to continuous growth and discounting later in the degree.
 
@@ -246,7 +246,7 @@ Do not silently invent missing material.
 - A **Challenge 3 PDF is not present**, although the `MyMath` template explicitly says it belongs to Challenge 3.
 - A **Challenge 4 brief is not present** in this upload.
 - Course Work 6 is inside the CE4701 pack but its heading says **“Computer Software 2”**. Preserve that as a source-text anomaly until another source resolves it.
-- Lecturer example files commonly name **John** as author. They are teaching examples, not Erik's submissions.
+- Lecturer example files commonly name **John** as author. They are teaching examples, not my submissions.
 
 ## Portfolio Workflow | How we should use the Java now
 
@@ -258,7 +258,7 @@ Take one small program, run it, change values, break it, repair it, add a test a
 
 **GitHub — permanent source of truth**
 
-Only curated work should graduate to Erik's GitHub: his own code, a clean README, sensible filenames, an explanation of what the program demonstrates, and enough instructions to run it.
+Only curated work should graduate to my GitHub: my own code, a clean README, sensible filenames, an explanation of what the program demonstrates, and enough instructions to run it.
 
 **Portfolio website — presentation layer**
 
@@ -285,7 +285,7 @@ For example:
 **Java ceremony:** declare type → create `Scanner` → read integer → conditional → print  
 **Python equivalent:** read value → conditional → print
 
-If the logic survives the translation, Erik understands the algorithm rather than merely recognising Java syntax.
+If the logic survives the translation, I understand the algorithm rather than merely recognising Java syntax.
 
 ## AI Handover | Reusable instruction set
 
@@ -314,9 +314,9 @@ SOURCE DISCIPLINE
   b) supplied example/template code,
   c) assessment briefs,
   d) past-paper material,
-  e) Erik's own work.
-- NEVER describe lecturer examples or templates as Erik's work.
-- If Erik's submission is missing, say "student evidence not yet verified".
+  e) my own work.
+- NEVER describe lecturer examples or templates as my work.
+- If my submission is missing, say "student evidence not yet verified".
 - Do not invent missing Challenge/Course Work documents.
 - Record anomalies rather than silently correcting them.
 
@@ -368,11 +368,11 @@ For any selected program:
 
 PORTFOLIO RULE
 Do not publish the entire teaching archive as a portfolio.
-Prefer a few pieces that Erik can genuinely explain and defend.
+Prefer a few pieces I can genuinely explain and defend.
 
 A portfolio item should contain:
 - the problem
-- Erik's implementation
+- My implementation
 - concepts demonstrated
 - sample input/output
 - tests
@@ -420,9 +420,9 @@ CURRENT ARCHIVE NOTES
 - The strongest potential portfolio item in the supplied briefs is Challenge 5 / ExploreArrays because it combines Java, arrays, methods, testing, documentation and approximation of exp(x) by a Taylor series.
 ~~~
 
-That block is deliberately stricter than a normal “summarise these files” prompt. It prevents the two biggest errors with this archive: **mistaking duplication for content** and **mistaking lecturer examples for Erik's work**.
+That block is deliberately stricter than a normal “summarise these files” prompt. It prevents the two biggest errors with this archive: **mistaking duplication for content** and **mistaking lecturer examples for my work**.
 
-## Recall Cues | What should Erik be able to say?
+## Recall Cues | What I should be able to explain
 
 **What was CE4701?**  
 A first programming and software-engineering module using Java: algorithm design, structured programming, classes, methods, arrays, testing, debugging and reporting.
@@ -434,4 +434,4 @@ It forces explicit thinking about types, methods, classes and program structure,
 Problem decomposition, algorithms, testing, debugging, documentation and the ability to learn unfamiliar technical tools.
 
 **What should go into the portfolio?**  
-Not the lecturer's archive. A small number of Erik's own reconstructed or submitted programs that run, are tested, are explained properly and are stored on GitHub.
+Not the lecturer's archive. A small number of my own reconstructed or submitted programs that run, are tested, are explained properly and are stored on GitHub.
