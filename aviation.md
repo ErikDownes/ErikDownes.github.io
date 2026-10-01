@@ -5,6 +5,8 @@ title: My Passion for the Aviation Industry and Asset management
 eyebrow: AIRCRAFT · LEASING · ASSET MANAGEMENT · ABELO
 ---
 
+[Aircraft Leasing & Aviation Finance sector overview →]({{ '/sectors/aircraft-leasing-aviation-finance.html' | relative_url }})
+
 ## Why Aviation?
 
 I’ve always had a fascination with flight. Every time I fly, I still find it incredible that engineering, mathematics, science and technology all come together to put an aircraft in the air safely and reliably.
