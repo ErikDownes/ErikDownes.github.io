@@ -91,7 +91,7 @@ This view preserves the **official structure of the BSc Financial Mathematics (L
 <div class="degree-semester" markdown="1">
 
 #### Semester 3
-- [Finance]({{ '/modules/fi4003-finance.html' | relative_url }}) · **FI4003**
+- [Finance]({{ '/modules/finance.html' | relative_url }})
 - [Methods of Linear Analysis]({{ '/modules/ms4043-methods-of-linear-analysis.html' | relative_url }}) · **MS4043**
 - [Probability Models]({{ '/modules/ms4035-probability-models.html' | relative_url }}) · **MS4035**
 - [Ordinary Differential Equations]({{ '/modules/ms4403-ordinary-differential-equations.html' | relative_url }}) · **MS4403**
@@ -207,7 +207,7 @@ This view cuts **across years and semesters**. It is the more useful view when a
 ### Finance & Accounting
 [Financial Accounting]({{ '/modules/ac4213-financial-accounting.html' | relative_url }}) ·
 [Accounting for Financial Decision Making]({{ '/modules/ac4214-accounting-for-financial-decision-making.html' | relative_url }}) ·
-[Finance]({{ '/modules/fi4003-finance.html' | relative_url }}) ·
+[Finance]({{ '/modules/finance.html' | relative_url }}) ·
 [Fundamentals of Financial Mathematics]({{ '/modules/ms4027-fundamentals-of-financial-mathematics.html' | relative_url }}) ·
 [Stochastic Differential Equations for Finance]({{ '/modules/ms4028-stochastic-differential-equations-for-finance.html' | relative_url }}) ·
 [Mathematical and Statistical Models of Investments]({{ '/modules/ms4528-mathematical-and-statistical-models-of-investments.html' | relative_url }})
@@ -273,7 +273,7 @@ The alphabetical index is the quickest route when the module name is already kno
 - [Computer Software 2]({{ '/modules/ce4702-computer-software-2.html' | relative_url }}) `CE4702`
 - [Cooperative Education]({{ '/modules/coop-1-cooperative-education.html' | relative_url }}) `COOP_1`
 - [Discrete Mathematics 2]({{ '/modules/ms4117-discrete-mathematics-2.html' | relative_url }}) `MS4117`
-- [Finance]({{ '/modules/fi4003-finance.html' | relative_url }}) `FI4003`
+- [Finance]({{ '/modules/finance.html' | relative_url }})
 - [Financial Accounting]({{ '/modules/ac4213-financial-accounting.html' | relative_url }}) `AC4213`
 - [Fundamentals of Financial Mathematics]({{ '/modules/ms4027-fundamentals-of-financial-mathematics.html' | relative_url }}) `MS4027`
 - [Further Linear Algebra]({{ '/modules/ms4122-further-linear-algebra.html' | relative_url }}) `MS4122`
