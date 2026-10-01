@@ -116,7 +116,7 @@ intro: Explore illustrative lease, re-lease and residual-value scenarios for reg
             <p>A firm order commits capital now. Purchase options preserve flexibility: add aircraft later if demand, financing, placement opportunities and market conditions support the decision.</p>
           </div>
           <div>
-            <h3>What Erik can explain</h3>
+            <h3>What I can explain</h3>
             <p><strong>“I separated the firm commitment from optional capacity, then made the price, quantity and timing assumptions adjustable so I could see the capital effect of exercising the options.”</strong></p>
           </div>
         </div>
