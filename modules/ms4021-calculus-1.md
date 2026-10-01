@@ -1,6 +1,6 @@
 ---
 layout: doc
-title: "MS4021 — Calculus 1"
+title: "Calculus I"
 code: "MS4021"
 year: "1st"
 semester: "Sem1"
@@ -135,7 +135,7 @@ f'(a)=\lim_{h\to 0}\frac{f(a+h)-f(a)}{h}
 <details class="module-resources">
 <summary>Open the original course resource map</summary>
 <div>
-<p class="calc-source-note">This is deliberately kept out of the main page. The source pack supplied for MS4021 contains the original lecture material, handwritten lecture scans and tutorial sheets with worked solutions.</p>
+<p class="calc-source-note">This is deliberately kept out of the main teaching page. The original university resource pack contains lecture material, handwritten lecture scans and tutorial sheets with worked solutions.</p>
 
 <details>
 <summary>Lecture resources</summary>
