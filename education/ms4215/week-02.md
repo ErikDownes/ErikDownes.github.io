@@ -55,7 +55,7 @@ Use R for the module because that is the lecturer's language. Then reproduce the
 
 ## What to understand before Lab 2
 
-Before doing Lab 2, Erik should be comfortable explaining:
+Before doing Lab 2, I should be comfortable explaining:
 
 1. the difference between correlation and regression;
 2. why correlation is not causation;
