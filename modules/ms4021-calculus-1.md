@@ -98,7 +98,7 @@ f'(a)=\lim_{h\to 0}\frac{f(a+h)-f(a)}{h}
 
 <div class="calc-judgement">
 <strong>Keep the mathematical judgement; do not confuse difficult hand manipulation with professional mathematical ability.</strong>
-<p>For finance, analytics and asset-management work, Erik should be able to recognise the structure of a problem, choose the right model, interpret derivatives and limits, check units and signs, and challenge an implausible result. Software can do repetitive symbolic manipulation extremely well; the human still has to decide what calculation is meaningful and whether the answer makes sense.</p>
+<p>For finance, analytics and asset-management work, the important skill is recognising the structure of a problem, choosing the right model, interpreting derivatives and limits, checking units and signs, and challenging an implausible result. Software can do repetitive symbolic manipulation extremely well; human judgement is still needed to decide what calculation is meaningful and whether the answer makes sense.</p>
 <p>That also applies when integration appears later in the degree. Basic hand integration remains useful for fluency and checking, but specialised integration tricks are rarely a high-value day-to-day workplace skill. Understanding what an integral means, whether an analytical or numerical method is appropriate, and how to validate the result matters more.</p>
 </div>
 
