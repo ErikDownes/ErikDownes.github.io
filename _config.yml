@@ -5,7 +5,7 @@ baseurl: ""
 markdown: kramdown
 
 # University-specific module context is deliberately centralised here.
-# Set show_university_context: false (or remove this block) to detach reusable teaching notes from UL presentation.
+# Set show_university_context: false to remove the university-context block from every module page.
 education:
   institution: "University of Limerick"
   programme: "Financial Mathematics"
