@@ -112,7 +112,7 @@ That matters because the non-significant shot-time result cannot reasonably be b
 
 ## 7 | What to say without a computer
 
-Erik should be able to explain these points in ordinary language:
+These are the points I should be able to explain in ordinary language:
 
 - A design matrix is the numerical structure of the regression model.
 - The intercept column is represented by ones.
