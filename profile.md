@@ -137,6 +137,20 @@ eyebrow: FINANCIAL MATHEMATICS · DATA ANALYSIS · UNIVERSITY OF LIMERICK
         </p>
 
         <p>
+          My degree gives me a strong, structured foundation. Alongside the
+          formal modules, I use projects and supplementary study to develop
+          areas that connect with them and with the work I want to understand
+          better, particularly data, software and applied technology.
+        </p>
+
+        <p>
+          AI-assisted tools are part of that process. I use them to explore
+          ideas, test approaches and speed up development, while still making
+          sure I understand the method, check the evidence and can explain the
+          result in my own words.
+        </p>
+
+        <p>
           Project work has also taught me that technical work has to be
           communicated well. Good analysis is much more useful when somebody else
           can understand the assumptions, follow the reasoning and explore the
