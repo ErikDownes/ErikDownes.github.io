@@ -31,10 +31,7 @@ eyebrow: FINANCIAL MATHEMATICS · DATA ANALYSIS · UNIVERSITY OF LIMERICK
       <summary>Read more</summary>
 
       <p>
-        I have always enjoyed mathematics most when I can connect it to something
-        practical. At school, Physics and Applied Mathematics were particularly
-        interesting to me because they involved designing, measuring, testing and
-        explaining rather than simply arriving at an answer on paper.
+   I enjoy math when it’s hands-on. Physics and Applied Math let me design, measure, test, and explain—not just get an answer on paper.
       </p>
 
       <p>
