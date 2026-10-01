@@ -11,7 +11,7 @@ eyebrow: "4TH YEAR · SEM1"
 
 ## Module overview
 
-This is the interview-level page for **MS4407 — Perturbation Techniques and Asymptotics**. Add the lecturer's module overview or syllabus here, then reduce it to the main ideas Erik should be able to recognise and explain.
+This is an interview-level summary of **MS4407 — Perturbation Techniques and Asymptotics**, focused on the main ideas, methods and applications worth retaining.
 
 ## Core concepts
 
@@ -23,7 +23,7 @@ This is the interview-level page for **MS4407 — Perturbation Techniques and As
 
 ## Important methods / theorems
 
-- Add the main methods, formulas, models or theorems Erik should recognise.
+- Main methods, formulas, models and theorems to recognise.
 
 ## Explain it simply
 
@@ -42,7 +42,7 @@ Connect the module to finance, data, modelling, computing, business, engineering
 
 ## Projects / assignments / evidence
 
-Add assignments, projects, software, grades or examples Erik can use as evidence.
+Relevant assignments, projects, software, grades and worked examples can be used as supporting evidence.
 
 ## Recall cues
 
