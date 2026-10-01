@@ -292,17 +292,17 @@ The useful evidence includes:
 
 ### Source discipline
 
-The teaching pack is **evidence of what the module covered**, not proof that every supplied program was written by Erik.
+The teaching pack is **evidence of what the module covered**, not evidence that every supplied program was written by me.
 
 Lecturer examples, templates and textbook code should remain learning material.
 
-Portfolio claims should be restricted to work that can be verified as Erik's own submission, reconstruction or extension.
+Portfolio claims should be restricted to work that can be verified as my own submission, reconstruction or extension.
 
 ## Strong Portfolio Candidates
 
 ### 1. Challenge 6 · CSV Data Processor
 
-Probably the strongest bridge to Erik's later quantitative work.
+Probably the strongest bridge to my later quantitative work.
 
 A cleaned-up version could demonstrate:
 
@@ -333,7 +333,7 @@ Useful evidence for explaining:
 
 ### 4. Challenge 5 · Graphics Application
 
-Useful if Erik's original solution is available because the brief explicitly rewards originality and visual design.
+Useful if my original solution is available because the brief explicitly rewards originality and visual design.
 
 ## Teamwork Connection
 
