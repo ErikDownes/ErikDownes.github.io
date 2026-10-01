@@ -47,3 +47,8 @@ A car-finance calculator built around deposit, monthly payment, term and the opt
 An aircraft-leasing calculator for ATR 42 and ATR 72 scenarios, connecting acquisition assumptions, lease income, financing, residual value and asset-management decisions.
 
 [Open ATR Lease Calculator →]({{ '/lease-dashboard.html' | relative_url }})
+
+
+## Projects to Sectors
+
+Projects are evidence, not isolated portfolio pieces. The [Sectors]({{ '/sectors.html' | relative_url }}) section shows how the same project can support different applications — for example, aircraft-data work can demonstrate aviation knowledge, data quality, analytics and financial-operations skills depending on the role.
