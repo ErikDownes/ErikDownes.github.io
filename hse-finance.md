@@ -1,8 +1,8 @@
 ---
 layout: doc
-permalink: /hse-finance.html
+permalink: /medical-finance.html
 handle: Medical Finance
-title: HSE Mid-West — Co-op Finance
+title: Medical Finance — HSE Mid-West Co-op
 description: HSE Mid-West Co-op Finance role, job specification, interview
   details and preparation.
 nav_order: 41
