@@ -47,7 +47,7 @@ content:
       - { name: philosophy, label: "Philosophy", type: file, path: philosophy.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: pivotal_corporate, label: "Pivotal Corporate", type: file, path: pivotal-corporate.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: preparation, label: "Preparation", type: file, path: preparation.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: profile, label: "Profile", type: file, path: profile.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: profile, label: "Profile", type: file, path: profile.md, format: code, operations: { delete: false } }
       - { name: projects, label: "Projects", type: file, path: projects.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: questions_for_abelo, label: "Questions For Abelo", type: file, path: questions-for-abelo.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: questions, label: "Questions", type: file, path: questions.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
