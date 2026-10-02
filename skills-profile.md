@@ -9,62 +9,60 @@ public_mode: true
 
 **This profile must be adjusted for every job application.** The skills, examples and emphasis should be tailored to the specific role and employer rather than used unchanged for every application.
 
-Financial Mathematics student at the University of Limerick with strong quantitative, analytical and problem-solving skills, supported by practical experience in data analysis, programming, customer-facing work and logistics.
+**Current version: tailored for the Pivotal Corporate Co-op Student / Corporate Administrator role.**
+
+Financial Mathematics student at the University of Limerick with strong analytical, numerical and problem-solving skills. I bring a careful approach to detailed information, practical experience with Excel and data analysis, customer-facing and logistics experience, and a strong interest in financial services. I am organised, comfortable learning new processes and keen to develop practical experience in corporate administration, accounting support, compliance and client service.
 
 <div class="profile-skill-groups" aria-label="Skills summary" data-no-glossary>
   <div class="profile-skill-group">
-    <h3>Quantitative</h3>
+    <h3>Financial & Analytical</h3>
     <div class="profile-skill-tags">
-      <span>Probability</span><span>Statistics</span><span>Financial Mathematics</span>
-      <span>Numerical Analysis</span><span>Operations Research</span><span>Modelling</span>
+      <span>Financial Mathematics</span><span>Finance</span><span>Statistics</span>
+      <span>Critical Thinking</span><span>Problem Solving</span><span>Research</span>
     </div>
   </div>
   <div class="profile-skill-group">
-    <h3>Data & Software</h3>
+    <h3>Data & Systems</h3>
     <div class="profile-skill-tags">
-      <span>Python</span><span>Pandas</span><span>R</span><span>MATLAB</span>
-      <span>Java</span><span>SQL</span><span>Excel</span><span>Git/GitHub</span>
+      <span>Excel</span><span>Python</span><span>Pandas</span><span>SQL</span>
+      <span>R</span><span>MATLAB</span><span>Git/GitHub</span>
     </div>
   </div>
   <div class="profile-skill-group">
     <h3>Workplace</h3>
     <div class="profile-skill-tags">
-      <span>Accuracy</span><span>Teamwork</span><span>Communication</span>
-      <span>Problem Solving</span><span>Initiative</span><span>Organisation</span>
+      <span>Accuracy</span><span>Organisation</span><span>Communication</span>
+      <span>Client Service</span><span>Teamwork</span><span>Initiative</span>
     </div>
   </div>
 </div>
 
-## Quantitative & Analytical
+## Accuracy & Financial Thinking
 
-University work includes Probability & Statistics, Finance, Applied Data Analysis, Numerical Analysis, Operations Research and Computer Software. I enjoy moving from a mathematical idea to a practical model, testing assumptions and checking whether the result makes sense.
+My Financial Mathematics degree combines quantitative work with finance, probability, statistics, numerical analysis and problem solving. I am used to working carefully through detailed information, checking assumptions and validating results rather than accepting an answer simply because a calculation has produced one.
 
-## Data & Technology
+That approach is directly relevant to work involving financial records, reconciliations, schedules and supporting documentation. I am keen to build practical experience in journal entries, accounts payable and receivable, VAT and regulatory processes while applying the same emphasis on accuracy and checking.
 
-I work with Excel, Python, Pandas, R/RStudio, MATLAB and Java, alongside Git/GitHub, Jupyter, Google Colab and VS Code. My project work has also used HTML, CSS, JavaScript and Leaflet.
+## Excel & Data Handling
 
-I am developing further experience with Power BI, machine learning tools and AI-assisted development, while keeping the underlying analysis, data quality and validation explicit.
+I use Excel alongside Python, Pandas, R/RStudio, MATLAB and SQL for analysing and organising data. I am comfortable taking a larger task, structuring the information, checking for inconsistencies and presenting the result clearly.
 
-## Problem Solving
+In a recent project I reconciled aircraft records from several public sources using Python and Pandas. Where the evidence was not strong enough to support a match, I left the record unresolved rather than forcing a conclusion. That project strengthened my approach to data quality, traceability and careful record checking.
 
-I am comfortable breaking a larger problem into smaller stages: defining the question, finding or preparing the data, choosing an appropriate method, checking the result and communicating it clearly.
+## Organisation & Client Service
 
-A recent data project required reconciling aircraft records from several public sources. I used Python and Pandas to clean and compare the data and deliberately left records unresolved where the evidence was not strong enough to support a match.
+Customer-facing work at Mr Price developed my confidence dealing with queries and helping customers professionally. At O'Mahony's, accurate communication around orders, invoices and dispatch is important to keeping work moving and meeting deadlines.
 
-## Teamwork & Communication
+These roles have reinforced the importance of being dependable, organised and clear when other people rely on the information or task being completed correctly. I am comfortable working as part of a team, taking responsibility for assigned work and asking questions early when something is unclear.
 
-A Java programming project involved working with another student, dividing the work, integrating separate pieces of code and testing the final solution together.
+## Research, Learning & Improvement
 
-Customer-facing work at Mr Price developed confidence answering queries and resolving problems professionally. At O'Mahony's, accurate communication around orders, invoices and dispatch is important to keeping work moving and meeting deadlines.
+I learn best by combining theory with practical application. When I meet a new process or system, I am comfortable researching it, testing my understanding and building from a small example.
 
-## Initiative & Learning
-
-I learn best by combining theory with application. When a project requires a tool or concept I have not used before, I am comfortable researching it, testing it on a small example and building from there.
-
-This website is part of that approach: it brings together coursework, applied projects and interview preparation in a form that can be reviewed, improved and demonstrated.
+I would bring that approach to learning company administration, accounting procedures, KYC/CDD requirements and regulatory documentation. I am also interested in process improvement: understanding how a task currently works, identifying avoidable repetition or error points, and using appropriate tools to make the process clearer and more reliable.
 
 ## Evidence
 
-- [Projects]({{ '/projects.html' | relative_url }}) — applied data, modelling and interactive tools.
-- [Academic Record]({{ '/academic-record.html' | relative_url }}) — modules and academic evidence.
-- [Education]({{ '/education.html' | relative_url }}) — Financial Mathematics concepts and coursework.
+- [Projects]({{ '/projects.html' | relative_url }}) — applied data analysis, modelling and practical problem solving.
+- [Academic Record]({{ '/academic-record.html' | relative_url }}) — Financial Mathematics modules and academic evidence.
+- [Education]({{ '/education.html' | relative_url }}) — finance, statistics, mathematical modelling and related coursework.
