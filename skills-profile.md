@@ -17,42 +17,42 @@ Financial Mathematics student at the University of Limerick with strong quantita
 
 <div class="profile-skill-groups" aria-label="Skills summary" data-no-glossary>
   <div class="profile-skill-group">
-    <h3>1 · Quantitative & Analytical</h3>
+    <h3>Quantitative & Analytical</h3>
     <div class="profile-skill-tags">
       <span>Statistics</span><span>Modelling</span><span>Regression</span>
       <span>Optimisation</span><span>Numerical Methods</span><span>Critical Thinking</span>
     </div>
   </div>
   <div class="profile-skill-group">
-    <h3>2 · Finance & Accounting</h3>
+    <h3>Finance & Accounting</h3>
     <div class="profile-skill-tags">
       <span>Financial Accounting</span><span>Finance</span><span>Cash Flow</span>
       <span>NPV / IRR</span><span>Budgeting</span><span>Working Capital</span>
     </div>
   </div>
   <div class="profile-skill-group">
-    <h3>3 · Spreadsheets & Data</h3>
+    <h3>Spreadsheets & Data</h3>
     <div class="profile-skill-tags">
       <span>Spreadsheets</span><span>Python</span><span>Pandas</span>
       <span>SQL</span><span>R</span><span>Data Checking</span>
     </div>
   </div>
   <div class="profile-skill-group">
-    <h3>4 · Accuracy & Administration</h3>
+    <h3>Accuracy & Administration</h3>
     <div class="profile-skill-tags">
       <span>Record Checking</span><span>Documentation</span><span>Traceability</span>
       <span>Schedules</span><span>Detail</span><span>Reliability</span>
     </div>
   </div>
   <div class="profile-skill-group">
-    <h3>5 · Communication & Client Service</h3>
+    <h3>Communication & Client Service</h3>
     <div class="profile-skill-tags">
       <span>Customer Service</span><span>Clear Communication</span><span>Professionalism</span>
       <span>Listening</span><span>Teamwork</span><span>Stakeholders</span>
     </div>
   </div>
   <div class="profile-skill-group">
-    <h3>6 · Organisation, Initiative & Improvement</h3>
+    <h3>Organisation, Initiative & Improvement</h3>
     <div class="profile-skill-tags">
       <span>Organisation</span><span>Research</span><span>Initiative</span>
       <span>Process Improvement</span><span>Learning</span><span>Responsibility</span>
