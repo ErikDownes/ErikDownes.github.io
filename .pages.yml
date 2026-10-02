@@ -34,6 +34,7 @@ content:
       - { name: aviation, label: "Aviation", type: file, path: aviation.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: blog, label: "Blog", type: file, path: blog.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: cooking, label: "Cooking", type: file, path: cooking.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: csp, label: "CSP", type: file, path: csp.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: cycling, label: "Cycling", type: file, path: cycling.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: education, label: "Education", type: file, path: education.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: fleet-map, label: "Fleet Map", type: file, path: fleet-map.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
