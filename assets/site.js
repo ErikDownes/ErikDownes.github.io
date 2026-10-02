@@ -703,90 +703,56 @@
     const seen = new Set();
     const modules = links
       .map(link => {
-        const label = cleanText(link.textContent);
+        const title = cleanText(link.textContent);
         const rawHref = link.getAttribute('href');
-        if (!label || !rawHref) return null;
+        if (!title || !rawHref) return null;
+
         const href = new URL(rawHref, pageUrl.href);
         if (!/\/modules\/[^/]+\.html$/.test(href.pathname)) return null;
+
         const key = normalisePath(href.href);
         if (seen.has(key)) return null;
         seen.add(key);
+
+        const surroundingText = cleanText(link.closest('li')?.textContent || link.parentElement?.textContent || '');
+        const contextCode = surroundingText.match(/\b([A-Z]{2}\d{4})\b/i)?.[1]?.toUpperCase();
+        const titleCode = moduleCode(title);
+        const code = contextCode || titleCode;
+        const cleanTitle = code ? title.replace(new RegExp('^' + code + '\\s*[—–-]?\\s*', 'i'), '') : title;
+
         return {
-          label,
+          title: cleanTitle,
+          label: code ? `${code} ${cleanTitle}` : cleanTitle,
           href,
-          code: moduleCode(label),
-          completed: Boolean(link.closest('strong'))
+          code
         };
       })
-      .filter(Boolean);
-
-    const grouped = COURSEWORK_GROUPS
-      .map(group => ({
-        ...group,
-        modules: modules
-          .filter(module => group.codes.includes(module.code))
-          .sort((a, b) => {
-            const byTitle = moduleTitleForSort(a.label).localeCompare(
-              moduleTitleForSort(b.label),
-              undefined,
-              { sensitivity: 'base', numeric: true }
-            );
-            return byTitle || a.label.localeCompare(b.label, undefined, { sensitivity: 'base', numeric: true });
-          })
-      }))
-      .filter(group => group.modules.length > 0);
-
-    const knownCodes = new Set(COURSEWORK_GROUPS.flatMap(group => group.codes));
-    const uncategorised = modules
-      .filter(module => !knownCodes.has(module.code))
-      .sort((a, b) => moduleTitleForSort(a.label).localeCompare(
-        moduleTitleForSort(b.label),
-        undefined,
-        { sensitivity: 'base', numeric: true }
-      ));
-    if (uncategorised.length) grouped.push({ label: 'Other Coursework', modules: uncategorised });
-
-    menu.replaceChildren();
-    menu.classList.remove('menu-columns-2', 'menu-columns-3', 'aviation-menu', 'career-menu', 'portfolio-menu');
-    menu.classList.add('coursework-menu');
-    item.classList.toggle('has-submenu', grouped.length > 0);
-    item.classList.toggle('has-flyout-menu', grouped.length > 0);
-    if (!grouped.length) return;
-    menu.style.setProperty('--menu-left', `${Math.round(item.getBoundingClientRect().left)}px`);
-
-    grouped.forEach(group => {
-      const row = document.createElement('div');
-      row.className = 'nav-flyout-item';
-
-      const parent = document.createElement('a');
-      parent.className = 'nav-flyout-parent';
-      parent.href = pageUrl.href;
-      parent.textContent = group.label;
-      row.appendChild(parent);
-
-      const panel = document.createElement('div');
-      panel.className = 'nav-flyout-panel';
-      panel.setAttribute('aria-label', group.label);
-      row.appendChild(createFlyoutToggle(row, group.label));
-
-      group.modules.forEach(module => {
-        const link = document.createElement('a');
-        link.href = module.href.href;
-        link.textContent = module.label;
-        if (module.completed) {
-          link.style.fontWeight = '800';
-          link.setAttribute('aria-label', module.label + ' — completed');
-        }
-        link.addEventListener('click', () => {
-          item.classList.remove('is-open');
-          item.querySelector('[data-nav-toggle]')?.setAttribute('aria-expanded', 'false');
-          if (window.innerWidth <= 1500) topbar?.classList.remove('nav-open');
-        });
-        panel.appendChild(link);
+      .filter(Boolean)
+      .sort((a, b) => {
+        const byCode = (a.code || '').localeCompare(b.code || '', undefined, { sensitivity: 'base', numeric: true });
+        return byCode || a.title.localeCompare(b.title, undefined, { sensitivity: 'base', numeric: true });
       });
 
-      row.appendChild(panel);
-      menu.appendChild(row);
+    menu.replaceChildren();
+    menu.classList.remove('aviation-menu', 'career-menu', 'coursework-menu', 'portfolio-menu');
+    menu.classList.toggle('menu-columns-2', modules.length > MENU_SINGLE_COLUMN_MAX && modules.length < 30);
+    menu.classList.toggle('menu-columns-3', modules.length >= 30);
+    item.classList.toggle('has-submenu', modules.length > 0);
+    item.classList.remove('has-flyout-menu');
+    if (!modules.length) return;
+
+    menu.style.setProperty('--menu-left', `${Math.round(item.getBoundingClientRect().left)}px`);
+
+    modules.forEach(module => {
+      const link = document.createElement('a');
+      link.href = module.href.href;
+      link.textContent = module.label;
+      link.addEventListener('click', () => {
+        item.classList.remove('is-open');
+        item.querySelector('[data-nav-toggle]')?.setAttribute('aria-expanded', 'false');
+        if (window.innerWidth <= 1500) topbar?.classList.remove('nav-open');
+      });
+      menu.appendChild(link);
     });
   };
 
@@ -952,7 +918,7 @@
     const cleanPagePath = pageUrl.pathname.replace(/\/+$/, '');
     const rootPath = normalisePath(document.querySelector('.brand')?.href || '/');
     const isAboutLibrary = targetPath === rootPath;
-    const isStudiesLibrary = /\/coursework(?:\.html)?$/.test(cleanPagePath);
+    const isStudiesLibrary = /\/(?:education|coursework)(?:\.html)?$/.test(cleanPagePath);
     const isAviationLibrary = /\/aviation(?:\.html)?$/.test(cleanPagePath);
     const isCareerLibrary = /\/career(?:\.html)?$/.test(cleanPagePath);
     const isPortfolioLibrary = /\/portfolio(?:\.html)?$/.test(cleanPagePath);
