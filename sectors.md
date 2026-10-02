@@ -10,11 +10,11 @@ public_mode: true
 
 <div class="career-door-hero">
   <span class="career-door-kicker">SECTORS</span>
-  <strong>Six sectors where a Financial Mathematics student can apply quantitative, financial and analytical skills.</strong>
+  <strong>Seven sectors where a Financial Mathematics student can apply quantitative, financial and analytical skills.</strong>
   <p>Each sector connects to relevant roles, companies, university modules, technical skills, projects and interview evidence.</p>
 </div>
 
-## The Six Sectors
+## The Seven Sectors
 
 1. [**Aircraft Leasing & Aviation Finance**]({{ '/sectors/aircraft-leasing-aviation-finance.html' | relative_url }})
 2. [**Corporate Services & Financial Operations**]({{ '/sectors/corporate-services-financial-operations.html' | relative_url }})
@@ -22,6 +22,7 @@ public_mode: true
 4. [**Insurance & Actuarial**]({{ '/sectors/insurance-actuarial.html' | relative_url }})
 5. [**Investment & Asset Management**]({{ '/sectors/investment-asset-management.html' | relative_url }})
 6. [**Data, Analytics & FinTech**]({{ '/sectors/data-analytics-fintech.html' | relative_url }})
+7. [**Healthcare & Public-Sector Finance**]({{ '/hse-finance.html' | relative_url }})
 
 <div class="education-view-grid">
 
@@ -53,6 +54,11 @@ public_mode: true
 <a class="education-view-card" href="{{ '/sectors/data-analytics-fintech.html' | relative_url }}">
 <strong>6. Data, Analytics & FinTech</strong>
 <span>Data analysis, automation, software, modelling and decision-support tools across financial organisations.</span>
+</a>
+
+<a class="education-view-card" href="{{ '/hse-finance.html' | relative_url }}">
+<strong>7. Healthcare & Public-Sector Finance</strong>
+<span>Month-end, reconciliations, patient-level costing, activity-based funding, insurer claims, accounts payable, SAP Financials and financial controls. HSE Mid-West is the current employer case study.</span>
 </a>
 
 </div>
