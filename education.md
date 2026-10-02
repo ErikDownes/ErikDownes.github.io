@@ -16,6 +16,11 @@ study_mode: true
 .education-semester ul{margin:.45rem 0 .15rem;padding-left:1.2rem}
 .education-status{display:inline-block;margin-left:7px;padding:2px 8px;border:1px solid #dce3e9;border-radius:999px;font-size:.75rem;font-weight:700;vertical-align:middle}
 .education-summary{padding:14px 16px;border-left:4px solid #5b7da3;background:#f7f9fb;border-radius:0 12px 12px 0;margin:18px 0 26px}
+.programme-overview{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:16px 0 28px}
+.programme-overview>div{padding:14px;border:1px solid #dce3e9;border-radius:12px;background:#fff}
+.programme-overview strong{display:block;margin-bottom:4px}
+@media(max-width:800px){.programme-overview{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.programme-overview{grid-template-columns:1fr}}
 .lc-results{max-width:620px}
 </style>
 
@@ -23,6 +28,17 @@ I am currently in **Year 3 of the BSc Financial Mathematics programme at the Uni
 
 <div class="education-summary">
 <strong>Current position:</strong> Year 3 · Semester 1 · BSc Financial Mathematics (LM058)
+</div>
+
+## Programme overview
+
+LM058 is a four-year Financial Mathematics degree combining **mathematics, probability and statistics, data analysis, programming, finance and accounting**, with **Cooperative Education in Year 3**. The programme moves from mathematical and computational foundations into increasingly specialised work in financial mathematics, stochastic modelling, statistical data science and quantitative finance.
+
+<div class="programme-overview">
+  <div><strong>Year 1 · Foundations</strong>Calculus, linear algebra, probability, programming and accounting.</div>
+  <div><strong>Year 2 · Applied analysis</strong>Finance, probability models, numerical analysis, data analysis, optimisation and differential equations.</div>
+  <div><strong>Year 3 · Specialisation + Co-op</strong>Statistical inference, advanced data analysis and financial mathematics, followed by professional placement.</div>
+  <div><strong>Year 4 · Advanced quantitative study</strong>Stochastic processes, time series, data-science projects, stochastic finance and investment modelling.</div>
 </div>
 
 <div class="education-year" markdown="1">
@@ -106,6 +122,35 @@ I am currently in **Year 3 of the BSc Financial Mathematics programme at the Uni
 - [Cooperative Education]({{ '/modules/coop-1-cooperative-education.html' | relative_url }}) · **CO4320**
 - Full-time professional placement
 - Opportunity to apply mathematics, finance, accounting, data analysis, programming and professional skills in the workplace
+
+</div>
+</div>
+
+<div class="education-year" markdown="1">
+
+## Fourth Year · 2027/28 <span class="education-status">Upper-level programme</span>
+
+<div class="education-semester" markdown="1">
+
+### Semester 1
+
+- [Discrete Mathematics 2]({{ '/modules/ms4117-discrete-mathematics-2.html' | relative_url }}) · **MS4117**
+- [Stochastic Processes]({{ '/modules/ms4217-stochastic-processes.html' | relative_url }}) · **MS4217**
+- [Statistical Data Science Project 1]({{ '/modules/ms4037-statistical-data-science-project-1.html' | relative_url }}) · **MS4037**
+- [Introduction to Fluid Mechanics]({{ '/modules/ma4617-introduction-to-fluid-mechanics.html' | relative_url }}) · **MA4617**
+- [Perturbation Techniques and Asymptotics]({{ '/modules/ms4407-perturbation-techniques-and-asymptotics.html' | relative_url }}) · **MS4407**
+
+</div>
+
+<div class="education-semester" markdown="1">
+
+### Semester 2
+
+- [Mathematical Methods 2 — Numerical Methods for Partial Differential Equations]({{ '/modules/ms4008-mathematical-methods-2-numerical-methods-for-partial-differential-equations.html' | relative_url }}) · **MS4008**
+- [Stochastic Differential Equations for Finance]({{ '/modules/ms4028-stochastic-differential-equations-for-finance.html' | relative_url }}) · **MS4028**
+- [Statistical Data Science Project 2]({{ '/modules/ms4038-statistical-data-science-project-2.html' | relative_url }}) · **MS4038**
+- [Time Series Analysis]({{ '/modules/ms4218-time-series-analysis.html' | relative_url }}) · **MS4218**
+- [Mathematical and Statistical Models of Investments]({{ '/modules/ms4528-mathematical-and-statistical-models-of-investments.html' | relative_url }}) · **MS4528**
 
 </div>
 </div>
