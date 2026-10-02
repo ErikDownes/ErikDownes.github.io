@@ -1,13 +1,80 @@
 ---
 layout: doc
-handle: ULCV
-title: UL Skills Profile (CV)
+handle: Co-op
+title: Co-op
 nav_order: 25
-eyebrow: UL SKILLS PROFILE · TAILOR FOR EACH JOB
+eyebrow: COOPERATIVE EDUCATION
 public_mode: true
 ---
 
 This page is deliberately fuller than the UL CV form. It should be tailored for every application so that the strongest evidence matches the actual job.
+
+
+## Cooperative Education Contact
+
+**Naomi Flanagan-Walsh · Placement Officer**
+
+Cooperative Education & Careers Division  
+University of Limerick  
+Limerick, V94 T9PX  
+Email: [naomi.flanagan-walsh@ul.ie](mailto:naomi.flanagan-walsh@ul.ie)  
+Website: [ul.ie/cecd](https://www.ul.ie/cecd)
+
+Naomi is the CECD placement contact currently corresponding with Erik about Cooperative Education interviews and placement arrangements. If a placement concern arises, this is the appropriate CECD contact to alert.
+
+## Cooperative Education — Code of Practice
+
+The Code of Practice sets out the behaviour expected of students throughout the Cooperative Education placement process. It is intended to make the placement process run as smoothly as possible and to make clear the student's responsibilities as a UL representative.
+
+### University responsibilities and preparation
+
+1. Abide by the University of Limerick Code of Conduct.
+2. Take increased personal responsibility during placement and remember that the student represents the University of Limerick.
+3. Attend advertised employability programmes, briefing sessions and workshops relating to placement.
+4. Read all placement information and material brought to the student's attention.
+5. Complete and submit all required Cooperative Education documentation by the stated deadlines, including the CV, Pre-Cooperative Education assessment form and Code of Practice.
+
+### Interviews, offers and self-sourcing
+
+6. Attend all scheduled Cooperative Education interviews and accept the first placement offer received. The valid placement offer is the first offer received from the employer through the Cooperative Education & Careers Division.
+7. Meet all deadlines for Self-Sourced Placement paperwork if choosing to self-source a placement.
+8. Follow all Garda Vetting procedures and deadlines where required.
+
+### Tax, employment rights and onboarding
+
+9. Obtain the relevant social insurance and tax details before placement begins.
+10. Be aware of the protections available under national and international employment legislation.
+11. Follow the placement organisation's onboarding requirements with due care, including contracts, medicals, vetting and related requirements.
+
+### Workplace rules and professional conduct
+
+12. Familiarise yourself with and comply with the placement organisation's working practices, rules and policies, including health and safety, confidentiality, privacy, internet, email and telephone use.
+13. Comply with reasonable requests and carry out the work programme directed by the placement organisation.
+14. Complete the full duration of the Cooperative Education placement agreed by the employer and University.
+
+### Overseas placement
+
+15. Purchase and provide evidence of insurance when undertaking placement abroad. Cover must extend for the full duration of the placement.
+16. Where required, obtain the correct visa so that the student is legally entitled to work and remain in the host country for the entire placement.
+17. Arrange suitable accommodation for the duration of placement where necessary.
+
+### Cooperative Education Report
+
+18. Complete and submit the Cooperative Education Report on or before the due date.
+19. Retain both the submission receipt and a copy of the Cooperative Education Report.
+
+## Declaration
+
+By agreeing to the Code of Practice, the student confirms that:
+
+- I know the contact details of the Cooperative Education & Careers Division staff member assigned to my placement.
+- I know how to alert the appropriate CECD staff member if I have concerns relating to my placement.
+- I understand that information on my CV will be circulated to employers and may also be circulated internally to hiring managers for interview selection.
+- I understand that my name and contact details may appear on circulated interview panels.
+- I understand that evaluation of Cooperative Education can involve CECD staff, UL faculty and employers, and that anonymised material may be used to support statistical and research-based evaluation of placement outcomes.
+- I agree that my Cooperative Education Report may be used as reference material for future students and for Cooperative Education-related quality or accreditation activities, unless I request that the report be marked confidential when I submit it.
+
+**Agreement:** By ticking the Code of Practice box, I declare that I have read, understand and agree to the above.
 
 ## Teamwork
 
