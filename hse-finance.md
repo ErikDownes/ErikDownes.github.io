@@ -3,20 +3,21 @@ layout: doc
 permalink: /hse-finance.html
 handle: Medical Finance
 title: HSE Mid-West — Co-op Finance
-description: HSE Mid-West Co-op Finance role, job specification, interview details and preparation.
+description: HSE Mid-West Co-op Finance role, job specification, interview
+  details and preparation.
 nav_order: 41
 eyebrow: HSE MID-WEST · MEDICAL & PUBLIC-SECTOR FINANCE · CO-OP
 public_mode: true
 ---
+HSE MID-WEST · CO-OP FINANCE**Friday 9 October 2026 · 12:00 PM · ONLINE**
 
-<div class="career-door-hero">
-  <span class="career-door-kicker">HSE MID-WEST · CO-OP FINANCE</span>
-  <strong>Friday 9 October 2026 · 12:00 PM · ONLINE</strong>
-  <p><strong>Interviewers:</strong> Joanne McNamara, Finance GM · Katie Hayes, Management Accountant</p>
-  <p><strong>Opportunity:</strong> 1 position · Limerick based</p>
-  <p><strong>Interview link:</strong> the employer will send the online link directly to my UL student email.</p>
-  <p id="hseCountdown" aria-live="polite"></p>
-</div>
+**Interviewers:** Joanne McNamara, Finance GM · Katie Hayes, Management Accountant
+
+**Opportunity:** 1 position · Limerick based
+
+**Interview link:** the employer will send the online link directly to my UL student email.
+
+
 
 ## Key Line
 
@@ -24,8 +25,9 @@ This is a finance placement inside a large regional health system: **month-end c
 
 ## Interview Details
 
+
 | Detail | Information |
-|---|---|
+| -------------- | ---------------------------------------------------------------------------- |
 | Employer | HSE Mid-West |
 | Role | Co-op Finance |
 | Date | Friday 9 October 2026 |
@@ -36,6 +38,7 @@ This is a finance placement inside a large regional health system: **month-end c
 | Interview link | Employer will contact me directly through my UL student email |
 | Result | Check the UL Student Portal regularly for the interview result |
 
+
 Because the interview is online, there is **no physical interview venue to map**.
 
 ## Job Location
@@ -44,15 +47,7 @@ The supplied job specification states **HSE Mid-West — Finance Dept**. The UL 
 
 **Job-location map:** Limerick, Ireland — regional location only until the specific Finance Department work location is confirmed.
 
-<iframe
-  title="Limerick job location — regional map"
-  width="100%"
-  height="360"
-  style="border:0;border-radius:14px"
-  loading="lazy"
-  referrerpolicy="no-referrer-when-downgrade"
-  src="https://www.openstreetmap.org/export/embed.html?bbox=-8.75%2C52.61%2C-8.55%2C52.70&amp;layer=mapnik">
-</iframe>
+
 
 ## Job Spec | What is the role?
 
@@ -150,8 +145,9 @@ The specification describes the ideal candidate as:
 
 The strongest connections are:
 
+
 | HSE Finance work | Financial Mathematics / practical connection |
-|---|---|
+| ---------------------- | --------------------------------------------------------------- |
 | Reconciliations | mathematical equality, checking, exceptions and data validation |
 | Pay / Non-Pay / Income | classification, aggregation and financial data analysis |
 | Patient-level costing | quantitative analysis and cost allocation |
@@ -162,6 +158,7 @@ The strongest connections are:
 | SAP Financials | professional financial-information systems |
 | Claims | data cleaning, completeness, matching and submission controls |
 | Deadlines | organisation, prioritisation and professional responsibility |
+
 
 ## Practical Preparation
 
@@ -182,24 +179,3 @@ Useful questions for the interview include:
 - How does the Finance team use Patient Level Cost and Activity Based Funding information?
 - What are the most important accuracy checks before financial information is submitted?
 
-<script>
-(function () {
-  const target = new Date('2026-10-09T12:00:00+01:00').getTime();
-  const el = document.getElementById('hseCountdown');
-  if (!el) return;
-  function updateCountdown() {
-    const diff = target - Date.now();
-    if (diff <= 0) {
-      el.textContent = 'Interview time reached.';
-      return;
-    }
-    const days = Math.floor(diff / 86400000);
-    const hours = Math.floor((diff % 86400000) / 3600000);
-    const mins = Math.floor((diff % 3600000) / 60000);
-    const secs = Math.floor((diff % 60000) / 1000);
-    el.innerHTML = '<strong>Countdown:</strong> ' + days + 'd ' + hours + 'h ' + mins + 'm ' + secs + 's';
-  }
-  updateCountdown();
-  setInterval(updateCountdown, 1000);
-})();
-</script>
