@@ -32,7 +32,7 @@ content:
       - { name: education, label: "BSc Financial Mathematics", type: file, path: education.md, format: code, operations: { delete: false } }
       - { name: projects, label: "Projects", type: file, path: projects.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: pivotal_corporate, label: "Pivotal Corporate", type: file, path: pivotal-corporate.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: csp, label: "Corporate Services", type: file, path: csp.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: csp, label: "Corporate Services", type: file, path: csp.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }\n      - { name: hse_finance, label: "HSE Finance", type: file, path: hse-finance.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: preparation, label: "Preparation", type: file, path: preparation.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: sectors, label: "Sectors", type: file, path: sectors.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: workplace_skills, label: "Workplace Skills", type: file, path: workplace-skills.md, format: code, operations: { delete: false } }
