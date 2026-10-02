@@ -13,7 +13,13 @@ This is the working version of the UL Co-op CV material. It should be tailored f
 
 ## Teamwork
 
-**Listen · Contribute · Deliver**
+What the interviewer really wants evidence of is that you can work effectively with other people toward a shared outcome. They are normally listening for four things:
+- Communication — you listen, explain, ask questions and keep others informed.
+- Contribution — you do your share, bring useful ideas and help when needed.
+- Collaboration — you adjust to other people, resolve differences, coordinate work and do not operate in isolation.
+- Reliability / shared outcome — the team can depend on you, and you care about the overall result rather than just “my bit”.
+
+
 
 I work best in teams when everyone understands the shared goal, communicates clearly and takes responsibility for their part.
 
