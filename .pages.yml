@@ -27,7 +27,7 @@ content:
     type: group
     items:
       - { name: profile, label: "Profile", type: file, path: profile.md, format: code, operations: { delete: false } }
-      - { name: skills_profile, label: "UL Skills Profile (CV)", type: file, path: skills-profile.md, format: code, operations: { delete: false } }
+      - { name: skills_profile, label: "ULCV — Tailored for CMS", type: file, path: skills-profile.md, format: code, operations: { delete: false } }
       - { name: academic_record, label: "Academic Record", type: file, path: academic-record.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: education, label: "BSc Financial Mathematics", type: file, path: education.md, format: code, operations: { delete: false } }
       - { name: projects, label: "Projects", type: file, path: projects.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
