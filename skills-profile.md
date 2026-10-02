@@ -1,10 +1,13 @@
 ---
 layout: doc
-handle: Skills Profile
-title: Skills Profile
+handle: UL Skills
+title: UL Skills Profile (CV)
+nav_order: 25
 eyebrow: PROFILE · SKILLS & EVIDENCE
 public_mode: true
 ---
+
+**This profile must be adjusted for every job application.** The skills, examples and emphasis should be tailored to the specific role and employer rather than used unchanged for every application.
 
 Financial Mathematics student at the University of Limerick with strong quantitative, analytical and problem-solving skills, supported by practical experience in data analysis, programming, customer-facing work and logistics.
 
