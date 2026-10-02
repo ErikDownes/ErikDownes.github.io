@@ -75,6 +75,13 @@
   <link rel="stylesheet" href="{{ '/assets/styles.css' | relative_url }}?v={{ site.github.build_revision }}">
   <link rel="stylesheet" href="{{ '/assets/mirror-fixes.css' | relative_url }}?v={{ site.github.build_revision }}">
   {% if page.ac4214_course %}<link rel="stylesheet" href="{{ '/assets/ac4214-course.css' | relative_url }}?v={{ site.github.build_revision }}">{% endif %}
+  {% if page.or1_course %}<link rel="stylesheet" href="{{ '/assets/or1-course.css' | relative_url }}?v={{ site.github.build_revision }}">{% endif %}
+  {% if page.mathjax or page.or1_course %}
+  <script>
+    window.MathJax = { tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] }, options: { skipHtmlTags: ['script','noscript','style','textarea','pre','code'] } };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  {% endif %}
   {% if page.code %}
   <style>
     .module-source-context{margin:0 0 18px;padding:12px 14px;border:1px solid #dfe5ea;border-radius:12px;background:#f8fafb;color:#53606b;font-size:.92rem}
