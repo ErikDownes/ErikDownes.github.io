@@ -52,7 +52,7 @@ content:
       - { name: questions_for_abelo, label: "Questions For Abelo", type: file, path: questions-for-abelo.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: questions, label: "Questions", type: file, path: questions.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: sectors, label: "Sectors", type: file, path: sectors.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: skills_profile, label: "Skills Profile", type: file, path: skills-profile.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: skills_profile, label: "UL Skills Profile (CV)", type: file, path: skills-profile.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: test_article, label: "Test Article", type: file, path: test-article.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: turboprop_dashboard_build, label: "Turboprop Dashboard Build", type: file, path: turboprop-dashboard-build.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: working_independently, label: "Working Independently", type: file, path: working-independently.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
