@@ -1126,12 +1126,6 @@
     defInput.rows = 5;
     defInput.value = suggested || '';
 
-    const cueLabel = document.createElement('label');
-    cueLabel.textContent = 'Recall cue';
-    const cueInput = document.createElement('input');
-    cueInput.type = 'text';
-    cueInput.value = existing?.cue || '';
-
     const actions = document.createElement('div');
     actions.className = 'glossary-term-actions';
 
@@ -1144,14 +1138,13 @@
     view.textContent = 'Open A–Z Glossary';
 
     actions.append(save, view);
-    form.append(h2, termLabel, termInput, defLabel, defInput, cueLabel, cueInput, actions);
+    form.append(h2, termLabel, termInput, defLabel, defInput, actions);
 
     form.addEventListener('submit', event => {
       event.preventDefault();
       const item = {
         term: cleanText(termInput.value),
-        definition: cleanText(defInput.value),
-        cue: cleanText(cueInput.value)
+        definition: cleanText(defInput.value)
       };
       if (!item.term || !item.definition) return;
       const items = customGlossary().filter(x => x.term.toLowerCase() !== item.term.toLowerCase());
@@ -1223,13 +1216,6 @@
         card.append(summary, p);
         renderGlossaryLearningContent(card, item);
 
-        if (item.cue) {
-          const cue = document.createElement('p');
-          cue.className = 'recall';
-          cue.innerHTML = '<strong>Recall cue:</strong> ';
-          cue.append(document.createTextNode(item.cue));
-          card.appendChild(cue);
-        }
         if (item.why) {
           const why = document.createElement('p');
           why.className = 'recall';
@@ -1287,13 +1273,6 @@
     const definition = document.createElement('p');
     definition.textContent = item.definition || '';
     glossaryDialogBody.replaceChildren(heading, definition);
-    if (item.cue) {
-      const cue = document.createElement('p');
-      cue.className = 'recall';
-      cue.innerHTML = '<strong>Recall cue:</strong> ';
-      cue.append(document.createTextNode(item.cue));
-      glossaryDialogBody.appendChild(cue);
-    }
     if (item.why) {
       const why = document.createElement('p');
       why.className = 'recall';
@@ -2004,7 +1983,7 @@
   });
 
   /* -----------------------------------------------------------------------
-     Floating page tools: CMS, GitHub, Print, Listen All, Listen Questions.
+     Floating page tools: CMS, GitHub, Print, Listen to all, Listen to headers.
      ----------------------------------------------------------------------- */
   const setupFloatingTools = () => {
     if (!pageCms && !pageGithub && !pagePrint) return;
@@ -2049,7 +2028,7 @@
       const listenAll = document.createElement('button');
       listenAll.id = 'floating-page-listen-all';
       listenAll.type = 'button';
-      listenAll.textContent = 'Listen All';
+      listenAll.textContent = 'Listen to all';
       listenAll.setAttribute('aria-label', 'Listen to all questions and answers');
       listenAll.title = 'Listen to all questions and answers';
       listenAll.addEventListener('click', () => {
@@ -2066,9 +2045,9 @@
         const listenQuestions = document.createElement('button');
         listenQuestions.id = 'floating-page-listen-questions';
         listenQuestions.type = 'button';
-        listenQuestions.textContent = 'Listen Questions';
-        listenQuestions.setAttribute('aria-label', 'Listen to questions only');
-        listenQuestions.title = 'Listen to questions only';
+        listenQuestions.textContent = 'Listen to headers';
+        listenQuestions.setAttribute('aria-label', 'Listen to headers only');
+        listenQuestions.title = 'Listen to headers only';
         listenQuestions.addEventListener('click', () => {
           const currentQuestions = practiceHeadings();
           const text = currentQuestions
