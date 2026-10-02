@@ -5,7 +5,8 @@
   const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
   const synth = window.speechSynthesis;
   const hasSpeech = Boolean(synth && typeof SpeechSynthesisUtterance !== 'undefined');
-  const pageEdit = document.querySelector('.doc-toolbar .edit-link[href]');
+  const pageCms = document.querySelector('.doc-toolbar .cms-edit-link[href]');
+  const pageGithub = document.querySelector('.doc-toolbar .github-edit-link[href]');
   const pagePrint = document.querySelector('.doc-toolbar [data-action="print"]');
   const EDIT_PREFIX = 'coop-answer-edit:v1:';
   const BREADCRUMB_PREFIX = 'coop-breadcrumbs:v1:';
@@ -2003,26 +2004,36 @@
   });
 
   /* -----------------------------------------------------------------------
-     Floating page tools: GitHub, Print, Listen All, Listen Questions.
-     Keep the question-only option last because it is the quickest rehearsal
-     control, matching the education-site rail.
+     Floating page tools: CMS, GitHub, Print, Listen All, Listen Questions.
      ----------------------------------------------------------------------- */
   const setupFloatingTools = () => {
-    if (!pageEdit && !pagePrint) return;
+    if (!pageCms && !pageGithub && !pagePrint) return;
     const rail = document.createElement('div');
     rail.id = 'floating-page-tools';
     rail.setAttribute('aria-label', 'Page tools');
 
-    if (pageEdit?.href) {
-      const floatingEdit = document.createElement('a');
-      floatingEdit.id = 'floating-section-edit';
-      floatingEdit.href = pageEdit.href;
-      floatingEdit.target = '_blank';
-      floatingEdit.rel = 'noopener';
-      floatingEdit.textContent = 'GitHub';
-      floatingEdit.setAttribute('aria-label', 'Edit this page in GitHub');
-      rail.appendChild(floatingEdit);
-      pageEdit.hidden = true;
+    if (pageCms?.href) {
+      const cms = document.createElement('a');
+      cms.id = 'floating-page-cms';
+      cms.href = pageCms.href;
+      cms.target = '_blank';
+      cms.rel = 'noopener';
+      cms.textContent = 'CMS';
+      cms.setAttribute('aria-label', 'Edit this page in CMS');
+      rail.appendChild(cms);
+      pageCms.hidden = true;
+    }
+
+    if (pageGithub?.href) {
+      const github = document.createElement('a');
+      github.id = 'floating-page-github';
+      github.href = pageGithub.href;
+      github.target = '_blank';
+      github.rel = 'noopener';
+      github.textContent = 'GitHub';
+      github.setAttribute('aria-label', 'Edit this page in GitHub');
+      rail.appendChild(github);
+      pageGithub.hidden = true;
     }
 
     const print = document.createElement('button');
