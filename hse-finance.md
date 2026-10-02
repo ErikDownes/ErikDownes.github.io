@@ -9,7 +9,7 @@ nav_order: 41
 eyebrow: HSE MID-WEST · MEDICAL & PUBLIC-SECTOR FINANCE · CO-OP
 public_mode: true
 ---
-HSE MID-WEST · CO-OP FINANCE**Friday 9 October 2026 · 12:00 PM · ONLINE**
+HSE MID-WEST · CO-OP FINANCE **Friday 9 October 2026 · 12:00 PM · ONLINE**
 
 **Interviewers:** Joanne McNamara, Finance GM · Katie Hayes, Management Accountant
 
