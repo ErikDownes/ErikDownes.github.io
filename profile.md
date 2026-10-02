@@ -234,8 +234,8 @@ eyebrow: FINANCIAL MATHEMATICS · DATA ANALYSIS · UNIVERSITY OF LIMERICK
 
 <div class="profile-doc-links" data-no-glossary>
   <a href="{{ '/skills-profile.html' | relative_url }}">
-    <span>Skills Profile</span>
-    <small>Quantitative, technical and workplace strengths</small>
+    <span>ULCV</span>
+    <small>Tailored UL CV skills and evidence</small>
   </a>
   <a href="{{ '/academic-record.html' | relative_url }}">
     <span>Academic Record</span>
