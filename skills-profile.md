@@ -45,7 +45,7 @@ That approach is directly relevant to work involving financial records, reconcil
 
 ## Excel & Data Handling
 
-I use Excel alongside Python, Pandas, R/RStudio, MATLAB and SQL for analysing and organising data. I am comfortable taking a larger task, structuring the information, checking for inconsistencies and presenting the result clearly.
+I work with spreadsheets alongside Python, Pandas, R/RStudio, MATLAB and SQL for analysing and organising data. I am comfortable taking a larger task, structuring the information, checking for inconsistencies and presenting the result clearly.
 
 In a recent project I reconciled aircraft records from several public sources using Python and Pandas. Where the evidence was not strong enough to support a match, I left the record unresolved rather than forcing a conclusion. That project strengthened my approach to data quality, traceability and careful record checking.
 
