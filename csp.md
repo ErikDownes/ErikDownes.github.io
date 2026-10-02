@@ -951,6 +951,90 @@ and return only unmatched amounts, duplicates and tolerance breaches.
 
 This is precisely where a Financial Mathematics student can become particularly valuable.
 
+## Spreadsheet Practice & Interview Assessment
+
+The aim is **conceptual understanding first, procedural fluency second**. The spreadsheet is useful evidence, but in interview the important skill is being able to explain **what the task was for, what risk/control it addressed, what exception you found, and what you would do next**.
+
+[Open the Pivotal CSP practice workbook →](https://docs.google.com/spreadsheets/d/17D-kzUOG6bBAAZMvS2jtrzr-K7WSKvCRkZAc_gX4Cno/edit)
+
+The workbook now includes a **13 — Concepts & Interview** tab. After each spreadsheet activity, complete three short reflections:
+
+- **Business purpose:** what problem was the task solving?
+- **Risk / control:** what could go wrong, and what check reduced that risk?
+- **Interview explanation:** explain what you did in one or two sentences without relying on formula names.
+
+### Quick concept assessment
+
+Try each question aloud before opening the answer.
+
+<details>
+<summary><strong>CSP vs SPV — what is the difference?</strong></summary>
+
+A **CSP — Corporate Service Provider — is the service firm** that provides accounting, administration, company-secretarial, compliance and related support. An **SPV — Special Purpose Vehicle — is a separate legal entity created for a defined transaction, asset or financing purpose**. A CSP may administer many SPVs.
+</details>
+
+<details>
+<summary><strong>What is a journal entry?</strong></summary>
+
+A journal entry records a transaction in the accounting system using debits and credits. The important controls are not the mechanics alone: the entry should have the correct entity, account, amount and period, be supported by evidence, and follow the firm's review/approval process.
+</details>
+
+<details>
+<summary><strong>What is a reconciliation trying to prove?</strong></summary>
+
+It compares two independent records or balances and explains every difference. An unresolved difference is an exception that must be investigated, corrected where appropriate, or escalated.
+</details>
+
+<details>
+<summary><strong>AP vs AR?</strong></summary>
+
+**Accounts payable** is money the company owes to suppliers or other parties. **Accounts receivable** is money owed to the company by customers or counterparties. Both require accurate invoices, dates, references, balances and follow-up.
+</details>
+
+<details>
+<summary><strong>Why do KYC and CDD matter in corporate services?</strong></summary>
+
+They help the firm establish who the client and beneficial owners are, understand the ownership/control structure and risk, obtain required evidence and identify matters that need review before or during the relationship.
+</details>
+
+<details>
+<summary><strong>What is the point of a schedule or register?</strong></summary>
+
+It turns deadlines, documents and responsibilities into a controlled process: what is due, who owns it, what status it has, what evidence is missing and what needs escalation.
+</details>
+
+<details>
+<summary><strong>What should happen when a legal or regulatory document is due for signature?</strong></summary>
+
+Check the correct entity and document version, authorised signatories, deadline and required approvals; organise signing; track completion; retain the final evidence; and escalate anything that threatens the deadline.
+</details>
+
+<details>
+<summary><strong>What does good client care look like in routine finance/admin work?</strong></summary>
+
+Accurate work, timely responses, clear communication, ownership of next actions, sensible escalation and no surprises. A client should know what has been done, what is outstanding and what happens next.
+</details>
+
+### Scenario assessment
+
+**Unmatched payment:** A payment appears in the bank but cannot be matched to an invoice. Explain the sequence of checks you would perform before posting or escalating it.
+
+**Incomplete KYC:** The accounting data is correct but a required KYC item is missing. Explain why the record should still be treated as an exception.
+
+**Unsigned document:** A regulatory or legal document is due tomorrow but is still unsigned. Explain what you would verify, who you would contact and what you would record.
+
+**Process improvement:** Identify one repetitive manual task from the workbook and explain a control or automation that would reduce error risk — not merely save time.
+
+### Interview transfer
+
+A strong 20–30 second explanation should normally follow:
+
+> **Purpose → what I did → control/check → exception or decision → what I learned.**
+
+For example, avoid: **"I used SUMIFS and XLOOKUP."**
+
+Prefer: **"I reconciled invoice and payment records, checked that each balance could be explained, flagged unmatched items for review, and then summarised the exceptions. The main lesson was that the spreadsheet formula is only useful if the underlying records and controls are reliable."**
+
 ### Job-ready capstone — Run a fictional SPV for one quarter
 
 Create one aircraft SPV.
