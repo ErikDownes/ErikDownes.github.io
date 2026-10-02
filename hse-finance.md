@@ -49,7 +49,7 @@ The supplied job specification states **HSE Mid-West — Finance Dept**. The UL 
 
 
 
-## Job Spec | What is the role?
+## What is the role?
 
 The post is **Co-op Finance** in the **HSE Mid-West Finance Department**.
 
@@ -57,7 +57,7 @@ HSE Mid-West manages and delivers public health and social-care services across 
 
 The role reports to a **Finance Manager or assigned manager** and involves working across the Finance Department.
 
-## Job Spec | Month-end close
+## Month-end close
 
 **Duty:** assist with the preparation of month-end close-off.
 
@@ -69,7 +69,7 @@ What this means in practice:
 - support reconciliations and closing checks;
 - work to a deadline.
 
-## Job Spec | Monthly reconciliations
+## Monthly reconciliations
 
 **Duty:** assist with monthly financial reconciliations for:
 
@@ -79,25 +79,25 @@ What this means in practice:
 
 The core idea is **expected record ↔ financial-system record ↔ supporting evidence**. Differences need to be identified, explained and followed up rather than hidden.
 
-## Job Spec | Finance policies and transaction controls
+## Finance policies and transaction controls
 
 **Duty:** ensure compliance with Finance policies and procedures for income and expenditure transactions.
 
 That makes accuracy and controls central to the role: correct authorisation, correct coding, supporting documentation, traceability and escalation of exceptions.
 
-## Job Spec | Patient Level Cost & Activity Based Funding
+## Patient Level Cost & Activity Based Funding
 
 **Duty:** work on **Patient Level Cost and Activity Based Funding Annual Returns**.
 
 This connects finance with healthcare activity. Financial information is not considered in isolation: costs and activity have to be organised into reliable returns that support understanding of how healthcare resources are used.
 
-## Job Spec | Private-insurer claims
+## Private-insurer claims
 
 **Duty:** collate **consultant private-insurer claims for submission**.
 
 This is a data-quality and financial-administration task: gather the relevant records, check completeness, organise them consistently and prepare them for submission.
 
-## Job Spec | Accounts Payable & SAP Financials
+## Accounts Payable & SAP Financials
 
 **Duty:** process **AP payments on SAP Financials**.
 
@@ -107,13 +107,13 @@ Important concepts:
 
 This is direct experience of an integrated financial-management system rather than spreadsheet-only finance.
 
-## Job Spec | Deadlines & service levels
+## Deadlines & service levels
 
 **Duty:** ensure deadlines are met and service levels are maintained.
 
 This means the work is not finished merely because the calculation is correct. It must also be **complete, controlled and delivered on time**.
 
-## Job Spec | Ad-hoc work
+## Ad-hoc work
 
 The role includes **ad-hoc projects** and other work assigned by the line manager to meet service need.
 
