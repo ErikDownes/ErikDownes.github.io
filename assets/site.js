@@ -530,6 +530,8 @@
       const targetPath = normalisePath(label.href);
       const rootPath = normalisePath(document.querySelector('.brand')?.href || '/');
       const isPageMenu = /\/(?:aviation|portfolio)\.html$/.test(targetPath);
+      const isLm058Overview = /\/education\.html$/.test(targetPath);
+      if (isLm058Overview) return;
       if (isPageMenu) {
         event.preventDefault();
         event.stopPropagation();
@@ -570,8 +572,8 @@
     const isAboutParent = labelPath === rootPath && /\/(?:academic-record|skills-profile)\.html$/.test(currentPath);
     const isCareerParent = /\/career\.html$/.test(labelPath) && /\/career\//.test(currentPath);
     const isAviationParent = /\/aviation\.html$/.test(labelPath) && /\/aviation\//.test(currentPath);
-    const isCourseworkParent = /\/coursework\.html$/.test(labelPath) && /\/modules\//.test(currentPath);
-    const isCurrent = labelPath === currentPath || isAboutParent || isCareerParent || isAviationParent || isCourseworkParent;
+    const isEducationParent = /\/(?:education|coursework)\.html$/.test(labelPath) && /\/modules\//.test(currentPath);
+    const isCurrent = labelPath === currentPath || isAboutParent || isCareerParent || isAviationParent || isEducationParent;
     const item = label.closest('.navitem');
     item?.classList.toggle('is-current', isCurrent);
     if (isCurrent) label.setAttribute('aria-current', 'page');
@@ -734,9 +736,7 @@
       });
 
     menu.replaceChildren();
-    menu.classList.remove('aviation-menu', 'career-menu', 'coursework-menu', 'portfolio-menu');
-    menu.classList.toggle('menu-columns-2', modules.length > MENU_SINGLE_COLUMN_MAX && modules.length < 30);
-    menu.classList.toggle('menu-columns-3', modules.length >= 30);
+    menu.classList.remove('menu-columns-2', 'menu-columns-3', 'aviation-menu', 'career-menu', 'coursework-menu', 'portfolio-menu');
     item.classList.toggle('has-submenu', modules.length > 0);
     item.classList.remove('has-flyout-menu');
     if (!modules.length) return;
