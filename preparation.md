@@ -9,8 +9,8 @@ public_mode: true
 
 <div class="career-door-hero">
   <span class="career-door-kicker">INTERVIEW PREPARATION</span>
-  <strong>Prepare reusable evidence first; then connect it to the sector, company and role.</strong>
-  <p>These pages contain transferable interview material. Company-specific research belongs under the relevant sector in Sectors.</p>
+  <strong>Prepare reusable evidence first; then connect it to the company and role.</strong>
+  <p>These pages contain transferable interview material. Business learning for the current Corporate Service Provider role sits under CSP.</p>
 </div>
 
 <h2 data-nav-href="{{ '/preparation/communication.html' | relative_url }}">Communication & Client Service</h2>
@@ -28,11 +28,10 @@ public_mode: true
 <h2 data-nav-href="{{ '/preparation/initiative-process-improvement.html' | relative_url }}">Initiative & Process Improvement</h2>
 <div class="career-door-card"><strong>Learn · question · improve · check</strong><p>Looking for practical improvements in repeated work while understanding the process and controls before changing anything.</p><a href="{{ '/preparation/initiative-process-improvement.html' | relative_url }}">Open Initiative & Process Improvement →</a></div>
 
-## Apply the evidence to a sector and company
+## Apply the evidence to CSP work
 
-The transferable evidence above is then matched to a real employer:
+Use the transferable evidence above alongside the current business-learning page:
 
-- [Corporate Services & Financial Operations →]({{ '/sectors/corporate-services-financial-operations.html' | relative_url }}) → [Pivotal Corporate →]({{ '/pivotal-corporate.html' | relative_url }})
-- [Aircraft Leasing & Aviation Finance →]({{ '/sectors/aircraft-leasing-aviation-finance.html' | relative_url }}) → [Abelo / Aviation preparation →]({{ '/aviation.html' | relative_url }})
+[Corporate Services & Financial Operations →]({{ '/csp.html' | relative_url }})
 
-[Open all Sectors →]({{ '/sectors.html' | relative_url }})
+[Pivotal Corporate →]({{ '/pivotal-corporate.html' | relative_url }})
