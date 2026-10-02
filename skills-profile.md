@@ -7,116 +7,109 @@ eyebrow: PIVOTAL CORPORATE · CO-OP STUDENT / CORPORATE ADMINISTRATOR
 public_mode: true
 ---
 
-**This profile must be adjusted for every job application.** The skills, examples and emphasis should be tailored to the specific role and employer rather than used unchanged for every application.
+<style>
+.ul-skills-note{margin:18px 0 24px;padding:14px 16px;border-left:4px solid #315f8c;background:#f5f8fb;border-radius:0 12px 12px 0}
+.ul-skills-grid,.skills-dashboard{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:16px 0 28px}
+.ul-skill-card,.skills-panel{border:1px solid #dde5ec;border-radius:14px;background:#fff;padding:15px;box-shadow:0 2px 10px rgba(20,40,60,.04)}
+.ul-skill-card h3,.skills-panel h3{margin:0 0 7px;font-size:1rem}
+.ul-level{display:inline-block;margin:0 0 8px;padding:2px 8px;border-radius:999px;background:#eef4f9;font-size:.76rem;font-weight:700}
+.ul-skill-card p,.skills-panel p{margin:.25rem 0;font-size:.9rem;line-height:1.4}
+.skill-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px}
+.skill-tags span{display:inline-block;padding:4px 8px;border:1px solid #dce5ec;border-radius:999px;background:#f8fafc;font-size:.78rem}
+.evidence-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:16px 0 28px}
+.evidence-card{border:1px solid #dde5ec;border-radius:14px;background:#fff;padding:16px}
+.evidence-card strong{display:block;margin-bottom:5px}
+@media(max-width:850px){.ul-skills-grid,.skills-dashboard{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.ul-skills-grid,.skills-dashboard,.evidence-grid{grid-template-columns:1fr}}
+</style>
 
-**Current version: tailored specifically for the Pivotal Corporate Co-op Student / Corporate Administrator role.**
+**This profile must be adjusted for every job application.**
 
-**Interview:** Monday 5 October 2026 · **11:30 AM** · **CG052, Main Building, University of Limerick** · On campus · Interviewer: **Catherine Wixted**
+**Current version:** Pivotal Corporate · Co-op Student / Corporate Administrator.
 
-Financial Mathematics student at the University of Limerick with strong quantitative, analytical and financial problem-solving skills, supported by practical experience with spreadsheets, data analysis, programming, customer-facing work and logistics. I am particularly interested in work where accuracy, financial information, client service and structured problem solving come together.
+**Interview:** Monday 5 October 2026 · **11:30 AM** · **CG052, Main Building, University of Limerick** · Interviewer: **Catherine Wixted**
 
-<div class="profile-skill-groups" aria-label="Skills summary" data-no-glossary>
-  <div class="profile-skill-group">
-    <h3>Quantitative & Analytical</h3>
-    <div class="profile-skill-tags">
-      <span>Statistics</span><span>Modelling</span><span>Regression</span>
-      <span>Optimisation</span><span>Numerical Methods</span><span>Critical Thinking</span>
-    </div>
+<div class="ul-skills-note">
+<strong>Official UL CV first.</strong> The UL system restricts each skill to a fixed name, level and a very short comment. The expanded profile below adds the evidence, tools and project context that cannot fit in the UL form.
+</div>
+
+## Official UL CV Skills
+
+<div class="ul-skills-grid" data-no-glossary>
+  <div class="ul-skill-card"><h3>Leaving Cert Hons Maths</h3><span class="ul-level">H1</span><p>H1 Leaving Cert Higher Level Mathematics</p></div>
+  <div class="ul-skill-card"><h3>Data Analytics</h3><span class="ul-level">Basic</span><p>MS4034: regression, inference, R and SPSS</p></div>
+  <div class="ul-skill-card"><h3>Microsoft Excel</h3><span class="ul-level">Proficient</span><p>Budgets, ratios, cash flow, appraisal</p></div>
+  <div class="ul-skill-card"><h3>Statistical Techniques</h3><span class="ul-level">Basic</span><p>Regression, testing, ANOVA, bootstrapping</p></div>
+  <div class="ul-skill-card"><h3>Python</h3><span class="ul-level">Proficient</span><p>pandas, NumPy, Jupyter; analysis, automation</p></div>
+  <div class="ul-skill-card"><h3>R Studio</h3><span class="ul-level">Basic</span><p>Regression, ANOVA, simulation, visualisation</p></div>
+  <div class="ul-skill-card"><h3>SPSS</h3><span class="ul-level">Basic</span><p>Testing, ANOVA, data analysis, charts</p></div>
+  <div class="ul-skill-card"><h3>Matlab</h3><span class="ul-level">Basic</span><p>Numerical methods, matrices, modelling</p></div>
+  <div class="ul-skill-card"><h3>Data Visualisation</h3><span class="ul-level">Basic</span><p>Matplotlib, Seaborn, Plotly, ggplot2</p></div>
+  <div class="ul-skill-card"><h3>Data Management</h3><span class="ul-level">Basic</span><p>pandas/spreadsheets: clean, validate, transform</p></div>
+  <div class="ul-skill-card"><h3>SQL</h3><span class="ul-level">Basic</span><p>Queries, filters, grouping, relational data</p></div>
+  <div class="ul-skill-card"><h3>Databases</h3><span class="ul-level">Basic</span><p>Tables, records, relationships, structured data</p></div>
+  <div class="ul-skill-card"><h3>Cash Management</h3><span class="ul-level">Basic</span><p>AC4214: cash budgets, working capital</p></div>
+  <div class="ul-skill-card"><h3>Git</h3><span class="ul-level">Basic</span><p>Version control for software and data projects</p></div>
+  <div class="ul-skill-card"><h3>Docker</h3><span class="ul-level">Basic</span><p>Containers for Python, PySpark, ML, databases</p></div>
+  <div class="ul-skill-card"><h3>HTML</h3><span class="ul-level">Basic</span><p>Portfolio pages, responsive web content</p></div>
+  <div class="ul-skill-card"><h3>Web Design</h3><span class="ul-level">Proficient</span><p>Portfolio sites, navigation, responsive layouts</p></div>
+  <div class="ul-skill-card"><h3>TypeScript</h3><span class="ul-level">Basic</span><p>AI-assisted typed web development</p></div>
+  <div class="ul-skill-card"><h3>Java</h3><span class="ul-level">Basic</span><p>CE4701/02: OOP, arrays, methods, projects</p></div>
+  <div class="ul-skill-card"><h3>Rust</h3><span class="ul-level">Basic</span><p>Exploring fast compiled data processing</p></div>
+  <div class="ul-skill-card"><h3>Survey Design</h3><span class="ul-level">Basic</span><p>MS4034: sampling, questionnaires, collection</p></div>
+  <div class="ul-skill-card"><h3>Technical Writing</h3><span class="ul-level">Proficient</span><p>Maths, statistics, finance, project reports</p></div>
+  <div class="ul-skill-card"><h3>Customer Service</h3><span class="ul-level">Proficient</span><p>Customer queries and problem resolution</p></div>
+  <div class="ul-skill-card"><h3>Spanish</h3><span class="ul-level">Basic</span><p>H3 Leaving Cert Higher Level Spanish</p></div>
+</div>
+
+## Expanded Skills Profile
+
+<div class="skills-dashboard" data-no-glossary>
+  <div class="skills-panel">
+    <h3>Data Analysis</h3>
+    <p><strong>Python-first analysis.</strong> Build, check and profile the workflow, then choose a different tool only where it improves scale, speed or clarity.</p>
+    <div class="skill-tags"><span>Python</span><span>pandas</span><span>NumPy</span><span>R</span><span>SPSS</span><span>Excel</span><span>SQL</span><span>Regression</span><span>Inference</span></div>
   </div>
-  <div class="profile-skill-group">
-    <h3>Finance & Accounting</h3>
-    <div class="profile-skill-tags">
-      <span>Financial Accounting</span><span>Finance</span><span>Cash Flow</span>
-      <span>NPV / IRR</span><span>Budgeting</span><span>Working Capital</span>
-    </div>
+  <div class="skills-panel">
+    <h3>Computer Science & Scale</h3>
+    <p>Uses programming and engineering tools to make analytical work reproducible and more efficient; profiles bottlenecks before adding complexity.</p>
+    <div class="skill-tags"><span>Java</span><span>Git/GitHub</span><span>Docker</span><span>DuckDB</span><span>PySpark</span><span>Rust</span><span>TypeScript</span></div>
   </div>
-  <div class="profile-skill-group">
-    <h3>Spreadsheets & Data</h3>
-    <div class="profile-skill-tags">
-      <span>Spreadsheets</span><span>Python</span><span>Pandas</span>
-      <span>SQL</span><span>R</span><span>Data Checking</span>
-    </div>
+  <div class="skills-panel">
+    <h3>Visualisation & Reporting</h3>
+    <p>Moves from exploration to communication: diagnostics, charts and concise reporting designed around the question being answered.</p>
+    <div class="skill-tags"><span>Matplotlib</span><span>Seaborn</span><span>Plotly</span><span>ggplot2</span><span>Jupyter</span><span>Colab</span></div>
   </div>
-  <div class="profile-skill-group">
-    <h3>Accuracy & Administration</h3>
-    <div class="profile-skill-tags">
-      <span>Record Checking</span><span>Documentation</span><span>Traceability</span>
-      <span>Schedules</span><span>Detail</span><span>Reliability</span>
-    </div>
+  <div class="skills-panel">
+    <h3>Finance & Operations</h3>
+    <p>Connects quantitative work with cash flow, budgeting, investment appraisal, records, invoices and operational controls.</p>
+    <div class="skill-tags"><span>AC4213</span><span>AC4214</span><span>FI4003</span><span>NPV/IRR</span><span>Working Capital</span><span>Reconciliation</span></div>
   </div>
-  <div class="profile-skill-group">
-    <h3>Communication & Client Service</h3>
-    <div class="profile-skill-tags">
-      <span>Customer Service</span><span>Clear Communication</span><span>Professionalism</span>
-      <span>Listening</span><span>Teamwork</span><span>Stakeholders</span>
-    </div>
+  <div class="skills-panel">
+    <h3>Web & Digital</h3>
+    <p>Builds and maintains a public portfolio rather than treating web skills as isolated coursework.</p>
+    <div class="skill-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>GitHub Pages</span><span>Web Design</span><span>SEO</span></div>
   </div>
-  <div class="profile-skill-group">
-    <h3>Organisation, Initiative & Improvement</h3>
-    <div class="profile-skill-tags">
-      <span>Organisation</span><span>Research</span><span>Initiative</span>
-      <span>Process Improvement</span><span>Learning</span><span>Responsibility</span>
-    </div>
+  <div class="skills-panel">
+    <h3>AI-Assisted Development</h3>
+    <p>Uses AI and agentic tools to accelerate coding, debugging and research while checking logic, assumptions, data and outputs.</p>
+    <div class="skill-tags"><span>Python</span><span>TypeScript</span><span>Rust</span><span>Automation</span><span>Validation</span></div>
   </div>
 </div>
 
-## Quantitative & Analytical
+## Evidence Behind the Skills
 
-My strongest evidence is not simply that I study Financial Mathematics; it is the level at which I have performed and the type of problems I can work through.
+<div class="evidence-grid" data-no-glossary>
+  <div class="evidence-card"><strong>MS4034 · Used-Car Regression</strong>Cleaned a Kaggle dataset, tested predictors and used diagnostics to improve model explanatory power from <strong>21% to 84%</strong>.</div>
+  <div class="evidence-card"><strong>O'Mahony's · Logistics & Reconciliation</strong>Checks books, invoices, box counts and library destinations; uses Excel records and dispatch systems to investigate discrepancies before shipment.</div>
+  <div class="evidence-card"><strong>CE4702 · Java Teamwork</strong>Paired Java assignments: divided work, solved problems together, coordinated remotely and integrated code for submission; <strong>A2</strong>.</div>
+  <div class="evidence-card"><strong>Mr Price · Teamwork & Initiative</strong>Worked with staff from different shifts on an evening floor reset; also corrected a missing shelf-price label after resolving the immediate customer query.</div>
+  <div class="evidence-card"><strong>Aircraft Fleet Analysis</strong>Reconciled public aircraft records across sources, preserved unresolved cases where evidence was insufficient and built clearer fleet views.</div>
+  <div class="evidence-card"><strong>Applied Mathematics Project</strong>Independently researched air resistance beyond the syllabus and incorporated it into a rollercoaster model; <strong>86%</strong>.</div>
+</div>
 
-I achieved **A1 in Introduction to Probability and Statistics** and **A2 grades in Applied Data Analysis, Introduction to Numerical Analysis, Operations Research 1 and Finance**. These modules require me to move beyond routine calculation: identify the problem, choose an appropriate method, work through the mathematics accurately, test whether the result is reasonable and explain what it means.
+## Pivotal Corporate Fit
 
-In **Applied Data Analysis**, I work with real datasets rather than clean textbook numbers. The process is **question → data → method → result → interpretation**. That includes descriptive analysis, hypothesis testing, confidence intervals, regression, ANOVA and checking assumptions. The important skill is deciding what the evidence supports and what it does not.
+For this application, the strongest combination is **accuracy + data + finance + communication**. O'Mahony's provides real evidence of invoice and dispatch checking; MS4034 provides analytical evidence; accounting and finance modules provide the financial foundation; customer-facing work and team projects provide communication and teamwork evidence.
 
-Operations Research adds a different kind of analytical thinking: define an objective, recognise constraints, compare feasible alternatives and make a structured decision. Numerical Analysis reinforces the habit of checking approximation, error and whether a computed answer is actually reliable.
-
-That combination is useful in a corporate-services environment because financial and administrative work often involves incomplete information, competing priorities and the need to reach a defensible conclusion rather than simply produce a number.
-
-## Finance & Accounting
-
-I have completed **Financial Accounting**, achieved **A2 in Accounting for Financial Decision Making**, and achieved **A2 in Finance**.
-
-Accounting for Financial Decision Making covered **cost behaviour, relevant costs, contribution and break-even, scarce-resource decisions, budgeting and cash, investment appraisal, working capital and sources of finance**. I worked with **payback, ARR, NPV and IRR**, but the more important lesson was deciding which information is relevant, which assumptions matter and how financial information supports a business decision.
-
-Finance developed this further through **cash-flow timing, present value, discounting, interest rates, risk and return, and investment decisions**. I am comfortable moving between a calculation and its business meaning rather than treating finance as a set of formulas.
-
-For the Pivotal role, I would be applying that foundation while learning the practical mechanics of **journal entries, account reconciliations, accounts payable and receivable, VAT/tax reporting, financial records and supporting documentation**.
-
-## Spreadsheets & Data
-
-I work with **spreadsheets** for organising, checking and analysing information, alongside Python, Pandas, SQL, R/RStudio and MATLAB when a task benefits from more structured analysis or automation.
-
-I am comfortable taking a larger dataset or record set and breaking the work into stages: understand the fields, identify missing or inconsistent values, clean the data, compare records, calculate or summarise what is needed, and then present the result clearly.
-
-In a recent aircraft-data project, I reconciled records from several public sources. I deliberately left records unresolved where the evidence was not strong enough to support a match rather than forcing a result. That is the same discipline I would bring to financial records, schedules, registers and supporting documentation: **accuracy first, and a clear trail for how a conclusion was reached**.
-
-## Accuracy & Administration
-
-I am comfortable with work where small details matter. My mathematical and data work has trained me to check inputs, units, assumptions and outputs systematically rather than relying on a result because it looks plausible.
-
-My logistics experience at **O'Mahony's** reinforced this in a practical setting: orders, invoices, dispatch information and timing all depend on accurate information being passed on correctly. If one part is wrong, the error moves through the rest of the process.
-
-That makes me well suited to learning Pivotal's administrative workflows around **internal schedules and registers, regulatory and legal documentation, KYC/CDD requirements and supporting records**. I would not claim prior professional KYC/CDD experience, but I am comfortable learning a controlled process, following it carefully and checking the evidence behind each step.
-
-## Communication & Client Service
-
-At **Mr Price**, customer-facing work developed my confidence answering questions, listening to what somebody actually needs and dealing with problems professionally.
-
-At O'Mahony's, communication is more operational: information about orders, invoices and dispatch has to be clear enough for the next person to act on it without ambiguity.
-
-I therefore see client service as more than being friendly. It means being **responsive, accurate, clear and dependable**, and knowing when to resolve something yourself and when to ask or escalate. That aligns closely with Pivotal's emphasis on professional client service and responsiveness.
-
-## Organisation, Initiative & Improvement
-
-I am used to managing work by breaking it into smaller stages, prioritising what matters and keeping track of what has and has not been completed.
-
-When I meet a process or tool I have not used before, I research it, test my understanding on a small example and then build from there. This website is one example: I use it to organise coursework, projects and interview preparation so that material can be reviewed, improved and reused rather than lost in separate files.
-
-I am also interested in process improvement. My instinct is to ask: **What is the current process? Where can an error occur? What is being repeated unnecessarily? Can the information be organised more clearly?** That is the approach I would bring to Pivotal's special projects, research tasks and operational-improvement work.
-
-## Evidence
-
-- [Academic Record]({{ '/academic-record.html' | relative_url }}) — results including **A1 Probability & Statistics** and A2 grades in **Applied Data Analysis, Numerical Analysis, Operations Research 1, Finance and Accounting for Financial Decision Making**.
-- [Projects]({{ '/projects.html' | relative_url }}) — applied data analysis, modelling, data reconciliation and practical problem solving.
-- [Education]({{ '/education.html' | relative_url }}) — finance, accounting, statistics, modelling and current coursework.
-- [Pivotal Corporate preparation]({{ '/pivotal-corporate.html' | relative_url }}) — role-specific company and interview preparation.
+[Academic Record]({{ '/academic-record.html' | relative_url }}) · [Projects]({{ '/projects.html' | relative_url }}) · [Education]({{ '/education.html' | relative_url }}) · [Pivotal Corporate preparation]({{ '/pivotal-corporate.html' | relative_url }})
