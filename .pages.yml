@@ -23,149 +23,149 @@ components:
           switcher: true
 
 content:
-  - name: group-main-pages
+  - name: group_main_pages
     label: "Main pages"
     type: group
     items:
-      - { name: about-asset-management, label: "About Asset Management", type: file, path: about-asset-management.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: academic-record, label: "Academic Record", type: file, path: academic-record.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: aircraft-learning, label: "Aircraft Learning", type: file, path: aircraft-learning.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: atr-fleet-dashboard, label: "Atr Fleet Dashboard", type: file, path: atr-fleet-dashboard.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: about_asset_management, label: "About Asset Management", type: file, path: about-asset-management.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: academic_record, label: "Academic Record", type: file, path: academic-record.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: aircraft_learning, label: "Aircraft Learning", type: file, path: aircraft-learning.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: atr_fleet_dashboard, label: "Atr Fleet Dashboard", type: file, path: atr-fleet-dashboard.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: aviation, label: "Aviation", type: file, path: aviation.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: blog, label: "Blog", type: file, path: blog.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: cooking, label: "Cooking", type: file, path: cooking.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: csp, label: "CSP", type: file, path: csp.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: cycling, label: "Cycling", type: file, path: cycling.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: education, label: "Education", type: file, path: education.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: fleet-map, label: "Fleet Map", type: file, path: fleet-map.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: fleet_map, label: "Fleet Map", type: file, path: fleet-map.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: glossary, label: "Glossary", type: file, path: glossary.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: interview, label: "Interview", type: file, path: interview.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: judgement, label: "Judgement", type: file, path: judgement.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: lease-dashboard-build, label: "Lease Dashboard Build", type: file, path: lease-dashboard-build.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: lease-dashboard, label: "Lease Dashboard", type: file, path: lease-dashboard.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: lease_dashboard_build, label: "Lease Dashboard Build", type: file, path: lease-dashboard-build.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: lease_dashboard, label: "Lease Dashboard", type: file, path: lease-dashboard.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: modules, label: "Modules", type: file, path: modules.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: philosophy, label: "Philosophy", type: file, path: philosophy.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: pivotal-corporate, label: "Pivotal Corporate", type: file, path: pivotal-corporate.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: pivotal_corporate, label: "Pivotal Corporate", type: file, path: pivotal-corporate.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: preparation, label: "Preparation", type: file, path: preparation.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: profile, label: "Profile", type: file, path: profile.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: projects, label: "Projects", type: file, path: projects.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: questions-for-abelo, label: "Questions For Abelo", type: file, path: questions-for-abelo.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: questions_for_abelo, label: "Questions For Abelo", type: file, path: questions-for-abelo.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: questions, label: "Questions", type: file, path: questions.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: sectors, label: "Sectors", type: file, path: sectors.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: skills-profile, label: "Skills Profile", type: file, path: skills-profile.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: test-article, label: "Test Article", type: file, path: test-article.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: turboprop-dashboard-build, label: "Turboprop Dashboard Build", type: file, path: turboprop-dashboard-build.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: working-independently, label: "Working Independently", type: file, path: working-independently.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: workplace-skills, label: "Workplace Skills", type: file, path: workplace-skills.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: skills_profile, label: "Skills Profile", type: file, path: skills-profile.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: test_article, label: "Test Article", type: file, path: test-article.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: turboprop_dashboard_build, label: "Turboprop Dashboard Build", type: file, path: turboprop-dashboard-build.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: working_independently, label: "Working Independently", type: file, path: working-independently.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: workplace_skills, label: "Workplace Skills", type: file, path: workplace-skills.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: workplace, label: "Workplace", type: file, path: workplace.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-  - name: group-preparation
+  - name: group_preparation
     label: "Preparation"
     type: group
     items:
-      - { name: preparation-accuracy-data-systems, label: "Accuracy Data Systems", type: file, path: preparation/accuracy-data-systems.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: preparation-asset-aviation-awareness, label: "Asset Aviation Awareness", type: file, path: preparation/asset-aviation-awareness.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: preparation-communication, label: "Communication", type: file, path: preparation/communication.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: preparation-finance-commercial-awareness, label: "Finance Commercial Awareness", type: file, path: preparation/finance-commercial-awareness.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: preparation-initiative-process-improvement, label: "Initiative Process Improvement", type: file, path: preparation/initiative-process-improvement.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: preparation-interview-preparation, label: "Interview Preparation", type: file, path: preparation/interview-preparation.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: preparation-organisation-delivery, label: "Organisation Delivery", type: file, path: preparation/organisation-delivery.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: preparation-problem-solving-judgement, label: "Problem Solving Judgement", type: file, path: preparation/problem-solving-judgement.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: preparation-reporting-analysis, label: "Reporting Analysis", type: file, path: preparation/reporting-analysis.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: preparation-teamwork-stakeholders, label: "Teamwork Stakeholders", type: file, path: preparation/teamwork-stakeholders.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: preparation-technology-ai, label: "Technology Ai", type: file, path: preparation/technology-ai.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: preparation-working-independently, label: "Working Independently", type: file, path: preparation/working-independently.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: preparation-working-with-others, label: "Working With Others", type: file, path: preparation/working-with-others.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-  - name: group-aviation
+      - { name: preparation_accuracy_data_systems, label: "Accuracy Data Systems", type: file, path: preparation/accuracy-data-systems.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: preparation_asset_aviation_awareness, label: "Asset Aviation Awareness", type: file, path: preparation/asset-aviation-awareness.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: preparation_communication, label: "Communication", type: file, path: preparation/communication.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: preparation_finance_commercial_awareness, label: "Finance Commercial Awareness", type: file, path: preparation/finance-commercial-awareness.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: preparation_initiative_process_improvement, label: "Initiative Process Improvement", type: file, path: preparation/initiative-process-improvement.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: preparation_interview_preparation, label: "Interview Preparation", type: file, path: preparation/interview-preparation.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: preparation_organisation_delivery, label: "Organisation Delivery", type: file, path: preparation/organisation-delivery.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: preparation_problem_solving_judgement, label: "Problem Solving Judgement", type: file, path: preparation/problem-solving-judgement.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: preparation_reporting_analysis, label: "Reporting Analysis", type: file, path: preparation/reporting-analysis.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: preparation_teamwork_stakeholders, label: "Teamwork Stakeholders", type: file, path: preparation/teamwork-stakeholders.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: preparation_technology_ai, label: "Technology Ai", type: file, path: preparation/technology-ai.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: preparation_working_independently, label: "Working Independently", type: file, path: preparation/working-independently.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: preparation_working_with_others, label: "Working With Others", type: file, path: preparation/working-with-others.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+  - name: group_aviation
     label: "Aviation"
     type: group
     items:
-      - { name: aviation-abelo, label: "Abelo", type: file, path: aviation/abelo.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: aviation-aircraft-leasing, label: "Aircraft Leasing", type: file, path: aviation/aircraft-leasing.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: aviation-aircraft-options, label: "Aircraft Options", type: file, path: aviation/aircraft-options.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: aviation-aircraft, label: "Aircraft", type: file, path: aviation/aircraft.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: aviation-asset-management, label: "Asset Management", type: file, path: aviation/asset-management.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: aviation-credit-risk, label: "Credit Risk", type: file, path: aviation/credit-risk.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: aviation-external-shocks-risk, label: "External Shocks Risk", type: file, path: aviation/external-shocks-risk.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: aviation-maintenance-reserves, label: "Maintenance Reserves", type: file, path: aviation/maintenance-reserves.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: aviation-maintenance, label: "Maintenance", type: file, path: aviation/maintenance.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: aviation-stress-testing, label: "Stress Testing", type: file, path: aviation/stress-testing.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: aviation-valuation-practices, label: "Valuation Practices", type: file, path: aviation/valuation-practices.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-  - name: group-education
+      - { name: aviation_abelo, label: "Abelo", type: file, path: aviation/abelo.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: aviation_aircraft_leasing, label: "Aircraft Leasing", type: file, path: aviation/aircraft-leasing.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: aviation_aircraft_options, label: "Aircraft Options", type: file, path: aviation/aircraft-options.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: aviation_aircraft, label: "Aircraft", type: file, path: aviation/aircraft.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: aviation_asset_management, label: "Asset Management", type: file, path: aviation/asset-management.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: aviation_credit_risk, label: "Credit Risk", type: file, path: aviation/credit-risk.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: aviation_external_shocks_risk, label: "External Shocks Risk", type: file, path: aviation/external-shocks-risk.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: aviation_maintenance_reserves, label: "Maintenance Reserves", type: file, path: aviation/maintenance-reserves.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: aviation_maintenance, label: "Maintenance", type: file, path: aviation/maintenance.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: aviation_stress_testing, label: "Stress Testing", type: file, path: aviation/stress-testing.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: aviation_valuation_practices, label: "Valuation Practices", type: file, path: aviation/valuation-practices.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+  - name: group_education
     label: "Education"
     type: group
     items:
-      - { name: education-ac4214-01-foundations-and-relevant-costs, label: "01 Foundations And Relevant Costs", type: file, path: education/ac4214/01-foundations-and-relevant-costs.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: education-ac4214-02-cvp-and-break-even, label: "02 Cvp And Break Even", type: file, path: education/ac4214/02-cvp-and-break-even.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: education-ac4214-03-limiting-factors, label: "03 Limiting Factors", type: file, path: education/ac4214/03-limiting-factors.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: education-ac4214-04-budgeting-and-cash, label: "04 Budgeting And Cash", type: file, path: education/ac4214/04-budgeting-and-cash.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: education-ac4214-05-investment-appraisal, label: "05 Investment Appraisal", type: file, path: education/ac4214/05-investment-appraisal.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: education-ac4214-06-working-capital, label: "06 Working Capital", type: file, path: education/ac4214/06-working-capital.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: education-ac4214-07-full-cost-and-finance, label: "07 Full Cost And Finance", type: file, path: education/ac4214/07-full-cost-and-finance.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: education-ac4214-08-revision-exam-interview, label: "08 Revision Exam Interview", type: file, path: education/ac4214/08-revision-exam-interview.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: education-ac4214-glossary, label: "Glossary", type: file, path: education/ac4214/glossary.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: education-ac4214-source-coverage, label: "Source Coverage", type: file, path: education/ac4214/source-coverage.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: education-ms4215-lab-02, label: "Lab 02", type: file, path: education/ms4215/lab-02.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: education-ms4215-week-01, label: "Week 01", type: file, path: education/ms4215/week-01.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: education-ms4215-week-02, label: "Week 02", type: file, path: education/ms4215/week-02.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-  - name: group-modules
+      - { name: education_ac4214_01_foundations_and_relevant_costs, label: "01 Foundations And Relevant Costs", type: file, path: education/ac4214/01-foundations-and-relevant-costs.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: education_ac4214_02_cvp_and_break_even, label: "02 Cvp And Break Even", type: file, path: education/ac4214/02-cvp-and-break-even.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: education_ac4214_03_limiting_factors, label: "03 Limiting Factors", type: file, path: education/ac4214/03-limiting-factors.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: education_ac4214_04_budgeting_and_cash, label: "04 Budgeting And Cash", type: file, path: education/ac4214/04-budgeting-and-cash.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: education_ac4214_05_investment_appraisal, label: "05 Investment Appraisal", type: file, path: education/ac4214/05-investment-appraisal.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: education_ac4214_06_working_capital, label: "06 Working Capital", type: file, path: education/ac4214/06-working-capital.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: education_ac4214_07_full_cost_and_finance, label: "07 Full Cost And Finance", type: file, path: education/ac4214/07-full-cost-and-finance.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: education_ac4214_08_revision_exam_interview, label: "08 Revision Exam Interview", type: file, path: education/ac4214/08-revision-exam-interview.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: education_ac4214_glossary, label: "Glossary", type: file, path: education/ac4214/glossary.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: education_ac4214_source_coverage, label: "Source Coverage", type: file, path: education/ac4214/source-coverage.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: education_ms4215_lab_02, label: "Lab 02", type: file, path: education/ms4215/lab-02.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: education_ms4215_week_01, label: "Week 01", type: file, path: education/ms4215/week-01.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: education_ms4215_week_02, label: "Week 02", type: file, path: education/ms4215/week-02.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+  - name: group_modules
     label: "Modules"
     type: group
     items:
-      - { name: modules-ac4213-financial-accounting, label: "AC4213 Financial Accounting", type: file, path: modules/ac4213-financial-accounting.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: modules-ac4214-accounting-for-financial-decision-making, label: "AC4214 Accounting For Financial Decision Making", type: file, path: modules/ac4214-accounting-for-financial-decision-making.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: modules-ce4701-computer-software-1, label: "CE4701 Computer Software 1", type: file, path: modules/ce4701-computer-software-1.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: modules-ce4702-computer-software-2, label: "CE4702 Computer Software 2", type: file, path: modules/ce4702-computer-software-2.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: modules-coop-1-cooperative-education, label: "Coop 1 Cooperative Education", type: file, path: modules/coop-1-cooperative-education.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: modules-finance, label: "Finance", type: file, path: modules/finance.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: modules-ma4617-introduction-to-fluid-mechanics, label: "Ma4617 Introduction To Fluid Mechanics", type: file, path: modules/ma4617-introduction-to-fluid-mechanics.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: modules-mb4017-geometry, label: "Mb4017 Geometry", type: file, path: modules/mb4017-geometry.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: modules-ms4008-mathematical-methods-2-numerical-methods-for-partial-differential-equations, label: "MS4008 Mathematical Methods 2 Numerical Methods For Partial Differential Equations", type: file, path: modules/ms4008-mathematical-methods-2-numerical-methods-for-partial-differential-equations.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: modules-ms4014-introduction-to-numerical-analysis, label: "MS4014 Introduction To Numerical Analysis", type: file, path: modules/ms4014-introduction-to-numerical-analysis.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: modules-ms4021-calculus-1, label: "MS4021 Calculus 1", type: file, path: modules/ms4021-calculus-1.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: modules-ms4022-calculus-2, label: "MS4022 Calculus 2", type: file, path: modules/ms4022-calculus-2.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: modules-ms4027-fundamentals-of-financial-mathematics, label: "MS4027 Fundamentals Of Financial Mathematics", type: file, path: modules/ms4027-fundamentals-of-financial-mathematics.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: modules-ms4028-stochastic-differential-equations-for-finance, label: "MS4028 Stochastic Differential Equations For Finance", type: file, path: modules/ms4028-stochastic-differential-equations-for-finance.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: modules-ms4034-applied-data-analysis, label: "MS4034 Applied Data Analysis", type: file, path: modules/ms4034-applied-data-analysis.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: modules-ms4035-probability-models, label: "MS4035 Probability Models", type: file, path: modules/ms4035-probability-models.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: modules-ms4037-statistical-data-science-project-1, label: "MS4037 Statistical Data Science Project 1", type: file, path: modules/ms4037-statistical-data-science-project-1.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: modules-ms4038-statistical-data-science-project-2, label: "MS4038 Statistical Data Science Project 2", type: file, path: modules/ms4038-statistical-data-science-project-2.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: modules-ms4043-methods-of-linear-analysis, label: "MS4043 Methods Of Linear Analysis", type: file, path: modules/ms4043-methods-of-linear-analysis.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: modules-ms4045-complex-analysis, label: "MS4045 Complex Analysis", type: file, path: modules/ms4045-complex-analysis.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: modules-ms4101-mathematical-laboratory, label: "MS4101 Mathematical Laboratory", type: file, path: modules/ms4101-mathematical-laboratory.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: modules-ms4105-linear-algebra-2, label: "MS4105 Linear Algebra 2", type: file, path: modules/ms4105-linear-algebra-2.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: modules-ms4117-discrete-mathematics-2, label: "MS4117 Discrete Mathematics 2", type: file, path: modules/ms4117-discrete-mathematics-2.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: modules-ms4122-further-linear-algebra, label: "MS4122 Further Linear Algebra", type: file, path: modules/ms4122-further-linear-algebra.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: modules-ms4131-linear-algebra-1, label: "MS4131 Linear Algebra 1", type: file, path: modules/ms4131-linear-algebra-1.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: modules-ms4214-statistical-inference, label: "MS4214 Statistical Inference", type: file, path: modules/ms4214-statistical-inference.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: modules-ms4215-advanced-data-analysis, label: "MS4215 Advanced Data Analysis", type: file, path: modules/ms4215-advanced-data-analysis.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: modules-ms4217-stochastic-processes, label: "MS4217 Stochastic Processes", type: file, path: modules/ms4217-stochastic-processes.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: modules-ms4218-time-series-analysis, label: "MS4218 Time Series Analysis", type: file, path: modules/ms4218-time-series-analysis.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: modules-ms4222-introduction-to-probability-and-statistics, label: "MS4222 Introduction To Probability And Statistics", type: file, path: modules/ms4222-introduction-to-probability-and-statistics.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: modules-ms4303-operations-research-1, label: "MS4303 Operations Research 1", type: file, path: modules/ms4303-operations-research-1.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: modules-ms4315-operations-research-2, label: "MS4315 Operations Research 2", type: file, path: modules/ms4315-operations-research-2.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: modules-ms4403-ordinary-differential-equations, label: "MS4403 Ordinary Differential Equations", type: file, path: modules/ms4403-ordinary-differential-equations.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: modules-ms4404-partial-differential-equations, label: "MS4404 Partial Differential Equations", type: file, path: modules/ms4404-partial-differential-equations.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: modules-ms4407-perturbation-techniques-and-asymptotics, label: "MS4407 Perturbation Techniques And Asymptotics", type: file, path: modules/ms4407-perturbation-techniques-and-asymptotics.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: modules-ms4414-theoretical-mechanics, label: "MS4414 Theoretical Mechanics", type: file, path: modules/ms4414-theoretical-mechanics.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: modules-ms4528-mathematical-and-statistical-models-of-investments, label: "MS4528 Mathematical And Statistical Models Of Investments", type: file, path: modules/ms4528-mathematical-and-statistical-models-of-investments.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: modules-ms4613-vector-analysis, label: "MS4613 Vector Analysis", type: file, path: modules/ms4613-vector-analysis.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-  - name: group-projects
+      - { name: modules_ac4213_financial_accounting, label: "AC4213 Financial Accounting", type: file, path: modules/ac4213-financial-accounting.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: modules_ac4214_accounting_for_financial_decision_making, label: "AC4214 Accounting For Financial Decision Making", type: file, path: modules/ac4214-accounting-for-financial-decision-making.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: modules_ce4701_computer_software_1, label: "CE4701 Computer Software 1", type: file, path: modules/ce4701-computer-software-1.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: modules_ce4702_computer_software_2, label: "CE4702 Computer Software 2", type: file, path: modules/ce4702-computer-software-2.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: modules_coop_1_cooperative_education, label: "Coop 1 Cooperative Education", type: file, path: modules/coop-1-cooperative-education.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: modules_finance, label: "Finance", type: file, path: modules/finance.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: modules_ma4617_introduction_to_fluid_mechanics, label: "Ma4617 Introduction To Fluid Mechanics", type: file, path: modules/ma4617-introduction-to-fluid-mechanics.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: modules_mb4017_geometry, label: "Mb4017 Geometry", type: file, path: modules/mb4017-geometry.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: modules_ms4008_mathematical_methods_2_numerical_methods_for_partial_differential_equations, label: "MS4008 Mathematical Methods 2 Numerical Methods For Partial Differential Equations", type: file, path: modules/ms4008-mathematical-methods-2-numerical-methods-for-partial-differential-equations.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: modules_ms4014_introduction_to_numerical_analysis, label: "MS4014 Introduction To Numerical Analysis", type: file, path: modules/ms4014-introduction-to-numerical-analysis.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: modules_ms4021_calculus_1, label: "MS4021 Calculus 1", type: file, path: modules/ms4021-calculus-1.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: modules_ms4022_calculus_2, label: "MS4022 Calculus 2", type: file, path: modules/ms4022-calculus-2.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: modules_ms4027_fundamentals_of_financial_mathematics, label: "MS4027 Fundamentals Of Financial Mathematics", type: file, path: modules/ms4027-fundamentals-of-financial-mathematics.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: modules_ms4028_stochastic_differential_equations_for_finance, label: "MS4028 Stochastic Differential Equations For Finance", type: file, path: modules/ms4028-stochastic-differential-equations-for-finance.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: modules_ms4034_applied_data_analysis, label: "MS4034 Applied Data Analysis", type: file, path: modules/ms4034-applied-data-analysis.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: modules_ms4035_probability_models, label: "MS4035 Probability Models", type: file, path: modules/ms4035-probability-models.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: modules_ms4037_statistical_data_science_project_1, label: "MS4037 Statistical Data Science Project 1", type: file, path: modules/ms4037-statistical-data-science-project-1.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: modules_ms4038_statistical_data_science_project_2, label: "MS4038 Statistical Data Science Project 2", type: file, path: modules/ms4038-statistical-data-science-project-2.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: modules_ms4043_methods_of_linear_analysis, label: "MS4043 Methods Of Linear Analysis", type: file, path: modules/ms4043-methods-of-linear-analysis.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: modules_ms4045_complex_analysis, label: "MS4045 Complex Analysis", type: file, path: modules/ms4045-complex-analysis.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: modules_ms4101_mathematical_laboratory, label: "MS4101 Mathematical Laboratory", type: file, path: modules/ms4101-mathematical-laboratory.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: modules_ms4105_linear_algebra_2, label: "MS4105 Linear Algebra 2", type: file, path: modules/ms4105-linear-algebra-2.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: modules_ms4117_discrete_mathematics_2, label: "MS4117 Discrete Mathematics 2", type: file, path: modules/ms4117-discrete-mathematics-2.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: modules_ms4122_further_linear_algebra, label: "MS4122 Further Linear Algebra", type: file, path: modules/ms4122-further-linear-algebra.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: modules_ms4131_linear_algebra_1, label: "MS4131 Linear Algebra 1", type: file, path: modules/ms4131-linear-algebra-1.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: modules_ms4214_statistical_inference, label: "MS4214 Statistical Inference", type: file, path: modules/ms4214-statistical-inference.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: modules_ms4215_advanced_data_analysis, label: "MS4215 Advanced Data Analysis", type: file, path: modules/ms4215-advanced-data-analysis.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: modules_ms4217_stochastic_processes, label: "MS4217 Stochastic Processes", type: file, path: modules/ms4217-stochastic-processes.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: modules_ms4218_time_series_analysis, label: "MS4218 Time Series Analysis", type: file, path: modules/ms4218-time-series-analysis.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: modules_ms4222_introduction_to_probability_and_statistics, label: "MS4222 Introduction To Probability And Statistics", type: file, path: modules/ms4222-introduction-to-probability-and-statistics.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: modules_ms4303_operations_research_1, label: "MS4303 Operations Research 1", type: file, path: modules/ms4303-operations-research-1.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: modules_ms4315_operations_research_2, label: "MS4315 Operations Research 2", type: file, path: modules/ms4315-operations-research-2.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: modules_ms4403_ordinary_differential_equations, label: "MS4403 Ordinary Differential Equations", type: file, path: modules/ms4403-ordinary-differential-equations.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: modules_ms4404_partial_differential_equations, label: "MS4404 Partial Differential Equations", type: file, path: modules/ms4404-partial-differential-equations.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: modules_ms4407_perturbation_techniques_and_asymptotics, label: "MS4407 Perturbation Techniques And Asymptotics", type: file, path: modules/ms4407-perturbation-techniques-and-asymptotics.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: modules_ms4414_theoretical_mechanics, label: "MS4414 Theoretical Mechanics", type: file, path: modules/ms4414-theoretical-mechanics.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: modules_ms4528_mathematical_and_statistical_models_of_investments, label: "MS4528 Mathematical And Statistical Models Of Investments", type: file, path: modules/ms4528-mathematical-and-statistical-models-of-investments.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: modules_ms4613_vector_analysis, label: "MS4613 Vector Analysis", type: file, path: modules/ms4613-vector-analysis.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+  - name: group_projects
     label: "Projects"
     type: group
     items:
-      - { name: projects-academic-projects, label: "Academic Projects", type: file, path: projects/academic-projects.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: projects-dashboards-visualisation, label: "Dashboards Visualisation", type: file, path: projects/dashboards-visualisation.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: projects-data-analytics, label: "Data Analytics", type: file, path: projects/data-analytics.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: projects-financial-modelling, label: "Financial Modelling", type: file, path: projects/financial-modelling.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: projects-sector-projects, label: "Sector Projects", type: file, path: projects/sector-projects.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: projects-software-apps, label: "Software Apps", type: file, path: projects/software-apps.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-  - name: group-sectors
+      - { name: projects_academic_projects, label: "Academic Projects", type: file, path: projects/academic-projects.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: projects_dashboards_visualisation, label: "Dashboards Visualisation", type: file, path: projects/dashboards-visualisation.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: projects_data_analytics, label: "Data Analytics", type: file, path: projects/data-analytics.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: projects_financial_modelling, label: "Financial Modelling", type: file, path: projects/financial-modelling.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: projects_sector_projects, label: "Sector Projects", type: file, path: projects/sector-projects.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: projects_software_apps, label: "Software Apps", type: file, path: projects/software-apps.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+  - name: group_sectors
     label: "Sectors"
     type: group
     items:
-      - { name: sectors-aircraft-leasing-aviation-finance, label: "Aircraft Leasing Aviation Finance", type: file, path: sectors/aircraft-leasing-aviation-finance.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: sectors-banking-financial-services, label: "Banking Financial Services", type: file, path: sectors/banking-financial-services.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: sectors-corporate-services-financial-operations, label: "Corporate Services Financial Operations", type: file, path: sectors/corporate-services-financial-operations.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: sectors-data-analytics-fintech, label: "Data Analytics Fintech", type: file, path: sectors/data-analytics-fintech.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: sectors-insurance-actuarial, label: "Insurance Actuarial", type: file, path: sectors/insurance-actuarial.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: sectors-investment-asset-management, label: "Investment Asset Management", type: file, path: sectors/investment-asset-management.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: sectors_aircraft_leasing_aviation_finance, label: "Aircraft Leasing Aviation Finance", type: file, path: sectors/aircraft-leasing-aviation-finance.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: sectors_banking_financial_services, label: "Banking Financial Services", type: file, path: sectors/banking-financial-services.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: sectors_corporate_services_financial_operations, label: "Corporate Services Financial Operations", type: file, path: sectors/corporate-services-financial-operations.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: sectors_data_analytics_fintech, label: "Data Analytics Fintech", type: file, path: sectors/data-analytics-fintech.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: sectors_insurance_actuarial, label: "Insurance Actuarial", type: file, path: sectors/insurance-actuarial.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: sectors_investment_asset_management, label: "Investment Asset Management", type: file, path: sectors/investment-asset-management.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
