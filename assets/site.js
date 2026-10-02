@@ -2003,7 +2003,9 @@
   });
 
   /* -----------------------------------------------------------------------
-     Floating page tools: Edit here, Print, Listen.
+     Floating page tools: GitHub, Print, Listen All, Listen Questions.
+     Keep the question-only option last because it is the quickest rehearsal
+     control, matching the education-site rail.
      ----------------------------------------------------------------------- */
   const setupFloatingTools = () => {
     if (!pageEdit && !pagePrint) return;
@@ -2017,7 +2019,7 @@
       floatingEdit.href = pageEdit.href;
       floatingEdit.target = '_blank';
       floatingEdit.rel = 'noopener';
-      floatingEdit.textContent = 'Edit in GitHub';
+      floatingEdit.textContent = 'GitHub';
       floatingEdit.setAttribute('aria-label', 'Edit this page in GitHub');
       rail.appendChild(floatingEdit);
       pageEdit.hidden = true;
@@ -2033,38 +2035,39 @@
     if (pagePrint) pagePrint.hidden = true;
 
     if (hasSpeech) {
-      const listen = document.createElement('button');
-      listen.id = 'floating-page-listen';
-      listen.type = 'button';
-      listen.textContent = 'Listen';
-      listen.setAttribute('aria-label', 'Listen to this page');
-      listen.addEventListener('click', () => {
-        if (activeAudioButton === listen && synth.speaking) {
-          if (synth.paused) {
-            synth.resume();
-            listen.textContent = 'Pause';
-          } else {
-            synth.pause();
-            listen.textContent = 'Resume';
-          }
-          return;
-        }
+      const listenAll = document.createElement('button');
+      listenAll.id = 'floating-page-listen-all';
+      listenAll.type = 'button';
+      listenAll.textContent = 'Listen All';
+      listenAll.setAttribute('aria-label', 'Listen to all questions and answers');
+      listenAll.title = 'Listen to all questions and answers';
+      listenAll.addEventListener('click', () => {
         const questions = practiceHeadings();
         const text = questions.length
           ? questions.map(heading => `${heading.dataset.questionText}. ${answerTextFor(heading)}`).join(' ')
           : `${document.querySelector('.doc-paper > h1')?.textContent || ''}. ${body.innerText}`;
-        resetAudio();
-        activeAudioButton = listen;
-        listen.classList.add('is-active');
-        listen.textContent = 'Pause';
-        activeUtterance = new SpeechSynthesisUtterance(cleanText(text));
-        activeUtterance.lang = 'en-IE';
-        activeUtterance.rate = 0.92;
-        activeUtterance.onend = () => { listen.textContent = 'Listen'; resetAudio(); };
-        activeUtterance.onerror = () => { listen.textContent = 'Listen'; resetAudio(); };
-        synth.speak(activeUtterance);
+        speak({ text, button: listenAll, rate: 0.92 });
       });
-      rail.appendChild(listen);
+      rail.appendChild(listenAll);
+
+      const questions = practiceHeadings();
+      if (questions.length) {
+        const listenQuestions = document.createElement('button');
+        listenQuestions.id = 'floating-page-listen-questions';
+        listenQuestions.type = 'button';
+        listenQuestions.textContent = 'Listen Questions';
+        listenQuestions.setAttribute('aria-label', 'Listen to questions only');
+        listenQuestions.title = 'Listen to questions only';
+        listenQuestions.addEventListener('click', () => {
+          const currentQuestions = practiceHeadings();
+          const text = currentQuestions
+            .map(heading => heading.dataset.questionText)
+            .filter(Boolean)
+            .join('. ');
+          speak({ text, button: listenQuestions, rate: 0.89 });
+        });
+        rail.appendChild(listenQuestions);
+      }
     }
 
     document.body.appendChild(rail);
