@@ -758,7 +758,7 @@
 
   const ABOUT_SUBPAGES = [
     { label: 'About Me', path: '' },
-    { label: 'Skills Profile', path: 'skills-profile.html' },
+    { label: 'ULCV', path: 'skills-profile.html' },
     { label: 'Academic Record', path: 'academic-record.html' }
   ];
 
