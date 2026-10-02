@@ -141,9 +141,12 @@
         <img src="{{ page.image | relative_url }}" alt="{{ page.image_alt | default: page_display_title | escape }}">
       </figure>
       {% endif %}
+      {% assign cms_key = page.path | replace: '/', '-' | replace: '.md', '' %}
+      {% assign cms_url = 'https://app.pagescms.org/ErikDownes/ErikDownes.github.io/main/file/' | append: cms_key %}
       <div class="doc-toolbar" aria-label="Document controls">
+        {% if page.path contains '.md' %}<a class="edit-link cms-edit-link" href="{{ cms_url }}" target="_blank" rel="noopener">CMS</a>{% endif %}
+        <a class="edit-link github-edit-link" href="https://github.com/ErikDownes/ErikDownes.github.io/edit/main/{{ page.path }}" target="_blank" rel="noopener">GitHub</a>
         <button type="button" data-action="print">Print</button>
-        <a class="edit-link" href="https://github.com/ErikDownes/ErikDownes.github.io/edit/main/{{ page.path }}" target="_blank" rel="noopener">Edit in GitHub</a>
       </div>
 
       <div class="doc-body" id="docBody">{{ content }}</div>
