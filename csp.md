@@ -3,7 +3,6 @@ layout: doc
 permalink: /csp.html
 handle: CSP
 title: Corporate Services & Financial Operations
-nav_order: 40
 eyebrow: CSP · SPVs · ACCOUNTING · CASH · CONTROLS
 public_mode: true
 ---
