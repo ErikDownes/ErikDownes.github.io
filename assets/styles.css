@@ -34,6 +34,11 @@ body{margin:0;background:var(--page);color:var(--ink);font-family:Arial,Helvetic
 .dropmenu a{display:block;padding:9px 12px;color:#202124;text-decoration:none;font-size:.9rem;line-height:1.3;white-space:normal;border-radius:5px}
 .dropmenu a:hover,.dropmenu a:focus-visible{background:#f1f3f4;outline:none}
 .dropmenu .dropmenu-empty{color:#70757a;cursor:default}
+.dropmenu .dropmenu-section-label{grid-column:1/-1;padding:8px 12px 5px;color:#5f6368;font-size:.72rem;font-weight:800;letter-spacing:.06em;line-height:1.2;text-transform:uppercase;cursor:default}
+.dropmenu .dropmenu-current-label{margin-top:0;color:var(--accent,#0b6b5c)}
+.dropmenu .current-module-link{font-weight:700;background:#f7faf9}
+.dropmenu .dropmenu-other-label{margin-top:10px;padding-top:12px;border-top:1px solid var(--line)}
+
 
 /* Two-level navigation: downward category menu with a second-level flyout. */
 .aviation-menu,.coursework-menu,.career-menu,.portfolio-menu{--menu-width:min(260px,calc(100vw - 24px));grid-template-columns:1fr!important;overflow:visible;max-height:none}
