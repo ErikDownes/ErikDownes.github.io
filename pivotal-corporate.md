@@ -8,10 +8,7 @@ eyebrow: CO-OP INTERVIEW · CORPORATE ADMINISTRATION · ACCOUNTING · CLIENT SER
 public_mode: true
 ---
 
-<div class="practice-rule">
-<strong>Eric — you've got to fucking go for it.</strong><br>
-Do not go into this thinking, “someone better will get it,” or “I’m not technical enough.” They are not recruiting a finished accountant or a finished corporate-services professional. They are recruiting a student who can learn, think, work carefully, communicate and take responsibility. You have strong evidence for all of those. Go in expecting to compete for the job.
-</div>
+
 
 ## Job Description | Verbatim
 
