@@ -10,6 +10,12 @@ public_mode: true
 
 This projects section is deliberately small. It contains a short set of working dashboards, calculators and applied data projects that can be developed further without burying the useful work under layers of categories.
 
+## Spreadsheet Exercises & Skills
+
+Applied spreadsheet practice in financial operations: controls, lookups, reconciliations, data cleaning, reporting support and interview-ready explanation of the business purpose behind the work.
+
+[Open Spreadsheet Exercises & Skills →]({{ '/spreadsheet-exercises.html' | relative_url }})
+
 ## Cycling / Strava Data Lab
 
 A personal-interest dataset turned into a reproducible analysis project: activity exports, ride statistics, milestones, route mapping and a plan to analyse the full ride history.
