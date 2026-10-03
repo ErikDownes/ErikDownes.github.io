@@ -3,7 +3,7 @@ layout: doc
 permalink: /blog.html
 handle: Blog
 title: Blog
-nav_order: 60
+nav_order: 40
 eyebrow: CYCLING · COOKING · INTERESTS
 public_mode: true
 ---
