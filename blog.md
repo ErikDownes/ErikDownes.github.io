@@ -7,7 +7,6 @@ nav_order: 40
 eyebrow: CYCLING · COOKING · INTERESTS
 public_mode: true
 ---
-
 A place for interests, experiences and occasional projects that begin outside formal coursework.
 
 ## Cycling
@@ -26,11 +25,7 @@ The page is deliberately more personal than technical: bolognese, roast chicken,
 
 [Open Cooking | Experiment, Taste, Adjust →]({{ '/cooking.html' | relative_url }})
 
-## Archive
-
-As the blog grows, this page can also become a simple chronological archive of posts.
 
 
-## Test Article
 
-[Open Test Article →]({{ '/test-article.html' | relative_url }})
+
