@@ -1,43 +1,14 @@
 ---
 layout: doc
 permalink: /interview.html
-handle: Interview
-title: Interview Preparation
-description: Reusable interview preparation with core questions, evidence and answer structures.
-nav_order: 50
-eyebrow: GENERAL INTERVIEW PREPARATION · REUSABLE ANSWERS
+handle: General Interview
+title: General Interview Questions
+description: Employer-neutral co-op interview questions, evidence and reusable answer structures.
+eyebrow: CO-OP · GENERAL INTERVIEW QUESTIONS · REUSABLE ANSWERS
 ---
 
-This page is deliberately employer-neutral. Company-specific preparation belongs on the relevant company page; these are the core questions and examples that can be reused across interviews.
+This page sits under [Co-op]({{ '/skills-profile.html' | relative_url }}). It is deliberately employer-neutral: company-specific preparation belongs on the relevant role page, while these questions and examples can be reused across applications.
 
-## Interview Schedule
-
-### Friday 2 October 2026 · UL Hospitals Group
-
-**11:40 AM · Online via MS Teams**
-
-- **Interviewer:** Eimear Laffan
-- **Role area:** Health & Wellbeing Department
-- **Location:** Limerick-based co-op opportunity
-- **Opportunities:** 1
-- **Teams link:** To be added when it arrives in my UL student email
-
-<div class="prep-links" data-no-glossary>
-  <a href="https://about.hse.ie/organisation/hse-mid-west/about-hse-mid-west/" target="_blank" rel="noopener">HSE Mid West →</a>
-</div>
-
-### Monday 5 October 2026 · Pivotal Corporate
-
-**11:30 AM · In person at UL**
-
-- **Venue:** Main Building, CG052
-- **Interviewer:** Catherine Wixted
-- **Opportunities:** Potentially 5 — 4 in Shannon, Co. Clare and 1 in Dublin
-
-<div class="prep-links" data-no-glossary>
-  <a href="/pivotal-corporate.html">Pivotal interview preparation →</a>
-  <a href="https://www.pivotalcorporate.com/" target="_blank" rel="noopener">Pivotal Corporate →</a>
-</div>
 
 ## Introduction | Tell me about yourself
 
