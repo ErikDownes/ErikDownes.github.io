@@ -1,7 +1,7 @@
 ---
 layout: doc
 permalink: /education.html
-handle: LM058
+handle: Financial Maths (UL-LM058)
 title: BSc Financial Mathematics
 nav_order: 20
 eyebrow: UNIVERSITY OF LIMERICK · BSC FINANCIAL MATHEMATICS · LM058
