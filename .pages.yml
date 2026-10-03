@@ -27,7 +27,7 @@ content:
     type: group
     items:
       - { name: profile, label: "10 · Profile", type: file, path: profile.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: education, label: "20 · Financial Maths", type: file, path: education.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: education, label: "20 · LM058", type: file, path: education.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: skills_profile, label: "30 · Co-op", type: file, path: skills-profile.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: blog, label: "40 · Blog", type: file, path: blog.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: projects, label: "50 · Projects", type: file, path: projects.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
