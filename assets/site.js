@@ -698,6 +698,8 @@
     });
   });
 
+  const LM058_CURRENT_MODULE_CODES = ['MS4027', 'MS4045', 'MS4105', 'MS4214', 'MS4215'];
+
   const populateModuleMenu = (item, links, pageUrl) => {
     const menu = item.querySelector(':scope > .dropmenu');
     if (!menu) return;
@@ -743,17 +745,45 @@
 
     menu.style.setProperty('--menu-left', `${Math.round(item.getBoundingClientRect().left)}px`);
 
-    modules.forEach(module => {
+    const appendModuleLink = (module, isCurrent = false) => {
       const link = document.createElement('a');
       link.href = module.href.href;
       link.textContent = module.label;
+      if (isCurrent) link.classList.add('current-module-link');
       link.addEventListener('click', () => {
         item.classList.remove('is-open');
         item.querySelector('[data-nav-toggle]')?.setAttribute('aria-expanded', 'false');
         if (window.innerWidth <= 1500) topbar?.classList.remove('nav-open');
       });
       menu.appendChild(link);
-    });
+    };
+
+    const cleanPagePath = pageUrl.pathname.replace(/\/+$/, '');
+    const isLm058Menu = /\/education(?:\.html)?$/.test(cleanPagePath);
+
+    if (isLm058Menu) {
+      const byCode = new Map(modules.map(module => [module.code, module]));
+      const currentModules = LM058_CURRENT_MODULE_CODES.map(code => byCode.get(code)).filter(Boolean);
+      const currentCodes = new Set(currentModules.map(module => module.code));
+
+      if (currentModules.length) {
+        const currentLabel = document.createElement('div');
+        currentLabel.className = 'dropmenu-section-label dropmenu-current-label';
+        currentLabel.textContent = 'Currently underway · Year 3 Semester 1';
+        menu.appendChild(currentLabel);
+        currentModules.forEach(module => appendModuleLink(module, true));
+
+        const otherLabel = document.createElement('div');
+        otherLabel.className = 'dropmenu-section-label dropmenu-other-label';
+        otherLabel.textContent = 'Other LM058 modules';
+        menu.appendChild(otherLabel);
+      }
+
+      modules.filter(module => !currentCodes.has(module.code)).forEach(module => appendModuleLink(module));
+      return;
+    }
+
+    modules.forEach(module => appendModuleLink(module));
   };
 
   const ABOUT_SUBPAGES = [
