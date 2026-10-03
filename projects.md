@@ -3,7 +3,7 @@ layout: doc
 permalink: /projects.html
 handle: Projects
 title: Projects
-nav_order: 30
+nav_order: 50
 eyebrow: DASHBOARDS · CALCULATORS · APPLIED WORK
 public_mode: true
 ---
