@@ -2,6 +2,7 @@
 layout: doc
 handle: Abelo
 title: Abelo
+nav_order: 50
 eyebrow: AVIATION · COMPANY CASE STUDY
 study_mode: true
 ---
