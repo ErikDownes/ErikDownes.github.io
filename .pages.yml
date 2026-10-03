@@ -14,6 +14,8 @@ components:
       - { name: layout, type: string, hidden: true }
       - { name: permalink, type: string, hidden: true }
       - { name: cms_key, type: string, hidden: true }
+      - { name: handle, type: string, label: Menu label }
+      - { name: nav_order, type: number, label: "Menu position (10, 20, 30...)" }
       - { name: title, type: string, label: Title }
       - { name: eyebrow, type: string, label: Eyebrow }
       - { name: intro, type: text, label: Introduction }
@@ -24,18 +26,19 @@ content:
     label: "Main pages"
     type: group
     items:
-      - { name: profile, label: "Profile", type: file, path: profile.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: skills_profile, label: "ULCV — Tailored for CMS", type: file, path: skills-profile.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: profile, label: "10 · Profile", type: file, path: profile.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: education, label: "20 · Financial Mathematics", type: file, path: education.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: skills_profile, label: "30 · Co-op", type: file, path: skills-profile.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: blog, label: "40 · Blog", type: file, path: blog.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: projects, label: "50 · Projects", type: file, path: projects.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: academic_record, label: "Academic Record", type: file, path: academic-record.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: education, label: "BSc Financial Mathematics", type: file, path: education.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: projects, label: "Projects", type: file, path: projects.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: pivotal_corporate, label: "Pivotal Corporate", type: file, path: pivotal-corporate.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: csp, label: "Corporate Services", type: file, path: csp.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: hse_finance, label: "HSE Finance", type: file, path: hse-finance.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: preparation, label: "Preparation", type: file, path: preparation.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: pivotal_corporate, label: "Co-op — Pivotal Corporate", type: file, path: pivotal-corporate.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: csp, label: "Co-op — Corporate Services (CSP)", type: file, path: csp.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: hse_finance, label: "Co-op — Medical Finance", type: file, path: hse-finance.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: general_interview, label: "Co-op — General Interview Questions", type: file, path: interview.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: preparation, label: "Co-op — Skills & Evidence", type: file, path: preparation.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: sectors, label: "Sectors", type: file, path: sectors.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: workplace_skills, label: "Workplace Skills", type: file, path: workplace-skills.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: blog, label: "Blog", type: file, path: blog.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: glossary, label: "Glossary", type: file, path: glossary.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: cycling, label: "Cycling", type: file, path: cycling.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: cooking, label: "Cooking", type: file, path: cooking.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
