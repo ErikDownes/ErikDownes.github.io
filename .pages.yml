@@ -27,7 +27,7 @@ content:
     type: group
     items:
       - { name: profile, label: "10 · Profile", type: file, path: profile.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: education, label: "20 · Financial Mathematics", type: file, path: education.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: education, label: "20 · Financial Maths", type: file, path: education.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: skills_profile, label: "30 · Co-op", type: file, path: skills-profile.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: blog, label: "40 · Blog", type: file, path: blog.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: projects, label: "50 · Projects", type: file, path: projects.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
@@ -44,7 +44,7 @@ content:
       - { name: cooking, label: "Cooking", type: file, path: cooking.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
 
   - name: preparation_pages
-    label: "Preparation"
+    label: "Co-op preparation"
     type: collection
     path: preparation
     format: yaml-frontmatter
