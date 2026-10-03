@@ -5,7 +5,6 @@ handle: Medical Finance
 title: Medical Finance — HSE Mid-West Co-op
 description: HSE Mid-West Co-op Finance role, job specification, interview
   details and preparation.
-nav_order: 41
 eyebrow: HSE MID-WEST · MEDICAL & PUBLIC-SECTOR FINANCE · CO-OP
 public_mode: true
 ---
