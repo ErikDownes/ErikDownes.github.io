@@ -1,16 +1,16 @@
 ---
 layout: doc
 permalink: /preparation.html
-handle: Preparation
-title: Interview Preparation
-eyebrow: REUSABLE SKILLS · EVIDENCE · INTERVIEW PREPARATION
+handle: Skills & Evidence
+title: Co-op Skills & Evidence
+eyebrow: CO-OP · REUSABLE SKILLS · EVIDENCE
 public_mode: true
 ---
 
 <div class="career-door-hero">
-  <span class="career-door-kicker">INTERVIEW PREPARATION</span>
+  <span class="career-door-kicker">CO-OP PREPARATION</span>
   <strong>Prepare reusable evidence first; then connect it to the company and role.</strong>
-  <p>These pages contain transferable interview material. Business learning for the current Corporate Service Provider role sits under CSP.</p>
+  <p>These pages contain transferable co-op and interview evidence. Role-specific business learning sits on the relevant Co-op role page.</p>
 </div>
 
 <h2 data-nav-href="{{ '/preparation/communication.html' | relative_url }}">Communication & Client Service</h2>
