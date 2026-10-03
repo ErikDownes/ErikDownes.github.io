@@ -22,12 +22,34 @@ study_mode: true
 @media(max-width:800px){.programme-overview{grid-template-columns:1fr 1fr}}
 @media(max-width:520px){.programme-overview{grid-template-columns:1fr}}
 .lc-results{max-width:620px}
+.current-study{margin:28px 0 34px;padding:20px;border:1px solid #cfdbe4;border-radius:16px;background:#fff}
+.current-study-kicker{font-size:.78rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#4f6475;margin-bottom:5px}
+.current-study h2{margin:.2rem 0 .35rem}
+.current-study p{margin:.2rem 0 1rem}
+.current-module-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.current-module{display:block;padding:12px 14px;border:1px solid #dce3e9;border-radius:10px;text-decoration:none;background:#f7f9fb}
+.current-module strong{display:block;margin-bottom:2px}
+.current-module span{display:block}
+@media(max-width:650px){.current-module-grid{grid-template-columns:1fr}}
 </style>
 
 I am currently in **Year 3 of the BSc Financial Mathematics programme at the University of Limerick**. Years 1 and 2 are complete, I am studying Semester 1 of Year 3 now, and Semester 2 is my Cooperative Education placement.
 
 <div class="education-summary">
 <strong>Current position:</strong> Year 3 · Semester 1 · BSc Financial Mathematics (LM058)
+</div>
+
+<div class="current-study">
+  <div class="current-study-kicker">Currently underway · Year 3 · Semester 1</div>
+  <h2>Current modules</h2>
+  <p>These five modules are currently underway.</p>
+  <div class="current-module-grid">
+    <a class="current-module" href="{{ '/modules/ms4027-fundamentals-of-financial-mathematics.html' | relative_url }}"><strong>MS4027</strong><span>Fundamentals of Financial Mathematics</span></a>
+    <a class="current-module" href="{{ '/modules/ms4045-complex-analysis.html' | relative_url }}"><strong>MS4045</strong><span>Complex Analysis</span></a>
+    <a class="current-module" href="{{ '/modules/ms4105-linear-algebra-2.html' | relative_url }}"><strong>MS4105</strong><span>Linear Algebra 2</span></a>
+    <a class="current-module" href="{{ '/modules/ms4214-statistical-inference.html' | relative_url }}"><strong>MS4214</strong><span>Statistical Inference</span></a>
+    <a class="current-module" href="{{ '/modules/ms4215-advanced-data-analysis.html' | relative_url }}"><strong>MS4215</strong><span>Advanced Data Analysis</span></a>
+  </div>
 </div>
 
 ## Programme overview
@@ -107,11 +129,11 @@ LM058 is a four-year Financial Mathematics degree combining **mathematics, proba
 
 ### Semester 1 · Current
 
+- [Fundamentals of Financial Mathematics]({{ '/modules/ms4027-fundamentals-of-financial-mathematics.html' | relative_url }}) · **MS4027**
 - [Complex Analysis]({{ '/modules/ms4045-complex-analysis.html' | relative_url }}) · **MS4045**
 - [Linear Algebra 2]({{ '/modules/ms4105-linear-algebra-2.html' | relative_url }}) · **MS4105**
 - [Statistical Inference]({{ '/modules/ms4214-statistical-inference.html' | relative_url }}) · **MS4214**
 - [Advanced Data Analysis]({{ '/modules/ms4215-advanced-data-analysis.html' | relative_url }}) · **MS4215**
-- [Fundamentals of Financial Mathematics]({{ '/modules/ms4027-fundamentals-of-financial-mathematics.html' | relative_url }}) · **MS4027**
 
 </div>
 
