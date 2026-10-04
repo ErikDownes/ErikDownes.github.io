@@ -629,6 +629,21 @@ Use examples where you had to **explain something clearly, communicate with a cu
 
 The O'Mahony's library delivery example is strong evidence: you identified the problem, discussed the solution with your supervisor, communicated what had happened, and helped minimise the delay.
 
+
+
+
+## Do you consider accessibility when communicating?
+
+**Inclusive  Text-to-speech  Accessible by design**
+
+Yes. I think about whether people can **access and use the information**, as well as whether the wording is clear. That applies to documents, presentations and websites.
+
+For example, **my GitHub-hosted website has text-to-speech so visitors can listen to the content in each section**. This can help people who find reading difficult or prefer to listen. I also consider clear headings, readable text, colour contrast, image descriptions and compatibility with keyboards and screen readers.
+
+I understand that **accessibility is a legal requirement for certain websites and services in some jurisdictions**, depending on the organisation and service. Text-to-speech is one useful feature; it does not by itself establish compliance. My approach is to **consider accessibility from the start**.
+
+Sources: [W3C accessibility standards](https://www.w3.org/WAI/standards-guidelines/wcag/) · [Accessibility laws by jurisdiction](https://www.w3.org/WAI/Policy/).
+
 # Microsoft Word, Excel & Outlook
 
 **Word  Excel  Outlook**
