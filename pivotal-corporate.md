@@ -199,7 +199,7 @@ I am still early in that proficiency path, but I would like to move into **time-
 
 **2020  85 employees  Dublin / London**
 
-LinkedIn currently shows about **85 employees**, with continued recruitment in **Shannon** and a stated growth focus on **Dublin and London**. The company was founded in **2020**. Eight of your employees went to UL.
+Pivotal’s [current website](https://www.pivotalcorporate.com/) describes **100+ staff across Shannon, Dublin, London and New York**. The [Clare Echo reported on 18 September 2026](https://www.clareecho.ie/top-aviation-recogniton-for-miltown-malbays-talty/) that headcount had doubled over eighteen months. See **Pivotal in the News** below for the current research.
 
 ## Do we take Co-op seriously?
 
@@ -692,24 +692,184 @@ The important phrase is:
 
 **“I am interested not just in producing the calculation, but in how the analysis can help somebody make a better decision.”**
 
+# Pivotal in the News
+
+**Research checked: 4 October 2026.** Use the source and the business implication, then ask a genuine question. Read the linked article before saying “I read…”.
 
 
-&nbsp;
 
-&nbsp;
+## What has independent coverage reported?
 
-&nbsp;
+**Growth  Recognition  Mentoring**
 
-&nbsp;
+The **Clare Echo, 18 September 2026**, reported that Pivotal had grown to **approximately 100 people**, with headcount doubling over eighteen months. Its article also covered Managing Director **David Talty’s recognition in Airline Economics’ 2026 “40 Under 40”**.
 
-&nbsp;
+The **award publisher independently confirms David Talty in the 2026 class** and lists Pivotal Managing Director **Michael Murphy among its 2026 mentors**.
 
-&nbsp;
+**Interview relevance:** growth raises questions about consistent client service; recognition and mentoring raise questions about how junior staff develop.
 
-&nbsp;
+Sources: [Clare Echo — David Talty and Pivotal’s growth](https://www.clareecho.ie/top-aviation-recogniton-for-miltown-malbays-talty/) · [Airline Economics — 2026 winners and mentors](https://www.aviationnews-online.com/airline-economics-40-under-40).
 
-&nbsp;
 
-&nbsp;
 
-&nbsp;
+## What is on the company’s own news page?
+
+**Recent deals  Managing Agent  Client support**
+
+Pivotal’s **News page redirects to a “Recent Deals” page**. It lists **GGAM 2026-1 for Griffin Global Asset Management** and **MCAV 2026-1 for AIP Capital** in July 2026, plus transactions for FTAI and Sky Leasing.
+
+Its homepage now describes **100+ staff across Shannon, Dublin, London and New York**. This is more current than the older “85 employees” preparation note.
+
+These are **company-published updates**, distinct from independent news coverage. The listings identify Pivotal as Managing Agent; they do not mean Pivotal owns the aircraft.
+
+Sources: [Pivotal — Recent Deals](https://www.pivotalcorporate.com/blog) · [Pivotal — company and services](https://www.pivotalcorporate.com/).
+
+
+
+## What is Pivotal posting on LinkedIn?
+
+**Commercial growth  Aviation  Team involvement**
+
+The verified company page is active, with updates on **Matthew Trotter’s appointment as Commercial Director and a Dublin/London growth focus**, aviation recruitment, transactions and industry events. Its recent feed also includes participation in the **Carlyle Aviation charity soccer tournament supporting the Cancer Clinical Research Trust**.
+
+**Interview relevance:** connect commercial growth to service delivery, and team events to willingness to participate.
+
+Sources: [Pivotal LinkedIn](https://ie.linkedin.com/company/pivotal-corporate) · [Commercial Director announcement](https://www.linkedin.com/posts/pivotal-corporate_leadership-growth-commercialstrategy-activity-7465684778089037824-7-S-).
+
+
+
+# Social Media Awareness
+
+
+
+## Which Pivotal channels are active?
+
+**Verify  Audience  Purpose**
+
+| Channel | Finding on 4 October 2026 |
+| --- | --- |
+| Website / News | Confirmed company site, with 2026 deal updates. |
+| LinkedIn | Confirmed active company page: business, recruitment and team updates. |
+| Facebook | No official account verified in this search. |
+| Instagram | No official account verified in this search. |
+| X / Twitter | No official account verified in this search. |
+| Reddit | No official account or company community verified in this search. |
+| YouTube | No official company channel verified in this search. |
+| TikTok, Threads, Bluesky | No official account verified; TikTok access was also restricted. |
+
+“No official account verified” does **not** prove that none exists. Search results may be incomplete. A directory’s Facebook or X sharing button is not evidence of a company account.
+
+For interview research, prioritise **the company website, verified LinkedIn updates and independent reporting**.
+
+
+
+## What is Reddit?
+
+**Communities  Discussion  Verify claims**
+
+Reddit is a discussion platform organised into topic communities called **subreddits**. People post questions, experiences and links; others comment and vote on them.
+
+It can help reveal questions people are asking or experiences they report. However, a popular comment is **not verified evidence**, and an anonymous account should not be assumed to represent an employer or employee. Use it to identify things to investigate, then check authoritative sources. Do not post confidential workplace information.
+
+Source: [Reddit — What is Reddit?](https://support.reddithelp.com/hc/en-us/articles/204511479-What-is-Reddit).
+
+
+
+## Is Facebook becoming less popular?
+
+**Audience  Country  Evidence**
+
+I would avoid making a blanket claim. **Pew’s 2025 US adult survey** found Facebook use remained relatively stable at **71%**, while Instagram, TikTok, WhatsApp and Reddit had grown compared with 2021. Reddit reached **26%**, compared with **18%** in 2021.
+
+Those are **US adult findings, not Irish figures or a measure of every age group’s preferences**. Pew also cautions about survey-method changes across years.
+
+The business point is to **choose channels for the audience and purpose**, then measure results. A corporate-services firm’s client and recruitment audience may differ from a consumer brand’s. Other platforms to recognise include YouTube, TikTok, Snapchat, WhatsApp, Threads and Bluesky.
+
+Source: [Pew Research Center — Americans’ Social Media Use 2025](https://www.pewresearch.org/internet/2025/11/20/americans-social-media-use-2025/).
+
+
+
+# Have You Any Questions for Us?
+
+Prepare these five. Ask **two or three that have not already been answered**, leaving room for a real conversation. Each starts with evidence and ends with something worth learning.
+
+
+
+## How do you maintain standards as you grow?
+
+**Clare Echo  Growth  Service quality**
+
+“I read the Clare Echo report that Pivotal’s headcount had doubled over eighteen months. As the team grows, how do you maintain consistent client-service standards, and what would you want a co-op student to get right from the beginning?”
+
+This connects research to the role’s **high-quality professional service**.
+
+
+
+## How do junior staff learn from experienced colleagues?
+
+**40 Under 40  Mentoring  Development**
+
+“I saw David Talty recognised in Airline Economics’ 40 Under 40 and Michael Murphy listed among its mentors. How does that emphasis on developing people translate into supervision and feedback for co-op students?”
+
+This shows interest in **learning, responding to feedback and taking responsibility**.
+
+
+
+## Where could I contribute to transaction support?
+
+**Recent deals  Accounting  Administration**
+
+“Your recent deals page lists GGAM and MCAV transactions from July. Which accounting or administration tasks could a co-op student support on that kind of work, and how is the work checked before it reaches the client?”
+
+This connects commercial activity to **accurate records, review controls and useful contribution**.
+
+
+
+## How will growth affect the Client Service Teams?
+
+**Dublin / London  Coordination  Opportunity**
+
+“I read the announcement about Matthew Trotter’s appointment and the focus on Dublin and London. What does that growth mean for the Client Service Teams here, and would a student get opportunities to support colleagues across offices?”
+
+This connects the news to **teamwork and serving internal clients**.
+
+
+
+## What would excellent performance look like?
+
+**Proactive  Highly organised  Client service**
+
+“Your role description asks for a proactive, self-motivated and highly organised student supporting accounting and administration. By the end of my first three months, what would make you say I was making a really useful contribution?”
+
+This is a strong final question because it repeats **their requirements** and asks how to deliver them.
+
+
+
+# Closing Pitch — What I Bring
+
+**Proactive  Self-motivated  Highly organised  Professional service**
+
+At the end, take the opportunity to connect your evidence to **the fifth paragraph: The Role Paragraph**. After their answers, say: **“Thank you. Before we finish, could I briefly bring together why I’m interested and what I would bring?”**
+
+Use the full version when there is time; adapt it to what has already been discussed.
+
+
+
+## How would I close in about two minutes?
+
+“Thank you — hearing more about the role has strengthened my interest. What stands out in your description is that you want a proactive, self-motivated and highly organised student who can support the Client Service Teams with accounting and administration and help deliver a high-quality professional service.
+
+I’m studying Financial Mathematics at UL, so I bring a foundation in accounting, finance, statistics and data analysis. I also like putting that learning into practice. In my aircraft project, I used Python and Pandas to work through more than 500,000 records and identify the relevant fleet. That took initiative, patience and careful checking.
+
+I’ve also used Excel to compare amounts due and paid and flag differences clearly. My experience at O’Mahony’s and Mr Price has helped me understand the importance of accurate information, teamwork and communicating with people professionally.
+
+I care about making information useful and accessible. My website includes text-to-speech, and I think about clear language and adapting communication to the person. I also understand the importance of confidentiality and following the firm’s procedures, including its policies on AI and social media.
+
+Your growth and the range of transactions you support make this an exciting place to learn. I would come in ready to ask sensible questions, take feedback, organise my work and follow through. My aim would be to become someone the team can rely on to produce accurate work on time and support the service your clients receive.”
+
+
+
+## What if there is only time for a short close?
+
+“Your description asks for someone proactive, self-motivated and highly organised. My independent projects show initiative, my degree gives me the accounting and analytical foundation, and my work experience has taught me accuracy and teamwork. I would bring those together to support your Client Service Teams, learn your procedures and deliver work people can rely on.”
+
