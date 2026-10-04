@@ -3,7 +3,7 @@ layout: doc
 permalink: /hse-finance-study.html
 handle: HSE Finance Study
 title: HSE Finance Study
-nav_order: 222
+nav_order: 60
 description: Study notes for the HSE Mid-West Co-op Finance role.
 eyebrow: HSE MID-WEST · FINANCE · CO-OP STUDY
 public_mode: true
