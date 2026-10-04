@@ -646,30 +646,35 @@
   const moduleTitleForSort = label =>
     cleanText(label).replace(/^[A-Z]{2,}(?:_?\d+)?\s*[—–-]\s*/i, '').toLocaleLowerCase();
 
-  const COURSEWORK_GROUPS = [
+  // LM058 subject strands. Each module has one primary home so the menu stays easy to scan.
+  const LM058_STRANDS = [
     {
-      label: 'Computer Science',
-      codes: ['CE4701', 'CE4702']
+      label: 'Financial Mathematics & Finance',
+      codes: ['FI4003', 'MS4027', 'MS4028', 'MS4528']
     },
     {
-      label: 'Accounting & Finance',
-      codes: ['AC4214', 'AC4213', 'FI4003', 'MS4027', 'MS4528', 'MS4028']
+      label: 'Probability & Statistics',
+      codes: ['MS4222', 'MS4035', 'MS4034', 'MS4214', 'MS4215', 'MS4217', 'MS4218', 'MS4037', 'MS4038']
     },
     {
-      label: 'Data, Statistics & Probability',
-      codes: ['MS4215', 'MS4034', 'MS4222', 'MS4035', 'MS4037', 'MS4038', 'MS4214', 'MS4217', 'MS4218']
+      label: 'Analysis',
+      codes: ['MS4021', 'MS4022', 'MS4043', 'MS4045', 'MS4403', 'MS4404', 'MS4613', 'MA4617', 'MS4407', 'MS4414']
     },
     {
-      label: 'Core Mathematics & Analysis',
-      codes: ['MS4021', 'MS4022', 'MS4045', 'MS4117', 'MS4122', 'MB4017', 'MS4131', 'MS4105', 'MS4043', 'MS4613']
+      label: 'Algebra',
+      codes: ['MS4131', 'MS4122', 'MS4105', 'MS4117']
     },
     {
-      label: 'Applied Mathematics & Modelling',
-      codes: ['MA4617', 'MS4014', 'MS4101', 'MS4008', 'MS4303', 'MS4315', 'MS4403', 'MS4404', 'MS4407', 'MS4414']
+      label: 'Computation',
+      codes: ['CE4701', 'CE4702', 'MS4101', 'MS4014', 'MS4303', 'MS4008']
+    },
+    {
+      label: 'Business',
+      codes: ['AC4213', 'AC4214']
     },
     {
       label: 'Co-operative Education',
-      codes: ['COOP_1']
+      codes: ['CO4320']
     }
   ];
 
@@ -786,14 +791,40 @@
         currentLabel.textContent = 'Currently underway · Year 3 Semester 1';
         menu.appendChild(currentLabel);
         currentModules.forEach(module => appendModuleLink(module, true));
-
-        const otherLabel = document.createElement('div');
-        otherLabel.className = 'dropmenu-section-label dropmenu-other-label';
-        otherLabel.textContent = 'Other LM058 modules';
-        menu.appendChild(otherLabel);
       }
 
-      modules.filter(module => !currentCodes.has(module.code)).forEach(module => appendModuleLink(module));
+      const groupedCodes = new Set(currentCodes);
+      LM058_STRANDS.forEach(strand => {
+        const strandModules = strand.codes
+          .map(code => byCode.get(code))
+          .filter(module => module && !currentCodes.has(module.code));
+
+        if (!strandModules.length) return;
+
+        const strandLabel = document.createElement('div');
+        strandLabel.className = 'dropmenu-strand-label';
+        strandLabel.setAttribute('role', 'heading');
+        strandLabel.setAttribute('aria-level', '1');
+        strandLabel.textContent = strand.label;
+        menu.appendChild(strandLabel);
+
+        strandModules.forEach(module => {
+          groupedCodes.add(module.code);
+          appendModuleLink(module);
+        });
+      });
+
+      // Safety net for any future LM058 module not yet assigned to a strand.
+      const ungrouped = modules.filter(module => !groupedCodes.has(module.code));
+      if (ungrouped.length) {
+        const otherLabel = document.createElement('div');
+        otherLabel.className = 'dropmenu-strand-label';
+        otherLabel.setAttribute('role', 'heading');
+        otherLabel.setAttribute('aria-level', '1');
+        otherLabel.textContent = 'Other modules';
+        menu.appendChild(otherLabel);
+        ungrouped.forEach(module => appendModuleLink(module));
+      }
       return;
     }
 
