@@ -64,25 +64,29 @@ Add the detailed job-description notes here as each duty is studied. Keep this p
 
 &nbsp;
 
-# Pivotal Corporate Perfect UL CV
+# Pivotal Corporate UL CV
+
+
+
+## Pivotal Corporate Teamwork
+
+## Pivotal Corporate Communication Skills
+
+## Pivotal Corporate Problem Solving and Analytics
+
+## Pivotal Corporate Using Initiative
+
+## Pivotal Corporate Projects, Portfolio and Volunteering
+
+## Pivotal Corporate Additional Information
 
 
 
 &nbsp;
 
-## Pivotal Corporate Teamwork  UL CV
-
-
-
 &nbsp;
 
 &nbsp;
 
-&nbsp;
-
-&nbsp;
-
-#   
-  
 
 
