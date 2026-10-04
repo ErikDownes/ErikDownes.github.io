@@ -199,7 +199,7 @@ For a fuller record of results and academic achievements, see my [Academic Recor
 | **3.00–3.39** | **Second Class Honours Grade 1 — 2.1** |
 | **2.60–2.99** | **Second Class Honours Grade 2 — 2.2** |
 | **2.00–2.59** | **Third Class Honours** |
-| **Below 2.00** | **Below the minimum QCA for an honours award** |
+| **Below 2.00** | **Fail / below the minimum QCA for an honours award** |
 
 The table shows the standard classification thresholds. Examination-board discretion may apply in qualifying cases close to a classification boundary.
 
@@ -251,7 +251,7 @@ Enter a cumulative QCA from **0.00 to 4.00** to see the corresponding standard d
     else if (qca >= 3.00) result = 'Second Class Honours Grade 1 — 2.1';
     else if (qca >= 2.60) result = 'Second Class Honours Grade 2 — 2.2';
     else if (qca >= 2.00) result = 'Third Class Honours';
-    else result = 'Below the minimum QCA for an honours award';
+    else result = 'Fail / below the minimum QCA for an honours award';
 
     output.innerHTML = '<strong>Classification:</strong> ' + result;
   }
