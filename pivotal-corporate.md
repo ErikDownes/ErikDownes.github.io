@@ -89,9 +89,11 @@ It means understanding **what the client actually needs**, responding quickly an
 
 ## Why is Pivotal a good name for the business?
 
-**Pivot point  Mechanical advantage  Core business**
+**Pivot point  Mechanical advantage  competitive advantage**
 
-In physics, a pivot gives a lever **mechanical advantage**. In business  Pivotal Corporation give US-based companies a competitive advantage.
+In physics, a pivot gives a lever **mechanical advantage**. In business  Pivotal Corporation give US-based companies a competitive advantage.  
+  
+i love the quote  **by** Archimedes: **“Give me a place to stand and I will move the earth.”** Perhaps you can use it on your website.
 
 ## When have you adapted to difficult data?
 
