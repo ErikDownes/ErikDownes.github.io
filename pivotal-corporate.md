@@ -17,7 +17,7 @@ public_mode: true
 
 &nbsp;
 
-## What does the word Pivotal mean in our case do you think?
+## What does Pivotal mean to you?
 
 <p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>Archimedes&emsp;&emsp;Mechanical advantage&emsp;&emsp;Client support</strong></p>
 
@@ -39,19 +39,19 @@ with extensive experience assisting
 **US-based investors** to  
 **establish and grow their European investments**.
 
-## Who is Pivotal? | Who is Pivotal Corporate?
+## Who is Pivotal Corporate?
 
 <p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>Solutions-driven&emsp;&emsp;US-based&emsp;&emsp;European investments</strong></p>
 
 Pivotal Corporate is an **independent, solutions-driven firm** that helps **US-based investors establish and grow their European investments**.
 
-## US investors | What type of clients does Pivotal mainly support?
+## Who does Pivotal mainly support?
 
 <p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>US-based&emsp;&emsp;Europe&emsp;&emsp;Jurisdictions</strong></p>
 
 Pivotal mainly supports **US-based investors coming into Europe**. I find that interesting because it combines **business, finance, accounting and working across different jurisdictions**.
 
-## Why Pivotal? | Why does this type of company interest you?
+## Why does Pivotal interest you?
 
 <p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>Financial Mathematics&emsp;&emsp;Real decisions&emsp;&emsp;Client value</strong></p>
 
@@ -64,19 +64,19 @@ We partner with our clients
 using our local networks  
 in a number of jurisdictions to ensure their project runs smoothly from the **initial assessment phase through to the project being fully operational**.
 
-## Every stage | How does Pivotal support a client?
+## How does Pivotal support clients?
 
 <p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>Every stage&emsp;&emsp;Initial assessment&emsp;&emsp;Fully operational</strong></p>
 
 Pivotal supports clients **from the initial assessment right through to becoming fully operational**, rather than just providing one isolated service.
 
-## Jurisdictions | Why are local networks in different jurisdictions important?
+## Why do local networks matter?
 
 <p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>Local networks&emsp;&emsp;Jurisdictions&emsp;&emsp;Operational</strong></p>
 
 Businesses operating internationally have to deal with **different legal, financial, regulatory and administrative requirements**. Pivotal's local networks help clients manage those differences.
 
-## International data | What interests you about working across jurisdictions?
+## What interests you about international work?
 
 <p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>Standardise&emsp;&emsp;Time zones&emsp;&emsp;Reconcile</strong></p>
 
@@ -86,19 +86,19 @@ I have already seen in data projects how important it is to **standardise inform
 
 With our **client-focused and solutions-driven delivery**, we have the ability to adapt to the **ever-changing needs of our clients quickly and efficiently**, becoming the **pivot point for their business** and allowing them to concentrate on their **core business needs as they grow**.
 
-## Client-focused | What does client-focused mean to you?
+## What does client-focused mean?
 
 <p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>Client-focused&emsp;&emsp;Ever-changing&emsp;&emsp;Core business</strong></p>
 
 It means understanding **what the client actually needs**, responding quickly and giving them information they can use rather than simply completing a task.
 
-## Pivot point | Why is Pivotal a good name?
+## Why is Pivotal a good name?
 
 <p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>Pivot point&emsp;&emsp;Mechanical advantage&emsp;&emsp;Core business</strong></p>
 
 In physics, a pivot gives a lever **mechanical advantage**. I see the same idea here: good accounting and administration support allows the client to concentrate on **running and growing the core business**.
 
-## Adaptability | Can you give an example of adapting when the data was difficult?
+## When have you adapted to difficult data?
 
 <p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>Ever-changing&emsp;&emsp;Standardise&emsp;&emsp;Check</strong></p>
 
@@ -108,19 +108,19 @@ In my **Strava and Dublin Bikes work**, the timestamps were represented differen
 
 **Delivery is what sets us apart from other firms.** Our clients appreciate our **unrivalled responsiveness** and our **passion and dedication**. We pride ourselves on being **accessible, reliable, practical, and professional at all times**.
 
-## Delivery | What does Pivotal say sets it apart?
+## What sets Pivotal apart?
 
 <p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>Delivery&emsp;&emsp;Unrivalled responsiveness&emsp;&emsp;Professional</strong></p>
 
 **Delivery.** Pivotal wants to be **responsive, accessible, reliable, practical and professional** for its clients.
 
-## High standards | Can you give an example of setting high standards for yourself?
+## How have you shown high standards?
 
 <p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>High standards&emsp;&emsp;Self-motivated&emsp;&emsp;Beyond syllabus</strong></p>
 
 I regularly practise beyond what is required in college. For example, I built an **aircraft data project using Python and Pandas**, combining **OpenSky and PlaneSpotters** data and working from more than **500,000 records down to the relevant 61 aircraft**.
 
-## Practical communication | How do you make analysis useful to someone else?
+## How do you make analysis useful?
 
 <p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>Practical&emsp;&emsp;Client value&emsp;&emsp;Decision</strong></p>
 
@@ -130,13 +130,13 @@ I compared **three PCP finance options in Excel**, calculated the total costs an
 
 We are currently seeking to hire a **proactive, self-motivated, and highly organised student** to join the business. This role will support our **Client Service Teams** in providing **Accounting & Administration services** to a portfolio of clients, ensuring that our clients are provided with a **high-quality professional service**.
 
-## Proactive | What shows that you are proactive and self-motivated?
+## How are you proactive and self-motivated?
 
 <p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>Proactive&emsp;&emsp;Self-motivated&emsp;&emsp;Practical</strong></p>
 
 A lot of my projects are **self-directed rather than college assignments**. I use what I learn in college and then build something practical with it, such as the **aircraft project, Strava analysis and financial calculators**.
 
-## Accuracy | Give an example of using Excel accurately.
+## How have you used Excel accurately?
 
 <p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>Detail-oriented&emsp;&emsp;Reconcile&emsp;&emsp;Accurate</strong></p>
 
@@ -144,7 +144,7 @@ I built an **Excel reconciliation check** comparing **amount due and amount paid
 
 `=IF(Paid=0,"Not Paid",IF(Paid<Due,"Underpaid",IF(Paid=Due,"Paid","Overpaid")))`
 
-## Next steps | Where would you like to take these skills next?
+## Where would you take these skills next?
 
 <p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>Genuine desire&emsp;&emsp;Learn&emsp;&emsp;Add value</strong></p>
 
@@ -156,31 +156,31 @@ I am still early in that proficiency path, but I would like to move into **time-
 
 # What I learned from Pivotal’s LinkedIn
 
-## Growth | How quickly is Pivotal growing?
+## How quickly is Pivotal growing?
 
 <p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>2020&emsp;&emsp;85 employees&emsp;&emsp;Dublin / London</strong></p>
 
 LinkedIn currently shows about **85 employees**, with continued recruitment in **Shannon** and a stated growth focus on **Dublin and London**. The company was founded in **2020**. Eight of your employees went to UL.
 
-## UL connection | Do we take Co-op seriously?
+## Do we take Co-op seriously?
 
 <p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>UL Co-op&emsp;&emsp;Returned&emsp;&emsp;Career path</strong></p>
 
 Yes and the evidence for that is that **Brian Nolan returned as an Assistant Client Manager after previously spending nine months at Pivotal on UL work placement**. That is probably the most relevant LinkedIn fact for me as a UL Co-op applicant.
 
-## Aviation | How important is aviation to Pivotal?
+## How important is aviation to Pivotal?
 
 <p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>Aviation leasing&emsp;&emsp;Growth&emsp;&emsp;Catherine Wixted</strong></p>
 
 It is clearly a major business area. They recently hired **two Vice Presidents and a Corporate Administrator specifically to strengthen aviation leasing**, including **Catherine Wixted**, my interviewer.
 
-## Scale | What kind of transactions are they involved in?
+## What scale of transactions does Pivotal handle?
 
 <p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>27 aircraft&emsp;&emsp;15 jurisdictions&emsp;&emsp;$779m portfolio</strong></p>
 
 Pivotal was appointed **Managing Agent for MAST 2026-1**: **27 aircraft, 18 lessees across 15 jurisdictions**, with about **$615 million of notes** backed by an aircraft portfolio worth about **$779 million**. That shows the scale and international nature of the work.
 
-## Culture | What impression did you get of the company?
+## What impression did you get of Pivotal?
 
 <p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>Team events&emsp;&emsp;Get involved&emsp;&emsp;Close team</strong></p>
 
@@ -200,7 +200,7 @@ It looks like a growing but fairly close team: LinkedIn shows **staff events, ch
 
 # Questions to Show you fit the role
 
-## Tell us something that shows you are proactive and self-motivated.
+## How are you proactive and self-motivated?
 
 <p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>Proactive&emsp;&emsp;Self-motivated&emsp;&emsp;Independent projects</strong></p>
 
@@ -232,7 +232,7 @@ That is a simple example of turning quantitative data into a useful **categorica
 
 My degree combines **Financial Accounting, Finance, Financial Mathematics, Statistics and Data Analysis**. My work and projects then give me a chance to apply those ideas practically — checking figures, reconciling data, analysing information and presenting it clearly.
 
-## Where would you like to take these skills next?
+## Where would you take these skills next?
 
 <p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>Time series&emsp;&emsp;Machine learning&emsp;&emsp;Add value</strong></p>
 
@@ -289,7 +289,7 @@ But I am **proactive, willing to take responsibility and prepared to get involve
 # Company Administration, Relationships & Client Care
 
 
-## Company administration | What do you think company administration involves?
+## What does company administration involve?
 
 <p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>Company administration&emsp;&emsp;Accurate records&emsp;&emsp;Deadlines</strong></p>
 
@@ -297,7 +297,7 @@ It means keeping the **records, documents, schedules and information around a co
 
 I would be coming in to learn Pivotal's processes, but my approach would be simple: understand the task, complete it accurately and check it before it moves on.
 
-## Relationships | How would you build business-like relationships with clients and intermediaries?
+## How would you build client relationships?
 
 <p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>Business-like relationships&emsp;&emsp;Intermediaries&emsp;&emsp;Internal clients</strong></p>
 
@@ -305,7 +305,7 @@ I would be **approachable but professional**: listen properly, respond clearly a
 
 My customer-service experience at **Mr Price** taught me that people remember whether you were helpful, reliable and easy to deal with.
 
-## Client care | What does a high standard of client care mean to you?
+## What does good client care mean?
 
 <p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>Client care&emsp;&emsp;Responsive&emsp;&emsp;Professional</strong></p>
 
@@ -317,7 +317,7 @@ That fits Pivotal's own emphasis on being **responsive, accessible, reliable, pr
 
 # Accounting, Reconciliations & Reporting
 
-## Duties | Which one does NOT belong?
+## Which duty does not belong?
 
 <p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>Journal entries&emsp;&emsp;Reconciliations&emsp;&emsp;Reporting</strong></p>
 
@@ -329,7 +329,7 @@ Journal entries · Account reconciliations · Accounts Payable · Accounts Recei
 
 The others all belong directly to the accounting and reporting side of the role.
 
-## Six duties | What accounting work could you be helping with?
+## What accounting work could you support?
 
 <p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>Journal entries&emsp;&emsp;AP / AR&emsp;&emsp;Reporting</strong></p>
 
@@ -337,7 +337,7 @@ I could be helping with **journal entries, reconciliations, Accounts Payable, Ac
 
 I have the academic foundation from university, and the placement is where I would learn how Pivotal applies it professionally.
 
-## Reconciliation | What is a reconciliation?
+## What is a reconciliation?
 
 <p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>Compare&emsp;&emsp;Difference&emsp;&emsp;Investigate</strong></p>
 
@@ -349,7 +349,7 @@ I used a **nested IF statement** so Excel classified each record as **Not Paid, 
 
 That turns raw numerical data into a useful **categorical status** that can be checked quickly.
 
-## Excel logic | What Excel logic do you know?
+## What Excel logic do you know?
 
 <p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>IF / IFS&emsp;&emsp;XLOOKUP&emsp;&emsp;SUMIFS</strong></p>
 
@@ -381,7 +381,7 @@ The important thing is **choosing the right tool for the size and purpose of the
 
 He does not need to mention any of this unless they ask a follow-up.
 
-## AP and AR | What is the difference between Accounts Payable and Accounts Receivable?
+## What is the difference between AP and AR?
 
 <p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>Payable&emsp;&emsp;Receivable&emsp;&emsp;Cash</strong></p>
 
@@ -397,7 +397,7 @@ Easy memory rule:
 
 At **O'Mahony's**, I have already seen why invoices, orders, quantities and destinations need to agree before something moves to the next stage.
 
-## Journals | What is a journal entry?
+## What is a journal entry?
 
 <p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>Transaction&emsp;&emsp;Debit&emsp;&emsp;Credit</strong></p>
 
@@ -405,7 +405,7 @@ A journal entry records a financial transaction in the accounting system using t
 
 I have covered this through **Financial Accounting and Accounting for Financial Decision Making**, and the placement would let me learn how Pivotal handles it in practice.
 
-## Accuracy | Why does accurate financial documentation matter?
+## Why does accurate documentation matter?
 
 <p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>Supporting documentation&emsp;&emsp;Check&emsp;&emsp;Trust</strong></p>
 
@@ -419,7 +419,7 @@ That makes the work easier to **check, reconcile, report and audit**, and means 
 
 # Compliance, Research & Process Improvement
 
-## Compliance | Why are accurate records and supporting documents important?
+## Why do accurate records matter?
 
 <p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>Accounting standards&emsp;&emsp;Regulatory reporting&emsp;&emsp;Traceable</strong></p>
 
@@ -427,7 +427,7 @@ Good records support **accounting standards, tax, regulatory reporting and later
 
 The information needs to be accurate, but also **traceable back to its source**.
 
-## Research | How would you approach a financial or market research task?
+## How would you approach research?
 
 <p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>Financial&emsp;&emsp;Accounting&emsp;&emsp;Market</strong></p>
 
@@ -435,7 +435,7 @@ I would start with reliable sources, organise the information, **cross-check any
 
 I used that approach in my aircraft project, where I combined **OpenSky and PlaneSpotters** rather than relying on a single source.
 
-## Improvement | Give an example of process-improvement thinking.
+## How have you improved a process?
 
 <p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>Process improvement&emsp;&emsp;Operational improvement&emsp;&emsp;Check</strong></p>
 
@@ -443,7 +443,7 @@ If I see the same task being repeated, I naturally think about whether it can be
 
 My Excel reconciliation is a simple example: instead of manually interpreting each balance, the logical formula classifies it consistently.
 
-## Data quality | Give an example of being careful with data.
+## How have you handled data carefully?
 
 <p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>Timestamp&emsp;&emsp;Normalise&emsp;&emsp;Reconcile</strong></p>
 
@@ -459,7 +459,7 @@ That is important in accounting too, particularly when working across **differen
 
 # Company Secretarial & Day-to-Day Administration
 
-## Company Secretarial | What is Company Secretarial?
+## What is Company Secretarial?
 
 <p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>Governance&emsp;&emsp;Statutory&emsp;&emsp;Regulatory</strong></p>
 
@@ -469,7 +469,7 @@ It includes things like **maintaining statutory records, company filings, board 
 
 It is not the same as an ordinary secretary or general administrator.
 
-## Registers | Why do schedules and registers matter?
+## Why do registers matter?
 
 <p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>Schedules&emsp;&emsp;Registers&emsp;&emsp;Accurate</strong></p>
 
@@ -477,7 +477,7 @@ A register is only useful if it is **current, complete and accurate**.
 
 I would treat maintaining one like a data task: update it systematically, preserve traceability and investigate anything that does not agree.
 
-## KYC and CDD | What do KYC and CDD mean?
+## What do KYC and CDD mean?
 
 <p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>KYC&emsp;&emsp;CDD&emsp;&emsp;Statutory requirements</strong></p>
 
@@ -487,7 +487,7 @@ I would treat maintaining one like a data task: update it systematically, preser
 
 For an international corporate-services firm, that is a fundamental part of meeting statutory and compliance requirements.
 
-## Legal documents | How would you approach documents requiring signatures?
+## How would you handle signed documents?
 
 <p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>Correct&emsp;&emsp;Authorised&emsp;&emsp;Regulatory</strong></p>
 
@@ -495,7 +495,7 @@ I would make sure it is the **correct document and correct version**, that it is
 
 With legal or regulatory documentation, I would rather **check once more than make an assumption**.
 
-## Day-to-day administration | How would you approach ordinary administrative tasks?
+## How would you handle admin tasks?
 
 <p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>Prioritise&emsp;&emsp;Complete&emsp;&emsp;Professional</strong></p>
 
