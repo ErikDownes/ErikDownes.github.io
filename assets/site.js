@@ -583,17 +583,18 @@
     const navHref = cleanText(heading.dataset?.navHref);
     const handle = cleanText(heading.dataset?.menuLabel);
     const question = cleanText(heading.dataset?.questionText);
-    if (handle && question) return { handle, question, id: heading.id, navHref };
+    const level = heading.tagName;
+    if (handle && question) return { handle, question, id: heading.id, navHref, level };
 
     const raw = cleanText(heading.textContent);
     if (!raw) return null;
 
     const parsed = splitQuestionHeading(raw);
-    if (parsed) return { ...parsed, id: heading.id, navHref };
+    if (parsed) return { ...parsed, id: heading.id, navHref, level };
 
-    // Legacy H2: no pipe means the same text is both the menu handle
+    // Legacy heading: no pipe means the same text is both the menu handle
     // and the visible section title.
-    return { handle: raw, question: raw, id: heading.id, navHref };
+    return { handle: raw, question: raw, id: heading.id, navHref, level };
   };
 
   const populateQuestionMenu = (item, headings, pageUrl) => {
@@ -613,6 +614,7 @@
       link.href = question.navHref ? new URL(question.navHref, pageUrl.href).href : `${pageUrl.pathname}${pageUrl.search}#${id}`;
       link.textContent = question.handle;
       link.title = question.question;
+      if (question.level === 'H1') link.classList.add('dropmenu-h1');
       link.addEventListener('click', () => {
         item.classList.remove('is-open');
         item.querySelector('[data-nav-toggle]')?.setAttribute('aria-expanded', 'false');
@@ -932,6 +934,7 @@
     const isAviationLibrary = /\/aviation(?:\.html)?$/.test(cleanPagePath);
     const isCareerLibrary = /\/career(?:\.html)?$/.test(cleanPagePath);
     const isPortfolioLibrary = /\/portfolio(?:\.html)?$/.test(cleanPagePath);
+    const includeH1Delimiters = /\/pivotal-corporate-study(?:\.html)?$/.test(cleanPagePath);
 
     try {
       if (isPortfolioLibrary) {
@@ -950,7 +953,8 @@
         if (isStudiesLibrary) {
           populateModuleMenu(item, Array.from(body.querySelectorAll('a[href]')), pageUrl);
         } else {
-          const headings = Array.from(body.querySelectorAll(':scope > h2')).filter(heading => headingInfo(heading));
+          const selector = includeH1Delimiters ? ':scope > h1, :scope > h2' : ':scope > h2';
+          const headings = Array.from(body.querySelectorAll(selector)).filter(heading => headingInfo(heading));
           populateQuestionMenu(item, headings, pageUrl);
         }
         return;
@@ -966,7 +970,8 @@
         return;
       }
 
-      const headings = Array.from(parsed.querySelectorAll('#docBody > h2')).filter(heading => headingInfo(heading));
+      const selector = includeH1Delimiters ? '#docBody > h1, #docBody > h2' : '#docBody > h2';
+      const headings = Array.from(parsed.querySelectorAll(selector)).filter(heading => headingInfo(heading));
       populateQuestionMenu(item, headings, pageUrl);
     } catch (_) {
       menu.replaceChildren();
