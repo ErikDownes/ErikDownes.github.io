@@ -14,23 +14,18 @@ public_mode: true
 
 This is the **working study page** for Pivotal Corporate and the targeted cv field entries to get the job. Read about the company, role, accounting, administration and corporate-services notes here and  enjoy learning and knowing whatever sticks. The other **Pivotal Corporate Interview** QAs is what counts for interview but only if yur cv is tailored for the job.  
 
-```
-<br>
-<br>
-<br>
-```
+# Pivotal Corporate Exposition
+
+This is the **working study page** for Pivotal Corporate and the targeted CV field entries to get the job. Read about the company, role, accounting, administration and corporate-services notes here and enjoy learning and knowing whatever sticks. The other **Pivotal Corporate Interview** Q&As are what count for interview, but only if your CV is tailored for the job. Send that email!
+
+
 
 ## Job Spec Slides
 
 The **Pivotal Corporate Job Spec** has been converted into a **21-slide visual study deck** for quick review and interview preparation.
 
-**[Open Job Spec Slides →](/job-spec-slides/)**
+**[Open Job Spec Slides →](https://docs.google.com/presentation/d/1CG_yaUNqHwJVuglcLoc6CLIq60AG7UGlTv5gwQuNS4s/edit?usp=sharing)**
 
-```
-<br>
-<br>
-<br>
-```
 
 # Pivotal Corporate UL CV
 
