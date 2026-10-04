@@ -19,7 +19,7 @@
       head.append(label, suggested);
       const reminder = document.createElement('p');
       reminder.className = 'answer-practice-reminder';
-      reminder.textContent = 'Use your breadcrumbs, then say the answer in your own words. Recording is optional.';
+      reminder.textContent = 'Say the answer in your own words. Recording is optional.';
       const timer = document.createElement('div');
       timer.className = 'answer-practice-timer';
       timer.textContent = `0:00 / ~${formatTime(target)} target`;
