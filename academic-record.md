@@ -11,29 +11,7 @@ public_mode: true
 
 
 
-## Leaving Certificate · 2024
 
-**Crescent College Comprehensive S.J., Limerick**
-
-**579 CAO points**
-
-
-| Subject | Result |
-| ------------------- | ------ |
-| Mathematics | **H1** |
-| Physics | **H1** |
-| Applied Mathematics | **H1** |
-| Business | **H1** |
-| Spanish | **H3** |
-| English | **H3** |
-| Irish | **O3** |
-
-
-**Kolvenbach Medal for Business · May 2024** — awarded for achieving the **highest Leaving Certificate Business grade at Crescent College**.
-
-**Certificate of Academic Excellence · September 2023** — awarded for outstanding academic performance at Crescent College.
-
-For my Leaving Certificate Applied Mathematics project, I modelled the minimum height required for a roller-coaster cart to complete a loop. I independently researched air resistance beyond the course material and incorporated it into the model, achieving **86% in the project**.
 
 ## First Year · 2024/25
 
@@ -107,12 +85,76 @@ Results are not yet available. Current modules:
 - **MS4214** — Statistical Inference
 - **MS4215** — Advanced Data Analysis
 
-### Semester 2 · Cooperative Education
+### Semester 2 · Cooperative Education  
+  
+  
+Fourth Year · 2027/28
+
+### Semester 1 · Planned
+
+- **Project 1**
+- **Stochastic Processes**
+- Three elective modules, with options including:
+  - Introduction to Fluid Mechanics
+  - Numerical Methods for Partial Differential Equations
+  - Discrete Mathematics 2
+  - Perturbation Techniques and Asymptotics
+  - Operations Research 2
+  - Geometry
+
+### Semester 2 · Planned
+
+- **Project 2**
+- **Stochastic Differential Equations for Finance**
+- **Mathematical and Statistical Models of Investments**
+- **Time Series Analysis**
+- Further elective options including:
+  - Advanced Data Modelling
+  - Dynamical Systems
+  - Optimisation
+  - Mathematical Control Theory
+  - Mathematical Modelling
+
+##   
+  
+Leaving Certificate · 2024
+
+**Crescent College Comprehensive S.J., Limerick**
+
+**579 CAO points**
+
+
+| Subject | Result |
+| ------------------- | ------ |
+| Mathematics | **H1** |
+| Physics | **H1** |
+| Applied Mathematics | **H1** |
+| Business | **H1** |
+| Spanish | **H3** |
+| English | **H3** |
+| Irish | **O3** |
+
+
+
+
+## Highest LC Business Grade at Crescent
+
+**Kolvenbach Medal for Business · May 2024** — awarded for achieving the **highest Leaving Certificate Business grade at Crescent College**.
+
+## Academic Excellence
+
+**Certificate of Academic Excellence · September 2023** — awarded for outstanding academic performance at Crescent College.
+
+## Exceptional Classroom-Based Assessments
+
+Achieved **Exceptional**, the **highest CBA descriptor**, in both **Mathematics and Science**, demonstrating a strong standard of independent and project-based work.
+
+## Applied Mathematics Project
+
+Modelled the minimum height required for a roller-coaster cart to complete a loop. Independently researched **air resistance beyond the course material** and incorporated it into the model, achieving **86%**.
 
 **CO4320 — Cooperative Education** · full-time professional placement.  
-  
-  
-  
+
 UL Grade Key
 
 
