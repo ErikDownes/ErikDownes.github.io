@@ -54,22 +54,6 @@ I would bring an organised, detail-oriented and positive approach, strong willin
 
 &nbsp;
 
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
 ## Job Description  Original
 
 ### Pivotal Corporate – Co-Op Student/Corporate Administrator
