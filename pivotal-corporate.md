@@ -11,14 +11,6 @@ public_mode: true
 ---
 # Questions to show you know the role
 
-## Do you agree that a well placed  pivot can turn a small effort force  into a much greater output force?
-
-**Guided question:** In physics, a lever and a well-positioned pivot provide mechanical advantage. In business, the right accounting and administration support can help clients achieve more. Do you agree that this makes **Pivotal** a meaningful name?
-
-**Short answer:** Yes. The connection for me is that **the right support can make a much greater result possible**.
-
-
-
 ## What does the word Pivotal mean in our case do you think?
 
 Well, that's actually an interesting one, because **physics and applied maths are subjects I really enjoy**. Your name reminds me of a saying attributed to Archimedes: **“Give me a place to stand and I will move the earth.”**
@@ -31,37 +23,97 @@ That's the connection I make with Pivotal: you provide the reliable accounting a
 
 
 
-## Who is Pivotal Corporate?
+&nbsp;
 
-Pivotal Corporate is an **independent, solutions-driven corporate services firm** that helps **US-based investors establish and grow their businesses in Europe**.
+# The Company Paragraph
 
-## How does Pivotal support clients?
+Pivotal Corporate is an **independent, solutions-driven firm**  
+with extensive experience assisting  
+**US-based investors** to  
+**establish and grow their European investments**.
 
-Pivotal provides and end-to-end service. From  **initial assessment** to  being **fully operational**, using its local networks across different jurisdictions.
+## Who is Pivotal? | Who is Pivotal Corporate?
 
-## What does client-focused mean?
+Pivotal Corporate is an **independent, solutions-driven firm** that helps **US-based investors establish and grow their European investments**.
 
-It means **adapting quickly to each client’s changing needs** and helping them focus on **running and growing their core business**.
+## US investors | What type of clients does Pivotal mainly support?
 
-## What sets Pivotal apart?
+Pivotal mainly supports **US-based investors coming into Europe**. I find that interesting because it combines **business, finance, accounting and working across different jurisdictions**.
 
-**Delivery.** Pivotal aims to be **responsive, accessible, reliable, practical and professional**.
+## Why Pivotal? | Why does this type of company interest you?
 
-## What is the role?
+My degree combines **Financial Mathematics, accounting, finance, statistics and data analysis**, so I like work where accurate financial information supports real business decisions.
 
-The role supports the **Client Service Teams** in providing **accounting and administration services** and maintaining a **high-quality professional service**.
+# The Client Journey Paragraph
 
+We partner with our clients  
+**at every stage in the process**  
+using our local networks  
+in a number of jurisdictions to ensure their project runs smoothly from the **initial assessment phase through to the project being fully operational**.
 
+## Every stage | How does Pivotal support a client?
 
-## What is Company Secretarial?
+Pivotal supports clients **from the initial assessment right through to becoming fully operational**, rather than just providing one isolated service.
 
-**Company Secretarial is a service Pivotal provides to client companies** to help them meet their **corporate governance, statutory and regulatory obligations**.
+## Jurisdictions | Why are local networks in different jurisdictions important?
 
-It includes things like **maintaining statutory records, company filings, board minutes and resolutions, and supporting the board of directors**.
+Businesses operating internationally have to deal with **different legal, financial, regulatory and administrative requirements**. Pivotal's local networks help clients manage those differences.
 
-It is not the same as an ordinary secretary or general administrator.
+## International data | What interests you about working across jurisdictions?
 
-# Show you fit the role
+I have already seen in data projects how important it is to **standardise information before comparing or merging it**. Even timestamps can involve **UTC, time zones and daylight-saving changes**, which is also relevant when working with international financial records.
+
+# The Pivot Point Paragraph
+
+With our **client-focused and solutions-driven delivery**, we have the ability to adapt to the **ever-changing needs of our clients quickly and efficiently**, becoming the **pivot point for their business** and allowing them to concentrate on their **core business needs as they grow**.
+
+## Client-focused | What does client-focused mean to you?
+
+It means understanding **what the client actually needs**, responding quickly and giving them information they can use rather than simply completing a task.
+
+## Pivot point | Why is Pivotal a good name?
+
+In physics, a pivot gives a lever **mechanical advantage**. I see the same idea here: good accounting and administration support allows the client to concentrate on **running and growing the core business**.
+
+## Adaptability | Can you give an example of adapting when the data was difficult?
+
+In my **Strava and Dublin Bikes work**, the timestamps were represented differently. Using **Pandas**, I parsed and standardised the datetime and timezone information before merging the data. It took some trial and error, but I kept checking until the records aligned correctly.
+
+# The Delivery Paragraph
+
+**Delivery is what sets us apart from other firms.** Our clients appreciate our **unrivalled responsiveness** and our **passion and dedication**. We pride ourselves on being **accessible, reliable, practical, and professional at all times**.
+
+## Delivery | What does Pivotal say sets it apart?
+
+**Delivery.** Pivotal wants to be **responsive, accessible, reliable, practical and professional** for its clients.
+
+## High standards | Can you give an example of setting high standards for yourself?
+
+I regularly practise beyond what is required in college. For example, I built an **aircraft data project using Python and Pandas**, combining **OpenSky and PlaneSpotters** data and working from more than **500,000 records down to the relevant 61 aircraft**.
+
+## Practical communication | How do you make analysis useful to someone else?
+
+I compared **three PCP finance options in Excel**, calculated the total costs and presented the result clearly. Two were almost identical and one was about **€800 cheaper**. The important part was making the result easy for someone else to use.
+
+# The Role Paragraph
+
+We are currently seeking to hire a **proactive, self-motivated, and highly organised student** to join the business. This role will support our **Client Service Teams** in providing **Accounting & Administration services** to a portfolio of clients, ensuring that our clients are provided with a **high-quality professional service**.
+
+## Proactive | What shows that you are proactive and self-motivated?
+
+A lot of my projects are **self-directed rather than college assignments**. I use what I learn in college and then build something practical with it, such as the **aircraft project, Strava analysis and financial calculators**.
+
+## Accuracy | Give an example of using Excel accurately.
+
+I built an **Excel reconciliation check** comparing **amount due and amount paid**. I used nested **IF statements** to classify the result as **Not Paid, Underpaid, Paid or Overpaid**.
+
+`=IF(Paid=0,"Not Paid",IF(Paid<Due,"Underpaid",IF(Paid=Due,"Paid","Overpaid")))`
+
+## Next steps | Where would you like to take these skills next?
+
+I am still early in that proficiency path, but I would like to move into **time-series forecasting, financial modelling and machine learning**. With the amount of financial and operational information involved in supporting international businesses, I think there is huge potential for **data analysis and eventually more advanced machine-learning techniques**.
+
+# Questions to Show you fit the role
 
 ## Tell us something that shows you are proactive and self-motivated.
 
