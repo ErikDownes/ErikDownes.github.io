@@ -2017,9 +2017,41 @@
       listen.setAttribute('aria-label', 'Listen to the current view');
       listen.title = 'Listen to the current view';
       listen.addEventListener('click', () => {
-        const pageTitle = document.querySelector('.doc-paper > h1')?.textContent || '';
-        const visibleText = body?.innerText || '';
-        speak({ text: `${pageTitle}. ${visibleText}`, button: listen, rate: questionsOnly ? 0.89 : 0.92 });
+        const visible = element => {
+          if (!element) return false;
+          const style = getComputedStyle(element);
+          return style.display !== 'none' && style.visibility !== 'hidden' && !element.hidden;
+        };
+
+        const sectionStarts = [
+          ...Array.from(body.querySelectorAll(':scope > h1')),
+          ...practiceHeadings()
+        ].filter(visible);
+
+        let start = null;
+
+        if (location.hash) {
+          try {
+            const target = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+            if (target && body.contains(target) && visible(target)) start = target;
+          } catch (_) {}
+        }
+
+        if (!start && window.scrollY > 40) {
+          const topOffset = (topbar?.getBoundingClientRect().height || 0) + 8;
+          start = sectionStarts.find(element => element.getBoundingClientRect().bottom >= topOffset) || null;
+        }
+
+        const nodes = Array.from(body.children).filter(visible);
+        const startIndex = start ? Math.max(0, nodes.indexOf(start)) : 0;
+        const text = nodes
+          .slice(startIndex)
+          .map(node => node.innerText || node.textContent || '')
+          .join(' ')
+          .replace(/\s+/g, ' ')
+          .trim();
+
+        speak({ text, button: listen, rate: questionsOnly ? 0.89 : 0.92 });
       });
       rail.appendChild(listen);
     }
