@@ -934,7 +934,7 @@
     const isAviationLibrary = /\/aviation(?:\.html)?$/.test(cleanPagePath);
     const isCareerLibrary = /\/career(?:\.html)?$/.test(cleanPagePath);
     const isPortfolioLibrary = /\/portfolio(?:\.html)?$/.test(cleanPagePath);
-    const includeH1Delimiters = /\/pivotal-corporate-study(?:\.html)?$/.test(cleanPagePath);
+    const includeH1Delimiters = /\/pivotal-corporate(?:-study)?(?:\.html)?$/.test(cleanPagePath);
 
     try {
       if (isPortfolioLibrary) {
