@@ -1963,8 +1963,9 @@
   });
 
   /* -----------------------------------------------------------------------
-     Floating page tools: CMS, GitHub, Print, Listen, Questions-only filter.
-     Print and Listen always follow the current filter state.
+     Floating page tools: Edit, GitHub, Print, Listen, Questions, Answers.
+     Questions and Answers are independent binary switches; Print and Listen
+     always use the content currently visible on the page.
      ----------------------------------------------------------------------- */
   const setupFloatingTools = () => {
     if (!pageCms && !pageGithub && !pagePrint) return;
@@ -1973,14 +1974,15 @@
     rail.setAttribute('aria-label', 'Page tools');
 
     if (pageCms?.href) {
-      const cms = document.createElement('a');
-      cms.id = 'floating-page-cms';
-      cms.href = pageCms.href;
-      cms.target = '_blank';
-      cms.rel = 'noopener';
-      cms.textContent = 'CMS';
-      cms.setAttribute('aria-label', 'Edit this page in CMS');
-      rail.appendChild(cms);
+      const edit = document.createElement('a');
+      edit.id = 'floating-page-cms';
+      edit.href = pageCms.href;
+      edit.target = '_blank';
+      edit.rel = 'noopener';
+      edit.textContent = 'Edit';
+      edit.setAttribute('aria-label', 'Edit this page');
+      edit.title = 'Edit this page';
+      rail.appendChild(edit);
       pageCms.hidden = true;
     }
 
@@ -2006,7 +2008,8 @@
     rail.appendChild(print);
     if (pagePrint) pagePrint.hidden = true;
 
-    let questionsOnly = false;
+    let questionsVisible = true;
+    let answersVisible = true;
     const questions = practiceHeadings();
 
     if (hasSpeech) {
@@ -2051,37 +2054,73 @@
           .replace(/\s+/g, ' ')
           .trim();
 
-        speak({ text, button: listen, rate: questionsOnly ? 0.89 : 0.92 });
+        speak({ text, button: listen, rate: answersVisible ? 0.92 : 0.89 });
       });
       rail.appendChild(listen);
     }
 
     if (questions.length && body) {
-      const filter = document.createElement('button');
-      filter.id = 'floating-page-filter';
-      filter.type = 'button';
-      filter.setAttribute('aria-pressed', 'false');
-      filter.setAttribute('aria-label', 'Questions-only filter off');
-      filter.title = 'Questions only';
-      filter.textContent = 'Filter Off';
+      const makeSwitch = ({ id, label, checked, onChange }) => {
+        const button = document.createElement('button');
+        button.id = id;
+        button.type = 'button';
+        button.className = 'floating-page-switch';
+        button.setAttribute('role', 'switch');
+        button.setAttribute('aria-checked', String(checked));
+        button.setAttribute('aria-label', `${label} ${checked ? 'shown' : 'hidden'}`);
+        button.title = `Show or hide ${label.toLowerCase()}`;
 
-      const setFilter = active => {
-        questionsOnly = Boolean(active);
-        body.classList.toggle('questions-only-filter', questionsOnly);
-        filter.classList.toggle('is-active', questionsOnly);
-        filter.setAttribute('aria-pressed', String(questionsOnly));
-        filter.setAttribute('aria-label', `Questions-only filter ${questionsOnly ? 'on' : 'off'}`);
-        filter.textContent = questionsOnly ? 'Filter On' : 'Filter Off';
-        resetAudio();
+        const text = document.createElement('span');
+        text.className = 'floating-page-switch-label';
+        text.textContent = label;
+
+        const track = document.createElement('span');
+        track.className = 'floating-page-switch-track';
+        track.setAttribute('aria-hidden', 'true');
+
+        const thumb = document.createElement('span');
+        thumb.className = 'floating-page-switch-thumb';
+        track.appendChild(thumb);
+        button.append(text, track);
+
+        const setChecked = value => {
+          button.setAttribute('aria-checked', String(value));
+          button.classList.toggle('is-on', value);
+          button.setAttribute('aria-label', `${label} ${value ? 'shown' : 'hidden'}`);
+          onChange(value);
+          resetAudio();
+        };
+
+        setChecked(checked);
+        button.addEventListener('click', () => setChecked(button.getAttribute('aria-checked') !== 'true'));
+        return button;
       };
 
-      filter.addEventListener('click', () => setFilter(!questionsOnly));
-      rail.appendChild(filter);
+      const questionSwitch = makeSwitch({
+        id: 'floating-page-questions',
+        label: 'Questions',
+        checked: true,
+        onChange: value => {
+          questionsVisible = value;
+          body.classList.toggle('questions-hidden', !questionsVisible);
+        }
+      });
+
+      const answerSwitch = makeSwitch({
+        id: 'floating-page-answers',
+        label: 'Answers',
+        checked: true,
+        onChange: value => {
+          answersVisible = value;
+          body.classList.toggle('answers-hidden', !answersVisible);
+        }
+      });
+
+      rail.append(questionSwitch, answerSwitch);
     }
 
     document.body.appendChild(rail);
   };
-
   setupFloatingTools();
 
   /* -----------------------------------------------------------------------
