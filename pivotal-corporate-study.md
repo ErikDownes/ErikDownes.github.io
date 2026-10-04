@@ -10,6 +10,8 @@ public_mode: true
 ---
 # Pivotal Corporate Exposition
 
+
+
 This is the **working study page** for Pivotal Corporate and the targeted cv field entries to get the job. Read about the company, role, accounting, administration and corporate-services notes here and  enjoy learning and knowing whatever sticks. The other **Pivotal Corporate Interview** QAs is what counts for interview but only if yur cv is tailored for the job.  
 
 ```
