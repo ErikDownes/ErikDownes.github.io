@@ -365,7 +365,7 @@ Good administration also means handling information in a way that respects **con
 
 **Personal data  Data minimisation  Confidentiality**
 
-GDPR is not separate from good administration. If company records contain **personal data** — for example names, addresses, contact details or identification information — that information should only be used for a **legitimate business purpose**, accessed by the people who need it, and protected from **unauthorised access or disclosure**.
+GDPR is not separate from good administration. If company records contain **personal data** — for example names, addresses, contact details or identification information — that information should only be processed for a **specified, lawful purpose**, limited to what is necessary, accessed by authorised people who need it for their work, and protected from **unauthorised access or disclosure**.
 
 The principles I would keep in mind are **purpose limitation, data minimisation, accuracy, storage limitation, integrity and confidentiality**.
 
@@ -389,7 +389,9 @@ A **data controller** decides **why** personal data is processed and the essenti
 
 A **data processor** processes personal data **on behalf of a controller** and under the controller's instructions.
 
-A corporate-services firm can have different data-protection roles depending on the particular processing activity, so I would not assume the role myself — I would follow **Pivotal's policies, instructions and approved controls**.
+Pivotal's own privacy notice gives a useful example of why the distinction matters: when providing services under a client agreement, Pivotal says it is **generally a data processor** for relevant client personal data, with the **client as data controller**. For some activities — including gathering **anti-money-laundering information** and maintaining internal databases — Pivotal says it may act as the **data controller**.
+
+So I would not assume the role from the type of document alone. I would follow **Pivotal's policies, instructions, access controls and approved systems** for the particular processing activity.
 
 ## How would you build client relationships?
 
