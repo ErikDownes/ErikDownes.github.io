@@ -97,7 +97,7 @@
   </style>
   {% endif %}
 </head>
-<body class="{% if page.study_mode %}study-mode{% endif %}{% if page.profile_mode %} profile-mode{% endif %}{% if page.public_mode %} public-mode{% endif %}{% if page.path == 'coursework.md' %} education-mode{% endif %}">
+<body class="{% if page.study_mode %}study-mode{% endif %}{% if page.profile_mode %} profile-mode{% endif %}{% if page.public_mode %} public-mode{% endif %}{% if page.path == 'coursework.md' %} education-mode{% endif %}{% if page.path == 'pivotal-corporate-study.md' %} pivotal-questions-page{% endif %}">
   <header class="topbar">
     <a class="brand" href="{{ '/' | relative_url }}" aria-label="Erik Downes — Financial Maths and Data Analysis — Home">
       <img src="{{ '/assets/coop-logo.svg' | relative_url }}" alt="Erik Downes — Financial Maths and Data Analysis — University of Limerick">
