@@ -13,27 +13,27 @@ public_mode: true
 
 
 
-## Who is Pivotal Corporate and what do you do?
-
-Pivotal Corporate is an **independent, solutions-driven corporate services  firm** that helps **US-based investors establish and grow their businesses in Europe**.
-
-## What do you know about Pivotal Corporate?
-
-Pivotal Corporate is an **independent, solutions-driven firm** that helps mainly **US-based investors establish and grow their businesses in Europe**.
-
-What I found interesting is that Pivotal supports clients **through the full process** — from the initial assessment and planning stage right through to becoming fully operational.
-
-They also use their **local knowledge and networks across different jurisdictions** to help clients navigate the practical, accounting and administrative requirements involved.
-
-So, the way I understand it, Pivotal essentially becomes a **trusted local partner for an international company entering or expanding in Europe**, helping to keep everything organised and running smoothly.
 
 
+## Who is Pivotal Corporate?
 
-## What does Pivotal mean by being client-focused and solutions-driven?
+Pivotal Corporate is an **independent, solutions-driven corporate services firm** that helps **US-based investors establish and grow their businesses in Europe**.
 
-It means Pivotal **adapts quickly to what each client needs** rather than taking a one-size-fits-all approach. As those needs change, the firm responds efficiently and helps keep things moving.
+## How does Pivotal support clients?
 
-By becoming a **pivot point for the client’s business**, Pivotal takes care of important support functions so the client can focus on **running and growing their core business**.
+Pivotal supports clients **at every stage**, from the **initial assessment** through to becoming **fully operational**, using its local networks across different jurisdictions.
+
+## What does client-focused mean?
+
+It means **adapting quickly to each client’s changing needs** and helping them focus on **running and growing their core business**.
+
+## What sets Pivotal apart?
+
+**Delivery.** Pivotal aims to be **responsive, accessible, reliable, practical and professional**.
+
+## What is the role?
+
+The role supports the **Client Service Teams** in providing **accounting and administration services** and maintaining a **high-quality professional service**.
 
 
 
