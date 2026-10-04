@@ -21,10 +21,16 @@ I also enjoy building projects that let me apply what I am learning, including d
 
 I am currently preparing for Cooperative Education and looking for a placement where I can bring a strong quantitative foundation, learn quickly and become useful to a professional team.
 
+**Upcoming Co-op interviews**
+
+- **Pivotal Corporate** — Monday 5 October 2026, **11:30 AM** — **CG052, Main Building, University of Limerick**
+- **HSE Mid-West** — Friday 9 October 2026, **12:00 PM** — **Online**
+
 ## Contact
 
-- **Email:** erikdownes2307 [at] gmail [dot] com
-- **University email:** available on request
-- **Co-op enquiries:** [University of Limerick Cooperative Education & Careers Division](https://www.ul.ie/cecd) — official placement contact route
+- **Personal email:** erikdownes2307 [at] gmail [dot] com
+- **UL student email:** [24434582@studentmail.ul.ie](mailto:24434582@studentmail.ul.ie)
+- **Co-op Placement Officer:** [Naomi Flanagan-Walsh](mailto:naomi.flanagan-walsh@ul.ie)
+- **Cooperative Education & Careers Division:** [ul.ie/cecd](https://www.ul.ie/cecd)
 - **LinkedIn:** [Erik Downes](https://www.linkedin.com/in/erik-downes-7b312127a/)
 - **GitHub:** [github.com/ErikDownes](https://github.com/ErikDownes)
