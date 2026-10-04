@@ -8,11 +8,168 @@ description: Working study notes for the Pivotal Corporate Co-Op Student /
 eyebrow: PIVOTAL CORPORATE · CORPORATE SERVICES · ACCOUNTING · ADMINISTRATION
 public_mode: true
 ---
-# UL CV for Pivotal Corporate -text only
+
+
+# **Pivotal Corporate — Questions Only**
+
+## **What does the word Pivotal mean in our case do you think?**
+
+# **The Company Paragraph**
+
+## **Who is Pivotal Corporate?**
+
+## **What type of clients does Pivotal mainly support?**
+
+## **Why does this type of company interest you?**
+
+# **The Client Journey Paragraph**
+
+## **How does Pivotal support a client?**
+
+## **Why are local networks in different jurisdictions important?**
+
+## **What interests you about working across jurisdictions?**
+
+# **The Pivot Point Paragraph**
+
+## **What does client-focused mean to you?**
+
+## **Why is Pivotal a good name?**
+
+## **Can you give an example of adapting when the data was difficult?**
+
+# **The Delivery Paragraph**
+
+## **What does Pivotal say sets it apart?**
+
+## **Can you give an example of setting high standards for yourself?**
+
+## **How do you make analysis useful to someone else?**
+
+# **The Role Paragraph**
+
+## **What shows that you are proactive and self-motivated?**
+
+## **Give an example of using Excel accurately.**
+
+## **Where would you like to take these skills next?**
+
+# **What I learned from Pivotal’s LinkedIn**
+
+## **How quickly is Pivotal growing?**
+
+## **Do we take Co-op seriously?**
+
+## **How important is aviation to Pivotal?**
+
+## **What kind of transactions are they involved in?**
+
+## **What impression did you get of the company?**
+
+# **Questions to Show you fit the role**
+
+## **Tell us something that shows you are proactive and self-motivated.**
+
+## **Strava + Dublin Bikes — Timestamp Example**
+
+## **Give us an example of using Excel accurately.**
+
+## **How have your studies prepared you for this role?**
+
+## **Where would you like to take these skills next?**
+
+# **Duties & Responsibilities**
+
+# **Company Administration, Relationships & Client Care**
+
+## **What do you think company administration involves?**
+
+## **How would you build business-like relationships with clients and intermediaries?**
+
+## **What does a high standard of client care mean to you?**
+
+# **Accounting, Reconciliations & Reporting**
+
+## **Which one does NOT belong?**
+
+Which of these is not one of the accounting duties in the role?
+
+Journal entries · Account reconciliations · Accounts Payable · Accounts Receivable · VAT and regulatory reporting · Designing advertising campaigns
+
+## **What accounting work could you be helping with?**
+
+## **What is a reconciliation?**
+
+## **What Excel logic do you know?**
+
+## **What is the difference between Accounts Payable and Accounts Receivable?**
+
+## **What is a journal entry?**
+
+## **Why does accurate financial documentation matter?**
+
+# **Compliance, Research & Process Improvement**
+
+## **Why are accurate records and supporting documents important?**
+
+## **How would you approach a financial or market research task?**
+
+## **Give an example of process-improvement thinking.**
+
+## **Give an example of being careful with data.**
+
+# **Company Secretarial & Day-to-Day Administration**
+
+## **What is Company Secretarial?**
+
+## **Why do schedules and registers matter?**
+
+## **What do KYC and CDD mean?**
+
+## **How would you approach documents requiring signatures?**
+
+## **How would you approach ordinary administrative tasks?**
+
+# **Job-Specific Requirements**
+
+# **Organised, Detail-Oriented & Critical Thinking**
+
+# **Written & Verbal Communication**
+
+# **Microsoft Word, Excel & Outlook**
+
+# **Positive Attitude & Responsibility**
+
+# **Interest in Financial Services & Adding Client Value**
+
+  
+
 
 
 
 &nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+# UL CV for Pivotal Corporate -text only
+
+
 
 ## Pivotal Corporate Teamwork
 
