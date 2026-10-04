@@ -144,7 +144,7 @@ The **Project 1 / Project 2** sequence provides the opportunity to complete a su
 
 **Certificate of Academic Excellence · September 2023** — awarded for outstanding academic performance at Crescent College.
 
-## Exceptional Classroom-Based Assessments
+## Exceptional CBA | Exceptional Classroom-Based Assessments
 
 Achieved **Exceptional**, the highest Junior Cycle CBA descriptor, in both **Mathematics and Science**.
 
