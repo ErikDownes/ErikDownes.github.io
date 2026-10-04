@@ -106,7 +106,7 @@ LM058 is a four-year Financial Mathematics degree combining **mathematics, proba
 
 &nbsp;
 
-### Semester 2 · Cooperative Education
+## Third Year · Semester 2 · Cooperative Education
 
 - [Cooperative Education]({{ '/modules/coop-1-cooperative-education.html' | relative_url }}) · **CO4320**
 - Full-time professional placement
@@ -116,9 +116,9 @@ LM058 is a four-year Financial Mathematics degree combining **mathematics, proba
 
 &nbsp;
 
-## Fourth Year · 2027/28 Upper-level programme
+# Fourth Year · 2027/28 Upper-level programme
 
-### Semester 1
+## Fourth Year · Semester 1
 
 - [Discrete Mathematics 2]({{ '/modules/ms4117-discrete-mathematics-2.html' | relative_url }}) · **MS4117**
 - [Stochastic Processes]({{ '/modules/ms4217-stochastic-processes.html' | relative_url }}) · **MS4217**
@@ -130,7 +130,7 @@ LM058 is a four-year Financial Mathematics degree combining **mathematics, proba
 
 &nbsp;
 
-### Semester 2
+## Fourth Year · Semester 2
 
 - [Mathematical Methods 2 — Numerical Methods for Partial Differential Equations]({{ '/modules/ms4008-mathematical-methods-2-numerical-methods-for-partial-differential-equations.html' | relative_url }}) · **MS4008**
 - [Stochastic Differential Equations for Finance]({{ '/modules/ms4028-stochastic-differential-equations-for-finance.html' | relative_url }}) · **MS4028**
