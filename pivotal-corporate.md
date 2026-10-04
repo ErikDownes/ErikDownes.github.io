@@ -55,14 +55,31 @@ The role supports the **Client Service Teams** in providing **accounting and adm
 
 &nbsp;
 
-## What is Company Secretarial?
+# ions to show you fit the role
 
-**Company Secretarial is an internal function within Pivotal** that supports client companies with **corporate governance, statutory records, company filings, board paperwork and other compliance requirements**.
+## Tell us something that shows you are proactive and self-motivated.
 
-It is different from an ordinary secretary or administrator in the client’s own company.  
+I built an **aircraft data project** outside college using **Python and Pandas**. I combined **OpenSky and PlaneSpotters** data, reducing over **500,000 records to the relevant 61 aircraft**. I like taking what I learn in college and practising it independently until it becomes natural.
 
+## Give us an example of setting high standards for your own work.
 
+With my **Strava project**, I exported my own cycling data and reproduced some of the calculations myself. My results initially differed from Strava because of how the GPS data was processed, so I adjusted the method and checked the results against Strava. I like understanding why figures differ rather than simply accepting them.
 
-&nbsp;
+## Give us an example of using Excel accurately.
 
-&nbsp;
+I built an **Excel reconciliation check** comparing **amount due with amount paid**. I used nested **IF statements** to convert the numerical result into categories such as **Not Paid, Underpaid, Paid or Overpaid**.
+
+`=IF(Paid=0,"Not Paid",IF(Paid<Due,"Underpaid",IF(Paid=Due,"Paid","Overpaid")))`
+
+That is a simple example of turning quantitative data into a useful **categorical status**.
+
+## How have your studies prepared you for this role?
+
+My degree combines **Financial Accounting, Finance, Financial Mathematics, Statistics and Data Analysis**. My work and projects then give me a chance to apply those ideas practically — checking figures, reconciling data, analysing information and presenting it clearly.
+
+## Where would you like to take these skills next?
+
+I am only at the beginning of that proficiency path, but I have really become interested in it. Next year I would like to work on **time-series forecasting, financial modelling and machine-learning projects**, particularly using accounting and business data.
+
+A company like Pivotal works with businesses coming from the **US into Europe**, so there is potentially very rich financial and operational data. I would be interested in learning how **data analysis, machine learning and eventually deep learning** can help identify patterns and support better decisions.
+
