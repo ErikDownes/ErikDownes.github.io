@@ -497,6 +497,22 @@ That makes the work easier to **check, reconcile, report and audit**, and means 
 
 # Compliance, Research & Process Improvement
 
+
+
+## How would you use social media and AI responsibly?
+
+**Approved tools  Confidentiality  Ever-changing regulations**
+
+I see this as a **fast-moving, critical area for protecting client trust**. I would learn and follow the firm's **social media and enterprise AI policies**, keep up with policy updates and training, and ask my manager or Compliance if I was unsure. Requirements can vary by **jurisdiction**, so I would follow the firm's guidance on the rules relevant to its work.
+
+On **social media**, I would communicate professionally, protect confidential and personal information, and obtain approval before posting on behalf of the firm or discussing client work. That includes being careful about work-related posts on personal accounts.
+
+With **AI**, I would use only **firm-approved tools and accounts for approved tasks**, and enter only information permitted by the firm's policy. An enterprise subscription alone does not make every use compliant. I would check outputs against reliable sources, follow disclosure and record-keeping requirements, and make sure any required human review happens before information is sent or acted on.
+
+AI can help with drafting, summarising and improving processes, but **I remain responsible for checking my work and protecting client information**. If I noticed an accidental disclosure or unsafe use, I would report it promptly through the firm's procedures.
+
+Sources: [Irish DPC — AI and data protection](https://www.dataprotection.ie/en/dpc-guidance/blogs/AI-LLMs-and-Data-Protection) · [NCSC — unapproved AI use](https://www.ncsc.gov.uk/blogs/the-hidden-risks-of-shadow-ai) · [NCSC — social media safety](https://www.ncsc.gov.uk/guidance/social-media-how-to-use-it-safely).
+
 ## Why do accurate records matter?
 
 **Accounting standards  Regulatory reporting  Traceable**
