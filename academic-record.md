@@ -115,9 +115,15 @@ Fourth Year · 2027/28
   - Mathematical Control Theory
   - Mathematical Modelling
 
+## Final Year Projects ( next academic year after co-op Intern work experience
+
+The **Project 1 / Project 2** element is particularly worth showing. UL describes it as a substantial fourth-year research project in mathematics, computing, statistics, finance or a related area, culminating in a professional written report and presentation.
+
 ##   
   
 Leaving Certificate · 2024
+
+
 
 **Crescent College Comprehensive S.J., Limerick**
 
@@ -155,7 +161,7 @@ Modelled the minimum height required for a roller-coaster cart to complete a loo
 
 **CO4320 — Cooperative Education** · full-time professional placement.  
 
-UL Grade Key
+## UL Grade Key
 
 
 | Grade | Meaning | QPV |
@@ -174,3 +180,25 @@ UL Grade Key
 
 
 **QPV** means **Quality Point Value**. These values are used in calculating the **QCA (Quality Credit Average)**.
+
+
+
+&nbsp;
+
+## LC Grade Key
+
+**H = Higher Level · O = Ordinary Level**
+
+
+| Grade | Percentage |
+| ----------- | ---------- |
+| **H1 / O1** | 90–100% |
+| **H2 / O2** | 80–89% |
+| **H3 / O3** | 70–79% |
+| **H4 / O4** | 60–69% |
+| **H5 / O5** | 50–59% |
+| **H6 / O6** | 40–49% |
+| **H7 / O7** | 30–39% |
+| **H8 / O8** | Below 30% |
+
+
