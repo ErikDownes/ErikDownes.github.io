@@ -59,3 +59,30 @@ The common standard across all three is **professional communication, reliabilit
 ## Duties & Responsibilities
 
 Add the detailed job-description notes here as each duty is studied. Keep this page explanatory; convert the most important points into short natural answers on the **Pivotal Corporate Interview** page.
+
+
+
+&nbsp;
+
+# Pivotal Corporate Perfect UL CV
+
+
+
+&nbsp;
+
+## Pivotal Corporate Teamwork  UL CV
+
+
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+#   
+  
+
+
