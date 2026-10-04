@@ -9,6 +9,24 @@ public_mode: true
 ---
 **Current QCA:** 3.40 · **Credits completed:** 120 · **Year 3 currently underway**
 
+## UL Grade Key
+
+| Grade | Meaning | QPV |
+| --- | --- | ---: |
+| **A1** | First Honours | **4.00** |
+| **A2** | First Honours | **3.60** |
+| **B1** | Honours 2.1 | **3.20** |
+| **B2** | Honours 2.1 | **3.00** |
+| **B3** | Honours 2.2 | **2.80** |
+| **C1** | Honours 2.2 | **2.60** |
+| **C2** | Third Honours | **2.40** |
+| **C3** | Third Honours | **2.00** |
+| **D1** | Compensating Fail | **1.60** |
+| **D2** | Compensating Fail | **1.20** |
+| **F / NG** | Fail | **0.00** |
+
+**QPV** means **Quality Point Value**. These values are used in calculating the **QCA (Quality Credit Average)**.
+
 ## Leaving Certificate · 2024
 
 **Crescent College Comprehensive S.J., Limerick**
