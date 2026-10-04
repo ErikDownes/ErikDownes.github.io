@@ -13,8 +13,6 @@ public_mode: true
 
 
 
-&nbsp;
-
 ## What does Pivotal mean to you?
 
 **Archimedes  Mechanical advantage  Client support**
@@ -89,11 +87,11 @@ With our **client-focused and solutions-driven delivery**, we have the ability t
 
 It means understanding **what the client actually needs**, responding quickly and giving them information they can use rather than simply completing a task.
 
-## Why is Pivotal a good name?
+## Why is Pivotal a good name for the business?
 
 **Pivot point  Mechanical advantage  Core business**
 
-In physics, a pivot gives a lever **mechanical advantage**. I see the same idea here: good accounting and administration support allows the client to concentrate on **running and growing the core business**.
+In physics, a pivot gives a lever **mechanical advantage**. In business  Pivotal Corporation give US-based companies a competitive advantage.
 
 ## When have you adapted to difficult data?
 
@@ -324,7 +322,7 @@ Accuracy, client care, compliance, professionalism, deadlines and producing work
 ***Duties* = what I will do.**
 
 These are the actual tasks I will be learning and carrying out: journals, reconciliations, AP/AR, reporting, research, company administration and company secretarial work.  
-  
+
 I will work to instructions from 
 
 
