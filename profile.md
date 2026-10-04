@@ -23,8 +23,8 @@ I am currently preparing for Cooperative Education and looking for a placement w
 
 ## Contact
 
-- **Email:** [erikdownes2307@gmail.com](mailto:erikdownes2307@gmail.com)
-- **UL Email:** [24434582@studentmail.ul.ie](mailto:24434582@studentmail.ul.ie)
+- **Email:** erikdownes2307 [at] gmail [dot] com
+- **University email:** available on request
+- **Co-op enquiries:** [University of Limerick Cooperative Education & Careers Division](https://www.ul.ie/cecd) — official placement contact route
 - **LinkedIn:** [Erik Downes](https://www.linkedin.com/in/erik-downes-7b312127a/)
 - **GitHub:** [github.com/ErikDownes](https://github.com/ErikDownes)
-
