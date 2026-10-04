@@ -12,6 +12,7 @@
   const ORDER_PREFIX = 'coop-section-order:v1:';
   const GLOSSARY_PREFIX = 'coop-glossary:v1';
   const GLOSSARY_SEED = [
+    { term: 'EAL', definition: 'English as an Additional Language: English used or learned alongside a person’s other language or languages. In communication, adapt clarity, pace and wording to the individual’s needs and preferences. EFL means English as a Foreign Language.', cue: 'Clear speech · suitable pace · check understanding.' },
     { term: 'Regional route', definition: 'A relatively short air service linking cities or airports within a region, often with lower passenger demand than major trunk routes.', cue: 'Shorter sector → thinner demand → right-sized aircraft.', examples: ['A service linking a smaller regional airport with a nearby city or hub'], misconceptions: ['Regional does not simply mean small aircraft; the route, demand and airport constraints matter.'] },
     { term: 'Lease transition',
   definition: 'The process of moving an aircraft from one lease or operator to another, including redelivery, technical records, maintenance status, remarketing and delivery to the next lessee.',
