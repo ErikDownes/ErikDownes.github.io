@@ -11,6 +11,30 @@ public_mode: true
 ---
 # Questions to show you know the role
 
+
+
+
+## Do you agree that the right pivot can turn a small effort into a much greater result?
+
+**Guided question:** In physics, a lever and a well-positioned pivot provide mechanical advantage. In business, the right accounting and administration support can help clients achieve more. Do you agree that this makes **Pivotal** a meaningful name?
+
+**Short answer:** Yes. The connection for me is that **the right support can make a much greater result possible**.
+
+
+
+## What does the word pivot mean to you?
+
+Well, that's actually an interesting one, because **physics and applied maths are subjects I really enjoy**. Your name reminds me of a saying attributed to Archimedes: **“Give me a place to stand and I will move the earth.”**
+
+The idea is that, with a long enough lever and a firm pivot point, a relatively small force can move a much greater load. That **mechanical advantage** is what makes a pivot such a powerful concept in physics.
+
+That's the connection I make with Pivotal: you provide the reliable accounting and administration support that allows clients to concentrate on running and growing their businesses. **The right support can make a much greater result possible.**
+
+**Practice cues:** Physics and applied maths → Archimedes → lever and pivot → mechanical advantage → support for clients.
+
+
+
+
 ## Who is Pivotal Corporate?
 
 Pivotal Corporate is an **independent, solutions-driven corporate services firm** that helps **US-based investors establish and grow their businesses in Europe**.
