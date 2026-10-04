@@ -13,7 +13,7 @@ I am a **third-year Financial Mathematics student at the University of Limerick*
 
 My degree combines mathematics and statistics with finance, accounting, programming and data analysis. I particularly enjoy work where accuracy matters and where the analysis has a clear practical purpose.
 
-I have completed **Financial Accounting**, **Accounting for Financial Decision Making**, **Finance**, **Applied Data Analysis**, **Numerical Analysis** and **Operations Research**. I am currently studying **Fundamentals of Financial Mathematics**, **Statistical Inference** and **Advanced Data Analysis**.
+I have completed **Financial Accounting**, **Accounting for Financial Decision Making**, **Finance**, **Applied Data Analysis**, **Numerical Analysis** and **Operations Research**. I am currently studying **Fundamentals of Financial Mathematics**, **Complex Analysis**, **Linear Algebra 2**, **Statistical Inference** and **Advanced Data Analysis**.
 
 Outside university, I have worked in **retail** and **logistics**. At O'Mahony's, accuracy is important because orders, invoices, box counts and destinations all have to agree before dispatch. At Mr Price, I developed customer-service and teamwork experience in a fast-moving environment.
 
