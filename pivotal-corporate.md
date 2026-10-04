@@ -17,7 +17,7 @@ Pivotal Corporate is an **independent, solutions-driven corporate services firm*
 
 ## How does Pivotal support clients?
 
-Pivotal supports clients **at every stage**, from the **initial assessment** through to becoming **fully operational**, using its local networks across different jurisdictions.
+Pivotal provides and end-to-end service. From  **initial assessment** to  being **fully operational**, using its local networks across different jurisdictions.
 
 ## What does client-focused mean?
 
