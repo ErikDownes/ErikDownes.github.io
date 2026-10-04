@@ -272,6 +272,36 @@ Sources: [Pivotal — offices and staff](https://www.pivotalcorporate.com/about)
 
 Pivotal mainly supports **US-based investors coming into Europe**. I find that interesting because it combines **business, finance, accounting and working across different jurisdictions**.
 
+## What else does Pivotal do?
+
+**CSP  Company management  Accounting  Compliance**
+
+Pivotal is a **Corporate Service Provider (CSP)**. Beyond helping investors establish in Europe, it provides **company formation and management, financial accounting and reporting, company secretarial services, registered offices, transaction and cash management, compliance support, restructuring and managing-agent services**.
+
+It works across sectors including **aviation, private equity, real estate, private and structured debt, infrastructure, technology and pharmaceuticals**.
+
+## What is an SPV?
+
+**Special Purpose Vehicle  Separate company  Specific purpose**
+
+An **SPV — Special Purpose Vehicle — is a separate legal company created for a specific asset, investment or financing transaction**.
+
+For example, an aircraft can be owned by its own SPV. That company can **own the aircraft, receive lease income, pay expenses and debt, and keep that transaction legally and financially separate** from other assets. Pivotal can help **form, administer, account for and support** these SPVs.
+
+## What does company management mean?
+
+**Directors  Governance  Board**
+
+Pivotal can provide **professionally qualified and experienced people to act as directors of client companies**. Company management is therefore about making sure the legal company is **properly governed, administered and supported at board level**.
+
+## What does Pivotal do in aviation?
+
+**Leasing  Warehouses  ABS  Cash + reporting**
+
+Pivotal works with **aircraft lessors, investors and lenders** on aircraft acquisitions and leasing, **warehouse financing, ABS transactions, cash management, waterfall payments, calculation-agent work and investor/board reporting**.
+
+Its current website reports **1,500+ aircraft assets managed** and about **€40bn of aircraft assets under management**.
+
 ## Why does Pivotal interest you?
 
 **Financial Mathematics  Real decisions  Client value**
