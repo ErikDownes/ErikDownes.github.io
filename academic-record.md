@@ -136,7 +136,7 @@ The **Project 1 / Project 2** sequence provides the opportunity to complete a su
 
 **579 CAO points**
 
-## Highest Leaving Certificate Business Grade
+## LC Business medal | Highest Leaving Certificate Business Grade
 
 **Kolvenbach Medal for Business · May 2024** — awarded for achieving the **highest Leaving Certificate Business grade at Crescent College**.
 
