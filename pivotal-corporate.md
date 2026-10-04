@@ -4,16 +4,36 @@ permalink: /pivotal-corporate.html
 handle: Pivotal Corporate
 title: Pivotal Corporate
 nav_order: 40
-description: Pivotal Corporate co-op job description and interview preparation for the Co-Op Student / Corporate Administrator role.
+description: Pivotal Corporate co-op job description and interview preparation
+  for the Co-Op Student / Corporate Administrator role.
 eyebrow: CO-OP INTERVIEW · CORPORATE ADMINISTRATION · ACCOUNTING · CLIENT SERVICE
 public_mode: true
 ---
+# Questions to show you know the role
+
+## What do you know about Pivotal Corporate?
+
+Pivotal Corporate is an **independent, solutions-driven firm** that helps mainly **US-based investors establish and grow their businesses in Europe**.
+
+What I found interesting is that Pivotal supports clients **through the full process** — from the initial assessment and planning stage right through to becoming fully operational.
+
+They also use their **local knowledge and networks across different jurisdictions** to help clients navigate the practical, accounting and administrative requirements involved.
+
+So, the way I understand it, Pivotal essentially becomes a **trusted local partner for an international company entering or expanding in Europe**, helping to keep everything organised and running smoothly.
 
 
+
+&nbsp;
+
+&nbsp;
 
 ## Job Description | Verbatim
 
 ### Pivotal Corporate – Co-Op Student/Corporate Administrator
+
+
+
+&nbsp;
 
 Pivotal Corporate is an independent, solutions driven firm with extensive experience assisting US based investors to establish and grow their European investments. We partner with our clients at every stage in the process using our local networks in a number of jurisdictions to ensure their project runs smoothly from the initial assessment phase through to the project being fully operational.
 
