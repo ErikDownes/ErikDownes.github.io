@@ -638,6 +638,8 @@ The O'Mahony's library delivery example is strong evidence: you identified the p
 
 Yes. I think about whether people can **access and use the information**, as well as whether the wording is clear. That applies to documents, presentations and websites.
 
+In conversation, that starts with **articulating clearly, projecting my voice so I can be heard comfortably, and speaking at a pace that suits the person**. I welcome requests to slow down, repeat or explain something differently. With clients who use **EAL — English as an Additional Language**, I would use plain language, avoid unnecessary jargon and check understanding respectfully. I would adapt to their preferences rather than assume they need help.
+
 For example, **my GitHub-hosted website has text-to-speech so visitors can listen to the content in each section**. This can help people who find reading difficult or prefer to listen. I also consider clear headings, readable text, colour contrast, image descriptions and compatibility with keyboards and screen readers.
 
 I understand that **accessibility is a legal requirement for certain websites and services in some jurisdictions**, depending on the organisation and service. Text-to-speech is one useful feature; it does not by itself establish compliance. My approach is to **consider accessibility from the start**.
