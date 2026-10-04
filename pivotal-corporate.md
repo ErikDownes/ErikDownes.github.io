@@ -9,7 +9,13 @@ description: Pivotal Corporate interview preparation for the Co-Op Student /
 eyebrow: CO-OP INTERVIEW · CORPORATE ADMINISTRATION · ACCOUNTING · CLIENT SERVICE
 public_mode: true
 ---
-# Questions to show you know the role
+# Questions and Answers to guarantee Success
+
+
+
+&nbsp;
+
+&nbsp;
 
 ## What does the word Pivotal mean in our case do you think?
 
@@ -112,6 +118,44 @@ I built an **Excel reconciliation check** comparing **amount due and amount paid
 ## Next steps | Where would you like to take these skills next?
 
 I am still early in that proficiency path, but I would like to move into **time-series forecasting, financial modelling and machine learning**. With the amount of financial and operational information involved in supporting international businesses, I think there is huge potential for **data analysis and eventually more advanced machine-learning techniques**.
+
+
+
+&nbsp;
+
+# What I learned from Pivotal’s LinkedIn
+
+## Growth | How quickly is Pivotal growing?
+
+LinkedIn currently shows about **85 employees**, with continued recruitment in **Shannon** and a stated growth focus on **Dublin and London**. The company was founded in **2020**. Eight of your employees went to UL.
+
+## UL connection | Do we take Co-op seriously?
+
+Yes and the evidence for that is that **Brian Nolan returned as an Assistant Client Manager after previously spending nine months at Pivotal on UL work placement**. That is probably the most relevant LinkedIn fact for me as a UL Co-op applicant.
+
+## Aviation | How important is aviation to Pivotal?
+
+It is clearly a major business area. They recently hired **two Vice Presidents and a Corporate Administrator specifically to strengthen aviation leasing**, including **Catherine Wixted**, my interviewer.
+
+## Scale | What kind of transactions are they involved in?
+
+Pivotal was appointed **Managing Agent for MAST 2026-1**: **27 aircraft, 18 lessees across 15 jurisdictions**, with about **$615 million of notes** backed by an aircraft portfolio worth about **$779 million**. That shows the scale and international nature of the work.
+
+## Culture | What impression did you get of the company?
+
+It looks like a growing but fairly close team: LinkedIn shows **staff events, charity cycles and walks, aviation-industry events and team charity sport**, rather than only corporate announcements.
+
+
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
 
 # Questions to Show you fit the role
 
