@@ -13,18 +13,6 @@ public_mode: true
 
 
 
-## What does Pivotal mean to you?
-
-**Archimedes  Mechanical advantage  Client support**
-
-Well, that's actually an interesting one, because **physics and applied maths are subjects I really enjoy**. Your name reminds me of a saying attributed to Archimedes: **“Give me a place to stand and I will move the earth.”**
-
-The idea is that, with a long enough lever and a firm pivot point - like your company - a relatively small force can move a much greater load. That **mechanical advantage** is what makes a pivot such a powerful concept in physics.
-
-That's the connection I make with Pivotal: you provide the reliable accounting and administration support that allows clients to concentrate on running and growing their businesses. **The right support can make a much greater result possible.**
-
-
-
 &nbsp;
 
 # The Company Paragraph
@@ -92,7 +80,7 @@ It means understanding **what the client actually needs**, responding quickly an
 **Pivot point  Mechanical advantage  competitive advantage**
 
 In physics, a pivot gives a lever **mechanical advantage**. In business  Pivotal Corporation give US-based companies a competitive advantage.  
-  
+
 i love the quote  **by** Archimedes: **“Give me a place to stand and I will move the earth.”** Perhaps you can use it on your website.
 
 ## When have you adapted to difficult data?
