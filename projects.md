@@ -35,3 +35,11 @@ A car-finance calculator built around deposit, monthly payment, term and the opt
 
 
 
+
+
+
+## Pivotal Office Map
+
+Explore Shannon, Dublin, London and New York on a zoomable map built with **Leaflet and OpenStreetMap**, with office addresses and city controls.
+
+[Open Pivotal Office Map →]({{ '/pivotal-office-map.html' | relative_url }})
