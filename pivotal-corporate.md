@@ -189,3 +189,292 @@ I am only at the beginning of that proficiency path, but I have really become in
 
 A company like Pivotal works with businesses coming from the **US into Europe**, so there is potentially very rich financial and operational data. I would be interested in learning how **data analysis, machine learning and eventually deep learning** can help identify patterns and support better decisions.
 
+
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+# Duties & Responsibilities
+
+**PIVOTAL CORPORATE · WHAT I WILL DO · HOW I WILL APPROACH IT · WHAT STANDARD I WILL WORK TO**
+
+## The Rule
+
+**Job-Specific Requirements = what I bring.**
+
+These are the qualities already evidenced on my CV: organised, good communication, Microsoft skills, positive attitude and an interest in financial services.
+
+**Duties = what I will do.**
+
+These are the actual tasks I will be learning and carrying out: journals, reconciliations, AP/AR, reporting, research, company administration and company secretarial work.
+
+**Responsibilities = the standard I am expected to maintain.**
+
+Accuracy, client care, compliance, professionalism, deadlines and producing work that other people can rely on.
+
+## How to Answer
+
+For a **requirement**:
+
+**“Here is evidence that I already have that quality.”**
+
+For a **duty**:
+
+**“I understand what the task involves, I have related experience, and I am ready to learn how Pivotal does it.”**
+
+For a **responsibility**:
+
+**“I understand why it matters and the professional standard expected.”**
+
+I do not need to pretend I already know how to perform every corporate accounting task. I am joining as a **Co-op student to learn**.
+
+But I am **proactive, willing to take responsibility and prepared to get involved**.
+
+---
+
+# Company Administration, Relationships & Client Care
+
+**Read the three cue words first. Then answer naturally.**
+
+## Company administration | What do you think company administration involves?
+
+**Records | Deadlines | Accuracy**
+
+It means keeping the **records, documents, schedules and information around a company accurate and up to date**.
+
+I would be coming in to learn Pivotal's processes, but my approach would be simple: understand the task, complete it accurately and check it before it moves on.
+
+## Relationships | How would you build business-like relationships with clients and intermediaries?
+
+**Listen | Respond | Follow-through**
+
+I would be **approachable but professional**: listen properly, respond clearly and do what I said I would do.
+
+My customer-service experience at **Mr Price** taught me that people remember whether you were helpful, reliable and easy to deal with.
+
+## Client care | What does a high standard of client care mean to you?
+
+**Accurate | Responsive | Professional**
+
+It means the client can **rely on both the information and the service**.
+
+That fits Pivotal's own emphasis on being **responsive, accessible, reliable, practical and professional**.
+
+---
+
+# Accounting, Reconciliations & Reporting
+
+## Duties | Which one does NOT belong?
+
+**Journals | Reconciliations | Reporting**
+
+Which of these is not one of the accounting duties in the role?
+
+Journal entries · Account reconciliations · Accounts Payable · Accounts Receivable · VAT and regulatory reporting · **Designing advertising campaigns**
+
+**Answer:** Designing advertising campaigns.
+
+The others all belong directly to the accounting and reporting side of the role.
+
+## Six duties | What accounting work could you be helping with?
+
+**Record | Compare | Report**
+
+I could be helping with **journal entries, reconciliations, Accounts Payable, Accounts Receivable, VAT and regulatory reporting, and maintaining accurate financial records and supporting documentation**.
+
+I have the academic foundation from university, and the placement is where I would learn how Pivotal applies it professionally.
+
+## Reconciliation | What is a reconciliation?
+
+**Compare | Difference | Investigate**
+
+A reconciliation means **comparing two records that should agree and investigating any difference**.
+
+For example, in Excel I built a payment-status check comparing **Amount Due** with **Amount Paid**.
+
+I used a **nested IF statement** so Excel classified each record as **Not Paid, Underpaid, Paid or Overpaid**.
+
+That turns raw numerical data into a useful **categorical status** that can be checked quickly.
+
+## Excel logic | What Excel logic do you know?
+
+**IF | AND | OR**
+
+I have practised **IF, nested IFs, IFS, AND, OR and IFERROR**, as well as **XLOOKUP, VLOOKUP, SUMIFS and COUNTIFS**.
+
+I also use **sorting, filtering, conditional formatting, pivot tables, charts and data-cleaning functions**.
+
+What I like is connecting Excel with data analysis.
+
+Excel is excellent for **business data, reconciliations, checking, reporting and communicating results**, but it is not always the right tool for very large datasets.
+
+For example, in my aircraft project I had over **500,000 records**, so I used **Python and Pandas** to filter and reconcile the data down to the relevant **61 aircraft**.
+
+The important thing is **choosing the right tool for the size and purpose of the problem**.
+
+### If they ask about the logical functions
+
+**IF** tests a condition.
+
+**Nested IF** puts one IF inside another to test several outcomes.
+
+**IFS** is a cleaner alternative when checking several conditions in sequence.
+
+**AND** means all conditions must be true.
+
+**OR** means at least one condition must be true.
+
+**IFERROR** handles errors instead of allowing them to flow through the spreadsheet.
+
+He does not need to mention any of this unless they ask a follow-up.
+
+## AP and AR | What is the difference between Accounts Payable and Accounts Receivable?
+
+**Payable | Receivable | Cash**
+
+**Accounts Payable** is money the company **owes**.
+
+**Accounts Receivable** is money **owed to the company**.
+
+Easy memory rule:
+
+**Payable → we pay.**
+
+**Receivable → we receive.**
+
+At **O'Mahony's**, I have already seen why invoices, orders, quantities and destinations need to agree before something moves to the next stage.
+
+## Journals | What is a journal entry?
+
+**Transaction | Debit | Credit**
+
+A journal entry records a financial transaction in the accounting system using the appropriate **debit and credit entries**.
+
+I have covered this through **Financial Accounting and Accounting for Financial Decision Making**, and the placement would let me learn how Pivotal handles it in practice.
+
+## Accuracy | Why does accurate financial documentation matter?
+
+**Evidence | Check | Trust**
+
+The number itself is not enough.
+
+There should be **supporting documentation showing where it came from**.
+
+That makes the work easier to **check, reconcile, report and audit**, and means colleagues and clients can rely on it.
+
+---
+
+# Compliance, Research & Process Improvement
+
+## Compliance | Why are accurate records and supporting documents important?
+
+**Evidence | Standards | Audit**
+
+Good records support **accounting standards, tax, regulatory reporting and later review or audit**.
+
+The information needs to be accurate, but also **traceable back to its source**.
+
+## Research | How would you approach a financial or market research task?
+
+**Source | Check | Summarise**
+
+I would start with reliable sources, organise the information, **cross-check anything important**, and reduce it to what the person actually needs.
+
+I used that approach in my aircraft project, where I combined **OpenSky and PlaneSpotters** rather than relying on a single source.
+
+## Improvement | Give an example of process-improvement thinking.
+
+**Repeat | Automate | Check**
+
+If I see the same task being repeated, I naturally think about whether it can be made **clearer, faster or less error-prone without removing the controls**.
+
+My Excel reconciliation is a simple example: instead of manually interpreting each balance, the logical formula classifies it consistently.
+
+## Data quality | Give an example of being careful with data.
+
+**Timestamp | Normalise | Reconcile**
+
+I combined **Strava GPX data with public Dublin Bikes data**, and the tricky part was the timestamps because the sources represented date and time differently.
+
+In **Pandas**, I used `pd.to_datetime()` to parse them and standardised the **datetime format and timezone**, including **UTC and daylight-saving differences**, before merging the datasets.
+
+That taught me that timestamps need to be **normalised before records can be reliably compared or reconciled**.
+
+That is important in accounting too, particularly when working across **different countries and jurisdictions**.
+
+---
+
+# Company Secretarial & Day-to-Day Administration
+
+## Company Secretarial | What is Company Secretarial?
+
+**Governance | Records | Compliance**
+
+Company Secretarial is a service Pivotal provides to client companies to help them meet their **corporate governance, statutory and regulatory obligations**.
+
+It includes things like **maintaining statutory records, company filings, board minutes and resolutions, and supporting the board of directors**.
+
+It is not the same as an ordinary secretary or general administrator.
+
+## Registers | Why do schedules and registers matter?
+
+**Current | Complete | Traceable**
+
+A register is only useful if it is **current, complete and accurate**.
+
+I would treat maintaining one like a data task: update it systematically, preserve traceability and investigate anything that does not agree.
+
+## KYC and CDD | What do KYC and CDD mean?
+
+**Identity | Ownership | Risk**
+
+**KYC — Know Your Customer** — is about establishing who the client is.
+
+**CDD — Customer Due Diligence** — goes further by checking things such as **ownership, control and relevant risk information**.
+
+For an international corporate-services firm, that is a fundamental part of meeting statutory and compliance requirements.
+
+## Legal documents | How would you approach documents requiring signatures?
+
+**Correct | Authorised | Recorded**
+
+I would make sure it is the **correct document and correct version**, that it is being sent to the **correct authorised people**, and that the completed document is properly recorded and stored.
+
+With legal or regulatory documentation, I would rather **check once more than make an assumption**.
+
+## Day-to-day administration | How would you approach ordinary administrative tasks?
+
+**Prioritise | Complete | Confirm**
+
+I would organise the work by urgency and importance, complete tasks carefully, and make sure anything dependent on me is not left hanging.
+
+The work may be routine, but the standard should still be **accurate, timely and professional**.
+
+
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
