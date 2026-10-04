@@ -37,6 +37,7 @@ body{margin:0;background:var(--page);color:var(--ink);font-family:Arial,Helvetic
 .dropmenu .dropmenu-current-label{margin-top:0;color:var(--accent,#0b6b5c)}
 .dropmenu .current-module-link{font-weight:700;background:#f7faf9}
 .dropmenu .dropmenu-other-label{margin-top:10px;padding-top:12px;border-top:1px solid var(--line)}
+.dropmenu .dropmenu-strand-label{grid-column:1/-1;margin-top:8px;padding:10px 12px 4px;border-top:1px solid var(--line);color:#303134;font-size:.78rem;font-weight:800;line-height:1.2;cursor:default}
 
 
 /* Two-level navigation: downward category menu with a second-level flyout. */
