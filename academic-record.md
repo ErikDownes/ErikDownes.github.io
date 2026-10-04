@@ -153,3 +153,53 @@ The CBAs involved **independent project work, organisation, attention to detail,
 ## Applied Mathematics Project
 
 Modelled the minimum height required for a roller-coaster cart to complete a loop. Independently researched **air resistance beyond the course material** and incorporated it into the model, achieving **86%**.
+
+## Current QCA · First Class Honours Level
+
+At the end of Second Year, my **cumulative QCA is 3.40**, which is the threshold for **First Class Honours**.
+
+An **A2 individual module grade has a QPV of 3.60**; this is different from the cumulative QCA used for the overall degree classification.
+
+My aim is to **maintain and strengthen this First Class Honours standard** through Third and Fourth Year, work hard across my remaining modules, and produce **excellent final-year project work**, with the goal of graduating with a **First Class Honours degree**.
+
+## University of Limerick Undergraduate Grade Key
+
+| Grade | Meaning | QPV |
+| --- | --- | ---: |
+| **A1** | First Honours | **4.00** |
+| **A2** | First Honours | **3.60** |
+| **B1** | Honours 2.1 | **3.20** |
+| **B2** | Honours 2.1 | **3.00** |
+| **B3** | Honours 2.2 | **2.80** |
+| **C1** | Honours 2.2 | **2.60** |
+| **C2** | Third Honours | **2.40** |
+| **C3** | Third Honours | **2.00** |
+| **D1** | Compensating Fail | **1.60** |
+| **D2** | Compensating Fail | **1.20** |
+| **F / NG** | Fail | **0.00** |
+
+**QPV** means **Quality Point Value**. These values are used in calculating the **QCA (Quality Credit Average)**.
+
+### Degree Classification by Cumulative QCA
+
+| Cumulative QCA | Degree Classification |
+| ---: | --- |
+| **3.40+** | **First Class Honours** |
+| **3.00–3.39** | **Second Class Honours Grade 1 — 2.1** |
+| **2.60–2.99** | **Second Class Honours Grade 2 — 2.2** |
+| **2.00–2.59** | **Third Class Honours** |
+
+## Leaving Certificate Grade Key
+
+**H = Higher Level · O = Ordinary Level**
+
+| Grade | Percentage |
+| --- | ---: |
+| **H1 / O1** | 90–100% |
+| **H2 / O2** | 80–89% |
+| **H3 / O3** | 70–79% |
+| **H4 / O4** | 60–69% |
+| **H5 / O5** | 50–59% |
+| **H6 / O6** | 40–49% |
+| **H7 / O7** | 30–39% |
+| **H8 / O8** | Below 30% |
