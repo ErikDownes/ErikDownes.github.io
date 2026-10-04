@@ -9,7 +9,6 @@
   const pageGithub = document.querySelector('.doc-toolbar .github-edit-link[href]');
   const pagePrint = document.querySelector('.doc-toolbar [data-action="print"]');
   const EDIT_PREFIX = 'coop-answer-edit:v1:';
-  const BREADCRUMB_PREFIX = 'coop-breadcrumbs:v1:';
   const MOVE_PREFIX = 'coop-section-moves:v1';
   const ORDER_PREFIX = 'coop-section-order:v1:';
   const GLOSSARY_PREFIX = 'coop-glossary:v1';
@@ -1837,52 +1836,6 @@
       answerButton.textContent = copy.hidden ? 'Show Answer' : 'Hide Answer';
     });
 
-    const breadcrumbBox = document.createElement('div');
-    breadcrumbBox.className = 'answer-focus-breadcrumbs';
-    breadcrumbBox.hidden = true;
-
-    const breadcrumbLabel = document.createElement('strong');
-    breadcrumbLabel.textContent = 'Breadcrumbs';
-    const breadcrumbHint = document.createElement('p');
-    breadcrumbHint.className = 'answer-focus-breadcrumbs-hint';
-    breadcrumbHint.textContent = 'Use a few cues in your own words — enough to reconstruct the answer, not a script.';
-
-    const seedItems = Array.from(copy.querySelectorAll('p,li,blockquote'))
-      .map(node => cleanText(node.textContent))
-      .filter(value => /^(key idea|key line|recall cue|cue|remember|outline|why this works)\s*:/i.test(value))
-      .map(value => value.replace(/^(key idea|key line|recall cue|cue|remember|outline|why this works)\s*:\s*/i, ''))
-      .slice(0, 8);
-
-    const breadcrumbKey = `${BREADCRUMB_PREFIX}${location.pathname}:${sourceHeadingText(heading).toLowerCase()}`;
-    const breadcrumbInput = document.createElement('textarea');
-    breadcrumbInput.rows = 4;
-    breadcrumbInput.setAttribute('aria-label', 'Breadcrumb cues for this answer');
-    breadcrumbInput.placeholder = 'One cue per line';
-    try {
-      const savedBreadcrumbs = localStorage.getItem(breadcrumbKey);
-      breadcrumbInput.value = savedBreadcrumbs !== null ? savedBreadcrumbs : seedItems.join('\n');
-    } catch (_) {
-      breadcrumbInput.value = seedItems.join('\n');
-    }
-    breadcrumbInput.addEventListener('input', () => {
-      try {
-        if (breadcrumbInput.value.trim()) localStorage.setItem(breadcrumbKey, breadcrumbInput.value);
-        else localStorage.removeItem(breadcrumbKey);
-      } catch (_) {}
-    });
-    breadcrumbBox.append(breadcrumbLabel, breadcrumbHint, breadcrumbInput);
-
-    const breadcrumbButton = document.createElement('button');
-    breadcrumbButton.type = 'button';
-    breadcrumbButton.textContent = 'Breadcrumbs';
-    breadcrumbButton.addEventListener('click', event => {
-      event.preventDefault();
-      event.stopPropagation();
-      breadcrumbBox.hidden = !breadcrumbBox.hidden;
-      breadcrumbButton.textContent = breadcrumbBox.hidden ? 'Breadcrumbs' : 'Hide Breadcrumbs';
-      if (!breadcrumbBox.hidden) breadcrumbInput.focus({ preventScroll: true });
-    });
-
     const play = document.createElement('button');
     play.type = 'button';
     play.textContent = '▶ Play';
@@ -1938,7 +1891,7 @@
       moveSectionToPage(heading, movePage.value);
     });
 
-    controls.append(answerButton, breadcrumbButton, play, stop, movePage);
+    controls.append(answerButton, play, stop, movePage);
 
     copy.querySelectorAll('ul,ol').forEach(list => {
       if (list.children.length >= 5) list.classList.add('answer-columns');
@@ -1947,8 +1900,8 @@
     const { panel: practice } = window.coopPractice.create(copy.innerText, { title: 'Optional recording' });
 
     // The answer is the primary learning object: show it immediately.
-    // Breadcrumbs are optional and editable; recording stays at the bottom.
-    focusContent.replaceChildren(title, controls, copy, breadcrumbBox, practice);
+    // Recording stays at the bottom.
+    focusContent.replaceChildren(title, controls, copy, practice);
     linkKnownGlossaryTerms(copy);
     lastTrigger = heading;
     overlay.hidden = false;
