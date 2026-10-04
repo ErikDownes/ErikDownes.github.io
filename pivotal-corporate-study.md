@@ -8,29 +8,9 @@ description: Working study notes for the Pivotal Corporate Co-Op Student /
 eyebrow: PIVOTAL CORPORATE · CORPORATE SERVICES · ACCOUNTING · ADMINISTRATION
 public_mode: true
 ---
-
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
 # UL CV for Pivotal Corporate -text only
 
 
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
 
 &nbsp;
 
