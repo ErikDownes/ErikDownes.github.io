@@ -1963,7 +1963,8 @@
   });
 
   /* -----------------------------------------------------------------------
-     Floating page tools: CMS, GitHub, Print, Listen to all, Listen to headers.
+     Floating page tools: CMS, GitHub, Print, Listen, Questions-only filter.
+     Print and Listen always follow the current filter state.
      ----------------------------------------------------------------------- */
   const setupFloatingTools = () => {
     if (!pageCms && !pageGithub && !pagePrint) return;
@@ -1999,45 +2000,51 @@
     print.id = 'floating-page-print';
     print.type = 'button';
     print.textContent = 'Print';
-    print.setAttribute('aria-label', 'Print this page');
+    print.setAttribute('aria-label', 'Print the current view');
+    print.title = 'Print the current view';
     print.addEventListener('click', () => window.print());
     rail.appendChild(print);
     if (pagePrint) pagePrint.hidden = true;
 
-    if (hasSpeech) {
-      const listenAll = document.createElement('button');
-      listenAll.id = 'floating-page-listen-all';
-      listenAll.type = 'button';
-      listenAll.textContent = 'Listen to all';
-      listenAll.setAttribute('aria-label', 'Listen to all questions and answers');
-      listenAll.title = 'Listen to all questions and answers';
-      listenAll.addEventListener('click', () => {
-        const questions = practiceHeadings();
-        const text = questions.length
-          ? questions.map(heading => `${heading.dataset.questionText}. ${answerTextFor(heading)}`).join(' ')
-          : `${document.querySelector('.doc-paper > h1')?.textContent || ''}. ${body.innerText}`;
-        speak({ text, button: listenAll, rate: 0.92 });
-      });
-      rail.appendChild(listenAll);
+    let questionsOnly = false;
+    const questions = practiceHeadings();
 
-      const questions = practiceHeadings();
-      if (questions.length) {
-        const listenQuestions = document.createElement('button');
-        listenQuestions.id = 'floating-page-listen-questions';
-        listenQuestions.type = 'button';
-        listenQuestions.textContent = 'Listen to headers';
-        listenQuestions.setAttribute('aria-label', 'Listen to headers only');
-        listenQuestions.title = 'Listen to headers only';
-        listenQuestions.addEventListener('click', () => {
-          const currentQuestions = practiceHeadings();
-          const text = currentQuestions
-            .map(heading => heading.dataset.questionText)
-            .filter(Boolean)
-            .join('. ');
-          speak({ text, button: listenQuestions, rate: 0.89 });
-        });
-        rail.appendChild(listenQuestions);
-      }
+    if (hasSpeech) {
+      const listen = document.createElement('button');
+      listen.id = 'floating-page-listen';
+      listen.type = 'button';
+      listen.textContent = 'Listen';
+      listen.setAttribute('aria-label', 'Listen to the current view');
+      listen.title = 'Listen to the current view';
+      listen.addEventListener('click', () => {
+        const pageTitle = document.querySelector('.doc-paper > h1')?.textContent || '';
+        const visibleText = body?.innerText || '';
+        speak({ text: `${pageTitle}. ${visibleText}`, button: listen, rate: questionsOnly ? 0.89 : 0.92 });
+      });
+      rail.appendChild(listen);
+    }
+
+    if (questions.length && body) {
+      const filter = document.createElement('button');
+      filter.id = 'floating-page-filter';
+      filter.type = 'button';
+      filter.setAttribute('aria-pressed', 'false');
+      filter.setAttribute('aria-label', 'Questions-only filter off');
+      filter.title = 'Questions only';
+      filter.textContent = 'Filter Off';
+
+      const setFilter = active => {
+        questionsOnly = Boolean(active);
+        body.classList.toggle('questions-only-filter', questionsOnly);
+        filter.classList.toggle('is-active', questionsOnly);
+        filter.setAttribute('aria-pressed', String(questionsOnly));
+        filter.setAttribute('aria-label', `Questions-only filter ${questionsOnly ? 'on' : 'off'}`);
+        filter.textContent = questionsOnly ? 'Filter On' : 'Filter Off';
+        resetAudio();
+      };
+
+      filter.addEventListener('click', () => setFilter(!questionsOnly));
+      rail.appendChild(filter);
     }
 
     document.body.appendChild(rail);
