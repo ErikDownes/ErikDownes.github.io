@@ -1,7 +1,7 @@
 ---
 layout: doc
 permalink: /pivotal-corporate-study.html
-handle: Pivotal Corporate Questions Only
+handle: PV Questions Only/CV
 nav_order: 40
 description: Working study notes for the Pivotal Corporate Co-Op Student /
   Corporate Administrator role.
