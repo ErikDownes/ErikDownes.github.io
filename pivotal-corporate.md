@@ -11,6 +11,12 @@ public_mode: true
 ---
 # Questions to show you know the role
 
+
+
+## Who is Pivotal Corporate and what do you do?
+
+Pivotal Corporate is an **independent, solutions-driven corporate services  firm** that helps **US-based investors establish and grow their businesses in Europe**.
+
 ## What do you know about Pivotal Corporate?
 
 Pivotal Corporate is an **independent, solutions-driven firm** that helps mainly **US-based investors establish and grow their businesses in Europe**.
