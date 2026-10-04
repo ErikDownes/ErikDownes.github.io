@@ -3,7 +3,7 @@ layout: doc
 permalink: /hse-finance-study.html
 handle: HSE Finance Study
 title: HSE Finance Study
-nav_order: 42
+nav_order: 222
 description: Study notes for the HSE Mid-West Co-op Finance role.
 eyebrow: HSE MID-WEST · FINANCE · CO-OP STUDY
 public_mode: true
@@ -29,6 +29,7 @@ The HSE Mid-West Health Region was established to manage and deliver all public 
 HSE Mid-West includes all hospital, community healthcare and public health services in the region. This includes:
 
 **Mid West Acute Hospitals**
+
 - University Hospital Limerick
 - University Maternity Hospital Limerick
 - Ennis Hospital
@@ -43,6 +44,7 @@ Deliver a broad range of community services, provided within and outside of the 
 **Public Health Mid-West**
 
 The Public Health team works to protect, support, enable, and advise on the health and wellbeing of the population. They deliver services across four public health domains:
+
 - Health Protection
 - Health Improvement
 - Health Service Improvement
