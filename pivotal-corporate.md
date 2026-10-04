@@ -15,18 +15,15 @@ public_mode: true
 
 &nbsp;
 
-&nbsp;
-
 ## What does Pivotal mean to you?
 
-<p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>Archimedes&emsp;&emsp;Mechanical advantage&emsp;&emsp;Client support</strong></p>
+**Archimedes  Mechanical advantage  Client support**
 
 Well, that's actually an interesting one, because **physics and applied maths are subjects I really enjoy**. Your name reminds me of a saying attributed to Archimedes: **“Give me a place to stand and I will move the earth.”**
 
 The idea is that, with a long enough lever and a firm pivot point - like your company - a relatively small force can move a much greater load. That **mechanical advantage** is what makes a pivot such a powerful concept in physics.
 
 That's the connection I make with Pivotal: you provide the reliable accounting and administration support that allows clients to concentrate on running and growing their businesses. **The right support can make a much greater result possible.**
-
 
 
 
@@ -41,19 +38,19 @@ with extensive experience assisting
 
 ## Who is Pivotal Corporate?
 
-<p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>Solutions-driven&emsp;&emsp;US-based&emsp;&emsp;European investments</strong></p>
+**Solutions-driven  US-based  European investments**
 
 Pivotal Corporate is an **independent, solutions-driven firm** that helps **US-based investors establish and grow their European investments**.
 
 ## Who does Pivotal mainly support?
 
-<p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>US-based&emsp;&emsp;Europe&emsp;&emsp;Jurisdictions</strong></p>
+**US-based  Europe  Jurisdictions**
 
 Pivotal mainly supports **US-based investors coming into Europe**. I find that interesting because it combines **business, finance, accounting and working across different jurisdictions**.
 
 ## Why does Pivotal interest you?
 
-<p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>Financial Mathematics&emsp;&emsp;Real decisions&emsp;&emsp;Client value</strong></p>
+**Financial Mathematics  Real decisions  Client value**
 
 My degree combines **Financial Mathematics, accounting, finance, statistics and data analysis**, so I like work where accurate financial information supports real business decisions.
 
@@ -66,19 +63,19 @@ in a number of jurisdictions to ensure their project runs smoothly from the **in
 
 ## How does Pivotal support clients?
 
-<p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>Every stage&emsp;&emsp;Initial assessment&emsp;&emsp;Fully operational</strong></p>
+**Every stage  Initial assessment  Fully operational**
 
 Pivotal supports clients **from the initial assessment right through to becoming fully operational**, rather than just providing one isolated service.
 
 ## Why do local networks matter?
 
-<p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>Local networks&emsp;&emsp;Jurisdictions&emsp;&emsp;Operational</strong></p>
+**Local networks  Jurisdictions  Operational**
 
 Businesses operating internationally have to deal with **different legal, financial, regulatory and administrative requirements**. Pivotal's local networks help clients manage those differences.
 
 ## What interests you about international work?
 
-<p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>Standardise&emsp;&emsp;Time zones&emsp;&emsp;Reconcile</strong></p>
+**Standardise  Time zones  Reconcile**
 
 I have already seen in data projects how important it is to **standardise information before comparing or merging it**. Even timestamps can involve **UTC, time zones and daylight-saving changes**, which is also relevant when working with international financial records.
 
@@ -88,19 +85,19 @@ With our **client-focused and solutions-driven delivery**, we have the ability t
 
 ## What does client-focused mean?
 
-<p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>Client-focused&emsp;&emsp;Ever-changing&emsp;&emsp;Core business</strong></p>
+**Client-focused  Ever-changing  Core business**
 
 It means understanding **what the client actually needs**, responding quickly and giving them information they can use rather than simply completing a task.
 
 ## Why is Pivotal a good name?
 
-<p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>Pivot point&emsp;&emsp;Mechanical advantage&emsp;&emsp;Core business</strong></p>
+**Pivot point  Mechanical advantage  Core business**
 
 In physics, a pivot gives a lever **mechanical advantage**. I see the same idea here: good accounting and administration support allows the client to concentrate on **running and growing the core business**.
 
 ## When have you adapted to difficult data?
 
-<p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>Ever-changing&emsp;&emsp;Standardise&emsp;&emsp;Check</strong></p>
+**Ever-changing  Standardise  Check**
 
 In my **Strava and Dublin Bikes work**, the timestamps were represented differently. Using **Pandas**, I parsed and standardised the datetime and timezone information before merging the data. It took some trial and error, but I kept checking until the records aligned correctly.
 
@@ -110,19 +107,19 @@ In my **Strava and Dublin Bikes work**, the timestamps were represented differen
 
 ## What sets Pivotal apart?
 
-<p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>Delivery&emsp;&emsp;Unrivalled responsiveness&emsp;&emsp;Professional</strong></p>
+**Delivery  Unrivalled responsiveness  Professional**
 
 **Delivery.** Pivotal wants to be **responsive, accessible, reliable, practical and professional** for its clients.
 
 ## How have you shown high standards?
 
-<p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>High standards&emsp;&emsp;Self-motivated&emsp;&emsp;Beyond syllabus</strong></p>
+**High standards  Self-motivated  Beyond syllabus**
 
 I regularly practise beyond what is required in college. For example, I built an **aircraft data project using Python and Pandas**, combining **OpenSky and PlaneSpotters** data and working from more than **500,000 records down to the relevant 61 aircraft**.
 
 ## How do you make analysis useful?
 
-<p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>Practical&emsp;&emsp;Client value&emsp;&emsp;Decision</strong></p>
+**Practical  Client value  Decision**
 
 I compared **three PCP finance options in Excel**, calculated the total costs and presented the result clearly. Two were almost identical and one was about **€800 cheaper**. The important part was making the result easy for someone else to use.
 
@@ -132,13 +129,13 @@ We are currently seeking to hire a **proactive, self-motivated, and highly organ
 
 ## How are you proactive and self-motivated?
 
-<p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>Proactive&emsp;&emsp;Self-motivated&emsp;&emsp;Practical</strong></p>
+**Proactive  Self-motivated  Practical**
 
 A lot of my projects are **self-directed rather than college assignments**. I use what I learn in college and then build something practical with it, such as the **aircraft project, Strava analysis and financial calculators**.
 
 ## How have you used Excel accurately?
 
-<p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>Detail-oriented&emsp;&emsp;Reconcile&emsp;&emsp;Accurate</strong></p>
+**Detail-oriented  Reconcile  Accurate**
 
 I built an **Excel reconciliation check** comparing **amount due and amount paid**. I used nested **IF statements** to classify the result as **Not Paid, Underpaid, Paid or Overpaid**.
 
@@ -146,7 +143,7 @@ I built an **Excel reconciliation check** comparing **amount due and amount paid
 
 ## Where would you take these skills next?
 
-<p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>Genuine desire&emsp;&emsp;Learn&emsp;&emsp;Add value</strong></p>
+**Genuine desire  Learn  Add value**
 
 I am still early in that proficiency path, but I would like to move into **time-series forecasting, financial modelling and machine learning**. With the amount of financial and operational information involved in supporting international businesses, I think there is huge potential for **data analysis and eventually more advanced machine-learning techniques**.
 
@@ -158,31 +155,31 @@ I am still early in that proficiency path, but I would like to move into **time-
 
 ## How quickly is Pivotal growing?
 
-<p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>2020&emsp;&emsp;85 employees&emsp;&emsp;Dublin / London</strong></p>
+**2020  85 employees  Dublin / London**
 
 LinkedIn currently shows about **85 employees**, with continued recruitment in **Shannon** and a stated growth focus on **Dublin and London**. The company was founded in **2020**. Eight of your employees went to UL.
 
 ## Do we take Co-op seriously?
 
-<p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>UL Co-op&emsp;&emsp;Returned&emsp;&emsp;Career path</strong></p>
+**UL Co-op  Returned  Career path**
 
 Yes and the evidence for that is that **Brian Nolan returned as an Assistant Client Manager after previously spending nine months at Pivotal on UL work placement**. That is probably the most relevant LinkedIn fact for me as a UL Co-op applicant.
 
 ## How important is aviation to Pivotal?
 
-<p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>Aviation leasing&emsp;&emsp;Growth&emsp;&emsp;Catherine Wixted</strong></p>
+**Aviation leasing  Growth  Catherine Wixted**
 
 It is clearly a major business area. They recently hired **two Vice Presidents and a Corporate Administrator specifically to strengthen aviation leasing**, including **Catherine Wixted**, my interviewer.
 
 ## What scale of transactions does Pivotal handle?
 
-<p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>27 aircraft&emsp;&emsp;15 jurisdictions&emsp;&emsp;$779m portfolio</strong></p>
+**27 aircraft  15 jurisdictions  $779m portfolio**
 
 Pivotal was appointed **Managing Agent for MAST 2026-1**: **27 aircraft, 18 lessees across 15 jurisdictions**, with about **$615 million of notes** backed by an aircraft portfolio worth about **$779 million**. That shows the scale and international nature of the work.
 
 ## What impression did you get of Pivotal?
 
-<p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>Team events&emsp;&emsp;Get involved&emsp;&emsp;Close team</strong></p>
+**Team events  Get involved  Close team**
 
 It looks like a growing but fairly close team: LinkedIn shows **staff events, charity cycles and walks, aviation-industry events and team charity sport**, rather than only corporate announcements.
 
@@ -202,13 +199,13 @@ It looks like a growing but fairly close team: LinkedIn shows **staff events, ch
 
 ## How are you proactive and self-motivated?
 
-<p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>Proactive&emsp;&emsp;Self-motivated&emsp;&emsp;Independent projects</strong></p>
+**Proactive  Self-motivated  Independent projects**
 
 I built an **aircraft data project** outside college using **Python and Pandas**. I combined **OpenSky and PlaneSpotters** data, reducing over **500,000 records to the relevant 61 aircraft**. I like taking what I learn in college and practising it independently until it becomes natural.
 
 ## Strava + Dublin Bikes — Timestamp Example
 
-<p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>Timezone&emsp;&emsp;Normalise&emsp;&emsp;Reconcile</strong></p>
+**Timezone  Normalise  Reconcile**
 
 I combined **Strava GPX data with public Dublin Bikes data**. The tricky part was the **timestamps**, because the two sources represented date and time differently.
 
@@ -218,7 +215,7 @@ That is important in accounting too, especially when working across **different 
 
 ## Give us an example of using Excel accurately.
 
-<p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>Nested IF&emsp;&emsp;Categorical status&emsp;&emsp;Accurate</strong></p>
+**Nested IF  Categorical status  Accurate**
 
 I built an **Excel reconciliation check** comparing **amount due with amount paid**. I used nested **IF statements** to convert the numerical result into categories such as **Not Paid, Underpaid, Paid or Overpaid**.
 
@@ -228,13 +225,13 @@ That is a simple example of turning quantitative data into a useful **categorica
 
 ## How have your studies prepared you for this role?
 
-<p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>Accounting&emsp;&emsp;Finance&emsp;&emsp;Data analysis</strong></p>
+**Accounting  Finance  Data analysis**
 
 My degree combines **Financial Accounting, Finance, Financial Mathematics, Statistics and Data Analysis**. My work and projects then give me a chance to apply those ideas practically — checking figures, reconciling data, analysing information and presenting it clearly.
 
 ## Where would you take these skills next?
 
-<p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>Time series&emsp;&emsp;Machine learning&emsp;&emsp;Add value</strong></p>
+**Time series  Machine learning  Add value**
 
 I am only at the beginning of that proficiency path, but I have really become interested in it. Next year I would like to work on **time-series forecasting, financial modelling and machine-learning projects**, particularly using accounting and business data.
 
@@ -252,19 +249,25 @@ A company like Pivotal works with businesses coming from the **US into Europe**,
 
 **PIVOTAL CORPORATE · WHAT I WILL DO · HOW I WILL APPROACH IT · WHAT STANDARD I WILL WORK TO**
 
-## The Rule
 
-**Job-Specific Requirements = what I bring.**
 
-These are the qualities already evidenced on my CV: organised, good communication, Microsoft skills, positive attitude and an interest in financial services.
-
-**Duties = what I will do.**
-
-These are the actual tasks I will be learning and carrying out: journals, reconciliations, AP/AR, reporting, research, company administration and company secretarial work.
+## What are **Responsibilities**
 
 **Responsibilities = the standard I am expected to maintain.**
 
 Accuracy, client care, compliance, professionalism, deadlines and producing work that other people can rely on.
+
+
+
+## What are **Duties**
+
+***Duties* = what I will do.**
+
+These are the actual tasks I will be learning and carrying out: journals, reconciliations, AP/AR, reporting, research, company administration and company secretarial work.  
+  
+I will work to instructions from 
+
+
 
 ## How to Answer
 
@@ -288,10 +291,9 @@ But I am **proactive, willing to take responsibility and prepared to get involve
 
 # Company Administration, Relationships & Client Care
 
-
 ## What does company administration involve?
 
-<p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>Company administration&emsp;&emsp;Accurate records&emsp;&emsp;Deadlines</strong></p>
+**Company administration  Accurate records  Deadlines**
 
 It means keeping the **records, documents, schedules and information around a company accurate and up to date**.
 
@@ -299,7 +301,7 @@ I would be coming in to learn Pivotal's processes, but my approach would be simp
 
 ## How would you build client relationships?
 
-<p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>Business-like relationships&emsp;&emsp;Intermediaries&emsp;&emsp;Internal clients</strong></p>
+**Business-like relationships  Intermediaries  Internal clients**
 
 I would be **approachable but professional**: listen properly, respond clearly and do what I said I would do.
 
@@ -307,7 +309,7 @@ My customer-service experience at **Mr Price** taught me that people remember wh
 
 ## What does good client care mean?
 
-<p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>Client care&emsp;&emsp;Responsive&emsp;&emsp;Professional</strong></p>
+**Client care  Responsive  Professional**
 
 It means the client can **rely on both the information and the service**.
 
@@ -319,7 +321,7 @@ That fits Pivotal's own emphasis on being **responsive, accessible, reliable, pr
 
 ## Which duty does not belong?
 
-<p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>Journal entries&emsp;&emsp;Reconciliations&emsp;&emsp;Reporting</strong></p>
+**Journal entries  Reconciliations  Reporting**
 
 Which of these is not one of the accounting duties in the role?
 
@@ -331,7 +333,7 @@ The others all belong directly to the accounting and reporting side of the role.
 
 ## What accounting work could you support?
 
-<p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>Journal entries&emsp;&emsp;AP / AR&emsp;&emsp;Reporting</strong></p>
+**Journal entries  AP / AR  Reporting**
 
 I could be helping with **journal entries, reconciliations, Accounts Payable, Accounts Receivable, VAT and regulatory reporting, and maintaining accurate financial records and supporting documentation**.
 
@@ -339,7 +341,7 @@ I have the academic foundation from university, and the placement is where I wou
 
 ## What is a reconciliation?
 
-<p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>Compare&emsp;&emsp;Difference&emsp;&emsp;Investigate</strong></p>
+**Compare  Difference  Investigate**
 
 A reconciliation means **comparing two records that should agree and investigating any difference**.
 
@@ -351,7 +353,7 @@ That turns raw numerical data into a useful **categorical status** that can be c
 
 ## What Excel logic do you know?
 
-<p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>IF / IFS&emsp;&emsp;XLOOKUP&emsp;&emsp;SUMIFS</strong></p>
+**IF / IFS  XLOOKUP  SUMIFS**
 
 I have practised **IF, nested IFs, IFS, AND, OR and IFERROR**, as well as **XLOOKUP, VLOOKUP, SUMIFS and COUNTIFS**.
 
@@ -383,7 +385,7 @@ He does not need to mention any of this unless they ask a follow-up.
 
 ## What is the difference between AP and AR?
 
-<p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>Payable&emsp;&emsp;Receivable&emsp;&emsp;Cash</strong></p>
+**Payable  Receivable  Cash**
 
 **Accounts Payable** is money the company **owes**.
 
@@ -399,7 +401,7 @@ At **O'Mahony's**, I have already seen why invoices, orders, quantities and dest
 
 ## What is a journal entry?
 
-<p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>Transaction&emsp;&emsp;Debit&emsp;&emsp;Credit</strong></p>
+**Transaction  Debit  Credit**
 
 A journal entry records a financial transaction in the accounting system using the appropriate **debit and credit entries**.
 
@@ -407,7 +409,7 @@ I have covered this through **Financial Accounting and Accounting for Financial 
 
 ## Why does accurate documentation matter?
 
-<p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>Supporting documentation&emsp;&emsp;Check&emsp;&emsp;Trust</strong></p>
+**Supporting documentation  Check  Trust**
 
 The number itself is not enough.
 
@@ -421,7 +423,7 @@ That makes the work easier to **check, reconcile, report and audit**, and means 
 
 ## Why do accurate records matter?
 
-<p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>Accounting standards&emsp;&emsp;Regulatory reporting&emsp;&emsp;Traceable</strong></p>
+**Accounting standards  Regulatory reporting  Traceable**
 
 Good records support **accounting standards, tax, regulatory reporting and later review or audit**.
 
@@ -429,7 +431,7 @@ The information needs to be accurate, but also **traceable back to its source**.
 
 ## How would you approach research?
 
-<p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>Financial&emsp;&emsp;Accounting&emsp;&emsp;Market</strong></p>
+**Financial  Accounting  Market**
 
 I would start with reliable sources, organise the information, **cross-check anything important**, and reduce it to what the person actually needs.
 
@@ -437,7 +439,7 @@ I used that approach in my aircraft project, where I combined **OpenSky and Plan
 
 ## How have you improved a process?
 
-<p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>Process improvement&emsp;&emsp;Operational improvement&emsp;&emsp;Check</strong></p>
+**Process improvement  Operational improvement  Check**
 
 If I see the same task being repeated, I naturally think about whether it can be made **clearer, faster or less error-prone without removing the controls**.
 
@@ -445,7 +447,7 @@ My Excel reconciliation is a simple example: instead of manually interpreting ea
 
 ## How have you handled data carefully?
 
-<p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>Timestamp&emsp;&emsp;Normalise&emsp;&emsp;Reconcile</strong></p>
+**Timestamp  Normalise  Reconcile**
 
 I combined **Strava GPX data with public Dublin Bikes data**, and the tricky part was the timestamps because the sources represented date and time differently.
 
@@ -461,7 +463,7 @@ That is important in accounting too, particularly when working across **differen
 
 ## What is Company Secretarial?
 
-<p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>Governance&emsp;&emsp;Statutory&emsp;&emsp;Regulatory</strong></p>
+**Governance  Statutory  Regulatory**
 
 Company Secretarial is a service Pivotal provides to client companies to help them meet their **corporate governance, statutory and regulatory obligations**.
 
@@ -471,7 +473,7 @@ It is not the same as an ordinary secretary or general administrator.
 
 ## Why do registers matter?
 
-<p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>Schedules&emsp;&emsp;Registers&emsp;&emsp;Accurate</strong></p>
+**Schedules  Registers  Accurate**
 
 A register is only useful if it is **current, complete and accurate**.
 
@@ -479,7 +481,7 @@ I would treat maintaining one like a data task: update it systematically, preser
 
 ## What do KYC and CDD mean?
 
-<p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>KYC&emsp;&emsp;CDD&emsp;&emsp;Statutory requirements</strong></p>
+**KYC  CDD  Statutory requirements**
 
 **KYC — Know Your Customer** — is about establishing who the client is.
 
@@ -489,7 +491,7 @@ For an international corporate-services firm, that is a fundamental part of meet
 
 ## How would you handle signed documents?
 
-<p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>Correct&emsp;&emsp;Authorised&emsp;&emsp;Regulatory</strong></p>
+**Correct  Authorised  Regulatory**
 
 I would make sure it is the **correct document and correct version**, that it is being sent to the **correct authorised people**, and that the completed document is properly recorded and stored.
 
@@ -497,7 +499,7 @@ With legal or regulatory documentation, I would rather **check once more than ma
 
 ## How would you handle admin tasks?
 
-<p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>Prioritise&emsp;&emsp;Complete&emsp;&emsp;Professional</strong></p>
+**Prioritise  Complete  Professional**
 
 I would organise the work by urgency and importance, complete tasks carefully, and make sure anything dependent on me is not left hanging.
 
@@ -535,7 +537,7 @@ That keeps the answer factual. You are not boasting about qualities — **you ar
 
 # Organised, Detail-Oriented & Critical Thinking
 
-<p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>Organised&emsp;&emsp;Detail-oriented&emsp;&emsp;Critical thinking</strong></p>
+**Organised  Detail-oriented  Critical thinking**
 
 Evidence can come from **O'Mahony's, university work, Excel reconciliation, the aircraft project and managing several projects alongside your degree**.
 
@@ -543,7 +545,7 @@ A strong answer should show that you **check details, notice when something does
 
 # Written & Verbal Communication
 
-<p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>Written&emsp;&emsp;Verbal&emsp;&emsp;Professional</strong></p>
+**Written  Verbal  Professional**
 
 Use examples where you had to **explain something clearly, communicate with a customer or colleague, or turn technical information into something another person could use**.
 
@@ -551,7 +553,7 @@ The O'Mahony's library delivery example is strong evidence: you identified the p
 
 # Microsoft Word, Excel & Outlook
 
-<p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>Word&emsp;&emsp;Excel&emsp;&emsp;Outlook</strong></p>
+**Word  Excel  Outlook**
 
 Do not just say you know Microsoft Office.
 
@@ -561,7 +563,7 @@ The stronger point is that you understand **which tool is appropriate for which 
 
 # Positive Attitude & Responsibility
 
-<p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>Positive attitude&emsp;&emsp;Take responsibility&emsp;&emsp;Get involved</strong></p>
+**Positive attitude  Take responsibility  Get involved**
 
 Evidence should show that you **take responsibility rather than waiting to be told everything**.
 
@@ -569,7 +571,7 @@ Your independent projects are useful here because many were **not required by co
 
 # Interest in Financial Services & Adding Client Value
 
-<p style="text-align:center; margin:.35rem 0 1rem; font-size:.9rem;"><strong>Financial services&emsp;&emsp;Genuine desire&emsp;&emsp;Add value</strong></p>
+**Financial services  Genuine desire  Add value**
 
 This is where your degree and projects connect most directly.
 
