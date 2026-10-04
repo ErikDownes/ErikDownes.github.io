@@ -3,71 +3,41 @@ layout: doc
 permalink: /education.html
 handle: Financial Maths (UL-LM058)
 title: BSc Financial Mathematics
-nav_order: 20
+nav_order: 133
 eyebrow: UNIVERSITY OF LIMERICK · BSC FINANCIAL MATHEMATICS · LM058
 study_mode: true
 ---
 
-<style>
-.education-year{margin:22px 0;padding:20px;border:1px solid #dce3e9;border-radius:16px;background:#fbfcfd}
-.education-year h2{margin-top:0}
-.education-semester{margin:16px 0;padding:16px;border:1px solid #e4e9ed;border-radius:12px;background:#fff}
-.education-semester h3{margin-top:0}
-.education-semester ul{margin:.45rem 0 .15rem;padding-left:1.2rem}
-.education-status{display:inline-block;margin-left:7px;padding:2px 8px;border:1px solid #dce3e9;border-radius:999px;font-size:.75rem;font-weight:700;vertical-align:middle}
-.education-summary{padding:14px 16px;border-left:4px solid #5b7da3;background:#f7f9fb;border-radius:0 12px 12px 0;margin:18px 0 26px}
-.programme-overview{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:16px 0 28px}
-.programme-overview>div{padding:14px;border:1px solid #dce3e9;border-radius:12px;background:#fff}
-.programme-overview strong{display:block;margin-bottom:4px}
-@media(max-width:800px){.programme-overview{grid-template-columns:1fr 1fr}}
-@media(max-width:520px){.programme-overview{grid-template-columns:1fr}}
-.lc-results{max-width:620px}
-.current-study{margin:28px 0 34px;padding:20px;border:1px solid #cfdbe4;border-radius:16px;background:#fff}
-.current-study-kicker{font-size:.78rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#4f6475;margin-bottom:5px}
-.current-study h2{margin:.2rem 0 .35rem}
-.current-study p{margin:.2rem 0 1rem}
-.current-module-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-.current-module{display:block;padding:12px 14px;border:1px solid #dce3e9;border-radius:10px;text-decoration:none;background:#f7f9fb}
-.current-module strong{display:block;margin-bottom:2px}
-.current-module span{display:block}
-@media(max-width:650px){.current-module-grid{grid-template-columns:1fr}}
-</style>
 
 I am currently in **Year 3 of the BSc Financial Mathematics programme at the University of Limerick**. Years 1 and 2 are complete, I am studying Semester 1 of Year 3 now, and Semester 2 is my Cooperative Education placement.
 
-<div class="education-summary">
-<strong>Current position:</strong> Year 3 · Semester 1 · BSc Financial Mathematics (LM058)
-</div>
+**Current position:** Year 3 · Semester 1 · BSc Financial Mathematics (LM058)
 
-<div class="current-study">
-  <div class="current-study-kicker">Currently underway · Year 3 · Semester 1</div>
-  <h2>Current modules</h2>
-  <p>These five modules are currently underway.</p>
-  <div class="current-module-grid">
-    <a class="current-module" href="{{ '/modules/ms4027-fundamentals-of-financial-mathematics.html' | relative_url }}"><strong>MS4027</strong><span>Fundamentals of Financial Mathematics</span></a>
-    <a class="current-module" href="{{ '/modules/ms4045-complex-analysis.html' | relative_url }}"><strong>MS4045</strong><span>Complex Analysis</span></a>
-    <a class="current-module" href="{{ '/modules/ms4105-linear-algebra-2.html' | relative_url }}"><strong>MS4105</strong><span>Linear Algebra 2</span></a>
-    <a class="current-module" href="{{ '/modules/ms4214-statistical-inference.html' | relative_url }}"><strong>MS4214</strong><span>Statistical Inference</span></a>
-    <a class="current-module" href="{{ '/modules/ms4215-advanced-data-analysis.html' | relative_url }}"><strong>MS4215</strong><span>Advanced Data Analysis</span></a>
-  </div>
-</div>
+Currently underway · Year 3 · Semester 1
+
+## Current modules
+
+These five modules are currently underway.
+
+**[MS4027**Fundamentals of Financial Mathematics]({{ '/modules/ms4027-fundamentals-of-financial-mathematics.html' | relative_url }}) **[MS4045**Complex Analysis]({{ '/modules/ms4045-complex-analysis.html' | relative_url }}) **[MS4105**Linear Algebra 2]({{ '/modules/ms4105-linear-algebra-2.html' | relative_url }}) **[MS4214**Statistical Inference]({{ '/modules/ms4214-statistical-inference.html' | relative_url }}) **[MS4215**Advanced Data Analysis]({{ '/modules/ms4215-advanced-data-analysis.html' | relative_url }})
 
 ## Programme overview
 
 LM058 is a four-year Financial Mathematics degree combining **mathematics, probability and statistics, data analysis, programming, finance and accounting**, with **Cooperative Education in Year 3**. The programme moves from mathematical and computational foundations into increasingly specialised work in financial mathematics, stochastic modelling, statistical data science and quantitative finance.
 
-<div class="programme-overview">
-  <div><strong>Year 1 · Foundations</strong>Calculus, linear algebra, probability, programming and accounting.</div>
-  <div><strong>Year 2 · Applied analysis</strong>Finance, probability models, numerical analysis, data analysis, optimisation and differential equations.</div>
-  <div><strong>Year 3 · Specialisation + Co-op</strong>Statistical inference, advanced data analysis and financial mathematics, followed by professional placement.</div>
-  <div><strong>Year 4 · Advanced quantitative study</strong>Stochastic processes, time series, data-science projects, stochastic finance and investment modelling.</div>
-</div>
+**Year 1 · Foundations**Calculus, linear algebra, probability, programming and accounting.
 
-<div class="education-year" markdown="1">
+**Year 2 · Applied analysis**Finance, probability models, numerical analysis, data analysis, optimisation and differential equations.
 
-## First Year · 2024/25 <span class="education-status">Completed</span>
+**Year 3 · Specialisation + Co-op**Statistical inference, advanced data analysis and financial mathematics, followed by professional placement.
 
-<div class="education-semester" markdown="1">
+**Year 4 · Advanced quantitative study**Stochastic processes, time series, data-science projects, stochastic finance and investment modelling.
+
+
+
+## First Year · 2024/25 Completed
+
+
 
 ### Semester 1
 
@@ -77,9 +47,9 @@ LM058 is a four-year Financial Mathematics degree combining **mathematics, proba
 - [Linear Algebra 1]({{ '/modules/ms4131-linear-algebra-1.html' | relative_url }}) · **MS4131** · B1
 - [Financial Accounting]({{ '/modules/ac4213-financial-accounting.html' | relative_url }}) · **AC4213** · B3
 
-</div>
 
-<div class="education-semester" markdown="1">
+
+&nbsp;
 
 ### Semester 2
 
@@ -89,14 +59,13 @@ LM058 is a four-year Financial Mathematics degree combining **mathematics, proba
 - [Introduction to Probability and Statistics]({{ '/modules/ms4222-introduction-to-probability-and-statistics.html' | relative_url }}) · **MS4222** · A1
 - [Accounting for Financial Decision Making]({{ '/modules/ac4214-accounting-for-financial-decision-making.html' | relative_url }}) · **AC4214** · A2
 
-</div>
-</div>
 
-<div class="education-year" markdown="1">
 
-## Second Year · 2025/26 <span class="education-status">Completed</span>
+&nbsp;
 
-<div class="education-semester" markdown="1">
+## Second Year · 2025/26 Completed
+
+
 
 ### Semester 1
 
@@ -106,9 +75,9 @@ LM058 is a four-year Financial Mathematics degree combining **mathematics, proba
 - [Ordinary Differential Equations]({{ '/modules/ms4403-ordinary-differential-equations.html' | relative_url }}) · **MS4403** · A2
 - [Vector Analysis]({{ '/modules/ms4613-vector-analysis.html' | relative_url }}) · **MS4613** · A2
 
-</div>
 
-<div class="education-semester" markdown="1">
+
+&nbsp;
 
 ### Semester 2
 
@@ -118,14 +87,13 @@ LM058 is a four-year Financial Mathematics degree combining **mathematics, proba
 - [Partial Differential Equations]({{ '/modules/ms4404-partial-differential-equations.html' | relative_url }}) · **MS4404** · B1
 - [Theoretical Mechanics]({{ '/modules/ms4414-theoretical-mechanics.html' | relative_url }}) · **MS4414** · B1
 
-</div>
-</div>
 
-<div class="education-year" markdown="1">
 
-## Third Year · 2026/27 <span class="education-status">Current year</span>
+&nbsp;
 
-<div class="education-semester" markdown="1">
+## Third Year · 2026/27 Current year
+
+
 
 ### Semester 1 · Current
 
@@ -135,9 +103,9 @@ LM058 is a four-year Financial Mathematics degree combining **mathematics, proba
 - [Statistical Inference]({{ '/modules/ms4214-statistical-inference.html' | relative_url }}) · **MS4214**
 - [Advanced Data Analysis]({{ '/modules/ms4215-advanced-data-analysis.html' | relative_url }}) · **MS4215**
 
-</div>
 
-<div class="education-semester" markdown="1">
+
+&nbsp;
 
 ### Semester 2 · Cooperative Education
 
@@ -145,14 +113,13 @@ LM058 is a four-year Financial Mathematics degree combining **mathematics, proba
 - Full-time professional placement
 - Opportunity to apply mathematics, finance, accounting, data analysis, programming and professional skills in the workplace
 
-</div>
-</div>
 
-<div class="education-year" markdown="1">
 
-## Fourth Year · 2027/28 <span class="education-status">Upper-level programme</span>
+&nbsp;
 
-<div class="education-semester" markdown="1">
+## Fourth Year · 2027/28 Upper-level programme
+
+
 
 ### Semester 1
 
@@ -162,9 +129,9 @@ LM058 is a four-year Financial Mathematics degree combining **mathematics, proba
 - [Introduction to Fluid Mechanics]({{ '/modules/ma4617-introduction-to-fluid-mechanics.html' | relative_url }}) · **MA4617**
 - [Perturbation Techniques and Asymptotics]({{ '/modules/ms4407-perturbation-techniques-and-asymptotics.html' | relative_url }}) · **MS4407**
 
-</div>
 
-<div class="education-semester" markdown="1">
+
+&nbsp;
 
 ### Semester 2
 
@@ -174,10 +141,9 @@ LM058 is a four-year Financial Mathematics degree combining **mathematics, proba
 - [Time Series Analysis]({{ '/modules/ms4218-time-series-analysis.html' | relative_url }}) · **MS4218**
 - [Mathematical and Statistical Models of Investments]({{ '/modules/ms4528-mathematical-and-statistical-models-of-investments.html' | relative_url }}) · **MS4528**
 
-</div>
-</div>
 
-<div class="education-year" markdown="1">
+
+&nbsp;
 
 ## Leaving Certificate · 2024
 
@@ -185,10 +151,11 @@ LM058 is a four-year Financial Mathematics degree combining **mathematics, proba
 
 **579 CAO points**
 
-<div class="lc-results">
+
+
 
 | Subject | Result |
-| --- | ---: |
+| ------------------- | ------ |
 | Mathematics | **H1** |
 | Applied Mathematics | **H1** |
 | Physics | **H1** |
@@ -197,12 +164,13 @@ LM058 is a four-year Financial Mathematics degree combining **mathematics, proba
 | English | **H3** |
 | Irish | **O3** |
 
-</div>
+
+
 
 I received the **Kolvenbach Medal for Business** in May 2024 for achieving the highest Leaving Certificate Business grade at Crescent College, and a **Certificate of Academic Excellence** in September 2023.
 
 For my Leaving Certificate Applied Mathematics project, I modelled the minimum height required for a roller-coaster cart to complete a loop. I independently researched air resistance beyond the course material and incorporated it into the model, achieving **86% in the project**.
 
-</div>
+
 
 For a fuller record of results and academic achievements, see my [Academic Record]({{ '/academic-record.html' | relative_url }}).
