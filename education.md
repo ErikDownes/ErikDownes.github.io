@@ -17,7 +17,11 @@ Currently underway · Year 3 · Semester 1
 
 These five modules are currently underway.
 
-**[MS4027**Fundamentals of Financial Mathematics]({{ '/modules/ms4027-fundamentals-of-financial-mathematics.html' | relative_url }}) **[MS4045**Complex Analysis]({{ '/modules/ms4045-complex-analysis.html' | relative_url }}) **[MS4105**Linear Algebra 2]({{ '/modules/ms4105-linear-algebra-2.html' | relative_url }}) **[MS4214**Statistical Inference]({{ '/modules/ms4214-statistical-inference.html' | relative_url }}) **[MS4215**Advanced Data Analysis]({{ '/modules/ms4215-advanced-data-analysis.html' | relative_url }})
+- [Fundamentals of Financial Mathematics]({{ '/modules/ms4027-fundamentals-of-financial-mathematics.html' | relative_url }}) · **MS4027**
+- [Complex Analysis]({{ '/modules/ms4045-complex-analysis.html' | relative_url }}) · **MS4045**
+- [Linear Algebra 2]({{ '/modules/ms4105-linear-algebra-2.html' | relative_url }}) · **MS4105**
+- [Statistical Inference]({{ '/modules/ms4214-statistical-inference.html' | relative_url }}) · **MS4214**
+- [Advanced Data Analysis]({{ '/modules/ms4215-advanced-data-analysis.html' | relative_url }}) · **MS4215**
 
 ## Programme overview
 
