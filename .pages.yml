@@ -33,7 +33,7 @@ content:
       - { name: projects, label: "50 · Projects", type: file, path: projects.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: academic_record, label: "Academic Record", type: file, path: academic-record.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: pivotal_corporate_study, label: "Co-op — Pivotal Corporate Study", type: file, path: pivotal-corporate-study.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: pivotal_corporate_interview, label: "Co-op — Pivotal Corporate Interview", type: file, path: pivotal-corporate.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: pivotal_corporate, label: "Co-op — Pivotal Corporate Interview", type: file, path: pivotal-corporate.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: csp, label: "Co-op — Corporate Services (CSP)", type: file, path: csp.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: hse_finance_study, label: "Co-op — HSE Finance Study", type: file, path: hse-finance-study.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: hse_finance_interview, label: "Co-op — HSE Finance Interview", type: file, path: hse-finance-interview.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
