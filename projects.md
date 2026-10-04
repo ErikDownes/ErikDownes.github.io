@@ -7,14 +7,26 @@ nav_order: 70
 eyebrow: DASHBOARDS · CALCULATORS · APPLIED WORK
 public_mode: true
 ---
-
 This projects section is deliberately small. It contains a short set of working dashboards, calculators and applied data projects that can be developed further without burying the useful work under layers of categories.
+
+
+
+## **Word**  **(Word Processing) Exercises and Skills**
+
+
 
 ## Spreadsheet Exercises & Skills
 
 Applied spreadsheet practice in financial operations: controls, lookups, reconciliations, data cleaning, reporting support and interview-ready explanation of the business purpose behind the work.
 
-[Open Spreadsheet Exercises & Skills →]({{ '/spreadsheet-exercises.html' | relative_url }})
+## [Open Spreadsheet Exercises & Skills →]({{ '/spreadsheet-exercises.html' | relative_url }})  
+  
+  
+**Powerpoint (slide deck) Exercises and Skills**
+
+
+
+&nbsp;
 
 ## Cycling / Strava Data Lab
 
@@ -53,7 +65,6 @@ A car-finance calculator built around deposit, monthly payment, term and the opt
 An aircraft-leasing calculator for ATR 42 and ATR 72 scenarios, connecting acquisition assumptions, lease income, financing, residual value and asset-management decisions.
 
 [Open ATR Lease Calculator →]({{ '/lease-dashboard.html' | relative_url }})
-
 
 ## Projects to Sectors
 
