@@ -27,3 +27,4 @@ I am currently preparing for Cooperative Education and looking for a placement w
 - **UL Email:** [24434582@studentmail.ul.ie](mailto:24434582@studentmail.ul.ie)
 - **LinkedIn:** [Erik Downes](https://www.linkedin.com/in/erik-downes-7b312127a/)
 - **GitHub:** [github.com/ErikDownes](https://github.com/ErikDownes)
+
