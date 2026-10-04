@@ -9,12 +9,6 @@ description: Pivotal Corporate interview preparation for the Co-Op Student /
 eyebrow: CO-OP INTERVIEW · CORPORATE ADMINISTRATION · ACCOUNTING · CLIENT SERVICE
 public_mode: true
 ---
-# Questions and Answers to guarantee Success
-
-
-
-&nbsp;
-
 # The Company Paragraph
 
 Pivotal Corporate is an **independent, solutions-driven firm**  
