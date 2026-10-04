@@ -37,7 +37,7 @@ LM058 is a four-year Financial Mathematics degree combining **mathematics, proba
 
 
 
-## First Year · 2024/25 Completed
+# First Year · 2024/25 Completed
 
 ### Semester 1
 
@@ -63,12 +63,15 @@ LM058 is a four-year Financial Mathematics degree combining **mathematics, proba
 
 &nbsp;
 
-## Second Year · 2025/26 Completed
+# Second Year · 2025/26 Completed
 
-### Semester 1
 
-- [Finance]({{ '/modules/finance.html' | relative_url }}) · **FI4003** · A2
-- [Probability Models]({{ '/modules/ms4035-probability-models.html' | relative_url }}) · **MS4035** · B1
+
+## Second Year Semester 1
+
+
+
+- [Finance]({{odels]({{ '/modules/ms4035-probability-models.html' | relative_url }}) · **MS4035** · B1
 - [Methods of Linear Analysis]({{ '/modules/ms4043-methods-of-linear-analysis.html' | relative_url }}) · **MS4043** · B3
 - [Ordinary Differential Equations]({{ '/modules/ms4403-ordinary-differential-equations.html' | relative_url }}) · **MS4403** · A2
 - [Vector Analysis]({{ '/modules/ms4613-vector-analysis.html' | relative_url }}) · **MS4613** · A2
@@ -77,7 +80,7 @@ LM058 is a four-year Financial Mathematics degree combining **mathematics, proba
 
 &nbsp;
 
-### Semester 2
+## Second Year Semester 2
 
 - [Introduction to Numerical Analysis]({{ '/modules/ms4014-introduction-to-numerical-analysis.html' | relative_url }}) · **MS4014** · A2
 - [Applied Data Analysis]({{ '/modules/ms4034-applied-data-analysis.html' | relative_url }}) · **MS4034** · A2
@@ -89,9 +92,9 @@ LM058 is a four-year Financial Mathematics degree combining **mathematics, proba
 
 &nbsp;
 
-## Third Year · 2026/27 Current year
+# Third Year · 2026/27 Current year
 
-### Semester 1 · Current
+## Third Year · Semester 1 · Current
 
 - [Fundamentals of Financial Mathematics]({{ '/modules/ms4027-fundamentals-of-financial-mathematics.html' | relative_url }}) · **MS4027**
 - [Complex Analysis]({{ '/modules/ms4045-complex-analysis.html' | relative_url }}) · **MS4045**
