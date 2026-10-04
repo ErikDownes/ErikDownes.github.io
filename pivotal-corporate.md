@@ -197,7 +197,7 @@ I am still early in that proficiency path, but I would like to move into **time-
 
 ## How quickly is Pivotal growing?
 
-**2020  85 employees  Dublin / London**
+**100+ staff  Growth  Four offices**
 
 Pivotal’s [current website](https://www.pivotalcorporate.com/) describes **100+ staff across Shannon, Dublin, London and New York**. The [Clare Echo reported on 18 September 2026](https://www.clareecho.ie/top-aviation-recogniton-for-miltown-malbays-talty/) that headcount had doubled over eighteen months. See **Pivotal in the News** below for the current research.
 
