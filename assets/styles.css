@@ -114,10 +114,12 @@ body{margin:0;background:var(--page);color:var(--ink);font-family:Arial,Helvetic
 .cm-question-play.is-paused::before{content:"❚❚";width:auto;height:auto;border:0;left:50%;font-size:11px;font-weight:700;line-height:1;transform:translate(-50%,-52%)}
 .cm-audio-speaking{background:#fff3bf!important;box-shadow:0 0 0 4px #fff3bf!important;border-radius:4px;transition:background .12s ease,box-shadow .12s ease}
 
-/* Floating page tools — same right-hand rail used on Education. */
+/* Floating page tools — one compact control rail. */
 #floating-page-tools{position:fixed;right:18px;top:50%;transform:translateY(-50%);z-index:1200;display:grid;gap:8px}
 #floating-page-tools a,#floating-page-tools button{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:9px 13px;border:1px solid #b9c9dc;border-radius:9px;background:rgba(255,255,255,.96);box-shadow:0 5px 18px rgba(23,43,77,.16);color:#204f83;font:600 15px/1.1 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;text-decoration:none;backdrop-filter:blur(6px);cursor:pointer}
 #floating-page-tools a:hover,#floating-page-tools a:focus-visible,#floating-page-tools button:hover,#floating-page-tools button:focus-visible{background:#f4f8fc;border-color:#8eabc9;outline:none}
+#floating-page-filter.is-active{background:#e8f0fe;border-color:#4f83c2;color:#174ea6}
+.doc-body.questions-only-filter>:not(h1):not(h2[data-section-heading]){display:none!important}
 
 /* Focus / rehearsal pop-up. */
 body.answer-focus-open{overflow:hidden}
@@ -188,8 +190,11 @@ body.answer-focus-open{overflow:hidden}
 }
 
 @media(max-width:760px){
-  #floating-page-tools{top:auto;right:12px;bottom:12px;transform:none;display:flex}
-  #floating-page-tools a,#floating-page-tools button{min-height:40px;padding:8px 11px;font-size:14px}
+  #floating-page-tools{top:auto;left:12px;right:12px;bottom:12px;transform:none;display:flex;flex-wrap:wrap;justify-content:flex-end;gap:6px;max-width:calc(100vw - 24px)}
+  #floating-page-tools a,#floating-page-tools button{min-height:40px;padding:8px 10px;font-size:13px}
+}
+@media(max-width:420px){
+  #floating-page-tools a,#floating-page-tools button{min-height:36px;padding:7px 8px;font-size:12px}
 }
 
 @media(max-width:600px){
