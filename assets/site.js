@@ -456,6 +456,9 @@
           if (menuTitle === 'Aviation' || menuTitle === 'Portfolio') {
             label.setAttribute('aria-haspopup', 'true');
             label.setAttribute('aria-expanded', 'false');
+          } else {
+            label.removeAttribute('aria-haspopup');
+            label.removeAttribute('aria-expanded');
           }
         }
         if (span) span.textContent = menuTitle;
@@ -565,12 +568,10 @@
 
   document.querySelectorAll('.navitem > .navlabel[href]').forEach(label => {
     const labelPath = normalisePath(label.href);
-    const rootPath = normalisePath(document.querySelector('.brand')?.href || '/');
-    const isAboutParent = labelPath === rootPath && /\/(?:academic-record|skills-profile)\.html$/.test(currentPath);
     const isCareerParent = /\/career\.html$/.test(labelPath) && /\/career\//.test(currentPath);
     const isAviationParent = /\/aviation\.html$/.test(labelPath) && /\/aviation\//.test(currentPath);
     const isEducationParent = /\/(?:education|coursework)\.html$/.test(labelPath) && /\/modules\//.test(currentPath);
-    const isCurrent = labelPath === currentPath || isAboutParent || isCareerParent || isAviationParent || isEducationParent;
+    const isCurrent = labelPath === currentPath || isCareerParent || isAviationParent || isEducationParent;
     const item = label.closest('.navitem');
     item?.classList.toggle('is-current', isCurrent);
     if (isCurrent) label.setAttribute('aria-current', 'page');
@@ -915,6 +916,17 @@
     if (!label || !menu) return;
     const pageUrl = new URL(label.href, location.href);
     const targetPath = normalisePath(pageUrl.href);
+    const rootPath = normalisePath(document.querySelector('.brand')?.href || '/');
+
+    // About Me is deliberately a single flat page: never build a dropdown for it.
+    if (targetPath === rootPath) {
+      menu.replaceChildren();
+      item.classList.remove('has-submenu', 'is-open');
+      label.removeAttribute('aria-haspopup');
+      label.removeAttribute('aria-expanded');
+      return;
+    }
+
     const cleanPagePath = pageUrl.pathname.replace(/\/+$/, '');
     const isStudiesLibrary = /\/(?:education|coursework)(?:\.html)?$/.test(cleanPagePath);
     const isAviationLibrary = /\/aviation(?:\.html)?$/.test(cleanPagePath);
