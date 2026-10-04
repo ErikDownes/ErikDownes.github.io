@@ -1,11 +1,10 @@
 ---
 layout: doc
 permalink: /pivotal-corporate.html
-handle: Pivotal Corporate
-title: Pivotal Corporate
+handle: Pivotal Corporate Interview
+title: Pivotal Corporate Interview
 nav_order: 100
-description: Pivotal Corporate co-op job description and interview preparation
-  for the Co-Op Student / Corporate Administrator role.
+description: Pivotal Corporate interview preparation for the Co-Op Student / Corporate Administrator role.
 eyebrow: CO-OP INTERVIEW · CORPORATE ADMINISTRATION · ACCOUNTING · CLIENT SERVICE
 public_mode: true
 ---
