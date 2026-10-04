@@ -23,9 +23,13 @@ So, the way I understand it, Pivotal essentially becomes a **trusted local partn
 
 
 
-&nbsp;
+## What does Pivotal mean by being client-focused and solutions-driven?
 
-&nbsp;
+It means Pivotal **adapts quickly to what each client needs** rather than taking a one-size-fits-all approach. As those needs change, the firm responds efficiently and helps keep things moving.
+
+By becoming a **pivot point for the client’s business**, Pivotal takes care of important support functions so the client can focus on **running and growing their core business**.
+
+
 
 ## Job Description | Verbatim
 
