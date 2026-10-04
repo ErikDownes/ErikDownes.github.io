@@ -70,7 +70,7 @@ Add the detailed job-description notes here as each duty is studied. Keep this p
 
 
 
-I work well as part of a team and understand the importance of shared responsibility. In **Computer Software 1**, I worked closely with a colleague on a Java pair-programming project, dividing tasks, reviewing work together and solving problems collaboratively. I have also worked across departments at **O’Mahony’s** and supported colleagues during busy periods and a major floor reorganisation at **Mr Price**. These experiences have taught me to communicate clearly, support colleagues and contribute positively to a team.
+I work well as part of a team and understand the importance of shared responsibility. In Computer Software 1, I worked closely with a colleague on a Java pair-programming project, dividing tasks, reviewing work together and solving problems collaboratively. I have also worked across departments at O’Mahony’s and supported colleagues during busy periods and a major floor reorganisation at Mr Price. These experiences have taught me to communicate clearly, support colleagues and contribute positively to a team.
 
 ## Pivotal Corporate Communication Skills
 
