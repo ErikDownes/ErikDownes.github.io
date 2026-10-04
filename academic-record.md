@@ -91,32 +91,7 @@ Results are not yet available. Current modules:
 
 ### Semester 2 · Cooperative Education
 
-Fourth Year · 2027/28
-
-### Semester 1 · Planned
-
-- **Project 1**
-- **Stochastic Processes**
-- Three elective modules, with options including:
-  - Introduction to Fluid Mechanics
-  - Numerical Methods for Partial Differential Equations
-  - Discrete Mathematics 2
-  - Perturbation Techniques and Asymptotics
-  - Operations Research 2
-  - Geometry
-
-### Semester 2 · Planned
-
-- **Project 2**
-- **Stochastic Differential Equations for Finance**
-- **Mathematical and Statistical Models of Investments**
-- **Time Series Analysis**
-- Further elective options including:
-  - Advanced Data Modelling
-  - Dynamical Systems
-  - Optimisation
-  - Mathematical Control Theory
-  - Mathematical Modelling
+**CO4320 — Cooperative Education** · full-time professional placement.
 
 
 
