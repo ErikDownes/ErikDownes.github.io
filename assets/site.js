@@ -934,7 +934,6 @@
     const isAviationLibrary = /\/aviation(?:\.html)?$/.test(cleanPagePath);
     const isCareerLibrary = /\/career(?:\.html)?$/.test(cleanPagePath);
     const isPortfolioLibrary = /\/portfolio(?:\.html)?$/.test(cleanPagePath);
-    const includeH1Delimiters = /\/pivotal-corporate(?:-study)?(?:\.html)?$/.test(cleanPagePath);
 
     try {
       if (isPortfolioLibrary) {
@@ -953,7 +952,7 @@
         if (isStudiesLibrary) {
           populateModuleMenu(item, Array.from(body.querySelectorAll('a[href]')), pageUrl);
         } else {
-          const selector = includeH1Delimiters ? ':scope > h1, :scope > h2' : ':scope > h2';
+          const selector = ':scope > h1, :scope > h2';
           const headings = Array.from(body.querySelectorAll(selector)).filter(heading => headingInfo(heading));
           populateQuestionMenu(item, headings, pageUrl);
         }
@@ -970,7 +969,7 @@
         return;
       }
 
-      const selector = includeH1Delimiters ? '#docBody > h1, #docBody > h2' : '#docBody > h2';
+      const selector = '#docBody > h1, #docBody > h2';
       const headings = Array.from(parsed.querySelectorAll(selector)).filter(heading => headingInfo(heading));
       populateQuestionMenu(item, headings, pageUrl);
     } catch (_) {
