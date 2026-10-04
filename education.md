@@ -3,12 +3,10 @@ layout: doc
 permalink: /education.html
 handle: Financial Maths (UL-LM058)
 title: BSc Financial Mathematics
-nav_order: 20
+nav_order: 765
 eyebrow: UNIVERSITY OF LIMERICK · BSC FINANCIAL MATHEMATICS · LM058
 study_mode: true
 ---
-
-
 I am currently in **Year 3 of the BSc Financial Mathematics programme at the University of Limerick**. Years 1 and 2 are complete, I am studying Semester 1 of Year 3 now, and Semester 2 is my Cooperative Education placement.
 
 **Current position:** Year 3 · Semester 1 · BSc Financial Mathematics (LM058)
@@ -37,8 +35,6 @@ LM058 is a four-year Financial Mathematics degree combining **mathematics, proba
 
 ## First Year · 2024/25 Completed
 
-
-
 ### Semester 1
 
 - [Computer Software 1]({{ '/modules/ce4701-computer-software-1.html' | relative_url }}) · **CE4701** · A2
@@ -64,8 +60,6 @@ LM058 is a four-year Financial Mathematics degree combining **mathematics, proba
 &nbsp;
 
 ## Second Year · 2025/26 Completed
-
-
 
 ### Semester 1
 
@@ -93,8 +87,6 @@ LM058 is a four-year Financial Mathematics degree combining **mathematics, proba
 
 ## Third Year · 2026/27 Current year
 
-
-
 ### Semester 1 · Current
 
 - [Fundamentals of Financial Mathematics]({{ '/modules/ms4027-fundamentals-of-financial-mathematics.html' | relative_url }}) · **MS4027**
@@ -118,8 +110,6 @@ LM058 is a four-year Financial Mathematics degree combining **mathematics, proba
 &nbsp;
 
 ## Fourth Year · 2027/28 Upper-level programme
-
-
 
 ### Semester 1
 
@@ -163,8 +153,6 @@ LM058 is a four-year Financial Mathematics degree combining **mathematics, proba
 | Spanish | **H3** |
 | English | **H3** |
 | Irish | **O3** |
-
-
 
 
 I received the **Kolvenbach Medal for Business** in May 2024 for achieving the highest Leaving Certificate Business grade at Crescent College, and a **Certificate of Academic Excellence** in September 2023.
