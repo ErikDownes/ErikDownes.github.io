@@ -53,17 +53,27 @@ The role supports the **Client Service Teams** in providing **accounting and adm
 
 
 
-&nbsp;
+## What is Company Secretarial?
 
-# ions to show you fit the role
+**Company Secretarial is a service Pivotal provides to client companies** to help them meet their **corporate governance, statutory and regulatory obligations**.
+
+It includes things like **maintaining statutory records, company filings, board minutes and resolutions, and supporting the board of directors**.
+
+It is not the same as an ordinary secretary or general administrator.
+
+# Show you fit the role
 
 ## Tell us something that shows you are proactive and self-motivated.
 
 I built an **aircraft data project** outside college using **Python and Pandas**. I combined **OpenSky and PlaneSpotters** data, reducing over **500,000 records to the relevant 61 aircraft**. I like taking what I learn in college and practising it independently until it becomes natural.
 
-## Give us an example of setting high standards for your own work.
+## Strava + Dublin Bikes — Timestamp Example
 
-With my **Strava project**, I exported my own cycling data and reproduced some of the calculations myself. My results initially differed from Strava because of how the GPS data was processed, so I adjusted the method and checked the results against Strava. I like understanding why figures differ rather than simply accepting them.
+I combined **Strava GPX data with public Dublin Bikes data**. The tricky part was the **timestamps**, because the two sources represented date and time differently.
+
+In **Pandas**, I used `pd.to_datetime()` to parse them, standardised the **datetime format and timezone**, including **UTC and daylight-saving changes**, and then merged the datasets.
+
+That is important in accounting too, especially when working across **different countries and jurisdictions** — transactions and records have to be aligned to the correct **date, time and timezone** before they can be reliably compared or reconciled.
 
 ## Give us an example of using Excel accurately.
 
