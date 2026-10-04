@@ -33,9 +33,9 @@ The role supports the **Client Service Teams** in providing **accounting and adm
 
 
 
+&nbsp;
 
-
-What is Company Secretarial?
+## What is Company Secretarial?
 
 **Company Secretarial is an internal function within Pivotal** that supports client companies with **corporate governance, statutory records, company filings, board paperwork and other compliance requirements**.
 
