@@ -455,9 +455,81 @@ The work may be routine, but the standard should still be **accurate, timely and
 
 
 
-&nbsp;
+# Job-Specific Requirements
 
-&nbsp;
+## The Rule
+
+**Requirements = what I already bring.**  
+Answer them with **evidence from the past**: work, university, projects, results and achievements.
+
+**Duties & Responsibilities = what I am coming to do.**  
+Answer them with: **I understand the task, I have relevant foundations, and I am ready to learn how Pivotal does it.**
+
+## Evidence, not bragging
+
+Do not say:
+
+**“I am highly organised.”**
+
+Say:
+
+**“A good example of that is…”**
+
+Then give the evidence.
+
+The pattern is:
+
+**Requirement → Evidence → What I learned → Why it matters here**
+
+That keeps the answer factual. You are not boasting about qualities — **you are showing where you have already demonstrated them**.
+
+# Organised, Detail-Oriented & Critical Thinking
+
+**Organise | Check | Solve**
+
+Evidence can come from **O'Mahony's, university work, Excel reconciliation, the aircraft project and managing several projects alongside your degree**.
+
+A strong answer should show that you **check details, notice when something does not agree, and solve the problem rather than just passing it on**.
+
+# Written & Verbal Communication
+
+**Listen | Explain | Confirm**
+
+Use examples where you had to **explain something clearly, communicate with a customer or colleague, or turn technical information into something another person could use**.
+
+The O'Mahony's library delivery example is strong evidence: you identified the problem, discussed the solution with your supervisor, communicated what had happened, and helped minimise the delay.
+
+# Microsoft Word, Excel & Outlook
+
+**Choose | Use | Check**
+
+Do not just say you know Microsoft Office.
+
+Explain what you have actually used it for: **Excel logic, nested IFs, XLOOKUP, SUMIFS, reconciliation, cleaning data, pivot tables and charts**, alongside Word for documents and Outlook for professional communication.
+
+The stronger point is that you understand **which tool is appropriate for which task**.
+
+# Positive Attitude & Responsibility
+
+**Volunteer | Learn | Contribute**
+
+Evidence should show that you **take responsibility rather than waiting to be told everything**.
+
+Your independent projects are useful here because many were **not required by college**. You chose to build them because you wanted to improve your skills and understand the subject more deeply.
+
+# Interest in Financial Services & Adding Client Value
+
+**Finance | Analysis | Value**
+
+This is where your degree and projects connect most directly.
+
+You have studied **Financial Accounting, Accounting for Financial Decision Making, Finance, Financial Mathematics and Data Analysis**, and you are already applying those ideas through spreadsheets, financial calculators and data projects.
+
+The important phrase is:
+
+**“I am interested not just in producing the calculation, but in how the analysis can help somebody make a better decision.”**
+
+
 
 &nbsp;
 
