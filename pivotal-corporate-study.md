@@ -8,9 +8,9 @@ description: Working study notes for the Pivotal Corporate Co-Op Student /
 eyebrow: PIVOTAL CORPORATE · CORPORATE SERVICES · ACCOUNTING · ADMINISTRATION
 public_mode: true
 ---
-# Pivotal Corporate Study
+# Pivotal Corporate Exposition
 
-This is the **working study page** for Pivotal Corporate. Put the detailed company, role, accounting, administration and corporate-services notes here. Keep the short spoken answers on **Pivotal Corporate Interview**.
+This is the **working study page** for Pivotal Corporate. Read about the company, role, accounting, administration and corporate-services notes here and  enjoy learning and knowing whatever sticks. The other **Pivotal Corporate Interview** QAs is what counts for interview.
 
 ## Company
 
