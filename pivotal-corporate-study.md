@@ -2,9 +2,9 @@
 layout: doc
 permalink: /pivotal-corporate-study.html
 handle: Pivotal Corporate Study
-title: Pivotal Corporate Study
 nav_order: 99
-description: Working study notes for the Pivotal Corporate Co-Op Student / Corporate Administrator role.
+description: Working study notes for the Pivotal Corporate Co-Op Student /
+  Corporate Administrator role.
 eyebrow: PIVOTAL CORPORATE · CORPORATE SERVICES · ACCOUNTING · ADMINISTRATION
 public_mode: true
 ---
