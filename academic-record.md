@@ -7,7 +7,7 @@ nav_order: 30
 eyebrow: FINANCIAL MATHEMATICS · UNIVERSITY OF LIMERICK
 public_mode: true
 ---
-# BSc Financial Mathematics · LM058 · University of Limerick
+# BSc Financial Mathematics · LM058 · University of Limerick Overview
 
 Third-year **Financial Mathematics** student at the **University of Limerick**, studying a multidisciplinary programme combining **mathematics, statistics, finance, accounting, programming and data analysis**.
 
@@ -118,37 +118,54 @@ Fourth Year · 2027/28
   - Mathematical Control Theory
   - Mathematical Modelling
 
-## Final Year Projects ( next academic year after co-op Intern work experience
-
-The **Project 1 / Project 2** element is particularly worth showing. UL describes it as a substantial fourth-year research project in mathematics, computing, statistics, finance or a related area, culminating in a professional written report and presentation.
 
 
+&nbsp;
 
-Leaving Certificate · 2024
+&nbsp;
 
+## Fourth Year · 2027/28
 
+### Semester 1 · Planned
+
+- **Project 1**
+- **Stochastic Processes**
+- Three elective modules, with options including:
+  - Introduction to Fluid Mechanics
+  - Numerical Methods for Partial Differential Equations
+  - Discrete Mathematics 2
+  - Perturbation Techniques and Asymptotics
+  - Operations Research 2
+  - Geometry
+
+### Semester 2 · Planned
+
+- **Project 2**
+- **Stochastic Differential Equations for Finance**
+- **Mathematical and Statistical Models of Investments**
+- **Time Series Analysis**
+- Further elective options including:
+  - Advanced Data Modelling
+  - Dynamical Systems
+  - Optimisation
+  - Mathematical Control Theory
+  - Mathematical Modelling
+
+## Final Year Research Project
+
+The **Project 1 / Project 2** sequence provides the opportunity to complete a substantial fourth-year research project in mathematics, computing, statistics, finance or a related area, culminating in a professional written report and presentation.
+
+## Leaving Certificate · 2024
 
 **Crescent College Comprehensive S.J., Limerick**
 
 **579 CAO points**
 
-
-| Subject | Result |
-| ------------------- | ------ |
-| Mathematics | **H1** |
-| Physics | **H1** |
-| Applied Mathematics | **H1** |
-| Business | **H1** |
-| Spanish | **H3** |
-| English | **H3** |
-| Irish | **O3** |
-
-
-## Highest LC Business Grade in Pre-Leaving in School
+## Highest Leaving Certificate Business Grade
 
 **Kolvenbach Medal for Business · May 2024** — awarded for achieving the **highest Leaving Certificate Business grade at Crescent College**.
 
-## Academic Excellence Certificate Award 5th Year School
+## Academic Excellence Award
 
 **Certificate of Academic Excellence · September 2023** — awarded for outstanding academic performance at Crescent College.
 
@@ -161,47 +178,3 @@ The CBAs involved **independent project work, organisation, attention to detail,
 ## Applied Mathematics Project
 
 Modelled the minimum height required for a roller-coaster cart to complete a loop. Independently researched **air resistance beyond the course material** and incorporated it into the model, achieving **86%**.
-
-**CO4320 — Cooperative Education** · full-time professional placement.  
-
-## UL Grade Key
-
-
-| Grade | Meaning | QPV |
-| ---------- | ----------------- | -------- |
-| **A1** | First Honours | **4.00** |
-| **A2** | First Honours | **3.60** |
-| **B1** | Honours 2.1 | **3.20** |
-| **B2** | Honours 2.1 | **3.00** |
-| **B3** | Honours 2.2 | **2.80** |
-| **C1** | Honours 2.2 | **2.60** |
-| **C2** | Third Honours | **2.40** |
-| **C3** | Third Honours | **2.00** |
-| **D1** | Compensating Fail | **1.60** |
-| **D2** | Compensating Fail | **1.20** |
-| **F / NG** | Fail | **0.00** |
-
-
-**QPV** means **Quality Point Value**. These values are used in calculating the **QCA (Quality Credit Average)**.
-
-
-
-&nbsp;
-
-## LC Grade Key
-
-**H = Higher Level · O = Ordinary Level**
-
-
-| Grade | Percentage |
-| ----------- | ---------- |
-| **H1 / O1** | 90–100% |
-| **H2 / O2** | 80–89% |
-| **H3 / O3** | 70–79% |
-| **H4 / O4** | 60–69% |
-| **H5 / O5** | 50–59% |
-| **H6 / O6** | 40–49% |
-| **H7 / O7** | 30–39% |
-| **H8 / O8** | Below 30% |
-
-
