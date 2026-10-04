@@ -14,18 +14,6 @@ This is the **working study page** for Pivotal Corporate and the targeted CV fie
 
 
 
-```
-Job Spec Slides
-```
-
-```
-The Pivotal Corporate Job Spec has been converted into a 21-slide visual study deck for quick review and interview preparation.
-```
-
-```
-Open Job Spec Slides →
-```
-
 # Pivotal Corporate UL CV
 
 ## Pivotal Corporate Teamwork
