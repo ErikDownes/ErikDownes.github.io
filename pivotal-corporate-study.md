@@ -9,7 +9,7 @@ eyebrow: PIVOTAL CORPORATE · CORPORATE SERVICES · ACCOUNTING · ADMINISTRATION
 public_mode: true
 title: "UL CV for Pivotal Corporate "
 ---
-
+# UL-CV-Tailored for Pivotal Corporation
 
 ## Pivotal Corporate Teamwork
 
@@ -73,7 +73,7 @@ I would bring an **organised, detail-oriented, positive and collaborative approa
 
 
 
-## Job Description  Original
+# Job Description  Original
 
 ### Pivotal Corporate – Co-Op Student/Corporate Administrator
 
