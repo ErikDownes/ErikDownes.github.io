@@ -13,7 +13,7 @@ I am currently in **Year 3 of the BSc Financial Mathematics programme at the Uni
 
 Currently underway · Year 3 · Semester 1
 
-## Current modules
+# Current modules
 
 These five modules are currently underway.
 
@@ -23,7 +23,7 @@ These five modules are currently underway.
 - [Statistical Inference]({{ '/modules/ms4214-statistical-inference.html' | relative_url }}) · **MS4214**
 - [Advanced Data Analysis]({{ '/modules/ms4215-advanced-data-analysis.html' | relative_url }}) · **MS4215**
 
-## Programme overview
+# Programme overview
 
 LM058 is a four-year Financial Mathematics degree combining **mathematics, probability and statistics, data analysis, programming, finance and accounting**, with **Cooperative Education in Year 3**. The programme moves from mathematical and computational foundations into increasingly specialised work in financial mathematics, stochastic modelling, statistical data science and quantitative finance.
 
