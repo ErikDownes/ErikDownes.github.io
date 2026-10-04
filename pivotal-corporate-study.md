@@ -1,17 +1,14 @@
 ---
 layout: doc
 permalink: /pivotal-corporate-study.html
-handle: Pivotal Corporate Study
+handle: Pivotal Corporate Questions Only
 nav_order: 40
 description: Working study notes for the Pivotal Corporate Co-Op Student /
   Corporate Administrator role.
 eyebrow: PIVOTAL CORPORATE · CORPORATE SERVICES · ACCOUNTING · ADMINISTRATION
 public_mode: true
+title: Pivotal Corporate — Questions Only then Pivotal Corporate UL CV
 ---
-
-
-# **Pivotal Corporate — Questions Only**
-
 ## **What does the word Pivotal mean in our case do you think?**
 
 # **The Company Paragraph**
@@ -142,9 +139,6 @@ Journal entries · Account reconciliations · Accounts Payable · Accounts Recei
 
 # **Interest in Financial Services & Adding Client Value**
 
-  
-
-
 
 
 &nbsp;
@@ -168,8 +162,6 @@ Journal entries · Account reconciliations · Accounts Payable · Accounts Recei
 &nbsp;
 
 # UL CV for Pivotal Corporate -text only
-
-
 
 ## Pivotal Corporate Teamwork
 
