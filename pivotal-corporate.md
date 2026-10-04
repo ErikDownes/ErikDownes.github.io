@@ -81,7 +81,7 @@ It means understanding **what the client actually needs**, responding quickly an
 
 In physics, a pivot gives a lever **mechanical advantage**. In business  Pivotal Corporation give US-based companies a competitive advantage.  
 
-i love the quote  **by** Archimedes: **“Give me a place to stand and I will move the earth.”** Perhaps you can use it on your website.
+I love the Archimedes quote: **“Give me a place to stand and I will move the earth.”** It captures the idea perfectly — the right pivot point can create a huge advantage.
 
 ## When have you adapted to difficult data?
 
