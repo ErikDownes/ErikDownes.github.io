@@ -127,6 +127,66 @@ I compared **three PCP finance options in Excel**, calculated the total costs an
 
 We are currently seeking to hire a **proactive, self-motivated, and highly organised student** to join the business. This role will support our **Client Service Teams** in providing **Accounting & Administration services** to a portfolio of clients, ensuring that our clients are provided with a **high-quality professional service**.
 
+## What is the job title?
+
+**Co-Op Student / Corporate Administrator  Client Service Teams**
+
+**Co-Op Student / Corporate Administrator working within the Client Service Teams.**
+
+## What are the two main activities?
+
+**Administration  Accounting  Client service**
+
+The two core work areas are **Administration and Accounting**, carried out within the **Client Service Teams** for a portfolio of client companies.
+
+## Who are my internal clients?
+
+**Colleagues  Depend on my work  Professional service**
+
+An **internal client** is a colleague or team inside Pivotal who depends on my work being **accurate, complete and on time** so they can do their own job and serve the external client.
+
+Depending on the assignment, that could include:
+
+- **Corporate Administrators**
+- **Client Managers and Senior Client Managers**
+- **Senior managers / Vice Presidents**
+- **Accounting and Financial Reporting**
+- **Company Secretarial / Corporate Governance**
+- **Compliance / Regulatory**
+- **Tax**
+- **Cash Management / Transaction support**
+- **Other members of the Client Service Teams**
+
+The important point is that even when I am not dealing directly with the external client, **the quality of my work still affects the client service**.
+
+## Which of these is NOT an internal client or team?
+
+**Corporate Administrator  Compliance  External investor**
+
+Which one is **not** an internal client or team?
+
+**Corporate Administrator · Accounting / Finance · Company Secretarial · Compliance · Tax · External investor / client**
+
+**Answer: External investor / client.**
+
+The others are colleagues or internal functions that may depend on my work. The investor or client company is the **external client** Pivotal is ultimately serving.
+
+## Who would I take instructions from?
+
+**Client Service Team  Senior staff  Portfolio work**
+
+The specification says duties will be set out by **senior members of staff**. I would therefore expect day-to-day instructions from the **Client Service Team and the senior colleagues responsible for the relevant client portfolio**.
+
+My approach would be to confirm **what is required, the deadline, who the work is for and who relies on it next**.
+
+## What is a Corporate Administrator?
+
+**Administration  Records  Client companies**
+
+A **Corporate Administrator** supports the day-to-day administration of client companies: maintaining accurate records and documents, tracking deadlines, supporting accounting and reporting work, and helping the wider Client Service Team deliver a professional service.
+
+It is a business and corporate-services role; it is **not the same as an ordinary office secretary**.
+
 ## How are you proactive and self-motivated?
 
 **Proactive  Self-motivated  Practical**
@@ -298,6 +358,38 @@ But I am **proactive, willing to take responsibility and prepared to get involve
 It means keeping the **records, documents, schedules and information around a company accurate and up to date**.
 
 I would be coming in to learn Pivotal's processes, but my approach would be simple: understand the task, complete it accurately and check it before it moves on.
+
+Good administration also means handling information in a way that respects **confidentiality, privacy and data-protection requirements**.
+
+## Where does GDPR fit into administration?
+
+**Personal data  Data minimisation  Confidentiality**
+
+GDPR is not separate from good administration. If company records contain **personal data** — for example names, addresses, contact details or identification information — that information should only be used for a **legitimate business purpose**, accessed by the people who need it, and protected from **unauthorised access or disclosure**.
+
+The principles I would keep in mind are **purpose limitation, data minimisation, accuracy, storage limitation, integrity and confidentiality**.
+
+In practice that means things like **not leaving personal information visible on a desk or screen, not sharing it unnecessarily, checking recipients before sending information and following Pivotal's approved systems and procedures**.
+
+## When have you already respected data privacy?
+
+**O'Mahony's  Addresses  Unauthorised disclosure**
+
+At **O'Mahony's**, delivery paperwork could contain **customer names and addresses**. I understood that this was **personal data**, so I did not leave delivery sheets or address information exposed when I stepped away or went for lunch.
+
+I would make sure the information was **not left visible to people who had no business need to see it**.
+
+That is a simple workplace example of **confidentiality, need-to-know access and protecting personal data from unauthorised disclosure**. In a corporate-services environment the information may be more sensitive, but the underlying discipline is the same.
+
+## What are a data controller and data processor?
+
+**Controller  Purpose and means  Processor**
+
+A **data controller** decides **why** personal data is processed and the essential **means** of processing it.
+
+A **data processor** processes personal data **on behalf of a controller** and under the controller's instructions.
+
+A corporate-services firm can have different data-protection roles depending on the particular processing activity, so I would not assume the role myself — I would follow **Pivotal's policies, instructions and approved controls**.
 
 ## How would you build client relationships?
 
@@ -479,15 +571,17 @@ A register is only useful if it is **current, complete and accurate**.
 
 I would treat maintaining one like a data task: update it systematically, preserve traceability and investigate anything that does not agree.
 
-## What do KYC and CDD mean?
+## What do AML, KYC and CDD mean?
 
-**KYC  CDD  Statutory requirements**
+**AML  KYC  CDD**
 
-**KYC — Know Your Customer** — is about establishing who the client is.
+**AML — Anti-Money Laundering** — is the wider legal and compliance framework for preventing and detecting the use of legitimate businesses and financial systems for money laundering or terrorist financing.
 
-**CDD — Customer Due Diligence** — goes further by checking things such as **ownership, control and relevant risk information**.
+**KYC — Know Your Customer** — is about establishing and verifying who the client is.
 
-For an international corporate-services firm, that is a fundamental part of meeting statutory and compliance requirements.
+**CDD — Customer Due Diligence** — is the process of understanding and verifying the client, relevant **beneficial ownership, control and risk information**, with the level of checking depending on the circumstances and applicable requirements.
+
+I would not be making compliance judgements independently as a co-op student. My responsibility would be to **follow the procedure, collect and record information accurately, protect confidential information and escalate anything I was unsure about**.
 
 ## How would you handle signed documents?
 
