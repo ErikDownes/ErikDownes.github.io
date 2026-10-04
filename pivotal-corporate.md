@@ -33,9 +33,8 @@ The role supports the **Client Service Teams** in providing **accounting and adm
 
 
 
-##   
-  
-  
+
+
 What is Company Secretarial?
 
 **Company Secretarial is an internal function within Pivotal** that supports client companies with **corporate governance, statutory records, company filings, board paperwork and other compliance requirements**.
@@ -44,12 +43,47 @@ It is different from an ordinary secretary or administrator in the client’s ow
 
 
 
+&nbsp;
 
-## Job Description | Verbatim
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+## Job Description  Original
 
 ### Pivotal Corporate – Co-Op Student/Corporate Administrator
-
-
 
 Pivotal Corporate is an independent, solutions driven firm with extensive experience assisting US based investors to establish and grow their European investments. We partner with our clients at every stage in the process using our local networks in a number of jurisdictions to ensure their project runs smoothly from the initial assessment phase through to the project being fully operational.
 
