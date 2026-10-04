@@ -75,9 +75,15 @@ I would bring an **organised, detail-oriented, positive and collaborative approa
 
 # Job Description  Original
 
-### Pivotal Corporate – Co-Op Student/Corporate Administrator
 
-Pivotal Corporate is an independent, solutions driven firm with extensive experience assisting US based investors to establish and grow their European investments. We partner with our clients at every stage in the process using our local networks in a number of jurisdictions to ensure their project runs smoothly from the initial assessment phase through to the project being fully operational.
+
+&nbsp;
+
+## Pivotal Corporate – Co-Op Student/Corporate Administrator
+
+
+
+### Pivotal Corporate is an independent, solutions driven firm with extensive experience assisting US based investors to establish and grow their European investments. We partner with our clients at every stage in the process using our local networks in a number of jurisdictions to ensure their project runs smoothly from the initial assessment phase through to the project being fully operational.
 
 With our client focused and solutions driven delivery, we have the ability to adapt to the ever-changing needs of our clients quickly and efficiently, becoming the pivot point for their business and allowing them to concentrate on their core business needs as they grow.
 
@@ -85,7 +91,7 @@ Delivery is what sets us apart from other firms. Our clients appreciate our unri
 
 We are currently seeking to hire a pro-active, self-motivated, and highly organised student to join the business. This role will support our Client Service Teams in providing Accounting & Administration services to a portfolio of clients, ensuring that our clients are provided with a high-quality professional service.
 
-### Duties and Responsibilities:
+## Duties and Responsibilities:
 
 - To develop a basic understanding of the mechanics of company administration and develop business like relationships with intermediaries and internal clients with whom you will come into regular contact.
 - Demonstrate a willingness to apply high standards of client care to all dealings with intermediaries and internal clients.
@@ -103,7 +109,7 @@ We are currently seeking to hire a pro-active, self-motivated, and highly organi
 - Process KYC and CDD requirement to ensure compliance with statutory requirements; and
 - Organise and facilitate for the signing of regulatory and legal documentation.
 
-### Job Specific Requirements:
+## Job Specific Requirements:
 
 - Organised, detail-oriented individual with well-developed critical thinking skills and possesses the ability to manage multiple tasks in a fast-paced environment.
 - Strong written and verbal skills.
@@ -111,9 +117,9 @@ We are currently seeking to hire a pro-active, self-motivated, and highly organi
 - A positive attitude, demonstrating enthusiasm and the desire to take on responsibility. A willingness to get involved in team issues and events.
 - An interest in financial services, and a genuine desire to learn how this can be used as a tool for adding value to a client’s business.
 
-al experience.  
 
 
+&nbsp;
 
 &nbsp;
 
