@@ -140,11 +140,11 @@ Leaving Certificate · 2024
 | Irish | **O3** |
 
 
-## Highest LC Business Grade at Crescent
+## Highest LC Business Grade in Pre-Leaving in School
 
 **Kolvenbach Medal for Business · May 2024** — awarded for achieving the **highest Leaving Certificate Business grade at Crescent College**.
 
-## Academic Excellence
+## Academic Excellence Certificate Award 5th Year School
 
 **Certificate of Academic Excellence · September 2023** — awarded for outstanding academic performance at Crescent College.
 
