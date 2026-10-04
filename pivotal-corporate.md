@@ -14,13 +14,21 @@ public_mode: true
 
 ## When you have a task that you do not readily know how to complete, how do you approach it?
 
-**Independent research  Approved tools  Referral ladder**
+**Inquiry-based learning  Research  Experiment  Verify  Refer**
 
-I would start by defining the **required outcome, deadline, source information and any controls or procedures that apply**. Then I would work through a sensible **ladder of referral** rather than immediately passing the problem upwards.
+I am quite comfortable starting from **“I don't know this yet.”** My instinct is not to wait for an instruction manual; it is to treat the task as an **inquiry problem**.
 
-First I would check the firm's own **procedures, templates, previous examples and internal knowledge resources**. If Pivotal provides an **approved enterprise AI tool** and the task is appropriate for it, I could use that to help me understand a concept or structure an approach — but I would follow the firm's AI, confidentiality and data-protection policy, never put client information into an unapproved system, and independently verify the output.
+I would first define exactly **what I am trying to achieve, what information I already have, what the constraints are and what a correct result should look like**. Then I would research it independently. In accounting there are established methods, standards and internal procedures, so I would start with the firm's approved guidance, previous examples and authoritative sources rather than inventing my own method.
 
-If I still had a gap, I would ask the **closest appropriate colleague or supervisor a specific question**, showing what I had already checked and exactly where I was stuck. I would only move further up the referral chain where the **risk, authority or unresolved issue justified it**. The aim is to be resourceful without making unsupported assumptions or creating unnecessary escalation.
+That is also how I have learned technical skills. Even before modern AI tools, I learned a lot by **looking things up, testing examples and following the trail of a question**. In programming, resources such as **Stack Overflow** were useful because you could see different proposed solutions, community feedback and explanations. With Excel, I often learned by opening a blank spreadsheet, trying something, changing it and seeing what happened.
+
+I enjoy that process because inquiry often produces **additional learning beyond the original problem**. It is similar to pure mathematics: curiosity can lead you somewhere before the practical application is obvious. That mindset transfers well into STEM and into learning new business systems.
+
+Today, AI adds another powerful research tool. If Pivotal provides an **approved enterprise AI system**, I could use it to help explain a concept, generate possible approaches or help me interrogate unfamiliar material more quickly. But I would still verify the answer against **authoritative sources, the firm's procedures and the actual data**, and I would never place confidential client information into an unapproved system.
+
+Because I am self-motivated, I am also happy to do **several iterations privately before presenting work** — try, test, refine and check. Then, if the issue involves judgement, authority, risk or something I still cannot resolve, I would go to the **closest appropriate colleague with a specific question and evidence of what I had already tried**.
+
+So my approach is: **investigate independently, learn through iteration, verify what I find, and escalate only when the nature of the task requires it.**
 
 ## Tell us about a mistake you made.
 
