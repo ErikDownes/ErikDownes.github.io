@@ -28,3 +28,15 @@ R | Python | self-directed learning | practical tools
 ### AI at work
 
 I would use AI where it genuinely accelerates research, drafting, analysis or repetitive tasks, while keeping responsibility for verification, confidentiality and the final output.
+
+
+
+## Innovation — Pivotal Office Map
+
+**Research  Leaflet  Useful presentation**
+
+This project turns Pivotal’s office addresses into a simple interactive map. It shows how company research can become a useful visual resource: start with all four locations, then zoom in to explore each office.
+
+Built with **Leaflet**, an open-source JavaScript mapping library, and **OpenStreetMap** tiles.
+
+[Explore the Pivotal Office Map →]({{ '/pivotal-office-map.html' | relative_url }})
