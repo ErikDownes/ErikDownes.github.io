@@ -34,7 +34,8 @@ content:
       - { name: academic_record, label: "Academic Record", type: file, path: academic-record.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: pivotal_corporate, label: "Co-op — Pivotal Corporate", type: file, path: pivotal-corporate.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: csp, label: "Co-op — Corporate Services (CSP)", type: file, path: csp.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: hse_finance, label: "Co-op — Medical Finance", type: file, path: hse-finance.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: hse_finance_study, label: "Co-op — HSE Finance Study", type: file, path: hse-finance-study.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: hse_finance_interview, label: "Co-op — HSE Finance Interview", type: file, path: hse-finance-interview.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: general_interview, label: "Co-op — General Interview Questions", type: file, path: interview.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: preparation, label: "Co-op — Skills & Evidence", type: file, path: preparation.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: sectors, label: "Sectors", type: file, path: sectors.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
