@@ -1,5 +1,4 @@
 (async () => {
-  const MENU_SINGLE_COLUMN_MAX = 30; // Change this number to control when menus split into 2 columns.
   const body = document.getElementById('docBody');
   const topbar = document.querySelector('.topbar');
   const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
@@ -608,9 +607,8 @@
     // Keep About Me as a simple single-column dropdown. Other question menus
     // can still expand to two or three columns when they contain many entries.
     const rootPath = normalisePath(document.querySelector('.brand')?.href || '/');
-    const isAboutMenu = normalisePath(pageUrl.href) === rootPath;
-    menu.classList.toggle('menu-columns-2', !isAboutMenu && questions.length > MENU_SINGLE_COLUMN_MAX && questions.length < 22);
-    menu.classList.toggle('menu-columns-3', !isAboutMenu && questions.length >= 22);
+    // Keep all dropdown menus in a single vertical column.
+    menu.classList.remove('menu-columns-2', 'menu-columns-3');
     menu.style.setProperty('--menu-left', `${Math.round(item.getBoundingClientRect().left)}px`);
 
     questions.forEach((question, index) => {
