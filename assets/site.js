@@ -453,7 +453,7 @@
         const pageTitle = entry.page_title || entry.title || '';
         if (label) {
           label.href = href;
-          if (menuTitle === 'About Me' || menuTitle === 'Aviation' || menuTitle === 'Portfolio') {
+          if (menuTitle === 'Aviation' || menuTitle === 'Portfolio') {
             label.setAttribute('aria-haspopup', 'true');
             label.setAttribute('aria-expanded', 'false');
           }
@@ -778,28 +778,6 @@
     modules.forEach(module => appendModuleLink(module));
   };
 
-  const ABOUT_SUBPAGES = [
-    { label: 'About Me', path: '' },
-    { label: 'ULCV', path: 'skills-profile.html' },
-    { label: 'Academic Record', path: 'academic-record.html' }
-  ];
-
-  const populateAboutMenu = (item, pageUrl) => {
-    const menu = item.querySelector(':scope > .dropmenu');
-    if (!menu) return;
-    menu.replaceChildren();
-    menu.classList.remove('aviation-menu', 'career-menu', 'coursework-menu', 'portfolio-menu');
-    item.classList.add('has-submenu');
-    item.classList.remove('has-flyout-menu');
-    menu.style.setProperty('--menu-left', `${Math.round(item.getBoundingClientRect().left)}px`);
-    ABOUT_SUBPAGES.forEach(entry => {
-      const link = document.createElement('a');
-      link.href = entry.path ? new URL(entry.path, pageUrl.href).href : pageUrl.href;
-      link.textContent = entry.label;
-      menu.appendChild(link);
-    });
-  };
-
   const AVIATION_SUBPAGES = [
     { label: 'Aircraft', path: 'aviation/aircraft.html' },
     { label: 'Abelo', path: 'aviation/abelo.html' },
@@ -938,18 +916,12 @@
     const pageUrl = new URL(label.href, location.href);
     const targetPath = normalisePath(pageUrl.href);
     const cleanPagePath = pageUrl.pathname.replace(/\/+$/, '');
-    const rootPath = normalisePath(document.querySelector('.brand')?.href || '/');
-    const isAboutLibrary = targetPath === rootPath;
     const isStudiesLibrary = /\/(?:education|coursework)(?:\.html)?$/.test(cleanPagePath);
     const isAviationLibrary = /\/aviation(?:\.html)?$/.test(cleanPagePath);
     const isCareerLibrary = /\/career(?:\.html)?$/.test(cleanPagePath);
     const isPortfolioLibrary = /\/portfolio(?:\.html)?$/.test(cleanPagePath);
 
     try {
-      if (isAboutLibrary) {
-        populateAboutMenu(item, pageUrl);
-        return;
-      }
       if (isPortfolioLibrary) {
         await populatePortfolioMenu(item, pageUrl);
         return;
