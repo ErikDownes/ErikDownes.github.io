@@ -2,11 +2,10 @@
 layout: doc
 handle: Co-op
 title: Co-op
-nav_order: 30
+nav_order: 122
 eyebrow: COOPERATIVE EDUCATION
 public_mode: true
 ---
-
 ## About UL Cooperative Education
 
 UL began in 1972 as the National Institute for Higher Education, Limerick, before becoming the University of Limerick in 1989. From the beginning it was designed differently from the traditional Irish university model, with modular and interdisciplinary study and a strong connection between education and employment.
@@ -25,6 +24,7 @@ This is the working version of the UL Co-op CV material. It should be tailored f
 ## Teamwork
 
 What the interviewer really wants evidence of is that you can work effectively with other people toward a shared outcome. They are normally listening for four things:
+
 - Communication — you listen, explain, ask questions and keep others informed.
 - Contribution — you do your share, bring useful ideas and help when needed.
 - Collaboration — you adjust to other people, resolve differences, coordinate work and do not operate in isolation.
@@ -119,3 +119,4 @@ General interview material now sits under Co-op rather than as a main-menu item.
 - [Corporate Services / CSP role preparation →]({{ '/csp.html' | relative_url }})
 - [Medical Finance role preparation →]({{ '/medical-finance.html' | relative_url }})
 - [Aircraft Leasing / Abelo preparation →]({{ '/aviation/abelo.html' | relative_url }})
+
