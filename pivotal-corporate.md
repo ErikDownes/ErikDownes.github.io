@@ -12,29 +12,45 @@ public_mode: true
 <!-- NEW-INTERVIEW-QUESTIONS-2026-10-04-START -->
 # Most Likely to Catch Me — Read These First
 
-## What do you do when you don't know how to do something?
+## When you have a task that you do not readily know how to complete, how do you approach it?
 
-**Clarify  Try  Check**
+**Independent research  Approved tools  Referral ladder**
 
-I would first make sure I understand **what the finished result should look like, the deadline and who relies on it next**. I would use the guidance and systems available, make a sensible attempt, and ask a **specific question** if I was still unsure. I would rather clarify early than confidently produce the wrong result.
+I would start by defining the **required outcome, deadline, source information and any controls or procedures that apply**. Then I would work through a sensible **ladder of referral** rather than immediately passing the problem upwards.
+
+First I would check the firm's own **procedures, templates, previous examples and internal knowledge resources**. If Pivotal provides an **approved enterprise AI tool** and the task is appropriate for it, I could use that to help me understand a concept or structure an approach — but I would follow the firm's AI, confidentiality and data-protection policy, never put client information into an unapproved system, and independently verify the output.
+
+If I still had a gap, I would ask the **closest appropriate colleague or supervisor a specific question**, showing what I had already checked and exactly where I was stuck. I would only move further up the referral chain where the **risk, authority or unresolved issue justified it**. The aim is to be resourceful without making unsupported assumptions or creating unnecessary escalation.
 
 ## Tell us about a mistake you made.
 
-**Notice  Correct  Learn**
+**Timestamp formats  pd.to_datetime()  Standardise**
 
-In one of my data projects, records did not line up properly when I first combined datasets because the **timestamps were represented differently**. I noticed the mismatch when I checked the output, traced it back to the datetime and timezone formats, standardised them in Pandas and ran the checks again. It reinforced the importance of **checking the result rather than assuming the process worked**.
+In one of my data projects, two datasets did not align correctly because their **timestamps were represented in different formats**. I detected the problem when the merged results did not reconcile as expected.
+
+In Pandas I used **`pd.to_datetime()`** — the function is called with the values inside the brackets — to parse the different date-and-time representations into a **standardised datetime type**. I then normalised the timezone information, including UTC and daylight-saving differences, before merging the data again.
+
+The important lesson was that data can look like dates to a person while still being represented differently to a computer. **Standardising the data type before comparing or joining records** made the process reliable, and I rechecked the result afterwards rather than assuming the correction had worked.
 
 ## How do you prioritise competing deadlines?
 
-**Deadline  Impact  Confirm**
+**Deadline  Urgency  Dependency  Stakeholders**
 
-I would look at **deadline, urgency and dependency** — especially whether another person is waiting for my work before they can continue. If two genuinely urgent tasks conflict, I would not guess which one matters more; I would confirm the priority with the relevant senior colleague and then keep both people informed.
+I would assess each task against **deadline, urgency, business impact and dependency**. A task can be important not only because of its own due date, but because another colleague, team or client may be unable to proceed until my part is complete.
+
+I would sequence the work around those dependencies, identify any genuine conflict early, and avoid silently making a priority decision that affects somebody else. Where priorities compete, I would confirm them with the appropriate person and **keep all relevant stakeholders informed** about what is being done, what is waiting, and any change to the expected completion time.
 
 ## How do you ensure accuracy when working with financial information?
 
-**Source  Reconcile  Review**
+**Avoid transcription  Validate  Reconcile  Reasonableness**
 
-I would work from the correct source information, enter or process it carefully, and then **reconcile or cross-check the result**. I would look for exceptions rather than just assuming a total is right, keep the work traceable to its source, and complete a final review before passing it on.
+I would try to **design out avoidable error before checking for it afterwards**. Where possible, I would avoid manually retyping data and instead use direct references, controlled imports or verified source data so there is less opportunity for transcription error.
+
+At input stage I would use **data validation and type checks** — for example, a date should be stored as a date rather than free text, required fields should not be blank, numeric fields should reject invalid values, and ranges or permitted values should be constrained where appropriate. I would also clean the data for **duplicates, missing values, inconsistent formats and obvious anomalies** before relying on it.
+
+Then I would use **independent cross-checks and reconciliations**: compare totals back to the source, reconcile one record set against another, check opening and closing balances where relevant, and investigate exceptions rather than forcing them to agree. I would also apply **reasonableness checks** — asking whether the result makes commercial and numerical sense.
+
+There are also formal redundancy controls such as **control totals, check digits and checksums**. A familiar example is the check-digit logic used to detect invalid card numbers, such as the **Luhn algorithm**. In a professional accounting environment I would use the controls built into Pivotal's systems and procedures, preserve the audit trail, and obtain any required independent review before the information is relied upon or sent to a client.
 
 ## Why Pivotal Corporate?
 
