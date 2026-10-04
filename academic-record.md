@@ -7,11 +7,15 @@ nav_order: 30
 eyebrow: FINANCIAL MATHEMATICS · UNIVERSITY OF LIMERICK
 public_mode: true
 ---
+# BSc Financial Mathematics · LM058 · University of Limerick
+
+Third-year **Financial Mathematics** student at the **University of Limerick**, studying a multidisciplinary programme combining **mathematics, statistics, finance, accounting, programming and data analysis**.
+
 **Current QCA:** 3.40 · **Credits completed:** 120 · **Year 3 currently underway**
 
+See below for my **full UL academic record**, **current and planned modules**, **Cooperative Education**, **final-year project information**, and earlier **school results and academic highlights**, including my Leaving Certificate, academic awards and project work.
 
 
-&nbsp;
 
 ## First Year · 2024/25
 
