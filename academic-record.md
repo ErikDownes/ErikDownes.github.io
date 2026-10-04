@@ -9,23 +9,7 @@ public_mode: true
 ---
 **Current QCA:** 3.40 · **Credits completed:** 120 · **Year 3 currently underway**
 
-## UL Grade Key
 
-| Grade | Meaning | QPV |
-| --- | --- | ---: |
-| **A1** | First Honours | **4.00** |
-| **A2** | First Honours | **3.60** |
-| **B1** | Honours 2.1 | **3.20** |
-| **B2** | Honours 2.1 | **3.00** |
-| **B3** | Honours 2.2 | **2.80** |
-| **C1** | Honours 2.2 | **2.60** |
-| **C2** | Third Honours | **2.40** |
-| **C3** | Third Honours | **2.00** |
-| **D1** | Compensating Fail | **1.60** |
-| **D2** | Compensating Fail | **1.20** |
-| **F / NG** | Fail | **0.00** |
-
-**QPV** means **Quality Point Value**. These values are used in calculating the **QCA (Quality Credit Average)**.
 
 ## Leaving Certificate · 2024
 
@@ -33,8 +17,9 @@ public_mode: true
 
 **579 CAO points**
 
+
 | Subject | Result |
-| --- | --- |
+| ------------------- | ------ |
 | Mathematics | **H1** |
 | Physics | **H1** |
 | Applied Mathematics | **H1** |
@@ -42,6 +27,7 @@ public_mode: true
 | Spanish | **H3** |
 | English | **H3** |
 | Irish | **O3** |
+
 
 **Kolvenbach Medal for Business · May 2024** — awarded for achieving the **highest Leaving Certificate Business grade at Crescent College**.
 
@@ -53,25 +39,29 @@ For my Leaving Certificate Applied Mathematics project, I modelled the minimum h
 
 ### Semester 1
 
+
 | Code | Module | Grade |
-| --- | --- | --- |
+| ------ | ----------------------- | ------ |
 | AC4213 | Financial Accounting | **B3** |
 | CE4701 | Computer Software 1 | **A2** |
 | MS4021 | Calculus 1 | **A2** |
 | MS4101 | Mathematical Laboratory | **A2** |
 | MS4131 | Linear Algebra 1 | **B1** |
 
+
 **Semester QCA:** 3.36 · **Credits:** 30
 
 ### Semester 2
 
+
 | Code | Module | Grade |
-| --- | --- | --- |
+| ------ | ------------------------------------------ | ------ |
 | AC4214 | Accounting for Financial Decision Making | **A2** |
 | CE4702 | Computer Software 2 | **B1** |
 | MS4022 | Calculus 2 | **B2** |
 | MS4122 | Further Linear Algebra | **B3** |
 | MS4222 | Introduction to Probability and Statistics | **A1** |
+
 
 **Semester QCA:** 3.32 · **Cumulative QCA:** 3.34 · **Credits completed:** 60
 
@@ -79,25 +69,29 @@ For my Leaving Certificate Applied Mathematics project, I modelled the minimum h
 
 ### Semester 1
 
+
 | Code | Module | Grade |
-| --- | --- | --- |
+| ------ | ------------------------------- | ------ |
 | FI4003 | Finance | **A2** |
 | MS4035 | Probability Models | **B1** |
 | MS4043 | Methods of Linear Analysis | **B3** |
 | MS4403 | Ordinary Differential Equations | **A2** |
 | MS4613 | Vector Analysis | **A2** |
 
+
 **Semester QCA:** 3.36 · **Credits:** 30
 
 ### Semester 2
 
+
 | Code | Module | Grade |
-| --- | --- | --- |
+| ------ | ---------------------------------- | ------ |
 | MS4014 | Introduction to Numerical Analysis | **A2** |
 | MS4034 | Applied Data Analysis | **A2** |
 | MS4303 | Operations Research 1 | **A2** |
 | MS4404 | Partial Differential Equations | **B1** |
 | MS4414 | Theoretical Mechanics | **B1** |
+
 
 **Semester QCA:** 3.44 · **Cumulative QCA:** 3.40 · **Credits completed:** 120
 
@@ -115,4 +109,26 @@ Results are not yet available. Current modules:
 
 ### Semester 2 · Cooperative Education
 
-**CO4320 — Cooperative Education** · full-time professional placement.
+**CO4320 — Cooperative Education** · full-time professional placement.  
+  
+  
+  
+UL Grade Key
+
+
+| Grade | Meaning | QPV |
+| ---------- | ----------------- | -------- |
+| **A1** | First Honours | **4.00** |
+| **A2** | First Honours | **3.60** |
+| **B1** | Honours 2.1 | **3.20** |
+| **B2** | Honours 2.1 | **3.00** |
+| **B3** | Honours 2.2 | **2.80** |
+| **C1** | Honours 2.2 | **2.60** |
+| **C2** | Third Honours | **2.40** |
+| **C3** | Third Honours | **2.00** |
+| **D1** | Compensating Fail | **1.60** |
+| **D2** | Compensating Fail | **1.20** |
+| **F / NG** | Fail | **0.00** |
+
+
+**QPV** means **Quality Point Value**. These values are used in calculating the **QCA (Quality Credit Average)**.
