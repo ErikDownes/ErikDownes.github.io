@@ -76,35 +76,35 @@ I work well as part of a team and understand the importance of shared responsibi
 
 
 
-My work in **retail and logistics** has developed my ability to communicate clearly with customers, colleagues and different departments. At Mr Price, I dealt with customer product and pricing queries; at O’Mahony’s, accurate communication was important when dealing with orders, invoices and dispatch information. My university work and project portfolio have also developed my written communication. I understand that at Pivotal the same professional approach must extend to **clients, intermediaries and internal clients**, with accurate information and reliable follow-through.
+My work in retail and logistics has developed my ability to communicate clearly with customers, colleagues and different departments. At Mr Price, I dealt with customer product and pricing queries; at O’Mahony’s, accurate communication was important when dealing with orders, invoices and dispatch information. My university work and project portfolio have also developed my written communication. I understand that at Pivotal the same professional approach must extend to clients, intermediaries and internal clients, with accurate information and reliable follow-through.
 
 ## Pivotal Corporate Problem Solving and Analytics
 
 
 
-My **Financial Mathematics** degree has developed strong analytical and critical-thinking skills through finance, accounting, statistics, data analysis, numerical analysis and operations research. I particularly enjoy identifying differences, checking information and working systematically towards a solution. For my Leaving Certificate Applied Mathematics project, I independently researched **air resistance beyond the syllabus** and incorporated it into my model. I would apply the same careful approach to reconciliations, financial records, research and process-improvement work.
+My Financial Mathematics degree has developed strong analytical and critical-thinking skills through finance, accounting, statistics, data analysis, numerical analysis and operations research. I particularly enjoy identifying differences, checking information and working systematically towards a solution. For my Leaving Certificate Applied Mathematics project, I independently researched air resistance beyond the syllabus and incorporated it into my model. I would apply the same careful approach to reconciliations, financial records, research and process-improvement work.
 
 ## Pivotal Corporate Using Initiative
 
 
 
-I am comfortable taking responsibility and looking for practical ways to improve a situation. At Mr Price, when dealing with an item without clear pricing information, I checked the price and also corrected the missing shelf information rather than dealing only with the immediate query. I also became actively involved during a major store-floor reorganisation. In project work, I have independently researched beyond course requirements when it improved the result. I try to **identify what needs to be done, act appropriately and follow the task through**.
+I am comfortable taking responsibility and looking for practical ways to improve a situation. At Mr Price, when dealing with an item without clear pricing information, I checked the price and also corrected the missing shelf information rather than dealing only with the immediate query. I also became actively involved during a major store-floor reorganisation. In project work, I have independently researched beyond course requirements when it improved the result. I try to identify what needs to be done, act appropriately and follow the task through.
 
 ## Pivotal Corporate Projects, Portfolio and Volunteering
 
 
 
-I maintain a personal project portfolio demonstrating work across **finance, accounting, data analysis, programming and practical problem solving**. My projects allow me to apply university learning independently, organise information clearly and communicate results to others. I use tools including **Excel, Word, Outlook, Python, SQL and data-analysis software**, and I am comfortable learning new systems. Building the portfolio itself reflects my interest in using technology to make information, processes and decision-making clearer and more efficient.
+I maintain a personal project portfolio demonstrating work across finance, accounting, data analysis, programming and practical problem solving. My projects allow me to apply university learning independently, organise information clearly and communicate results to others. I use tools including Excel, Word, Outlook, Python, SQL and data-analysis software, and I am comfortable learning new systems. Building the portfolio itself reflects my interest in using technology to make information, processes and decision-making clearer and more efficient.
 
 ## Pivotal Corporate Additional Information
 
 
 
-I am a **third-year Financial Mathematics student at the University of Limerick**, with a current QCA of **3.40** and strong results across finance, accounting, mathematics and computing, including **A2 grades in Finance and Accounting for Financial Decision Making**. I also achieved **H1 Business** and received the **Kolvenbach Medal for Business** at Crescent College.
+I am a third-year Financial Mathematics student at the University of Limerick, with a current QCA of 3.40 and strong results across finance, accounting, mathematics and computing, including A2 grades in Finance and Accounting for Financial Decision Making. I also achieved H1 Business and received the Kolvenbach Medal for Business at Crescent College.
 
-Pivotal particularly interests me because the role combines **accounting, administration, client service and analytical problem solving**. I understand that the intern supports senior staff and the Client Service Teams with work including **journals and reconciliations, accounts payable and receivable, financial records, VAT/tax and regulatory reporting, research, schedules and registers, KYC/CDD and regulatory documentation**.
+Pivotal particularly interests me because the role combines accounting, administration, client service and analytical problem solving. I understand that the intern supports senior staff and the Client Service Teams with work including journals and reconciliations, accounts payable and receivable, financial records, VAT/tax and regulatory reporting, research, schedules and registers, KYC/CDD and regulatory documentation.
 
-I would bring an **organised, detail-oriented and positive approach**, strong willingness to learn, and a genuine interest in understanding how high-quality accounting and administration services can **add value to a client’s business**.
+I would bring an organised, detail-oriented and positive approach, strong willingness to learn, and a genuine interest in understanding how high-quality accounting and administration services can add value to a client’s business.
 
 
 
