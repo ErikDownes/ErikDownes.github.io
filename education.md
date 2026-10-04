@@ -31,7 +31,7 @@ LM058 is a four-year Financial Mathematics degree combining **mathematics, proba
 
 **Year 2 · Applied analysis**Finance, probability models, numerical analysis, data analysis, optimisation and differential equations.
 
-**Year 3 · Specialisation + Co-op**Statistical inference, advanced data analysis and financial mathematics, followed by professional placement.
+**Year 3 · Specialisation + Co-op**Complex analysis, linear algebra, statistical inference, advanced data analysis and financial mathematics, followed by professional placement.
 
 **Year 4 · Advanced quantitative study**Stochastic processes, time series, data-science projects, stochastic finance and investment modelling.
 
