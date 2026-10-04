@@ -11,7 +11,7 @@ public_mode: true
 
 
 
-
+&nbsp;
 
 ## First Year · 2024/25
 
@@ -85,9 +85,8 @@ Results are not yet available. Current modules:
 - **MS4214** — Statistical Inference
 - **MS4215** — Advanced Data Analysis
 
-### Semester 2 · Cooperative Education  
-  
-  
+### Semester 2 · Cooperative Education
+
 Fourth Year · 2027/28
 
 ### Semester 1 · Planned
@@ -119,8 +118,8 @@ Fourth Year · 2027/28
 
 The **Project 1 / Project 2** element is particularly worth showing. UL describes it as a substantial fourth-year research project in mathematics, computing, statistics, finance or a related area, culminating in a professional written report and presentation.
 
-##   
-  
+
+
 Leaving Certificate · 2024
 
 
@@ -141,8 +140,6 @@ Leaving Certificate · 2024
 | Irish | **O3** |
 
 
-
-
 ## Highest LC Business Grade at Crescent
 
 **Kolvenbach Medal for Business · May 2024** — awarded for achieving the **highest Leaving Certificate Business grade at Crescent College**.
@@ -153,7 +150,9 @@ Leaving Certificate · 2024
 
 ## Exceptional Classroom-Based Assessments
 
-Achieved **Exceptional**, the **highest CBA descriptor**, in both **Mathematics and Science**, demonstrating a strong standard of independent and project-based work.
+Achieved **Exceptional**, the highest Junior Cycle CBA descriptor, in both **Mathematics and Science**.
+
+The CBAs involved **independent project work, organisation, attention to detail, critical thinking and clear communication** — early experience of taking responsibility for a task and bringing it through to completion.
 
 ## Applied Mathematics Project
 
