@@ -526,8 +526,7 @@
   document.querySelectorAll('.navitem > .navlabel').forEach(label => {
     label.addEventListener('click', event => {
       const targetPath = normalisePath(label.href);
-      const rootPath = normalisePath(document.querySelector('.brand')?.href || '/');
-      const isPageMenu = /\/(?:aviation|portfolio)\.html$/.test(targetPath);
+        const isPageMenu = /\/(?:aviation|portfolio)\.html$/.test(targetPath);
       const isLm058Overview = /\/education\.html$/.test(targetPath);
       if (isLm058Overview) return;
       if (isPageMenu) {
@@ -604,11 +603,7 @@
     item.classList.toggle('has-submenu', questions.length > 0);
     if (!questions.length) return;
 
-    // Keep About Me as a simple single-column dropdown. Other question menus
-    // can still expand to two or three columns when they contain many entries.
     const rootPath = normalisePath(document.querySelector('.brand')?.href || '/');
-    // Keep all dropdown menus in a single vertical column.
-    menu.classList.remove('menu-columns-2', 'menu-columns-3');
     menu.style.setProperty('--menu-left', `${Math.round(item.getBoundingClientRect().left)}px`);
 
     questions.forEach((question, index) => {
@@ -735,7 +730,7 @@
       });
 
     menu.replaceChildren();
-    menu.classList.remove('menu-columns-2', 'menu-columns-3', 'aviation-menu', 'career-menu', 'coursework-menu', 'portfolio-menu');
+    menu.classList.remove('aviation-menu', 'career-menu', 'coursework-menu', 'portfolio-menu');
     item.classList.toggle('has-submenu', modules.length > 0);
     item.classList.remove('has-flyout-menu');
     if (!modules.length) return;
@@ -793,7 +788,7 @@
     const menu = item.querySelector(':scope > .dropmenu');
     if (!menu) return;
     menu.replaceChildren();
-    menu.classList.remove('menu-columns-2', 'menu-columns-3', 'aviation-menu', 'career-menu', 'coursework-menu', 'portfolio-menu');
+    menu.classList.remove('aviation-menu', 'career-menu', 'coursework-menu', 'portfolio-menu');
     item.classList.add('has-submenu');
     item.classList.remove('has-flyout-menu');
     menu.style.setProperty('--menu-left', `${Math.round(item.getBoundingClientRect().left)}px`);
@@ -824,7 +819,7 @@
     if (!menu) return;
 
     menu.replaceChildren();
-    menu.classList.remove('menu-columns-2', 'menu-columns-3', 'career-menu', 'coursework-menu', 'portfolio-menu');
+    menu.classList.remove('career-menu', 'coursework-menu', 'portfolio-menu');
     menu.classList.add('aviation-menu');
     item.classList.add('has-submenu');
     item.classList.remove('has-flyout-menu');
@@ -854,7 +849,7 @@
     if (!menu) return;
 
     menu.replaceChildren();
-    menu.classList.remove('menu-columns-2', 'menu-columns-3', 'aviation-menu', 'coursework-menu', 'portfolio-menu');
+    menu.classList.remove('aviation-menu', 'coursework-menu', 'portfolio-menu');
     menu.classList.add('career-menu');
     item.classList.add('has-submenu', 'has-flyout-menu');
     menu.style.setProperty('--menu-left', `${Math.round(item.getBoundingClientRect().left)}px`);
@@ -922,7 +917,7 @@
     if (!menu) return;
 
     menu.replaceChildren();
-    menu.classList.remove('menu-columns-2', 'menu-columns-3', 'aviation-menu', 'coursework-menu', 'career-menu');
+    menu.classList.remove('aviation-menu', 'coursework-menu', 'career-menu');
     menu.classList.add('portfolio-menu');
     item.classList.add('has-submenu');
     item.classList.remove('has-flyout-menu');
