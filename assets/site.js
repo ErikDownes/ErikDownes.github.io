@@ -1584,13 +1584,13 @@
   };
 
   // Recall is deliberately hidden in the normal page view and exposed only
-  // inside the rehearsal overlay. Use a paragraph beginning "Recall:" as the
-  // delimiter in Markdown. "Recall cue:" remains supported for older content.
+  // inside the rehearsal overlay. Use a paragraph beginning "Recall chain:"
+  // in new Q&A content. "Recall:" and "Recall cue:" remain supported for older content.
   // Legacy bold-only first paragraphs are also treated as recall so existing
   // interview material keeps working without a bulk rewrite.
   const isRecallNode = node => {
     if (!node?.matches?.('p')) return false;
-    return /^recall(?:\\s+cue)?\\s*:/i.test(cleanText(node.textContent));
+    return /^recall(?:\\s+(?:cue|chain))?\\s*:/i.test(cleanText(node.textContent));
   };
 
   const isLegacyRecallNode = node => {
@@ -2088,6 +2088,8 @@
     if (overlay.hidden) return;
     if (overlay.dataset.unsaved === 'true' && !window.confirm('Discard unsaved changes?')) return;
     resetAudio();
+    overlay._stopVideo?.();
+    overlay._stopVideo = null;
     focusContent.querySelector('.answer-practice-record.is-recording')?.click();
     delete overlay.dataset.unsaved;
     overlay.hidden = true;
@@ -2153,17 +2155,17 @@
     }
 
     const recallText = recallNodes
-      .map(node => cleanText(node.textContent).replace(/^recall(?:\\s+cue)?\\s*:\\s*/i, '').trim())
+      .map(node => cleanText(node.textContent).replace(/^recall(?:\\s+(?:cue|chain))?\\s*:\\s*/i, '').trim())
       .filter(Boolean)
       .join(' · ');
     recallNodes.forEach(node => node.remove());
     hint.textContent = recallText;
-    hint.hidden = !recallText;
+    hint.hidden = true;
 
     const answerSwitch = makeFocusSwitch('Answer', true, shown => {
       copy.hidden = !shown;
     });
-    const hintSwitch = makeFocusSwitch('Recall', true, shown => {
+    const hintSwitch = makeFocusSwitch('Recall Chain', false, shown => {
       hint.hidden = !shown || !hint.textContent;
     });
     if (!hint.textContent) hintSwitch.hidden = true;
@@ -2233,11 +2235,182 @@
       if (list.children.length >= 5) list.classList.add('answer-columns');
     });
 
+    const rehearsal = document.createElement('section');
+    rehearsal.className = 'answer-rehearsal-flow';
+    const rehearsalStatus = document.createElement('strong');
+    rehearsalStatus.className = 'answer-rehearsal-status';
+    rehearsalStatus.textContent = 'Read 1 of 4';
+    const rehearsalActions = document.createElement('div');
+    rehearsalActions.className = 'answer-rehearsal-actions';
+
+    const ensureSwitch = (button, value) => {
+      const current = button.getAttribute('aria-checked') === 'true';
+      if (current !== value) button.click();
+    };
+
+    let readCount = 1;
+    const readAgain = document.createElement('button');
+    readAgain.type = 'button';
+    readAgain.textContent = 'Read again';
+    readAgain.addEventListener('click', () => {
+      if (readCount < 4) {
+        readCount += 1;
+        ensureSwitch(answerSwitch, true);
+        ensureSwitch(hintSwitch, false);
+        rehearsalStatus.textContent = `Read ${readCount} of 4`;
+        if (readCount === 4) readAgain.textContent = 'Use Recall Chain';
+        copy.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        return;
+      }
+      ensureSwitch(answerSwitch, false);
+      ensureSwitch(hintSwitch, true);
+      rehearsalStatus.textContent = 'Recall Chain only';
+      readAgain.textContent = 'Read answer again';
+      readCount = 0;
+    });
+
+    const recallOnly = document.createElement('button');
+    recallOnly.type = 'button';
+    recallOnly.textContent = 'Recall Chain';
+    recallOnly.addEventListener('click', () => {
+      ensureSwitch(answerSwitch, false);
+      ensureSwitch(hintSwitch, true);
+      rehearsalStatus.textContent = 'Recall Chain only';
+    });
+
+    const unaided = document.createElement('button');
+    unaided.type = 'button';
+    unaided.textContent = 'No prompts';
+    unaided.addEventListener('click', () => {
+      ensureSwitch(answerSwitch, false);
+      ensureSwitch(hintSwitch, false);
+      rehearsalStatus.textContent = 'Unaided attempt';
+    });
+
+    const edit = document.createElement('button');
+    edit.type = 'button';
+    edit.textContent = 'Rewrite';
+    const save = document.createElement('button');
+    save.type = 'button';
+    save.className = 'answer-focus-save';
+    save.textContent = 'Save rewrite';
+    save.hidden = true;
+    edit.addEventListener('click', () => {
+      ensureSwitch(answerSwitch, true);
+      copy.hidden = false;
+      copy.contentEditable = 'true';
+      copy.focus();
+      overlay.dataset.unsaved = 'true';
+      edit.hidden = true;
+      save.hidden = false;
+      rehearsalStatus.textContent = 'Rewrite in your own words';
+    });
+    save.addEventListener('click', () => {
+      copy.contentEditable = 'false';
+      localStorage.setItem(editKeyFor(heading), copy.innerHTML);
+      applySavedToSource(heading, copy.innerHTML);
+      delete overlay.dataset.unsaved;
+      edit.hidden = false;
+      save.hidden = true;
+      rehearsalStatus.textContent = 'Rewrite saved on this device';
+    });
+
+    rehearsalActions.append(readAgain, recallOnly, unaided, edit, save);
+    rehearsal.append(rehearsalStatus, rehearsalActions);
+
     const { panel: practice } = window.coopPractice.create(copy.innerText, { visualOnly: true });
 
-    // Answer and Recall both start on in focus view. Either can be switched off,
-    // so the learner can rehearse with both, answer only, or recall only.
-    focusContent.replaceChildren(title, controls, copy, hint, practice);
+    const videoPractice = document.createElement('section');
+    videoPractice.className = 'answer-video-practice';
+    const videoButton = document.createElement('button');
+    videoButton.type = 'button';
+    videoButton.className = 'answer-video-button';
+    videoButton.textContent = '● Video practice';
+    const videoStatus = document.createElement('span');
+    videoStatus.className = 'answer-video-status';
+    videoStatus.textContent = 'Optional: camera + microphone';
+    const video = document.createElement('video');
+    video.className = 'answer-video-preview';
+    video.playsInline = true;
+    video.controls = true;
+    video.hidden = true;
+    let videoRecorder = null;
+    let videoStream = null;
+    let videoChunks = [];
+
+    const stopVideo = () => {
+      if (videoRecorder?.state === 'recording') {
+        videoRecorder.stop();
+        return;
+      }
+      videoStream?.getTracks().forEach(track => track.stop());
+      videoStream = null;
+    };
+    overlay._stopVideo = stopVideo;
+
+    videoButton.addEventListener('click', async () => {
+      if (videoRecorder?.state === 'recording') {
+        videoButton.textContent = '● Video practice';
+        videoStatus.textContent = 'Preparing playback…';
+        stopVideo();
+        return;
+      }
+      if (!navigator.mediaDevices?.getUserMedia || typeof MediaRecorder === 'undefined') {
+        videoStatus.textContent = 'Video recording is not supported in this browser.';
+        return;
+      }
+      try {
+        videoStream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
+        video.hidden = false;
+        video.controls = false;
+        video.muted = true;
+        video.src = '';
+        video.srcObject = videoStream;
+        await video.play();
+        videoChunks = [];
+        videoRecorder = new MediaRecorder(videoStream);
+        videoRecorder.ondataavailable = event => { if (event.data?.size) videoChunks.push(event.data); };
+        videoRecorder.onstop = () => {
+          videoStream?.getTracks().forEach(track => track.stop());
+          videoStream = null;
+          video.srcObject = null;
+          if (!videoChunks.length) return;
+          const url = URL.createObjectURL(new Blob(videoChunks, { type: videoRecorder.mimeType || 'video/webm' }));
+          video.src = url;
+          video.muted = false;
+          video.controls = true;
+          videoStatus.textContent = 'Playback ready — watch your delivery, pace and eye contact.';
+        };
+        videoRecorder.start();
+        videoButton.textContent = '■ Stop video';
+        videoStatus.textContent = 'Recording… answer as if you are in the interview.';
+      } catch (_) {
+        videoStream?.getTracks().forEach(track => track.stop());
+        videoStream = null;
+        videoStatus.textContent = 'Camera and microphone permission are needed.';
+      }
+    });
+    videoPractice.append(videoButton, videoStatus, video);
+
+    const nextButton = document.createElement('button');
+    nextButton.type = 'button';
+    nextButton.className = 'answer-next-question';
+    nextButton.textContent = 'Next question →';
+    const headings = practiceHeadings();
+    const currentIndex = headings.indexOf(heading);
+    const nextHeading = currentIndex >= 0 ? headings[currentIndex + 1] : null;
+    nextButton.hidden = !nextHeading;
+    nextButton.addEventListener('click', () => {
+      if (!nextHeading) return;
+      overlay._stopVideo?.();
+      delete overlay.dataset.unsaved;
+      focusContent.replaceChildren();
+      openFocus(nextHeading);
+    });
+
+    // Start with the full answer only. The learner can reread up to four times,
+    // then step down to the Recall Chain and finally to an unaided recording.
+    focusContent.replaceChildren(title, controls, rehearsal, copy, hint, practice, videoPractice, nextButton);
     linkKnownGlossaryTerms(copy);
     lastTrigger = heading;
     overlay.hidden = false;
