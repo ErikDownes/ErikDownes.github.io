@@ -27,6 +27,7 @@ content:
     type: group
     items:
       - { name: profile, label: "10 · About Me", type: file, path: profile.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: qa, label: "11 · Q&A", type: file, path: qa.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: education, label: "20 · Financial Maths", type: file, path: education.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: academic_record, label: "30 · Results", type: file, path: academic-record.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: job_spec, label: "39 · Job Spec", type: file, path: job-spec.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
