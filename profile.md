@@ -15,11 +15,6 @@ My degree combines mathematics, statistics, finance and programming, and I enjoy
 
 Outside university, I have worked in **retail** and **logistics**, where accuracy, teamwork and clear communication matter. I am currently preparing for Cooperative Education and looking for a placement where I can contribute, learn quickly and become useful to a professional team.
 
-**Upcoming Co-op interviews**
-
-- **Pivotal Corporate** — Monday 5 October 2026, **11:30 AM** — **CG052, Main Building, University of Limerick**
-- **HSE Mid-West** — Friday 9 October 2026, **12:00 PM** — **Online**
-
 ## Contact
 
 - **Personal email:** erikdownes2307 [at] gmail [dot] com
