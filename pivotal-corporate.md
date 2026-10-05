@@ -1,7 +1,7 @@
 ---
 layout: doc
 permalink: /pivotal-corporate.html
-handle: Pivotal Corp
+handle: Pivotal Corp QA
 title: Pivotal Corp Interview
 nav_order: 50
 description: Pivotal Corporate interview preparation for the Co-Op Student /
