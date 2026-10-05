@@ -15,14 +15,7 @@ My degree combines mathematics, statistics, finance and programming, and I enjoy
 
 Outside university, I have worked in **retail** and **logistics**, where accuracy, teamwork and clear communication matter. I am currently preparing for Cooperative Education and looking for a placement where I can contribute, learn quickly and become useful to a professional team.
 
-## Contact
 
-- **Personal email:** erikdownes2307 [at] gmail [dot] com
-- **UL student email:** [24434582@studentmail.ul.ie](mailto:24434582@studentmail.ul.ie)
-- **Co-op Placement Officer:** [Naomi Flanagan-Walsh](mailto:naomi.flanagan-walsh@ul.ie)
-- **Cooperative Education & Careers Division:** [ul.ie/cecd](https://www.ul.ie/cecd)
-- **LinkedIn:** [Erik Downes](https://www.linkedin.com/in/erik-downes-7b312127a/)
-- **GitHub:** [github.com/ErikDownes](https://github.com/ErikDownes)
 
 ### How to use this site
 
