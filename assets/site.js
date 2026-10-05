@@ -1857,29 +1857,67 @@
     const controls = document.createElement('div');
     controls.className = 'answer-focus-tools';
 
-    const answerButton = document.createElement('button');
-    answerButton.type = 'button';
-    answerButton.textContent = 'Hide Answer';
-    answerButton.addEventListener('click', event => {
-      event.preventDefault();
-      event.stopPropagation();
-      copy.hidden = !copy.hidden;
-      answerButton.textContent = copy.hidden ? 'Show Answer' : 'Hide Answer';
+    const makeFocusSwitch = (label, checked, onChange) => {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'answer-focus-switch' + (checked ? ' is-on' : '');
+      button.setAttribute('role', 'switch');
+      button.setAttribute('aria-checked', String(checked));
+      button.setAttribute('aria-label', `${label} ${checked ? 'on' : 'off'}`);
+      const text = document.createElement('span');
+      text.className = 'answer-focus-switch-label';
+      text.textContent = label;
+      const track = document.createElement('span');
+      track.className = 'answer-focus-switch-track';
+      track.setAttribute('aria-hidden', 'true');
+      const thumb = document.createElement('span');
+      thumb.className = 'answer-focus-switch-thumb';
+      track.appendChild(thumb);
+      button.append(text, track);
+      button.addEventListener('click', event => {
+        event.preventDefault();
+        event.stopPropagation();
+        const next = button.getAttribute('aria-checked') !== 'true';
+        button.setAttribute('aria-checked', String(next));
+        button.setAttribute('aria-label', `${label} ${next ? 'on' : 'off'}`);
+        button.classList.toggle('is-on', next);
+        onChange(next);
+      });
+      return button;
+    };
+
+    const breadcrumbs = document.createElement('div');
+    breadcrumbs.className = 'answer-focus-breadcrumbs answer-focus-breadcrumb-path';
+    breadcrumbs.hidden = true;
+    const pageName = cleanText(document.querySelector('.doc-title, .page-title, h1')?.textContent || document.title);
+    breadcrumbs.textContent = pageName && pageName !== title.textContent
+      ? `${pageName} › ${title.textContent}`
+      : title.textContent;
+
+    const answerSwitch = makeFocusSwitch('Answer', true, shown => {
+      copy.hidden = !shown;
+    });
+    const breadcrumbSwitch = makeFocusSwitch('Breadcrumbs', false, shown => {
+      breadcrumbs.hidden = !shown;
     });
 
     const play = document.createElement('button');
     play.type = 'button';
-    play.textContent = '▶ Play';
-    play.title = 'Play or pause this question and answer';
+    play.className = 'answer-focus-icon';
+    play.textContent = '▶';
+    play.title = 'Play or pause';
+    play.setAttribute('aria-label', 'Play question and answer');
     play.addEventListener('click', event => {
       event.stopPropagation();
       if (activeAudioButton === play && synth?.speaking) {
         if (synth.paused) {
           synth.resume();
-          play.textContent = '⏸ Pause';
+          play.textContent = '❚❚';
+          play.setAttribute('aria-label', 'Pause');
         } else {
           synth.pause();
-          play.textContent = '▶ Resume';
+          play.textContent = '▶';
+          play.setAttribute('aria-label', 'Resume');
         }
         return;
       }
@@ -1887,52 +1925,47 @@
       if (!hasSpeech) return;
       activeAudioButton = play;
       play.classList.add('is-active');
-      play.textContent = '⏸ Pause';
+      play.textContent = '❚❚';
+      play.setAttribute('aria-label', 'Pause');
       activeUtterance = new SpeechSynthesisUtterance(`${title.textContent}. ${cleanText(copy.innerText)}`);
       activeUtterance.lang = 'en-IE';
       activeUtterance.rate = 0.92;
-      activeUtterance.onend = () => { play.textContent = '▶ Play'; resetAudio(); };
-      activeUtterance.onerror = () => { play.textContent = '▶ Play'; resetAudio(); };
+      activeUtterance.onend = () => {
+        play.textContent = '▶';
+        play.setAttribute('aria-label', 'Play question and answer');
+        resetAudio();
+      };
+      activeUtterance.onerror = () => {
+        play.textContent = '▶';
+        play.setAttribute('aria-label', 'Play question and answer');
+        resetAudio();
+      };
       synth.speak(activeUtterance);
     });
 
     const stop = document.createElement('button');
     stop.type = 'button';
-    stop.textContent = '■ Stop';
+    stop.className = 'answer-focus-icon';
+    stop.textContent = '■';
+    stop.title = 'Stop';
+    stop.setAttribute('aria-label', 'Stop playback');
     stop.addEventListener('click', event => {
       event.stopPropagation();
       resetAudio();
-      play.textContent = '▶ Play';
+      play.textContent = '▶';
+      play.setAttribute('aria-label', 'Play question and answer');
     });
 
-    const movePage = document.createElement('select');
-    movePage.className = 'answer-focus-move-page';
-    movePage.title = 'Move this section to another page (it will be placed at the bottom)';
-    movePage.setAttribute('aria-label', 'Move section to another page');
-    const movePrompt = document.createElement('option');
-    movePrompt.value = '';
-    movePrompt.textContent = 'Move to Page…';
-    movePrompt.selected = true;
-    movePrompt.disabled = true;
-    movePage.appendChild(movePrompt);
-    populateMovePageSelect(movePage);
-    movePage.addEventListener('change', event => {
-      event.stopPropagation();
-      if (!movePage.value) return;
-      moveSectionToPage(heading, movePage.value);
-    });
-
-    controls.append(answerButton, play, stop, movePage);
+    controls.append(answerSwitch, breadcrumbSwitch, play, stop);
 
     copy.querySelectorAll('ul,ol').forEach(list => {
       if (list.children.length >= 5) list.classList.add('answer-columns');
     });
 
-    const { panel: practice } = window.coopPractice.create(copy.innerText, { title: 'Optional recording' });
+    const { panel: practice } = window.coopPractice.create(copy.innerText, { visualOnly: true });
 
-    // The answer is the primary learning object: show it immediately.
-    // Recording stays at the bottom.
-    focusContent.replaceChildren(title, controls, copy, practice);
+    // Keep the answer primary. Recording is visual and compact; breadcrumbs are optional at the bottom.
+    focusContent.replaceChildren(title, controls, copy, practice, breadcrumbs);
     linkKnownGlossaryTerms(copy);
     lastTrigger = heading;
     overlay.hidden = false;
