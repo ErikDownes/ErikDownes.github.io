@@ -2112,8 +2112,7 @@
     title.dataset.focusClose = '';
     title.title = 'Click the question to close';
 
-    // Pull breadcrumb / recall content out of the full answer. In focus mode,
-    // answer and prompts are mutually exclusive.
+    // Pull breadcrumb / recall content out of the full answer.
     const promptBoard = document.createElement('div');
     promptBoard.className = 'answer-prompt-board';
 
@@ -2138,7 +2137,6 @@
     promptItems.forEach((value, index) => {
       const item = document.createElement('div');
       item.className = 'answer-prompt-card';
-      item.setAttribute('aria-label', 'Prompt ' + (index + 1));
       const number = document.createElement('span');
       number.className = 'answer-prompt-number';
       number.textContent = String(index + 1);
@@ -2157,32 +2155,25 @@
     const controls = document.createElement('div');
     controls.className = 'answer-focus-tools answer-focus-simple-tools';
 
-    const hideButton = document.createElement('button');
-    hideButton.type = 'button';
-    hideButton.className = 'answer-simple-text-button';
-    hideButton.textContent = 'Hide';
+    const makeModeButton = (label, mode) => {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'answer-simple-text-button';
+      button.textContent = label;
+      button.dataset.mode = mode;
+      button.setAttribute('aria-pressed', 'false');
+      return button;
+    };
 
-    const promptButton = document.createElement('button');
-    promptButton.type = 'button';
-    promptButton.className = 'answer-simple-text-button';
-    promptButton.textContent = 'Prompt';
+    const answerButton = makeModeButton('Answer', 'answer');
+    const promptButton = makeModeButton('Prompt', 'prompt');
     promptButton.disabled = !promptItems.length;
-
-    const cameraButton = document.createElement('button');
-    cameraButton.type = 'button';
-    cameraButton.className = 'answer-simple-icon-button';
-    cameraButton.title = 'Video';
-    cameraButton.setAttribute('aria-label', 'Start video recording');
-    cameraButton.innerHTML =
-      '<svg viewBox="0 0 24 24" aria-hidden="true">' +
-      '<path d="M4 7.5h3l1.4-2.5h7.2L17 7.5h3a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-9a2 2 0 0 1 2-2Z"></path>' +
-      '<circle cx="12" cy="14" r="4"></circle>' +
-      '</svg>';
+    const blankButton = makeModeButton('Blank', 'blank');
 
     const micButton = document.createElement('button');
     micButton.type = 'button';
     micButton.className = 'answer-simple-icon-button';
-    micButton.title = 'Audio';
+    micButton.title = 'Record audio';
     micButton.setAttribute('aria-label', 'Start audio recording');
     micButton.innerHTML =
       '<svg viewBox="0 0 24 24" aria-hidden="true">' +
@@ -2196,127 +2187,65 @@
     meter.setAttribute('aria-hidden', 'true');
     for (let i = 0; i < 5; i += 1) meter.appendChild(document.createElement('i'));
 
-    controls.append(hideButton, promptButton, cameraButton, micButton, meter);
+    const timer = document.createElement('span');
+    timer.className = 'answer-audio-timer';
+    timer.hidden = true;
+    timer.setAttribute('role', 'status');
+    timer.textContent = '0:00';
+
+    controls.append(answerButton, promptButton, blankButton, micButton, meter, timer);
 
     let textMode = 'answer';
     const setTextMode = mode => {
       textMode = mode;
       copy.hidden = mode !== 'answer';
       promptBoard.hidden = mode !== 'prompt' || !promptItems.length;
-      hideButton.classList.toggle('is-active', mode === 'hide');
-      promptButton.classList.toggle('is-active', mode === 'prompt');
-      hideButton.setAttribute('aria-pressed', String(mode === 'hide'));
-      promptButton.setAttribute('aria-pressed', String(mode === 'prompt'));
+      [answerButton, promptButton, blankButton].forEach(button => {
+        const active = button.dataset.mode === mode;
+        button.classList.toggle('is-active', active);
+        button.setAttribute('aria-pressed', String(active));
+      });
     };
 
-    hideButton.addEventListener('click', () => {
-      setTextMode(textMode === 'hide' ? 'answer' : 'hide');
-    });
-
+    answerButton.addEventListener('click', () => setTextMode('answer'));
     promptButton.addEventListener('click', () => {
-      if (!promptItems.length) return;
-      setTextMode(textMode === 'prompt' ? 'answer' : 'prompt');
+      if (promptItems.length) setTextMode('prompt');
     });
+    blankButton.addEventListener('click', () => setTextMode('blank'));
 
-    const mediaArea = document.createElement('div');
-    mediaArea.className = 'answer-simple-media';
+    const recorderArea = document.createElement('section');
+    recorderArea.className = 'answer-audio-recorder';
 
-    const video = document.createElement('video');
-    video.className = 'answer-video-preview';
-    video.playsInline = true;
-    video.controls = true;
-    video.hidden = true;
-
-    const audioPlayback = document.createElement('audio');
-    audioPlayback.className = 'answer-audio-playback';
-    audioPlayback.controls = true;
-    audioPlayback.hidden = true;
+    const attempts = document.createElement('div');
+    attempts.className = 'answer-practice-attempts answer-audio-attempts';
 
     const mediaMessage = document.createElement('div');
     mediaMessage.className = 'answer-media-message';
     mediaMessage.hidden = true;
 
-    mediaArea.append(video, audioPlayback, mediaMessage);
-
-    let videoRecorder = null;
-    let videoStream = null;
-    let videoChunks = [];
-    let videoUrl = null;
-
-    const stopVideo = () => {
-      if (videoRecorder?.state === 'recording') {
-        videoRecorder.stop();
-        return;
-      }
-      videoStream?.getTracks().forEach(track => track.stop());
-      videoStream = null;
-      cameraButton.classList.remove('is-recording');
-      cameraButton.setAttribute('aria-label', 'Start video recording');
-    };
-    overlay._stopVideo = stopVideo;
-
-    cameraButton.addEventListener('click', async () => {
-      if (videoRecorder?.state === 'recording') {
-        stopVideo();
-        return;
-      }
-      if (!navigator.mediaDevices?.getUserMedia || typeof MediaRecorder === 'undefined') {
-        mediaMessage.textContent = 'Video recording is not supported in this browser.';
-        mediaMessage.hidden = false;
-        return;
-      }
-      try {
-        setTextMode('hide');
-        mediaMessage.hidden = true;
-        videoStream = await navigator.mediaDevices.getUserMedia({
-          video: { facingMode: 'user', width: { ideal: 800 }, height: { ideal: 1000 }, aspectRatio: { ideal: 0.8 } },
-          audio: true
-        });
-        video.hidden = false;
-        video.controls = false;
-        video.muted = true;
-        video.classList.add('is-live');
-        video.src = '';
-        video.srcObject = videoStream;
-        await video.play();
-        videoChunks = [];
-        videoRecorder = new MediaRecorder(videoStream);
-        videoRecorder.ondataavailable = event => {
-          if (event.data?.size) videoChunks.push(event.data);
-        };
-        videoRecorder.onstop = () => {
-          videoStream?.getTracks().forEach(track => track.stop());
-          videoStream = null;
-          video.srcObject = null;
-          video.classList.remove('is-live');
-          cameraButton.classList.remove('is-recording');
-          cameraButton.setAttribute('aria-label', 'Start video recording');
-          if (!videoChunks.length) return;
-          if (videoUrl) URL.revokeObjectURL(videoUrl);
-          videoUrl = URL.createObjectURL(new Blob(videoChunks, { type: videoRecorder.mimeType || 'video/webm' }));
-          video.src = videoUrl;
-          video.muted = false;
-          video.controls = true;
-        };
-        videoRecorder.start();
-        cameraButton.classList.add('is-recording');
-        cameraButton.setAttribute('aria-label', 'Stop video recording');
-      } catch (_) {
-        videoStream?.getTracks().forEach(track => track.stop());
-        videoStream = null;
-        cameraButton.classList.remove('is-recording');
-        mediaMessage.textContent = 'Camera and microphone permission are needed.';
-        mediaMessage.hidden = false;
-      }
-    });
+    recorderArea.append(mediaMessage, attempts);
 
     let audioRecorder = null;
     let audioStream = null;
     let audioChunks = [];
-    let audioUrl = null;
     let audioContext = null;
     let analyser = null;
     let meterFrame = null;
+    let startedAt = 0;
+    let tick = null;
+    let attemptNumber = 0;
+
+    const formatTime = seconds => {
+      const value = Math.max(0, Math.floor(seconds));
+      return Math.floor(value / 60) + ':' + String(value % 60).padStart(2, '0');
+    };
+
+    const stopClock = () => {
+      if (tick) clearInterval(tick);
+      tick = null;
+      timer.hidden = true;
+      timer.textContent = '0:00';
+    };
 
     const stopMeter = () => {
       if (meterFrame) cancelAnimationFrame(meterFrame);
@@ -2364,50 +2293,91 @@
       }
       audioStream?.getTracks().forEach(track => track.stop());
       audioStream = null;
+      stopClock();
       stopMeter();
       micButton.classList.remove('is-recording');
       micButton.setAttribute('aria-label', 'Start audio recording');
     };
     overlay._stopAudio = stopAudio;
+    overlay._stopVideo = null;
 
     micButton.addEventListener('click', async () => {
       if (audioRecorder?.state === 'recording') {
         stopAudio();
         return;
       }
+
       if (!navigator.mediaDevices?.getUserMedia || typeof MediaRecorder === 'undefined') {
         mediaMessage.textContent = 'Audio recording is not supported in this browser.';
         mediaMessage.hidden = false;
         return;
       }
+
       try {
         mediaMessage.hidden = true;
         audioStream = await navigator.mediaDevices.getUserMedia({ audio: true });
         audioChunks = [];
-        const mime = MediaRecorder.isTypeSupported?.('audio/webm;codecs=opus') ? 'audio/webm;codecs=opus' : '';
-        audioRecorder = mime ? new MediaRecorder(audioStream, { mimeType: mime }) : new MediaRecorder(audioStream);
+
+        const mime = MediaRecorder.isTypeSupported?.('audio/webm;codecs=opus')
+          ? 'audio/webm;codecs=opus'
+          : '';
+        audioRecorder = mime
+          ? new MediaRecorder(audioStream, { mimeType: mime })
+          : new MediaRecorder(audioStream);
+
         audioRecorder.ondataavailable = event => {
           if (event.data?.size) audioChunks.push(event.data);
         };
+
         audioRecorder.onstop = () => {
           audioStream?.getTracks().forEach(track => track.stop());
           audioStream = null;
+          stopClock();
           stopMeter();
           micButton.classList.remove('is-recording');
           micButton.setAttribute('aria-label', 'Start audio recording');
+
           if (!audioChunks.length) return;
-          if (audioUrl) URL.revokeObjectURL(audioUrl);
-          audioUrl = URL.createObjectURL(new Blob(audioChunks, { type: audioRecorder.mimeType || 'audio/webm' }));
-          audioPlayback.src = audioUrl;
-          audioPlayback.hidden = false;
+
+          attemptNumber += 1;
+          const url = URL.createObjectURL(new Blob(audioChunks, {
+            type: audioRecorder.mimeType || 'audio/webm'
+          }));
+
+          const row = document.createElement('div');
+          row.className = 'answer-practice-attempt answer-audio-attempt';
+
+          const name = document.createElement('strong');
+          name.textContent = 'Recording ' + attemptNumber;
+
+          const audio = document.createElement('audio');
+          audio.controls = true;
+          audio.src = url;
+
+          const download = document.createElement('a');
+          download.href = url;
+          download.download = 'interview-practice-' + attemptNumber + '.webm';
+          download.textContent = 'Save';
+          download.setAttribute('aria-label', 'Download recording ' + attemptNumber);
+
+          row.append(name, audio, download);
+          attempts.prepend(row);
         };
-        startMeter(audioStream);
+
         audioRecorder.start();
+        startedAt = Date.now();
+        timer.hidden = false;
+        timer.textContent = '0:00';
+        tick = setInterval(() => {
+          timer.textContent = formatTime((Date.now() - startedAt) / 1000);
+        }, 250);
+        startMeter(audioStream);
         micButton.classList.add('is-recording');
         micButton.setAttribute('aria-label', 'Stop audio recording');
       } catch (_) {
         audioStream?.getTracks().forEach(track => track.stop());
         audioStream = null;
+        stopClock();
         stopMeter();
         micButton.classList.remove('is-recording');
         mediaMessage.textContent = 'Microphone permission is needed.';
@@ -2417,7 +2387,7 @@
 
     const stage = document.createElement('div');
     stage.className = 'answer-simple-stage';
-    stage.append(copy, promptBoard, mediaArea);
+    stage.append(copy, promptBoard, recorderArea);
 
     focusContent.replaceChildren(title, controls, stage);
     linkKnownGlossaryTerms(copy);
