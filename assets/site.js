@@ -2295,41 +2295,14 @@
       rehearsalStatus.textContent = 'Unaided attempt';
     });
 
-    const edit = document.createElement('button');
-    edit.type = 'button';
-    edit.textContent = 'Rewrite';
-    const save = document.createElement('button');
-    save.type = 'button';
-    save.className = 'answer-focus-save';
-    save.textContent = 'Save rewrite';
-    save.hidden = true;
-    edit.addEventListener('click', () => {
-      ensureSwitch(answerSwitch, true);
-      copy.hidden = false;
-      copy.contentEditable = 'true';
-      copy.focus();
-      overlay.dataset.unsaved = 'true';
-      edit.hidden = true;
-      save.hidden = false;
-      rehearsalStatus.textContent = 'Rewrite in your own words';
-    });
-    save.addEventListener('click', () => {
-      copy.contentEditable = 'false';
-      localStorage.setItem(editKeyFor(heading), copy.innerHTML);
-      applySavedToSource(heading, copy.innerHTML);
-      delete overlay.dataset.unsaved;
-      edit.hidden = false;
-      save.hidden = true;
-      rehearsalStatus.textContent = 'Rewrite saved on this device';
-    });
-
-    rehearsalActions.append(readAgain, recallOnly, unaided, edit, save);
+    rehearsalActions.append(readAgain, recallOnly, unaided);
     rehearsal.append(rehearsalStatus, rehearsalActions);
 
     const { panel: practice } = window.coopPractice.create(copy.innerText, { visualOnly: true });
 
     const videoPractice = document.createElement('section');
     videoPractice.className = 'answer-video-practice';
+    videoPractice.hidden = true;
     const videoButton = document.createElement('button');
     videoButton.type = 'button';
     videoButton.className = 'answer-video-button';
@@ -2368,10 +2341,14 @@
         return;
       }
       try {
-        videoStream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
+        videoStream = await navigator.mediaDevices.getUserMedia({
+          video: { facingMode: 'user', width: { ideal: 720 }, height: { ideal: 1280 }, aspectRatio: { ideal: 0.5625 } },
+          audio: true
+        });
         video.hidden = false;
         video.controls = false;
         video.muted = true;
+        video.classList.add('is-live');
         video.src = '';
         video.srcObject = videoStream;
         await video.play();
@@ -2382,6 +2359,7 @@
           videoStream?.getTracks().forEach(track => track.stop());
           videoStream = null;
           video.srcObject = null;
+          video.classList.remove('is-live');
           if (!videoChunks.length) return;
           const url = URL.createObjectURL(new Blob(videoChunks, { type: videoRecorder.mimeType || 'video/webm' }));
           video.src = url;
@@ -2398,11 +2376,20 @@
         videoStatus.textContent = 'Camera and microphone permission are needed.';
       }
     });
-    videoPractice.append(videoButton, videoStatus, video);
+    videoPractice.append(video, videoButton, videoStatus);
+
+    const promptColumn = document.createElement('div');
+    promptColumn.className = 'answer-prompt-column';
+    promptColumn.append(copy, hint, practice);
+
+    const practiceStage = document.createElement('div');
+    practiceStage.className = 'answer-practice-stage';
+    practiceStage.append(videoPractice, promptColumn);
 
     videoTop.addEventListener('click', () => {
-      videoPractice.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      videoButton.focus({ preventScroll: true });
+      videoPractice.hidden = false;
+      practiceStage.classList.add('is-video-active');
+      videoButton.click();
     });
 
     const nextButton = document.createElement('button');
@@ -2423,7 +2410,7 @@
 
     // Start with the full answer only. The learner can reread up to four times,
     // then step down to the Recall Chain and finally to an unaided recording.
-    focusContent.replaceChildren(title, controls, rehearsal, copy, hint, practice, videoPractice, nextButton);
+    focusContent.replaceChildren(title, controls, rehearsal, practiceStage, nextButton);
     linkKnownGlossaryTerms(copy);
     lastTrigger = heading;
     overlay.hidden = false;
