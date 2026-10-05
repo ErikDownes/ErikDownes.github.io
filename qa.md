@@ -4,7 +4,7 @@ permalink: /qa.html
 handle: Q&A
 title: Interview Q&A
 nav_order: 11
-description: Reusable interview questions, polished answers and recall chains
+description: Reusable interview questions, polished answers and audio rehearsal
   for co-op interview practice.
 eyebrow: INTERVIEW · Q&A · RETRIEVAL PRACTICE
 ---
