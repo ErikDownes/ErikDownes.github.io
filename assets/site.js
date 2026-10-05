@@ -546,7 +546,9 @@
     const links = [
       { label: 'About Me', href: rootHref },
       { label: 'UL CV', href: new URL('pivotal-corporate-study.html', rootHref).href },
-      { label: 'Results', href: new URL('academic-record.html', rootHref).href }
+      { label: 'Results', href: new URL('academic-record.html', rootHref).href },
+      { label: 'Cashbook Implementation (TIMS)', href: new URL('job-spec.html#cashbook-implementation', rootHref).href },
+      { label: 'HSE Finance', href: new URL('job-spec.html#hse-finance', rootHref).href }
     ];
 
     links.forEach(entry => {
