@@ -36,6 +36,14 @@
     </nav>
   </header>
 
+
+  {% assign cms_key = page.path | replace: '/', '_' | replace: '-', '_' | replace: '.md', '' %}
+  {% assign cms_url = 'https://app.pagescms.org/ErikDownes/ErikDownes.github.io/main/file/' | append: cms_key %}
+  <div id="floating-page-tools" aria-label="Page tools">
+    <a id="floating-page-cms" href="{{ cms_url }}" target="_blank" rel="noopener" aria-label="Edit this page in CMS" title="Edit this page in CMS">Edit</a>
+    <a id="floating-page-github" href="https://github.com/ErikDownes/ErikDownes.github.io/edit/main/{{ page.path }}" target="_blank" rel="noopener" aria-label="Edit this page in GitHub">GitHub</a>
+  </div>
+
   <main class="contact-page">
     <figure class="contact-hero">
       <img
@@ -51,8 +59,8 @@
       <div class="contact-grid">
         <div class="contact-main">
           <p class="contact-kicker">CONTACT</p>
-          <h1 id="contact-title">Send a Message</h1>
-          <p class="contact-intro">I’ll get back to you as soon as possible.</p>
+          <h1 id="contact-title">{{ page.contact_heading | default: 'Send a Message' }}</h1>
+          <p class="contact-intro">{{ page.contact_intro | default: 'I’ll get back to you as soon as possible.' }}</p>
 
           <form class="contact-form" id="contactForm">
             <div class="contact-name-row">
@@ -83,8 +91,8 @@
 
         <aside class="contact-aside" aria-label="LinkedIn">
           <span class="contact-rule" aria-hidden="true"></span>
-          <h2>Connect on LinkedIn</h2>
-          <p>You can also connect with me on LinkedIn.</p>
+          <h2>{{ page.linkedin_heading | default: 'Connect on LinkedIn' }}</h2>
+          <p>{{ page.linkedin_intro | default: 'You can also connect with me on LinkedIn.' }}</p>
           <a class="linkedin-link" href="https://www.linkedin.com/in/erik-downes-7b312127a/" target="_blank" rel="noopener">
             <span class="linkedin-mark" aria-hidden="true">in</span>
             <span>View my LinkedIn profile</span>
