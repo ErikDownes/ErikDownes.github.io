@@ -35,6 +35,7 @@ content:
       - { name: hse_finance_study, label: "60 · HSE Finance Study", type: file, path: hse-finance-study.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: hse_finance_interview, label: "70 · HSE Finance Interview", type: file, path: hse-finance-interview.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: projects, label: "90 · Projects", type: file, path: projects.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: misc, label: "100 · Misc", type: file, path: misc.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: csp, label: "Co-op — Corporate Services (CSP)", type: file, path: csp.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: general_interview, label: "Co-op — General Interview Questions", type: file, path: interview.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: preparation, label: "Co-op — Skills & Evidence", type: file, path: preparation.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
