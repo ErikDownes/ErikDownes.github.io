@@ -14,7 +14,7 @@ I always enjoyed maths at school — understanding the concepts, making connecti
 
 Financial Mathematics is delivering the broad education I was after by bringing statistics, programming, finance, accounting and data analysis together in a single course — the same special blend of finance and technology that Cashbook is built around.
 
-I became interested in the power of technology and data — using Scratch, NetLogo and spreadsheets for school projects, and later Python, pandas and SQL to analyse larger datasets, model real situations and deal with uncertainty — a good fit for Cashbook’s focus on automation and troubleshooting.
+I became interested in the power of technology and data — from Scratch in primary school, to micro and spreadsheets in secondary school, and later Python, pandas and SQL to analyse larger datasets, model real situations and deal with uncertainty — a good fit for Cashbook’s focus on automation and troubleshooting.
 
 The financial side appealed to me because money matters at every level — from personal finances to businesses and the wider economy — and I liked the idea of using maths and data to support better decisions with real human impact.
 
