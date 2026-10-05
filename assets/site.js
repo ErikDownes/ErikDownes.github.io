@@ -2113,16 +2113,19 @@
       rail.append(questionSwitch, answerSwitch);
     }
 
-    // Rehearsal on every question page: one shuffled bag per H1 section for this tab session.
-    if (questions.length && body) {
+    // Rehearsal on every H2 page, including education, with independent session queues.
+    const randomQuestions = sectionHeadings();
+    if (randomQuestions.length && body) {
       const random = document.createElement('button');
       random.id = 'floating-page-random';
       random.type = 'button';
-      random.textContent = 'Random';
+      random.textContent = 'Rand';
       const status = document.createElement('span');
       status.setAttribute('role', 'status');
       status.style.cssText = 'position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);';
-      rail.append(random, status);
+      const firstSwitch = rail.querySelector('.floating-page-switch');
+      rail.insertBefore(random, firstSwitch);
+      rail.appendChild(status);
 
       const sections = [];
       let section = null;
@@ -2130,7 +2133,7 @@
         if (node.tagName === 'H1') {
           section = { heading: node, key: node.id || node.textContent.trim(), questions: [] };
           sections.push(section);
-        } else if (questions.includes(node)) {
+        } else if (randomQuestions.includes(node)) {
           if (!section) {
             section = { heading: node, key: 'opening-questions', questions: [] };
             sections.push(section);
