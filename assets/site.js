@@ -2120,6 +2120,93 @@
       rail.append(questionSwitch, answerSwitch);
     }
 
+    // Pivotal rehearsal: one shuffled bag per H1 section, retained for this tab session.
+    if (/\/pivotal[^/]*\.html$/.test(currentPath) && questions.length) {
+      const random = document.createElement('button');
+      random.id = 'floating-page-random';
+      random.type = 'button';
+      random.textContent = 'Random question';
+      const status = document.createElement('span');
+      status.setAttribute('role', 'status');
+      status.style.cssText = 'position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);';
+      rail.append(random, status);
+
+      const sections = [];
+      let section = null;
+      Array.from(body.children).forEach(node => {
+        if (node.tagName === 'H1') {
+          section = { heading: node, key: node.id || node.textContent.trim(), questions: [] };
+          sections.push(section);
+        } else if (questions.includes(node)) {
+          if (!section) {
+            section = { heading: node, key: 'opening-questions', questions: [] };
+            sections.push(section);
+          }
+          section.questions.push(node);
+        }
+      });
+      const storageKey = 'pivotal-random-v1:' + currentPath;
+      let bags = {};
+      try { bags = JSON.parse(sessionStorage.getItem(storageKey)) || {}; } catch (_) {}
+      if (typeof bags !== 'object' || Array.isArray(bags)) bags = {};
+      const bagMap = new Map(Object.entries(bags));
+      const selectedSection = () => {
+        let target;
+        try { target = document.getElementById(decodeURIComponent(location.hash.slice(1))); } catch (_) {}
+        if (target && body.contains(target)) {
+          const match = sections.find(item => item.heading === target || item.questions.includes(target));
+          if (match) return match;
+        }
+        const offset = (topbar?.getBoundingClientRect().height || 0) + 24;
+        return sections.filter(item => item.heading.getBoundingClientRect().top <= offset).pop() || sections[0];
+      };
+      const updateRandom = () => {
+        const item = selectedSection();
+        random.disabled = !questionsVisible || !item?.questions.length;
+        random.title = !questionsVisible ? 'Turn Questions on to practise' :
+          item?.questions.length ? 'Random question from: ' + item.heading.textContent.trim() : 'No questions in this section';
+        random.setAttribute('aria-label', random.title);
+      };
+      random.addEventListener('click', () => {
+        const item = selectedSection();
+        if (!questionsVisible || !item?.questions.length) return;
+        const ids = item.questions.map(heading => heading.id);
+        const signature = JSON.stringify(ids);
+        let bag = bagMap.get(item.key);
+        if (!bag || bag.signature !== signature || !Array.isArray(bag.remaining)) {
+          bag = { signature, remaining: [], last: null };
+        }
+        if (!bag.remaining.length) {
+          bag.remaining = ids.slice();
+          for (let i = bag.remaining.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [bag.remaining[i], bag.remaining[j]] = [bag.remaining[j], bag.remaining[i]];
+          }
+          // Avoid an immediate repeat across the boundary between rounds too.
+          const end = bag.remaining.length - 1;
+          if (end > 0 && bag.remaining[end] === bag.last) {
+            [bag.remaining[0], bag.remaining[end]] = [bag.remaining[end], bag.remaining[0]];
+          }
+        }
+        const id = bag.remaining.pop();
+        bag.last = id;
+        bagMap.set(item.key, bag);
+        try { sessionStorage.setItem(storageKey, JSON.stringify(Object.fromEntries(bagMap))); } catch (_) {}
+        const heading = document.getElementById(id);
+        resetAudio();
+        history.replaceState(null, '', '#' + encodeURIComponent(id));
+        alignHashTarget();
+        heading.setAttribute('tabindex', '-1');
+        heading.focus({ preventScroll: true });
+        status.textContent = `${item.heading.textContent.trim()}: ${ids.length - bag.remaining.length} of ${ids.length}. ${heading.dataset.questionText || heading.textContent}`;
+        updateRandom();
+      });
+      window.addEventListener('hashchange', updateRandom);
+      window.addEventListener('scroll', updateRandom, { passive: true });
+      rail.addEventListener('click', updateRandom);
+      updateRandom();
+    }
+
     document.body.appendChild(rail);
   };
   setupFloatingTools();
