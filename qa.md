@@ -18,9 +18,9 @@ That continued into college and personal projects with Python, pandas, SQL and d
 
 Financial Maths in UL brought together technology, statistics, finance and my favourite area, data analysis, in one broad education — that same special blend of finance and technology that Cashbook is built around, where accuracy, understanding client needs and delivering a high-quality service really matter.
 
-##   
-  
-Why are you interested in this role?
+
+
+## Why are you interested in this role?
 
 I’m interested in this role because it brings together the areas I want to develop most — finance, technology, data and working with customers.
 
