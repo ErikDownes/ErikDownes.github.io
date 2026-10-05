@@ -3976,3 +3976,52 @@
       tableHost.innerHTML = '<p class="abelo-airframes__loading">The maintenance model above remains available.</p>';
     });
 })();
+
+
+// Enhance ordinary CMS-editable duty links with inline practice feedback.
+(() => {
+  function setupDutyChecks() {
+    const root = document.getElementById('docBody');
+    if (!root) return;
+    const results = {
+      '#senior-duty-listed': 'Incorrect — that is a listed senior-staff duty. Try again.',
+      '#senior-duty-not-listed': 'Correct — making coffee is not mentioned. Remember three or four of the real duties.',
+      '#secretarial-duty-listed': 'Incorrect — that is a listed company secretarial duty. Try again.',
+      '#secretarial-duty-not-listed': 'Correct — making coffee is not mentioned. Remember the three real secretarial duties.'
+    };
+    root.querySelectorAll('a[href]').forEach(link => {
+      const message = results[link.getAttribute('href')];
+      if (!message || link.dataset.dutyCheckReady) return;
+      const list = link.closest('ul');
+      if (!list) return;
+      link.dataset.dutyCheckReady = 'true';
+      link.setAttribute('role', 'button');
+      let feedback = list.querySelector('[data-duty-feedback]');
+      if (!feedback) {
+        const item = document.createElement('li');
+        item.style.listStyle = 'none';
+        feedback = document.createElement('p');
+        feedback.dataset.dutyFeedback = 'true';
+        feedback.setAttribute('role', 'status');
+        feedback.setAttribute('aria-live', 'polite');
+        item.appendChild(feedback);
+        list.appendChild(item);
+      }
+      link.addEventListener('click', event => {
+        event.preventDefault();
+        feedback.textContent = message;
+      });
+      link.addEventListener('keydown', event => {
+        if (event.key === ' ') {
+          event.preventDefault();
+          link.click();
+        }
+      });
+    });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupDutyChecks);
+  } else {
+    setupDutyChecks();
+  }
+})();
