@@ -45,6 +45,6 @@ We are currently seeking to hire a pro-active, self-motivated, and highly organi
 - A positive attitude, demonstrating enthusiasm and the desire to take on responsibility. A willingness to get involved in team issues and events.
 - An interest in financial services, and a genuine desire to learn how this can be used as a tool for adding value to a client’s business.
 
-## Slides based on the job description
+## PowerPoint
 
-[PowerPoint – Job Spec Slides](https://docs.google.com/presentation/d/1CG_yaUNqHwJVuglcLoc6CLIq60AG7UGlTv5gwQuNS4s/export/pptx)
+[Open the Job Description PowerPoint](https://docs.google.com/presentation/d/1CG_yaUNqHwJVuglcLoc6CLIq60AG7UGlTv5gwQuNS4s/export/pptx)
