@@ -13,7 +13,7 @@ permalink: /nav.json
   {% if p.handle == nil and title_parts.size > 1 %}
     {% assign page_title = title_parts[1] | strip %}
   {% endif %}
-{% unless menu_title == 'General Questions' or menu_title == 'Competency / STAR' or menu_title == 'Pivotal Corporate Interview' or menu_title == 'UL CV' or menu_title == 'Results' %}
+{% unless menu_title == 'General Questions' or menu_title == 'Competency / STAR' or menu_title == 'Pivotal Corporate Interview' or menu_title == 'UL CV' or menu_title == 'Results' or menu_title == 'Job Spec' %}
 {"title": {{ menu_title | jsonify }}, "page_title": {{ page_title | jsonify }}, "url": {{ p.url | relative_url | jsonify }}, "order": {{ p.nav_order | jsonify }}}{% unless forloop.last %},{% endunless %}
   {% endunless %}
 {% endfor %}
