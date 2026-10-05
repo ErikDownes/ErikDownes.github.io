@@ -8,19 +8,24 @@ description: Reusable interview questions, polished answers and recall chains
   for co-op interview practice.
 eyebrow: INTERVIEW · Q&A · RETRIEVAL PRACTICE
 ---
-## Why  choose Financial Maths?
+## Why  choose Financial Maths?
 
-I always enjoyed maths at school — understanding the concepts, making connections and using strategic problem-solving — and I wanted to continue that at third level.
+It’s a journey from school to university, from spreadsheets to databases, and from understanding finance to being accountable for delivering accurate, high-quality service to clients.
 
-Financial Mathematics is delivering the broad education I was after by bringing statistics, programming, finance, accounting and data analysis together in a single course — the same special blend of finance and technology that Cashbook is built around.
+I caught the maths bug in school and wanted to continue my enjoyment and success in the subject into third level, but not as pure maths — I wanted a broader education. From Scratch in primary school to dataloggers and spreadsheet-based projects in secondary school, by the end of school I had caught the technology bug as well.
 
-I became interested in the power of technology and data — from Scratch in primary school, to micro and spreadsheets in secondary school, and later Python, pandas and SQL to analyse larger datasets, model real situations and deal with uncertainty — a good fit for Cashbook’s focus on automation and troubleshooting.
+That continued into college and personal projects with Python, pandas, SQL and databases. As the datasets became larger and needed to be joined across different sources, spreadsheets were no longer enough, so I moved to databases and SQL — for example, cleaning and merging public Dublin Bikes data to analyse rebalancing across the station network.
 
-The financial side appealed to me because money matters at every level — from personal finances to businesses and the wider economy — and I liked the idea of using maths and data to support better decisions with real human impact.
+Financial Maths in UL brought together technology, statistics, finance and my favourite area, data analysis, in one broad education — that same special blend of finance and technology that Cashbook is built around.
 
-That’s what attracts me to Cashbook too — understanding clients’ needs and using finance and technology to deliver practical solutions to real financial problems.
 
-**Breadcrumb:** maths → broad education → finance + technology → data + programming → modelling + uncertainty → money matters → better decisions + human impact → client needs → practical solutions
+
+&nbsp;
+
+&nbsp;
+
+  
+
 
 
 
