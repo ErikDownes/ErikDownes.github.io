@@ -1,14 +1,16 @@
 ---
 layout: doc
 permalink: /interview.html
-handle: General Interview
+handle: General Questions
 title: General Interview Questions
-description: Employer-neutral co-op interview questions, evidence and reusable answer structures.
+nav_order: 42
+description: Employer-neutral co-op interview questions and reusable answer structures.
 eyebrow: CO-OP · GENERAL INTERVIEW QUESTIONS · REUSABLE ANSWERS
 ---
 
-This page sits under [Co-op]({{ '/skills-profile.html' | relative_url }}). It is deliberately employer-neutral: company-specific preparation belongs on the relevant role page, while these questions and examples can be reused across applications.
+These are the questions that can appear in almost any co-op interview. Company-specific preparation belongs on the relevant employer page.
 
+# Opening & Motivation
 
 ## Introduction | Tell me about yourself
 
@@ -24,31 +26,35 @@ I want to see how quantitative work is actually used inside an organisation: how
 
 I also want to become more useful with professional systems and processes rather than only academic tools.
 
+# Understanding the Role
+
+## Role | What do you think a co-op student should contribute?
+
+I would expect to start by learning the team's systems and standards, then become reliable on defined tasks and gradually take on more responsibility.
+
+The useful contribution is not just completing work. It is completing it accurately, communicating when something is unclear and making life easier for the people who depend on the output.
+
+## Expectations | What would good performance look like to you?
+
+Good performance would mean being dependable, accurate, willing to learn and increasingly able to complete work independently.
+
+I would also expect good feedback to include how well I communicate, how I respond when something changes and whether people can trust the work I hand over.
+
+# Strengths & Development
+
 ## Strengths | What strengths would you bring?
 
 My strongest areas are quantitative reasoning, accuracy and learning through practical problems.
 
 I am comfortable working through a problem methodically, checking the data and explaining how I reached a result. I also have experience dealing with customers and working as part of a team, so I understand that being technically correct is only part of doing a job well.
 
-## Teamwork | Tell me about a time you worked with someone else
+## Development | What are you working to improve?
 
-In a Java programming project I worked with another student. We divided the task into manageable pieces, worked on separate sections and then had to bring the code together.
+I want to keep improving the speed with which I can move from understanding a business problem to producing a useful professional output.
 
-The important part was not just writing our own sections. We had to communicate about interfaces, test the combined program and fix problems created when the pieces interacted. The project achieved an A2.
+University gives me the quantitative foundation; co-op is an opportunity to learn the systems, controls, communication standards and commercial context that make the work useful in practice.
 
-## Problem Solving | Tell me about a difficult problem you worked through
-
-A recent data project involved combining aircraft information from several public sources. The records did not always agree and there was no single clean dataset.
-
-I used Python and Pandas to standardise fields, compare registrations and serial numbers and investigate discrepancies. Where I could not support a match with enough evidence, I left it unresolved rather than forcing an answer.
-
-That taught me that good analysis is not just producing a result; it is also knowing how confident you can be in it.
-
-## Accuracy | Give an example of work where accuracy mattered
-
-At O'Mahony's, orders, invoices and dispatch information have to match because an error can affect the next stage of the process.
-
-That reinforces the same habit I use in quantitative work: check inputs, compare records, investigate differences and avoid assuming that something is correct because it looks plausible.
+# Working Style
 
 ## Learning | How do you learn a new system or tool?
 
@@ -62,20 +68,42 @@ I separate urgent work from important longer-term work, identify dependencies an
 
 I also try to surface uncertainty early. If another person is waiting on my work or a deadline may be affected, it is better to communicate that early rather than discover it at the end.
 
-## Initiative | Tell me about a time you showed initiative
+# Technical & Academic Background
 
-I built an interactive data project from public aviation records because I wanted to understand how messy real-world data could be turned into something useful.
+## Course | How has Financial Mathematics prepared you for work?
 
-It required finding sources, cleaning and reconciling data, learning additional web tools and then presenting the result clearly. The important part for me was taking the project from an idea through to a working output rather than stopping once the analysis was complete.
+It has trained me to work carefully with quantitative information, make assumptions explicit and check whether a result is reasonable.
 
-## Development | What are you working to improve?
+It also crosses mathematics, statistics, finance, accounting and programming, so I am used to moving between technical ideas and practical applications.
 
-I want to keep improving the speed with which I can move from understanding a business problem to producing a useful professional output.
+## Tools | Which technical tools are you most comfortable with?
 
-University gives me the quantitative foundation; co-op is an opportunity to learn the systems, controls, communication standards and commercial context that make the work useful in practice.
+My strongest day-to-day tools are Python, Pandas, Excel and Jupyter or Colab for analysis. I have also used R, MATLAB, Java, SQL, Git and GitHub.
+
+I would not claim to know every feature of every system. I am comfortable learning new tools quickly and checking that I understand the business process behind them.
+
+# Career & Co-op
+
+## Direction | Where do you see yourself after university?
+
+I want to work in an area where quantitative reasoning, data and business decisions come together.
+
+Co-op is useful because it lets me test that interest in a real organisation and understand which type of work I am strongest at before I specialise too narrowly.
+
+## Choice | Why should we choose you?
+
+I would bring a strong quantitative foundation, evidence that I can learn independently and practical experience of accuracy, customers and teamwork.
+
+I would also come in expecting to learn. My aim would be to become useful quickly, take feedback well and earn trust through the standard of my work.
+
+# Closing the Interview
 
 ## Questions | What should I ask at the end?
 
 Good questions should help me understand the real work rather than repeat information from the job description.
 
 Useful themes are: what a strong student can own independently, how the team measures good work, which systems are used, how feedback is given, which teams I would work with and what previous co-op students found most challenging.
+
+## Close | Is there anything else you would like to add?
+
+I would briefly confirm my interest and connect it back to the role: I like work where accuracy, analysis and communication all matter, and I would value the opportunity to learn in a professional team while making a useful contribution.
