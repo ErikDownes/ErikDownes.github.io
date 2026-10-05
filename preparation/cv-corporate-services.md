@@ -27,7 +27,6 @@ Use the strongest evidence for:
 
 [Corporate Services & Financial Operations →]({{ '/csp.html' | relative_url }})
 
-[Pivotal Corporate →]({{ '/pivotal-corporate.html' | relative_url }})
 
 ## CV Wording
 
