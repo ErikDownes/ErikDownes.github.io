@@ -1,6 +1,5 @@
 .contact-mode{background:#f6f4ee;color:#24221f}
 .contact-mode .topbar{position:relative;background:#fff}
-.contact-mode .contact-topnav{justify-content:flex-end}
 .contact-mode .contact-topnav .navitem{grid-template-columns:1fr;flex-basis:116px}
 .contact-mode .contact-topnav .navlabel{font-size:.78rem}
 .contact-page{min-height:calc(100vh - 80px);background:#f6f4ee}
@@ -53,7 +52,6 @@
   .contact-mode .brand img{width:310px}
   .contact-mode .mobile-nav-toggle{display:none}
   .contact-mode .topnav{display:flex;order:initial;flex:1 1 auto;width:auto;min-height:80px;max-height:none;overflow:visible;flex-direction:row;align-items:stretch;border-top:0;margin:0;background:#fff}
-  .contact-mode .contact-topnav{justify-content:flex-end}
   .contact-mode .contact-topnav .navitem{width:auto;flex:0 0 116px;min-height:80px;grid-template-columns:1fr;border-bottom:0}
   .contact-mode .contact-topnav .navlabel{min-height:80px;justify-content:center;text-align:center;padding:0 4px;font-size:.78rem;line-height:1.2}
 }
