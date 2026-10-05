@@ -1,6 +1,7 @@
 .contact-mode{background:#fff;color:#202124}
 .contact-mode .topbar{position:relative;background:#fff}
 .contact-mode .contact-topnav .navitem{grid-template-columns:1fr;flex-basis:116px}
+.contact-mode .contact-topnav .navitem.has-submenu{grid-template-columns:minmax(0,1fr) 19px}
 .contact-mode .contact-topnav .navlabel{font-size:.78rem}
 .contact-page{min-height:calc(100vh - 80px);background:#fff}
 .contact-shell{max-width:1220px;margin:0 auto;padding:68px 32px 92px}
@@ -46,7 +47,9 @@
   .contact-mode .mobile-nav-toggle{display:none}
   .contact-mode .topnav{display:flex;order:initial;flex:1 1 auto;width:auto;min-height:80px;max-height:none;overflow:visible;flex-direction:row;align-items:stretch;border-top:0;margin:0;background:#fff}
   .contact-mode .contact-topnav .navitem{width:auto;flex:0 0 116px;min-height:80px;grid-template-columns:1fr;border-bottom:0}
+  .contact-mode .contact-topnav .navitem.has-submenu{grid-template-columns:minmax(0,1fr) 19px}
   .contact-mode .contact-topnav .navlabel{min-height:80px;justify-content:center;text-align:center;padding:0 4px;font-size:.78rem;line-height:1.2}
+  .contact-mode .contact-topnav .dropmenu{position:fixed;grid-column:auto;top:76px;left:clamp(12px,var(--menu-left,12px),calc(100vw - 272px));right:auto;width:min(260px,calc(100vw - 24px));max-width:none;max-height:calc(100vh - 90px);border:1px solid var(--line);box-shadow:0 8px 24px rgba(60,64,67,.18);padding:10px;background:#fff}
 }
 
 .github-link{margin-top:12px}
