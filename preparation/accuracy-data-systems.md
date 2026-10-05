@@ -2,29 +2,31 @@
 layout: doc
 handle: Accuracy, Data & Systems
 title: Accuracy, Data & Systems
-eyebrow: PREPARATION · DATA QUALITY · INTERNAL SYSTEMS · BILLING
+eyebrow: INTERVIEW · ACCURACY · DATA · SYSTEMS
 ---
 
-[← Preparation]({{ '/preparation.html' | relative_url }})
+[← Interview]({{ '/preparation.html' | relative_url }})
 
-## Accuracy | How would you make sure data and records were accurate?
+## Accuracy | How would you make sure your work was accurate?
 
-I would work systematically from reliable source documents, enter information consistently, check unusual values and use available validation or review processes. I would avoid guessing where a value is unclear.
+I would work systematically, check important details against the original information and use any available validation or review process. For repetitive work, I would use a consistent checking method rather than relying on memory.
 
-source | consistency | validation | no guessing
+**Recall:** source → check → validate → review
 
-### If I found an error
+## Error | What would you do if you found a mistake?
 
-I would identify the impact, correct it quickly, tell the appropriate person if it affects others, and review why it happened so the process can be improved.
+I would identify the impact, correct it quickly and tell the appropriate person if it affected anyone else. I would also look at why it happened so the same mistake was less likely to happen again.
 
-## Systems | How would you learn an unfamiliar internal system?
+**Recall:** impact → correct → communicate → improve
 
-I would start with the guidance, get a simple task working, and then learn through use. I keep useful notes and ask focused questions when I reach something I cannot resolve myself.
+## Systems | How would you learn an unfamiliar system?
 
-guidance | practice | notes | focused questions
+I would first understand what the system is used for, follow the guidance and get a simple task working correctly. I would keep useful notes, practise with it and ask focused questions when something was unclear.
 
-## Data responsibility | How would you handle sensitive or important data?
+**Recall:** purpose → guidance → practise → questions
 
-I would understand what each field represents, where it came from and how it will be used downstream. I would only access or share confidential information for a legitimate work reason and follow the organisation's procedures.
+## Data Responsibility | How would you handle confidential information?
 
-meaning | source | downstream use | confidentiality
+I would only access or share information when there was a legitimate work reason, follow the organisation's procedures and be careful about where information was stored or discussed.
+
+**Recall:** need → procedure → confidentiality
