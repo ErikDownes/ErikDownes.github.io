@@ -1,7 +1,7 @@
 ---
 layout: doc
 permalink: /pivotal-corporate.html
-handle: Pivotal Corp QA
+handle: PivotalC QA
 title: Pivotal Corp Interview
 nav_order: 50
 description: Pivotal Corporate interview preparation for the Co-Op Student /
@@ -9,8 +9,6 @@ description: Pivotal Corporate interview preparation for the Co-Op Student /
 eyebrow: CO-OP INTERVIEW · CORPORATE ADMINISTRATION · ACCOUNTING · CLIENT SERVICE
 public_mode: true
 ---
-
-
 ## The role says proactive. Give me an example of when you've been proactive.
 
 **Self-directed project  No assignment  Practical result**
