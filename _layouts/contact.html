@@ -123,70 +123,108 @@
 
       const rootHref = document.querySelector('.brand')?.href || new URL('/', location.origin).href;
       const rootPath = normalisePath(rootHref);
-      const aboutItem = Array.from(nav?.querySelectorAll(':scope > .navitem') || []).find(item => {
+
+      const buildMenu = (item, menuClass, toggleLabel, entries) => {
+        if (!item) return;
+        item.classList.add('has-submenu');
         const label = item.querySelector(':scope > .navlabel[href]');
-        return label && normalisePath(label.href) === rootPath;
-      });
+        label?.setAttribute('aria-haspopup', 'true');
+        label?.setAttribute('aria-expanded', 'false');
 
-      if (aboutItem) {
-        aboutItem.classList.add('nav-about', 'nav-about-parent', 'has-submenu');
-        const aboutLabel = aboutItem.querySelector(':scope > .navlabel[href]');
-        aboutLabel?.setAttribute('aria-haspopup', 'true');
-        aboutLabel?.setAttribute('aria-expanded', 'false');
-
-        const aboutMenu = document.createElement('div');
-        aboutMenu.className = 'dropmenu about-menu';
-        [
-          ['About Me', rootHref],
-          ['UL CV', new URL('pivotal-corporate-study.html', rootHref).href],
-          ['Results', new URL('academic-record.html', rootHref).href],
-          ['Cashbook Implementation (TIMS)', new URL('job-spec.html#cashbook-implementation', rootHref).href],
-          ['HSE Finance', new URL('job-spec.html#hse-finance', rootHref).href]
-        ].forEach(([textValue, href]) => {
+        const menu = document.createElement('div');
+        menu.className = 'dropmenu ' + menuClass;
+        entries.forEach(entry => {
+          if (entry.section) {
+            const section = document.createElement('span');
+            section.className = 'dropmenu-section-label';
+            section.textContent = entry.section;
+            menu.appendChild(section);
+            return;
+          }
           const link = document.createElement('a');
-          link.href = href;
-          link.textContent = textValue;
-          aboutMenu.appendChild(link);
+          link.href = entry.href;
+          link.textContent = entry.label;
+          menu.appendChild(link);
         });
 
-        const aboutToggle = document.createElement('button');
-        aboutToggle.type = 'button';
-        aboutToggle.className = 'navtoggle';
-        aboutToggle.textContent = '▾';
-        aboutToggle.setAttribute('aria-label', 'Open About menu');
-        aboutToggle.setAttribute('aria-expanded', 'false');
+        const menuToggle = document.createElement('button');
+        menuToggle.type = 'button';
+        menuToggle.className = 'navtoggle';
+        menuToggle.textContent = '▾';
+        menuToggle.setAttribute('aria-label', 'Open ' + toggleLabel + ' menu');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        item.append(menuToggle, menu);
 
-        aboutItem.append(aboutToggle, aboutMenu);
-
-        const positionAboutMenu = () => {
-          aboutMenu.style.setProperty('--menu-left', `${Math.round(aboutItem.getBoundingClientRect().left)}px`);
+        const positionMenu = () => {
+          menu.style.setProperty('--menu-left', `${Math.round(item.getBoundingClientRect().left)}px`);
         };
-        aboutItem.addEventListener('pointerenter', positionAboutMenu);
-        aboutItem.addEventListener('focusin', positionAboutMenu);
-        window.addEventListener('resize', positionAboutMenu);
-        positionAboutMenu();
+        item.addEventListener('pointerenter', positionMenu);
+        item.addEventListener('focusin', positionMenu);
+        window.addEventListener('resize', positionMenu);
+        positionMenu();
 
-        const setAboutOpen = open => {
-          aboutItem.classList.toggle('is-open', open);
-          aboutLabel?.setAttribute('aria-expanded', String(open));
-          aboutToggle.setAttribute('aria-expanded', String(open));
+        const setOpen = open => {
+          item.classList.toggle('is-open', open);
+          label?.setAttribute('aria-expanded', String(open));
+          menuToggle.setAttribute('aria-expanded', String(open));
         };
 
-        aboutLabel?.addEventListener('click', event => {
+        label?.addEventListener('click', event => {
           event.preventDefault();
           event.stopPropagation();
-          setAboutOpen(!aboutItem.classList.contains('is-open'));
+          setOpen(!item.classList.contains('is-open'));
         });
 
-        aboutToggle.addEventListener('click', event => {
+        menuToggle.addEventListener('click', event => {
           event.preventDefault();
           event.stopPropagation();
-          setAboutOpen(!aboutItem.classList.contains('is-open'));
+          setOpen(!item.classList.contains('is-open'));
         });
 
         document.addEventListener('click', event => {
-          if (!aboutItem.contains(event.target)) setAboutOpen(false);
+          if (!item.contains(event.target)) setOpen(false);
         });
+      };
+
+      const careerItem = Array.from(nav?.querySelectorAll(':scope > .navitem') || []).find(item => {
+        const label = item.querySelector(':scope > .navlabel[href]');
+        return label && normalisePath(label.href) === rootPath;
+      });
+      if (careerItem) {
+        careerItem.classList.add('nav-about', 'nav-about-parent');
+        const careerLabel = careerItem.querySelector(':scope > .navlabel[href]');
+        const careerSpan = careerLabel?.querySelector('span');
+        if (careerSpan) careerSpan.textContent = 'Career';
+        else if (careerLabel) careerLabel.textContent = 'Career';
+        buildMenu(careerItem, 'about-menu', 'Career', [
+          { label: 'Career Home', href: rootHref },
+          { label: 'UL CV', href: new URL('pivotal-corporate-study.html', rootHref).href },
+          { label: 'Results', href: new URL('academic-record.html', rootHref).href },
+          { section: 'Job Specs' },
+          { label: 'Cashbook Limited — Implementation Associate (TIMS)', href: new URL('job-spec.html#cashbook-implementation', rootHref).href },
+          { label: 'HSE Mid-West — Co-Op Finance', href: new URL('job-spec.html#hse-finance', rootHref).href }
+        ]);
+      }
+
+      const interviewHref = new URL('preparation.html', rootHref).href;
+      const interviewItem = Array.from(nav?.querySelectorAll(':scope > .navitem') || []).find(item => {
+        const label = item.querySelector(':scope > .navlabel[href]');
+        return label && normalisePath(label.href) === normalisePath(interviewHref);
+      });
+      if (interviewItem) {
+        interviewItem.classList.add('nav-interview-parent');
+        buildMenu(interviewItem, 'interview-menu', 'Interview', [
+          { label: 'Communication', href: interviewHref + '#communication' },
+          { label: 'Problem-Solving', href: interviewHref + '#problem-solving' },
+          { label: 'Accuracy & Detail', href: interviewHref + '#accuracy-attention-to-detail' },
+          { label: 'Teamwork', href: interviewHref + '#teamwork' },
+          { label: 'Customer Care', href: interviewHref + '#customer-care' },
+          { label: 'Organisation & Priorities', href: interviewHref + '#organisation-priorities' },
+          { label: 'Motivation & Role Fit', href: interviewHref + '#motivation-role-fit' },
+          { section: 'Role Research' },
+          { label: 'Cashbook Limited — Implementation Associate (TIMS)', href: new URL('cashbook-study.html', rootHref).href },
+          { label: 'HSE Mid-West — Co-Op Finance', href: new URL('hse-finance-study.html', rootHref).href }
+        ]);
       }
 
       const form = document.getElementById('contactForm');
