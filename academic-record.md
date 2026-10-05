@@ -136,9 +136,11 @@ The **Project 1 / Project 2** sequence provides the opportunity to complete a su
 
 **579 CAO points**
 
-## LC Business medal | Highest Leaving Certificate Business Grade
+## LC Business Medal | Highest Business Result in 6th Year
 
-**Kolvenbach Medal for Business · May 2024** — awarded for achieving the **highest Leaving Certificate Business grade at Crescent College**.
+**Kolvenbach Medal for Business · May 2024** — awarded by **Crescent College Comprehensive SJ** for achieving the **highest Business result in 6th year** in the Pre-Leaving Certificate examinations.
+
+Named after **Fr Peter-Hans Kolvenbach SJ**, a Dutch Jesuit priest and former Superior General of the Jesuits.
 
 ## Academic Excellence Award
 
