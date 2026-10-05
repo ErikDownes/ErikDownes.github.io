@@ -1589,7 +1589,9 @@
   // Legacy bold-only first paragraphs are also treated as recall so existing
   // interview material keeps working without a bulk rewrite.
   const isRecallNode = node => {
-    if (!node?.matches?.('p')) return false;
+    if (!node?.matches) return false;
+    if (node.matches('[data-recall-chain],.recall-chain')) return true;
+    if (!node.matches('p')) return false;
     return /^recall(?:\\s+(?:cue|chain))?\\s*:/i.test(cleanText(node.textContent));
   };
 
@@ -2148,7 +2150,7 @@
     hint.className = 'answer-focus-hint';
 
     let recallNodes = Array.from(copy.children).filter(node =>
-      node.matches?.('[data-pointer-words]') || isRecallNode(node)
+      node.matches?.('[data-recall-chain],.recall-chain,[data-pointer-words]') || isRecallNode(node)
     );
     if (!recallNodes.length && isLegacyRecallNode(copy.firstElementChild)) {
       recallNodes = [copy.firstElementChild];
@@ -2229,7 +2231,13 @@
       play.setAttribute('aria-label', 'Play question and answer');
     });
 
-    controls.append(answerSwitch, hintSwitch, play, stop);
+    const videoTop = document.createElement('button');
+    videoTop.type = 'button';
+    videoTop.className = 'answer-focus-video-top';
+    videoTop.textContent = 'Video';
+    videoTop.setAttribute('aria-label', 'Open video practice');
+
+    controls.append(answerSwitch, hintSwitch, videoTop, play, stop);
 
     copy.querySelectorAll('ul,ol').forEach(list => {
       if (list.children.length >= 5) list.classList.add('answer-columns');
@@ -2391,6 +2399,11 @@
       }
     });
     videoPractice.append(videoButton, videoStatus, video);
+
+    videoTop.addEventListener('click', () => {
+      videoPractice.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      videoButton.focus({ preventScroll: true });
+    });
 
     const nextButton = document.createElement('button');
     nextButton.type = 'button';
