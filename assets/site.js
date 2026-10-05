@@ -1355,6 +1355,15 @@
       glossaryDialogBody.appendChild(why);
     }
     renderGlossaryLearningContent(glossaryDialogBody, item);
+
+    const tools = document.createElement('div');
+    tools.className = 'glossary-entry-tools';
+    const adapt = document.createElement('button');
+    adapt.type = 'button';
+    adapt.textContent = item.builtIn ? 'Adapt' : 'Edit';
+    adapt.addEventListener('click', () => openGlossaryTerm(item.term));
+    tools.appendChild(adapt);
+    glossaryDialogBody.appendChild(tools);
   };
 
   const linkKnownGlossaryTerms = (root, onTerm = showGlossaryDefinition) => {
