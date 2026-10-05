@@ -36,6 +36,23 @@ content:
       - { name: hse_finance_interview, label: "70 · HSE Finance Interview", type: file, path: hse-finance-interview.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: projects, label: "90 · Projects", type: file, path: projects.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: misc, label: "100 · Misc", type: file, path: misc.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - name: contact
+        label: "Contact"
+        type: file
+        path: contact.md
+        format: yaml-frontmatter
+        fields:
+          - { name: layout, type: string, hidden: true }
+          - { name: permalink, type: string, hidden: true }
+          - { name: handle, type: string, label: Menu label }
+          - { name: nav_order, type: number, label: "Menu position (10, 20, 30...)" }
+          - { name: title, type: string, label: Browser/page title }
+          - { name: description, type: text, label: Description }
+          - { name: contact_heading, type: string, label: Main heading }
+          - { name: contact_intro, type: text, label: Intro line }
+          - { name: linkedin_heading, type: string, label: LinkedIn heading }
+          - { name: linkedin_intro, type: text, label: LinkedIn text }
+        operations: { delete: false }
       - { name: csp, label: "Co-op — Corporate Services (CSP)", type: file, path: csp.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: general_interview, label: "Co-op — General Interview Questions", type: file, path: interview.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: preparation, label: "Co-op — Skills & Evidence", type: file, path: preparation.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
