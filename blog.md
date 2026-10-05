@@ -8,8 +8,12 @@ description: Notes on software, tools, projects and practical technology choices
 eyebrow: SOFTWARE · TOOLS · PRACTICAL NOTES
 public_mode: true
 ---
+## miniforge
 
-## Snagit in 2026: subscription-only — and the best alternatives
+##   
+**Miniforge3-Windows-x86_64.exe**  
+  
+Snagit in 2026: subscription-only — and the best alternatives
 
 **5 October 2026**
 
@@ -61,11 +65,13 @@ That is why a proper Snagit replacement needs to be compared with **Snagit's cap
 
 ## Free and one-time-purchase alternatives
 
+
 | Tool | Cost model | Best for |
-| --- | --- | --- |
+| ---------------- | -------------------------------------------------- | ----------------------------------------------------------------- |
 | **ShareX** | Free and open source | Best full-featured free Snagit alternative on Windows |
 | **Greenshot** | Free and open source | Simpler screenshots and annotation |
 | **Screenpresso** | Free version; Pro is a one-time perpetual purchase | Closest fit if you want to own the software rather than subscribe |
+
 
 ### ShareX — best completely free alternative
 
