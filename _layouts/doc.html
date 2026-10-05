@@ -74,6 +74,7 @@
   <link rel="icon" href="{{ '/assets/favicon.svg' | relative_url }}" type="image/svg+xml">
   <link rel="stylesheet" href="{{ '/assets/styles.css' | relative_url }}?v={{ site.github.build_revision }}">
   <link rel="stylesheet" href="{{ '/assets/mirror-fixes.css' | relative_url }}?v={{ site.github.build_revision }}">
+  {% if page.profile_mode %}<link rel="stylesheet" href="{{ '/assets/profile.css' | relative_url }}?v={{ site.github.build_revision }}">{% endif %}
   {% if page.ac4214_course %}<link rel="stylesheet" href="{{ '/assets/ac4214-course.css' | relative_url }}?v={{ site.github.build_revision }}">{% endif %}
   {% if page.or1_course %}<link rel="stylesheet" href="{{ '/assets/or1-course.css' | relative_url }}?v={{ site.github.build_revision }}">{% endif %}
   {% if page.mathjax or page.or1_course %}
