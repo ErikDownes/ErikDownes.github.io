@@ -2113,7 +2113,7 @@
       rail.append(questionSwitch, answerSwitch);
     }
 
-    // Rehearsal on every H2 page, including education, with independent session queues.
+    // Rehearsal across all H2 headings on the open page, with one session queue per page.
     const randomQuestions = sectionHeadings();
     if (randomQuestions.length && body) {
       const random = document.createElement('button');
@@ -2127,38 +2127,19 @@
       rail.insertBefore(random, firstSwitch);
       rail.appendChild(status);
 
-      const sections = [];
-      let section = null;
-      Array.from(body.children).forEach(node => {
-        if (node.tagName === 'H1') {
-          section = { heading: node, key: node.id || node.textContent.trim(), questions: [] };
-          sections.push(section);
-        } else if (randomQuestions.includes(node)) {
-          if (!section) {
-            section = { heading: node, key: 'opening-questions', questions: [] };
-            sections.push(section);
-          }
-          section.questions.push(node);
-        }
-      });
-      const storageKey = 'page-random-v1:' + currentPath;
+      const storageKey = 'page-random-v2:' + currentPath;
       let bags = {};
       try { bags = JSON.parse(sessionStorage.getItem(storageKey)) || {}; } catch (_) {}
       if (typeof bags !== 'object' || Array.isArray(bags)) bags = {};
       const bagMap = new Map(Object.entries(bags));
-      const selectedSection = () => {
-        const target = currentHeading();
-        return sections.find(item => item.heading === target || item.questions.includes(target)) || sections[0];
-      };
+      const item = { key: 'whole-page', questions: randomQuestions };
       const updateRandom = () => {
-        const item = selectedSection();
         random.disabled = !questionsVisible || !item?.questions.length;
         random.title = !questionsVisible ? 'Turn Questions on to practise' :
-          item?.questions.length ? 'Random question from: ' + item.heading.textContent.trim() : 'No questions in this section';
+          item.questions.length ? 'Random question from the whole page' : 'No questions on this page';
         random.setAttribute('aria-label', random.title);
       };
       random.addEventListener('click', () => {
-        const item = selectedSection();
         if (!questionsVisible || !item?.questions.length) return;
         const ids = item.questions.map(heading => heading.id);
         const signature = JSON.stringify(ids);
@@ -2188,11 +2169,9 @@
         alignHashTarget();
         heading.setAttribute('tabindex', '-1');
         heading.focus({ preventScroll: true });
-        status.textContent = `${item.heading.textContent.trim()}: ${ids.length - bag.remaining.length} of ${ids.length}. ${heading.dataset.questionText || heading.textContent}`;
+        status.textContent = `Whole page: ${ids.length - bag.remaining.length} of ${ids.length}. ${heading.dataset.questionText || heading.textContent}`;
         updateRandom();
       });
-      window.addEventListener('hashchange', updateRandom);
-      window.addEventListener('scroll', updateRandom, { passive: true });
       rail.addEventListener('click', updateRandom);
       updateRandom();
     }
