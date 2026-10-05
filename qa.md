@@ -23,3 +23,19 @@ For me, Financial Mathematics brings together problem-solving, technology, data,
 That’s what attracts me to Cashbook too — the same special blend of finance and technology, combined with understanding clients’ needs and delivering practical solutions to real financial problems.
 
 **Breadcrumb:** maths → broad education → technology + data → modelling + uncertainty → money + finance → better decisions → human impact → business + communication → Cashbook: finance + technology + client needs + practical solutions
+
+
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
