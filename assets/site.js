@@ -2012,6 +2012,16 @@
     let questionsVisible = true;
     let answersVisible = true;
     const questions = practiceHeadings();
+    // Shared by Listen and Random; dropdown visibility does not change the page selection.
+    const currentHeading = () => {
+      const headings = Array.from(body.querySelectorAll(':scope > h1, :scope > h2'));
+      const visible = headings.filter(node => getComputedStyle(node).display !== 'none' && !node.hidden);
+      const offset = (topbar?.getBoundingClientRect().height || 0) + 24;
+      let target;
+      try { target = document.getElementById(decodeURIComponent(location.hash.slice(1))); } catch (_) {}
+      if (headings.includes(target) && Math.abs(target.getBoundingClientRect().top - offset) < 64) return target;
+      return visible.filter(node => node.getBoundingClientRect().top <= offset).pop() || visible[0] || null;
+    };
 
     if (hasSpeech) {
       const listen = document.createElement('button');
@@ -2027,29 +2037,12 @@
           return style.display !== 'none' && style.visibility !== 'hidden' && !element.hidden;
         };
 
-        const sectionStarts = [
-          ...Array.from(body.querySelectorAll(':scope > h1')),
-          ...practiceHeadings()
-        ].filter(visible);
-
-        let start = null;
-
-        if (location.hash) {
-          try {
-            const target = document.getElementById(decodeURIComponent(location.hash.slice(1)));
-            if (target && body.contains(target) && visible(target)) start = target;
-          } catch (_) {}
-        }
-
-        if (!start && window.scrollY > 40) {
-          const topOffset = (topbar?.getBoundingClientRect().height || 0) + 8;
-          start = sectionStarts.find(element => element.getBoundingClientRect().bottom >= topOffset) || null;
-        }
-
-        const nodes = Array.from(body.children).filter(visible);
+        const start = currentHeading();
+        const nodes = Array.from(body.children);
         const startIndex = start ? Math.max(0, nodes.indexOf(start)) : 0;
         const text = nodes
           .slice(startIndex)
+          .filter(visible)
           .map(node => node.innerText || node.textContent || '')
           .join(' ')
           .replace(/\s+/g, ' ')
@@ -2120,12 +2113,12 @@
       rail.append(questionSwitch, answerSwitch);
     }
 
-    // Pivotal rehearsal: one shuffled bag per H1 section, retained for this tab session.
-    if (/\/pivotal[^/]*\.html$/.test(currentPath) && questions.length) {
+    // Rehearsal on every question page: one shuffled bag per H1 section for this tab session.
+    if (questions.length && body) {
       const random = document.createElement('button');
       random.id = 'floating-page-random';
       random.type = 'button';
-      random.textContent = 'Random question';
+      random.textContent = 'Random';
       const status = document.createElement('span');
       status.setAttribute('role', 'status');
       status.style.cssText = 'position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);';
@@ -2145,20 +2138,14 @@
           section.questions.push(node);
         }
       });
-      const storageKey = 'pivotal-random-v1:' + currentPath;
+      const storageKey = 'page-random-v1:' + currentPath;
       let bags = {};
       try { bags = JSON.parse(sessionStorage.getItem(storageKey)) || {}; } catch (_) {}
       if (typeof bags !== 'object' || Array.isArray(bags)) bags = {};
       const bagMap = new Map(Object.entries(bags));
       const selectedSection = () => {
-        let target;
-        try { target = document.getElementById(decodeURIComponent(location.hash.slice(1))); } catch (_) {}
-        if (target && body.contains(target)) {
-          const match = sections.find(item => item.heading === target || item.questions.includes(target));
-          if (match) return match;
-        }
-        const offset = (topbar?.getBoundingClientRect().height || 0) + 24;
-        return sections.filter(item => item.heading.getBoundingClientRect().top <= offset).pop() || sections[0];
+        const target = currentHeading();
+        return sections.find(item => item.heading === target || item.questions.includes(target)) || sections[0];
       };
       const updateRandom = () => {
         const item = selectedSection();
