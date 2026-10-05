@@ -156,6 +156,14 @@
 
         aboutItem.append(aboutToggle, aboutMenu);
 
+        const positionAboutMenu = () => {
+          aboutMenu.style.setProperty('--menu-left', `${Math.round(aboutItem.getBoundingClientRect().left)}px`);
+        };
+        aboutItem.addEventListener('pointerenter', positionAboutMenu);
+        aboutItem.addEventListener('focusin', positionAboutMenu);
+        window.addEventListener('resize', positionAboutMenu);
+        positionAboutMenu();
+
         const setAboutOpen = open => {
           aboutItem.classList.toggle('is-open', open);
           aboutLabel?.setAttribute('aria-expanded', String(open));
