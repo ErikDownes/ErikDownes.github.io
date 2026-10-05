@@ -8,7 +8,7 @@ description: Reusable interview questions, polished answers and recall chains
   for co-op interview practice.
 eyebrow: INTERVIEW · Q&A · RETRIEVAL PRACTICE
 ---
-## Why did you choose Financial Maths?
+## Why  choose Financial Maths?
 
 I always enjoyed maths at school — understanding the concepts, making connections and using strategic problem-solving — and I wanted to continue that at third level.
 
