@@ -936,7 +936,6 @@
 
   const PORTFOLIO_SUBPAGES = [
     { label: 'Turboprop Asset Reporting', path: 'fleet-map.html' },
-    { label: 'How I Built It', path: 'turboprop-dashboard-build.html' },
     { label: 'Global Fleet Maintenance Dashboard', path: 'atr-fleet-dashboard.html' },
     { label: 'Mortgage Calculator', path: 'mortgage-calculator.html' },
     { label: 'PCP Car Finance Calculator', path: 'pcp-calculator.html' },
