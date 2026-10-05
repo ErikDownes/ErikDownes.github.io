@@ -4004,3 +4004,18 @@ article img.img-full,
     grid-row:2;
   }
 }
+
+
+/* Final minimal interview rehearsal: answer toggle + audio recorder only. */
+.answer-focus-audio-only{
+  flex-wrap:nowrap!important;
+}
+.answer-focus-audio-only .answer-simple-text-button{
+  min-width:84px;
+}
+.answer-audio-only-stage{
+  min-height:calc(100vh - 190px);
+}
+.answer-audio-only-stage .answer-audio-recorder{
+  margin-top:18px;
+}
