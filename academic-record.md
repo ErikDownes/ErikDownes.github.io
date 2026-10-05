@@ -6,6 +6,8 @@ nav_order: 72
 eyebrow: FINANCIAL MATHEMATICS · UNIVERSITY OF LIMERICK
 public_mode: true
 ---
+# Results
+
 # BSc Financial Mathematics · LM058 · University of Limerick
 
 Third-year **Financial Mathematics** student at the **University of Limerick**, studying a multidisciplinary programme combining **mathematics, statistics, finance, accounting, programming and data analysis**.
