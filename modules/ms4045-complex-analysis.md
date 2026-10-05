@@ -7,6 +7,8 @@ semester: "Sem1"
 status: "Core"
 eyebrow: "3RD YEAR · SEM1"
 ---
+{% include ms4045-styles.html %}
+
 <p><a href="{{ '/modules-projects.html' | relative_url }}">← Modules & Projects</a></p>
 
 ## Module overview
@@ -33,6 +35,39 @@ Complex Analysis extends calculus from real-valued functions to functions of a *
 - Two mid-semester tests: **2 × 10% = 20%**
 - End-of-year examination: **80%**
 - Repeat examination: **as above or 100% for the repeat exam, whichever is higher**
+
+## Midterm 1 · Digitised tutorial set
+
+<div class="ms4045-intro">
+<strong>Current preparation boundary: Tutorial Sheets 1–2.</strong>
+The lecturer worksheets are now transcribed into live mathematics rather than embedded as flat PDFs. Questions and solutions are separate, solutions are click-to-reveal, and the geometry-heavy work is paired with Argand diagrams.
+</div>
+
+<div class="ms4045-grid">
+<a class="ms4045-card" href="{{ '/modules/ms4045/tutorial-sheet-1.html' | relative_url }}">
+<small>Worksheet</small>
+<strong>Sheet 1 · Complex numbers, roots & exponentials</strong>
+<span>Conjugates, modulus, Cartesian/polar form, loci, roots and complex exponential equations.</span>
+</a>
+
+<a class="ms4045-card" href="{{ '/modules/ms4045/tutorial-sheet-1-solutions.html' | relative_url }}">
+<small>Worked solutions</small>
+<strong>Sheet 1 solutions</strong>
+<span>Step-by-step algebra with Argand diagrams for polar points, loci, roots and exponential solution families.</span>
+</a>
+
+<a class="ms4045-card" href="{{ '/modules/ms4045/tutorial-sheet-2.html' | relative_url }}">
+<small>Worksheet</small>
+<strong>Sheet 2 · Multivalued functions</strong>
+<span>Branches, logarithms, branch points and deciding whether a proposed cut really makes a function single-valued.</span>
+</a>
+
+<a class="ms4045-card" href="{{ '/modules/ms4045/tutorial-sheet-2-solutions.html' | relative_url }}">
+<small>Worked solutions</small>
+<strong>Sheet 2 solutions</strong>
+<span>Argument tracking and branch-cut reasoning shown algebraically and on the Argand plane.</span>
+</a>
+</div>
 
 ## Core concepts
 
@@ -74,7 +109,7 @@ Complex analysis connects naturally with differential equations, fluid mechanics
 
 ## Projects / assignments / evidence
 
-Add test questions, worked examples, lecturer material and any assignment evidence here.
+Tutorial Sheets 1–2 are now digitised above as the current **Midterm 1** study set. Add later lecturer sheets and test material here as the module progresses.
 
 ## Recall cues
 
