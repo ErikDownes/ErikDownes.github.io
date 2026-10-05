@@ -22,9 +22,11 @@ Alongside college, work in retail and logistics has given me practical experienc
 
 ## Motivation | What are you hoping to get from co-op?
 
-I want to see how quantitative work is actually used inside an organisation: how information is checked, how decisions are made, how teams communicate and how responsibility changes when the work has a real client or business impact.
+I want to build my confidence working in a corporate environment and get the satisfaction of contributing as part of a professional team. University develops the technical side, but I want experience of working with other people, taking responsibility and seeing my work become useful to somebody else.
 
-I also want to become more useful with professional systems and processes rather than only academic tools.
+I also want to learn in an organisation that is using modern technology at a time when the way people work is changing very quickly. I think the best preparation for an uncertain career landscape is to become confident using new tools responsibly, while also developing the human skills — judgement, communication, teamwork and reliability — that make those tools useful.
+
+Longer term, I would like the placement to be the start of a professional relationship rather than just six or nine months of experience. Seeing that a former UL co-op student later returned to work for the company is a very positive example of that kind of progression.
 
 # Understanding the Role
 
