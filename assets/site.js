@@ -2092,7 +2092,8 @@
     resetAudio();
     overlay._stopVideo?.();
     overlay._stopVideo = null;
-    focusContent.querySelector('.answer-practice-record.is-recording')?.click();
+    overlay._stopAudio?.();
+    overlay._stopAudio = null;
     delete overlay.dataset.unsaved;
     overlay.hidden = true;
     focusContent.replaceChildren();
@@ -2111,43 +2112,10 @@
     title.dataset.focusClose = '';
     title.title = 'Click the question to close';
 
-    const controls = document.createElement('div');
-    controls.className = 'answer-focus-tools';
-
-    const makeFocusSwitch = (label, checked, onChange) => {
-      const button = document.createElement('button');
-      button.type = 'button';
-      button.className = 'answer-focus-switch' + (checked ? ' is-on' : '');
-      button.setAttribute('role', 'switch');
-      button.setAttribute('aria-checked', String(checked));
-      button.setAttribute('aria-label', `${label} ${checked ? 'on' : 'off'}`);
-      const text = document.createElement('span');
-      text.className = 'answer-focus-switch-label';
-      text.textContent = label;
-      const track = document.createElement('span');
-      track.className = 'answer-focus-switch-track';
-      track.setAttribute('aria-hidden', 'true');
-      const thumb = document.createElement('span');
-      thumb.className = 'answer-focus-switch-thumb';
-      track.appendChild(thumb);
-      button.append(text, track);
-      button.addEventListener('click', event => {
-        event.preventDefault();
-        event.stopPropagation();
-        const next = button.getAttribute('aria-checked') !== 'true';
-        button.setAttribute('aria-checked', String(next));
-        button.setAttribute('aria-label', `${label} ${next ? 'on' : 'off'}`);
-        button.classList.toggle('is-on', next);
-        onChange(next);
-      });
-      return button;
-    };
-
-    // Pull recall out of the answer before display. Explicit "Recall:" /
-    // "Recall cue:" paragraphs are the delimiter; tagged or legacy bold-only
-    // paragraphs remain supported. Recall never appears in the normal page.
-    const hint = document.createElement('div');
-    hint.className = 'answer-focus-hint';
+    // Pull breadcrumb / recall content out of the full answer. In focus mode,
+    // answer and prompts are mutually exclusive.
+    const promptBoard = document.createElement('div');
+    promptBoard.className = 'answer-prompt-board';
 
     let recallNodes = Array.from(copy.children).filter(node =>
       node.matches?.('[data-recall-chain],.recall-chain,[data-pointer-words]') || isRecallNode(node)
@@ -2157,167 +2125,123 @@
     }
 
     const recallText = recallNodes
-      .map(node => cleanText(node.textContent).replace(/^(?:breadcrumbs?|recall(?:\\s+(?:cue|chain))?)\\s*:\\s*/i, '').trim())
+      .map(node => cleanText(node.textContent).replace(/^(?:breadcrumbs?|recall(?:\s+(?:cue|chain))?)\s*:\s*/i, '').trim())
       .filter(Boolean)
-      .join(' · ');
+      .join(' → ');
     recallNodes.forEach(node => node.remove());
-    hint.textContent = recallText;
-    hint.hidden = true;
 
-    const answerSwitch = makeFocusSwitch('Answer', true, shown => {
-      copy.hidden = !shown;
+    const promptItems = recallText
+      .split(/\s*(?:→|·|•)\s*/)
+      .map(value => value.trim())
+      .filter(Boolean);
+
+    promptItems.forEach((value, index) => {
+      const item = document.createElement('div');
+      item.className = 'answer-prompt-card';
+      item.setAttribute('aria-label', 'Prompt ' + (index + 1));
+      const number = document.createElement('span');
+      number.className = 'answer-prompt-number';
+      number.textContent = String(index + 1);
+      const text = document.createElement('span');
+      text.className = 'answer-prompt-text';
+      text.textContent = value;
+      item.append(number, text);
+      promptBoard.appendChild(item);
     });
-    const hintSwitch = makeFocusSwitch('Recall', false, shown => {
-      hint.hidden = !shown || !hint.textContent;
-    });
-    if (!hint.textContent) hintSwitch.hidden = true;
-
-    const play = document.createElement('button');
-    play.type = 'button';
-    play.className = 'answer-focus-icon';
-    play.textContent = '▶';
-    play.title = 'Play or pause';
-    play.setAttribute('aria-label', 'Play question and answer');
-    play.addEventListener('click', event => {
-      event.stopPropagation();
-      if (activeAudioButton === play && synth?.speaking) {
-        if (synth.paused) {
-          synth.resume();
-          play.textContent = '❚❚';
-          play.setAttribute('aria-label', 'Pause');
-        } else {
-          synth.pause();
-          play.textContent = '▶';
-          play.setAttribute('aria-label', 'Resume');
-        }
-        return;
-      }
-      resetAudio();
-      if (!hasSpeech) return;
-      activeAudioButton = play;
-      play.classList.add('is-active');
-      play.textContent = '❚❚';
-      play.setAttribute('aria-label', 'Pause');
-      const visibleAnswer = copy.hidden ? '' : cleanText(copy.innerText);
-      const visibleRecall = hint.hidden ? '' : cleanText(hint.innerText);
-      activeUtterance = new SpeechSynthesisUtterance(
-        [title.textContent, visibleAnswer, visibleRecall].filter(Boolean).join('. ')
-      );
-      activeUtterance.lang = 'en-IE';
-      activeUtterance.rate = 0.92;
-      activeUtterance.onend = () => {
-        play.textContent = '▶';
-        play.setAttribute('aria-label', 'Play question and answer');
-        resetAudio();
-      };
-      activeUtterance.onerror = () => {
-        play.textContent = '▶';
-        play.setAttribute('aria-label', 'Play question and answer');
-        resetAudio();
-      };
-      synth.speak(activeUtterance);
-    });
-
-    const stop = document.createElement('button');
-    stop.type = 'button';
-    stop.className = 'answer-focus-icon';
-    stop.textContent = '■';
-    stop.title = 'Stop';
-    stop.setAttribute('aria-label', 'Stop playback');
-    stop.addEventListener('click', event => {
-      event.stopPropagation();
-      resetAudio();
-      play.textContent = '▶';
-      play.setAttribute('aria-label', 'Play question and answer');
-    });
-
-    const videoTop = document.createElement('button');
-    videoTop.type = 'button';
-    videoTop.className = 'answer-focus-video-top';
-    videoTop.textContent = 'Video';
-    videoTop.setAttribute('aria-label', 'Open video practice');
-
-    controls.append(answerSwitch, hintSwitch, videoTop, play, stop);
+    promptBoard.hidden = true;
 
     copy.querySelectorAll('ul,ol').forEach(list => {
       if (list.children.length >= 5) list.classList.add('answer-columns');
     });
 
-    const rehearsal = document.createElement('section');
-    rehearsal.className = 'answer-rehearsal-flow';
-    const rehearsalStatus = document.createElement('strong');
-    rehearsalStatus.className = 'answer-rehearsal-status';
-    rehearsalStatus.textContent = 'Read 1 of 4';
-    const rehearsalActions = document.createElement('div');
-    rehearsalActions.className = 'answer-rehearsal-actions';
+    const controls = document.createElement('div');
+    controls.className = 'answer-focus-tools answer-focus-simple-tools';
 
-    const ensureSwitch = (button, value) => {
-      const current = button.getAttribute('aria-checked') === 'true';
-      if (current !== value) button.click();
+    const hideButton = document.createElement('button');
+    hideButton.type = 'button';
+    hideButton.className = 'answer-simple-text-button';
+    hideButton.textContent = 'Hide';
+
+    const promptButton = document.createElement('button');
+    promptButton.type = 'button';
+    promptButton.className = 'answer-simple-text-button';
+    promptButton.textContent = 'Prompt';
+    promptButton.disabled = !promptItems.length;
+
+    const cameraButton = document.createElement('button');
+    cameraButton.type = 'button';
+    cameraButton.className = 'answer-simple-icon-button';
+    cameraButton.title = 'Video';
+    cameraButton.setAttribute('aria-label', 'Start video recording');
+    cameraButton.innerHTML =
+      '<svg viewBox="0 0 24 24" aria-hidden="true">' +
+      '<path d="M4 7.5h3l1.4-2.5h7.2L17 7.5h3a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-9a2 2 0 0 1 2-2Z"></path>' +
+      '<circle cx="12" cy="14" r="4"></circle>' +
+      '</svg>';
+
+    const micButton = document.createElement('button');
+    micButton.type = 'button';
+    micButton.className = 'answer-simple-icon-button';
+    micButton.title = 'Audio';
+    micButton.setAttribute('aria-label', 'Start audio recording');
+    micButton.innerHTML =
+      '<svg viewBox="0 0 24 24" aria-hidden="true">' +
+      '<rect x="9" y="3" width="6" height="11" rx="3"></rect>' +
+      '<path d="M6.5 11.5v.8a5.5 5.5 0 0 0 11 0v-.8M12 17.8V21M9 21h6"></path>' +
+      '</svg>';
+
+    const meter = document.createElement('span');
+    meter.className = 'answer-audio-meter';
+    meter.hidden = true;
+    meter.setAttribute('aria-hidden', 'true');
+    for (let i = 0; i < 5; i += 1) meter.appendChild(document.createElement('i'));
+
+    controls.append(hideButton, promptButton, cameraButton, micButton, meter);
+
+    let textMode = 'answer';
+    const setTextMode = mode => {
+      textMode = mode;
+      copy.hidden = mode !== 'answer';
+      promptBoard.hidden = mode !== 'prompt' || !promptItems.length;
+      hideButton.classList.toggle('is-active', mode === 'hide');
+      promptButton.classList.toggle('is-active', mode === 'prompt');
+      hideButton.setAttribute('aria-pressed', String(mode === 'hide'));
+      promptButton.setAttribute('aria-pressed', String(mode === 'prompt'));
     };
 
-    let readCount = 1;
-    const readAgain = document.createElement('button');
-    readAgain.type = 'button';
-    readAgain.textContent = 'Read again';
-    readAgain.addEventListener('click', () => {
-      if (readCount < 4) {
-        readCount += 1;
-        ensureSwitch(answerSwitch, true);
-        ensureSwitch(hintSwitch, false);
-        rehearsalStatus.textContent = `Read ${readCount} of 4`;
-        if (readCount === 4) readAgain.textContent = 'Use Recall';
-        copy.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        return;
-      }
-      ensureSwitch(answerSwitch, false);
-      ensureSwitch(hintSwitch, true);
-      rehearsalStatus.textContent = 'Recall only';
-      readAgain.textContent = 'Read answer again';
-      readCount = 0;
+    hideButton.addEventListener('click', () => {
+      setTextMode(textMode === 'hide' ? 'answer' : 'hide');
     });
 
-    const recallOnly = document.createElement('button');
-    recallOnly.type = 'button';
-    recallOnly.textContent = 'Recall';
-    recallOnly.addEventListener('click', () => {
-      ensureSwitch(answerSwitch, false);
-      ensureSwitch(hintSwitch, true);
-      rehearsalStatus.textContent = 'Recall only';
+    promptButton.addEventListener('click', () => {
+      if (!promptItems.length) return;
+      setTextMode(textMode === 'prompt' ? 'answer' : 'prompt');
     });
 
-    const unaided = document.createElement('button');
-    unaided.type = 'button';
-    unaided.textContent = 'No prompts';
-    unaided.addEventListener('click', () => {
-      ensureSwitch(answerSwitch, false);
-      ensureSwitch(hintSwitch, false);
-      rehearsalStatus.textContent = 'Unaided attempt';
-    });
+    const mediaArea = document.createElement('div');
+    mediaArea.className = 'answer-simple-media';
 
-    rehearsalActions.append(readAgain, recallOnly, unaided);
-    rehearsal.append(rehearsalStatus, rehearsalActions);
-
-    const { panel: practice } = window.coopPractice.create(copy.innerText, { visualOnly: true });
-
-    const videoPractice = document.createElement('section');
-    videoPractice.className = 'answer-video-practice';
-    videoPractice.hidden = true;
-    const videoButton = document.createElement('button');
-    videoButton.type = 'button';
-    videoButton.className = 'answer-video-button';
-    videoButton.textContent = '● Video practice';
-    const videoStatus = document.createElement('span');
-    videoStatus.className = 'answer-video-status';
-    videoStatus.textContent = 'Optional: camera + microphone';
     const video = document.createElement('video');
     video.className = 'answer-video-preview';
     video.playsInline = true;
     video.controls = true;
     video.hidden = true;
+
+    const audioPlayback = document.createElement('audio');
+    audioPlayback.className = 'answer-audio-playback';
+    audioPlayback.controls = true;
+    audioPlayback.hidden = true;
+
+    const mediaMessage = document.createElement('div');
+    mediaMessage.className = 'answer-media-message';
+    mediaMessage.hidden = true;
+
+    mediaArea.append(video, audioPlayback, mediaMessage);
+
     let videoRecorder = null;
     let videoStream = null;
     let videoChunks = [];
+    let videoUrl = null;
 
     const stopVideo = () => {
       if (videoRecorder?.state === 'recording') {
@@ -2326,21 +2250,24 @@
       }
       videoStream?.getTracks().forEach(track => track.stop());
       videoStream = null;
+      cameraButton.classList.remove('is-recording');
+      cameraButton.setAttribute('aria-label', 'Start video recording');
     };
     overlay._stopVideo = stopVideo;
 
-    videoButton.addEventListener('click', async () => {
+    cameraButton.addEventListener('click', async () => {
       if (videoRecorder?.state === 'recording') {
-        videoButton.textContent = '● Video practice';
-        videoStatus.textContent = 'Preparing playback…';
         stopVideo();
         return;
       }
       if (!navigator.mediaDevices?.getUserMedia || typeof MediaRecorder === 'undefined') {
-        videoStatus.textContent = 'Video recording is not supported in this browser.';
+        mediaMessage.textContent = 'Video recording is not supported in this browser.';
+        mediaMessage.hidden = false;
         return;
       }
       try {
+        setTextMode('hide');
+        mediaMessage.hidden = true;
         videoStream = await navigator.mediaDevices.getUserMedia({
           video: { facingMode: 'user', width: { ideal: 800 }, height: { ideal: 1000 }, aspectRatio: { ideal: 0.8 } },
           audio: true
@@ -2354,64 +2281,148 @@
         await video.play();
         videoChunks = [];
         videoRecorder = new MediaRecorder(videoStream);
-        videoRecorder.ondataavailable = event => { if (event.data?.size) videoChunks.push(event.data); };
+        videoRecorder.ondataavailable = event => {
+          if (event.data?.size) videoChunks.push(event.data);
+        };
         videoRecorder.onstop = () => {
           videoStream?.getTracks().forEach(track => track.stop());
           videoStream = null;
           video.srcObject = null;
           video.classList.remove('is-live');
+          cameraButton.classList.remove('is-recording');
+          cameraButton.setAttribute('aria-label', 'Start video recording');
           if (!videoChunks.length) return;
-          const url = URL.createObjectURL(new Blob(videoChunks, { type: videoRecorder.mimeType || 'video/webm' }));
-          video.src = url;
+          if (videoUrl) URL.revokeObjectURL(videoUrl);
+          videoUrl = URL.createObjectURL(new Blob(videoChunks, { type: videoRecorder.mimeType || 'video/webm' }));
+          video.src = videoUrl;
           video.muted = false;
           video.controls = true;
-          videoStatus.textContent = 'Playback ready — watch your delivery, pace and eye contact.';
         };
         videoRecorder.start();
-        videoButton.textContent = '■ Stop video';
-        videoStatus.textContent = 'Recording… answer as if you are in the interview.';
+        cameraButton.classList.add('is-recording');
+        cameraButton.setAttribute('aria-label', 'Stop video recording');
       } catch (_) {
         videoStream?.getTracks().forEach(track => track.stop());
         videoStream = null;
-        videoStatus.textContent = 'Camera and microphone permission are needed.';
+        cameraButton.classList.remove('is-recording');
+        mediaMessage.textContent = 'Camera and microphone permission are needed.';
+        mediaMessage.hidden = false;
       }
     });
-    videoPractice.append(video, videoButton, videoStatus);
 
-    const promptColumn = document.createElement('div');
-    promptColumn.className = 'answer-prompt-column';
-    promptColumn.append(copy, hint, practice);
+    let audioRecorder = null;
+    let audioStream = null;
+    let audioChunks = [];
+    let audioUrl = null;
+    let audioContext = null;
+    let analyser = null;
+    let meterFrame = null;
 
-    const practiceStage = document.createElement('div');
-    practiceStage.className = 'answer-practice-stage';
-    practiceStage.append(videoPractice, promptColumn);
+    const stopMeter = () => {
+      if (meterFrame) cancelAnimationFrame(meterFrame);
+      meterFrame = null;
+      meter.hidden = true;
+      Array.from(meter.children).forEach(bar => { bar.style.height = ''; });
+      if (audioContext) {
+        audioContext.close().catch(() => {});
+        audioContext = null;
+      }
+      analyser = null;
+    };
 
-    videoTop.addEventListener('click', () => {
-      videoPractice.hidden = false;
-      practiceStage.classList.add('is-video-active');
-      videoButton.click();
+    const startMeter = stream => {
+      try {
+        audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        analyser = audioContext.createAnalyser();
+        analyser.fftSize = 256;
+        const source = audioContext.createMediaStreamSource(stream);
+        source.connect(analyser);
+        const data = new Uint8Array(analyser.frequencyBinCount);
+        const bars = Array.from(meter.children);
+        meter.hidden = false;
+        const draw = () => {
+          analyser.getByteFrequencyData(data);
+          let total = 0;
+          for (let i = 0; i < data.length; i += 1) total += data[i];
+          const level = total / Math.max(1, data.length) / 255;
+          bars.forEach((bar, index) => {
+            const factor = 0.45 + ((index + 1) % 3) * 0.22;
+            bar.style.height = Math.max(5, Math.round(6 + level * 28 * factor)) + 'px';
+          });
+          meterFrame = requestAnimationFrame(draw);
+        };
+        draw();
+      } catch (_) {
+        meter.hidden = false;
+      }
+    };
+
+    const stopAudio = () => {
+      if (audioRecorder?.state === 'recording') {
+        audioRecorder.stop();
+        return;
+      }
+      audioStream?.getTracks().forEach(track => track.stop());
+      audioStream = null;
+      stopMeter();
+      micButton.classList.remove('is-recording');
+      micButton.setAttribute('aria-label', 'Start audio recording');
+    };
+    overlay._stopAudio = stopAudio;
+
+    micButton.addEventListener('click', async () => {
+      if (audioRecorder?.state === 'recording') {
+        stopAudio();
+        return;
+      }
+      if (!navigator.mediaDevices?.getUserMedia || typeof MediaRecorder === 'undefined') {
+        mediaMessage.textContent = 'Audio recording is not supported in this browser.';
+        mediaMessage.hidden = false;
+        return;
+      }
+      try {
+        mediaMessage.hidden = true;
+        audioStream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        audioChunks = [];
+        const mime = MediaRecorder.isTypeSupported?.('audio/webm;codecs=opus') ? 'audio/webm;codecs=opus' : '';
+        audioRecorder = mime ? new MediaRecorder(audioStream, { mimeType: mime }) : new MediaRecorder(audioStream);
+        audioRecorder.ondataavailable = event => {
+          if (event.data?.size) audioChunks.push(event.data);
+        };
+        audioRecorder.onstop = () => {
+          audioStream?.getTracks().forEach(track => track.stop());
+          audioStream = null;
+          stopMeter();
+          micButton.classList.remove('is-recording');
+          micButton.setAttribute('aria-label', 'Start audio recording');
+          if (!audioChunks.length) return;
+          if (audioUrl) URL.revokeObjectURL(audioUrl);
+          audioUrl = URL.createObjectURL(new Blob(audioChunks, { type: audioRecorder.mimeType || 'audio/webm' }));
+          audioPlayback.src = audioUrl;
+          audioPlayback.hidden = false;
+        };
+        startMeter(audioStream);
+        audioRecorder.start();
+        micButton.classList.add('is-recording');
+        micButton.setAttribute('aria-label', 'Stop audio recording');
+      } catch (_) {
+        audioStream?.getTracks().forEach(track => track.stop());
+        audioStream = null;
+        stopMeter();
+        micButton.classList.remove('is-recording');
+        mediaMessage.textContent = 'Microphone permission is needed.';
+        mediaMessage.hidden = false;
+      }
     });
 
-    const nextButton = document.createElement('button');
-    nextButton.type = 'button';
-    nextButton.className = 'answer-next-question';
-    nextButton.textContent = 'Next question →';
-    const headings = practiceHeadings();
-    const currentIndex = headings.indexOf(heading);
-    const nextHeading = currentIndex >= 0 ? headings[currentIndex + 1] : null;
-    nextButton.hidden = !nextHeading;
-    nextButton.addEventListener('click', () => {
-      if (!nextHeading) return;
-      overlay._stopVideo?.();
-      delete overlay.dataset.unsaved;
-      focusContent.replaceChildren();
-      openFocus(nextHeading);
-    });
+    const stage = document.createElement('div');
+    stage.className = 'answer-simple-stage';
+    stage.append(copy, promptBoard, mediaArea);
 
-    // Start with the full answer only. The learner can reread up to four times,
-    // then step down to the Recall Chain and finally to an unaided recording.
-    focusContent.replaceChildren(title, controls, rehearsal, practiceStage, nextButton);
+    focusContent.replaceChildren(title, controls, stage);
     linkKnownGlossaryTerms(copy);
+    setTextMode('answer');
+
     lastTrigger = heading;
     overlay.hidden = false;
     document.body.classList.add('answer-focus-open');
