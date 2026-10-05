@@ -7,6 +7,8 @@ description: Financial Mathematics student at the University of Limerick with
   interests in finance, data analysis and applied problem solving.
 nav_order: 10
 profile_mode: true
+image: /assets/erik-profile-200kb.jpg
+image_alt: Erik Downes
 eyebrow: FINANCIAL MATHEMATICS · UNIVERSITY OF LIMERICK
 ---
 
