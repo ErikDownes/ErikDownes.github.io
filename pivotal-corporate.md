@@ -447,11 +447,38 @@ The others are colleagues or internal functions that may depend on my work. The 
 
 ## Who would I take instructions from?
 
-**Client Service Team  Senior staff  Portfolio work**
+**Client Service Teams  Senior staff  Company secretarial group**
 
-The specification says duties will be set out by **senior members of staff**. I would therefore expect day-to-day instructions from the **Client Service Team and the senior colleagues responsible for the relevant client portfolio**.
+The specification names **senior members of staff** and the **company secretarial group** as assigning duties. I would support the **Client Service Teams**, confirming what is required, the deadline and who will review my work.
 
-My approach would be to confirm **what is required, the deadline, who the work is for and who relies on it next**.
+## Which duty is NOT listed for senior staff to assign?
+
+Choose one:
+
+- [Support journal entries and account reconciliations.](#senior-duty-listed)
+- [Assist with accounts payable and accounts receivable.](#senior-duty-listed)
+- [Assist with VAT, tax and regulatory reporting.](#senior-duty-listed)
+- [Make coffee.](#senior-duty-not-listed)
+- [Maintain accurate financial records and supporting documentation.](#senior-duty-listed)
+
+**Remember three or four real duties.** The specification also mentions company policies and accounting standards, special projects, process improvement, research and contributing ideas in team meetings.
+
+**Show what you know, then ask:** “You mention that my duties would include reconciliations, accounts payable and receivable, and reporting. Which would I start with, and who would check my work?”
+
+## Which duty is NOT listed for the company secretarial group to assign?
+
+Choose one:
+
+- [Maintain internal schedules and registers.](#secretarial-duty-listed)
+- [Process KYC and CDD requirements to support statutory compliance.](#secretarial-duty-listed)
+- [Make coffee.](#secretarial-duty-not-listed)
+- [Organise and facilitate the signing of regulatory and legal documentation.](#secretarial-duty-listed)
+
+**Remember these three:** schedules and registers; **KYC — Know Your Customer / CDD — Customer Due Diligence**; arranging document signing. Follow the group's procedures and refer anything uncertain to the appropriate colleague.
+
+**Show what you know, then ask:** “You mention maintaining registers, supporting KYC and CDD, and arranging document signing. Would I support several client companies, and who would coordinate that work?”
+
+*In both questions, choose the task not mentioned in the specification. The duties are described as “including but not limited to”.*
 
 ## What is a Corporate Administrator?
 
