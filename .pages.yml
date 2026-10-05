@@ -29,7 +29,8 @@ content:
       - { name: profile, label: "10 · About Me", type: file, path: profile.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: education, label: "20 · Financial Maths", type: file, path: education.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: academic_record, label: "30 · Results", type: file, path: academic-record.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: pivotal_corporate_study, label: "40 · Pivotal Corporate Study", type: file, path: pivotal-corporate-study.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: job_spec, label: "39 · Job Spec", type: file, path: job-spec.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: pivotal_corporate_study, label: "40 · UL CV", type: file, path: pivotal-corporate-study.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: pivotal_corporate, label: "50 · Pivotal Corporate Interview", type: file, path: pivotal-corporate.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: hse_finance_study, label: "60 · HSE Finance Study", type: file, path: hse-finance-study.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: hse_finance_interview, label: "70 · HSE Finance Interview", type: file, path: hse-finance-interview.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
