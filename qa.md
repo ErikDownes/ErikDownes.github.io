@@ -10,7 +10,7 @@ eyebrow: INTERVIEW · Q&A · RETRIEVAL PRACTICE
 ---
 ## Why  choose Financial Maths?
 
-It’s a story that spans from primary school to university, from spreadsheets to databases, and from being an  highest scoring   Business student   in my school to welcoming the challenge of being accountable for delivering accurate, high-quality service to clients.
+It’s a story that spans from primary school to university, from spreadsheets to databases, and from being an  highest scoring   Business student   in my school to welcoming the challenge of being accountable for delivering accurate, high-quality service to clients in my current logistics job.
 
 I’ve had the maths bug since primary school and wanted to continue my enjoyment and success in the subject through secondary school and into third level, but I wanted a broader education than pure maths offered. From Scratch in primary school to dataloggers and spreadsheet-based projects in secondary school, by the end of school I’d added the technology bug to the maths bug.
 
