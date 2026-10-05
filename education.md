@@ -1,7 +1,7 @@
 ---
 layout: doc
 permalink: /education.html
-handle: Financial Maths
+handle: Financial Maths Modules
 title: BSc Financial Mathematics
 nav_order: 765
 eyebrow: UNIVERSITY OF LIMERICK · BSC FINANCIAL MATHEMATICS · LM058
