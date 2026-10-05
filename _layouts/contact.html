@@ -28,12 +28,13 @@
         {% assign nav_legacy_title = nav_title_parts[0] | strip %}
         {% assign nav_menu_title = navpage.handle | default: nav_legacy_title | strip %}
         {% unless nav_menu_title == 'General Questions' or nav_menu_title == 'Competency / STAR' or nav_menu_title == 'Pivotal Corporate Interview' %}
-<div class="navitem{% if navpage.url == page.url %} is-current{% endif %}">
+<div class="navitem{% if nav_menu_title == 'Contact' %} nav-contact-link{% endif %}{% if navpage.url == page.url %} is-current{% endif %}">
           <a class="navlabel" href="{{ navpage.url | relative_url }}"><span>{{ nav_menu_title }}</span></a>
         </div>
         {% endunless %}
       {% endfor %}
     </nav>
+    <a class="contact-cta is-current" href="{{ '/contact.html' | relative_url }}">Contact Me</a>
   </header>
 
 
@@ -96,6 +97,11 @@
           <a class="linkedin-link" href="https://www.linkedin.com/in/erik-downes-7b312127a/" target="_blank" rel="noopener">
             <span class="linkedin-mark" aria-hidden="true">in</span>
             <span>View my LinkedIn profile</span>
+            <span aria-hidden="true">→</span>
+          </a>
+          <a class="linkedin-link github-link" href="https://github.com/ErikDownes" target="_blank" rel="noopener">
+            <span class="github-mark" aria-hidden="true">GH</span>
+            <span>View my GitHub profile</span>
             <span aria-hidden="true">→</span>
           </a>
         </aside>
