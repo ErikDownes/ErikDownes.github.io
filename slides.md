@@ -1,9 +1,7 @@
 ---
 layout: doc
 permalink: /slides.html
-handle: Slides
 title: Job Spec Slides
-nav_order: 51
 description: Self-hosted image gallery of the Pivotal Corporate job specification slides.
 eyebrow: PIVOTAL CORPORATE · JOB SPEC · SLIDES
 public_mode: true
