@@ -27,7 +27,7 @@
         {% assign nav_title_parts = navpage.title | split: '|' %}
         {% assign nav_legacy_title = nav_title_parts[0] | strip %}
         {% assign nav_menu_title = navpage.handle | default: nav_legacy_title | strip %}
-        {% unless nav_menu_title == 'General Questions' or nav_menu_title == 'Competency / STAR' or nav_menu_title == 'Pivotal Corporate Interview' %}
+        {% unless nav_menu_title == 'General Questions' or nav_menu_title == 'Competency / STAR' or nav_menu_title == 'Pivotal Corporate Interview' or nav_menu_title == 'UL CV' or nav_menu_title == 'Results' %}
 <div class="navitem{% if nav_menu_title == 'Contact' %} nav-contact-link{% endif %}{% if navpage.url == page.url %} is-current{% endif %}">
           <a class="navlabel" href="{{ navpage.url | relative_url }}"><span>{{ nav_menu_title }}</span></a>
         </div>
@@ -110,6 +110,72 @@
           const open = topbar.classList.toggle('nav-open');
           toggle.setAttribute('aria-expanded', String(open));
           toggle.setAttribute('aria-label', open ? 'Close main navigation' : 'Open main navigation');
+        });
+      }
+
+      const normalisePath = value => {
+        try {
+          return new URL(value, location.href).pathname.replace(/\/+$/, '') || '/';
+        } catch (_) {
+          return '/';
+        }
+      };
+
+      const rootHref = document.querySelector('.brand')?.href || new URL('/', location.origin).href;
+      const rootPath = normalisePath(rootHref);
+      const aboutItem = Array.from(nav?.querySelectorAll(':scope > .navitem') || []).find(item => {
+        const label = item.querySelector(':scope > .navlabel[href]');
+        return label && normalisePath(label.href) === rootPath;
+      });
+
+      if (aboutItem) {
+        aboutItem.classList.add('nav-about', 'nav-about-parent', 'has-submenu');
+        const aboutLabel = aboutItem.querySelector(':scope > .navlabel[href]');
+        aboutLabel?.setAttribute('aria-haspopup', 'true');
+        aboutLabel?.setAttribute('aria-expanded', 'false');
+
+        const aboutMenu = document.createElement('div');
+        aboutMenu.className = 'dropmenu about-menu';
+        [
+          ['About Me', rootHref],
+          ['UL CV', new URL('pivotal-corporate-study.html', rootHref).href],
+          ['Results', new URL('academic-record.html', rootHref).href]
+        ].forEach(([textValue, href]) => {
+          const link = document.createElement('a');
+          link.href = href;
+          link.textContent = textValue;
+          aboutMenu.appendChild(link);
+        });
+
+        const aboutToggle = document.createElement('button');
+        aboutToggle.type = 'button';
+        aboutToggle.className = 'navtoggle';
+        aboutToggle.textContent = '▾';
+        aboutToggle.setAttribute('aria-label', 'Open About menu');
+        aboutToggle.setAttribute('aria-expanded', 'false');
+
+        aboutItem.append(aboutToggle, aboutMenu);
+
+        const setAboutOpen = open => {
+          aboutItem.classList.toggle('is-open', open);
+          aboutLabel?.setAttribute('aria-expanded', String(open));
+          aboutToggle.setAttribute('aria-expanded', String(open));
+        };
+
+        aboutLabel?.addEventListener('click', event => {
+          event.preventDefault();
+          event.stopPropagation();
+          setAboutOpen(!aboutItem.classList.contains('is-open'));
+        });
+
+        aboutToggle.addEventListener('click', event => {
+          event.preventDefault();
+          event.stopPropagation();
+          setAboutOpen(!aboutItem.classList.contains('is-open'));
+        });
+
+        document.addEventListener('click', event => {
+          if (!aboutItem.contains(event.target)) setAboutOpen(false);
         });
       }
 
