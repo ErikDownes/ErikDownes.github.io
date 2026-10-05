@@ -4,6 +4,7 @@ permalink: /nav.json
 ---
 [
 {% assign nav_pages = site.pages | where_exp: "p", "p.nav_order" | sort: "nav_order" %}
+{% assign first_nav_item = true %}
 {% for p in nav_pages %}
   {% assign raw_title = p.title | default: '' %}
   {% assign title_parts = raw_title | split: '|' %}
@@ -13,8 +14,10 @@ permalink: /nav.json
   {% if p.handle == nil and title_parts.size > 1 %}
     {% assign page_title = title_parts[1] | strip %}
   {% endif %}
-{% unless menu_title == 'General Questions' or menu_title == 'Competency / STAR' or menu_title == 'Pivotal Corporate Interview' or menu_title == 'UL CV' or menu_title == 'Results' or menu_title == 'Job Spec' %}
-{"title": {{ menu_title | jsonify }}, "page_title": {{ page_title | jsonify }}, "url": {{ p.url | relative_url | jsonify }}, "order": {{ p.nav_order | jsonify }}}{% unless forloop.last %},{% endunless %}
+  {% unless menu_title == 'General Questions' or menu_title == 'Competency / STAR' or menu_title == 'Pivotal Corporate Interview' or menu_title == 'UL CV' or menu_title == 'Results' or menu_title == 'Job Spec' %}
+    {% unless first_nav_item %},{% endunless %}
+{"title": {{ menu_title | jsonify }}, "page_title": {{ page_title | jsonify }}, "url": {{ p.url | relative_url | jsonify }}, "order": {{ p.nav_order | jsonify }}}
+    {% assign first_nav_item = false %}
   {% endunless %}
 {% endfor %}
 ]
