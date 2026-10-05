@@ -30,9 +30,9 @@ The client side appeals to me as well. I like understanding what someone needs, 
 
 Most of all, I see it as a chance to learn quickly, work with an experienced team and contribute to real implementations for customers around the world.
 
-**Breadcrumb:** finance + technology → practical experience → SQL + Excel → automation + troubleshooting → customers → communication → learn + contribute
 
 
+&nbsp;
 
 &nbsp;
 
