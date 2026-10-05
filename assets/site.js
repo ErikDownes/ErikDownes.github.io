@@ -2085,7 +2085,7 @@
       rail.appendChild(listen);
     }
 
-    if (questions.length && body) {
+    if (body) {
       const makeSwitch = ({ id, label, checked, onChange }) => {
         const button = document.createElement('button');
         button.id = id;
@@ -2142,12 +2142,19 @@
         }
       });
 
+      if (!questions.length) {
+        questionSwitch.disabled = true;
+        answerSwitch.disabled = true;
+        questionSwitch.title = 'No question sections on this page';
+        answerSwitch.title = 'No answer sections on this page';
+      }
       rail.append(questionSwitch, answerSwitch);
     }
 
     // Rehearsal across all H2 headings on the open page, with one session queue per page.
+    // Keep the control visible on every document page so the tool rail stays identical.
     const randomQuestions = sectionHeadings();
-    if (randomQuestions.length && body) {
+    if (body) {
       const random = document.createElement('button');
       random.id = 'floating-page-random';
       random.type = 'button';
