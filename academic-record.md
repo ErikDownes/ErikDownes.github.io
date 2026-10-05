@@ -164,8 +164,9 @@ My aim is to **maintain and strengthen this First Class Honours standard** throu
 
 ## University of Limerick Undergraduate Grade Key
 
+
 | Grade | Meaning | QPV |
-| --- | --- | ---: |
+| ---------- | ----------------- | -------- |
 | **A1** | First Honours | **4.00** |
 | **A2** | First Honours | **3.60** |
 | **B1** | Honours 2.1 | **3.20** |
@@ -178,23 +179,27 @@ My aim is to **maintain and strengthen this First Class Honours standard** throu
 | **D2** | Compensating Fail | **1.20** |
 | **F / NG** | Fail | **0.00** |
 
+
 **QPV** means **Quality Point Value**. These values are used in calculating the **QCA (Quality Credit Average)**.
 
 ### Degree Classification by Cumulative QCA
 
+
 | Cumulative QCA | Degree Classification |
-| ---: | --- |
+| -------------- | -------------------------------------- |
 | **3.40+** | **First Class Honours** |
 | **3.00–3.39** | **Second Class Honours Grade 1 — 2.1** |
 | **2.60–2.99** | **Second Class Honours Grade 2 — 2.2** |
 | **2.00–2.59** | **Third Class Honours** |
 
+
 ## Leaving Certificate Grade Key
 
 **H = Higher Level · O = Ordinary Level**
 
+
 | Grade | Percentage |
-| --- | ---: |
+| ----------- | ---------- |
 | **H1 / O1** | 90–100% |
 | **H2 / O2** | 80–89% |
 | **H3 / O3** | 70–79% |
@@ -203,3 +208,5 @@ My aim is to **maintain and strengthen this First Class Honours standard** throu
 | **H6 / O6** | 40–49% |
 | **H7 / O7** | 30–39% |
 | **H8 / O8** | Below 30% |
+
+
