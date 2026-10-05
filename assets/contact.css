@@ -1,0 +1,49 @@
+.contact-mode{background:#f6f4ee;color:#24221f}
+.contact-mode .topbar{position:relative;background:#fff}
+.contact-mode .contact-topnav{justify-content:flex-end}
+.contact-mode .contact-topnav .navitem{grid-template-columns:1fr;flex-basis:116px}
+.contact-mode .contact-topnav .navlabel{font-size:.78rem}
+.contact-page{min-height:calc(100vh - 80px);background:#f6f4ee}
+.contact-hero{margin:0;background:#d7dde0}
+.contact-hero img{display:block;width:100%;height:clamp(300px,34vw,500px);object-fit:cover;object-position:center 53%}
+.contact-hero figcaption{max-width:1220px;margin:0 auto;padding:7px 32px 0;color:#77736c;font-size:.68rem;line-height:1.35;text-align:right}
+.contact-hero figcaption a{color:inherit;text-underline-offset:2px}
+.contact-shell{max-width:1220px;margin:0 auto;padding:68px 32px 92px}
+.contact-grid{display:grid;grid-template-columns:minmax(0,2fr) minmax(280px,.8fr);gap:clamp(52px,7vw,96px)}
+.contact-main{min-width:0}
+.contact-kicker{margin:0 0 12px;color:#68645e;font-size:.73rem;font-weight:800;letter-spacing:.24em}
+.contact-kicker::after{content:"";display:block;width:52px;height:2px;margin-top:12px;background:#174ea6}
+.contact-main h1,.contact-aside h2{font-family:Georgia,"Times New Roman",serif;font-weight:400;letter-spacing:-.045em;color:#24221f}
+.contact-main h1{margin:0 0 10px;font-size:clamp(3rem,5.8vw,5.2rem);line-height:.98}
+.contact-intro{margin:0 0 34px;color:#595650;font-size:1.12rem}
+.contact-form{display:grid;gap:20px}
+.contact-name-row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.contact-form label{display:grid;gap:7px;color:#4b4842;font-size:.78rem;font-weight:700;letter-spacing:.015em}
+.contact-form input,.contact-form textarea{width:100%;border:1px solid #d3cec3;border-radius:6px;background:rgba(255,255,255,.72);padding:15px 16px;color:#25231f;font:inherit;font-size:1rem;line-height:1.45;outline:none;transition:border-color .15s ease,box-shadow .15s ease,background .15s ease}
+.contact-form textarea{resize:vertical;min-height:152px}
+.contact-form input:focus,.contact-form textarea:focus{border-color:#7592b4;background:#fff;box-shadow:0 0 0 3px rgba(23,78,166,.08)}
+.contact-send{justify-self:start;min-width:190px;border:0;border-radius:6px;background:#174ea6;color:#fff;padding:14px 22px;font:700 1rem/1.2 Arial,Helvetica,sans-serif;cursor:pointer}
+.contact-send:hover,.contact-send:focus-visible{background:#123e84;outline:3px solid rgba(23,78,166,.18);outline-offset:2px}
+.contact-note{margin:-6px 0 0;color:#77736c;font-size:.75rem;line-height:1.5}
+.contact-aside{align-self:start;margin-top:78px;padding-left:46px;border-left:1px solid #d9d4c9}
+.contact-rule{display:block;width:54px;height:3px;margin:0 0 24px;background:#174ea6}
+.contact-aside h2{margin:0 0 15px;font-size:clamp(2rem,3vw,3.05rem);line-height:1.04}
+.contact-aside p{margin:0 0 28px;color:#615e58;font-size:1rem;line-height:1.6}
+.linkedin-link{display:grid;grid-template-columns:34px 1fr auto;align-items:center;gap:14px;width:100%;padding:13px 15px;border:1px solid #bfc9d7;border-radius:7px;background:#fff;color:#25334a;text-decoration:none;font-weight:700}
+.linkedin-link:hover,.linkedin-link:focus-visible{border-color:#7791b2;background:#f8fbff;outline:none}
+.linkedin-mark{display:inline-flex;align-items:center;justify-content:center;width:31px;height:31px;border-radius:3px;background:#0a66c2;color:#fff;font:bold 20px/1 Arial,sans-serif}
+@media(max-width:900px){
+  .contact-shell{padding:50px 24px 72px}
+  .contact-grid{grid-template-columns:1fr;gap:52px}
+  .contact-aside{margin-top:0;padding:34px 0 0;border-left:0;border-top:1px solid #d9d4c9}
+  .contact-hero figcaption{padding-left:24px;padding-right:24px}
+}
+@media(max-width:600px){
+  .contact-hero img{height:245px}
+  .contact-shell{padding:42px 18px 58px}
+  .contact-hero figcaption{padding-left:18px;padding-right:18px}
+  .contact-name-row{grid-template-columns:1fr}
+  .contact-main h1{font-size:clamp(2.75rem,14vw,4rem)}
+  .contact-intro{font-size:1rem}
+  .contact-send{width:100%}
+}
