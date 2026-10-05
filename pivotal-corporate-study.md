@@ -3,69 +3,11 @@ layout: doc
 permalink: /pivotal-corporate-study.html
 handle: UL CV
 nav_order: 40
-description: Working study notes for the Pivotal Corporate Co-Op Student /
-  Corporate Administrator role.
-eyebrow: PIVOTAL CORPORATE · CORPORATE SERVICES · ACCOUNTING · ADMINISTRATION
+description: UL CV evidence for the Pivotal Corporate Co-Op Student / Corporate Administrator role.
+eyebrow: PIVOTAL CORPORATE · UL CV · EVIDENCE
 public_mode: true
-title: "UL CV for Pivotal Corporate "
+title: "UL CV"
 ---
-
-
-## Pivotal Corporate – Co-Op Student/Corporate Administrator
-
-Pivotal Corporate is an independent, solutions driven firm with extensive experience assisting US based investors to establish and grow their European investments. We partner with our clients at every stage in the process using our local networks in a number of jurisdictions to ensure their project runs smoothly from the initial assessment phase through to the project being fully operational.
-
-With our client focused and solutions driven delivery, we have the ability to adapt to the ever-changing needs of our clients quickly and efficiently, becoming the pivot point for their business and allowing them to concentrate on their core business needs as they grow.
-
-Delivery is what sets us apart from other firms. Our clients appreciate our unrivalled responsiveness and our passion and dedication. We pride ourselves on being accessible, reliable, practical, and professional at all times.
-
-We are currently seeking to hire a pro-active, self-motivated, and highly organised student to join the business. This role will support our Client Service Teams in providing Accounting & Administration services to a portfolio of clients, ensuring that our clients are provided with a high-quality professional service.
-
-## Duties and Responsibilities:
-
-- To develop a basic understanding of the mechanics of company administration and develop business like relationships with intermediaries and internal clients with whom you will come into regular contact.
-- Demonstrate a willingness to apply high standards of client care to all dealings with intermediaries and internal clients.
-- Duties as set out by senior members of staff including (but not limited to):
-  - Support the processing of journal entries and account reconciliations.
-  - Assist with accounts payable and accounts receivable activities
-  - Assist with VAT, tax and regulatory reporting processes
-  - Help maintain accurate financial records and supporting documentation
-  - Support compliance with company policies and accounting standards
-  - Support special projects and process improvement initiatives.
-  - Conduct research into financial, accounting and market topics as required.
-  - Participate in team meetings and contribute ideas for operational improvement
-- Deal with day-to-day administration tasks assigned by company secretarial group including (but not limited to):
-  - Maintenance of internal schedules and registers;
-  - Process KYC and CDD requirement to ensure compliance with statutory requirements; and
-  - Organise and facilitate for the signing of regulatory and legal documentation.
-
-## Job Specific Requirements:
-
-- Organised, detail-oriented individual with well-developed critical thinking skills and possesses the ability to manage multiple tasks in a fast-paced environment.
-- Strong written and verbal skills.
-- Working knowledge of Microsoft Word, Excel, and Outlook.
-- A positive attitude, demonstrating enthusiasm and the desire to take on responsibility. A willingness to get involved in team issues and events.
-- An interest in financial services, and a genuine desire to learn how this can be used as a tool for adding value to a client’s business.
-
-# Where This Type of Business Came From
-
-Corporate-service businesses developed because cross-border investments and financing structures often require **separate legal entities to be formed, governed, accounted for, documented and kept compliant**. Investors may understand the investment itself extremely well but still need local specialists to maintain the entity, books and records, board processes, filings, banking arrangements and transaction documentation.
-
-Ireland became particularly important in international financial structuring, securitisation and asset finance. An important part of that history is the Irish **Section 110** regime: Revenue explains that its predecessor was introduced in the **Finance Act 1991** to promote securitisation in Ireland, and the regime is now contained in **Section 110 of the Taxes Consolidation Act 1997**. This helped create a substantial ecosystem of lawyers, accountants, corporate administrators, directors, banks and specialist service providers around SPVs and structured transactions.
-
-That history should not be confused with saying that every Pivotal client or SPV is a Section 110 company. Pivotal's current service range is much broader. It describes work across **aviation, private equity, real estate, private debt, structured debt, infrastructure, technology and pharmaceuticals**, with services including company formation, management, financial accounting, company secretarial work, transaction and cash management, compliance support and international expansion.
-
-This explains the co-op role: the student is entering the **operational infrastructure behind investment structures**. The journal, reconciliation, register, KYC check, signed document or client response may look small in isolation, but each is part of keeping the legal and financial structure accurate, compliant and usable.
-
-# Research and References
-
-- [Pivotal Corporate — About](https://www.pivotalcorporate.com/about)
-- [Pivotal Corporate — Corporate & SPV Services](https://www.pivotalcorporate.com/corporate---spv-services)
-- [Pivotal Corporate — Services and sectors](https://www.pivotalcorporate.com/)
-- [Revenue — Qualifying companies / Section 110](https://www.revenue.ie/en/companies-and-charities/financial-services/qualifying-companies/index.aspx)
-- [Revenue Tax and Duty Manual — Section 110 companies](https://www.revenue.ie/en/tax-professionals/tdm/income-tax-capital-gains-tax-corporation-tax/part-04/04-09-01.pdf)
-
-# UL CV
 
 ## Teamwork
 
