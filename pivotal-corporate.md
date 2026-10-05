@@ -343,6 +343,24 @@ With our **client-focused and solutions-driven delivery**, we have the ability t
 
 It means understanding **what the client actually needs**, responding quickly and giving them information they can use rather than simply completing a task.
 
+## When have you demonstrated that you were client-focused?
+
+**Client-focused  Solutions-driven delivery  Quickly and efficiently  Core business needs**
+
+At **O’Mahony’s**, I help prepare book orders for libraries. Being **client-focused** means thinking about what the library needs: the correct books, the correct invoices and a delivery that goes to the right destination.
+
+If an error arises, I check the existing **Excel records** to trace who serviced the books and help establish what went wrong. I check the number of books against the invoice and make sure the order goes to the correct library. I also record who packed the order, how many boxes there are and which invoices are included in the dispatch system.
+
+That is a practical example of **solutions-driven delivery**: using the records to investigate a problem **quickly and efficiently**, while keeping the order and its paperwork traceable. It supports the library’s **core business needs** by helping it receive the books it needs to serve its readers.
+
+## How could you improve that process?
+
+**One record  Validation  Exceptions**
+
+I would first understand the existing process and ask where mistakes or repeated work occur. One improvement I could propose is a standard dispatch checklist or controlled spreadsheet linking the library, invoice numbers, box count and packer, with required fields and a clear flag for missing information. I would agree it with the team and test it on a small number of orders before wider use.
+
+This is an **improvement I could propose**, rather than a system I have already built at O’Mahony’s.
+
 ## Why is Pivotal a good name for the business?
 
 **Pivot point  Mechanical advantage  competitive advantage**
