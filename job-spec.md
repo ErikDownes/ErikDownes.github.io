@@ -2,7 +2,6 @@
 layout: doc
 permalink: /job-spec.html
 handle: Job Spec
-nav_order: 39
 description: Cashbook and HSE Mid-West Co-Op job specifications.
 eyebrow: CASHBOOK · HSE MID-WEST · CO-OP
 public_mode: true
