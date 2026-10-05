@@ -11,6 +11,14 @@ title: "Miscellaneous"
 
 # Miscellaneous
 
+## Pivotal Job Description Slides
+
+The Pivotal Corporate job-description slides are kept here as supporting interview material rather than in the main navigation.
+
+[Open the self-hosted slide gallery →]({{ '/slides.html' | relative_url }})
+
+[Open the Google Slides presentation →](https://docs.google.com/presentation/d/1CG_yaUNqHwJVuglcLoc6CLIq60AG7UGlTv5gwQuNS4s/present)
+
 ## Pivotal Corporate Background
 
 Background material for understanding what Pivotal does, how corporate service providers work, SPVs, accounting, cash controls, governance and transaction administration.
