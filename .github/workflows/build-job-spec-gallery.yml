@@ -29,3 +29,4 @@ jobs:
             git push
           fi
           echo "Self-hosted gallery build complete"
+          echo "Final source set: all 21 slides"
