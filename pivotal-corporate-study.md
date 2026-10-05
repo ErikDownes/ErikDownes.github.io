@@ -1,14 +1,14 @@
 ---
 layout: doc
 permalink: /pivotal-corporate-study.html
-handle: UL CV
+handle: UL CV (cashbook)
 nav_order: 40
-description: UL CV evidence for the Pivotal Corporate Co-Op Student / Corporate Administrator role.
+description: UL CV evidence for the Pivotal Corporate Co-Op Student / Corporate
+  Administrator role.
 eyebrow: PIVOTAL CORPORATE · UL CV · EVIDENCE
 public_mode: true
-title: "UL CV"
+title: UL CV
 ---
-
 ## Teamwork
 
 While working at **O’Mahony’s**, an order of books was sent to the wrong library because the invoice I received contained an incorrect delivery address. I raised the issue quickly with my supervisor and proposed sending the receiving library a **pre-paid delivery label** so the books could be forwarded directly to the correct library.
