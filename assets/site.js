@@ -2107,68 +2107,39 @@
     const copy = cloneAnswer(heading);
     if (!cleanText(copy.textContent)) return;
 
+    // Keep old breadcrumb / recall metadata out of rehearsal mode.
+    Array.from(copy.children)
+      .filter(node => node.matches?.('[data-recall-chain],.recall-chain,[data-pointer-words]') || isRecallNode(node))
+      .forEach(node => node.remove());
+    if (isLegacyRecallNode(copy.firstElementChild)) copy.firstElementChild.remove();
+
     const title = document.createElement('h2');
     title.textContent = heading.dataset.questionText || cleanText(heading.textContent);
     title.dataset.focusClose = '';
     title.title = 'Click the question to close';
-
-    // Pull breadcrumb / recall content out of the full answer.
-    const promptBoard = document.createElement('div');
-    promptBoard.className = 'answer-prompt-board';
-
-    let recallNodes = Array.from(copy.children).filter(node =>
-      node.matches?.('[data-recall-chain],.recall-chain,[data-pointer-words]') || isRecallNode(node)
-    );
-    if (!recallNodes.length && isLegacyRecallNode(copy.firstElementChild)) {
-      recallNodes = [copy.firstElementChild];
-    }
-
-    const recallText = recallNodes
-      .map(node => cleanText(node.textContent).replace(/^(?:breadcrumbs?|recall(?:\s+(?:cue|chain))?)\s*:\s*/i, '').trim())
-      .filter(Boolean)
-      .join(' → ');
-    recallNodes.forEach(node => node.remove());
-
-    const promptItems = recallText
-      .split(/\s*(?:→|·|•)\s*/)
-      .map(value => value.trim())
-      .filter(Boolean);
-
-    promptItems.forEach((value, index) => {
-      const item = document.createElement('div');
-      item.className = 'answer-prompt-card';
-      const number = document.createElement('span');
-      number.className = 'answer-prompt-number';
-      number.textContent = String(index + 1);
-      const text = document.createElement('span');
-      text.className = 'answer-prompt-text';
-      text.textContent = value;
-      item.append(number, text);
-      promptBoard.appendChild(item);
-    });
-    promptBoard.hidden = true;
 
     copy.querySelectorAll('ul,ol').forEach(list => {
       if (list.children.length >= 5) list.classList.add('answer-columns');
     });
 
     const controls = document.createElement('div');
-    controls.className = 'answer-focus-tools answer-focus-simple-tools';
+    controls.className = 'answer-focus-tools answer-focus-simple-tools answer-focus-audio-only';
 
-    const makeModeButton = (label, mode) => {
-      const button = document.createElement('button');
-      button.type = 'button';
-      button.className = 'answer-simple-text-button';
-      button.textContent = label;
-      button.dataset.mode = mode;
-      button.setAttribute('aria-pressed', 'false');
-      return button;
-    };
+    const answerButton = document.createElement('button');
+    answerButton.type = 'button';
+    answerButton.className = 'answer-simple-text-button is-active';
+    answerButton.textContent = 'Answer';
+    answerButton.setAttribute('aria-pressed', 'true');
+    answerButton.setAttribute('aria-label', 'Hide answer');
 
-    const answerButton = makeModeButton('Answer', 'answer');
-    const promptButton = makeModeButton('Prompt', 'prompt');
-    promptButton.disabled = !promptItems.length;
-    const blankButton = makeModeButton('Blank', 'blank');
+    let answerVisible = true;
+    answerButton.addEventListener('click', () => {
+      answerVisible = !answerVisible;
+      copy.hidden = !answerVisible;
+      answerButton.classList.toggle('is-active', answerVisible);
+      answerButton.setAttribute('aria-pressed', String(answerVisible));
+      answerButton.setAttribute('aria-label', answerVisible ? 'Hide answer' : 'Show answer');
+    });
 
     const micButton = document.createElement('button');
     micButton.type = 'button';
@@ -2193,25 +2164,7 @@
     timer.setAttribute('role', 'status');
     timer.textContent = '0:00';
 
-    controls.append(answerButton, promptButton, blankButton, micButton, meter, timer);
-
-    let textMode = 'answer';
-    const setTextMode = mode => {
-      textMode = mode;
-      copy.hidden = mode !== 'answer';
-      promptBoard.hidden = mode !== 'prompt' || !promptItems.length;
-      [answerButton, promptButton, blankButton].forEach(button => {
-        const active = button.dataset.mode === mode;
-        button.classList.toggle('is-active', active);
-        button.setAttribute('aria-pressed', String(active));
-      });
-    };
-
-    answerButton.addEventListener('click', () => setTextMode('answer'));
-    promptButton.addEventListener('click', () => {
-      if (promptItems.length) setTextMode('prompt');
-    });
-    blankButton.addEventListener('click', () => setTextMode('blank'));
+    controls.append(answerButton, micButton, meter, timer);
 
     const recorderArea = document.createElement('section');
     recorderArea.className = 'answer-audio-recorder';
@@ -2269,6 +2222,7 @@
         const data = new Uint8Array(analyser.frequencyBinCount);
         const bars = Array.from(meter.children);
         meter.hidden = false;
+
         const draw = () => {
           analyser.getByteFrequencyData(data);
           let total = 0;
@@ -2386,12 +2340,11 @@
     });
 
     const stage = document.createElement('div');
-    stage.className = 'answer-simple-stage';
-    stage.append(copy, promptBoard, recorderArea);
+    stage.className = 'answer-simple-stage answer-audio-only-stage';
+    stage.append(copy, recorderArea);
 
     focusContent.replaceChildren(title, controls, stage);
     linkKnownGlossaryTerms(copy);
-    setTextMode('answer');
 
     lastTrigger = heading;
     overlay.hidden = false;
