@@ -3645,3 +3645,42 @@ body.answer-focus-open{overflow:hidden}
   .contact-cta{display:none}
   .nav-contact-link{display:grid!important}
 }
+
+/* Global responsive content images */
+main img,
+article img,
+.page-content img,
+.markdown-body img,
+.cms-content img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Optional image sizing helpers */
+main img.img-small,
+article img.img-small,
+.page-content img.img-small,
+.markdown-body img.img-small,
+.cms-content img.img-small {
+  width: min(100%, 450px);
+}
+
+main img.img-medium,
+article img.img-medium,
+.page-content img.img-medium,
+.markdown-body img.img-medium,
+.cms-content img.img-medium {
+  width: min(100%, 700px);
+}
+
+main img.img-full,
+article img.img-full,
+.page-content img.img-full,
+.markdown-body img.img-full,
+.cms-content img.img-full {
+  width: 100%;
+}
+
