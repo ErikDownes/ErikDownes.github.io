@@ -1,7 +1,7 @@
 ---
 layout: doc
 permalink: /pivotal-corporate.html
-handle: Pivotal Corporate Interview
+handle: Pivotal Corp Interview
 title: Pivotal Corp Interview
 nav_order: 50
 description: Pivotal Corporate interview preparation for the Co-Op Student /
@@ -10,8 +10,6 @@ eyebrow: CO-OP INTERVIEW · CORPORATE ADMINISTRATION · ACCOUNTING · CLIENT SER
 public_mode: true
 ---
 
-
-# Job-Specification Pressure Tests
 
 ## The role says proactive. Give me an example of when you've been proactive.
 
