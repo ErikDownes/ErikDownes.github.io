@@ -61,4 +61,3 @@ The exercises map directly onto areas in the Pivotal Corporate co-op specificati
 
 [Corporate Services & Financial Operations →]({{ '/csp.html' | relative_url }})
 
-[Pivotal Corporate preparation →]({{ '/pivotal-corporate.html' | relative_url }})
