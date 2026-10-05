@@ -14,9 +14,13 @@ Use **STAR: Situation, Task, Action, Result**. Keep the situation short. Spend m
 
 ## Communication | Tell me about a time you communicated something clearly
 
-Use a situation where another person needed a clear explanation rather than more detail. Start with what they needed to know, explain the key point in plain language and check that it was understood.
+At O'Mahony's, two library customers could be affected by the same dispatch problem: one receiving books it was not expecting and the other waiting for books that should have reached it.
 
-A good example can come from customer service, university group work or explaining one of your projects to someone non-technical.
+I treated them as **two separate communication problems** rather than one internal packing error. We checked the order and dispatch information quickly, then made sure the library receiving the unexpected books was told what had happened before the parcel became a confusing surprise. The clearest sequence was **email first, then a short phone call** to make sure the message had been received and understood.
+
+Because returning low-value books can cost more in freight, time and administration than it saves, I raised the practical option of letting that library keep them if the appropriate person approved it. At the same time, the intended library needed a clear heads-up and its replacement dispatch prioritised rather than being left wondering where the order was.
+
+The lesson for me was that good communication is not just giving accurate information. It is identifying **who is affected, what each person needs to know, and when they need to know it**.
 
 ## Difficult Communication | Tell me about a time someone was not responding or was unclear
 
@@ -54,6 +58,16 @@ Explain what was known, what was uncertain and what risk came from guessing.
 
 A good decision is often not pretending uncertainty has disappeared. It can mean checking another source, asking the right person or recording something as unresolved until there is enough evidence.
 
+## Client Judgement | Tell me about a time you balanced customer service with cost
+
+At O'Mahony's, a dispatch error could have created two problems: an unexpected delivery for one library and a delayed delivery for another.
+
+We did a **quick practical analysis** rather than automatically following the slowest possible process. The questions were: What is the cost of getting the books returned? How much delay would that create? Who needs to be contacted immediately? What decision needs manager approval?
+
+The customer-friendly option was to communicate early, prioritise the correct replacement dispatch and avoid unnecessary return handling where the economics did not justify it. I would not present that as me personally authorising free stock; the point is that I could **identify the sensible option, explain the trade-off and escalate the commercial decision to the right person**.
+
+That is a useful example of judgement because the cheapest-looking action is not always the lowest-cost action once staff time, freight, delay and customer confidence are included.
+
 # Initiative & Ownership
 
 ## Initiative | Tell me about a time you showed initiative
@@ -61,6 +75,10 @@ A good decision is often not pretending uncertainty has disappeared. It can mean
 I built an interactive aviation data project from public records because I wanted to understand how messy real-world data could be turned into something useful.
 
 It required finding sources, cleaning and reconciling data, learning additional web tools and presenting the result clearly. I took it from an idea through to a working output rather than stopping once the analysis was complete.
+
+A smaller example came directly from work. Barcode and identifier exceptions made me think about whether the phone itself could remove a manual step, so I built a **browser-based barcode scanner** that lets a user photograph a barcode and decode it on the phone.
+
+[Try the barcode scanner project →]({{ '/barcode-scanner.html' | relative_url }})
 
 ## Independence | Tell me about a time you worked without much supervision
 
