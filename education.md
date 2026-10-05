@@ -7,22 +7,6 @@ nav_order: 55
 eyebrow: UNIVERSITY OF LIMERICK · BSC FINANCIAL MATHEMATICS · LM058
 study_mode: true
 ---
-I am currently in **Year 3 of the BSc Financial Mathematics programme at the University of Limerick**. Years 1 and 2 are complete, I am studying Semester 1 of Year 3 now, and Semester 2 is my Cooperative Education placement.
-
-**Current position:** Year 3 · Semester 1 · BSc Financial Mathematics (LM058)
-
-Currently underway · Year 3 · Semester 1
-
-# Current modules
-
-These five modules are currently underway.
-
-- [Fundamentals of Financial Mathematics]({{ '/modules/ms4027-fundamentals-of-financial-mathematics.html' | relative_url }}) · **MS4027**
-- [Complex Analysis]({{ '/modules/ms4045-complex-analysis.html' | relative_url }}) · **MS4045**
-- [Linear Algebra 2]({{ '/modules/ms4105-linear-algebra-2.html' | relative_url }}) · **MS4105**
-- [Statistical Inference]({{ '/modules/ms4214-statistical-inference.html' | relative_url }}) · **MS4214**
-- [Advanced Data Analysis]({{ '/modules/ms4215-advanced-data-analysis.html' | relative_url }}) · **MS4215**
-
 # Programme overview
 
 LM058 is a four-year Financial Mathematics degree combining **mathematics, probability and statistics, data analysis, programming, finance and accounting**, with **Cooperative Education in Year 3**. The programme moves from mathematical and computational foundations into increasingly specialised work in financial mathematics, stochastic modelling, statistical data science and quantitative finance.
@@ -34,6 +18,18 @@ LM058 is a four-year Financial Mathematics degree combining **mathematics, proba
 **Year 3 · Specialisation + Co-op**Complex analysis, linear algebra, statistical inference, advanced data analysis and financial mathematics, followed by professional placement.
 
 **Year 4 · Advanced quantitative study**Stochastic processes, time series, data-science projects, stochastic finance and investment modelling.
+
+# Current modules
+
+These five modules are currently underway.
+
+- [Fundamentals of Financial Mathematics]({{ '/modules/ms4027-fundamentals-of-financial-mathematics.html' | relative_url }}) · **MS4027**
+- [Complex Analysis]({{ '/modules/ms4045-complex-analysis.html' | relative_url }}) · **MS4045**
+- [Linear Algebra 2]({{ '/modules/ms4105-linear-algebra-2.html' | relative_url }}) · **MS4105**
+- [Statistical Inference]({{ '/modules/ms4214-statistical-inference.html' | relative_url }}) · **MS4214**
+- [Advanced Data Analysis]({{ '/modules/ms4215-advanced-data-analysis.html' | relative_url }}) · **MS4215**
+
+
 
 
 
