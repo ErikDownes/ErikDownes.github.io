@@ -81,7 +81,7 @@ That is also how I have learned technical skills. Even before modern AI tools, I
 
 I enjoy that process because inquiry often produces **additional learning beyond the original problem**. It is similar to pure mathematics: curiosity can lead you somewhere before the practical application is obvious. That mindset transfers well into STEM and into learning new business systems.
 
-Today, AI adds another powerful research tool. If Pivotal provides an **approved enterprise AI system**, I could use it to help explain a concept, generate possible approaches or help me interrogate unfamiliar material more quickly. But I would still verify the answer against **authoritative sources, the firm's procedures and the actual data**, and I would never place confidential client information into an unapproved system.
+Today, AI adds another powerful research tool. If Pivotal provides an **approved enterprise AI system**, I could use it to help explain a concept, generate possible approaches or help me interrogate unfamiliar material more quickly. I would still verify the answer against **authoritative sources, the firm's procedures and the actual data**, and use the system only in line with the firm's approved policy and workflow.
 
 Because I am self-motivated, I am also happy to do **several iterations privately before presenting work** — try, test, refine and check. Then, if the issue involves judgement, authority, risk or something I still cannot resolve, I would go to the **closest appropriate colleague with a specific question and evidence of what I had already tried**.
 
@@ -719,37 +719,124 @@ I would be coming in to learn Pivotal's processes, but my approach would be simp
 
 Good administration also means handling information in a way that respects **confidentiality, privacy and data-protection requirements**.
 
-## Where does GDPR fit into administration?
+## Have you read the GDPR question carefully?
 
-**Personal data  Data minimisation  Confidentiality**
+**First identify what is being asked. Then answer that question.**
 
-GDPR is not separate from good administration. If company records contain **personal data** — for example names, addresses, contact details or identification information — that information should only be processed for a **specified, lawful purpose**, limited to what is necessary, accessed by authorised people who need it for their work, and protected from **unauthorised access or disclosure**.
+A GDPR question may be testing different things: **what personal data is, the GDPR principles, lawful processing, individual rights, controller versus processor, redaction, security, retention or incident handling**.
 
-The principles I would keep in mind are **purpose limitation, data minimisation, accuracy, storage limitation, integrity and confidentiality**.
+Do not unload everything you know. Start with the exact point being asked, give a clear definition or principle, then add one practical example.
 
-In practice that means things like **not leaving personal information visible on a desk or screen, not sharing it unnecessarily, checking recipients before sending information and following Pivotal's approved systems and procedures**.
+## What is personal data?
 
-## When have you already respected data privacy?
+**Identified person  Identifiable person  Much broader than names**
 
-**O'Mahony's  Addresses  Unauthorised disclosure**
+Personal data is **any information relating to an identified or identifiable living person**.
 
-At **O'Mahony's**, delivery paperwork could contain **customer names and addresses**. I understood that this was **personal data**, so I did not leave delivery sheets or address information exposed when I stepped away or went for lunch.
+That is much broader than obvious identifiers. Depending on the context, it can include:
 
-I would make sure the information was **not left visible to people who had no business need to see it**.
+- **name, address, telephone number and email address**;
+- date of birth, PPS number, ID documents and **signatures**;
+- employee, customer or student numbers;
+- IP addresses, device identifiers and location data;
+- photographs, video, voice recordings and CCTV;
+- financial information, account details and transaction records;
+- employment history, CV information and performance records;
+- **handwriting, notes, comments or annotations** where they relate to an identifiable person;
+- an **essay, written submission, application or other work** where the author can be identified;
+- combinations of apparently ordinary details that together identify somebody.
 
-That is a simple workplace example of **confidentiality, need-to-know access and protecting personal data from unauthorised disclosure**. In a corporate-services environment the information may be more sensitive, but the underlying discipline is the same.
+The useful test is: **does this information relate to a living person who is identified, or could reasonably be identified from it or by combining it with other information?**
+
+## What is not personal data?
+
+**Truly anonymous  Company-only information  No identifiable person**
+
+Examples can include **truly anonymised data** where a person cannot reasonably be re-identified, general information about a company that does not relate to an identifiable individual, and aggregate statistics that cannot be traced back to a person.
+
+**Pseudonymised data is different:** replacing a name with a code does not automatically take information outside GDPR if the person can still be re-identified.
+
+## What does redaction mean?
+
+**Remove what is not needed  Make removal effective  Check the final document**
+
+Redaction means removing or obscuring information that should not be disclosed in the version being shared.
+
+If a document is needed for one purpose but contains personal details irrelevant to that purpose, the unnecessary details may need to be **redacted**.
+
+Proper redaction should actually remove the underlying information — not simply place a black shape over visible text — and the final document should be checked before release. The same principle applies to hidden text, comments, tracked changes and document metadata where relevant.
+
+A useful question is: **what information is genuinely needed for this purpose, and what can be removed?**
+
+## What are the seven GDPR principles?
+
+**Lawfulness  Purpose  Minimum necessary  Accuracy  Retention  Security  Accountability**
+
+- **Lawfulness, fairness and transparency** — have a lawful basis and be clear about the processing.
+- **Purpose limitation** — use data for specified, legitimate purposes.
+- **Data minimisation** — use only what is adequate, relevant and necessary.
+- **Accuracy** — keep personal data accurate and correct it where necessary.
+- **Storage limitation** — do not keep identifiable data longer than necessary.
+- **Integrity and confidentiality** — protect it using appropriate security.
+- **Accountability** — be able to demonstrate compliance.
+
+## What are the six lawful bases?
+
+**Consent  Contract  Legal obligation  Vital interests  Public task  Legitimate interests**
+
+The six GDPR lawful bases are **consent, contract, legal obligation, vital interests, public task and legitimate interests**.
+
+Consent is therefore **not** the only basis. The correct basis depends on the particular processing activity.
+
+## What rights can a person have under GDPR?
+
+**Access  Rectification  Erasure  Restriction  Portability  Object**
+
+Depending on the circumstances, rights can include the right to be informed, access, rectification, erasure, restriction, portability, objection, and rights relating to certain automated decision-making and profiling.
+
+These rights are not absolute in every circumstance, so I would follow the firm's procedure rather than making a legal judgement myself.
+
+## Who is responsible for data protection in a company?
+
+**Everyone has responsibilities  Privacy Officer / DPO  Know who to refer to**
+
+Everyone handling personal data has responsibilities, but organisations normally have a designated **privacy or data-protection contact**. Where required or chosen, this may be a **Data Protection Officer — DPO**.
+
+Pivotal's current privacy notice tells people to contact its **Privacy Officer** for privacy matters. For an intern, the practical point is: know the policy, know the appropriate privacy/compliance contact, and refer a question rather than guessing.
 
 ## What are a data controller and data processor?
 
-**Controller  Purpose and means  Processor**
+**Controller = decides why/how  Processor = acts for controller**
 
-A **data controller** decides **why** personal data is processed and the essential **means** of processing it.
+A **data controller** determines the purposes and essential means of processing personal data.
 
-A **data processor** processes personal data **on behalf of a controller** and under the controller's instructions.
+A **data processor** processes personal data on behalf of a controller and under the controller's instructions.
 
-Pivotal's own privacy notice gives a useful example of why the distinction matters: when providing services under a client agreement, Pivotal says it is **generally a data processor** for relevant client personal data, with the **client as data controller**. For some activities — including gathering **anti-money-laundering information** and maintaining internal databases — Pivotal says it may act as the **data controller**.
+Pivotal's privacy notice explains that, for some client-service activities, Pivotal may act as a processor while the client is the controller; for some of its own activities, Pivotal may act as controller.
 
-So I would not assume the role from the type of document alone. I would follow **Pivotal's policies, instructions, access controls and approved systems** for the particular processing activity.
+## What is a personal data breach?
+
+**Confidentiality  Integrity  Availability**
+
+A personal data breach is a security breach leading to the accidental or unlawful **destruction, loss, alteration, unauthorised disclosure of, or access to, personal data**.
+
+The practical lesson is not to make a legal assessment yourself: **follow the organisation's incident procedure promptly so the appropriate people can assess the event and any reporting duties.**
+
+## Where does GDPR fit into day-to-day administration?
+
+**Purpose  Minimum necessary  Accurate  Secure  Retained correctly**
+
+GDPR is part of ordinary administration, not a separate add-on.
+
+In practice I would think about **why information is needed, whether all of it is necessary, whether it is accurate, who needs access, how it is stored or transferred, and how long it should be retained**. I would follow Pivotal's approved systems, access controls, retention rules and privacy procedures.
+
+## When have you already respected data privacy?
+
+**O'Mahony's  Addresses  Need-to-know**
+
+At **O'Mahony's**, delivery paperwork could contain customer names and addresses. I treated those details as personal information and kept the paperwork appropriately controlled during the working day.
+
+That is a simple example of understanding that ordinary operational records can contain personal data and should be handled according to the organisation's procedures.
 
 ## How would you build client relationships?
 
