@@ -145,13 +145,61 @@ Select an office to zoom in, use the normal map controls to explore, or choose *
 
 [Open the standalone map →]({{ '/pivotal-office-map.html' | relative_url }})
 
-## Turboprop Asset Reporting
+## Turboprop Fleet Map — Aircraft, Lessees & Countries
 
-Aircraft and operator reporting built from public turboprop fleet records, with the emphasis on clean identities, traceable data and useful asset-level reporting.
+**Public aircraft data → reconciliation → interactive fleet reporting**
 
-[Open Turboprop Asset Reporting →]({{ '/fleet-map.html' | relative_url }})
+I built this project to turn a complicated turboprop portfolio into something you can explore quickly. Use the controls below to view the fleet by **aircraft**, **lessee / airline** or **country**, then filter and inspect individual records.
 
-[How I Built It →]({{ '/turboprop-dashboard-build.html' | relative_url }})
+The short version: I used **Python and Pandas** to clean and reconcile public aircraft data, worked in both **Jupyter locally and Google Colab**, and used **Leaflet** to turn the result into an interactive map.
+
+ABEL0_MAP_APP
+
+<details class="project-read-more">
+<summary><strong>Read more — how the fleet project was built</strong></summary>
+
+### The data
+
+There was no single clean fleet dataset, so I combined several public sources rather than treating one source as complete.
+
+I used **PlaneSpotters production lists** for ATR and Dash 8 aircraft and structured the records into fields such as MSN, registration, aircraft type, operator, delivery information and status. I also brought in the much larger **OpenSky aircraft database**, containing roughly **520,000 aircraft records**, to cross-check identifiers and fill gaps.
+
+Separately, I built a control table from public Abelo / Elix portfolio information so I had a target fleet to reconcile against.
+
+### Python, Pandas and reconciliation
+
+I used **Python and Pandas** for the main data work: cleaning column names and values, filtering the large datasets down to relevant turboprops, comparing schemas, joining candidate records and checking duplicates or uncertain matches.
+
+The strongest identifiers were **MSN / serial number** and **registration**. Aircraft type, operator and history were supporting evidence rather than substitutes for a reliable identity.
+
+Where the evidence was not strong enough, I left the aircraft unresolved rather than forcing a match. That was an important part of the project: the aim was not just to produce a map, but to keep the data **traceable and defensible**.
+
+### Jupyter and Google Colab
+
+I used notebooks in two ways:
+
+- **Jupyter locally** for exploratory work, checking intermediate tables and iterating quickly on cleaning and matching logic.
+- **Google Colab** when I wanted a browser-based environment that was easy to reopen, share and run without depending on the local setup.
+
+The underlying workflow is the same in both: load the data, inspect it, clean it, filter it, reconcile it and export a smaller structured dataset for the web application.
+
+### From dataset to interactive map
+
+Once the data was in a usable form, I moved to the front end and used **HTML, CSS, JavaScript and Leaflet**.
+
+The interface is designed so a visitor does not need to read the methodology first. They can immediately interact with the fleet, switch between different views, filter the records and see how aircraft and lessees are distributed geographically.
+
+The map shows portfolio geography and reporting context; it is **not a live aircraft-tracking map**.
+
+### What the project demonstrates
+
+What began as a map became a much broader data exercise involving **data cleaning, filtering, schema matching, reconciliation, provenance, uncertainty and client-facing visualisation**.
+
+That is the part I value most: using analysis to reduce a large, messy dataset into something accurate enough to interrogate and simple enough for another person to understand.
+
+</details>
+
+[Open the fleet dashboard on its own →]({{ '/fleet-map.html' | relative_url }})
 
 ## Global Fleet Maintenance Dashboard
 
