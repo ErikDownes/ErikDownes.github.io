@@ -55,3 +55,6 @@
   .contact-mode .contact-topnav .navitem{width:auto;flex:0 0 116px;min-height:80px;grid-template-columns:1fr;border-bottom:0}
   .contact-mode .contact-topnav .navlabel{min-height:80px;justify-content:center;text-align:center;padding:0 4px;font-size:.78rem;line-height:1.2}
 }
+
+.github-link{margin-top:12px}
+.github-mark{display:inline-flex;align-items:center;justify-content:center;width:31px;height:31px;border-radius:50%;background:#24292f;color:#fff;font:700 11px/1 Arial,sans-serif;letter-spacing:.02em}
