@@ -20,6 +20,6 @@ The financial side appealed to me because money matters at every level — from 
 
 For me, Financial Mathematics brings together problem-solving, technology, data, finance and business, while also requiring you to communicate your conclusions clearly. It gives me a broad set of skills I can apply to real problems and different careers.
 
-That’s what attracts me to Cashbook too — the same special blend of finance and technology, applied to solving real financial problems for organisations.
+That’s what attracts me to Cashbook too — the same special blend of finance and technology, combined with understanding clients’ needs and delivering practical solutions to real financial problems.
 
-**Breadcrumb:** maths → breadth → technology + data → uncertainty + modelling → money → decisions + human impact → business + communication → Cashbook: finance + technology
+**Breadcrumb:** maths → broad education → technology + data → modelling + uncertainty → money + finance → better decisions → human impact → business + communication → Cashbook: finance + technology + client needs + practical solutions
