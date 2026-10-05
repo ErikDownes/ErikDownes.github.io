@@ -62,6 +62,12 @@ with extensive experience assisting
 
 Pivotal Corporate is an **independent, solutions-driven firm** that helps **US-based investors establish and grow their European investments**.
 
+## What does independent mean?
+
+**Independent  In control  Client-focused**
+
+It means Pivotal is **not controlled by a larger parent organisation**. The firm can make its own decisions, which is good for clients — there is no distant head office saying, **“No, you can’t do that.”**
+
 
 
 ## Where are we based?
