@@ -9,7 +9,7 @@
       const fast = Math.max(10, Math.round(words / 150 * 60));
       const slow = Math.max(fast, Math.round(words / 120 * 60));
       const panel = document.createElement('section');
-      panel.className = 'answer-practice-panel';
+      panel.className = 'answer-practice-panel' + (options.visualOnly ? ' is-visual-only' : '');
       const head = document.createElement('div');
       head.className = 'answer-practice-head';
       const label = document.createElement('strong');
@@ -26,10 +26,18 @@
       const record = document.createElement('button');
       record.type = 'button';
       record.className = 'answer-practice-record';
-      record.textContent = '● Record';
+      record.textContent = options.visualOnly ? '●' : '● Record';
+      record.setAttribute('aria-label', 'Record answer');
+      record.title = 'Record';
       const attempts = document.createElement('div');
       attempts.className = 'answer-practice-attempts';
-      panel.append(head, reminder, timer, record, attempts);
+      if (options.visualOnly) {
+        timer.textContent = '';
+        timer.setAttribute('role', 'status');
+        panel.append(record, timer, attempts);
+      } else {
+        panel.append(head, reminder, timer, record, attempts);
+      }
 
       let recorder = null;
       let stream = null;
@@ -41,7 +49,9 @@
       const stop = () => {
         if (recorder?.state === 'recording') recorder.stop();
         else stream?.getTracks().forEach(track => track.stop());
-        record.textContent = '● Record';
+        record.textContent = options.visualOnly ? '●' : '● Record';
+        record.setAttribute('aria-label', 'Record answer');
+        record.title = 'Record';
         record.classList.remove('is-recording');
         stopClock();
       };
@@ -68,15 +78,19 @@
             const row = document.createElement('div');
             row.className = 'answer-practice-attempt';
             const name = document.createElement('strong');
-            name.textContent = `Recording ${++attemptNumber}`;
+            name.textContent = options.visualOnly ? '' : `Recording ${++attemptNumber}`;
+            if (options.visualOnly) attemptNumber += 1;
             const audio = document.createElement('audio');
             audio.controls = true;
             audio.src = url;
             const download = document.createElement('a');
             download.href = url;
             download.download = `interview-practice-${attemptNumber}.webm`;
-            download.textContent = 'Save';
-            row.append(name, audio, download);
+            download.textContent = options.visualOnly ? '↓' : 'Save';
+            download.setAttribute('aria-label', 'Download recording');
+            download.title = 'Download';
+            if (options.visualOnly) row.append(audio, download);
+            else row.append(name, audio, download);
             attempts.prepend(row);
           };
           recorder.start();
@@ -84,7 +98,9 @@
           const update = () => { timer.textContent = `${formatTime(Math.floor((Date.now() - startedAt) / 1000))} / ~${formatTime(target)} target`; };
           update();
           tick = setInterval(update, 250);
-          record.textContent = '■ Stop';
+          record.textContent = options.visualOnly ? '■' : '■ Stop';
+          record.setAttribute('aria-label', 'Stop recording');
+          record.title = 'Stop';
           record.classList.add('is-recording');
         } catch (_) {
           stream?.getTracks().forEach(track => track.stop());
