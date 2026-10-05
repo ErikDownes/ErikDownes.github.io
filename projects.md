@@ -7,17 +7,7 @@ nav_order: 90
 eyebrow: DASHBOARDS · CALCULATORS · APPLIED WORK
 public_mode: true
 ---
-## Phone Barcode Scanner — Work Problem to Small Digital Tool
 
-**Operational exception → mobile camera → barcode decoding → faster checking**
-
-This project came from a simple work observation: identifiers such as barcodes are useful only when they can be captured and checked easily. Instead of manually typing a long number, I built a small browser tool that lets a phone **take a photo of a barcode and decode it**.
-
-It uses **HTML, CSS and JavaScript** with a browser-based barcode library. The aim is not to replace Booksolve or a warehouse system; it is to show how a repetitive manual step can become a small, usable digital workflow.
-
-On a phone, the file control opens the camera. The selected image is analysed in the browser and the decoded value is displayed so it can be copied or checked.
-
-[Try the phone barcode scanner →]({{ '/barcode-scanner.html' | relative_url }})
 
 ## Pivotal Office Map — AI-Assisted Leaflet Project
 
@@ -90,70 +80,15 @@ For client-centred service, that matters because the user should not have to wor
 
 Select an office to zoom in, use the normal map controls to explore, or choose **All offices** to return to the international view.
 
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
-<style>
-.pivotal-project-controls{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 12px}
-.pivotal-project-controls button{padding:10px 14px;border:1px solid #9aa9b5;border-radius:999px;background:#fff;color:#18354a;font:inherit;cursor:pointer;min-height:44px}
-.pivotal-project-controls button:hover,.pivotal-project-controls button[aria-pressed="true"]{background:#18354a;color:#fff}
-.pivotal-project-controls button:focus-visible{outline:3px solid #c96c18;outline-offset:3px}
-#pivotal-project-map{height:clamp(360px,60vh,620px);width:100%;border:1px solid #ccd5dd;border-radius:14px;z-index:0;margin:0 0 10px}
-#pivotal-project-map .leaflet-popup-content{color:#18354a;font-size:15px;line-height:1.5}
-@media print{#pivotal-project-map,.pivotal-project-controls{display:none}}
-</style>
 
-<div class="pivotal-project-controls" role="group" aria-label="Choose a Pivotal office">
-<button type="button" data-project-office="all" aria-pressed="true" disabled>All offices</button>
-<button type="button" data-project-office="0" aria-pressed="false" disabled>Shannon</button>
-<button type="button" data-project-office="1" aria-pressed="false" disabled>Dublin</button>
-<button type="button" data-project-office="2" aria-pressed="false" disabled>London</button>
-<button type="button" data-project-office="3" aria-pressed="false" disabled>New York</button>
-</div>
 
-<div id="pivotal-project-map" role="region" aria-label="Interactive map of Pivotal Corporate office locations" tabindex="0"></div>
-<p id="pivotal-project-map-status" role="status">Loading map…</p>
+All officesShannonDublinLondonNew York
 
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-<script>
-(function(){
-  var status=document.getElementById('pivotal-project-map-status');
-  if(!window.L){status.textContent='The map could not load.';return;}
-  var offices=[
-    {name:'Shannon',coords:[52.69865,-8.90204],address:'First Floor, Universal House, Shannon Free Zone, Co. Clare, V14 T213'},
-    {name:'Dublin',coords:[53.3354,-6.2507],address:'6–7 Fitzwilliam Square East, Dublin 2, D02 Y447'},
-    {name:'London',coords:[51.516951,-0.083779],address:'35 New Broad Street, London, EC2M 1NH'},
-    {name:'New York',coords:[40.754885,-73.974871],address:'245 Park Avenue, New York, NY 10167'}
-  ];
-  var map=L.map('pivotal-project-map',{scrollWheelZoom:false});
-  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'&copy; OpenStreetMap contributors'}).addTo(map);
-  var buttons=document.querySelectorAll('[data-project-office]');
-  function selected(value){buttons.forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.projectOffice===value));});}
-  var markers=offices.map(function(o,i){
-    return L.marker(o.coords,{title:o.name,keyboard:true}).addTo(map)
-      .bindPopup('<strong>'+o.name+'</strong><br>'+o.address)
-      .on('click',function(){selected(String(i));status.textContent=o.name+': '+o.address;});
-  });
-  var bounds=L.latLngBounds(offices.map(function(o){return o.coords;}));
-  function overview(){
-    map.fitBounds(bounds,{padding:[35,35]});
-    map.closePopup();
-    selected('all');
-    status.textContent='Showing all four offices. Select a city to zoom in.';
-  }
-  buttons.forEach(function(b){
-    b.disabled=false;
-    b.addEventListener('click',function(){
-      if(b.dataset.projectOffice==='all'){overview();return;}
-      var i=Number(b.dataset.projectOffice),o=offices[i];
-      map.setView(o.coords,15);
-      markers[i].openPopup();
-      selected(String(i));
-      status.textContent=o.name+': '+o.address;
-    });
-  });
-  overview();
-  if(window.ResizeObserver){new ResizeObserver(function(){map.invalidateSize();}).observe(document.getElementById('pivotal-project-map'));}
-})();
-</script>
+Loading map…
+
+
+
+&nbsp;
 
 [Open the standalone map →]({{ '/pivotal-office-map.html' | relative_url }})
 
@@ -167,8 +102,7 @@ The short version: I used **Python and Pandas** to clean and reconcile public ai
 
 ABEL0_MAP_APP
 
-<details class="project-read-more">
-<summary><strong>Read more — how the fleet project was built</strong></summary>
+**Read more — how the fleet project was built**
 
 ### The data
 
@@ -203,21 +137,7 @@ The interface is designed so a visitor does not need to read the methodology fir
 
 The map shows portfolio geography and reporting context; it is **not a live aircraft-tracking map**.
 
-### What the project demonstrates
 
-What began as a map became a much broader data exercise involving **data cleaning, filtering, schema matching, reconciliation, provenance, uncertainty and client-facing visualisation**.
-
-That is the part I value most: using analysis to reduce a large, messy dataset into something accurate enough to interrogate and simple enough for another person to understand.
-
-</details>
-
-[Open the fleet dashboard on its own →]({{ '/fleet-map.html' | relative_url }})
-
-## Global Fleet Maintenance Dashboard
-
-The existing ATR fleet and maintenance dashboard is retained as a core project. It brings aircraft, utilisation and maintenance thinking together in one reporting view.
-
-[Open Global Fleet Maintenance Dashboard →]({{ '/atr-fleet-dashboard.html' | relative_url }})
 
 ## Mortgage Calculator
 
@@ -229,4 +149,6 @@ A simple financial-mathematics tool for exploring principal, deposit, interest r
 
 A car-finance calculator built around deposit, monthly payment, term and the optional final payment / GMFV. The aim is to compare the full cash-flow structure rather than just the headline monthly payment.
 
-[Open PCP Calculator →]({{ '/pcp-calculator.html' | relative_url }})
+[Open PCP Calculator →]({{ '/pcp-calculator.html' | relative_url }})  
+  
+  
