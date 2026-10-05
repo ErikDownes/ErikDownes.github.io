@@ -1,0 +1,132 @@
+<!doctype html>
+{% assign legacy_title_parts = page.title | split: '|' %}
+{% assign page_display_title = legacy_title_parts[0] | strip %}
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{{ page.description | default: 'Contact Erik Downes.' | escape }}">
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+  <title>{{ page_display_title }} | Erik Downes · Financial Mathematics</title>
+  <link rel="icon" href="{{ '/assets/favicon.svg' | relative_url }}" type="image/svg+xml">
+  <link rel="stylesheet" href="{{ '/assets/styles.css' | relative_url }}?v={{ site.github.build_revision }}">
+  <link rel="stylesheet" href="{{ '/assets/contact.css' | relative_url }}?v={{ site.github.build_revision }}">
+</head>
+<body class="contact-mode">
+  <header class="topbar">
+    <a class="brand" href="{{ '/' | relative_url }}" aria-label="Erik Downes — Financial Maths and Data Analysis — Home">
+      <img src="{{ '/assets/coop-logo.svg' | relative_url }}" alt="Erik Downes — Financial Maths and Data Analysis — University of Limerick">
+    </a>
+    <button class="mobile-nav-toggle" type="button" aria-controls="mainNav" aria-expanded="false" aria-label="Open main navigation">
+      <span class="mobile-nav-icon" aria-hidden="true"></span>
+    </button>
+
+    <nav class="topnav contact-topnav" id="mainNav" aria-label="Main navigation">
+      {% assign nav_pages = site.pages | where_exp: "p", "p.nav_order" | sort: "nav_order" %}
+      {% for navpage in nav_pages %}
+        {% assign nav_title_parts = navpage.title | split: '|' %}
+        {% assign nav_legacy_title = nav_title_parts[0] | strip %}
+        {% assign nav_menu_title = navpage.handle | default: nav_legacy_title | strip %}
+        <div class="navitem{% if navpage.url == page.url %} is-current{% endif %}">
+          <a class="navlabel" href="{{ navpage.url | relative_url }}"><span>{{ nav_menu_title }}</span></a>
+        </div>
+      {% endfor %}
+    </nav>
+  </header>
+
+  <main class="contact-page">
+    <figure class="contact-hero">
+      <img
+        src="https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/King_John%27s_Castle_%28Limerick%29_Is_Beside_The_Shannon_River_%2814414821315%29.jpg/1280px-King_John%27s_Castle_%28Limerick%29_Is_Beside_The_Shannon_River_%2814414821315%29.jpg"
+        alt="King John's Castle beside the River Shannon in Limerick">
+      <figcaption>
+        Limerick · Photograph by William Murphy,
+        <a href="https://commons.wikimedia.org/wiki/File:King_John%27s_Castle_(Limerick)_Is_Beside_The_Shannon_River_(14414821315).jpg" target="_blank" rel="noopener">CC BY-SA 2.0</a>
+      </figcaption>
+    </figure>
+
+    <section class="contact-shell" aria-labelledby="contact-title">
+      <div class="contact-grid">
+        <div class="contact-main">
+          <p class="contact-kicker">CONTACT</p>
+          <h1 id="contact-title">Send a Message</h1>
+          <p class="contact-intro">I’ll get back to you as soon as possible.</p>
+
+          <form class="contact-form" id="contactForm">
+            <div class="contact-name-row">
+              <label>
+                <span>First name</span>
+                <input name="firstName" autocomplete="given-name" required>
+              </label>
+              <label>
+                <span>Last name</span>
+                <input name="lastName" autocomplete="family-name">
+              </label>
+            </div>
+
+            <label>
+              <span>Email address</span>
+              <input name="replyEmail" type="email" autocomplete="email" required>
+            </label>
+
+            <label>
+              <span>Message</span>
+              <textarea name="message" rows="6" required></textarea>
+            </label>
+
+            <button class="contact-send" type="submit">Send Message</button>
+            <p class="contact-note">This opens your email app with the message addressed to Erik, so you can review it before sending.</p>
+          </form>
+        </div>
+
+        <aside class="contact-aside" aria-label="LinkedIn">
+          <span class="contact-rule" aria-hidden="true"></span>
+          <h2>Connect on LinkedIn</h2>
+          <p>You can also connect with me on LinkedIn.</p>
+          <a class="linkedin-link" href="https://www.linkedin.com/in/erik-downes-7b312127a/" target="_blank" rel="noopener">
+            <span class="linkedin-mark" aria-hidden="true">in</span>
+            <span>View my LinkedIn profile</span>
+            <span aria-hidden="true">→</span>
+          </a>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    (() => {
+      const topbar = document.querySelector('.topbar');
+      const toggle = document.querySelector('.mobile-nav-toggle');
+      const nav = document.getElementById('mainNav');
+      if (topbar && toggle && nav) {
+        toggle.addEventListener('click', () => {
+          const open = topbar.classList.toggle('nav-open');
+          toggle.setAttribute('aria-expanded', String(open));
+          toggle.setAttribute('aria-label', open ? 'Close main navigation' : 'Open main navigation');
+        });
+      }
+
+      const form = document.getElementById('contactForm');
+      if (!form) return;
+      form.addEventListener('submit', event => {
+        event.preventDefault();
+        const data = new FormData(form);
+        const first = String(data.get('firstName') || '').trim();
+        const last = String(data.get('lastName') || '').trim();
+        const reply = String(data.get('replyEmail') || '').trim();
+        const message = String(data.get('message') || '').trim();
+        const name = [first, last].filter(Boolean).join(' ');
+        const subject = 'Website message from ' + (name || 'visitor');
+        const body = [
+          'Name: ' + (name || 'Not provided'),
+          'Email: ' + reply,
+          '',
+          message
+        ].join('\n');
+        window.location.href = 'mailto:erikdownes2307@gmail.com?subject=' +
+          encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+      });
+    })();
+  </script>
+</body>
+</html>
