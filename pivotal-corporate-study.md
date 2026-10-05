@@ -170,7 +170,13 @@ At UL, **Computer Software 1** also gave me experience of **collaborative learni
 
 My retail, logistics and university experience has developed **strong written and verbal communication skills**. At O’Mahony’s, clear communication is important when working with **orders, invoices, dispatch information, different departments and client libraries**. At Mr Price, I dealt directly with customer product and pricing queries.
 
-My university and project work have also taught me to communicate financial and technical information at the appropriate level. For example, I used **Excel** to compare three PCP finance options and presented the overall cost clearly rather than simply presenting the calculations.
+My university and project work have also taught me that **quantitative communication is not finished when the calculation is correct**. The numbers still have to be made understandable to the person making the decision.
+
+A good example was when **my mother was choosing between three car-finance offers**. The salesperson had shown her a large set of figures from the finance system, but it was very difficult to see what was actually better. One option had a **high down payment and lower monthly payments**, another had a **low down payment and higher monthly payments**, and the third sat between them with an **intermediate down payment and intermediate monthly payments**.
+
+I put the three offers into **Excel**, calculated the **total cost of each option**, and then showed the comparison visually with a simple **graph**. Instead of giving her another pile of numbers, I explained the model and then brought it back to the bottom line: **the middle option was about €800 cheaper overall**. That made the decision clear, and it was the option she chose.
+
+That experience stayed with me because it showed that good quantitative work is also a **communication chain**: understand the figures, compare them correctly, present them clearly, and make the decision-relevant conclusion easy to see.
 
 I understand that at Pivotal the same approach is required when developing **business-like relationships with clients, intermediaries and internal clients**: listen carefully, communicate accurately, be **accessible and responsive**, and provide a **high-quality professional service** with reliable follow-through.
 
@@ -200,7 +206,7 @@ I maintain a personal project portfolio and website at **[erikdownes.github.io](
 
 My tools include **Excel, Word, Outlook, Python, Pandas, R, SQL, Git and GitHub**. **Computer Software 1** developed my Java programming and collaborative coding skills, while maintaining the website has also given me practical experience with **HTML, CSS and JavaScript**.
 
-Projects include **aircraft data reconciliation and reporting, financial calculators, Excel business analysis**, and work combining Strava GPX data with public data, where I had to standardise datetime formats and time zones before merging records.
+Projects include **aircraft data reconciliation and reporting, a mortgage calculator, a mortgage reporting calculator, Excel business analysis**, and work combining Strava GPX data with public data, where I had to standardise datetime formats and time zones before merging records.
 
 I have practised **Excel formulas, logical functions, lookups, data cleaning, filtering, pivot tables and charts**. These projects have taught me that the important skill is not simply knowing software, but **choosing the right tool for the size and purpose of the problem**.
 
