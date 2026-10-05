@@ -3,7 +3,6 @@ layout: doc
 permalink: /hse-finance-interview.html
 handle: HSE Finance Interview
 title: HSE Finance Interview
-nav_order: 70
 description: Interview preparation for the HSE Mid-West Co-op Finance role.
 eyebrow: HSE MID-WEST · FINANCE · INTERVIEW
 public_mode: true
