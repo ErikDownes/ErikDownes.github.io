@@ -1070,49 +1070,67 @@ The important phrase is:
 
 # Pivotal in the News
 
-**Research checked: 4 October 2026.** Use the source and the business implication, then ask a genuine question. Read the linked article before saying “I read…”.
+**Research checked: 5 October 2026. Focus on developments that tell you something useful about the business — not individual staff promotions.**
 
+## What recent transactions has Pivotal supported?
 
+**ABS deals  Managing Agent  Scale**
 
-## What has independent coverage reported?
+Pivotal’s own Recent Deals material lists a sequence of aviation finance transactions in 2026, including **GGAM 2026-1 ($568m)** and **MCAV 2026-1 ($643m)** in July, as well as transactions involving FTAI Aircraft Leasing, SKY Leasing, Altavair, Merit AirFinance and Marathon Asset Management.
 
-**Growth  Recognition  Mentoring**
+The useful interview point is not memorising every deal. It is understanding that Pivotal acts as **Managing Agent** on large structured-finance transactions, where accurate administration, reporting, cash management and coordination matter.
 
-The **Clare Echo, 18 September 2026**, reported that Pivotal had grown to **approximately 100 people**, with headcount doubling over eighteen months. Its article also covered Managing Director **David Talty’s recognition in Airline Economics’ 2026 “40 Under 40”**.
+**Possible question:** “Your recent deals page shows a number of large aviation ABS transactions in 2026. What parts of the administration or reporting process would a co-op student be most likely to support?”
 
-The **award publisher independently confirms David Talty in the 2026 class** and lists Pivotal Managing Director **Michael Murphy among its 2026 mentors**.
+Source: [Pivotal Corporate — Recent Deals](https://www.pivotalcorporate.com/).
 
-**Interview relevance:** growth raises questions about consistent client service; recognition and mentoring raise questions about how junior staff develop.
+## How large is Pivotal now?
 
-Sources: [Clare Echo — David Talty and Pivotal’s growth](https://www.clareecho.ie/top-aviation-recogniton-for-miltown-malbays-talty/) · [Airline Economics — 2026 winners and mentors](https://www.aviationnews-online.com/airline-economics-40-under-40).
+**100+ staff  Four offices  Growth**
 
+Pivotal currently describes itself as an independently owned Corporate Service Provider with **100+ staff across Shannon, Dublin, London and New York**.
 
+That gives a better interview question than asking about an individual promotion:
 
-## What is on the company’s own news page?
+**Possible question:** “As the business has grown across four offices, how do you keep client service and internal processes consistent between teams?”
 
-**Recent deals  Managing Agent  Client support**
+Source: [Pivotal Corporate — About](https://www.pivotalcorporate.com/about).
 
-Pivotal’s **News page redirects to a “Recent Deals” page**. It lists **GGAM 2026-1 for Griffin Global Asset Management** and **MCAV 2026-1 for AIP Capital** in July 2026, plus transactions for FTAI and Sky Leasing.
+## What changed with the Shannon and Dublin offices?
 
-Its homepage now describes **100+ staff across Shannon, Dublin, London and New York**. This is more current than the older “85 employees” preparation note.
+**Office move  Collaboration  Learning**
 
-These are **company-published updates**, distinct from independent news coverage. The listings identify Pivotal as Managing Agent; they do not mean Pivotal owns the aircraft.
+Pivotal announced that its **Shannon and Dublin teams moved into new office locations**, describing the new spaces as supporting greater collaboration and learning while the business continued to grow.
 
-Sources: [Pivotal — Recent Deals](https://www.pivotalcorporate.com/blog) · [Pivotal — company and services](https://www.pivotalcorporate.com/).
+That is useful for a student because it points towards the working environment rather than gossip about individuals.
 
+**Possible question:** “You mentioned that the newer Shannon and Dublin offices were designed to support collaboration and learning. How does that work in practice for students and new joiners?”
 
+Source: [Pivotal Corporate — office move announcement](https://www.linkedin.com/posts/pivotal-corporate_newbeginnings-officemove-teamgrowth-activity-7317870611723149312-0e7S).
 
-## What is Pivotal posting on LinkedIn?
+## What does the aviation side of the business look like?
 
-**Commercial growth  Aviation  Team involvement**
+**1,500+ aircraft  €40bn AUM  Repeat transactions**
 
-The verified company page is active, with updates on **Matthew Trotter’s appointment as Commercial Director and a Dublin/London growth focus**, aviation recruitment, transactions and industry events. Its recent feed also includes participation in the **Carlyle Aviation charity soccer tournament supporting the Cancer Clinical Research Trust**.
+Pivotal describes its aviation business as supporting **1,500+ aircraft assets**, approximately **€40bn of aircraft assets under management**, more than **50 warehouse facilities**, and a high level of repeat transaction activity.
 
-**Interview relevance:** connect commercial growth to service delivery, and team events to willingness to participate.
+This gives a stronger business question:
 
-Sources: [Pivotal LinkedIn](https://ie.linkedin.com/company/pivotal-corporate) · [Commercial Director announcement](https://www.linkedin.com/posts/pivotal-corporate_leadership-growth-commercialstrategy-activity-7465684778089037824-7-S-).
+**Possible question:** “With such a large aviation portfolio and a high level of repeat transaction activity, what information has to be most accurate and timely for the client teams?”
 
+Source: [Pivotal Corporate — Aviation](https://www.pivotalcorporate.com/aviation).
 
+## What about the company’s beginnings?
+
+**Founded in 2021  Shannon base  Expansion**
+
+Pivotal’s own material states that the group was **founded in 2021** and has grown substantially since then. Public company records also show the relevant Irish corporate entities being incorporated in 2021.
+
+I could not verify a reliable source for a specific minister attending a launch event, so that should **not** be used in interview preparation unless a primary or reputable source is found.
+
+A better question is:
+
+**Possible question:** “Pivotal has grown quickly since it was founded in 2021. What do you think has driven that growth, and where do you see the next stage coming from?”
 
 # Social Media Awareness
 
@@ -1167,59 +1185,31 @@ Source: [Pew Research Center — Americans’ Social Media Use 2025](https://www
 
 # Have You Any Questions for Us?
 
-Prepare these five. Ask **two or three that have not already been answered**, leaving room for a real conversation. Each starts with evidence and ends with something worth learning.
+Prepare **two or three** and use only the ones that have not already been answered.
 
+## Which work would I start with?
 
+**Reconciliations  Reporting  Administration**
 
-## How do you maintain standards as you grow?
+“Your role description mentions accounting and administration across the Client Service Teams. Which tasks would a co-op student usually start with, and who would review the work?”
 
-**Clare Echo  Growth  Service quality**
+## How do you maintain service quality as the business grows?
 
-“I read the Clare Echo report that Pivotal’s headcount had doubled over eighteen months. As the team grows, how do you maintain consistent client-service standards, and what would you want a co-op student to get right from the beginning?”
+**100+ staff  Four offices  Consistency**
 
-This connects research to the role’s **high-quality professional service**.
+“As Pivotal has grown across Shannon, Dublin, London and New York, how do you maintain consistent client-service standards and ways of working across the different teams?”
 
+## How could I contribute to a live transaction?
 
+**Recent deals  Checks  Internal clients**
 
-## How do junior staff learn from experienced colleagues?
-
-**40 Under 40  Mentoring  Development**
-
-“I saw David Talty recognised in Airline Economics’ 40 Under 40 and Michael Murphy listed among its mentors. How does that emphasis on developing people translate into supervision and feedback for co-op students?”
-
-This shows interest in **learning, responding to feedback and taking responsibility**.
-
-
-
-## Where could I contribute to transaction support?
-
-**Recent deals  Accounting  Administration**
-
-“Your recent deals page lists GGAM and MCAV transactions from July. Which accounting or administration tasks could a co-op student support on that kind of work, and how is the work checked before it reaches the client?”
-
-This connects commercial activity to **accurate records, review controls and useful contribution**.
-
-
-
-## How will growth affect the Client Service Teams?
-
-**Dublin / London  Coordination  Opportunity**
-
-“I read the announcement about Matthew Trotter’s appointment and the focus on Dublin and London. What does that growth mean for the Client Service Teams here, and would a student get opportunities to support colleagues across offices?”
-
-This connects the news to **teamwork and serving internal clients**.
-
-
+“Your recent deals page shows several large aviation transactions. What part of that workflow could a co-op student realistically support, and what checks happen before the work reaches the client?”
 
 ## What would excellent performance look like?
 
-**Proactive  Highly organised  Client service**
+**Proactive  Organised  Reliable**
 
-“Your role description asks for a proactive, self-motivated and highly organised student supporting accounting and administration. By the end of my first three months, what would make you say I was making a really useful contribution?”
-
-This is a strong final question because it repeats **their requirements** and asks how to deliver them.
-
-
+“By the end of my first three months, what would make you say that I was making a genuinely useful contribution to the team?”
 
 # Closing Pitch — What I Bring
 
