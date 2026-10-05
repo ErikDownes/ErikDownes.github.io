@@ -17,12 +17,9 @@ Alongside my studies, I have worked in retail and logistics, where being organis
 
 In my free time, I enjoy cycling, cooking, photography and gaming.
 
-
-
-```
 <details class="cv-details">
-  <summary>See UL CV</summary>
-```
+
+<summary>See UL CV</summary>
 
 ## Teamwork
 
