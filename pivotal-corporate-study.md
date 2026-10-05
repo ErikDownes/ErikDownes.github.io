@@ -47,36 +47,6 @@ We are currently seeking to hire a pro-active, self-motivated, and highly organi
 - A positive attitude, demonstrating enthusiasm and the desire to take on responsibility. A willingness to get involved in team issues and events.
 - An interest in financial services, and a genuine desire to learn how this can be used as a tool for adding value to a client’s business.
 
-# Acronyms and Glossary
-
-## DR | Duty / Responsibility
-
-A local label used on this preparation page to make the four main duty areas easy to reference. It is **not Pivotal terminology**.
-
-## JSR | Job-Specific Requirement
-
-A local label used to reference the five requirements in the job specification. It is **not Pivotal terminology**.
-
-## CSP | Corporate Service Provider
-
-A firm providing services such as company formation and management, accounting, company secretarial work, registered-office support, transaction administration and compliance support.
-
-## SPV | Special Purpose Vehicle
-
-A legal entity established for a defined transaction, asset or financing purpose. Its activities and risks are normally deliberately limited to that purpose.
-
-## KYC | Know Your Customer
-
-Checks used to establish and verify who a customer or relevant party is.
-
-## CDD | Customer Due Diligence
-
-The broader due-diligence process around identifying customers, beneficial owners, risk and the nature of the relationship.
-
-## AP / AR | Accounts Payable / Accounts Receivable
-
-**AP** concerns amounts the company owes; **AR** concerns amounts owed to the company.
-
 # Where This Type of Business Came From
 
 Corporate-service businesses developed because cross-border investments and financing structures often require **separate legal entities to be formed, governed, accounted for, documented and kept compliant**. Investors may understand the investment itself extremely well but still need local specialists to maintain the entity, books and records, board processes, filings, banking arrangements and transaction documentation.
