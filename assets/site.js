@@ -1584,7 +1584,7 @@
   };
 
   // Recall is deliberately hidden in the normal page view and exposed only
-  // inside the rehearsal overlay. Use a paragraph beginning "Recall chain:"
+  // inside the rehearsal overlay. Use a paragraph beginning "Breadcrumb:" or "Recall chain:"
   // in new Q&A content. "Recall:" and "Recall cue:" remain supported for older content.
   // Legacy bold-only first paragraphs are also treated as recall so existing
   // interview material keeps working without a bulk rewrite.
@@ -1592,7 +1592,7 @@
     if (!node?.matches) return false;
     if (node.matches('[data-recall-chain],.recall-chain')) return true;
     if (!node.matches('p')) return false;
-    return /^recall(?:\\s+(?:cue|chain))?\\s*:/i.test(cleanText(node.textContent));
+    return /^(?:breadcrumbs?|recall(?:\\s+(?:cue|chain))?)\\s*:/i.test(cleanText(node.textContent));
   };
 
   const isLegacyRecallNode = node => {
@@ -2157,7 +2157,7 @@
     }
 
     const recallText = recallNodes
-      .map(node => cleanText(node.textContent).replace(/^recall(?:\\s+(?:cue|chain))?\\s*:\\s*/i, '').trim())
+      .map(node => cleanText(node.textContent).replace(/^(?:breadcrumbs?|recall(?:\\s+(?:cue|chain))?)\\s*:\\s*/i, '').trim())
       .filter(Boolean)
       .join(' · ');
     recallNodes.forEach(node => node.remove());
@@ -2167,7 +2167,7 @@
     const answerSwitch = makeFocusSwitch('Answer', true, shown => {
       copy.hidden = !shown;
     });
-    const hintSwitch = makeFocusSwitch('Recall Chain', false, shown => {
+    const hintSwitch = makeFocusSwitch('Recall', false, shown => {
       hint.hidden = !shown || !hint.textContent;
     });
     if (!hint.textContent) hintSwitch.hidden = true;
@@ -2266,24 +2266,24 @@
         ensureSwitch(answerSwitch, true);
         ensureSwitch(hintSwitch, false);
         rehearsalStatus.textContent = `Read ${readCount} of 4`;
-        if (readCount === 4) readAgain.textContent = 'Use Recall Chain';
+        if (readCount === 4) readAgain.textContent = 'Use Recall';
         copy.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         return;
       }
       ensureSwitch(answerSwitch, false);
       ensureSwitch(hintSwitch, true);
-      rehearsalStatus.textContent = 'Recall Chain only';
+      rehearsalStatus.textContent = 'Recall only';
       readAgain.textContent = 'Read answer again';
       readCount = 0;
     });
 
     const recallOnly = document.createElement('button');
     recallOnly.type = 'button';
-    recallOnly.textContent = 'Recall Chain';
+    recallOnly.textContent = 'Recall';
     recallOnly.addEventListener('click', () => {
       ensureSwitch(answerSwitch, false);
       ensureSwitch(hintSwitch, true);
-      rehearsalStatus.textContent = 'Recall Chain only';
+      rehearsalStatus.textContent = 'Recall only';
     });
 
     const unaided = document.createElement('button');
@@ -2342,7 +2342,7 @@
       }
       try {
         videoStream = await navigator.mediaDevices.getUserMedia({
-          video: { facingMode: 'user', width: { ideal: 720 }, height: { ideal: 1280 }, aspectRatio: { ideal: 0.5625 } },
+          video: { facingMode: 'user', width: { ideal: 800 }, height: { ideal: 1000 }, aspectRatio: { ideal: 0.8 } },
           audio: true
         });
         video.hidden = false;
