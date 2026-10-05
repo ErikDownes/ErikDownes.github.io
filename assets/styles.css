@@ -3693,7 +3693,7 @@ article img.img-full,
 .answer-rehearsal-actions button,.answer-video-button,.answer-next-question{border:1px solid #cfd5dc;border-radius:999px;background:#fff;color:#30343b;padding:7px 12px;font:inherit;font-size:.78em;font-weight:700;cursor:pointer}
 .answer-rehearsal-actions button:hover,.answer-video-button:hover,.answer-next-question:hover{background:#f3f6fb;border-color:#aecbfa}
 .answer-focus-hint:not([hidden]){margin:12px 0 20px;padding:15px 17px;border-left:4px solid #1a73e8;border-radius:0 10px 10px 0;background:#f3f7fc;color:#243b53;font-size:.95em;font-weight:750;line-height:1.65}
-.answer-focus-hint:not([hidden])::before{content:"Recall Chain";display:block;margin-bottom:6px;color:#5f6b78;font-size:.72em;font-weight:900;letter-spacing:.1em;text-transform:uppercase}
+.answer-focus-hint:not([hidden])::before{content:"Breadcrumbs";display:block;margin-bottom:6px;color:#5f6b78;font-size:.72em;font-weight:900;letter-spacing:.1em;text-transform:uppercase}
 .answer-video-practice{display:grid;grid-template-columns:auto 1fr;align-items:center;gap:10px;margin:14px 0 4px;padding-top:14px;border-top:1px solid #e4e8ee}
 .answer-video-status{color:#6b7280;font-size:.8em}
 .answer-video-preview{grid-column:1/-1;width:min(100%,640px);max-height:46vh;border-radius:12px;background:#111}
@@ -3752,8 +3752,8 @@ article img.img-full,
 .answer-video-preview{
   width:min(100%,300px)!important;
   height:auto!important;
-  aspect-ratio:9/16;
-  max-height:70vh!important;
+  aspect-ratio:4/5;
+  max-height:58vh!important;
   object-fit:cover;
   border-radius:28px!important;
   background:#111;
