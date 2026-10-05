@@ -10,19 +10,17 @@ eyebrow: INTERVIEW · Q&A · RETRIEVAL PRACTICE
 ---
 ## Why did you choose Financial Maths?
 
-I always enjoyed maths at school — from understanding the concepts, making the connections and using  strategic problem solving.  I wanted to continue that at third level.
+I always enjoyed maths at school — understanding the concepts, making connections and using strategic problem-solving — and I wanted to continue that at third level.
 
-Financial Mathematics is delivering the broad education I was after by bringing statistics, programming, finance, accounting and data analysis all together in a single course — that same special blend of finance and technology that Cashbook is built around.
+Financial Mathematics is delivering the broad education I was after by bringing statistics, programming, finance, accounting and data analysis together in a single course — the same special blend of finance and technology that Cashbook is built around.
 
 I became interested in the power of technology and data — using Scratch, NetLogo and spreadsheets for school projects, and later Python, pandas and SQL to analyse larger datasets, model real situations and deal with uncertainty — a good fit for Cashbook’s focus on automation and troubleshooting.
 
 The financial side appealed to me because money matters at every level — from personal finances to businesses and the wider economy — and I liked the idea of using maths and data to support better decisions with real human impact.
 
-For me, Financial Mathematics brings together problem-solving, technology, data, finance and business, while also requiring you to communicate your conclusions clearly. It gives me a broad set of skills I can apply to real problems and different careers.
+That’s what attracts me to Cashbook too — understanding clients’ needs and using finance and technology to deliver practical solutions to real financial problems.
 
-That’s what attracts me to Cashbook too — the same special blend of finance and technology, combined with understanding clients’ needs and delivering practical solutions to real financial problems.
-
-**Breadcrumb:** maths → broad education → technology + data → modelling + uncertainty → money + finance → better decisions → human impact → business + communication → Cashbook: finance + technology + client needs + practical solutions
+**Breadcrumb:** maths → broad education → finance + technology → data + programming → modelling + uncertainty → money matters → better decisions + human impact → client needs → practical solutions
 
 
 
