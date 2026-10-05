@@ -2,29 +2,37 @@
 layout: doc
 handle: Finance & Commercial Awareness
 title: Finance & Commercial Awareness
-eyebrow: PREPARATION · BILLING · CASH FLOWS · COMMERCIAL CONTEXT
+eyebrow: INTERVIEW · FINANCE · CUSTOMERS · COMMERCIAL AWARENESS
 ---
 
-[← Preparation]({{ '/preparation.html' | relative_url }})
+[← Interview]({{ '/preparation.html' | relative_url }})
 
-## Financial Mathematics | How does Financial Mathematics connect to aircraft leasing?
+## Finance | Why are you interested in finance?
 
-A leased aircraft produces contractual cash flows while retaining a future asset value. That creates direct links to present value, discounting, risk, financing, lease rates and residual value.
+Finance interests me because money is involved in almost every important business decision. Good financial information helps a business understand what is happening, make better decisions and provide a reliable service to its customers.
 
-cash flows | discounting | risk | residual value
+I like that it combines **numbers, judgement and real-world consequences**.
 
-## Commercial value | What makes an aircraft commercially valuable?
+**Recall:** money → decisions → customers → judgement
 
-Value depends on more than the purchase price. Relevant factors include lease income, customer quality, technical condition, market demand, remaining useful life, financing cost and expected residual value.
+## Financial Operations | Why does accuracy matter in financial work?
 
-income | customer | condition | demand | residual value
+Financial information is used by other people to make decisions, so even a small error can affect payments, reports, customers or future decisions.
 
-### Billing
+That is why I would want the figures to be **accurate, traceable and supported by the right information**.
 
-Billing turns contractual information into financial transactions, so dates, rates, usage and other inputs need to be reliable, traceable and consistent with the agreement.
+**Recall:** accurate → traceable → dependable decisions
 
-## Business context | Why does Asset Management work with Commercial, Finance and Legal?
+## Commercial Awareness | What does commercial awareness mean to you?
 
-The same aircraft creates different questions for different teams. Commercial focuses on customer and placement decisions, Finance on cash flows and reporting, Legal on contractual rights and obligations, while Asset Management connects those perspectives to the aircraft and lease.
+Commercial awareness means understanding that your work sits inside a wider business. It is not enough just to complete a task correctly; you should understand **why it matters, who depends on it and how it affects the customer or the business**.
 
-commercial | finance | legal | asset
+**Recall:** task → purpose → customer → business
+
+## Customer Care | How does financial work support good customer care?
+
+Customers need to be able to trust the information and service they receive. Accurate records, timely responses and clear communication all contribute to that trust.
+
+For me, good financial work and good customer care are connected: **get the detail right, communicate clearly and follow through reliably**.
+
+**Recall:** accuracy → response → clarity → trust
