@@ -1894,9 +1894,33 @@
       ? `${pageName} › ${title.textContent}`
       : title.textContent;
 
+    // Interview pages commonly use the first bold-only paragraph as short recall
+    // cue words. Keep those separate from the answer so focus view can hide them
+    // by default everywhere and reveal them only on request.
+    const hint = document.createElement('div');
+    hint.className = 'answer-focus-hint';
+    hint.hidden = true;
+    const firstAnswerNode = copy.firstElementChild;
+    if (firstAnswerNode?.matches('p')) {
+      const strongs = Array.from(firstAnswerNode.querySelectorAll(':scope > strong'));
+      const otherMeaningful = Array.from(firstAnswerNode.childNodes).some(node => {
+        if (node.nodeType === Node.TEXT_NODE) return cleanText(node.textContent).length > 0;
+        if (node.nodeType !== Node.ELEMENT_NODE) return false;
+        return !node.matches('strong,br');
+      });
+      if (strongs.length && !otherMeaningful) {
+        hint.textContent = cleanText(firstAnswerNode.textContent);
+        firstAnswerNode.remove();
+      }
+    }
+
     const answerSwitch = makeFocusSwitch('Answer', true, shown => {
       copy.hidden = !shown;
     });
+    const hintSwitch = makeFocusSwitch('Hint words', false, shown => {
+      hint.hidden = !shown || !hint.textContent;
+    });
+    if (!hint.textContent) hintSwitch.hidden = true;
     const breadcrumbSwitch = makeFocusSwitch('Breadcrumbs', false, shown => {
       breadcrumbs.hidden = !shown;
     });
@@ -1956,7 +1980,7 @@
       play.setAttribute('aria-label', 'Play question and answer');
     });
 
-    controls.append(answerSwitch, breadcrumbSwitch, play, stop);
+    controls.append(answerSwitch, hintSwitch, breadcrumbSwitch, play, stop);
 
     copy.querySelectorAll('ul,ol').forEach(list => {
       if (list.children.length >= 5) list.classList.add('answer-columns');
@@ -1964,8 +1988,9 @@
 
     const { panel: practice } = window.coopPractice.create(copy.innerText, { visualOnly: true });
 
-    // Keep the answer primary. Recording is visual and compact; breadcrumbs are optional at the bottom.
-    focusContent.replaceChildren(title, controls, copy, practice, breadcrumbs);
+    // Hint words are off by default everywhere and, if enabled, sit below the
+    // question controls. Recording stays compact; breadcrumbs remain optional at the bottom.
+    focusContent.replaceChildren(title, controls, hint, copy, practice, breadcrumbs);
     linkKnownGlossaryTerms(copy);
     lastTrigger = heading;
     overlay.hidden = false;
