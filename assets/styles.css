@@ -3699,3 +3699,9 @@ article img.img-full,
 .answer-video-preview{grid-column:1/-1;width:min(100%,640px);max-height:46vh;border-radius:12px;background:#111}
 .answer-next-question{display:block;margin:18px 0 0 auto}
 @media(max-width:600px){.answer-video-practice{grid-template-columns:1fr}.answer-video-preview{grid-column:1}}
+
+
+/* Explicit Q&A metadata */
+.doc-body [data-recall-chain],.doc-body .recall-chain{display:none}
+.answer-focus-copy [data-recall-chain],.answer-focus-copy .recall-chain{display:none}
+.answer-focus-video-top{font-weight:800!important}
