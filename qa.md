@@ -10,11 +10,11 @@ eyebrow: INTERVIEW · Q&A · RETRIEVAL PRACTICE
 ---
 ## Why did you choose Financial Maths?
 
-I always enjoyed maths at school — understanding it, making connections and finding different ways to solve problems — and I wanted to continue that at third level.
+I always enjoyed maths at school — from understanding the concepts, making the connections and using  strategic problem solving.  I wanted to continue that at third level.
 
-  Financial Mathematics  delivers a broad education with  maths and statistics alongside programming, data analysis, finance and accounting 
+Financial Mathematics is delivering the broad education I was after by bringing statistics, programming, finance, accounting and data analysis all together in a single course — that same special blend of finance and technology that Cashbook is built around.
 
-I became interested in the power of technology and data — using Scratch, NetLogo and spreadsheets for school projects, and later Python, pandas and SQL to analyse larger datasets, model real situations and deal with uncertainty.
+I became interested in the power of technology and data — using Scratch, NetLogo and spreadsheets for school projects, and later Python, pandas and SQL to analyse larger datasets, model real situations and deal with uncertainty — a good fit for Cashbook’s focus on automation and troubleshooting.
 
 The financial side appealed to me because money matters at every level — from personal finances to businesses and the wider economy — and I liked the idea of using maths and data to support better decisions with real human impact.
 
