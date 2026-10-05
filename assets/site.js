@@ -2153,6 +2153,13 @@
       '<path d="M6.5 11.5v.8a5.5 5.5 0 0 0 11 0v-.8M12 17.8V21M9 21h6"></path>' +
       '</svg>';
 
+    const stopButton = document.createElement('button');
+    stopButton.type = 'button';
+    stopButton.className = 'answer-audio-stop';
+    stopButton.textContent = 'Stop';
+    stopButton.hidden = true;
+    stopButton.setAttribute('aria-label', 'Stop audio recording');
+
     const meter = document.createElement('span');
     meter.className = 'answer-audio-meter';
     meter.hidden = true;
@@ -2175,7 +2182,7 @@
     progress.value = 0;
     progress.setAttribute('aria-label', 'Recording progress towards suggested answer time');
 
-    controls.append(answerButton, micButton, meter, timer, progress);
+    controls.append(answerButton, micButton, stopButton, meter, timer, progress);
 
     const recorderArea = document.createElement('section');
     recorderArea.className = 'answer-audio-recorder';
@@ -2265,7 +2272,9 @@
       stopMeter();
       micButton.classList.remove('is-recording');
       micButton.setAttribute('aria-label', 'Start audio recording');
+      stopButton.hidden = true;
     };
+    stopButton.addEventListener('click', stopAudio);
     overlay._stopAudio = stopAudio;
     overlay._stopVideo = null;
 
@@ -2304,6 +2313,7 @@
           stopMeter();
           micButton.classList.remove('is-recording');
           micButton.setAttribute('aria-label', 'Start audio recording');
+          stopButton.hidden = true;
 
           if (!audioChunks.length) return;
 
@@ -2363,13 +2373,15 @@
         }, 250);
         startMeter(audioStream);
         micButton.classList.add('is-recording');
-        micButton.setAttribute('aria-label', 'Stop audio recording');
+        micButton.setAttribute('aria-label', 'Recording audio');
+        stopButton.hidden = false;
       } catch (_) {
         audioStream?.getTracks().forEach(track => track.stop());
         audioStream = null;
         stopClock();
         stopMeter();
         micButton.classList.remove('is-recording');
+        stopButton.hidden = true;
         mediaMessage.textContent = 'Microphone permission is needed.';
         mediaMessage.hidden = false;
       }
