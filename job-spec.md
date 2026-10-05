@@ -3,48 +3,82 @@ layout: doc
 permalink: /job-spec.html
 handle: Job Spec
 nav_order: 39
-description: Pivotal Corporate Co-Op Student / Corporate Administrator job specification.
-eyebrow: PIVOTAL CORPORATE · CO-OP STUDENT · CORPORATE ADMINISTRATOR
+description: HSE Mid-West Co-Op Finance job specification.
+eyebrow: HSE MID-WEST · FINANCE · CO-OP
 public_mode: true
 title: "Job Spec"
 ---
 
-## Pivotal Corporate – Co-Op Student/Corporate Administrator
+## HSE Mid-West – Co-Op Finance
 
-Pivotal Corporate is an independent, solutions driven firm with extensive experience assisting US based investors to establish and grow their European investments. We partner with our clients at every stage in the process using our local networks in a number of jurisdictions to ensure their project runs smoothly from the initial assessment phase through to the project being fully operational.
+### Job Title and Grade
 
-With our client focused and solutions driven delivery, we have the ability to adapt to the ever-changing needs of our clients quickly and efficiently, becoming the pivot point for their business and allowing them to concentrate on their core business needs as they grow.
+**Co-Op Finance**
 
-Delivery is what sets us apart from other firms. Our clients appreciate our unrivalled responsiveness and our passion and dedication. We pride ourselves on being accessible, reliable, practical, and professional at all times.
+### Location of Post
 
-We are currently seeking to hire a pro-active, self-motivated, and highly organised student to join the business. This role will support our Client Service Teams in providing Accounting & Administration services to a portfolio of clients, ensuring that our clients are provided with a high-quality professional service.
+**HSE Mid West – Finance Dept**
 
-## Duties and Responsibilities:
+### Details of Service
 
-- To develop a basic understanding of the mechanics of company administration and develop business like relationships with intermediaries and internal clients with whom you will come into regular contact.
-- Demonstrate a willingness to apply high standards of client care to all dealings with intermediaries and internal clients.
-- Duties as set out by senior members of staff including (but not limited to):
-  - Support the processing of journal entries and account reconciliations.
-  - Assist with accounts payable and accounts receivable activities
-  - Assist with VAT, tax and regulatory reporting processes
-  - Help maintain accurate financial records and supporting documentation
-  - Support compliance with company policies and accounting standards
-  - Support special projects and process improvement initiatives.
-  - Conduct research into financial, accounting and market topics as required.
-  - Participate in team meetings and contribute ideas for operational improvement
-- Deal with day-to-day administration tasks assigned by company secretarial group including (but not limited to):
-  - Maintenance of internal schedules and registers;
-  - Process KYC and CDD requirement to ensure compliance with statutory requirements; and
-  - Organise and facilitate for the signing of regulatory and legal documentation.
+**HSE Mid-West Health Region**
 
-## Job Specific Requirements:
+The HSE Mid-West Health Region was established to manage and deliver all public health and social care services for Limerick, Clare and North Tipperary serving a population of over 413,059 people. The redesign of services allows for new pathways to be developed between acute hospitals, community services, primary care, health & wellbeing and voluntary sectors to develop more integrated, patient-centred care across the region.
 
-- Organised, detail-oriented individual with well-developed critical thinking skills and possesses the ability to manage multiple tasks in a fast-paced environment.
-- Strong written and verbal skills.
-- Working knowledge of Microsoft Word, Excel, and Outlook.
-- A positive attitude, demonstrating enthusiasm and the desire to take on responsibility. A willingness to get involved in team issues and events.
-- An interest in financial services, and a genuine desire to learn how this can be used as a tool for adding value to a client’s business.
+HSE Mid-West includes all hospital, community healthcare and public health services in the region. This includes:
 
-## Slides
+**Mid West Acute Hospitals**
 
-[Open the Job Description Slides](https://docs.google.com/presentation/d/1CG_yaUNqHwJVuglcLoc6CLIq60AG7UGlTv5gwQuNS4s/present)
+- University Hospital Limerick
+- University Maternity Hospital Limerick
+- Ennis Hospital
+- Nenagh Hospital
+- Croom Hospital
+- St John’s Hospital (s38 voluntary hospital)
+
+**Mid West Community Healthcare Services**
+
+Deliver a broad range of community services, provided within and outside of the acute hospital system, and includes Primary Care, Older Persons, Disabilities, Mental Health, and Health & Wellbeing. Community services are delivered through a range of direct and indirect services delivered directly or through partnerships with HSE teams, Section 38/39 agencies, and private providers under SLA agreements.
+
+**Public Health Mid-West**
+
+The Public Health team works to protect, support, enable, and advise on the health and wellbeing of the population. They deliver services across four public health domains:
+
+- Health Protection
+- Health Improvement
+- Health Service Improvement
+- Health Intelligence
+
+The current governance structure in the Mid West sees healthcare services driven via an interim Integrated Healthcare Area (IHA) structure that is presently based around care group structures with Acutes and Older Persons Services sitting in one IHA and all other Community Healthcare Services sitting under the other IHA. It is expected that the Mid West will move to a geographical IHA structure over the coming years as services develop further and in line with other regions.
+
+A key function of the role will be to support these IHA structures and any transition to new structures in future.
+
+### Reporting Relationship
+
+**Finance Manager or assigned manager**
+
+### Job Description / Duties
+
+Working in the Finance Department the position involves working in all aspects of finance, including:
+
+- Assisting with the preparation of month end close off
+- Assisting with the preparation of monthly financial reconciliations in respect of Pay, Non-Pay and Income
+- Ensuring compliance with Finance policies and procedures in respect of all income and expenditure transaction
+- Working on Patient Level Cost and Activity Based Funding Annual Returns
+- Collating consultant private insurer claims for submission
+- Processing AP payments on SAP Financials
+- Ensure deadlines are met and that service levels are maintained
+- Work on Ad-hoc projects as they arise
+- Any other duties assigned by your line manager to meet service need
+
+The role will involve using integrated financial management systems – **SAP Financials** and the suite of Microsoft packages e.g. **Word, Excel, Outlook, Power Point** etc.
+
+Detailed training and review on all aspect of work will be carried out.
+
+The above Job Description is not intended to be a comprehensive list of all duties involved and consequently, the post holder may be required to perform other duties as appropriate to the post which may be assigned to him/her from time to time and to contribute to the development of the post while in office.
+
+### Candidate
+
+The ideal candidate will be a **highly motivated, flexible and conscientious graduate**.
+
+**Initiative and excellent interpersonal and communication skills** are also important requirements.
