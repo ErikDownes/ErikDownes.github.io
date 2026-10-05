@@ -11,9 +11,7 @@ image: /assets/erik-profile-200kb.jpg
 image_alt: Erik Downes
 eyebrow: FINANCIAL MATHEMATICS · UNIVERSITY OF LIMERICK
 ---
-I am a **third-year Financial Mathematics student at the University of Limerick** with a strong interest in **financial services, data analysis and applied problem solving**.
-
-LM058 is a four-year Financial Mathematics degree combining **mathematics, probability and statistics, data analysis, programming, finance and accounting**, with **Cooperative Education in Year 3**. The programme moves from mathematical and computational foundations into increasingly specialised work in financial mathematics, stochastic modelling, statistical data science and quantitative finance.
+I am a **third-year Financial Mathematics student at the University of Limerick** with a strong interest in **financial services, data analysis and applied problem solving**. My degree develops a broad quantitative foundation across **calculus, linear algebra, probability and statistics, mathematical modelling, numerical methods and financial mathematics**, supported by **programming, data analysis, finance and accounting**, with **Cooperative Education in Year 3**.
 
 I enjoy using these skills to analyse real problems, build financial models and visualisations, and communicate quantitative information clearly. This work has strengthened my **critical thinking, accuracy and attention to detail**.
 
