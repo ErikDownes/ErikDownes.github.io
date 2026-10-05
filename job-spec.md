@@ -9,7 +9,7 @@ public_mode: true
 title: "Job Spec"
 ---
 
-## Cashbook Limited – Implementation Associate (TIMS team)
+<a id="cashbook-implementation"></a>\n\n## Cashbook Limited – Implementation Associate (TIMS team)
 
 ### Interview
 
@@ -79,7 +79,7 @@ This is a **full-time paid placement** for the period of internship: **5 days an
 
 ---
 
-## HSE Mid-West – Co-Op Finance
+<a id="hse-finance"></a>\n\n## HSE Mid-West – Co-Op Finance
 
 ### Job Title and Grade
 
