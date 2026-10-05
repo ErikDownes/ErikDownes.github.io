@@ -9,6 +9,18 @@ public_mode: true
 ---
 
 
+## SQL Bank Reconciliation Lab — Cashbook Preparation
+
+**Microsoft SQL → bank transactions → ledger matching → exceptions → cash application**
+
+This is a working practice project for the Cashbook Limited Implementation Associate interview. It uses a small Microsoft SQL database to practise **bank reconciliation, cash application, collections, matching logic and exception reporting**.
+
+The project is deliberately structured so the reconciliation queries are not pre-solved. Erik has the tables and sample data, but must build the joins, identify exceptions, explain false-match risk and produce a reconciliation summary himself.
+
+[Open the SQL Bank Reconciliation Lab →]({{ '/sql-bank-reconciliation.html' | relative_url }})
+
+
+
 ## Pivotal Office Map — AI-Assisted Leaflet Project
 
 **Addresses → AI-assisted build → interactive map → clear client-facing communication**
