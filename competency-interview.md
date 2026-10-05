@@ -122,11 +122,17 @@ Use an example where the feedback changed what you did.
 
 Listen first, make sure you understand the point, correct the work and show how you prevented the same issue recurring. The goal is not to prove the feedback was wrong; it is to show that you can use it professionally.
 
-## Mistake | Tell me about a mistake you made
+## Mistake | Tell me about a time you made a mistake
 
-Choose a real but proportionate example. State the mistake directly, explain how you corrected it and focus on the control or habit you added afterwards.
+**Key line:** I do not just correct the individual mistake. I look at the wider system and ask whether the process can be improved so that the same kind of human error is less likely to happen again.
 
-Avoid disguising a strength as a mistake. A good answer shows accountability and learning.
+At O'Mahony's, I was working from a **morning printout** of the order information. The problem was that the working record could still change after the printout had been produced. An entry added at 8:30 or 9:00 would not appear on the paper copy I was using, so an order could be missed and delayed by a day.
+
+I recognised that relying on a static printout was the weakness in the process. I raised it and asked for my work login to have access to the **live Office 365 Excel file** instead. That meant I could work from the current document rather than an outdated snapshot. The procedural change was implemented, so the information I was checking was always live.
+
+The important lesson for me was broader than that one order. When a mistake happens, I would first correct it and take responsibility, but then I would look for the **system cause** as well. In a data process that might mean validation rules, restricting invalid data types, reconciliation checks, clearer ownership or replacing a legacy paper step with a live controlled source.
+
+That reduces dependence on memory and manual checking. Good accuracy is not only about telling people to be more careful; it is about **designing a process in which mistakes are harder to make and easier to detect**.
 
 ## Disagreement | Tell me about a time you disagreed with someone
 
