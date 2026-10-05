@@ -77,7 +77,6 @@ Pivotal Corporate is the current case study because its co-op role makes the sec
 
 The company page is deliberately one level below the sector page so the learning remains reusable for another corporate services employer.
 
-[Open Pivotal Corporate →]({{ '/pivotal-corporate.html' | relative_url }})
 
 ## Evidence I can bring into an interview
 
