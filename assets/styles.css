@@ -4087,3 +4087,26 @@ article img.img-full,
   .answer-audio-attempt audio{grid-column:1;grid-row:auto}
   .answer-audio-actions{justify-content:flex-start}
 }
+
+
+/* Explicit stop control shown only while interview audio is recording. */
+.answer-audio-stop{
+  min-width:64px;
+  height:42px;
+  padding:0 15px;
+  border:1px solid #d7a7a2;
+  border-radius:10px;
+  background:#fff;
+  color:#a12d24;
+  font:inherit;
+  font-size:.84rem;
+  font-weight:850;
+  cursor:pointer;
+}
+.answer-audio-stop[hidden]{display:none!important}
+.answer-audio-stop:hover,
+.answer-audio-stop:focus-visible{
+  background:#fce8e6;
+  border-color:#c9857f;
+  outline:none;
+}
