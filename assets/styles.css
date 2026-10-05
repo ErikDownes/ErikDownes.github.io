@@ -3791,3 +3791,150 @@ article img.img-full,
     max-height:48vh!important;
   }
 }
+
+
+/* Simple interview focus controls: answer by default, then Hide / Prompt / Camera / Mic. */
+.answer-focus-simple-tools{
+  display:flex!important;
+  flex-wrap:nowrap!important;
+  align-items:center!important;
+  gap:10px!important;
+  overflow-x:auto;
+  padding-bottom:14px!important;
+}
+.answer-focus-simple-tools .answer-simple-text-button{
+  min-width:76px;
+  height:42px;
+  padding:0 16px!important;
+  border-radius:10px!important;
+  font-size:.86rem!important;
+  font-weight:800!important;
+  white-space:nowrap;
+}
+.answer-focus-simple-tools .answer-simple-icon-button{
+  display:inline-grid;
+  place-items:center;
+  flex:0 0 42px;
+  width:42px;
+  height:42px;
+  padding:0!important;
+  border-radius:10px!important;
+}
+.answer-simple-icon-button svg{
+  width:23px;
+  height:23px;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.8;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+.answer-focus-simple-tools button.is-active,
+.answer-focus-simple-tools button.is-recording{
+  background:#eef4ff!important;
+  border-color:#7aa7e8!important;
+  color:#174ea6!important;
+}
+.answer-focus-simple-tools button:disabled{
+  opacity:.42;
+  cursor:not-allowed;
+}
+.answer-audio-meter{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:3px;
+  width:38px;
+  height:42px;
+  flex:0 0 38px;
+}
+.answer-audio-meter[hidden]{display:none!important}
+.answer-audio-meter i{
+  display:block;
+  width:3px;
+  height:7px;
+  border-radius:99px;
+  background:currentColor;
+  transition:height .07s linear;
+}
+.answer-simple-stage{
+  min-height:calc(100vh - 190px);
+}
+.answer-simple-stage .answer-focus-copy{
+  margin-top:0;
+  font-size:clamp(1.05rem,1.22vw,1.3rem);
+  line-height:1.72;
+}
+.answer-prompt-board[hidden]{display:none!important}
+.answer-prompt-board{
+  min-height:calc(100vh - 220px);
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  align-content:center;
+  gap:14px;
+  padding:20px 0 34px;
+}
+.answer-prompt-card{
+  min-height:112px;
+  display:grid;
+  grid-template-columns:34px minmax(0,1fr);
+  align-items:center;
+  gap:12px;
+  padding:20px 22px;
+  border:1px solid #dce3eb;
+  border-radius:16px;
+  background:#f8fafc;
+  color:#243447;
+  box-shadow:0 4px 16px rgba(15,23,42,.05);
+}
+.answer-prompt-number{
+  display:grid;
+  place-items:center;
+  width:30px;
+  height:30px;
+  border:1px solid #cad4df;
+  border-radius:50%;
+  color:#667788;
+  font-size:.72rem;
+  font-weight:900;
+}
+.answer-prompt-text{
+  font-size:clamp(1.18rem,1.55vw,1.72rem);
+  font-weight:800;
+  line-height:1.25;
+}
+.answer-simple-media{
+  display:grid;
+  justify-items:center;
+  gap:12px;
+}
+.answer-simple-media:has(.answer-video-preview[hidden]):has(.answer-audio-playback[hidden]):has(.answer-media-message[hidden]){
+  display:none;
+}
+.answer-video-preview{
+  width:min(520px,70vw)!important;
+  aspect-ratio:4/5!important;
+  max-height:62vh!important;
+  border-radius:18px!important;
+}
+.answer-audio-playback{
+  width:min(620px,100%);
+  margin-top:8px;
+}
+.answer-media-message{
+  margin:6px 0 0;
+  color:#6b7280;
+  font-size:.82rem;
+  text-align:center;
+}
+@media(max-width:700px){
+  .answer-focus-simple-tools{gap:7px!important}
+  .answer-focus-simple-tools .answer-simple-text-button{min-width:68px;padding:0 12px!important}
+  .answer-prompt-board{
+    grid-template-columns:1fr;
+    align-content:start;
+    min-height:0;
+  }
+  .answer-prompt-card{min-height:86px}
+  .answer-video-preview{width:min(82vw,420px)!important}
+}
