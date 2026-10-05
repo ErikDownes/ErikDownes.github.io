@@ -76,13 +76,9 @@ Pivotal is headquartered in **Shannon**, with offices in **Dublin, London and Ne
 
 The company reports **100+ staff overall**. Reliable office-by-office headcounts have not been found.
 
-[Explore the zoomable office map and addresses →]({{ '/pivotal-office-map.html' | relative_url }})
-
-The map uses **Leaflet**, an open-source JavaScript mapping library, with **OpenStreetMap** tiles. Select a city to zoom in.
-
-Sources: [Pivotal — offices and staff](https://www.pivotalcorporate.com/about) · [Office address listings](https://ie.linkedin.com/company/pivotal-corporate).
 
 
+&nbsp;
 
 ## Who does Pivotal mainly support?
 
