@@ -3,7 +3,7 @@ layout: doc
 permalink: /academic-record.html
 handle: Results
 title: Results
-nav_order: 30
+nav_order: 72
 eyebrow: FINANCIAL MATHEMATICS · UNIVERSITY OF LIMERICK
 public_mode: true
 ---
