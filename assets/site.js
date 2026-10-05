@@ -1886,14 +1886,6 @@
       return button;
     };
 
-    const breadcrumbs = document.createElement('div');
-    breadcrumbs.className = 'answer-focus-breadcrumbs answer-focus-breadcrumb-path';
-    breadcrumbs.hidden = true;
-    const pageName = cleanText(document.querySelector('.doc-title, .page-title, h1')?.textContent || document.title);
-    breadcrumbs.textContent = pageName && pageName !== title.textContent
-      ? `${pageName} › ${title.textContent}`
-      : title.textContent;
-
     // Interview pages commonly use the first bold-only paragraph as short recall
     // cue words. Keep those separate from the answer so focus view can hide them
     // by default everywhere and reveal them only on request.
@@ -1917,13 +1909,10 @@
     const answerSwitch = makeFocusSwitch('Answer', true, shown => {
       copy.hidden = !shown;
     });
-    const hintSwitch = makeFocusSwitch('Hint words', false, shown => {
+    const hintSwitch = makeFocusSwitch('Pointer words', false, shown => {
       hint.hidden = !shown || !hint.textContent;
     });
     if (!hint.textContent) hintSwitch.hidden = true;
-    const breadcrumbSwitch = makeFocusSwitch('Breadcrumbs', false, shown => {
-      breadcrumbs.hidden = !shown;
-    });
 
     const play = document.createElement('button');
     play.type = 'button';
@@ -1980,7 +1969,7 @@
       play.setAttribute('aria-label', 'Play question and answer');
     });
 
-    controls.append(answerSwitch, hintSwitch, breadcrumbSwitch, play, stop);
+    controls.append(answerSwitch, hintSwitch, play, stop);
 
     copy.querySelectorAll('ul,ol').forEach(list => {
       if (list.children.length >= 5) list.classList.add('answer-columns');
@@ -1988,9 +1977,9 @@
 
     const { panel: practice } = window.coopPractice.create(copy.innerText, { visualOnly: true });
 
-    // Hint words are off by default everywhere and, if enabled, sit below the
-    // question controls. Recording stays compact; breadcrumbs remain optional at the bottom.
-    focusContent.replaceChildren(title, controls, hint, copy, practice, breadcrumbs);
+    // Pointer words are off by default everywhere and, if enabled, sit below the
+    // question controls. Recording stays compact and separate.
+    focusContent.replaceChildren(title, controls, hint, copy, practice);
     linkKnownGlossaryTerms(copy);
     lastTrigger = heading;
     overlay.hidden = false;
