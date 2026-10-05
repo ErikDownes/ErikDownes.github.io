@@ -16,3 +16,7 @@ I am a **third-year Financial Mathematics student at the University of Limerick*
 My degree combines mathematics, statistics, finance and programming. I enjoy using these skills to analyse real problems, build financial models and visualisations, and communicate quantitative information clearly. This work has strengthened my **critical thinking, accuracy and attention to detail**.
 
 Outside university, I have worked in **retail and logistics**, where being organised, reliable and responsive matters. These roles have developed my teamwork, communication and ability to take responsibility while managing competing tasks. I am particularly interested in opportunities where I can contribute to a professional team, continue learning, and use quantitative and financial skills to **add value for clients and the wider business**.
+
+**Current study:** Year 3 · Semester 1 · **BSc Financial Mathematics (LM058)**. Years 1 and 2 are complete, and Semester 2 is my **Cooperative Education placement**.
+
+[View my third-year Financial Mathematics modules]({{ '/education.html' | relative_url }})
