@@ -28,3 +28,4 @@ jobs:
             git commit -m "Build self-hosted Job Spec slide gallery asset"
             git push
           fi
+          echo "Self-hosted gallery build complete"
