@@ -511,6 +511,67 @@
 
   await syncFreshNavigation();
 
+  // About is a small page group rather than three competing top-level tabs.
+  // Build it after the fresh-nav pass so it also works when an older HTML page
+  // is still in the browser/CDN cache.
+  const setupAboutMenu = () => {
+    const nav = document.getElementById('mainNav');
+    if (!nav) return;
+
+    const rootHref = document.querySelector('.brand')?.href || new URL('/', location.origin).href;
+    const rootPath = normalisePath(rootHref);
+    const aboutItem = Array.from(nav.querySelectorAll(':scope > .navitem')).find(item => {
+      const label = item.querySelector(':scope > .navlabel[href]');
+      return label && normalisePath(label.href) === rootPath;
+    });
+    if (!aboutItem) return;
+
+    aboutItem.removeAttribute('data-question-menu');
+    aboutItem.classList.add('nav-about', 'nav-about-parent', 'has-submenu');
+
+    const label = aboutItem.querySelector(':scope > .navlabel[href]');
+    if (label) {
+      label.setAttribute('aria-haspopup', 'true');
+      label.setAttribute('aria-expanded', 'false');
+    }
+
+    let menu = aboutItem.querySelector(':scope > .dropmenu');
+    if (!menu) {
+      menu = document.createElement('div');
+      aboutItem.appendChild(menu);
+    }
+    menu.className = 'dropmenu about-menu';
+    menu.replaceChildren();
+
+    const links = [
+      { label: 'About Me', href: rootHref },
+      { label: 'UL CV', href: new URL('pivotal-corporate-study.html', rootHref).href },
+      { label: 'Results', href: new URL('academic-record.html', rootHref).href }
+    ];
+
+    links.forEach(entry => {
+      const link = document.createElement('a');
+      link.href = entry.href;
+      link.textContent = entry.label;
+      if (normalisePath(entry.href) === currentPath) link.setAttribute('aria-current', 'page');
+      menu.appendChild(link);
+    });
+
+    let toggle = aboutItem.querySelector(':scope > .navtoggle');
+    if (!toggle) {
+      toggle = document.createElement('button');
+      toggle.type = 'button';
+      toggle.className = 'navtoggle';
+      toggle.dataset.navToggle = '';
+      toggle.textContent = '▾';
+      toggle.setAttribute('aria-label', 'Open About menu');
+      toggle.setAttribute('aria-expanded', 'false');
+      aboutItem.insertBefore(toggle, menu);
+    }
+  };
+
+  setupAboutMenu();
+
   /* -----------------------------------------------------------------------
      Navigation: same open/pin behaviour as the Education site.
      ----------------------------------------------------------------------- */
@@ -560,7 +621,8 @@
   document.querySelectorAll('.navitem > .navlabel').forEach(label => {
     label.addEventListener('click', event => {
       const targetPath = normalisePath(label.href);
-        const isPageMenu = /\/(?:aviation|portfolio)\.html$/.test(targetPath);
+      const isPageMenu = /\/(?:aviation|portfolio)\.html$/.test(targetPath) ||
+        label.closest('.navitem')?.classList.contains('nav-about-parent');
       const isLm058Overview = /\/education\.html$/.test(targetPath);
       if (isLm058Overview) return;
       if (isPageMenu) {
@@ -602,10 +664,16 @@
     const isCareerParent = /\/career\.html$/.test(labelPath) && /\/career\//.test(currentPath);
     const isAviationParent = /\/aviation\.html$/.test(labelPath) && /\/aviation\//.test(currentPath);
     const isEducationParent = /\/(?:education|coursework)\.html$/.test(labelPath) && /\/modules\//.test(currentPath);
-    const isCurrent = labelPath === currentPath || isCareerParent || isAviationParent || isEducationParent;
+    const rootHref = document.querySelector('.brand')?.href || new URL('/', location.origin).href;
+    const aboutChildPaths = [
+      normalisePath(new URL('pivotal-corporate-study.html', rootHref).href),
+      normalisePath(new URL('academic-record.html', rootHref).href)
+    ];
+    const isAboutParent = labelPath === normalisePath(rootHref) && aboutChildPaths.includes(currentPath);
+    const isCurrent = labelPath === currentPath || isCareerParent || isAviationParent || isEducationParent || isAboutParent;
     const item = label.closest('.navitem');
     item?.classList.toggle('is-current', isCurrent);
-    if (isCurrent) label.setAttribute('aria-current', 'page');
+    if (isCurrent && !isAboutParent) label.setAttribute('aria-current', 'page');
     else label.removeAttribute('aria-current');
   });
 
