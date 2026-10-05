@@ -1417,12 +1417,36 @@
     return nodes;
   };
 
+  // A bold-only first paragraph under an interview question is a recall cue,
+  // not part of the visible answer. Keep it in the source so focus view can
+  // offer it as optional Pointer words, but hide it on the normal page.
+  const pointerWordsNodeFor = heading => {
+    const first = sourceNodesFor(heading)[0];
+    if (!first?.matches?.('p')) return null;
+    const strongs = Array.from(first.querySelectorAll(':scope > strong'));
+    const otherMeaningful = Array.from(first.childNodes).some(node => {
+      if (node.nodeType === Node.TEXT_NODE) return cleanText(node.textContent).length > 0;
+      if (node.nodeType !== Node.ELEMENT_NODE) return false;
+      return !node.matches('strong,br');
+    });
+    return strongs.length && !otherMeaningful ? first : null;
+  };
+
+  const hideInlinePointerWords = () => {
+    practiceHeadings().forEach(heading => {
+      const pointerWords = pointerWordsNodeFor(heading);
+      if (!pointerWords) return;
+      pointerWords.dataset.pointerWords = '';
+      pointerWords.hidden = true;
+    });
+  };
+
   const sourceHeadingText = heading => cleanText(
     heading.dataset.sourceHeading || `${heading.dataset.menuLabel || ''} | ${heading.dataset.questionText || heading.textContent}`
   );
 
   const answerTextFor = heading => sourceNodesFor(heading)
-    .filter(node => !node.matches?.('.answer-focus-chain'))
+    .filter(node => !node.matches?.('.answer-focus-chain,[data-pointer-words]'))
     .map(node => node.querySelector?.('.aercap-source')?.textContent || node.textContent || '')
     .join(' ')
     .replace(/\s+/g, ' ')
@@ -1616,6 +1640,7 @@
 
   restoreMovedSections();
   restoreSavedAnswers();
+  hideInlinePointerWords();
 
   /* -----------------------------------------------------------------------
      Audio state shared by inline play, focus play and page Listen.
@@ -2025,9 +2050,9 @@
 
     const { panel: practice } = window.coopPractice.create(copy.innerText, { visualOnly: true });
 
-    // Pointer words are off by default everywhere and, if enabled, sit below the
-    // question controls. Recording stays compact and separate.
-    focusContent.replaceChildren(title, controls, hint, copy, practice);
+    // Pointer words exist only in focus view, are off by default, and appear
+    // below the answer when switched on. Recording stays compact and separate.
+    focusContent.replaceChildren(title, controls, copy, hint, practice);
     linkKnownGlossaryTerms(copy);
     lastTrigger = heading;
     overlay.hidden = false;
