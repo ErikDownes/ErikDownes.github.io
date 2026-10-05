@@ -7,6 +7,18 @@ nav_order: 90
 eyebrow: DASHBOARDS · CALCULATORS · APPLIED WORK
 public_mode: true
 ---
+## Phone Barcode Scanner — Work Problem to Small Digital Tool
+
+**Operational exception → mobile camera → barcode decoding → faster checking**
+
+This project came from a simple work observation: identifiers such as barcodes are useful only when they can be captured and checked easily. Instead of manually typing a long number, I built a small browser tool that lets a phone **take a photo of a barcode and decode it**.
+
+It uses **HTML, CSS and JavaScript** with a browser-based barcode library. The aim is not to replace Booksolve or a warehouse system; it is to show how a repetitive manual step can become a small, usable digital workflow.
+
+On a phone, the file control opens the camera. The selected image is analysed in the browser and the decoded value is displayed so it can be copied or checked.
+
+[Try the phone barcode scanner →]({{ '/barcode-scanner.html' | relative_url }})
+
 ## Pivotal Office Map — AI-Assisted Leaflet Project
 
 **Addresses → AI-assisted build → interactive map → clear client-facing communication**
