@@ -15,7 +15,7 @@ That matters in interviews as well as in work. I try to identify the **sound bit
 
 I am comfortable listening and thinking before I speak. I do not mind silence, and I would rather give a useful answer than fill the space for the sake of it.
 
-**Recall cue:** Audience → useful point → evidence → check understanding.
+**Recall:** Audience → useful point → evidence → check understanding.
 
 ## PCP example | Turn the calculation into a decision
 
@@ -39,7 +39,7 @@ I try to be accurate and dependable without becoming overly formal or distant. I
 
 A friendly interaction still needs to be professional. A professional interaction does not need to feel cold.
 
-**Recall cue:** Listen → understand → explain → follow through.
+**Recall:** Listen → understand → explain → follow through.
 
 ## Explain clearly | How would you explain something technical to a non-technical person?
 
@@ -49,7 +49,7 @@ From there, I would identify the **prerequisite knowledge** they need, pitch the
 
 I would then **scaffold the explanation** from something familiar, using a practical example, analogy or visual where useful. Finally, I would check their understanding and adjust the explanation if necessary.
 
-**Recall cue:** Profile → prerequisites → level → scaffold → example → check.
+**Recall:** Profile → prerequisites → level → scaffold → example → check.
 
 ### Example | Explaining aircraft leasing at three levels
 
@@ -71,7 +71,7 @@ I would focus on the basic relationship.
 
 I would avoid terms such as **residual value, discounted cash flow, credit risk or yield** unless they were necessary.
 
-**Recall cue:** Owner → airline uses → payments → aircraft returns.
+**Recall:** Owner → airline uses → payments → aircraft returns.
 
 ### Middle-tech audience | Commercially aware non-specialist
 
@@ -89,7 +89,7 @@ At this level, I would begin connecting the lease to the wider commercial decisi
 | Can it be leased again? | Future market demand |
 | Is the airline likely to meet its obligations? | Customer / credit risk |
 
-**Recall cue:** Asset → income → condition → future value → next lease.
+**Recall:** Asset → income → condition → future value → next lease.
 
 ### High-tech audience | Financial or quantitative colleague
 
@@ -108,7 +108,7 @@ At this level, I could use the quantitative language from Financial Mathematics:
 | **Sensitivity analysis** | Effect of changing assumptions |
 | **Risk** | Airline, market, asset and valuation uncertainty |
 
-**Recall cue:** Cash flows → discounting → risk → residual value → return.
+**Recall:** Cash flows → discounting → risk → residual value → return.
 
 The advantage of this version is that the **same example demonstrates three things simultaneously**: communication, understanding of an aircraft lessor's business, and the ability to connect Financial Mathematics to a real commercial asset.
 
@@ -116,24 +116,22 @@ The advantage of this version is that the **same example demonstrates three thin
 
 Choose a problem where you had to diagnose the issue rather than simply follow instructions. Explain the information available, the options you considered, the method you chose and how you checked the outcome.
 
-diagnose | assumptions | method | validation
-
-**Recall cue:** Problem → method → check → result.
+**Recall:** Problem → diagnose → assumptions → method → validation → result.
 
 ## Unknown problem | How do you approach a problem when you do not immediately know the answer?
 
 I break the problem into smaller parts, identify what is known and unknown, check whether I have seen a similar structure before, make reasonable assumptions explicit and test the result. If I am still blocked, I would ask for help with a clear explanation of what I have already tried.
 
-**Recall cue:** Break down → assumptions → test → ask intelligently.
+**Recall:** Break down → assumptions → test → ask intelligently.
 
 ## Initiative | Give an example of how you would show initiative.
 
 If I noticed a recurring problem or an inefficient process, I would first understand why it was happening and then suggest a practical improvement. I would take initiative within my role while checking with others where a change could affect their work.
 
-observe | improve | practical | consult
+**Recall:** Observe → improve → practical → consult.
 
 ## Accuracy | How would you make sure your work was accurate?
 
 I would work systematically, check important details before completing the task, and use any available validation or review process. For repetitive work, I would look for a consistent checking method rather than relying on memory.
 
-systematic | check | validation | consistency
+**Recall:** Systematic → check → validation → consistency.
