@@ -77,7 +77,7 @@
             </label>
 
             <button class="contact-send" type="submit">Send Message</button>
-            <p class="contact-note">This opens your email app with the message addressed to Erik, so you can review it before sending.</p>
+            <p class="contact-note">This opens Gmail with your message addressed to Erik, ready for you to send.</p>
           </form>
         </div>
 
@@ -125,8 +125,11 @@
           '',
           message
         ].join('\n');
-        window.location.href = 'mailto:erikdownes2307@gmail.com?subject=' +
-          encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+        const gmailUrl = 'https://mail.google.com/mail/?view=cm&fs=1&to=' +
+          encodeURIComponent('erikdownes2307@gmail.com') +
+          '&su=' + encodeURIComponent(subject) +
+          '&body=' + encodeURIComponent(body);
+        window.location.href = gmailUrl;
       });
     })();
   </script>
