@@ -2,7 +2,7 @@
 layout: doc
 permalink: /pivotal-corporate.html
 handle: Pivotal Corporate Interview
-title: Pivotal Corporate Interview
+title: Pivotal Corp Interview
 nav_order: 50
 description: Pivotal Corporate interview preparation for the Co-Op Student /
   Corporate Administrator role.
@@ -10,7 +10,6 @@ eyebrow: CO-OP INTERVIEW · CORPORATE ADMINISTRATION · ACCOUNTING · CLIENT SER
 public_mode: true
 ---
 
-Use the reusable [General Interview Questions]({{ '/interview.html' | relative_url }}) and [Competency / STAR Questions]({{ '/competency-interview.html' | relative_url }}) for employer-neutral preparation. This page is now reserved for **Pivotal Corporate, its role, its services, its terminology and Pivotal-specific scenarios**.
 
 # Job-Specification Pressure Tests
 
@@ -50,7 +49,7 @@ My Excel reconciliation check is a simple example. Instead of manually interpret
 
 I would start by defining exactly what I need to find out, then use reliable primary or authoritative sources where possible. I would cross-check important facts, note the date and source, separate fact from interpretation, and reduce the research to the information the person actually needs for the decision or task.
 
-<!-- NEW-INTERVIEW-QUESTIONS-2026-10-04-END -->
+
 
 # The Company Paragraph
 
@@ -64,7 +63,6 @@ with extensive experience assisting
 **Solutions-driven  US-based  European investments**
 
 Pivotal Corporate is an **independent, solutions-driven firm** that helps **US-based investors establish and grow their European investments**.
-
 
 
 
@@ -721,8 +719,6 @@ That makes the work easier to **check, reconcile, report and audit**, and means 
 
 # Compliance, Research & Process Improvement
 
-
-
 ## How would you use social media and AI responsibly?
 
 **Approved tools  Confidentiality  Ever-changing regulations**
@@ -868,7 +864,6 @@ A strong answer should show that you **check details, notice when something does
 Use examples where you had to **explain something clearly, communicate with a customer or colleague, or turn technical information into something another person could use**.
 
 The O'Mahony's library delivery example is strong evidence: you identified the problem, discussed the solution with your supervisor, communicated what had happened, and helped minimise the delay.
-
 
 
 
