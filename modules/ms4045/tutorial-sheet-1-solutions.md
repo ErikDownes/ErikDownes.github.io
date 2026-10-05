@@ -18,6 +18,9 @@ mathjax: true
 <a href="{{ '/modules/ms4045/tutorial-sheet-1-solutions.html' | relative_url }}">Sheet 1 solutions</a>
 <a href="{{ '/modules/ms4045/tutorial-sheet-2.html' | relative_url }}">Sheet 2</a>
 <a href="{{ '/modules/ms4045/tutorial-sheet-2-solutions.html' | relative_url }}">Sheet 2 solutions</a>
+
+<a href="https://drive.google.com/file/d/1SV0CwWgqUGaLgg7RzyWJ5qCG3ViuFjTr/view?usp=drivesdk" target="_blank" rel="noopener">Original PDF ↗</a>
+<a href="https://drive.google.com/drive/folders/1EOVUSQ2E8I1f9W07hBTSnf4qVaF9rjy-?usp=sharing" target="_blank" rel="noopener">All originals ↗</a>
 </div>
 
 <div class="ms4045-source-note">
