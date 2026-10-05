@@ -12,6 +12,16 @@
   const ORDER_PREFIX = 'coop-section-order:v1:';
   const GLOSSARY_PREFIX = 'coop-glossary:v1';
   const GLOSSARY_SEED = [
+    // Core site and interview acronyms kept in the shared glossary.
+    { term: 'AP / AR', definition: 'Accounts Payable / Accounts Receivable: AP is money the company owes; AR is money owed to the company.', cue: 'AP = owe out; AR = owed in.' },
+    { term: 'CMS', definition: 'Content Management System: an interface used to create and edit website content without needing to work directly in the source code.', cue: 'Edit content through an interface.' },
+    { term: 'CSP', definition: 'Corporate Service Provider: a firm that provides company administration, accounting, company-secretarial, compliance and related support services.', cue: 'Company administration + accounting + governance + compliance.' },
+    { term: 'DPO', definition: 'Data Protection Officer: a designated role that supports an organisation with data-protection compliance, advice and oversight where the role is required or appointed.', cue: 'Data protection advice + oversight.' },
+    { term: 'DR', definition: 'Duty / Responsibility: a local preparation label used to reference the main duty areas in the job specification. It is not Pivotal terminology.', cue: 'Local study label for a duty area.' },
+    { term: 'JSR', definition: 'Job-Specific Requirement: a local preparation label used to reference the requirements in the job specification. It is not Pivotal terminology.', cue: 'Local study label for a requirement.' },
+    { term: 'SPV', definition: 'Special Purpose Vehicle: a separate legal entity created for a defined transaction, asset or financing purpose, with its activities and risks deliberately limited to that purpose.', cue: 'Separate entity + specific purpose.' },
+    { term: 'VAT', definition: 'Value Added Tax: a consumption tax charged on many goods and services, collected and reported by businesses under the applicable tax rules.', cue: 'Tax on value added through the supply chain.' },
+    { term: 'GitHub', definition: 'A web platform for hosting Git repositories and collaborating on source code. This site uses GitHub to store and publish its files.', cue: 'Repository + version history + publishing.' },
     { term: 'EAL', definition: 'English as an Additional Language: English used or learned alongside a person’s other language or languages. In communication, adapt clarity, pace and wording to the individual’s needs and preferences. EFL means English as a Foreign Language.', cue: 'Clear speech · suitable pace · check understanding.' },
     { term: 'Regional route', definition: 'A relatively short air service linking cities or airports within a region, often with lower passenger demand than major trunk routes.', cue: 'Shorter sector → thinner demand → right-sized aircraft.', examples: ['A service linking a smaller regional airport with a nearby city or hub'], misconceptions: ['Regional does not simply mean small aircraft; the route, demand and airport constraints matter.'] },
     { term: 'Lease transition',
@@ -1191,98 +1201,136 @@
 
     const entries = readGlossary();
     const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
-    const present = new Set(entries.map(item => item.term[0]?.toUpperCase()).filter(Boolean));
+    const isAcronym = item => {
+      const term = cleanText(item?.term || '');
+      const alpha = term.replace(/[^A-Za-z]/g, '');
+      return alpha.length >= 2 && alpha === alpha.toUpperCase();
+    };
+    const matches = (item, q) =>
+      !q || item.term.toLowerCase().includes(q) || (item.definition || '').toLowerCase().includes(q);
 
     const search = document.createElement('input');
     search.type = 'search';
     search.className = 'glossary-search';
-    search.placeholder = 'Search glossary…';
-    search.setAttribute('aria-label', 'Search glossary');
+    search.placeholder = 'Search acronyms and glossary…';
+    search.setAttribute('aria-label', 'Search acronyms and glossary');
 
-    const alphabet = document.createElement('nav');
-    alphabet.className = 'glossary-alphabet';
-    alphabet.setAttribute('aria-label', 'Glossary alphabet');
+    const makeEntry = item => {
+      const card = document.createElement('details');
+      card.className = 'glossary-entry';
 
-    letters.forEach(letter => {
-      const button = document.createElement('button');
-      button.type = 'button';
-      button.textContent = letter;
-      button.disabled = !present.has(letter);
-      button.addEventListener('click', () => document.getElementById(`glossary-${letter}`)?.scrollIntoView({ behavior: 'smooth', block: 'start' }));
-      alphabet.appendChild(button);
-    });
+      const summary = document.createElement('summary');
+      summary.textContent = item.term;
 
-    const list = document.createElement('div');
-    list.className = 'glossary-az';
+      const p = document.createElement('p');
+      p.textContent = item.definition;
+      card.append(summary, p);
+      renderGlossaryLearningContent(card, item);
 
-    const draw = query => {
-      list.replaceChildren();
-      const q = cleanText(query).toLowerCase();
-      const filtered = entries.filter(item =>
-        !q || item.term.toLowerCase().includes(q) || (item.definition || '').toLowerCase().includes(q)
-      );
-      let current = '';
-      filtered.forEach(item => {
-        const letter = item.term[0]?.toUpperCase() || '#';
-        if (letter !== current) {
-          current = letter;
-          const heading = document.createElement('h2');
-          heading.id = `glossary-${letter}`;
-          heading.className = 'glossary-letter';
-          heading.textContent = letter;
-          list.appendChild(heading);
-        }
-
-        const card = document.createElement('details');
-        card.className = 'glossary-entry';
-        const summary = document.createElement('summary');
-        summary.textContent = item.term;
-        const p = document.createElement('p');
-        p.textContent = item.definition;
-        card.append(summary, p);
-        renderGlossaryLearningContent(card, item);
-
-        if (item.why) {
-          const why = document.createElement('p');
-          why.className = 'recall';
-          why.innerHTML = '<strong>Why it matters:</strong> ';
-          why.append(document.createTextNode(item.why));
-          card.appendChild(why);
-        }
-
-        const tools = document.createElement('div');
-        tools.className = 'glossary-entry-tools';
-        const edit = document.createElement('button');
-        edit.type = 'button';
-        edit.textContent = item.builtIn ? 'Adapt' : 'Edit';
-        edit.addEventListener('click', () => openGlossaryTerm(item.term));
-        tools.appendChild(edit);
-
-        if (!item.builtIn) {
-          const remove = document.createElement('button');
-          remove.type = 'button';
-          remove.textContent = 'Remove';
-          remove.addEventListener('click', () => {
-            const items = customGlossary().filter(x => x.term.toLowerCase() !== item.term.toLowerCase());
-            writeCustomGlossary(items);
-          });
-          tools.appendChild(remove);
-        }
-        card.appendChild(tools);
-        list.appendChild(card);
-      });
-
-      if (!filtered.length) {
-        const empty = document.createElement('p');
-        empty.className = 'glossary-empty';
-        empty.textContent = 'No matching terms yet.';
-        list.appendChild(empty);
+      if (item.why) {
+        const why = document.createElement('p');
+        why.className = 'recall';
+        why.innerHTML = '<strong>Why it matters:</strong> ';
+        why.append(document.createTextNode(item.why));
+        card.appendChild(why);
       }
+
+      const tools = document.createElement('div');
+      tools.className = 'glossary-entry-tools';
+
+      const edit = document.createElement('button');
+      edit.type = 'button';
+      edit.textContent = item.builtIn ? 'Adapt' : 'Edit';
+      edit.addEventListener('click', () => openGlossaryTerm(item.term));
+      tools.appendChild(edit);
+
+      if (!item.builtIn) {
+        const remove = document.createElement('button');
+        remove.type = 'button';
+        remove.textContent = 'Remove';
+        remove.addEventListener('click', () => {
+          const items = customGlossary().filter(x => x.term.toLowerCase() !== item.term.toLowerCase());
+          writeCustomGlossary(items);
+        });
+        tools.appendChild(remove);
+      }
+
+      card.appendChild(tools);
+      return card;
     };
 
-    search.addEventListener('input', () => draw(search.value));
-    app.replaceChildren(search, alphabet, list);
-    draw('');
+    const makeSection = (title, sourceEntries, idPrefix, emptyText) => {
+      const section = document.createElement('section');
+      section.className = 'glossary-section';
+      section.dataset.glossarySection = idPrefix;
+
+      const heading = document.createElement('h2');
+      heading.className = 'glossary-section-title';
+      heading.textContent = title;
+
+      const alphabet = document.createElement('nav');
+      alphabet.className = 'glossary-alphabet';
+      alphabet.setAttribute('aria-label', title + ' alphabet');
+      const present = new Set(sourceEntries.map(item => item.term[0]?.toUpperCase()).filter(Boolean));
+      letters.forEach(letter => {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.textContent = letter;
+        button.disabled = !present.has(letter);
+        button.addEventListener('click', () =>
+          document.getElementById(`${idPrefix}-${letter}`)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        );
+        alphabet.appendChild(button);
+      });
+
+      const list = document.createElement('div');
+      list.className = 'glossary-az';
+
+      const draw = query => {
+        list.replaceChildren();
+        const q = cleanText(query).toLowerCase();
+        const filtered = sourceEntries.filter(item => matches(item, q));
+        let current = '';
+
+        filtered.forEach(item => {
+          const letter = item.term[0]?.toUpperCase() || '#';
+          if (letter !== current) {
+            current = letter;
+            const letterHeading = document.createElement('h3');
+            letterHeading.id = `${idPrefix}-${letter}`;
+            letterHeading.className = 'glossary-letter';
+            letterHeading.textContent = letter;
+            list.appendChild(letterHeading);
+          }
+          list.appendChild(makeEntry(item));
+        });
+
+        if (!filtered.length) {
+          const empty = document.createElement('p');
+          empty.className = 'glossary-empty';
+          empty.textContent = emptyText;
+          list.appendChild(empty);
+        }
+      };
+
+      section.append(heading, alphabet, list);
+      return { section, draw };
+    };
+
+    const acronyms = entries.filter(isAcronym);
+    const terms = entries.filter(item => !isAcronym(item));
+
+    const acronymSection = makeSection('Acronyms', acronyms, 'acronym', 'No matching acronyms.');
+    const glossarySection = makeSection('Glossary', terms, 'glossary', 'No matching glossary terms.');
+
+    const drawAll = () => {
+      acronymSection.draw(search.value);
+      glossarySection.draw(search.value);
+    };
+
+    search.addEventListener('input', drawAll);
+    app.replaceChildren(search, acronymSection.section, glossarySection.section);
+    drawAll();
   };
 
   renderGlossaryPage();
