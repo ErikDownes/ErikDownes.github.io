@@ -41,6 +41,18 @@ The strongest areas to understand before interview are:
 - Finance-process automation
 - AI tools in finance operations
 
+
+
+## SQL Practice Project
+
+A practical interview-preparation project is now set up around the finance process most central to the role:
+
+**bank feed → ledger data → SQL matching → exceptions → cash application → collections**
+
+The project uses **Microsoft SQL-style tables and queries** and is designed to give Erik something concrete to discuss rather than merely saying that he is interested in SQL.
+
+[Open the SQL Bank Reconciliation Lab →]({{ '/sql-bank-reconciliation.html' | relative_url }})
+
 ## Interview Connection
 
 This role is a strong match for transferable interview domains such as **communication, problem-solving, accuracy, customer care, organisation and learning new systems**.
