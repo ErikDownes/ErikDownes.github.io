@@ -3602,3 +3602,46 @@ body.answer-focus-open{overflow:hidden}
   text-decoration:none;
   font-size:1.2rem;
 }
+
+
+/* Persistent Contact Me CTA — visually prominent, like a conventional primary nav action. */
+.contact-cta{
+  flex:0 0 auto;
+  align-self:center;
+  margin-left:auto;
+  min-width:112px;
+  padding:12px 17px;
+  border:1px solid #174ea6;
+  border-radius:8px;
+  background:#174ea6;
+  color:#fff;
+  text-align:center;
+  text-decoration:none;
+  font-size:.82rem;
+  font-weight:800;
+  line-height:1.1;
+  transition:background .15s ease,border-color .15s ease,transform .15s ease,box-shadow .15s ease;
+}
+.contact-cta:hover,
+.contact-cta:focus-visible{
+  background:#123e84;
+  border-color:#123e84;
+  transform:translateY(-1px);
+  box-shadow:0 4px 12px rgba(23,78,166,.18);
+  outline:none;
+}
+.contact-cta.is-current{background:#123e84;border-color:#123e84}
+.nav-contact-link{display:none!important}
+
+.glossary-section{margin-top:34px}
+.glossary-section:first-of-type{margin-top:22px}
+.glossary-section-title{margin-bottom:14px}
+.glossary-section .glossary-letter{scroll-margin-top:96px}
+
+@media(max-width:1500px){
+  .contact-cta{margin-left:8px;padding:10px 14px;min-width:104px}
+}
+@media(max-width:700px){
+  .contact-cta{display:none}
+  .nav-contact-link{display:grid!important}
+}
