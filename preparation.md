@@ -1,8 +1,9 @@
 ---
 layout: doc
 permalink: /preparation.html
-handle: Skills & Evidence
+handle: Co-op
 title: Co-op Skills & Evidence
+nav_order: 40
 eyebrow: CO-OP · REUSABLE SKILLS · EVIDENCE
 public_mode: true
 ---
