@@ -9,6 +9,63 @@ description: Pivotal Corporate interview preparation for the Co-Op Student /
 eyebrow: CO-OP INTERVIEW · CORPORATE ADMINISTRATION · ACCOUNTING · CLIENT SERVICE
 public_mode: true
 ---
+# Interview Strategies — Read This First
+
+**Listen fully. Pause. Speak slowly and clearly. A clear answer is more useful than a rushed display of everything you know.**
+
+[Open the A–Z Glossary]({{ '/glossary.html' | relative_url }}). Tap a highlighted term for its definition. Use short definitions when you need them, then return to the answer.
+
+## Listen to the whole question
+
+**Do not interrupt or start answering before the interviewer has finished.** A pause does not always mean the question is over: they may add context, narrow the task or give you a useful clue.
+
+Use a **four- or five-second pause as a practice habit** after the question ends: breathe, identify the main point and organise your opening sentence. In the interview, keep the pause natural rather than counting rigidly. If they continue speaking, keep listening.
+
+## Speak slowly and articulate clearly
+
+**Your priority in practice is clear delivery.** Intelligent interviewers do not need you to speak quickly. They need to follow your reasoning.
+
+Use short sentences, finish your words, keep your voice audible and pause between ideas. Explain an abbreviation the first time you use it. Aim for a calm, conversational pace.
+
+**One-minute articulation practice:** record an answer, listen back for rushed phrases or swallowed endings, then repeat it more clearly. Practise delivering the meaning rather than reciting a script.
+
+## If you go blank, reset
+
+Losing your train of thought under interview pressure can happen. Pause and say:
+
+**“Sorry, I've lost the thread for a moment. Could you repeat the gist of the question?”**
+
+You only need enough to get back on track. You can also check: **“So the main point you're asking about is…?”** A brief apology is enough; then answer the question.
+
+## Give a direct answer, then evidence
+
+Start with the answer in one sentence. Follow with one relevant example and what it shows about your suitability.
+
+For experience questions, use **STAR: Situation, Task, Action, Result**. Keep the background short and focus on **what you did**, the outcome and what you learned.
+
+Choose examples from **O'Mahony's, Mr Price, university or your projects**. Distinguish what you have actually done from what you have studied or would do. When you have answered, stop and let them follow up.
+
+## Show how you think as a Financial Mathematics intern
+
+For a numerical or technical question, clarify the task, state your assumptions and explain the main steps. Check units, signs and whether the result makes sense. Connect the calculation to the business decision.
+
+If you do not know, say: **“I haven't used that in practice yet. My understanding is… and I would check…”** Show how you would learn and verify it.
+
+For client work, demonstrate **accuracy, confidentiality, traceable records and appropriate review**. Be ready to explain your own contribution to a project in plain English.
+
+## Be professional and ask informed questions
+
+Arrive in good time, silence your phone, greet the panel and sit comfortably upright. Use natural eye contact; include the other panellists when answering. Listen to follow-up questions as carefully as the first one.
+
+**Show what you know, then ask what you want to learn:** “Your description mentions reconciliations and reporting. Which would I start with, and who would review my work?”
+
+Prepare two or three questions, but adapt if they have already been answered. Thank the panel and briefly confirm your interest.
+
+For further guidance: [Prospects — preparing for an interview](https://www.prospects.ac.uk/careers-advice/interview-tips/how-to-prepare-for-an-interview/).
+
+---
+
+
 <!-- NEW-INTERVIEW-QUESTIONS-2026-10-04-START -->
 # Most Likely to Catch Me — Read These First
 
