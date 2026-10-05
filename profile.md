@@ -17,9 +17,9 @@ Alongside my studies, I have worked in retail and logistics, where being organis
 
 In my free time, I enjoy cycling, cooking, photography and gaming.
 
-<details class="cv-details">
 
-<summary>See UL CV</summary>
+
+See UL CV
 
 ## Teamwork
 
@@ -86,6 +86,4 @@ I understand that the Co-op role supports senior staff and the **Client Service 
 I am also interested in the **responsible use of AI in professional work**. I have used ChatGPT, Claude and Gemini and have followed the development of large language models and more agentic systems. I understand the importance of **human review, company policy, confidentiality, data protection and appropriate enterprise tools** when working with client information.
 
 I would bring an **organised, detail-oriented, positive and collaborative approach**, the ability to **manage multiple tasks**, a genuine **interest in financial services** and a **genuine desire to learn how high-quality accounting and administration can add value to a client’s business**.    
-  
-</details>
 
