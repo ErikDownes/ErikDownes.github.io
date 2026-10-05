@@ -1,7 +1,7 @@
 ---
 layout: doc
 permalink: /education.html
-handle: Financial Maths (UL-LM058)
+handle: Financial Maths
 title: BSc Financial Mathematics
 nav_order: 765
 eyebrow: UNIVERSITY OF LIMERICK · BSC FINANCIAL MATHEMATICS · LM058
@@ -65,11 +65,7 @@ LM058 is a four-year Financial Mathematics degree combining **mathematics, proba
 
 # Second Year · 2025/26 Completed
 
-
-
 ## Second Year Semester 1
-
-
 
 - [Finance]({{ '/modules/finance.html' | relative_url }}) · **FI4003** · A2
 - [Probability Models]({{ '/modules/ms4035-probability-models.html' | relative_url }}) · **MS4035** · B1
@@ -175,8 +171,9 @@ For a fuller record of results and academic achievements, see my [Academic Recor
 
 ## University of Limerick Undergraduate Grade Key
 
+
 | Grade | Meaning | QPV |
-| --- | --- | ---: |
+| ---------- | ----------------- | -------- |
 | **A1** | First Honours | **4.00** |
 | **A2** | First Honours | **3.60** |
 | **B1** | Honours 2.1 | **3.20** |
@@ -189,17 +186,20 @@ For a fuller record of results and academic achievements, see my [Academic Recor
 | **D2** | Compensating Fail | **1.20** |
 | **F / NG** | Fail | **0.00** |
 
+
 **QPV** means **Quality Point Value**. QPV values are used in calculating the **QCA (Quality Credit Average)**.
 
 ## Degree Classification by Cumulative QCA
 
+
 | Cumulative QCA | Degree Classification |
-| ---: | --- |
+| -------------- | ----------------------------------------------------- |
 | **3.40–4.00** | **First Class Honours** |
 | **3.00–3.39** | **Second Class Honours Grade 1 — 2.1** |
 | **2.60–2.99** | **Second Class Honours Grade 2 — 2.2** |
 | **2.00–2.59** | **Third Class Honours** |
 | **Below 2.00** | **Fail / below the minimum QCA for an honours award** |
+
 
 The table shows the standard classification thresholds. Examination-board discretion may apply in qualifying cases close to a classification boundary.
 
@@ -207,8 +207,9 @@ The table shows the standard classification thresholds. Examination-board discre
 
 **H = Higher Level · O = Ordinary Level**
 
+
 | Grade | Percentage |
-| --- | ---: |
+| ----------- | ---------- |
 | **H1 / O1** | 90–100% |
 | **H2 / O2** | 80–89% |
 | **H3 / O3** | 70–79% |
@@ -218,48 +219,14 @@ The table shows the standard classification thresholds. Examination-board discre
 | **H7 / O7** | 30–39% |
 | **H8 / O8** | Below 30% |
 
+
 ## QCA Converter
 
 Enter a cumulative QCA from **0.00 to 4.00** to see the corresponding standard degree classification.
 
-<div class="qca-converter" style="max-width:34rem;">
-  <label for="qca-value"><strong>Cumulative QCA</strong></label>
-  <div style="display:flex;gap:.6rem;align-items:center;flex-wrap:wrap;margin:.5rem 0 .75rem;">
-    <input id="qca-value" type="number" min="0" max="4" step="0.01" inputmode="decimal" placeholder="e.g. 3.40" style="max-width:10rem;">
-    <button id="qca-convert" type="button">Convert</button>
-  </div>
-  <p id="qca-output" aria-live="polite"><strong>Classification:</strong> —</p>
-</div>
+**Cumulative QCA**
 
-<script>
-(function () {
-  const input = document.getElementById('qca-value');
-  const button = document.getElementById('qca-convert');
-  const output = document.getElementById('qca-output');
-  if (!input || !button || !output) return;
+Convert
 
-  function classify() {
-    const qca = Number(input.value);
-    let result;
-
-    if (!Number.isFinite(qca) || qca < 0 || qca > 4) {
-      output.innerHTML = '<strong>Classification:</strong> Enter a QCA between 0.00 and 4.00.';
-      return;
-    }
-
-    if (qca >= 3.40) result = 'First Class Honours';
-    else if (qca >= 3.00) result = 'Second Class Honours Grade 1 — 2.1';
-    else if (qca >= 2.60) result = 'Second Class Honours Grade 2 — 2.2';
-    else if (qca >= 2.00) result = 'Third Class Honours';
-    else result = 'Fail / below the minimum QCA for an honours award';
-
-    output.innerHTML = '<strong>Classification:</strong> ' + result;
-  }
-
-  button.addEventListener('click', classify);
-  input.addEventListener('keydown', function (event) {
-    if (event.key === 'Enter') classify();
-  });
-})();
-</script>
+**Classification:** —
 
