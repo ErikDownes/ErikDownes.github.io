@@ -547,7 +547,7 @@
     menu.replaceChildren();
 
     const links = [
-      { label: 'Career Home', href: rootHref },
+      { label: 'About Me', href: rootHref },
       { label: 'UL CV', href: new URL('pivotal-corporate-study.html', rootHref).href },
       { label: 'Results', href: new URL('academic-record.html', rootHref).href },
       { section: 'Job Specs' },
@@ -617,6 +617,7 @@
     menu.replaceChildren();
 
     const links = [
+      { section: 'Core Interview Domains' },
       { label: 'Communication', href: interviewHref + '#communication' },
       { label: 'Problem-Solving', href: interviewHref + '#problem-solving' },
       { label: 'Accuracy & Detail', href: interviewHref + '#accuracy-attention-to-detail' },
