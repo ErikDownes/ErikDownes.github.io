@@ -15,6 +15,6 @@ I am a third-year Financial Mathematics student at the University of Limerick wi
 
 I enjoy applying mathematical and statistical ideas through data analysis, programming, modelling and financial problem solving, using technology to investigate real-world problems, test ideas, interpret results and communicate them clearly. This work has strengthened my critical thinking, accuracy and attention to detail.
 
-Outside university, I have worked in retail and logistics, where being organised, reliable and responsive matters. These roles have developed my teamwork, communication and ability to take responsibility while managing competing tasks. I am particularly interested in opportunities where I can contribute to a professional team, continue learning, and use quantitative and financial skills to add value for clients and the wider business.
+Alongside my studies, I have worked in retail and logistics, where being organised, reliable and responsive matters. These roles have developed my teamwork, communication and ability to take responsibility while managing competing tasks. I am particularly interested in opportunities where I can contribute to a professional team, continue learning, and use quantitative and financial skills to add value for clients and the wider business.
 
-Outside study and work I enjoy , cycling, cooking, photography  and gaming.
+In my free time, I enjoy cycling, cooking, photography and gaming.
