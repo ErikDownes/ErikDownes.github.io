@@ -36,7 +36,7 @@ content:
       - { name: hse_finance_study, label: "60 · HSE Finance Study", type: file, path: hse-finance-study.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: hse_finance_interview, label: "70 · HSE Finance Interview", type: file, path: hse-finance-interview.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: projects, label: "90 · Projects", type: file, path: projects.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: misc, label: "100 · Misc", type: file, path: misc.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: blog, label: "100 · Blog", type: file, path: blog.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - name: contact
         label: "Contact"
         type: file
