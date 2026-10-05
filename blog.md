@@ -8,11 +8,20 @@ description: Notes on software, tools, projects and practical technology choices
 eyebrow: SOFTWARE · TOOLS · PRACTICAL NOTES
 public_mode: true
 ---
+
+
+## CEFR and Interview English
+
+The **CEFR scale** runs from **A1 to C2** and describes levels of language ability. For interview answers, the best target is around the **B2–C1 boundary**: clear, natural spoken English with short sentences, but with stronger vocabulary where it adds precision. A useful rule is **B2 sentence structure, B2–C1 general vocabulary, and C1 technical vocabulary**.
+
+
+
 ## miniforge
 
-##   
+
+
 **Miniforge3-Windows-x86_64.exe**  
-  
+
 Snagit in 2026: subscription-only — and the best alternatives
 
 **5 October 2026**
