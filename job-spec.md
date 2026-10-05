@@ -3,10 +3,80 @@ layout: doc
 permalink: /job-spec.html
 handle: Job Spec
 nav_order: 39
-description: HSE Mid-West and Cashbook Co-Op job specifications.
-eyebrow: HSE MID-WEST · CASHBOOK · CO-OP
+description: Cashbook and HSE Mid-West Co-Op job specifications.
+eyebrow: CASHBOOK · HSE MID-WEST · CO-OP
 public_mode: true
 title: "Job Spec"
+---
+
+## Cashbook Limited – Implementation Associate (TIMS team)
+
+### Interview
+
+**Wednesday 7 October 2026 · 1:00 PM**
+
+### Placement Period
+
+**January – August 2027**
+
+### Company
+
+Cashbook is an **Irish software company based in the Technology Park in Limerick** with an international customer base.
+
+The company sells financial software which automates key financial processes such as:
+
+- Accounts Payable
+- Accounts Receivable
+- Bank Reconciliation
+
+### Description
+
+Cashbook is looking for an **Implementation Associate** to join its **TIMS team**.
+
+The successful candidate will be **highly focused, a good communicator, a team player, dedicated, hard-working and analytical**. The candidate will be in the process of completing a **Financial Mathematics degree**.
+
+The role supports the daily implementation and support activities of the TIMS team and includes involvement in some larger projects during the placement.
+
+The position reports to the **TIMS Implementation Director** as a **junior business consultant**.
+
+### Duties and Responsibilities
+
+- Support the TIMS Implementation team in daily administrative tasks
+- Learn the basics of **Cash Application, Bank Reconciliation and Collections**
+- Assist the TIMS team on **Lockbox development** and assist in the application of Lockboxes
+- Work alongside customers to achieve higher rates of automation in **Bank Reconciliation**
+
+### Skills and Requirements
+
+- Strong desire to learn along with a professional drive
+- Excellent multitasking and organisational abilities
+- Ability to take direction and absorb information quickly
+- Basic finance knowledge
+- Aptitude for IT/technical concepts
+
+### Experience Offered
+
+The candidate will get experience in:
+
+- International finance processes
+- Basic accounting principles
+- Bank Reconciliation, Cash Application and Collections processes in particular
+- Microsoft SQL
+- Excel
+- Best practice in American manufacturing activities
+- Experience in an indigenous Fintech company with customers worldwide
+- Working with upper management in a flat organisational structure
+- Communicating and troubleshooting with customers
+- Customer tutorial training videos
+- Analysing application errors and liaising with IT to debug
+- AI Tools
+
+### Travel and Working Pattern
+
+Travel may be required within Ireland or internationally to events and customers.
+
+This is a **full-time paid placement** for the period of internship: **5 days and 39 hours per week**.
+
 ---
 
 ## HSE Mid-West – Co-Op Finance
@@ -82,74 +152,3 @@ The above Job Description is not intended to be a comprehensive list of all duti
 The ideal candidate will be a **highly motivated, flexible and conscientious graduate**.
 
 **Initiative and excellent interpersonal and communication skills** are also important requirements.
-
-
----
-
-## Cashbook Limited – Implementation Associate (TIMS team)
-
-### Interview
-
-**Wednesday 7 October 2026 · 1:00 PM**
-
-### Placement Period
-
-**January – August 2027**
-
-### Company
-
-Cashbook is an **Irish software company based in the Technology Park in Limerick** with an international customer base.
-
-The company sells financial software which automates key financial processes such as:
-
-- Accounts Payable
-- Accounts Receivable
-- Bank Reconciliation
-
-### Description
-
-Cashbook is looking for an **Implementation Associate** to join its **TIMS team**.
-
-The successful candidate will be **highly focused, a good communicator, a team player, dedicated, hard-working and analytical**. The candidate will be in the process of completing a **Financial Mathematics degree**.
-
-The role supports the daily implementation and support activities of the TIMS team and includes involvement in some larger projects during the placement.
-
-The position reports to the **TIMS Implementation Director** as a **junior business consultant**.
-
-### Duties and Responsibilities
-
-- Support the TIMS Implementation team in daily administrative tasks
-- Learn the basics of **Cash Application, Bank Reconciliation and Collections**
-- Assist the TIMS team on **Lockbox development** and assist in the application of Lockboxes
-- Work alongside customers to achieve higher rates of automation in **Bank Reconciliation**
-
-### Skills and Requirements
-
-- Strong desire to learn along with a professional drive
-- Excellent multitasking and organisational abilities
-- Ability to take direction and absorb information quickly
-- Basic finance knowledge
-- Aptitude for IT/technical concepts
-
-### Experience Offered
-
-The candidate will get experience in:
-
-- International finance processes
-- Basic accounting principles
-- Bank Reconciliation, Cash Application and Collections processes in particular
-- Microsoft SQL
-- Excel
-- Best practice in American manufacturing activities
-- Experience in an indigenous Fintech company with customers worldwide
-- Working with upper management in a flat organisational structure
-- Communicating and troubleshooting with customers
-- Customer tutorial training videos
-- Analysing application errors and liaising with IT to debug
-- AI Tools
-
-### Travel and Working Pattern
-
-Travel may be required within Ireland or internationally to events and customers.
-
-This is a **full-time paid placement** for the period of internship: **5 days and 39 hours per week**.
