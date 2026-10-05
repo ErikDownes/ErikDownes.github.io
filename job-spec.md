@@ -7,8 +7,6 @@ eyebrow: CASHBOOK · HSE MID-WEST · CO-OP
 public_mode: true
 title: Job Spec
 ---
-
-
 ## Cashbook Limited – Implementation Associate (TIMS team) {#cashbook-implementation}
 
 ### Interview
@@ -21,42 +19,26 @@ title: Job Spec
 
 ### Company
 
-Cashbook is an **Irish software company based in the Technology Park in Limerick** with an international customer base.
+Cashbook is an Irish software company, based in the Technology Park in Limerick. We have an international customer base. We sell financial software which automates key financial processes such as Accounts Payable, Accounts Receivable and Bank Reconciliation. 
 
-The company sells financial software which automates key financial processes such as:
+### **Description:** We are looking for an Implementation Associate to join our TIMS team. The successful candidate will be highly focused, a good communicator, a team player, dedicated, hard-working and analytical. The candidate will be in the process of completing a financial mathematics degree. They will support the daily implementations and support activities of the TIMS team and will be involved in some larger projects during the placement. This position reports to the to the TIMS Implementation Director as a junior business consultant.
 
-- Accounts Payable
-- Accounts Receivable
-- Bank Reconciliation
+## Duties and Responsibilities:
 
-### Description
+- Support the TIMS Implementation team in daily administrative tasks.
+- Learn the basics of Cash Application, Bank Reconciliation and Collections
+- Assist the TIMS team on Lockbox development and assist in the application of Lockboxes
+- Work alongside customers to achieve higher rates of automation in Bank Reconciliation
 
-Cashbook is looking for an **Implementation Associate** to join its **TIMS team**.
+## Skills and Requirements:
 
-The successful candidate will be **highly focused, a good communicator, a team player, dedicated, hard-working and analytical**. The candidate will be in the process of completing a **Financial Mathematics degree**.
-
-The role supports the daily implementation and support activities of the TIMS team and includes involvement in some larger projects during the placement.
-
-The position reports to the **TIMS Implementation Director** as a **junior business consultant**.
-
-### Duties and Responsibilities
-
-- Support the TIMS Implementation team in daily administrative tasks
-- Learn the basics of **Cash Application, Bank Reconciliation and Collections**
-- Assist the TIMS team on **Lockbox development** and assist in the application of Lockboxes
-- Work alongside customers to achieve higher rates of automation in **Bank Reconciliation**
-
-### Skills and Requirements
-
-- Strong desire to learn along with a professional drive
-- Excellent multitasking and organisational abilities
-- Ability to take direction and absorb information quickly
+- Strong desire to learn along with a professional drive.
+- Excellent multitasking and organisational abilities.
+- Ability to take direction and absorb information quickly.
 - Basic finance knowledge
 - Aptitude for IT/technical concepts
 
-### Experience Offered
-
-The candidate will get experience in:
+## The candidate will get a great experience in:
 
 - International finance processes
 - Basic accounting principles
@@ -71,11 +53,9 @@ The candidate will get experience in:
 - Analysing application errors and liaising with IT to debug
 - AI Tools
 
-### Travel and Working Pattern
-
 Travel may be required within Ireland or internationally to events and customers.
 
-This is a **full-time paid placement** for the period of internship: **5 days and 39 hours per week**.
+**This is a full-time paid placement for the period of internship:** 5 days and 39hrs per week.
 
 ### Unpacked
 
@@ -156,6 +136,46 @@ Put the project data into simple customer, invoice and payment tables and use SQ
 ---
 
 
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
 
 ## HSE Mid-West – Co-Op Finance {#hse-finance}
 
