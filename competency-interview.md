@@ -14,13 +14,7 @@ Use **STAR: Situation, Task, Action, Result**. Keep the situation short. Spend m
 
 ## Communication | Tell me about a time you communicated something clearly
 
-At O'Mahony's, two library customers could be affected by the same dispatch problem: one receiving books it was not expecting and the other waiting for books that should have reached it.
-
-I treated them as **two separate communication problems** rather than one internal packing error. We checked the order and dispatch information quickly, then made sure the library receiving the unexpected books was told what had happened before the parcel became a confusing surprise. The clearest sequence was **email first, then a short phone call** to make sure the message had been received and understood.
-
-Because returning low-value books can cost more in freight, time and administration than it saves, I raised the practical option of letting that library keep them if the appropriate person approved it. At the same time, the intended library needed a clear heads-up and its replacement dispatch prioritised rather than being left wondering where the order was.
-
-The lesson for me was that good communication is not just giving accurate information. It is identifying **who is affected, what each person needs to know, and when they need to know it**.
+At O'Mahony's, I realised a parcel had gone to the wrong library, so I immediately identified **two customers** who needed a quick, clear response. I suggested to my manager that, rather than pay to return the books, we let that library keep them free of charge; she agreed it was cheaper and created goodwill. I contacted the intended library about the one-day delay and checked that this was acceptable — keeping the service **responsive, practical and professional**.
 
 ## Difficult Communication | Tell me about a time someone was not responding or was unclear
 
