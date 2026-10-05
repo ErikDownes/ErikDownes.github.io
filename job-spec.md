@@ -5,16 +5,15 @@ handle: Job Spec
 description: Cashbook and HSE Mid-West Co-Op job specifications.
 eyebrow: CASHBOOK · HSE MID-WEST · CO-OP
 public_mode: true
-title: "Job Spec"
+title: Job Spec
 ---
 
-<a id="cashbook-implementation"></a>
 
 ## Cashbook Limited – Implementation Associate (TIMS team) {#cashbook-implementation}
 
 ### Interview
 
-**Wednesday 7 October 2026 · 1:00 PM**
+**Wednesday 7 October 2026 · 1:00 PM Online**
 
 ### Placement Period
 
@@ -80,7 +79,7 @@ This is a **full-time paid placement** for the period of internship: **5 days an
 
 ---
 
-<a id="hse-finance"></a>
+
 
 ## HSE Mid-West – Co-Op Finance {#hse-finance}
 
