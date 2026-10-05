@@ -1,8 +1,8 @@
-.contact-mode{background:#f6f4ee;color:#24221f}
+.contact-mode{background:#fff;color:#202124}
 .contact-mode .topbar{position:relative;background:#fff}
 .contact-mode .contact-topnav .navitem{grid-template-columns:1fr;flex-basis:116px}
 .contact-mode .contact-topnav .navlabel{font-size:.78rem}
-.contact-page{min-height:calc(100vh - 80px);background:#f6f4ee}
+.contact-page{min-height:calc(100vh - 80px);background:#fff}
 .contact-hero{margin:0;background:#d7dde0}
 .contact-hero img{display:block;width:100%;height:clamp(300px,34vw,500px);object-fit:cover;object-position:center 53%}
 .contact-hero figcaption{max-width:1220px;margin:0 auto;padding:7px 32px 0;color:#77736c;font-size:.68rem;line-height:1.35;text-align:right}
