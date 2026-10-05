@@ -7,9 +7,9 @@ eyebrow: CASHBOOK · HSE MID-WEST · CO-OP
 public_mode: true
 title: Job Spec
 ---
-## Cashbook Limited – Implementation Associate (TIMS team) {#cashbook-implementation}
+# Cashbook Limited – Implementation Associate (TIMS team) 
 
-### Interview
+## Cashbook Interview
 
 **Wednesday 7 October 2026 · 1:00 PM Online**
 
@@ -17,11 +17,13 @@ title: Job Spec
 
 **January – August 2027**
 
-### Company
+## Company
 
 Cashbook is an Irish software company, based in the Technology Park in Limerick. We have an international customer base. We sell financial software which automates key financial processes such as Accounts Payable, Accounts Receivable and Bank Reconciliation. 
 
-### **Description:** We are looking for an Implementation Associate to join our TIMS team. The successful candidate will be highly focused, a good communicator, a team player, dedicated, hard-working and analytical. The candidate will be in the process of completing a financial mathematics degree. They will support the daily implementations and support activities of the TIMS team and will be involved in some larger projects during the placement. This position reports to the to the TIMS Implementation Director as a junior business consultant.
+## Description
+
+ We are looking for an Implementation Associate to join our TIMS team. The successful candidate will be highly focused, a good communicator, a team player, dedicated, hard-working and analytical. The candidate will be in the process of completing a financial mathematics degree. They will support the daily implementations and support activities of the TIMS team and will be involved in some larger projects during the placement. This position reports to the to the TIMS Implementation Director as a junior business consultant.
 
 ## Duties and Responsibilities:
 
