@@ -2128,7 +2128,7 @@
     const answerButton = document.createElement('button');
     answerButton.type = 'button';
     answerButton.className = 'answer-simple-text-button is-active';
-    answerButton.textContent = 'Answer';
+    answerButton.textContent = 'Hide answer';
     answerButton.setAttribute('aria-pressed', 'true');
     answerButton.setAttribute('aria-label', 'Hide answer');
 
@@ -2137,6 +2137,7 @@
       answerVisible = !answerVisible;
       copy.hidden = !answerVisible;
       answerButton.classList.toggle('is-active', answerVisible);
+      answerButton.textContent = answerVisible ? 'Hide answer' : 'Show answer';
       answerButton.setAttribute('aria-pressed', String(answerVisible));
       answerButton.setAttribute('aria-label', answerVisible ? 'Hide answer' : 'Show answer');
     });
@@ -2156,15 +2157,25 @@
     meter.className = 'answer-audio-meter';
     meter.hidden = true;
     meter.setAttribute('aria-hidden', 'true');
-    for (let i = 0; i < 5; i += 1) meter.appendChild(document.createElement('i'));
+    for (let i = 0; i < 9; i += 1) meter.appendChild(document.createElement('i'));
+
+    const answerWords = cleanText(copy.textContent).split(/\s+/).filter(Boolean).length;
+    const targetSeconds = Math.max(20, Math.round(answerWords / 135 * 60));
 
     const timer = document.createElement('span');
     timer.className = 'answer-audio-timer';
     timer.hidden = true;
     timer.setAttribute('role', 'status');
-    timer.textContent = '0:00';
+    timer.textContent = '0:00 / ' + Math.floor(targetSeconds / 60) + ':' + String(targetSeconds % 60).padStart(2, '0');
 
-    controls.append(answerButton, micButton, meter, timer);
+    const progress = document.createElement('progress');
+    progress.className = 'answer-audio-progress';
+    progress.hidden = true;
+    progress.max = targetSeconds;
+    progress.value = 0;
+    progress.setAttribute('aria-label', 'Recording progress towards suggested answer time');
+
+    controls.append(answerButton, micButton, meter, timer, progress);
 
     const recorderArea = document.createElement('section');
     recorderArea.className = 'answer-audio-recorder';
@@ -2197,7 +2208,9 @@
       if (tick) clearInterval(tick);
       tick = null;
       timer.hidden = true;
-      timer.textContent = '0:00';
+      timer.textContent = '0:00 / ' + formatTime(targetSeconds);
+      progress.hidden = true;
+      progress.value = 0;
     };
 
     const stopMeter = () => {
@@ -2229,8 +2242,9 @@
           for (let i = 0; i < data.length; i += 1) total += data[i];
           const level = total / Math.max(1, data.length) / 255;
           bars.forEach((bar, index) => {
-            const factor = 0.45 + ((index + 1) % 3) * 0.22;
-            bar.style.height = Math.max(5, Math.round(6 + level * 28 * factor)) + 'px';
+            const wave = 0.72 + Math.sin((Date.now() / 105) + index * 0.92) * 0.28;
+            const factor = 0.72 + ((index + 2) % 4) * 0.12;
+            bar.style.height = Math.max(7, Math.round(8 + level * 44 * factor * wave)) + 'px';
           });
           meterFrame = requestAnimationFrame(draw);
         };
@@ -2308,22 +2322,44 @@
           audio.controls = true;
           audio.src = url;
 
+          const actions = document.createElement('div');
+          actions.className = 'answer-audio-actions';
+
           const download = document.createElement('a');
           download.href = url;
           download.download = 'interview-practice-' + attemptNumber + '.webm';
           download.textContent = 'Save';
           download.setAttribute('aria-label', 'Download recording ' + attemptNumber);
 
-          row.append(name, audio, download);
+          const remove = document.createElement('button');
+          remove.type = 'button';
+          remove.className = 'answer-audio-delete';
+          remove.textContent = 'Delete';
+          remove.setAttribute('aria-label', 'Delete recording ' + attemptNumber);
+          remove.addEventListener('click', () => {
+            audio.pause();
+            audio.removeAttribute('src');
+            audio.load();
+            URL.revokeObjectURL(url);
+            row.remove();
+          });
+
+          actions.append(download, remove);
+          row.append(name, audio, actions);
           attempts.prepend(row);
         };
 
         audioRecorder.start();
         startedAt = Date.now();
         timer.hidden = false;
-        timer.textContent = '0:00';
+        progress.hidden = false;
+        progress.value = 0;
+        timer.textContent = '0:00 / ' + formatTime(targetSeconds);
         tick = setInterval(() => {
-          timer.textContent = formatTime((Date.now() - startedAt) / 1000);
+          const elapsed = (Date.now() - startedAt) / 1000;
+          timer.textContent = formatTime(elapsed) + ' / ' + formatTime(targetSeconds);
+          progress.value = Math.min(targetSeconds, elapsed);
+          progress.classList.toggle('is-complete', elapsed >= targetSeconds);
         }, 250);
         startMeter(audioStream);
         micButton.classList.add('is-recording');
