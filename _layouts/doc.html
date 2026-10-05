@@ -119,6 +119,11 @@
         <div class="dropmenu"></div>
       </div>
       {% endunless %}
+      {% if navpage.url == '/pivotal-corporate.html' %}
+      <div class="navitem nav-slides-link" style="--nav-w:76px;grid-template-columns:1fr;flex-basis:76px">
+        <a class="navlabel" href="https://docs.google.com/presentation/d/1CG_yaUNqHwJVuglcLoc6CLIq60AG7UGlTv5gwQuNS4s/edit?usp=drivesdk" target="_blank" rel="noopener" aria-label="Open Job Spec Slides in Google Slides"><span>Slides</span></a>
+      </div>
+      {% endif %}
       {% endfor %}
     </nav>
     <a class="contact-cta{% if page.url == '/contact.html' %} is-current{% endif %}" href="{{ '/contact.html' | relative_url }}">Contact Me</a>
