@@ -39,7 +39,7 @@ content:
       - { name: preparation, label: "Co-op — Skills & Evidence", type: file, path: preparation.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: sectors, label: "Sectors", type: file, path: sectors.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: workplace_skills, label: "Workplace Skills", type: file, path: workplace-skills.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: glossary, label: "Glossary", type: file, path: glossary.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: glossary, label: "Acronyms and Glossary", type: file, path: glossary.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: cycling, label: "Cycling", type: file, path: cycling.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: cooking, label: "Cooking", type: file, path: cooking.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
   - name: preparation_pages
