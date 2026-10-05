@@ -1426,27 +1426,41 @@
     return nodes;
   };
 
-  // A bold-only first paragraph under an interview question is a recall cue,
-  // not part of the visible answer. Keep it in the source so focus view can
-  // offer it as optional Pointer words, but hide it on the normal page.
-  const pointerWordsNodeFor = heading => {
-    const first = sourceNodesFor(heading)[0];
-    if (!first?.matches?.('p')) return null;
-    const strongs = Array.from(first.querySelectorAll(':scope > strong'));
-    const otherMeaningful = Array.from(first.childNodes).some(node => {
-      if (node.nodeType === Node.TEXT_NODE) return cleanText(node.textContent).length > 0;
-      if (node.nodeType !== Node.ELEMENT_NODE) return false;
-      return !node.matches('strong,br');
+  // Recall is deliberately hidden in the normal page view and exposed only
+  // inside the rehearsal overlay. Use a paragraph beginning "Recall:" as the
+  // delimiter in Markdown. "Recall cue:" remains supported for older content.
+  // Legacy bold-only first paragraphs are also treated as recall so existing
+  // interview material keeps working without a bulk rewrite.
+  const isRecallNode = node => {
+    if (!node?.matches?.('p')) return false;
+    return /^recall(?:\\s+cue)?\\s*:/i.test(cleanText(node.textContent));
+  };
+
+  const isLegacyRecallNode = node => {
+    if (!node?.matches?.('p')) return false;
+    const strongs = Array.from(node.querySelectorAll(':scope > strong'));
+    const otherMeaningful = Array.from(node.childNodes).some(child => {
+      if (child.nodeType === Node.TEXT_NODE) return cleanText(child.textContent).length > 0;
+      if (child.nodeType !== Node.ELEMENT_NODE) return false;
+      return !child.matches('strong,br');
     });
-    return strongs.length && !otherMeaningful ? first : null;
+    return strongs.length && !otherMeaningful;
+  };
+
+  const recallNodesFor = heading => {
+    const nodes = sourceNodesFor(heading);
+    const explicit = nodes.filter(isRecallNode);
+    const first = nodes[0];
+    if (first && isLegacyRecallNode(first) && !explicit.includes(first)) explicit.unshift(first);
+    return explicit;
   };
 
   const hideInlinePointerWords = () => {
     practiceHeadings().forEach(heading => {
-      const pointerWords = pointerWordsNodeFor(heading);
-      if (!pointerWords) return;
-      pointerWords.dataset.pointerWords = '';
-      pointerWords.hidden = true;
+      recallNodesFor(heading).forEach(recall => {
+        recall.dataset.pointerWords = '';
+        recall.hidden = true;
+      });
     });
   };
 
@@ -1968,30 +1982,31 @@
       return button;
     };
 
-    // Interview pages commonly use the first bold-only paragraph as short recall
-    // cue words. Keep those separate from the answer so focus view can hide them
-    // by default everywhere and reveal them only on request.
+    // Pull recall out of the answer before display. Explicit "Recall:" /
+    // "Recall cue:" paragraphs are the delimiter; tagged or legacy bold-only
+    // paragraphs remain supported. Recall never appears in the normal page.
     const hint = document.createElement('div');
     hint.className = 'answer-focus-hint';
-    hint.hidden = true;
-    const firstAnswerNode = copy.firstElementChild;
-    if (firstAnswerNode?.matches('p')) {
-      const strongs = Array.from(firstAnswerNode.querySelectorAll(':scope > strong'));
-      const otherMeaningful = Array.from(firstAnswerNode.childNodes).some(node => {
-        if (node.nodeType === Node.TEXT_NODE) return cleanText(node.textContent).length > 0;
-        if (node.nodeType !== Node.ELEMENT_NODE) return false;
-        return !node.matches('strong,br');
-      });
-      if (strongs.length && !otherMeaningful) {
-        hint.textContent = cleanText(firstAnswerNode.textContent);
-        firstAnswerNode.remove();
-      }
+
+    let recallNodes = Array.from(copy.children).filter(node =>
+      node.matches?.('[data-pointer-words]') || isRecallNode(node)
+    );
+    if (!recallNodes.length && isLegacyRecallNode(copy.firstElementChild)) {
+      recallNodes = [copy.firstElementChild];
     }
+
+    const recallText = recallNodes
+      .map(node => cleanText(node.textContent).replace(/^recall(?:\\s+cue)?\\s*:\\s*/i, '').trim())
+      .filter(Boolean)
+      .join(' · ');
+    recallNodes.forEach(node => node.remove());
+    hint.textContent = recallText;
+    hint.hidden = !recallText;
 
     const answerSwitch = makeFocusSwitch('Answer', true, shown => {
       copy.hidden = !shown;
     });
-    const hintSwitch = makeFocusSwitch('Pointer words', false, shown => {
+    const hintSwitch = makeFocusSwitch('Recall', true, shown => {
       hint.hidden = !shown || !hint.textContent;
     });
     if (!hint.textContent) hintSwitch.hidden = true;
@@ -2022,7 +2037,11 @@
       play.classList.add('is-active');
       play.textContent = '❚❚';
       play.setAttribute('aria-label', 'Pause');
-      activeUtterance = new SpeechSynthesisUtterance(`${title.textContent}. ${cleanText(copy.innerText)}`);
+      const visibleAnswer = copy.hidden ? '' : cleanText(copy.innerText);
+      const visibleRecall = hint.hidden ? '' : cleanText(hint.innerText);
+      activeUtterance = new SpeechSynthesisUtterance(
+        [title.textContent, visibleAnswer, visibleRecall].filter(Boolean).join('. ')
+      );
       activeUtterance.lang = 'en-IE';
       activeUtterance.rate = 0.92;
       activeUtterance.onend = () => {
@@ -2059,8 +2078,8 @@
 
     const { panel: practice } = window.coopPractice.create(copy.innerText, { visualOnly: true });
 
-    // Pointer words exist only in focus view, are off by default, and appear
-    // below the answer when switched on. Recording stays compact and separate.
+    // Answer and Recall both start on in focus view. Either can be switched off,
+    // so the learner can rehearse with both, answer only, or recall only.
     focusContent.replaceChildren(title, controls, copy, hint, practice);
     linkKnownGlossaryTerms(copy);
     lastTrigger = heading;
