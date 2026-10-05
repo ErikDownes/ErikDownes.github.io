@@ -4019,3 +4019,71 @@ article img.img-full,
 .answer-audio-only-stage .answer-audio-recorder{
   margin-top:18px;
 }
+
+
+/* Interview audio rehearsal refinements: clearer meter, timed progress, delete action. */
+.answer-audio-meter{
+  width:78px;
+  height:48px;
+  gap:4px;
+  justify-content:flex-start;
+}
+.answer-audio-meter i{
+  width:4px;
+  min-height:7px;
+  border-radius:999px;
+  transition:height .09s linear;
+}
+.answer-audio-timer{
+  min-width:82px;
+  font-size:.82rem;
+  font-weight:750;
+  letter-spacing:.01em;
+}
+.answer-audio-progress{
+  width:120px;
+  height:8px;
+  flex:0 0 120px;
+  border:0;
+}
+.answer-audio-progress[hidden]{display:none!important}
+.answer-audio-progress.is-complete{filter:saturate(.65)}
+.answer-audio-actions{
+  display:flex;
+  align-items:center;
+  gap:7px;
+}
+.answer-audio-actions a,
+.answer-audio-delete{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:54px;
+  min-height:34px;
+  padding:5px 10px;
+  border:1px solid #cfd5dc;
+  border-radius:8px;
+  background:#fff;
+  color:#30343b;
+  text-decoration:none;
+  font:inherit;
+  font-size:.76rem;
+  font-weight:800;
+  cursor:pointer;
+}
+.answer-audio-delete{
+  color:#8b2b24;
+  border-color:#e3c4c1;
+}
+.answer-audio-delete:hover,
+.answer-audio-delete:focus-visible{
+  background:#fce8e6;
+  border-color:#d7a7a2;
+  outline:none;
+}
+@media(max-width:640px){
+  .answer-audio-progress{width:90px;flex-basis:90px}
+  .answer-audio-attempt{grid-template-columns:1fr}
+  .answer-audio-attempt audio{grid-column:1;grid-row:auto}
+  .answer-audio-actions{justify-content:flex-start}
+}
