@@ -531,6 +531,9 @@
 
     const label = aboutItem.querySelector(':scope > .navlabel[href]');
     if (label) {
+      const labelSpan = label.querySelector('span');
+      if (labelSpan) labelSpan.textContent = 'Career';
+      else label.textContent = 'Career';
       label.setAttribute('aria-haspopup', 'true');
       label.setAttribute('aria-expanded', 'false');
     }
@@ -544,14 +547,22 @@
     menu.replaceChildren();
 
     const links = [
-      { label: 'About Me', href: rootHref },
+      { label: 'Career Home', href: rootHref },
       { label: 'UL CV', href: new URL('pivotal-corporate-study.html', rootHref).href },
       { label: 'Results', href: new URL('academic-record.html', rootHref).href },
-      { label: 'Cashbook Implementation (TIMS)', href: new URL('job-spec.html#cashbook-implementation', rootHref).href },
-      { label: 'HSE Finance', href: new URL('job-spec.html#hse-finance', rootHref).href }
+      { section: 'Job Specs' },
+      { label: 'Cashbook Limited — Implementation Associate (TIMS)', href: new URL('job-spec.html#cashbook-implementation', rootHref).href },
+      { label: 'HSE Mid-West — Co-Op Finance', href: new URL('job-spec.html#hse-finance', rootHref).href }
     ];
 
     links.forEach(entry => {
+      if (entry.section) {
+        const section = document.createElement('span');
+        section.className = 'dropmenu-section-label';
+        section.textContent = entry.section;
+        menu.appendChild(section);
+        return;
+      }
       const link = document.createElement('a');
       link.href = entry.href;
       link.textContent = entry.label;
@@ -573,6 +584,79 @@
   };
 
   setupAboutMenu();
+
+  // Interview is organised by transferable domains, with separate employer/role research entrances.
+  const setupInterviewMenu = () => {
+    const nav = document.getElementById('mainNav');
+    if (!nav) return;
+
+    const rootHref = document.querySelector('.brand')?.href || new URL('/', location.origin).href;
+    const interviewHref = new URL('preparation.html', rootHref).href;
+    const interviewPath = normalisePath(interviewHref);
+    const interviewItem = Array.from(nav.querySelectorAll(':scope > .navitem')).find(item => {
+      const label = item.querySelector(':scope > .navlabel[href]');
+      return label && normalisePath(label.href) === interviewPath;
+    });
+    if (!interviewItem) return;
+
+    interviewItem.removeAttribute('data-question-menu');
+    interviewItem.classList.add('nav-interview-parent', 'has-submenu');
+
+    const label = interviewItem.querySelector(':scope > .navlabel[href]');
+    if (label) {
+      label.setAttribute('aria-haspopup', 'true');
+      label.setAttribute('aria-expanded', 'false');
+    }
+
+    let menu = interviewItem.querySelector(':scope > .dropmenu');
+    if (!menu) {
+      menu = document.createElement('div');
+      interviewItem.appendChild(menu);
+    }
+    menu.className = 'dropmenu interview-menu';
+    menu.replaceChildren();
+
+    const links = [
+      { label: 'Communication', href: interviewHref + '#communication' },
+      { label: 'Problem-Solving', href: interviewHref + '#problem-solving' },
+      { label: 'Accuracy & Detail', href: interviewHref + '#accuracy-attention-to-detail' },
+      { label: 'Teamwork', href: interviewHref + '#teamwork' },
+      { label: 'Customer Care', href: interviewHref + '#customer-care' },
+      { label: 'Organisation & Priorities', href: interviewHref + '#organisation-priorities' },
+      { label: 'Motivation & Role Fit', href: interviewHref + '#motivation-role-fit' },
+      { section: 'Role Research' },
+      { label: 'Cashbook Limited — Implementation Associate (TIMS)', href: new URL('cashbook-study.html', rootHref).href },
+      { label: 'HSE Mid-West — Co-Op Finance', href: new URL('hse-finance-study.html', rootHref).href }
+    ];
+
+    links.forEach(entry => {
+      if (entry.section) {
+        const section = document.createElement('span');
+        section.className = 'dropmenu-section-label';
+        section.textContent = entry.section;
+        menu.appendChild(section);
+        return;
+      }
+      const link = document.createElement('a');
+      link.href = entry.href;
+      link.textContent = entry.label;
+      menu.appendChild(link);
+    });
+
+    let toggle = interviewItem.querySelector(':scope > .navtoggle');
+    if (!toggle) {
+      toggle = document.createElement('button');
+      toggle.type = 'button';
+      toggle.className = 'navtoggle';
+      toggle.dataset.navToggle = '';
+      toggle.textContent = '▾';
+      toggle.setAttribute('aria-label', 'Open Interview menu');
+      toggle.setAttribute('aria-expanded', 'false');
+      interviewItem.insertBefore(toggle, menu);
+    }
+  };
+
+  setupInterviewMenu();
 
   /* -----------------------------------------------------------------------
      Navigation: same open/pin behaviour as the Education site.
@@ -624,7 +708,8 @@
     label.addEventListener('click', event => {
       const targetPath = normalisePath(label.href);
       const isPageMenu = /\/(?:aviation|portfolio)\.html$/.test(targetPath) ||
-        label.closest('.navitem')?.classList.contains('nav-about-parent');
+        label.closest('.navitem')?.classList.contains('nav-about-parent') ||
+        label.closest('.navitem')?.classList.contains('nav-interview-parent');
       const isLm058Overview = /\/education\.html$/.test(targetPath);
       if (isLm058Overview) return;
       if (isPageMenu) {
