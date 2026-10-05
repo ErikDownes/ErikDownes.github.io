@@ -9,7 +9,7 @@ eyebrow: PIVOTAL CORPORATE · CORPORATE SERVICES · ACCOUNTING · ADMINISTRATION
 public_mode: true
 title: "UL CV for Pivotal Corporate "
 ---
-# Job Spec
+
 
 ## Pivotal Corporate – Co-Op Student/Corporate Administrator
 
