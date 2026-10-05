@@ -11,57 +11,41 @@ title: "UL CV for Pivotal Corporate "
 ---
 # Job Spec
 
-These are the employer's own ideas and wording, turned into natural interview questions. The answers stay close to the original job specification.
+## Pivotal Corporate – Co-Op Student/Corporate Administrator
 
-## Tell us about Pivotal Corporate
+Pivotal Corporate is an independent, solutions driven firm with extensive experience assisting US based investors to establish and grow their European investments. We partner with our clients at every stage in the process using our local networks in a number of jurisdictions to ensure their project runs smoothly from the initial assessment phase through to the project being fully operational.
 
-Pivotal Corporate is an **independent, solutions-driven firm** with extensive experience assisting **US-based investors** to **establish and grow their European investments**.
+With our client focused and solutions driven delivery, we have the ability to adapt to the ever-changing needs of our clients quickly and efficiently, becoming the pivot point for their business and allowing them to concentrate on their core business needs as they grow.
 
-## How does Pivotal work with a client from the start of a project through to full operation?
+Delivery is what sets us apart from other firms. Our clients appreciate our unrivalled responsiveness and our passion and dedication. We pride ourselves on being accessible, reliable, practical, and professional at all times.
 
-We partner with our clients **at every stage in the process** using our **local networks in a number of jurisdictions** to ensure their project runs smoothly from the **initial assessment phase through to the project being fully operational**.
+We are currently seeking to hire a pro-active, self-motivated, and highly organised student to join the business. This role will support our Client Service Teams in providing Accounting & Administration services to a portfolio of clients, ensuring that our clients are provided with a high-quality professional service.
 
-## How does Pivotal respond as a client's needs change?
-
-With our **client-focused and solutions-driven delivery**, we have the ability to adapt to the **ever-changing needs of our clients quickly and efficiently**, becoming the **pivot point for their business** and allowing them to concentrate on their **core business needs as they grow**.
-
-## What sets Pivotal's delivery apart from other firms?
-
-**Delivery is what sets us apart from other firms.** Our clients appreciate our **unrivalled responsiveness** and our **passion and dedication**. We pride ourselves on being **accessible, reliable, practical, and professional at all times**.
-
-## What kind of student is Pivotal looking for, and what will the role support?
-
-We are currently seeking to hire a **proactive, self-motivated, and highly organised student** to join the business. This role will support our **Client Service Teams** in providing **Accounting & Administration services** to a portfolio of clients, ensuring that our clients are provided with a **high-quality professional service**.
-
-## Duties and Responsibilities
+## Duties and Responsibilities:
 
 - To develop a basic understanding of the mechanics of company administration and develop business like relationships with intermediaries and internal clients with whom you will come into regular contact.
 - Demonstrate a willingness to apply high standards of client care to all dealings with intermediaries and internal clients.
 - Duties as set out by senior members of staff including (but not limited to):
   - Support the processing of journal entries and account reconciliations.
-  - Assist with accounts payable and accounts receivable activities.
-  - Assist with VAT, tax and regulatory reporting processes.
-  - Help maintain accurate financial records and supporting documentation.
-  - Support compliance with company policies and accounting standards.
+  - Assist with accounts payable and accounts receivable activities
+  - Assist with VAT, tax and regulatory reporting processes
+  - Help maintain accurate financial records and supporting documentation
+  - Support compliance with company policies and accounting standards
   - Support special projects and process improvement initiatives.
   - Conduct research into financial, accounting and market topics as required.
-  - Participate in team meetings and contribute ideas for operational improvement.
+  - Participate in team meetings and contribute ideas for operational improvement
 - Deal with day-to-day administration tasks assigned by company secretarial group including (but not limited to):
-  - Maintenance of internal schedules and registers.
-  - Process KYC and CDD requirement to ensure compliance with statutory requirements.
+  - Maintenance of internal schedules and registers;
+  - Process KYC and CDD requirement to ensure compliance with statutory requirements; and
   - Organise and facilitate for the signing of regulatory and legal documentation.
 
-## Job Specific Requirements
+## Job Specific Requirements:
 
 - Organised, detail-oriented individual with well-developed critical thinking skills and possesses the ability to manage multiple tasks in a fast-paced environment.
 - Strong written and verbal skills.
 - Working knowledge of Microsoft Word, Excel, and Outlook.
 - A positive attitude, demonstrating enthusiasm and the desire to take on responsibility. A willingness to get involved in team issues and events.
-- An interest in financial services, and a genuine desire to learn how this can be used as a tool for adding value to a client's business.
-
-## What does proactive mean in this role?
-
-You don't wait for someone to tell you every next step. You anticipate what needs to be done, act early, follow up, solve small problems before they become bigger ones, and keep the work moving.
+- An interest in financial services, and a genuine desire to learn how this can be used as a tool for adding value to a client’s business.
 
 # Acronyms and Glossary
 
@@ -111,7 +95,7 @@ This explains the co-op role: the student is entering the **operational infrastr
 - [Revenue — Qualifying companies / Section 110](https://www.revenue.ie/en/companies-and-charities/financial-services/qualifying-companies/index.aspx)
 - [Revenue Tax and Duty Manual — Section 110 companies](https://www.revenue.ie/en/tax-professionals/tdm/income-tax-capital-gains-tax-corporation-tax/part-04/04-09-01.pdf)
 
-# ULCV
+# UL CV
 
 ## Teamwork
 
