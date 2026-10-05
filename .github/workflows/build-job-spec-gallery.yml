@@ -1,0 +1,30 @@
+name: Build Job Spec Gallery Asset
+
+on:
+  push:
+    paths:
+      - '.github/workflows/build-job-spec-gallery.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build self-hosted gallery image
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p assets/job-spec-slides
+          cat assets/job-spec-slides-build/part-*.b64 | base64 -d > assets/job-spec-slides/gallery.avif
+          test -s assets/job-spec-slides/gallery.avif
+          rm -rf assets/job-spec-slides-build
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if ! git diff --cached --quiet; then
+            git commit -m "Build self-hosted Job Spec slide gallery asset"
+            git push
+          fi
