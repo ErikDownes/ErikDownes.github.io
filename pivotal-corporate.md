@@ -342,7 +342,7 @@ Pivotal’s [current website](https://www.pivotalcorporate.com/) describes **100
 
 **UL Co-op  Returned  Career path**
 
-Yes and the evidence for that is that **Brian Nolan returned as an Assistant Client Manager after previously spending nine months at Pivotal on UL work placement**. That is probably the most relevant LinkedIn fact for me as a UL Co-op applicant.
+Yes. One particularly relevant example from Pivotal's LinkedIn is that **a former UL co-op student later returned to work at Pivotal after completing a placement there**. I like that because it shows that a co-op placement can become the start of a longer relationship with the company, not just a short university requirement.
 
 ## How important is aviation to Pivotal?
 
