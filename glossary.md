@@ -1,8 +1,12 @@
 ---
 layout: doc
+permalink: /glossary.html
 handle: Acronyms and Glossary
 title: Acronyms and Glossary
+nav_order: 95
+description: A single-page A–Z glossary of acronyms and key terms used across the interview preparation site.
 eyebrow: RAPID RECALL · ACRONYMS · GLOSSARY
+public_mode: true
 ---
 
 <div id="glossary-app">
@@ -35,11 +39,11 @@ A legal entity established for a defined transaction, asset or financing purpose
 
 ## KYC | Know Your Customer
 
-Checks used to establish and verify who a customer or relevant party is.
+The process of establishing and verifying who a customer, client or relevant party is.
 
 ## CDD | Customer Due Diligence
 
-The broader due-diligence process around identifying customers, beneficial owners, risk and the nature of the relationship.
+The broader process of identifying and verifying the customer and beneficial owners, understanding the purpose and nature of the relationship, and assessing risk so statutory compliance requirements can be met.
 
 ## AP / AR | Accounts Payable / Accounts Receivable
 
