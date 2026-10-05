@@ -1,18 +1,16 @@
 ---
 layout: doc
 permalink: /misc.html
-handle: Misc
+handle: Blog
 nav_order: 100
 description: Miscellaneous notes, company background and supporting resources.
-eyebrow: MISCELLANEOUS
+eyebrow: Blog
 public_mode: true
 title: Miscellaneous
 ---
-# Miscellaneous
+# Blog
 
 
-
-&nbsp;
 
 &nbsp;
 
