@@ -48,31 +48,33 @@ The main lesson was that with large datasets, the analysis is only as good as th
 
 ### Situation
 
-I started with a simple question: **Abelo says it has 61 aircraft, 26 lessees and operates across 19 countries — what does that portfolio actually look like?**
+The historical Dublin Bikes archive covered several years, but it was not one consistent source file repeated in the same format.
 
-There was no single clean dataset containing the full fleet, so what looked like a mapping project became a data-reconciliation problem.
+The way the data was published changed over time. Some years were split into roughly **12 separate files**, while later periods could be grouped into only **three or four larger files**. The date and timestamp formats also changed, with different text formats, month styles and year formats.
 
 ### Task
 
-I needed to build a reliable aircraft dataset from several public sources whose structures did not match.
+I needed to combine those changing historical files into **one reliable dataset** before I could compare stations or time periods properly.
+
+At around **55 million observations**, it was also beyond the point where I wanted to treat the project as a spreadsheet exercise.
 
 ### Action
 
-I used public PlaneSpotters production lists for ATRs and Dash 8s. The information was spread across pages rather than available as a CSV, so I captured the pages and used **AI-assisted OCR** to turn them into about **2,600 structured aircraft records**.
+I used pandas to inspect the different files, standardise the column structure and normalise the date and time fields so records from different years meant the same thing.
 
-I then brought in the much larger **OpenSky aircraft database — about 520,000 records**. The fields were not identical, so I had to reconcile them rather than merge them blindly. For example, **PlaneSpotters MSN matched to OpenSky serial number**, while registration could be matched directly. I used aircraft type, operator and aircraft history as supporting evidence.
+I used `to_datetime` to convert the inconsistent timestamp formats into one consistent datetime representation and checked the results before combining the data.
 
-Separately, I built a **61-record Abelo/Elix control table** from public announcements and historical information and worked from **lessee → aircraft type → candidate aircraft → registration/MSN → OpenSky cross-check**.
+For storage and querying, I moved the cleaned data into **SQLite**. I could have used a server database such as Microsoft SQL Server, but for this project SQLite was a better engineering choice: it is lightweight, runs as a local database file, needs no separate database server, and Python has direct support for it through the `sqlite3` library.
 
-I deliberately left **five aircraft unresolved** where the evidence was not strong enough rather than forcing a match.
+That gave me SQL without adding unnecessary infrastructure for a single-user analytical project of about 55 million rows.
 
 ### Result
 
-Once the data made sense, I used Google Colab and pandas for the analysis and then built the [Turboprop Fleet Map](/fleet-map.html) with HTML, CSS, JavaScript and Leaflet.
+I ended up with one consistent database that I could query and aggregate into the much smaller hourly tables needed for the [Dublin Bikes dashboard](/dublin-bikes.html).
 
 ### What I learned
 
-The most useful lesson was that **good analysis also means knowing when the evidence is not strong enough to make a claim**. A technically successful merge is not necessarily a reliable match.
+The important decision is not to use the biggest technology available. It is to choose technology that is **appropriate to the scale and purpose of the problem**, while making sure inconsistent source data is standardised before it is combined.
 
 
 
