@@ -54,11 +54,27 @@ Strong academic evidence already shown on this portfolio includes **A1 in Probab
 
 ## Teamwork
 
-A concrete example comes from **Computer Software II**, where I completed multiple Java assignments with a partner. We divided the work, met in the library to solve problems together, kept each other updated by email when working separately, and then combined and tested the code before submission.
+### Situation
 
-The important part was not simply splitting the task. We had to make two people's work function as one submission, communicate when something changed, and support each other when one part of the solution blocked the other. The module result was **A2**.
+During my TY placement at Mr Price, I worked as part of a large team reorganising the shop floor and redesigning the shelf layout. It was an all-hands-on-deck project, and everyone was encouraged to contribute ideas outside their normal role.
 
-**Evidence:** paired software development · shared deadlines · integration and testing · remote and in-person coordination.
+### Task
+
+We needed to complete the changeover with **minimum disruption to customers and minimum loss of sales**. I created my first **Gantt chart** because the work had clear dependencies — one area often had to be cleared before another could move.
+
+We also used data to choose the best time. **Reolink cameras feeding into Frigate on a Raspberry Pi** used AI computer vision to generate timestamped **person-detection events**. These were discrete observations that could be aggregated into integer footfall counts. A second camera provided redundancy, and the two feeds reconciled to the same overall pattern and totals, giving us extra confidence in the data.
+
+### Action
+
+I analysed the events locally in a **Jupyter notebook using Python and pandas**. By aggregating them by **day of week and time of day**, and then looking at the longer time-series pattern, we identified Sunday evening into Monday morning as one of the quietest periods.
+
+When several staff became unavailable through illness, I took direction, switched tasks as priorities changed and helped focus effort on the activities that other parts of the project depended on.
+
+### Result
+
+Despite being short-staffed, we completed the redesign within the planned window, **minimising disruption to customers and protecting sales**.
+
+For me, the project brought together **teamwork, planning and data analysis**. It reinforced three elements of successful teamwork: **planning together, understanding how your work depends on others, and adapting together when circumstances change**.
 
 ## Communication Skills
 
