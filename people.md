@@ -12,33 +12,27 @@ eyebrow: teamwork · communication · customer care · taking direction.
 ---
 ## Worked Effectively in a Team | Tell me about a time you worked effectively as part of a team.
 
-### What I’m going to tell you
+### Situation
 
-Good teamwork means 
+During my TY placement at Mr Price, I worked as part of a large team reorganising the shop floor and redesigning the shelf layout. It was an all-hands-on-deck project, and everyone was encouraged to contribute ideas outside their normal role.
 
-1. **planning together,**
-2. **understanding mutual dependancies,**
-3. **and adapting together as needed**
+### Task
 
-### Planning together
+We needed to complete the changeover with **minimum disruption to customers and minimum loss of sales**. I created my first **Gantt chart** because the work had clear dependencies — one area often had to be cleared before another could move.
 
-During my TY placement in Mr Price, we had to reorganise the shop floor with minimum disruption to customers. My manager and I looked at footfall data from the store camera and chose **Sunday night into Monday morning** as the best window. I also produced my **first Gantt chart**, sequencing the different jobs so we could see what depended on what and what had to be completed before the store reopened.
+We also used data to choose the best time. **Reolink cameras feeding into Frigate on a Raspberry Pi** used AI computer vision to generate timestamped **person-detection events**. These were discrete observations that could be aggregated into integer footfall counts. A second camera provided redundancy, and the two feeds reconciled to the same overall pattern and totals, giving us extra confidence in the data.
 
-### Adapting together
+### Action
 
-Once the work started, stock, fixtures, displays and people all had to move in a coordinated sequence. When a colleague called in sick, we had to redistribute the workload and work longer. I took direction, changed tasks as priorities shifted and helped wherever I was needed to keep the overall plan moving.
+I analysed the events locally in a **Jupyter notebook using Python and pandas**. By aggregating them by **day of week and time of day**, and then looking at the longer time-series pattern, we identified Sunday evening into Monday morning as one of the quietest periods.
 
-### What I told you
+When several staff became unavailable through illness, I took direction, switched tasks as priorities changed and helped focus effort on the activities that other parts of the project depended on.
 
-Good teamwork means 
+### Result
 
-1. **planning together,**
-2. **understanding how your work affects others,**
-3. **and adapting together to deliver the result.**
+Despite being short-staffed, we completed the redesign within the planned window, **minimising disruption to customers and protecting sales**.
 
-
-
-&nbsp;
+For me, the project brought together **teamwork, planning and data analysis**. It reinforced three elements of successful teamwork: **planning together, understanding how your work depends on others, and adapting together when circumstances change**.
 
 ## Explain something clearly  | Tell me about a time you had to explain something clearly to another person.
 
