@@ -39,23 +39,23 @@ Journeys through **maths, technology and people** brought me to Financial Maths 
 
 ### What I’m going to tell you
 
-**Our journeys are aligned: we both bring maths, technology and people together to solve financial problems and deliver for customers.**
+We operate the same way — bringing maths, technology and teamwork together, while never losing sight of the client.
 
 
 
-### The journeys continue
+### We are going the same way
 
-I’m learning how maths, technology and people increasingly come together: maths and data analysis becoming more sophisticated, technology moving into databases, SQL and automation, and my own work moving further into teamwork, customers and professional responsibility.
+My own journey is moving towards more sophisticated maths, data analysis, databases, SQL and automation, while also moving further into teamwork and professional responsibility.
 
-### More sophisticated tools emerge
+### We appreciate the same formula
 
-That is exactly where Cashbook sits — finance, technology and people coming together to improve real processes for customers. So this role is not a change of direction for me; it is the natural continuation of the direction I am already travelling.
+Cashbook brings those same strengths together — finance, technology, automation and AI — but always with a **client-focused, solutions-driven** approach and an emphasis on adapting to changing client needs.
 
 
 
 ### What I told you
 
-**Our journeys are aligned: we both bring maths, technology and people together to solve financial problems and deliver for customers.**
+We operate the same way — bringing maths, technology and teamwork together, while never losing sight of the client.
 
 
 
