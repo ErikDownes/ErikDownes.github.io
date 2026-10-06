@@ -47,8 +47,6 @@ For me, good communication means making information accurate, accessible, approp
 
 ## Problem Solving and Analytics
 
-
-
 Financial Mathematics has developed my analytical approach across mathematics, statistics, finance, accounting, modelling and data analysis. I like identifying differences, checking assumptions and working systematically until the result can be trusted.
 
 In Excel, I investigated a spreadsheet that no longer reconciled after its inputs changed. By duplicating the sheet, exposing the formulas and tracing the calculations, I found a hard-coded value where a relative-reference formula should have been. Replacing it restored the reconciliation and made the workbook update correctly when the data changed.
