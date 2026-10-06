@@ -30,6 +30,7 @@ content:
     items:
       - { name: profile, label: "10 · About Me", type: file, path: profile.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: pivotal_corporate_study, label: "15 · CV", type: file, path: pivotal-corporate-study.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: cv_qa, label: "16 · CV QA", type: file, path: cv-qa.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: qa, label: "20 · Career & Motivation", type: file, path: qa.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: people, label: "30 · Teamwork & Communication", type: file, path: people.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: analytics, label: "40 · Problem Solving & Analytics", type: file, path: analytics.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
