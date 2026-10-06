@@ -8,8 +8,6 @@ description: Financial Mathematics student at the University of Limerick with
 nav_order: 10
 top_nav: true
 profile_mode: true
-image: /assets/erik-profile-200kb.jpg
-image_alt: Erik Downes
 eyebrow: 3rd YEAR · FINANCIAL MATHEMATICS · UNIVERSITY OF LIMERICK
 ---
 
