@@ -9,7 +9,7 @@ eyebrow: INTERACTIVE PROJECTS
 public_mode: true
 ---
 
-Open a project directly. Each one now has its **own page**, with the interactive work first and the explanation underneath.
+Four projects. Open the interactive work first; the explanation is underneath.
 
 <style>
 .project-index{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin:1rem 0 2rem}
@@ -22,26 +22,21 @@ Open a project directly. Each one now has its **own page**, with the interactive
 <div class="project-index">
   <a class="project-card" href="{{ '/dublin-bikes.html' | relative_url }}">
     <strong>Dublin Bikes</strong>
-    <span>24-hour rebalancing dashboard using public station data, pandas, SQLite/SQL and Leaflet.</span>
+    <span>Large public dataset → pandas → SQLite/SQL → 24-hour rebalancing dashboard.</span>
   </a>
 
-  <a class="project-card" href="{{ '/pivotal-office-map.html' | relative_url }}">
-    <strong>Pivotal Office Map</strong>
-    <span>AI-assisted Leaflet map of the four Pivotal Corporate office locations.</span>
-  </a>
-
-  <a class="project-card" href="{{ '/fleet-map.html' | relative_url }}">
-    <strong>Turboprop Fleet Map</strong>
-    <span>Interactive aircraft, lessee and country view built from reconciled public fleet data.</span>
+  <a class="project-card" href="{{ '/cycling.html' | relative_url }}">
+    <strong>Strava Raw Data Analysis</strong>
+    <span>Raw GPX → EDA → feature engineering → SQLite/SQL → visualisation and Leaflet.</span>
   </a>
 
   <a class="project-card" href="{{ '/mortgage-calculator.html' | relative_url }}">
     <strong>Mortgage Calculator</strong>
-    <span>Interactive repayment and amortisation model.</span>
+    <span>Interactive repayment, amortisation and long-term cash-flow model.</span>
   </a>
 
   <a class="project-card" href="{{ '/pcp-calculator.html' | relative_url }}">
-    <strong>PCP Car Finance Calculator</strong>
-    <span>Deposit, monthly payment, term and GMFV cash-flow calculator.</span>
+    <strong>PCP Finance Comparator</strong>
+    <span>Compare up to three offers for the same car using cash cost and present-value cost.</span>
   </a>
 </div>
