@@ -41,7 +41,7 @@ When a problem looks too large, I try to **define the objective, break it into s
 
 &nbsp;
 
-## Tell me about a time your first assumption or approach was wrong and you had to rethink it.
+## First assumption or approach |  Tell me about a time your first assumption or approach was wrong and you had to rethink it.
 
 ### Situation
 
