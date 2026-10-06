@@ -6,30 +6,22 @@ title: CV
 subtitle: UL CV — evidence, experience and achievements.
 nav_order: 15
 top_nav: true
-description: UL CV evidence tailored for the Cashbook Limited Implementation Associate (TIMS) interview.
+description: UL CV evidence tailored for the Cashbook Limited Implementation
+  Associate (TIMS) interview.
 eyebrow: CV · UL EVIDENCE · EXPERIENCE · ACHIEVEMENTS
 public_mode: true
 ---
-
 ## Teamwork
 
-### Situation
-
-During my TY placement at Mr Price, I worked as part of a large team reorganising the shop floor and redesigning the shelf layout. It was an all-hands-on-deck project, and everyone was encouraged to contribute ideas outside their normal role.
-
-### Task
+ my TY placement at Mr Price, I worked as part of a large team reorganising the shop floor and redesigning the shelf layout. It was an all-hands-on-deck project, and everyone was encouraged to contribute ideas outside their normal role.
 
 We needed to complete the changeover with **minimum disruption to customers and minimum loss of sales**. I created my first **Gantt chart** because the work had clear dependencies — one area often had to be cleared before another could move.
 
 We also used data to choose the best time. **Reolink cameras feeding into Frigate on a Raspberry Pi** used AI computer vision to generate timestamped **person-detection events**. These were discrete observations that could be aggregated into integer footfall counts. A second camera provided redundancy, and the two feeds reconciled to the same overall pattern and totals, giving us extra confidence in the data.
 
-### Action
-
 I analysed the events locally in a **Jupyter notebook using Python and pandas**. By aggregating them by **day of week and time of day**, and then looking at the longer time-series pattern, we identified Sunday evening into Monday morning as one of the quietest periods.
 
 When several staff became unavailable through illness, I took direction, switched tasks as priorities changed and helped focus effort on the activities that other parts of the project depended on.
-
-### Result
 
 Despite being short-staffed, we completed the redesign within the planned window, **minimising disruption to customers and protecting sales**.
 
