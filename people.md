@@ -1,12 +1,13 @@
 ---
 layout: doc
 permalink: /people.html
-handle: People
-title: People
+handle: Teamwork & Communication
+title: Teamwork & Communication
+subtitle: How I work with colleagues, communicate with customers, build relationships and respond to feedback.
 nav_order: 30
 top_nav: true
 description: Teamwork, communication and customer-facing interview preparation.
-eyebrow: INTERVIEW DOMAIN · PEOPLE
+eyebrow: INTERVIEW DOMAIN · TEAMWORK & COMMUNICATION
 ---
 **PEOPLE = teamwork · communication · customer care · taking direction.**
 
