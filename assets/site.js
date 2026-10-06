@@ -499,7 +499,7 @@
         item.classList.toggle('nav-right', menuTitle === 'LM058');
         if (label) {
           label.href = href;
-          if (menuTitle === 'Aviation' || menuTitle === 'Portfolio' || menuTitle === 'LM058' || menuTitle === 'Fin Mat Modules') {
+          if (menuTitle === 'Aviation' || menuTitle === 'Portfolio' || menuTitle === 'LM058' || menuTitle === 'FinMath Mod') {
             label.setAttribute('aria-haspopup', 'true');
             label.setAttribute('aria-expanded', 'false');
           } else {
@@ -563,6 +563,8 @@
 
     const links = [
       { label: 'About Me', href: rootHref },
+      { label: 'CV QA', href: new URL('cv-qa.html', rootHref).href },
+      { label: 'LM058 · Degree at a Glance', href: new URL('lm058.html', rootHref).href },
       { label: 'Results', href: new URL('academic-record.html', rootHref).href },
       { label: 'Projects', href: new URL('projects.html', rootHref).href },
       { section: 'Cashbook Interview' },
