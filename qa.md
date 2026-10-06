@@ -72,9 +72,6 @@ In my logistics work with O’Mahony’s, I’ve learned that doing my own job w
 ### How I contribute in a team
 
 I’ve also had paired programming experience in college, where we worked through problems together, supported each other and respected each other’s contribution to the shared task. So I think I can bring my individual analytical and technical skills into a team, take responsibility for my part and contribute to delivering a reliable, high-quality service to the customer.  
-  
-  
-
 
 ## What do you enjoy most about Financial Maths?
 
@@ -92,9 +89,31 @@ That is probably the part I enjoy most about Financial Maths: using maths and te
 
 
 
-&nbsp;
+## What do you enjoy most about Financial Maths?
 
-&nbsp;
+### Turning messy data into something reliable
+
+What I enjoy most is where maths, statistics and technology come together in data analysis. I like taking real data whose inputs have changed over time and creating a consistent structure from it.
+
+In accounting, dates anchor transactions to the correct period; in data analysis, timestamps do much the same thing — they allow observations to be compared properly across time.
+
+In my Dublin Bikes project, eight years of data contained changing date and timestamp formats — abbreviated and full month names, two-digit and four-digit years, and dates stored as text. With around 55 million rows, that cannot be corrected manually.
+
+In a spreadsheet, I like using formulas and relative references so the logic follows changing inputs consistently. With larger datasets, pandas and DataFrames let me apply the same idea across whole columns, while tools such as `to_datetime` can normalise inconsistent timestamps. At the next scale, databases and SQL let me store the data consistently and query only what I need, and Leaflet lets me turn the results into something visual and useful.
+
+### Finding why things do not balance
+
+I also enjoy reconciliation-type problems in Excel — where something does not balance or match and you have to work backwards, identify the inconsistency and understand why it happened.
+
+I find that satisfying because there is a clear purpose to the analysis: trace the problem, explain it, correct it and get to an answer that can be trusted.
+
+### Analysis that leads to action
+
+That is probably what I enjoy most about Financial Maths: taking changing or inconsistent inputs, imposing a reliable structure on them and turning them into something accurate and useful.
+
+That is why areas such as bank reconciliation, cash application, troubleshooting and automation appeal to me. The analysis is not just theoretical — the result can actually be used to improve a real financial process.
+
+
 
 &nbsp;
 
