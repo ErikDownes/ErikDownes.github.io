@@ -52,23 +52,25 @@ Good teamwork means
 
 ### Situation
 
-My mother was comparing three PCP offers for an Audi A4 and was leaning towards the option with the highest deposit and lowest monthly repayments because she had the larger deposit available in the bank.
+In fifth year, my mother was comparing three PCP offers for an Audi A4: a higher deposit with lower monthly repayments, a lower deposit with higher monthly repayments, and an option in between. She was leaning towards the higher deposit because she had the money available in the bank.
 
 ### Task
 
-I wanted to help her step away from that immediate affordability decision and compare the three offers on a cold financial basis — what each option would actually cost overall.
+I wanted to turn the finance I understood into information she could actually use to compare the three offers objectively, rather than assuming that lower monthly repayments meant a lower overall cost.
 
 ### Action
 
-I used what I had learned about the time value of money to build a simple PCP calculator. I compared the deposit, repayments and overall cost of each option, and then used graphs as well as the final figures to explain the differences clearly and at a pace that suited her.
+At school I had learned the mathematics behind loan amortisation. A PCP is not just one calculation: the deposit is an immediate cash flow that reduces the amount financed; the monthly repayments form an annuity whose discounted values form a finite geometric series; and the GMFV is a separate balloon payment at the end of the term.
+
+I coded a simple [PCP calculator](/pcp-calculator.html) that combined those components and showed the amount financed, monthly repayment, final payment and, most importantly for the comparison, the **total cash outlay**. I then used the graph and the headline figures to explain the three options in ordinary language, slowing the explanation down and giving her time to work through the numbers.
 
 ### Result
 
-The middle option was about €800 cheaper overall, so she could make the decision from the full financial picture rather than simply thinking, “I have the bigger deposit available, so I may as well pay it now.”
+The middle option was about **€800 cheaper in total cash outlay**. Instead of simply choosing the largest deposit because she could afford it, she could see the financial effect of each option and make the decision from the full picture.
 
 ### What I learned
 
-Good communication is not just producing the correct analysis. It is helping another person understand the evidence well enough to make a more informed decision.
+Good communication is not just producing the correct analysis. It is turning technical information into something another person can understand, trust and use to make a decision.
 
 
 
