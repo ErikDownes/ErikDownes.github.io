@@ -496,7 +496,7 @@
         const span = label?.querySelector('span');
         const menuTitle = entry.title || '';
         const pageTitle = entry.page_title || entry.title || '';
-        item.classList.toggle('nav-right', menuTitle === 'Fin Mat Modules' || menuTitle === 'LM058');
+        item.classList.toggle('nav-right', menuTitle === 'LM058');
         if (label) {
           label.href = href;
           if (menuTitle === 'Aviation' || menuTitle === 'Portfolio' || menuTitle === 'LM058' || menuTitle === 'Fin Mat Modules') {
@@ -1160,6 +1160,15 @@
     const pageUrl = new URL(label.href, location.href);
     const targetPath = normalisePath(pageUrl.href);
     const rootPath = normalisePath(document.querySelector('.brand')?.href || '/');
+
+    // LM058 is deliberately a standalone direct link; Fin Mat Modules owns the module dropdown.
+    if (/\/lm058\.html$/.test(targetPath)) {
+      menu.replaceChildren();
+      item.classList.remove('has-submenu', 'is-open');
+      label.removeAttribute('aria-haspopup');
+      label.removeAttribute('aria-expanded');
+      return;
+    }
 
     // About Me is deliberately a single flat page: never build a dropdown for it.
     if (targetPath === rootPath) {
