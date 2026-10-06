@@ -10,6 +10,61 @@ public_mode: true
 ---
 
 
+
+## Dublin Bikes — 24-Hour Rebalancing Dashboard
+
+**SQL → historical station data → hourly aggregation → interactive map → operational insight**
+
+This project asks a more useful question than simply “which stations are empty?”: **where does imbalance move through the Dublin Bikes network during the day, and when is rebalancing likely to matter most?**
+
+A large historical station-status archive is reduced with **pandas and SQLite/SQL** into a compact hourly dataset. The dashboard keeps the underlying occupancy, empty-rate and full-rate measures, while presenting a simple visual language of **Empty · Balanced · Full**. Switch between **Weekday** and **Weekend**, move through all **24 hours**, or press **Play** to watch the network change.
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:.7rem;margin:1rem 0 1.2rem;">
+  <div style="padding:.85rem 1rem;border:1px solid rgba(127,127,127,.25);border-radius:12px;">
+    <strong>24-hour view</strong><br>
+    <span style="font-size:.92em;opacity:.78;">Hourly station balance rather than one averaged morning snapshot.</span>
+  </div>
+  <div style="padding:.85rem 1rem;border:1px solid rgba(127,127,127,.25);border-radius:12px;">
+    <strong>Weekday / Weekend</strong><br>
+    <span style="font-size:.92em;opacity:.78;">Compare commuting behaviour with the different weekend pattern.</span>
+  </div>
+  <div style="padding:.85rem 1rem;border:1px solid rgba(127,127,127,.25);border-radius:12px;">
+    <strong>Critical question</strong><br>
+    <span style="font-size:.92em;opacity:.78;">The important signal is how imbalance moves, not merely whether it exists.</span>
+  </div>
+</div>
+
+<div style="margin:1rem 0 1.2rem;border:1px solid rgba(127,127,127,.25);border-radius:14px;overflow:hidden;background:#fff;">
+  <iframe
+    src="{{ '/dublin-bikes-dashboard.html' | relative_url }}"
+    title="Dublin Bikes 24-hour rebalancing dashboard"
+    style="display:block;width:100%;height:900px;border:0;background:#fff;"
+    loading="lazy">
+  </iframe>
+</div>
+
+[Open the Dublin Bikes dashboard full screen →]({{ '/dublin-bikes-dashboard.html' | relative_url }})
+
+### What the dashboard is testing
+
+The first map was a useful prototype, but averaging a whole morning together risked hiding the real behaviour. The analysis therefore moved to **hour-by-hour occupancy**. A station can drain, recover, fill and reverse direction over the same day. That “seesaw” is exactly the pattern an operational rebalancing decision needs to expose.
+
+The dashboard uses a continuous occupancy measure underneath:
+
+[
+\text{occupancy} = \frac{\text{bikes available}}{\text{bikes available} + \text{free docks}}
+]
+
+For quick interpretation, the map reduces that measure to three states: **Empty**, **Balanced** and **Full**. The popups retain the actual occupancy, empty-rate and full-rate percentages so the simplification does not throw away the underlying evidence.
+
+### Why SQL matters here
+
+The historical archive is far larger than a single spreadsheet worksheet and contains repeated station observations across many dates and times. Instead of loading the whole archive into one enormous DataFrame, the project uses the database to do the heavy aggregation first, then brings only the much smaller result set back into pandas and the web visualisation.
+
+That is the practical progression behind the project: **spreadsheets → pandas → database → SQL aggregation → interactive dashboard**.
+
+
+
 ## SQL Bank Reconciliation Lab — Cashbook Preparation
 
 **Microsoft SQL → bank transactions → ledger matching → exceptions → cash application**
