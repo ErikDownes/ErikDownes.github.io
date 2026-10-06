@@ -6,6 +6,7 @@ title: Erik Downes
 description: Financial Mathematics student at the University of Limerick with
   interests in finance, data analysis and applied problem solving.
 nav_order: 10
+top_nav: true
 profile_mode: true
 image: /assets/erik-profile-200kb.jpg
 image_alt: Erik Downes
