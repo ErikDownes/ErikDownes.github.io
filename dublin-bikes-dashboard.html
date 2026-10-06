@@ -303,6 +303,10 @@ button{cursor:pointer}
         <canvas id="networkChart"></canvas>
       </div>
 
+      <div style="margin-top:6px;font-size:12px;color:var(--muted);text-align:center;">
+        Selected hour is highlighted on all three series. Click any hour on the chart to jump the map to that time.
+      </div>
+
       <div class="explain">
         <strong>Occupancy</strong> is the proportion of station capacity
         represented by available bikes. The three labels are deliberately simple,
@@ -410,21 +414,36 @@ const chart = new Chart(
           data:[],
           borderWidth:3,
           tension:.25,
-          pointRadius:3
+          pointRadius:ctx =>
+            ctx.dataIndex === Number(hour.value) ? 7 : 2.5,
+          pointHoverRadius:8,
+          pointBorderWidth:ctx =>
+            ctx.dataIndex === Number(hour.value) ? 3 : 1,
+          pointHitRadius:12
         },
         {
           label:"Empty-station rate",
           data:[],
           borderWidth:2,
           tension:.25,
-          pointRadius:2
+          pointRadius:ctx =>
+            ctx.dataIndex === Number(hour.value) ? 7 : 2.5,
+          pointHoverRadius:8,
+          pointBorderWidth:ctx =>
+            ctx.dataIndex === Number(hour.value) ? 3 : 1,
+          pointHitRadius:12
         },
         {
           label:"Full-station rate",
           data:[],
           borderWidth:2,
           tension:.25,
-          pointRadius:2
+          pointRadius:ctx =>
+            ctx.dataIndex === Number(hour.value) ? 7 : 2.5,
+          pointHoverRadius:8,
+          pointBorderWidth:ctx =>
+            ctx.dataIndex === Number(hour.value) ? 3 : 1,
+          pointHitRadius:12
         }
       ]
     },
@@ -436,6 +455,36 @@ const chart = new Chart(
       interaction:{
         mode:"index",
         intersect:false
+      },
+
+      onClick:(event, elements, chartRef) => {
+
+        const hits =
+          chartRef.getElementsAtEventForMode(
+            event,
+            "index",
+            {intersect:false},
+            true
+          );
+
+        if(!hits.length){
+          return;
+        }
+
+        const clickedIndex = hits[0].index;
+        const clickedHour = Number(chartRef.data.labels[clickedIndex]);
+
+        if(Number.isFinite(clickedHour)){
+          hour.value = clickedHour;
+          render();
+        }
+      },
+
+      onHover:(event, elements) => {
+        if(event.native && event.native.target){
+          event.native.target.style.cursor =
+            elements.length ? "pointer" : "default";
+        }
       },
 
       plugins:{
