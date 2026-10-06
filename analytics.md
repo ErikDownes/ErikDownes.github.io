@@ -75,7 +75,7 @@ My first approach was not useless — it gave me a clean baseline — but it was
 
 &nbsp;
 
-## Tell me about a time you found an error or inconsistency and worked out what was causing it.
+## Inconsistency  | Tell me about a time you found an error or inconsistency and worked out what was causing it.
 
 ### Situation
 
