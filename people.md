@@ -10,7 +10,7 @@ top_nav: true
 description: Teamwork, communication and customer-facing interview preparation.
 eyebrow: teamwork · communication · customer care · taking direction.
 ---
-## Tell me about a time you worked effectively as part of a team.
+## Worked Effectively in a Team | Tell me about a time you worked effectively as part of a team.
 
 ### What I’m going to tell you
 
@@ -40,9 +40,7 @@ Good teamwork means
 
 &nbsp;
 
-&nbsp;
-
-## Tell me about a time you had to explain something clearly to another person.
+## Explain something clearly  | Tell me about a time you had to explain something clearly to another person.
 
 ### Situation
 
@@ -72,7 +70,7 @@ Good communication is not just producing the correct analysis. It is turning tec
 
 &nbsp;
 
-## Tell me about a time you dealt with a customer or client problem.
+## Dealt with a client problem. | Tell me about a time you dealt with a customer or client problem.
 
 When a customer raises a problem, I don't get defensive or embarrassed about it. I try to understand what has happened, keep the customer informed and follow the issue through to a fair resolution. I'll give you an example from Mr Price.
 
@@ -104,7 +102,7 @@ What I learned was that when a customer is already frustrated, good service mean
 
 &nbsp;
 
-## Tell me about a time you received direction or feedback and had to adapt.
+## You received direction | Tell me about a time you received direction or feedback and had to adapt.
 
 ### Situation
 
@@ -132,7 +130,7 @@ The lesson for me was that **taking direction is not just following an instructi
 
 &nbsp;
 
-## Tell me about a time you had to work with different people to get something done.
+## Had to work with different new people  | Tell me about a time you had to work with different people to get something done.
 
 ### What I’m going to tell you
 
@@ -159,8 +157,6 @@ Good teamwork means
 3. **and adapting together to deliver the result.**
 
 
-
-&nbsp;
 
 &nbsp;
 
