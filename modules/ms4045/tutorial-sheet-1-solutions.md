@@ -27,13 +27,39 @@ mathjax: true
 <strong>Source discipline.</strong> The lecturer answer sheet is the authority for the stated answers and hints. The algebra below expands those terse answers into worked steps. Where the lecturer sheet says <em>For independent work</em> and the theorem statement itself is not in the supplied material, the theorem is not invented here.
 </div>
 
+<div class="ms4045-solution-hero" markdown="1">
+## Sheet 1 · worked visually
+
+Every solution follows the same reading pattern: **recognise the structure → choose the rule → show the algebra → check the result**. The lecturer answer sheet supplies the target answers; this page expands the route to them.
+
+<div class="ms4045-method-grid">
+<div class="ms4045-method-step"><b>1 · Recognise</b><span>What kind of complex-number problem is this?</span></div>
+<div class="ms4045-method-step"><b>2 · Rule</b><span>Write the one definition or identity that unlocks it.</span></div>
+<div class="ms4045-method-step"><b>3 · Work</b><span>Move one algebraic step at a time with no hidden jump.</span></div>
+<div class="ms4045-method-step"><b>4 · Check</b><span>Use geometry, modulus, conjugation or substitution to verify.</span></div>
+</div>
+
+<div class="ms4045-jump">
+<a href="#q1">Q1</a><a href="#q2">Q2</a><a href="#q3">Q3</a><a href="#q4">Q4</a><a href="#q5">Q5</a><a href="#q6">Q6</a><a href="#q7">Q7</a><a href="#q8">Q8</a><a href="#q9">Q9</a><a href="#q10">Q10</a><a href="#q11">Q11</a><a href="#q12">Q12</a><a href="#q13">Q13</a>
+</div>
+</div>
+
+<div class="ms4045-reveal-controls">
+<button type="button" id="ms4045-open-all">Show all working</button>
+<button type="button" id="ms4045-close-all">Hide all working</button>
+</div>
+
 ## Click a question to reveal the worked solution
 
-<details class="ms4045-solution" markdown="1">
+<details class="ms4045-solution" id="q1" markdown="1">
 <summary>Question 1 · Check the identities</summary>
 <div class="ms4045-answer" markdown="1">
 
+<div class="ms4045-answer-label"><span>SOURCE-CHECKED</span><span>EXPANDED WORKING</span></div>
+
 The lecturer answer says **(a) is correct and all the others are incorrect**.
+
+<div class="ms4045-rule"><strong>Four facts to keep visible:</strong> \(\operatorname{Re}(a+ib)=a\), \(\operatorname{Im}(a+ib)=b\), \(\overline{a+ib}=a-ib\), and \(|a+ib|=\sqrt{a^2+b^2}\).</div>
 
 Let \(z=a+ib\).
 
@@ -90,11 +116,13 @@ so
 </div>
 </details>
 
-<details class="ms4045-solution" markdown="1">
+<details class="ms4045-solution" id="q2" markdown="1">
 <summary>Question 2 · Complex division</summary>
 <div class="ms4045-answer" markdown="1">
 
-Multiply numerator and denominator by the conjugate of the denominator.
+<div class="ms4045-answer-label"><span>SOURCE-CHECKED</span><span>EXPANDED WORKING</span></div>
+
+<div class="ms4045-rule"><strong>Method:</strong> multiply top and bottom by the conjugate of the denominator. The denominator then becomes a real number because \((a+ib)(a-ib)=a^2+b^2\).</div>
 
 **(a)**
 \[
@@ -125,9 +153,13 @@ Multiply numerator and denominator by the conjugate of the denominator.
 </div>
 </details>
 
-<details class="ms4045-solution" markdown="1">
+<details class="ms4045-solution" id="q3" markdown="1">
 <summary>Question 3 · Conjugation of products and quotients</summary>
 <div class="ms4045-answer" markdown="1">
+
+<div class="ms4045-answer-label"><span>SOURCE-CHECKED</span><span>EXPANDED WORKING</span></div>
+
+<div class="ms4045-method-note"><strong>Proof strategy:</strong> expand both sides into Cartesian form and show that their real and imaginary parts are identical.</div>
 
 Write
 \[
@@ -185,9 +217,11 @@ we obtain
 </div>
 </details>
 
-<details class="ms4045-solution" markdown="1">
+<details class="ms4045-solution" id="q4" markdown="1">
 <summary>Question 4 · Theorem 1.2</summary>
 <div class="ms4045-answer" markdown="1">
+
+<div class="ms4045-answer-label"><span>SOURCE-CHECKED</span><span>EXPANDED WORKING</span></div>
 
 <div class="ms4045-warning">
 The supplied lecturer solution marks this question <strong>For independent work</strong>. The statement of Theorem 1.2 is not included in the supplied sheets, so a proof cannot be reconstructed faithfully from these sources alone.
@@ -196,9 +230,11 @@ The supplied lecturer solution marks this question <strong>For independent work<
 </div>
 </details>
 
-<details class="ms4045-solution" markdown="1">
+<details class="ms4045-solution" id="q5" markdown="1">
 <summary>Question 5 · Modulus of a product and quotient</summary>
 <div class="ms4045-answer" markdown="1">
+
+<div class="ms4045-answer-label"><span>SOURCE-CHECKED</span><span>EXPANDED WORKING</span></div>
 
 ### (a) \(|z_1z_2|=|z_1||z_2|\)
 
@@ -266,9 +302,11 @@ The polar proof is immediate from
 </div>
 </details>
 
-<details class="ms4045-solution" markdown="1">
+<details class="ms4045-solution" id="q6" markdown="1">
 <summary>Question 6 · Theorems 1.3 and 1.4</summary>
 <div class="ms4045-answer" markdown="1">
+
+<div class="ms4045-answer-label"><span>SOURCE-CHECKED</span><span>EXPANDED WORKING</span></div>
 
 <div class="ms4045-warning">
 The lecturer solution marks this as <strong>For independent work</strong>. The statements of Theorems 1.3 and 1.4 are not present in the supplied material, so no theorem statement or proof is guessed here.
@@ -277,9 +315,17 @@ The lecturer solution marks this as <strong>For independent work</strong>. The s
 </div>
 </details>
 
-<details class="ms4045-solution" markdown="1">
+<details class="ms4045-solution" id="q7" markdown="1">
 <summary>Question 7 · Express everything in terms of x and y</summary>
 <div class="ms4045-answer" markdown="1">
+
+<div class="ms4045-answer-label"><span>SOURCE-CHECKED</span><span>EXPANDED WORKING</span></div>
+
+<div class="ms4045-rule"><strong>Reusable start:</strong> for \(z=x+iy\neq0\), rationalise once:
+\[
+\frac1z=\frac{\bar z}{|z|^2}=\frac{x-iy}{x^2+y^2}.
+\]
+Most of Question 7 then becomes expansion plus “read off the real/imaginary part”.</div>
 
 Let \(z=x+iy\), so
 \[
@@ -387,28 +433,39 @@ therefore
 </div>
 </details>
 
-<details class="ms4045-solution" markdown="1">
+<details class="ms4045-solution" id="q8" markdown="1">
 <summary>Question 8 · Polar to Cartesian + Argand diagram</summary>
 <div class="ms4045-answer" markdown="1">
+
+<div class="ms4045-answer-label"><span>SOURCE-CHECKED</span><span>EXPANDED WORKING</span></div>
 
 Use
 \[
 z=r(\cos\theta+i\sin\theta).
 \]
 
+<div class="ms4045-rule"><strong>Conversion rule:</strong>
 \[
-\begin{aligned}
-\text{(a)}&\quad i,\\
-\text{(b)}&\quad -i,\\
-\text{(c)}&\quad 1-\sqrt3,i,\\
-\text{(d)}&\quad \sqrt2(1+i),\\
-\text{(e)}&\quad \frac32(\sqrt3+i),\\
-\text{(f)}&\quad -3,\\
-\text{(g)}&\quad \frac{-1+i}{\sqrt2},\\
-\text{(h)}&\quad -2i,\\
-\text{(i)}&\quad \frac32(\sqrt3-i).
-\end{aligned}
+x=r\cos\theta,\qquad y=r\sin\theta,\qquad z=x+iy.
 \]
+So each part is a three-column job: angle → coordinates → complex number.</div>
+
+<table class="ms4045-solution-table">
+<thead><tr><th>Part</th><th>Coordinates \((x,y)\)</th><th>Cartesian form</th></tr></thead>
+<tbody>
+<tr><td>(a)</td><td>\((0,1)\)</td><td>\(\boxed{i}\)</td></tr>
+<tr><td>(b)</td><td>\((0,-1)\)</td><td>\(\boxed{-i}\)</td></tr>
+<tr><td>(c)</td><td>\((1,-\sqrt3)\)</td><td>\(\boxed{1-\sqrt3\,i}\)</td></tr>
+<tr><td>(d)</td><td>\((\sqrt2,\sqrt2)\)</td><td>\(\boxed{\sqrt2(1+i)}\)</td></tr>
+<tr><td>(e)</td><td>\((3\sqrt3/2,3/2)\)</td><td>\(\boxed{\frac32(\sqrt3+i)}\)</td></tr>
+<tr><td>(f)</td><td>\((-3,0)\)</td><td>\(\boxed{-3}\)</td></tr>
+<tr><td>(g)</td><td>\((-1/\sqrt2,1/\sqrt2)\)</td><td>\(\boxed{\frac{-1+i}{\sqrt2}}\)</td></tr>
+<tr><td>(h)</td><td>\((0,-2)\)</td><td>\(\boxed{-2i}\)</td></tr>
+<tr><td>(i)</td><td>\((3\sqrt3/2,-3/2)\)</td><td>\(\boxed{\frac32(\sqrt3-i)}\)</td></tr>
+</tbody>
+</table>
+
+<div class="ms4045-checkline"><strong>Fast check:</strong> every coordinate pair must satisfy \(x^2+y^2=r^2\), and its quadrant must agree with \(\theta\).</div>
 
 <figure class="ms4045-diagram">
 <svg viewBox="0 0 620 430" role="img" aria-label="Argand diagram showing the nine points from question 8">
@@ -447,9 +504,13 @@ z=r(\cos\theta+i\sin\theta).
 </div>
 </details>
 
-<details class="ms4045-solution" markdown="1">
+<details class="ms4045-solution" id="q9" markdown="1">
 <summary>Question 9 · Principal argument by quadrant + Argand diagram</summary>
 <div class="ms4045-answer" markdown="1">
+
+<div class="ms4045-answer-label"><span>SOURCE-CHECKED</span><span>EXPANDED WORKING</span></div>
+
+<div class="ms4045-method-note"><strong>Why this question is tricky:</strong> \(\arcsin\) only returns values in \([ -\pi/2,\pi/2]\). That range naturally describes the right half-plane, so Quadrants II and III need a \(\pi\)-correction.</div>
 
 Let
 \[
@@ -492,9 +553,13 @@ The reason is geometric: \(\arcsin(y/r)\) only returns an angle in the right-hal
 </div>
 </details>
 
-<details class="ms4045-solution" markdown="1">
+<details class="ms4045-solution" id="q10" markdown="1">
 <summary>Question 10 · Loci in the complex plane</summary>
 <div class="ms4045-answer" markdown="1">
+
+<div class="ms4045-answer-label"><span>SOURCE-CHECKED</span><span>EXPANDED WORKING</span></div>
+
+<div class="ms4045-rule"><strong>Geometry dictionary:</strong> fixed real part → vertical line; fixed imaginary part → horizontal line; fixed modulus → circle; fixed argument → ray.</div>
 
 Write \(z=x+iy\), so \(\bar z=x-iy\).
 
@@ -533,9 +598,11 @@ Write \(z=x+iy\), so \(\bar z=x-iy\).
 </div>
 </details>
 
-<details class="ms4045-solution" markdown="1">
+<details class="ms4045-solution" id="q11" markdown="1">
 <summary>Question 11 · Theorem 1.1</summary>
 <div class="ms4045-answer" markdown="1">
+
+<div class="ms4045-answer-label"><span>SOURCE-CHECKED</span><span>EXPANDED WORKING</span></div>
 
 <div class="ms4045-warning">
 The supplied lecturer solution marks this as <strong>For independent work</strong>. The statement of Theorem 1.1 is not included in the supplied sheets, so no theorem is reconstructed from guesswork.
@@ -544,9 +611,17 @@ The supplied lecturer solution marks this as <strong>For independent work</stron
 </div>
 </details>
 
-<details class="ms4045-solution" markdown="1">
+<details class="ms4045-solution" id="q12" markdown="1">
 <summary>Question 12 · Roots + unit-circle Argand diagram</summary>
 <div class="ms4045-answer" markdown="1">
+
+<div class="ms4045-answer-label"><span>SOURCE-CHECKED</span><span>EXPANDED WORKING</span></div>
+
+<div class="ms4045-rule"><strong>Root recipe:</strong> write the target as \(re^{i\theta}\). For \(w^n=re^{i\theta}\),
+\[
+w_k=r^{1/n}e^{i(\theta+2\pi k)/n},\qquad k=0,1,\ldots,n-1.
+\]
+The roots are equally spaced around a circle.</div>
 
 ### (a) \(w^2=-i\)
 
@@ -612,9 +687,17 @@ so
 </div>
 </details>
 
-<details class="ms4045-solution" markdown="1">
+<details class="ms4045-solution" id="q13" markdown="1">
 <summary>Question 13 · Complex exponential equations + w-plane diagram</summary>
 <div class="ms4045-answer" markdown="1">
+
+<div class="ms4045-answer-label"><span>SOURCE-CHECKED</span><span>EXPANDED WORKING</span></div>
+
+<div class="ms4045-rule"><strong>Exponential recipe:</strong> if \(e^w=Re^{i\theta}\) and \(w=u+iv\), then
+\[
+u=\ln R,\qquad v=\theta+2\pi k.
+\]
+So the real part comes from the modulus and the imaginary part comes from the argument.</div>
 
 Write
 \[
@@ -694,3 +777,15 @@ w_k=
 <a href="{{ '/modules/ms4045/tutorial-sheet-1.html' | relative_url }}">← Back to Sheet 1</a>
 <a href="{{ '/modules/ms4045/tutorial-sheet-2.html' | relative_url }}">Continue to Sheet 2 →</a>
 </div>
+
+
+<script>
+(() => {
+  const solutions = Array.from(document.querySelectorAll('.ms4045-solution'));
+  document.getElementById('ms4045-open-all')?.addEventListener('click', () => solutions.forEach(item => item.open = true));
+  document.getElementById('ms4045-close-all')?.addEventListener('click', () => {
+    solutions.forEach(item => item.open = false);
+    document.querySelector('.ms4045-solution-hero')?.scrollIntoView({behavior:'smooth', block:'start'});
+  });
+})();
+</script>
