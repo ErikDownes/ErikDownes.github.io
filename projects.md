@@ -65,6 +65,18 @@ That is the practical progression behind the project: **spreadsheets → pandas 
 
 
 
+## Spreadsheet VLOOKUP Practice — Formula + Communication
+
+**Excel / Google Sheets → VLOOKUP → absolute references → explain the logic clearly**
+
+A deliberately small practice activity based on the spreadsheet workbook. Type the **VLOOKUP formula yourself**, get immediate feedback on the lookup value, locked table, return-column number and exact match, then explain the formula in one sentence as if speaking to a colleague.
+
+The activity changes the Product ID and the field to return, so it tests whether the lookup logic can be reconstructed rather than memorised.
+
+[Open the VLOOKUP practice activity →]({{ '/vlookup-practice.html' | relative_url }})
+
+
+
 ## SQL Bank Reconciliation Lab — Cashbook Preparation
 
 **Microsoft SQL → bank transactions → ledger matching → exceptions → cash application**
