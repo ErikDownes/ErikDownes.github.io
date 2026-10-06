@@ -26,6 +26,20 @@ The placement is for an **Implementation Associate** on the **TIMS team**, repor
 
 The work includes supporting implementations, learning cash application and collections, assisting with lockbox development, and working with customers to improve automation in bank reconciliation.
 
+## What TIMS Means
+
+**TIMS = Total Information Management System.**
+
+TIMS is the flagship business / ERP system from **Computers Unlimited**. Cashbook identifies TIMS as one of the ERP systems it integrates with and supports customers using TIMS for finance automation.
+
+For this role, the useful mental model is:
+
+**TIMS customer data and finance records → Cashbook integration → automated cash application, bank reconciliation, Accounts Payable, deductions and collections**
+
+So the **TIMS team** is the Cashbook implementation team focused on customers whose underlying business system is TIMS.
+
+[Cashbook — TIMS ERP integration](https://www.cashbook.com/erps/tims-erp-software/)
+
 ## Skills to Research
 
 The strongest areas to understand before interview are:
