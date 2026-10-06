@@ -109,53 +109,29 @@ A spreadsheet can **look correct because the current answer is correct while the
 
 ## Messy Data | Tell me about a time you analysed a large or messy set of data and made it reliable.
 
-Yes. The **Dublin Bikes rebalancing project** is the right story, and we do not need to drown it in code.
-
-
+**PA4 · Shared answer:** This exact same STAR example is also used in **TW1 — Teamwork & Communication, Question 1**.
 
 ### Situation
 
-I worked with the historical Dublin Bikes data to analyse **where the bike network becomes unbalanced during the day and where rebalancing is likely to be needed**.
-
-The raw archive was roughly **55 million station-status observations** collected over several years. They are snapshots of each station — timestamp, bikes available, empty stands, capacity and location — rather than individual journeys.
+During my TY placement at Mr Price, I worked as part of a large team reorganising the shop floor and redesigning the shelf layout. It was an all-hands-on-deck project, and everyone was encouraged to contribute ideas outside their normal role.
 
 ### Task
 
-Before I could analyse anything, I had to turn that very large historical archive into **one consistent, reliable dataset**. The difficulty was not just its size; data collected over different periods was not always represented in exactly the same way, particularly dates and timestamps.
+We needed to complete the changeover with **minimum disruption to customers and minimum loss of sales**. I created my first **Gantt chart** because the work had clear dependencies — one area often had to be cleared before another could move.
+
+We also used data to choose the best time. **Reolink cameras feeding into Frigate on a Raspberry Pi** used AI computer vision to generate timestamped **person-detection events**. These were discrete observations that could be aggregated into integer footfall counts. A second camera provided redundancy, and the two feeds reconciled to the same overall pattern and totals, giving us extra confidence in the data.
 
 ### Action
 
-I combined the historical files, standardised the fields and normalised the timestamps so records from different periods could be compared properly.
+I analysed the events locally in a **Jupyter notebook using Python and pandas**. By aggregating them by **day of week and time of day**, and then looking at the longer time-series pattern, we identified Sunday evening into Monday morning as one of the quietest periods.
 
-I then reduced the full dataset into something operationally useful: for each station and time of day I could calculate its **occupancy — bikes available relative to station capacity**.
-
-Rather than trying to display 55 million rows, I aggregated the data into a much smaller hourly view and compared **weekday and weekend patterns**. That let me identify when stations tended towards empty or full and see how that pressure moved across the network.
+When several staff became unavailable through illness, I took direction, switched tasks as priorities changed and helped focus effort on the activities that other parts of the project depended on.
 
 ### Result
 
-The finished dashboard turns a very large, messy historical dataset into a simple 24-hour picture of the network, showing **where and when rebalancing is likely to matter most**.
+Despite being short-staffed, we completed the redesign within the planned window, **minimising disruption to customers and protecting sales**.
 
-### What I learned
-
-The main lesson was that with large datasets, the analysis is only as good as the preparation. **Make the data consistent first, reduce it to the level needed for the question, validate it, and only then analyse or visualise it.**
-
-And yes — for the **Problem Solving & Analytics** page, the short visible question cues should be something like:
-
-Break Down Problem
-
-Rethink Assumptions
-
-Find the Error
-
-Messy Data
-
-Reconcile & Check
-
-Support a Decision
-
-Much easier to scan.
-
-
+For me, the project brought together **teamwork, planning and data analysis**. It reinforced three elements of successful teamwork: **planning together, understanding how your work depends on others, and adapting together when circumstances change**.
 
 &nbsp;
 
