@@ -115,8 +115,20 @@ That is why areas such as bank reconciliation, cash application, troubleshooting
 
 
 
-&nbsp;
+## Why Cashbook specifically?
 
-&nbsp;
+### Finance and technology coming together
+
+What attracts me specifically to Cashbook is that it feels like a natural continuation of the journey that brought me to Financial Maths in the first place. Cashbook sits right where **finance and technology meet** — taking processes such as bank reconciliation, cash application and collections and using data, software and automation to make them faster, more accurate and more reliable.
+
+### Solving a real problem
+
+What particularly caught my attention was seeing what that means in practice with TIMS. I read about a Cashbook customer where bank reconciliation had been a largely manual two-day process and, through automated matching, it was reduced to less than half a day. **That is the kind of problem-solving I enjoy** — understanding the data, finding where the inefficiency is, building reliable logic around it and producing an outcome that genuinely improves somebody’s work.
+
+### Technology still has a human destination
+
+The other reason Cashbook appeals to me is that implementation is not just sitting behind a computer writing code. You work with the customer's finance and IT teams through **setup, testing, training and go-live**, understand how their processes actually work, troubleshoot problems and help them get value from the software.
+
+
 
 &nbsp;
