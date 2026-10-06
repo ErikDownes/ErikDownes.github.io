@@ -13,13 +13,19 @@ public_mode: true
 
 ## Dublin Bikes — 24-Hour Rebalancing Dashboard
 
-**SQL → historical station data → hourly aggregation → interactive map → operational insight**
+**Smart Dublin open data → pandas → SQLite/SQL → hourly aggregation → interactive map → operational insight**
 
-This project asks a more useful question than simply “which stations are empty?”: **where does imbalance move through the Dublin Bikes network during the day, and when is rebalancing likely to matter most?**
+This project asks a more useful question than simply “which stations are empty?”:
 
-A large historical station-status archive is reduced with **pandas and SQLite/SQL** into a compact hourly dataset. The dashboard keeps the underlying occupancy, empty-rate and full-rate measures, while presenting a simple visual language of **Empty · Balanced · Full**. Switch between **Weekday** and **Weekend**, move through all **24 hours**, or press **Play** to watch the network change.
+> **Where does imbalance move through the Dublin Bikes network during the day, and when is rebalancing likely to matter most?**
+
+The project database contains **roughly 55 million station-status observations** assembled from the historical Dublin Bikes archive. That scale is the reason the project moved beyond spreadsheets: the raw archive is reduced with **pandas and SQLite/SQL** into a compact hourly dataset that can be explored interactively.
 
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:.7rem;margin:1rem 0 1.2rem;">
+  <div style="padding:.85rem 1rem;border:1px solid rgba(127,127,127,.25);border-radius:12px;">
+    <strong>~55 million rows</strong><br>
+    <span style="font-size:.92em;opacity:.78;">Station observations — not 55 million individual journeys.</span>
+  </div>
   <div style="padding:.85rem 1rem;border:1px solid rgba(127,127,127,.25);border-radius:12px;">
     <strong>24-hour view</strong><br>
     <span style="font-size:.92em;opacity:.78;">Hourly station balance rather than one averaged morning snapshot.</span>
@@ -33,6 +39,55 @@ A large historical station-status archive is reduced with **pandas and SQLite/SQ
     <span style="font-size:.92em;opacity:.78;">The important signal is how imbalance moves, not merely whether it exists.</span>
   </div>
 </div>
+
+### Where the data comes from
+
+The source is Dublin City Council / Smart Dublin's public **Dublinbikes API DCC** dataset. The dataset page provides the live API information and the historical CSV archive used in this project:
+
+[Smart Dublin — Dublinbikes API DCC →](https://data.smartdublin.ie/dataset/dublinbikes-api)
+
+The live dynamic service is supplied through the JCDecaux open-data API:
+
+[JCDecaux Open Data API →](https://developer.jcdecaux.com/#/opendata/vls?page=getstarted)
+
+The live feed reports station state and is refreshed frequently; Smart Dublin also publishes historical files so the system can be studied over long periods.
+
+### What one row actually represents
+
+**This is not a trip-by-trip GPS dataset.** A historical row is essentially a **snapshot of one docking station at one reported time**.
+
+Typical fields in the newer historical files include:
+
+| Field | Meaning |
+|---|---|
+| **last_reported** | Timestamp of the station record |
+| **station_id** | Which docking station the record describes |
+| **num_bikes_available** | Bikes available to rent at that moment |
+| **num_docks_available** | Free docks available for bike returns |
+| **capacity** | Station capacity |
+| **name / address** | Station identification |
+| **lat / lon** | The fixed geographic position of the station |
+| **is_renting / is_returning** | Whether renting or returning is currently available |
+
+The **latitude and longitude are the station's location**, not a GPS trace of a cyclist. There is no row saying:
+
+> Bike 123 left Station A at 08:12, followed this route, and arrived at Station B at 08:27.
+
+So **55 million rows does not mean 55 million journeys**. It means roughly 55 million recorded station states across many stations and timestamps.
+
+### How journeys appear — indirectly
+
+A customer journey changes the station totals. If a bike is taken from one station, its available-bike count falls. When a bike is docked elsewhere, another station's available-bike count rises.
+
+That lets us analyse **pressure, availability and network imbalance**, but it does **not** let us reliably pair one decrease with one later increase and claim that they are the same journey. Operator rebalancing can also change station counts.
+
+That limitation shaped the project question. Rather than pretending the data contains individual trips, the analysis focuses on what the data genuinely supports:
+
+- when stations are at risk of becoming **empty**;
+- when stations are at risk of becoming **full**;
+- how that imbalance changes by **hour**;
+- how **weekday** and **weekend** patterns differ;
+- where rebalancing may have the greatest operational value.
 
 <div style="margin:1rem 0 1.2rem;border:1px solid rgba(127,127,127,.25);border-radius:14px;overflow:hidden;background:#fff;">
   <iframe
@@ -49,32 +104,21 @@ A large historical station-status archive is reduced with **pandas and SQLite/SQ
 
 The first map was a useful prototype, but averaging a whole morning together risked hiding the real behaviour. The analysis therefore moved to **hour-by-hour occupancy**. A station can drain, recover, fill and reverse direction over the same day. That “seesaw” is exactly the pattern an operational rebalancing decision needs to expose.
 
-The dashboard uses a continuous occupancy measure underneath:
+The dashboard keeps a continuous occupancy measure underneath:
 
-[
-\text{occupancy} = \frac{\text{bikes available}}{\text{bikes available} + \text{free docks}}
-]
+**occupancy = bikes available ÷ station capacity**
 
 For quick interpretation, the map reduces that measure to three states: **Empty**, **Balanced** and **Full**. The popups retain the actual occupancy, empty-rate and full-rate percentages so the simplification does not throw away the underlying evidence.
 
 ### Why SQL matters here
 
-The historical archive is far larger than a single spreadsheet worksheet and contains repeated station observations across many dates and times. Instead of loading the whole archive into one enormous DataFrame, the project uses the database to do the heavy aggregation first, then brings only the much smaller result set back into pandas and the web visualisation.
+The historical archive is far larger than a single spreadsheet worksheet. Rather than concatenating the entire archive into one enormous in-memory DataFrame, the workflow reads files in chunks, normalises their timestamps and schemas, stores the historical observations in **SQLite**, and then uses **SQL aggregation** to reduce the data before bringing the much smaller result set back into pandas and the visualisation.
 
-That is the practical progression behind the project: **spreadsheets → pandas → database → SQL aggregation → interactive dashboard**.
+That gives a clear progression:
 
+**raw CSV archive → pandas cleaning → SQLite database → SQL aggregation → compact analysis table → interactive dashboard**
 
-
-## Spreadsheet VLOOKUP Practice — Formula + Communication
-
-**Excel / Google Sheets → VLOOKUP → absolute references → explain the logic clearly**
-
-A deliberately small practice activity based on the spreadsheet workbook. Type the **VLOOKUP formula yourself**, get immediate feedback on the lookup value, locked table, return-column number and exact match, then explain the formula in one sentence as if speaking to a colleague.
-
-The activity changes the Product ID and the field to return, so it tests whether the lookup logic can be reconstructed rather than memorised.
-
-[Open the VLOOKUP practice activity →]({{ '/vlookup-practice.html' | relative_url }})
-
+It also makes the project rerunnable: completed downloads can be reused and already-ingested resources can be skipped rather than processing the whole archive from scratch every time.
 
 
 ## SQL Bank Reconciliation Lab — Cashbook Preparation
