@@ -1,12 +1,13 @@
 ---
 layout: doc
 permalink: /analytics.html
-handle: Analytics
-title: Analytics
+handle: Problem Solving & Analytics
+title: Problem Solving & Analytics
+subtitle: How I analyse information, find what is wrong, explain it and reach a reliable solution.
 nav_order: 40
 top_nav: true
 description: Problem solving, data analysis, accuracy and troubleshooting interview preparation.
-eyebrow: INTERVIEW DOMAIN · ANALYTICS
+eyebrow: INTERVIEW DOMAIN · PROBLEM SOLVING & ANALYTICS
 ---
 **ANALYTICS = problem solving · data · accuracy · troubleshooting.**
 
