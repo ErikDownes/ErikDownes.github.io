@@ -549,7 +549,6 @@
 
     const links = [
       { label: 'About Me', href: rootHref },
-      { label: 'UL CV', href: new URL('pivotal-corporate-study.html', rootHref).href },
       { label: 'Results', href: new URL('academic-record.html', rootHref).href },
       { label: 'Financial Maths (LM058)', href: new URL('education.html', rootHref).href },
       { label: 'Projects', href: new URL('projects.html', rootHref).href },
