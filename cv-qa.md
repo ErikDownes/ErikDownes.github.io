@@ -3,7 +3,7 @@ layout: doc
 permalink: /cv-qa.html
 handle: CV QA
 title: CV QA
-subtitle: Line-by-line viva questions from the CV — explain every claim, term, tool and example in your own words.
+subtitle: Start with the whole CV claim, then drill down until every word, tool and example can be explained simply.
 nav_order: 16
 top_nav: true
 description: CV drill page for checking that every claim, tool, technical term and example in Erik's CV can be explained clearly in interview.
