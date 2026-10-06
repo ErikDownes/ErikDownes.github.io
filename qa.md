@@ -93,13 +93,15 @@ In a spreadsheet, I like using formulas and relative references so the logic fol
 
 I also enjoy reconciliation-type problems in Excel — where something does not balance or match and you have to work backwards, identify the inconsistency and understand why it happened.
 
-I find that satisfying because there is a clear purpose to the analysis: trace the problem, explain it, correct it and get to an answer that can be trusted.
+I find that satisfying because there is a clear purpose to the analysis: trace the problem, explain it, correct it and get to an answer that can be trusted — ultimately helping to deliver a reliable, high-quality service to a satisfied end user.
 
 ### Analysis that leads to action
 
 That is probably what I enjoy most about Financial Maths: taking changing or inconsistent inputs, imposing a reliable structure on them and turning them into something accurate and useful.
 
-That is why areas such as bank reconciliation, cash application, troubleshooting and automation appeal to me. The analysis is not just theoretical — the result can actually be used to improve a real financial process.
+That is why areas such as bank reconciliation, cash application, troubleshooting and automation appeal to me. The analysis is not just theoretical — it leads to action, improves a real financial process and gives colleagues and customers something reliable they can depend on, so they can spend less time dealing with the process and more time focusing on their core business.
+
+For me, that is where the people journey completes the analytical one: the value of getting the numbers and systems right is that it frees other people to do what they do best.
 
 
 
