@@ -74,11 +74,27 @@ In my free time, I enjoy cycling, cooking, photography and gaming.
 
 ### Teamwork
 
-During my TY placement at Mr Price, I worked as part of a large team reorganising the shop floor with minimum disruption to customers. We used store footfall information to choose a quiet Sunday-night/Monday-morning window, and I produced my first Gantt chart to sequence tasks and dependencies. When a colleague called in sick, I took direction, changed tasks as priorities shifted and helped redistribute the workload so the overall plan kept moving.
+#### Situation
 
-At UL, Java pair programming in Computer Software 1 developed the same habits of dividing work, reviewing each other’s code and solving problems jointly. In my current logistics work at O’Mahony’s, accurate checks, clear handovers and reliable follow-through matter because colleagues and client libraries depend on each stage being completed correctly.
+During my TY placement at Mr Price, I worked as part of a large team reorganising the shop floor and redesigning the shelf layout. It was an all-hands-on-deck project, and everyone was encouraged to contribute ideas outside their normal role.
 
-These experiences have taught me to plan with others, understand how my work affects the wider team and adapt constructively when circumstances change.
+#### Task
+
+We needed to complete the changeover with **minimum disruption to customers and minimum loss of sales**. I created my first **Gantt chart** because the work had clear dependencies — one area often had to be cleared before another could move.
+
+We also used data to choose the best time. **Reolink cameras feeding into Frigate on a Raspberry Pi** used AI computer vision to generate timestamped **person-detection events**. These were discrete observations that could be aggregated into integer footfall counts. A second camera provided redundancy, and the two feeds reconciled to the same overall pattern and totals, giving us extra confidence in the data.
+
+#### Action
+
+I analysed the events locally in a **Jupyter notebook using Python and pandas**. By aggregating them by **day of week and time of day**, and then looking at the longer time-series pattern, we identified Sunday evening into Monday morning as one of the quietest periods.
+
+When several staff became unavailable through illness, I took direction, switched tasks as priorities changed and helped focus effort on the activities that other parts of the project depended on.
+
+#### Result
+
+Despite being short-staffed, we completed the redesign within the planned window, **minimising disruption to customers and protecting sales**.
+
+For me, the project brought together **teamwork, planning and data analysis**. It reinforced three elements of successful teamwork: **planning together, understanding how your work depends on others, and adapting together when circumstances change**.
 
 ### Communication Skills
 
