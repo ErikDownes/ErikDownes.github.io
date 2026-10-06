@@ -3,28 +3,23 @@ layout: doc
 permalink: /analytics.html
 handle: Problem Solving & Analytics
 title: Problem Solving & Analytics
-subtitle: How I analyse information, find what is wrong, explain it and reach a reliable solution.
+subtitle: How I analyse information, find what is wrong, explain it and reach a
+  reliable solution.
 nav_order: 40
 top_nav: true
-description: Problem solving, data analysis, accuracy and troubleshooting interview preparation.
+description: Problem solving, data analysis, accuracy and troubleshooting
+  interview preparation.
 eyebrow: INTERVIEW DOMAIN · PROBLEM SOLVING & ANALYTICS
 ---
-**PROBLEM SOLVING & ANALYTICS = problem solving · data · accuracy · troubleshooting.**
+## Tell me about a difficult problem you had to break down and solve.
 
-Use this domain when the interviewer wants to know **how you think through a problem and reach a reliable result**.
+## Tell me about a time your first assumption or approach was wrong and you had to rethink it.
 
-## Problem Solving | Tell me about a difficult problem you solved.
+## Tell me about a time you found an error or inconsistency and worked out what was causing it.
 
-Use a specific example and explain the **problem → method → checks → result**.
+## Tell me about a time you analysed a large or messy set of data and made it reliable.
 
-## Data Analysis | Tell me about a time you used data to answer a question.
+## Tell me about a time you had to check or reconcile information to make sure it was accurate.
 
-Evidence can come from **Python, pandas, Excel, SQL or a university data-analysis project**.
+## Tell me about a time you used analysis to support a decision or recommendation.
 
-## Accuracy | Tell me about a time accuracy really mattered.
-
-Good evidence includes checking **orders, invoices, destinations, reconciliations or calculated outputs**.
-
-## Troubleshooting | How would you investigate an application error?
-
-Reproduce the issue, isolate the inputs, inspect the data or logs, test one cause at a time, document what you find and escalate clearly when needed.
