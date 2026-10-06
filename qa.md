@@ -15,7 +15,7 @@ eyebrow: INTERVIEW DOMAIN · MOTIVATION · ROLE FIT
 
 Journeys through maths, technology and people brought me to Financial Maths in UL.
 
-I was always drawn to maths, and by secondary school I was sure it would remain central to my journey into third level. But I wanted a broader education than studying pure maths.
+I was always drawn to maths, and by secondary school I was  looking for a course with a large  mathematical component  but someting giving a broader education than pursuing pure maths.
 
 My technology journey brought me from Scratch and spreadsheets to Python and pandas, then Parquet, and ultimately, when looking at station rebalancing demands across the Dublin Bikes network, I needed SQL and Leaflet to manage and map a 55-million-row database.
 
