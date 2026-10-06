@@ -9,22 +9,11 @@ top_nav: true
 description: Initiative, learning, ownership and organisation interview preparation.
 eyebrow: INTERVIEW DOMAIN · USING INITIATIVE
 ---
-**USING INITIATIVE = ownership · learning · organisation · follow-through.**
 
-Use this domain when the question asks whether you **act constructively without needing every step prescribed**.
+## Improve a Process | Tell me about a time you noticed a process could be improved and took the initiative to do something about it.
 
-## Initiative | Tell me about a time you showed initiative.
+## Learn Quickly | Tell me about a time you had to learn a new tool, system or process quickly in order to get something done.
 
-Best evidence: a **self-directed project** where you chose the problem, found the data or tools and kept improving the result.
+## Find Another Way | Tell me about a time your original plan was no longer going to work and you took action to find another way forward.
 
-## Learning | Tell me about a time you had to learn something quickly.
-
-Show the sequence: **identify the gap → find a reliable source → practise → test your understanding → apply it**.
-
-## Organisation | How do you manage competing priorities?
-
-Keep tasks and deadlines visible, identify dependencies, break work into next actions and flag conflicts early.
-
-## Ownership | Tell me about a time you took responsibility for getting something finished.
-
-Emphasise **follow-through**: do not stop at identifying the problem; carry the solution through to completion.
+## Take Ownership | Tell me about a time you took responsibility for something and followed it through to completion without needing to be reminded.
