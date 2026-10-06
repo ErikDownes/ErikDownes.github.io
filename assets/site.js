@@ -1107,12 +1107,11 @@
 
 
   const PORTFOLIO_SUBPAGES = [
-    { label: 'Turboprop Asset Reporting', path: 'fleet-map.html' },
-    { label: 'Global Fleet Maintenance Dashboard', path: 'atr-fleet-dashboard.html' },
+    { label: 'Dublin Bikes', path: 'dublin-bikes.html' },
+    { label: 'Pivotal Office Map', path: 'pivotal-office-map.html' },
+    { label: 'Turboprop Fleet Map', path: 'fleet-map.html' },
     { label: 'Mortgage Calculator', path: 'mortgage-calculator.html' },
-    { label: 'PCP Car Finance Calculator', path: 'pcp-calculator.html' },
-    { label: 'Turboprop Lease Calculator', path: 'lease-dashboard.html' },
-    { label: 'How I Built the Lease Calculator', path: 'lease-dashboard-build.html' }
+    { label: 'PCP Car Finance Calculator', path: 'pcp-calculator.html' }
   ];
 
   const populatePortfolioMenu = async (item, pageUrl) => {
@@ -1155,7 +1154,7 @@
     const isStudiesLibrary = /\/(?:education|coursework)(?:\.html)?$/.test(cleanPagePath);
     const isAviationLibrary = /\/aviation(?:\.html)?$/.test(cleanPagePath);
     const isCareerLibrary = /\/career(?:\.html)?$/.test(cleanPagePath);
-    const isPortfolioLibrary = /\/portfolio(?:\.html)?$/.test(cleanPagePath);
+    const isPortfolioLibrary = /\/(?:portfolio|projects)(?:\.html)?$/.test(cleanPagePath);
 
     try {
       if (isPortfolioLibrary) {
