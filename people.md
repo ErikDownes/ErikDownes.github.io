@@ -12,6 +12,8 @@ eyebrow: teamwork · communication · customer care · taking direction.
 ---
 ## Worked Effectively in a Team | Tell me about a time you worked effectively as part of a team.
 
+**TW1 · Shared answer:** This exact same STAR example is also used in **PA4 — Problem Solving & Analytics, Question 4**.
+
 ### Situation
 
 During my TY placement at Mr Price, I worked as part of a large team reorganising the shop floor and redesigning the shelf layout. It was an all-hands-on-deck project, and everyone was encouraged to contribute ideas outside their normal role.
