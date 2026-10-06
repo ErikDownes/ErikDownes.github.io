@@ -13,6 +13,8 @@ public_mode: true
 ---
 ## Teamwork
 
+
+
 During my TY placement at Mr Price, I worked as part of a large team reorganising the shop floor and redesigning the shelf layout. It was an all-hands-on-deck project, and everyone was encouraged to contribute ideas outside their normal role.
 
 We needed to complete the changeover with minimum disruption to customers and minimum loss of sales. I created my first Gantt chart because the work had clear dependencies — one area often had to be cleared before another could move.
@@ -33,15 +35,19 @@ Together, those experiences reinforced three elements of successful teamwork for
 
 My retail, logistics and university experience has developed strong written and verbal communication skills. At O’Mahony’s, I work with orders, invoices, dispatch information, colleagues and client libraries, so information needs to be clear, accurate and appropriate to the person receiving it. At Mr Price, I learned to listen to customers, verify the facts and involve the appropriate manager when resolving a pricing problem.
 
-I try to make information easy for other people to understand and act on. That means knowing the audience and adjusting my articulation, pace, level of detail and body language, as well as choosing the right level of communication for the situation — from a quick acknowledgement that a message has been received to a clear written update for a client, including an honest estimate of when work will be completed. In written material, I also use simple accessibility principles such as clear headings, zebra shading and properly structured tables.
+I try to know my audience and adapt the way I communicate — my articulation, pace, level of detail and body language — as well as the format I use. Depending on the purpose, that might mean a quick acknowledgement, a clear written update with an honest estimate of when work will be completed, a structured table, bar chart, time-series graph, flow diagram or other visualisation. I also use simple accessibility principles such as clear headings, zebra shading and properly structured tables to make information easier to follow.
+
+Publishing is another part of communication for me. I have used Overleaf and LaTeX for structured academic and professional write-ups, including citations, bibliographies and proper referencing. I use GitHub and GitHub Pages to publish projects, results and written material online, using HTML and web-based visualisations to turn technical work into something other people can navigate, inspect and understand. My personal site also gives me a place to document projects and develop my written communication through explanatory and blog-style material.
 
 I also enjoy translating quantitative work into language another person can use. When my mother was comparing three PCP finance offers for the same car, I used the mathematics of loan amortisation to build a calculator and compare the deposit, monthly repayments, GMFV/final payment and total cash outlay. I then used graphs and headline figures to explain the result in ordinary language; the middle option was about €800 cheaper overall.
 
-I am also conscious that good communication includes knowing what information should not be shared. When we used footfall data during the Mr Price store reorganisation, the customer images were already blurred because there was no operational reason for us to identify individual customers. That reinforced the importance of GDPR, privacy and only using the information genuinely needed for the task.
+I am also conscious that good communication includes knowing what information should not be communicated. When we used footfall data during the Mr Price store reorganisation, the customer images were already blurred because there was no operational reason for us to identify individual customers. That reinforced the importance of GDPR, privacy, appropriate access and only using or publishing information that is genuinely necessary for the task.
 
-That experience reinforced that good communication means making information accurate, understandable, useful and appropriate, while working closely and responsibly with the people who depend on it.
+For me, good communication means making information accurate, accessible, appropriately presented, properly referenced and useful to the person who needs it.
 
 ## Problem Solving and Analytics
+
+
 
 Financial Mathematics has developed my analytical approach across mathematics, statistics, finance, accounting, modelling and data analysis. I like identifying differences, checking assumptions and working systematically until the result can be trusted.
 
@@ -52,6 +58,8 @@ For larger data, my Dublin Bikes project involved about 55 million station-statu
 
 
 ## Using Initiative
+
+
 
 I try to look beyond the immediate task and ask whether the underlying process can be improved. At O’Mahony’s, I was working from printed Booksolve order reports that were point-in-time snapshots and could become outdated as information changed. After an inconsistency contributed to books being sent to the wrong customer, I helped resolve the immediate issue with the customers involved, but I also wanted to understand why it had happened rather than treating it as a one-off mistake.
 
@@ -64,6 +72,8 @@ I also try to use open-source and freely available technology where it is approp
 I bring initiative through curiosity, ownership, responsible follow-through and a willingness to learn quickly. For me, initiative is not simply having an idea; it is identifying what could be improved, finding and learning the right tools, following the solution through and, where possible, making the result useful to other people as well.
 
 ## Projects, Portfolio and Volunteering
+
+
 
 I maintain a personal project portfolio at [https://erikdownes.github.io](https://erikdownes.github.io), where I apply university learning to practical finance and data problems.
 
