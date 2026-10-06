@@ -17,8 +17,8 @@ eyebrow: teamwork · communication · customer care · taking direction.
 Good teamwork means 
 
 1. **planning together,**
-2. **understanding how your work affects others,**
-3. **and adapting together to deliver the result.**
+2. **understanding mutual dependancies,**
+3. **and adapting together as needed**
 
 ### Planning together
 
@@ -37,8 +37,6 @@ Good teamwork means
 3. **and adapting together to deliver the result.**
 
 
-
-&nbsp;
 
 &nbsp;
 
@@ -168,9 +166,7 @@ Good teamwork means
 
 &nbsp;
 
-
-
-
+&nbsp;
 
 &nbsp;
 
