@@ -13,11 +13,17 @@ eyebrow: INTERVIEW DOMAIN · MOTIVATION · ROLE FIT
 
 
 
-&nbsp;
+Journeys through maths, technology and people brought me to Financial Maths in UL.
 
-&nbsp;
+I was always drawn to maths, and by secondary school I was sure it would remain central to my journey into third level. But I wanted a broader education than studying pure maths.
 
-&nbsp;
+My technology journey brought me from Scratch and spreadsheets to Python and pandas, then Parquet, and ultimately, when looking at station rebalancing demands across the Dublin Bikes network, I needed SQL and Leaflet to manage and map a 55-million-row database.
+
+My people journey began more with individual achievement — two Exceptional CBAs in Junior Cycle, an academic achievement award in fifth year, a medal for being the top Business student in sixth year, and four H1s contributing to 579 CAO points. But my Jesuit education also had a strong ethos of community, responsibility and looking beyond the individual. Since then, working in teams and dealing with customers has taught me that achievement is also about understanding what other people need, adapting to those needs and being accountable for providing a high-quality service.
+
+Financial Maths brought those three journeys together: maths, technology and people.
+
+
 
 ## Why are you interested in this role?
 
