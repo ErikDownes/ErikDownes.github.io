@@ -1,7 +1,7 @@
 ---
 layout: doc
 permalink: /education.html
-handle: Fin Mat Modules
+handle: FinMath Mod
 title: BSc Financial Mathematics programme at the University of Limerick
 nav_order: 990
 top_nav: true
