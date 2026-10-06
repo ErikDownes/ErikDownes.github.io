@@ -1,12 +1,14 @@
 ---
 layout: doc
 permalink: /pivotal-corporate-study.html
-handle: UL CV
-nav_order: 40
+handle: CV
+title: CV
+subtitle: UL CV — evidence, experience and achievements.
+nav_order: 15
+top_nav: true
 description: UL CV evidence tailored for the Cashbook Limited Implementation Associate (TIMS) interview.
-eyebrow: CASHBOOK LIMITED · UL CV · EVIDENCE
+eyebrow: CV · UL EVIDENCE · EXPERIENCE · ACHIEVEMENTS
 public_mode: true
-title: UL CV
 ---
 
 ## Teamwork
