@@ -10,9 +10,31 @@ top_nav: true
 description: Teamwork, communication and customer-facing interview preparation.
 eyebrow: teamwork · communication · customer care · taking direction.
 ---
-
-
 ## Tell me about a time you worked effectively as part of a team.
+
+### What I’m going to tell you
+
+Good teamwork means planning together, understanding dependencies and adapting when things change.
+
+### Planning together
+
+During my TY placement in Mr Price, we had to reorganise the shop floor with minimum disruption to customers. My manager and I looked at footfall data from the store camera and chose **Sunday night into Monday morning** as the best window. I also produced my **first Gantt chart**, sequencing the different jobs so we could see what depended on what and what had to be completed before the store reopened.
+
+### Adapting together
+
+Once the work started, stock, fixtures, displays and people all had to move in a coordinated sequence. When a colleague called in sick, we had to redistribute the workload and work longer. I took direction, changed tasks as priorities shifted and helped wherever I was needed to keep the overall plan moving.
+
+### What I told you
+
+Good teamwork means **planning together, understanding how your work affects others, and adapting together to deliver the result.**
+
+
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
 
 ## Tell me about a time you had to explain something clearly to another person.
 
@@ -23,8 +45,6 @@ eyebrow: teamwork · communication · customer care · taking direction.
 ## Tell me about a time you had to work with different people to get something done.
 
 
-
-&nbsp;
 
 &nbsp;
 
