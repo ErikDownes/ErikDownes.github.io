@@ -10,67 +10,31 @@ description: Motivation and role-fit interview questions for co-op preparation.
   for co-op interview practice.
 eyebrow: INTERVIEW DOMAIN · CAREER & MOTIVATION
 ---
-## Why choose Financial Maths?
-
-### What I’m going to tell you
-
-Journeys through **maths, technology and people** brought me to Financial Maths in UL.
-
-### Maths
-
-I was always drawn to maths, and by the end of secondary school I was looking for a course with a           broad spectrum of topics with a large mathematical component   so putting financial maths in UL down as my top pick was an easy choice.
-
-### Technology
-
-My technology journey brought me from Scratch and spreadsheets to Python and pandas, then Parquet, and ultimately, when looking at station rebalancing demands across the Dublin Bikes network, I needed SQL and Leaflet to manage and map a 55-million-row database.
-
-### People
-
-My people journey began more with individual achievement — two Exceptional CBAs in Junior Cycle, an academic achievement award in fifth year, a medal for being the top Business student in sixth year, and four H1s contributing to 579 (445)  CAO points. But my Jesuit education also had a strong ethos of community, responsibility and looking beyond the individual. Since then, working in teams and dealing with customers has taught me that achievement is also about understanding what other people need, adapting to those needs and being accountable for providing a high-quality service.
-
-### What I told you
-
-Journeys through **maths, technology and people** brought me to Financial Maths in UL.
 
 
+### Why choose Financial Maths?
+
+I was always drawn to maths, and by the end of secondary school I was looking for a course with a broad spectrum of topics and a strong mathematical component, so putting Financial Maths in UL as my top choice was an easy decision.
+
+My technology journey brought me from Scratch and spreadsheets to Python and pandas, then Parquet. When I began looking at station rebalancing demands across the Dublin Bikes network, I moved into SQLite, SQL and Leaflet to manage, analyse and map a database of about 55 million observations.
+
+What I enjoy about Financial Maths is that it allows me to combine mathematics with technology and apply both to practical problems.
+
+
+
+&nbsp;
 
 ## Why are you interested in this role?
 
-### What I’m going to tell you
+My own journey is moving towards more advanced maths, data analysis, databases, SQL and automation, while also moving further into teamwork and professional responsibility.
 
-We both bring maths, technology and teamwork together, while never losing sight of the client.
+That is why the Cashbook role appeals to me. It brings together finance, technology, automation and AI, but applies them to real customer problems.
 
-### We are going the same way
+I also like the client-focused, solutions-driven side of the role. The technology has a practical purpose: understanding a financial process, improving it and helping deliver a reliable service that adapts to the customer’s needs.
 
-My own journey is moving towards more sophisticated maths, data analysis, databases, SQL and automation, while also moving further into teamwork and professional responsibility.
-
-### We appreciate the same formula
-
-Cashbook brings those same strengths together — finance, technology, automation and AI — but always with a **client-focused, solutions-driven** approach and an emphasis on adapting to changing client needs.
-
-### What I told you
-
-We both bring maths, technology and teamwork together, while never losing sight of the client.
+It feels like a natural next step because it combines the technical direction I am already moving in with greater teamwork, responsibility and client contact.
 
 
-
-&nbsp;
-
-&nbsp;
-
-## What do you want from co-op?
-
-I want co-op to be the point in my journey where learning becomes responsibility and my individual ability becomes my collaborative contribution.
-
-Up to now, my journey through maths, financial processes and technology has mostly been about developing my own knowledge and skills, with some progression from individual work into paired and group work.
-
-In co-op, I want to move much further into professional collaboration — working with experienced colleagues, contributing to live financial and technology processes, communicating with customers, and learning what it means when other people are depending on the quality and timeliness of our work.
-
-Most of all, I want to come out of co-op having moved from being a student who can solve problems to someone who can solve them reliably with other people and for other people. I want to be a seasoned expert!
-
-
-
-&nbsp;
 
 &nbsp;
 
