@@ -3,8 +3,6 @@ layout: doc
 permalink: /initiative.html
 handle: Using Initiative
 title: Using Initiative
-subtitle: How I spot opportunities, take appropriate action and improve the way
-  work is done.
 nav_order: 50
 top_nav: true
 description: Initiative, learning, ownership and organisation interview preparation.
