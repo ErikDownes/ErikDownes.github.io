@@ -68,7 +68,7 @@ Up to now, my journey through maths, financial processes and technology has most
 
 In co-op, I want to move much further into professional collaboration — working with experienced colleagues, contributing to live financial and technology processes, communicating with customers, and learning what it means when other people are depending on the quality and timeliness of our work.
 
-Most of all, I want to come out of co-op having moved from being a student who can solve problems to someone who can solve them reliably with other people and for other people.
+Most of all, I want to come out of co-op having moved from being a student who can solve problems to someone who can solve them reliably with other people and for other people. I want to be a seasoned expert!
 
 
 
