@@ -13,8 +13,6 @@ public_mode: true
 ---
 ## Teamwork
 
-
-
 During my TY placement at Mr Price, I worked as part of a large team reorganising the shop floor and redesigning the shelf layout. It was an all-hands-on-deck project, and everyone was encouraged to contribute ideas outside their normal role.
 
 We needed to complete the changeover with minimum disruption to customers and minimum loss of sales. I created my first Gantt chart because the work had clear dependencies — one area often had to be cleared before another could move.
@@ -57,8 +55,6 @@ For larger data, my Dublin Bikes project involved about 55 million station-statu
 
 ## Using Initiative
 
-
-
 I try to look beyond the immediate task and ask whether the underlying process can be improved. At O’Mahony’s, I was working from printed Booksolve order reports that were point-in-time snapshots and could become outdated as information changed. After an inconsistency contributed to books being sent to the wrong customer, I helped resolve the immediate issue with the customers involved, but I also wanted to understand why it had happened rather than treating it as a one-off mistake.
 
 I raised the underlying issue with my line manager and suggested reviewing whether appropriate Booksolve access and a refreshed Excel export could provide more current information and reduce reliance on paper. I followed this through by obtaining the appropriate access, learning enough of the system to use it effectively and incorporating the more current information into my checks. That gave me a more direct way to verify orders and take greater responsibility for the accuracy of my own work.
@@ -70,8 +66,6 @@ I also try to use open-source and freely available technology where it is approp
 I bring initiative through curiosity, ownership, responsible follow-through and a willingness to learn quickly. For me, initiative is not simply having an idea; it is identifying what could be improved, finding and learning the right tools, following the solution through and, where possible, making the result useful to other people as well.
 
 ## Projects, Portfolio and Volunteering
-
-
 
 I maintain a personal project portfolio at [https://erikdownes.github.io](https://erikdownes.github.io), where I apply university learning to practical finance and data problems.
 
@@ -85,12 +79,12 @@ I use AI for research, coding and debugging, while checking source data, testing
 
 ## Additional Information
 
-I chose Financial Mathematics because journeys through maths, technology and people had all started to come together for me by the end of secondary school. I was always drawn to maths and wanted a university course with a broad range of mathematical subjects, so putting Financial Mathematics in UL first on my CAO was an easy choice.
+I chose Financial Mathematics because maths and technology had increasingly come together for me by the end of secondary school. I was always drawn to maths and wanted a university course with a broad range of mathematical subjects, so putting Financial Mathematics in UL first on my CAO was an easy choice.
 
-My technology journey moved from Scratch and spreadsheets into Python and pandas, and then into databases, SQL and visualisation. In my Dublin Bikes data-analysis project, I worked with about 55 million timestamped docking-station observations. Each observation is a snapshot of a station at a particular time, recording the station ID, timestamp, number of bikes available, number of free docks, capacity and fixed latitude and longitude. By comparing those snapshots over time, I could calculate how full or empty each station tended to be and identify where rebalancing pressure developed across the network. I used Python in Jupyter, pandas — including [pd.to](http://pd.to)_datetime() for timestamp standardisation — SQLite/SQL for storage and aggregation, and Leaflet for the interactive visualisation.
+My academic record reflects that interest. I achieved two Exceptional Junior Cycle CBAs in Mathematics and Science, received an Academic Excellence award in fifth year, won the Kolvenbach Medal for Business in sixth year and achieved four H1s as part of 579 CAO points. Those were largely individual achievements, while university and work have since broadened my experience into teamwork, customers, responsibility and reliable service.
+
+My technology journey moved from Scratch and spreadsheets into Python and pandas, and then into databases, SQL and visualisation. In my Dublin Bikes data-analysis project, I worked with about 55 million timestamped docking-station observations. Each observation is a snapshot of a station at a particular time, recording the station ID, timestamp, number of bikes available, number of free docks, capacity and fixed latitude and longitude. By comparing those snapshots over time, I could calculate how full or empty each station tended to be and identify where rebalancing pressure developed across the network. I used Python in Jupyter, pandas — including [pd . to](http://pd.to)_datetime() for timestamp standardisation — SQLite/SQL for storage and aggregation, and Leaflet for the interactive visualisation.
 
 Cycling is also one of my main interests, which has naturally influenced some of the data projects I choose to work on, including Dublin Bikes and my analysis of raw Strava GPX data.
 
-The people side has developed too. School began more with individual achievement, including four H1s, 579 CAO points and the Kolvenbach Medal for Business, while work at Mr Price and O’Mahony’s has taught me more about teamwork, customers, responsibility and reliable service.
-
-Financial Mathematics suits me because it brings those three journeys together: mathematics, technology and people. That is also why Cashbook appeals to me — it applies finance, data and software to real customer problems and turns analysis into something useful.
+Financial Mathematics suits me because it brings together mathematics, technology and practical problem solving. That is also why Cashbook appeals to me — it applies finance, data and software to real customer problems and turns analysis into something useful.
