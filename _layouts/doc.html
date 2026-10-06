@@ -130,6 +130,7 @@
     <article class="doc-paper">
       {% if page.eyebrow and page.eyebrow != "" %}<p class="doc-kicker">{{ page.eyebrow }}</p>{% endif %}
       <h1>{{ page_display_title }}</h1>
+      {% if page.subtitle and page.subtitle != "" %}<p class="doc-subtitle">{{ page.subtitle }}</p>{% endif %}
       {% if page.code %}
       {% unless site.education.show_university_context == false %}
       <details class="module-source-context" open>
