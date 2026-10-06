@@ -1121,10 +1121,9 @@
 
   const PORTFOLIO_SUBPAGES = [
     { label: 'Dublin Bikes', path: 'dublin-bikes.html' },
-    { label: 'Pivotal Office Map', path: 'pivotal-office-map.html' },
-    { label: 'Turboprop Fleet Map', path: 'fleet-map.html' },
+    { label: 'Strava Raw Data Analysis', path: 'cycling.html' },
     { label: 'Mortgage Calculator', path: 'mortgage-calculator.html' },
-    { label: 'PCP Car Finance Calculator', path: 'pcp-calculator.html' }
+    { label: 'PCP Finance Comparator', path: 'pcp-calculator.html' }
   ];
 
   const populatePortfolioMenu = async (item, pageUrl) => {
