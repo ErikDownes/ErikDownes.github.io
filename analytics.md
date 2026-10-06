@@ -107,9 +107,91 @@ A spreadsheet can **look correct because the current answer is correct while the
 
 &nbsp;
 
-## Tell me about a time you analysed a large or messy set of data and made it reliable.
+## Messy Data | Tell me about a time you analysed a large or messy set of data and made it reliable.
 
-## Tell me about a time you had to check or reconcile information to make sure it was accurate.
+
+
+Yes. The **Dublin Bikes rebalancing project** is the right story, and we do not need to drown it in code.
+
+
+
+### Situation
+
+I worked with the historical Dublin Bikes data to analyse **where the bike network becomes unbalanced during the day and where rebalancing is likely to be needed**.
+
+The raw archive was roughly **55 million station-status observations** collected over several years. They are snapshots of each station — timestamp, bikes available, empty stands, capacity and location — rather than individual journeys.
+
+### Task
+
+Before I could analyse anything, I had to turn that very large historical archive into **one consistent, reliable dataset**. The difficulty was not just its size; data collected over different periods was not always represented in exactly the same way, particularly dates and timestamps.
+
+### Action
+
+I combined the historical files, standardised the fields and normalised the timestamps so records from different periods could be compared properly.
+
+I then reduced the full dataset into something operationally useful: for each station and time of day I could calculate its **occupancy — bikes available relative to station capacity**.
+
+Rather than trying to display 55 million rows, I aggregated the data into a much smaller hourly view and compared **weekday and weekend patterns**. That let me identify when stations tended towards empty or full and see how that pressure moved across the network.
+
+### Result
+
+The finished dashboard turns a very large, messy historical dataset into a simple 24-hour picture of the network, showing **where and when rebalancing is likely to matter most**.
+
+### What I learned
+
+The main lesson was that with large datasets, the analysis is only as good as the preparation. **Make the data consistent first, reduce it to the level needed for the question, validate it, and only then analyse or visualise it.**
+
+And yes — for the **Problem Solving & Analytics** page, the short visible question cues should be something like:
+
+Break Down Problem
+
+Rethink Assumptions
+
+Find the Error
+
+Messy Data
+
+Reconcile & Check
+
+Support a Decision
+
+Much easier to scan.
+
+
+
+&nbsp;
+
+## Reconcile & Check | Tell me about a time you had to check or reconcile information to make sure it was accurate.
+
+
+
+### Situation
+
+I was checking an existing Excel spreadsheet where some of the totals no longer reconciled after the underlying data had been updated.
+
+### Task
+
+I needed to work out whether the source data was wrong or whether the spreadsheet calculations themselves were causing the difference.
+
+### Action
+
+I duplicated the worksheet first so I could investigate without affecting the original.
+
+When I exposed the formulas and compared the calculations, I found that some results had been **calculated manually and typed in as figures** rather than being driven by formulas. They had once been correct, but when the inputs changed, those cells stayed fixed.
+
+I replaced the manual entries with proper formulas and used simple Excel logic and lookups where appropriate so that the calculations were linked to the underlying data. I then filtered and checked the records again to make sure the totals reconciled.
+
+### Result
+
+The discrepancy disappeared, but more importantly the spreadsheet became **repeatable**: when the source data changed, the outputs updated with it rather than relying on somebody remembering to recalculate figures by hand.
+
+### What I learned
+
+For me, reconciliation is not just getting two totals to agree once. It is checking that the **logic underneath the totals is reliable**, so the same process continues to produce the right result when the data changes.
+
+
+
+
 
 ## Tell me about a time you used analysis to support a decision or recommendation.
 
