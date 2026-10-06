@@ -46,7 +46,35 @@ Good teamwork means
 
 &nbsp;
 
+
+
 ## Tell me about a time you had to explain something clearly to another person.
+
+### Situation
+
+My mother was comparing three PCP offers for an Audi A4 and was leaning towards the option with the highest deposit and lowest monthly repayments because she had the larger deposit available in the bank.
+
+### Task
+
+I wanted to help her step away from that immediate affordability decision and compare the three offers on a cold financial basis — what each option would actually cost overall.
+
+### Action
+
+I used what I had learned about the time value of money to build a simple PCP calculator. I compared the deposit, repayments and overall cost of each option, and then used graphs as well as the final figures to explain the differences clearly and at a pace that suited her.
+
+### Result
+
+The middle option was about €800 cheaper overall, so she could make the decision from the full financial picture rather than simply thinking, “I have the bigger deposit available, so I may as well pay it now.”
+
+### What I learned
+
+Good communication is not just producing the correct analysis. It is helping another person understand the evidence well enough to make a more informed decision.
+
+
+
+&nbsp;
+
+&nbsp;
 
 ## Tell me about a time you dealt with a customer or client problem.
 
