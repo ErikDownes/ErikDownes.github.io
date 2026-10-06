@@ -114,7 +114,7 @@
       {% assign nav_legacy_title = nav_title_parts[0] | strip %}
       {% assign nav_menu_title = navpage.handle | default: nav_legacy_title | strip %}
       {% unless nav_menu_title == 'General Questions' or nav_menu_title == 'Competency / STAR' or nav_menu_title == 'Pivotal Corporate Interview' or nav_menu_title == 'UL CV' or nav_menu_title == 'Results' or nav_menu_title == 'Job Spec' %}
-<div class="navitem{% if nav_menu_title == 'LM058' %} nav-right{% endif %} nav-dynamic{% if nav_menu_title == 'Contact' %} nav-contact-link{% endif %}{% if nav_menu_title == 'Fin Mat Modules' %} nav-right{% endif %}" data-question-menu>
+<div class="navitem{% if nav_menu_title == 'LM058' %} nav-right{% endif %} nav-dynamic{% if nav_menu_title == 'Contact' %} nav-contact-link{% endif %}" data-question-menu>
         <a class="navlabel" href="{{ navpage.url | relative_url }}"{% if nav_menu_title == 'Career' or nav_menu_title == 'Profile' or nav_menu_title == 'Education' or nav_menu_title == 'BSc Financial Mathematics' or nav_menu_title == 'LM058' or nav_menu_title == 'Fin Mat Modules' or nav_menu_title == 'Projects' or nav_menu_title == 'Co-op' %} aria-haspopup="true" aria-expanded="false"{% endif %}><span>{{ nav_menu_title }}</span></a>
         <div class="dropmenu"></div>
       </div>
