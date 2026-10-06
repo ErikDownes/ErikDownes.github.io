@@ -7,8 +7,6 @@ eyebrow: CASHBOOK · HSE MID-WEST · CO-OP
 public_mode: true
 title: Job Spec
 ---
-
-
 # Cashbook Job Spec
 
 Cashbook Limited – Implementation Associate (TIMS team)
@@ -35,6 +33,14 @@ Cashbook is an Irish software company, based in the Technology Park in Limerick.
 - Learn the basics of Cash Application, Bank Reconciliation and Collections
 - Assist the TIMS team on Lockbox development and assist in the application of Lockboxes
 - Work alongside customers to achieve higher rates of automation in Bank Reconciliation
+
+
+
+**TIMS — Total Information Management System:** The flagship business and **ERP (Enterprise Resource Planning)** software from Computers Unlimited. Cashbook integrates with TIMS to automate finance processes including cash application, accounts payable, bank reconciliation, deductions and collections.
+
+
+
+**ERP — Enterprise Resource Planning:** Business software that brings core processes such as finance, accounting, purchasing, inventory and operations together in one integrated system.
 
 ## Skills and Requirements:
 
