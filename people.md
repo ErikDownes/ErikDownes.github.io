@@ -80,6 +80,34 @@ Good communication is not just producing the correct analysis. It is turning tec
 
 ## Tell me about a time you dealt with a customer or client problem.
 
+### Situation
+
+During my TY placement in Mr Price, a customer came to the checkout with an item that scanned a euro or two higher than the price she believed she had seen on the shelf. When we checked, she was right to be annoyed: the item had been placed on the wrong shelf beside a lower price label for a different product.
+
+### Task
+
+My job was not just to establish the correct price. It was to make sure the customer felt **listened to, treated fairly and looked after**, rather than feeling that we were simply telling her she was wrong.
+
+### Action
+
+I stayed calm, listened to her explanation and told her I would check it rather than argue from what was showing on the till. I verified the shelf with a colleague and then brought the issue to my line manager.
+
+Because it was a genuine store mistake and the difference was small, we agreed that **customer goodwill was worth more than the euro or two involved**. With my manager's approval, the price was adjusted to the amount the customer had reasonably expected to pay, and we corrected the shelf afterwards so the same problem would not happen again.
+
+### Result
+
+The customer left satisfied and, more importantly, she felt that we had taken her concern seriously and dealt with it fairly.
+
+### What I learned
+
+When a customer is already frustrated, good service means **listening first, verifying the facts, taking ownership, keeping them informed and resolving the issue fairly**. The aim is not simply to prove what the system says; it is to preserve the customer's trust while still following the correct process.
+
+
+
+&nbsp;
+
+&nbsp;
+
 ## Tell me about a time you received direction or feedback and had to adapt.
 
 ## Tell me about a time you had to work with different people to get something done.
