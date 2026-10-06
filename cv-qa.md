@@ -10,474 +10,532 @@ description: CV drill page for checking that every claim, tool, technical term a
 eyebrow: CV QA · KNOW EVERY CLAIM · EXPLAIN EVERY TOOL · DEFEND EVERY EXAMPLE
 ---
 
-**Rule:** if it is written on the CV, be ready to explain what it means, what you actually did, what tool you used, why you used it and what the result was.
+> **How to use this page:** start with the whole CV block, answer the broad question, then work down through the pick-up questions at finer and finer granularity. Where the CV does not actually contain enough detail, the page says **Need detail from Erik/Ronan** rather than inventing an answer.\n\n**Rule:** if it is written on the CV, be ready to explain **what it means, what you actually did, what tool you used, why you used it and what the result was**.
 
-### Teamwork
+## Teamwork | Teamwork — explain the whole section from start to finish
 
-## Mr Price | What exactly was the shop-floor reorganisation?
+> **CV block:** Mr Price shop-floor reorganisation → Gantt chart → footfall data from Reolink/Frigate/Raspberry Pi → Python/pandas analysis → quiet changeover window → staff illness and changing priorities → successful completion → pair programming at UL → three teamwork lessons: plan together, understand dependencies and adapt together.
 
-## Mr Price | What did you personally do during the reorganisation?
+### Broad question | Tell me the whole Mr Price teamwork story.
 
-## Mr Price | What does “all-hands-on-deck” mean in this example?
+**Answer:** During my TY placement at Mr Price, I worked as part of a large team reorganising the shop floor and redesigning the shelf layout. We wanted to complete the changeover with minimum disruption to customers and sales. I used a Gantt chart because the work had dependencies, and I analysed timestamped footfall events in Python and pandas to help identify a quieter period. When several staff became unavailable, I took direction, switched tasks as priorities changed and concentrated on work that other parts of the project depended on. Despite being short-staffed, we completed the redesign within the planned window.
 
-## Gantt chart | What is a Gantt chart?
+**Pick-up:** What was your own contribution rather than the team's contribution?
 
-## Gantt chart | Why did you create one?
+### Mr Price | What exactly was being reorganised?
 
-## Dependencies | What does a dependency mean in a project?
+**Answer:** The shop floor and shelf layout were being redesigned. The CV says I worked as part of the team; it does not claim I designed the entire new layout myself.
 
-## Dependencies | Give one real dependency from the Mr Price work.
+### Mr Price | What does “all-hands-on-deck” mean here?
 
-## Disruption | What did “minimum disruption to customers” mean in practice?
+**Answer:** It means the reorganisation required a large team effort and people were encouraged to contribute outside their normal role because the changeover had to be completed within a limited window.
 
-## Sales | How could the timing of the changeover affect sales?
+### Gantt chart | What is a Gantt chart?
 
-## Reolink | What is Reolink?
+**Answer:** A Gantt chart is a visual project schedule that shows tasks across time. It helps show the order of work and where one task depends on another.
 
-## Frigate | What is Frigate?
+### Gantt chart | Why did you create one?
 
-## Raspberry Pi | What is a Raspberry Pi?
+**Answer:** Because the reorganisation had clear dependencies. Some work could not move until another area had first been cleared or completed.
 
-## Computer vision | What does AI computer vision mean?
+### Dependencies | What does a dependency mean in a project?
 
-## Person detection | What exactly was being detected?
+**Answer:** A dependency is a relationship where one task relies on another task happening first or being available.
 
-## Timestamp | What is a timestamp?
+### Dependencies | Give one real dependency from the Mr Price work.
 
-## Event | What was a person-detection event in this dataset?
+**Answer:** The CV gives the example that one area often had to be cleared before another could move.
 
-## Discrete observations | What does “discrete observations” mean?
+### Disruption | What did “minimum disruption to customers” mean?
 
-## Integer counts | Why do footfall counts become integers?
+**Answer:** It meant trying to carry out the most disruptive work when fewer customers were in the store so normal shopping and sales were affected as little as possible.
 
-## Footfall | What does footfall mean?
+### Sales | How could the timing of the changeover affect sales?
 
-## Redundancy | What does redundancy mean here?
+**Answer:** A large floor change during a busy period could obstruct customers, make products harder to access and interfere with normal trading. That is why the timing mattered.
 
-## Second camera | Why did having a second camera improve confidence?
+### Reolink / Frigate / Raspberry Pi | Explain the technology chain.
 
-## Reconciliation | What does it mean that the two camera feeds reconciled?
+**Answer:** Reolink supplied the camera feeds. Frigate processed the feeds and produced person-detection events. That processing ran on a Raspberry Pi, a small computer. The useful analytical output was timestamped detection events that could be counted over time.
 
-## Same pattern | What do you mean by the same overall pattern?
+### Computer vision | What does AI computer vision mean here?
 
-## Local analysis | What does analysing the data locally mean?
+**Answer:** Software analysed the camera images and detected people automatically. For this analysis, the useful result was not a person's identity; it was a timestamped detection that could contribute to a footfall count.
 
-## Jupyter | What is Jupyter?
+### Timestamp | What is a timestamp?
 
-## Python | What is Python and what did you use it for here?
+**Answer:** A timestamp records when an event happened, usually as a date and time. That allowed the detections to be grouped by day of week and time of day.
 
-## pandas | What is pandas and what did you use it for here?
+### Event / discrete observation | What was one observation?
 
-## Aggregation | What does aggregating events mean?
+**Answer:** One observation was a separate person-detection event at a particular time. It is discrete because it is a countable event rather than a continuously varying measurement.
 
-## Day and time | How did grouping by day of week and time of day help?
+### Integer counts | Why do footfall counts become integers?
 
-## Time series | What is a time series?
+**Answer:** Because people are counted as whole events: 0, 1, 2, 3 and so on, not fractional people.
 
-## Quiet period | How did you decide Sunday evening into Monday morning was quiet?
+### Footfall | What does footfall mean?
 
-## Staff illness | What changed when several staff became unavailable?
+**Answer:** Footfall is the number of people entering or moving through a place over a period of time. Here it was used as an indicator of how busy the shop was.
 
-## Priorities | What tasks did you switch between?
+### Redundancy | Why was there a second camera?
 
-## Team dependencies | What did you mean by focusing on work that other parts of the project depended on?
+**Answer:** The second camera provided redundancy and a cross-check. The CV says the two feeds reconciled to the same overall pattern and totals, which increased confidence in the result.
 
-## Result | How do you know the redesign was completed successfully?
+### Reconciliation | What does it mean that the camera feeds reconciled?
 
-## Pair programming | What is pair programming?
+**Answer:** It means the independently produced feeds agreed closely enough on the overall pattern and totals to support the same conclusion.
 
-## Pair programming | What did you actually do with your partner?
+### Local analysis | What does analysing the data locally mean?
 
-## Code review | What does reviewing each other’s code involve?
+**Answer:** The CV says the events were analysed locally in Jupyter rather than relying on a public analysis service. The analytical need was counts and timing, not customer identity.
 
-## Shared understanding | Why was it important that both people understood the final solution?
+### Jupyter | What is Jupyter?
 
-## Teamwork lesson | Why are planning, dependencies and adapting your three teamwork lessons?
+**Answer:** Jupyter is an interactive notebook environment where code, outputs, charts and written explanation can be kept together.
 
-### Communication Skills
+### Python | What is Python and what did you use it for?
 
-## O’Mahony’s | What kinds of orders, invoices and dispatch information do you work with?
+**Answer:** Python is a general-purpose programming language widely used in data analysis. I used it to process and analyse the timestamped detection-event data.
 
-## Client libraries | Who are the client libraries?
+### pandas | What is pandas and what did you use it for?
 
-## Clear communication | Give an example of information that had to be clear and accurate.
+**Answer:** pandas is a Python library for tabular data analysis. I used it to organise, group and aggregate the events by day and time.
 
-## Pricing problem | What happened in the Mr Price pricing example?
+### Aggregation | What does aggregating events mean?
 
-## Pricing problem | Why did you involve a manager?
+**Answer:** It means combining many individual detection events into useful summaries, such as counts for a particular day or time period.
 
-## Know your audience | What does “know your audience” mean?
+### Day and time | Why group by day of week and time of day?
 
-## Articulation | What does articulation mean?
+**Answer:** Because the decision was about finding recurring quieter periods, not one isolated moment. Grouping made the weekly pattern visible.
 
-## Pace | Why might you change your pace when speaking?
+### Time series | What is a time series?
 
-## Level of detail | How do you decide how much detail to give?
+**Answer:** A time series is a sequence of observations ordered through time. Looking at the longer pattern helped avoid basing the decision on one unusual day.
 
-## Body language | What does body language contribute to communication?
+### Quiet period | How did you identify Sunday evening into Monday morning?
 
-## Acknowledgement | What is a quick acknowledgement and when would you use one?
+**Answer:** I aggregated the events by day of week and time of day and then looked at the longer time-series pattern. That identified Sunday evening into Monday morning as one of the quietest periods.
 
-## Written update | What makes a written update useful?
+### Staff illness | What changed when several staff became unavailable?
 
-## Estimate | Why is an honest estimate of completion time important?
+**Answer:** The team had fewer people than expected, so priorities had to change. I took direction, switched tasks and focused effort on work that other parts of the project depended on.
 
-## Structured table | When is a table better than a paragraph?
+### Priorities | What exact tasks did you switch between?
 
-## Bar chart | When would you use a bar chart?
+**Answer:** **Need detail from Erik/Ronan.** The CV supports that I switched tasks as priorities changed, but it does not name the individual tasks.
 
-## Time-series graph | When would you use a time-series graph?
+### Result | How do you know the redesign was successful?
 
-## Flow diagram | When would you use a flow diagram?
+**Answer:** Despite being short-staffed, the team completed the redesign within the planned window while minimising disruption to customers and protecting sales.
 
-## Visualisation | What makes a visualisation useful rather than decorative?
+### Pair programming | What is pair programming?
 
-## Accessibility | What do you mean by accessibility principles?
+**Answer:** Pair programming is a way of working where two people collaborate closely on the same programming task rather than working entirely independently.
 
-## Clear headings | Why do clear headings help?
+### Pair programming | What did you actually do with your partner?
 
-## Zebra shading | What is zebra shading?
+**Answer:** We divided the task, talked through our reasoning, reviewed each other's code and made sure both of us understood the final solution instead of simply joining two separate pieces together at the end.
 
-## Structured tables | What makes a table properly structured?
+### Code review | What does reviewing each other's code involve?
 
-## Overleaf | What is Overleaf?
+**Answer:** Reading and checking the other person's code, discussing the logic and making sure the final solution is correct, clear and understood by both people.
 
-## LaTeX | What is LaTeX?
+### Shared understanding | Why did both people need to understand the solution?
 
-## Citations | What is a citation?
+**Answer:** Because effective teamwork is not just splitting work. Both people should be able to explain, check and take responsibility for the combined result.
 
-## Bibliography | What is a bibliography?
+### Teamwork lesson | What are your three teamwork lessons?
 
-## Referencing | Why does proper referencing matter?
+**Answer:** Plan together, understand how your work depends on other people's work, and adapt together when circumstances change.
 
-## GitHub | What is GitHub?
+---
 
-## GitHub Pages | What is GitHub Pages?
+## Communication Skills | Communication Skills — explain every claim and example
 
-## GitHub vs GitHub Pages | What is the difference between them?
+### O’Mahony’s | What kinds of orders, invoices and dispatch information do you work with?
 
-## HTML | What is HTML?
+### Client libraries | Who are the client libraries?
 
-## Web visualisation | What kind of web-based visualisation have you used?
+### Clear communication | Give an example of information that had to be clear and accurate.
 
-## Personal site | What is the purpose of your personal site?
+### Pricing problem | What happened in the Mr Price pricing example?
 
-## Technical communication | How does publishing a project help another person understand technical work?
+### Pricing problem | Why did you involve a manager?
 
-## PCP | What does PCP stand for?
+### Know your audience | What does “know your audience” mean?
 
-## PCP finance | How does PCP car finance work at a high level?
+### Articulation | What does articulation mean?
 
-## Loan amortisation | What does loan amortisation mean?
+### Pace | Why might you change your pace when speaking?
 
-## Deposit | What role did the deposit play in the comparison?
+### Level of detail | How do you decide how much detail to give?
 
-## Monthly repayments | What did you compare about the monthly repayments?
+### Body language | What does body language contribute to communication?
 
-## GMFV | What does GMFV stand for?
+### Acknowledgement | What is a quick acknowledgement and when would you use one?
 
-## Final payment | Why does the final payment matter when comparing PCP offers?
+### Written update | What makes a written update useful?
 
-## Total cash outlay | What does total cash outlay mean?
+### Estimate | Why is an honest estimate of completion time important?
 
-## €800 result | How did you calculate that the middle option was about €800 cheaper?
+### Structured table | When is a table better than a paragraph?
 
-## Ordinary language | How did you translate the maths into ordinary language?
+### Bar chart | When would you use a bar chart?
 
-## GDPR | What does GDPR stand for?
+### Time-series graph | When would you use a time-series graph?
 
-## Privacy | What privacy issue existed with the footfall data?
+### Flow diagram | When would you use a flow diagram?
 
-## Blurred images | Why were the customer images blurred?
+### Visualisation | What makes a visualisation useful rather than decorative?
 
-## Data minimisation | Why should you avoid identifying people when it is not necessary?
+### Accessibility | What do you mean by accessibility principles?
 
-## Appropriate access | What does appropriate access mean?
+### Clear headings | Why do clear headings help?
 
-## Publishing data | What information should not be published?
+### Zebra shading | What is zebra shading?
 
-## Communication principle | Why do you define good communication as accurate, accessible, appropriately presented, referenced and useful?
+### Structured tables | What makes a table properly structured?
 
-### Problem Solving and Analytics
+### Overleaf | What is Overleaf?
 
-## Analytical approach | What does an analytical approach mean to you?
+### LaTeX | What is LaTeX?
 
-## Differences | What kind of differences do you look for when checking data or calculations?
+### Citations | What is a citation?
 
-## Assumptions | Why do assumptions need to be checked?
+### Bibliography | What is a bibliography?
 
-## Trusted result | What makes a result trustworthy?
+### Referencing | Why does proper referencing matter?
 
-## Excel reconciliation | What does it mean for a spreadsheet to reconcile?
+### GitHub | What is GitHub?
 
-## Broken reconciliation | What was wrong with the spreadsheet?
+### GitHub Pages | What is GitHub Pages?
 
-## Duplicate sheet | Why did you duplicate the sheet before investigating?
+### GitHub vs GitHub Pages | What is the difference between them?
 
-## Expose formulas | What does exposing the formulas mean in Excel?
+### HTML | What is HTML?
 
-## Trace calculations | How do you trace a calculation in a spreadsheet?
+### Web visualisation | What kind of web-based visualisation have you used?
 
-## Hard-coded value | What is a hard-coded value?
+### Personal site | What is the purpose of your personal site?
 
-## Relative reference | What is a relative-reference formula?
+### Technical communication | How does publishing a project help another person understand technical work?
 
-## Hard-coded vs formula | Why was the hard-coded value a problem?
+### PCP | What does PCP stand for?
 
-## Fix | What exactly did you replace it with?
+### PCP finance | How does PCP car finance work at a high level?
 
-## Dynamic workbook | What does it mean that the workbook updated correctly when the data changed?
+### Loan amortisation | What does loan amortisation mean?
 
-## Dublin Bikes | What was the question your Dublin Bikes project was trying to answer?
+### Deposit | What role did the deposit play in the comparison?
 
-## 55 million observations | What exactly is one station-status observation?
+### Monthly repayments | What did you compare about the monthly repayments?
 
-## Historical files | Where did the observations come from?
+### GMFV | What does GMFV stand for?
 
-## Changing structures | What changed between the historical files?
+### Final payment | Why does the final payment matter when comparing PCP offers?
 
-## Timestamp formats | What different timestamp problems did you encounter?
+### Total cash outlay | What does total cash outlay mean?
 
-## Concatenate | What does concatenate mean in pandas?
+### €800 result | How did you calculate that the middle option was about €800 cheaper?
 
-## Schema | What is a schema?
+### Ordinary language | How did you translate the maths into ordinary language?
 
-## Standardise schema | What did you standardise?
+### GDPR | What does GDPR stand for?
 
-## Normalise timestamps | What does normalising timestamps mean?
+### Privacy | What privacy issue existed with the footfall data?
 
-## SQLite | What is SQLite?
+### Blurred images | Why were the customer images blurred?
 
-## SQL | What does SQL stand for and what is it used for?
+### Data minimisation | Why should you avoid identifying people when it is not necessary?
 
-## SQLite and SQL | What is the difference between SQLite and SQL?
+### Appropriate access | What does appropriate access mean?
 
-## Store cleaned data | Why did you move the cleaned data into SQLite?
+### Publishing data | What information should not be published?
 
-## Query | What is a query?
+### Communication principle | Why do you define good communication as accurate, accessible, appropriately presented, referenced and useful?
 
-## Derived field | What is a derived field?
+## Problem Solving and Analytics | Problem Solving and Analytics — explain every calculation and tool
 
-## Hour field | How did you derive hour from a timestamp?
+### Analytical approach | What does an analytical approach mean to you?
 
-## Weekday/weekend | How did you classify weekday versus weekend?
+### Differences | What kind of differences do you look for when checking data or calculations?
 
-## Station occupancy | How did you calculate station occupancy?
+### Assumptions | Why do assumptions need to be checked?
 
-## Capacity | What does station capacity mean?
+### Trusted result | What makes a result trustworthy?
 
-## Grouping | What does grouping data mean?
+### Excel reconciliation | What does it mean for a spreadsheet to reconcile?
 
-## Aggregation | What does aggregation mean in this project?
+### Broken reconciliation | What was wrong with the spreadsheet?
 
-## Station-by-hour profile | What is a station-by-hour profile?
+### Duplicate sheet | Why did you duplicate the sheet before investigating?
 
-## 24-hour dashboard | What does the dashboard show?
+### Expose formulas | What does exposing the formulas mean in Excel?
 
-## Scale | Why was a database more appropriate than a spreadsheet at this scale?
+### Trace calculations | How do you trace a calculation in a spreadsheet?
 
-## Validation | How did you validate that the logic was correct?
+### Hard-coded value | What is a hard-coded value?
 
-## Workflow | Explain the sequence: raw data → standardise → group → aggregate → validate → visualise.
+### Relative reference | What is a relative-reference formula?
 
-### Using Initiative
+### Hard-coded vs formula | Why was the hard-coded value a problem?
 
-## Initiative | What does initiative mean to you?
+### Fix | What exactly did you replace it with?
 
-## Process improvement | What is the difference between fixing one mistake and improving the process?
+### Dynamic workbook | What does it mean that the workbook updated correctly when the data changed?
 
-## Booksolve | What is Booksolve?
+### Dublin Bikes | What was the question your Dublin Bikes project was trying to answer?
 
-## Printed report | What information was on the printed Booksolve reports?
+### 55 million observations | What exactly is one station-status observation?
 
-## Point-in-time snapshot | What does point-in-time snapshot mean?
+### Historical files | Where did the observations come from?
 
-## Outdated information | How could the printed report become outdated?
+### Changing structures | What changed between the historical files?
 
-## Wrong customer | What actually happened when books went to the wrong customer?
+### Timestamp formats | What different timestamp problems did you encounter?
 
-## Immediate resolution | What did you do to resolve the customer issue?
+### Concatenate | What does concatenate mean in pandas?
 
-## Root cause | Why did you look beyond the one-off mistake?
+### Schema | What is a schema?
 
-## Line manager | What did you raise with your line manager?
+### Standardise schema | What did you standardise?
 
-## Appropriate access | Why did you need appropriate Booksolve access?
+### Normalise timestamps | What does normalising timestamps mean?
 
-## Excel export | What was the purpose of a refreshed Excel export?
+### SQLite | What is SQLite?
 
-## Paper reliance | Why could reducing reliance on paper improve accuracy?
+### SQL | What does SQL stand for and what is it used for?
 
-## Follow-through | What did you do after suggesting the improvement?
+### SQLite and SQL | What is the difference between SQLite and SQL?
 
-## Verification | How did the newer information improve your order checks?
+### Store cleaned data | Why did you move the cleaned data into SQLite?
 
-## Ownership | What does taking greater responsibility for accuracy mean?
+### Query | What is a query?
 
-## Independent learning | Give an example of something you learned because a project required it.
+### Derived field | What is a derived field?
 
-## Inconsistent structures | What inconsistency did the Dublin Bikes files have?
+### Hour field | How did you derive hour from a timestamp?
 
-## Manual correction | Why did you avoid correcting millions of records manually?
+### Weekday/weekend | How did you classify weekday versus weekend?
 
-## pd.to_datetime() | What does pd.to_datetime() do?
+### Station occupancy | How did you calculate station occupancy?
 
-## Timestamp validation | How did you check that timestamp standardisation worked?
+### Capacity | What does station capacity mean?
 
-## Spreadsheet limit | Why was the dataset no longer suitable for a spreadsheet workflow?
+### Grouping | What does grouping data mean?
 
-## SQL aggregation | What work did you move into SQL?
+### Aggregation | What does aggregation mean in this project?
 
-## Open source | What does open-source software mean?
+### Station-by-hour profile | What is a station-by-hour profile?
 
-## Python | Why do you use Python?
+### 24-hour dashboard | What does the dashboard show?
 
-## pandas | Why do you use pandas?
+### Scale | Why was a database more appropriate than a spreadsheet at this scale?
 
-## SQLite | Why do you use SQLite?
+### Validation | How did you validate that the logic was correct?
 
-## Jupyter | Why do you use Jupyter?
+### Workflow | Explain the sequence: raw data → standardise → group → aggregate → validate → visualise.
 
-## Leaflet | What is Leaflet?
+## Using Initiative | Using Initiative — explain the process improvements and learning
 
-## OpenStreetMap | What is OpenStreetMap?
+### Initiative | What does initiative mean to you?
 
-## Free technology | Why do you value freely available technology?
+### Process improvement | What is the difference between fixing one mistake and improving the process?
 
-## CareerPortfolio Starter | What is CareerPortfolio Starter?
+### Booksolve | What is Booksolve?
 
-## Reusable structure | What part of your website is reusable by another student?
+### Printed report | What information was on the printed Booksolve reports?
 
-## Give back | What do you mean by contributing something back?
+### Point-in-time snapshot | What does point-in-time snapshot mean?
 
-## Initiative principle | Explain curiosity, ownership, follow-through and learning quickly in one example.
+### Outdated information | How could the printed report become outdated?
 
-### Projects, Portfolio and Volunteering
+### Wrong customer | What actually happened when books went to the wrong customer?
 
-## Portfolio | What is on your personal project portfolio?
+### Immediate resolution | What did you do to resolve the customer issue?
 
-## Practical problems | Why do you choose practical finance and data problems?
+### Root cause | Why did you look beyond the one-off mistake?
 
-## Dublin Bikes summary | Explain the Dublin Bikes project in 30 seconds.
+### Line manager | What did you raise with your line manager?
 
-## Cleaning | What cleaning did you perform on the Dublin Bikes data?
+### Appropriate access | Why did you need appropriate Booksolve access?
 
-## Datetime standardisation | What did datetime standardisation involve?
+### Excel export | What was the purpose of a refreshed Excel export?
 
-## Storage | Why did you use SQLite for storage?
+### Paper reliance | Why could reducing reliance on paper improve accuracy?
 
-## Aggregation | What aggregations did you perform?
+### Follow-through | What did you do after suggesting the improvement?
 
-## Leaflet map | What does the interactive Leaflet map allow a user to see?
+### Verification | How did the newer information improve your order checks?
 
-## Strava | What is the Strava raw-data project?
+### Ownership | What does taking greater responsibility for accuracy mean?
 
-## GPX | What is a GPX file?
+### Independent learning | Give an example of something you learned because a project required it.
 
-## EDA | What does EDA stand for?
+### Inconsistent structures | What inconsistency did the Dublin Bikes files have?
 
-## Exploratory data analysis | What do you actually do during EDA?
+### Manual correction | Why did you avoid correcting millions of records manually?
 
-## Validation | What did you validate in the Strava project?
+### pd.to_datetime() | What does pd.to_datetime() do?
 
-## Feature engineering | What is feature engineering?
+### Timestamp validation | How did you check that timestamp standardisation worked?
 
-## Strava features | What features did you create from the raw GPX data?
+### Spreadsheet limit | Why was the dataset no longer suitable for a spreadsheet workflow?
 
-## Matplotlib | What is Matplotlib?
+### SQL aggregation | What work did you move into SQL?
 
-## Leaflet explorer | What does the Strava Leaflet explorer show?
+### Open source | What does open-source software mean?
 
-## Data limitations | What limitations did the Strava data have?
+### Python | Why do you use Python?
 
-## Missing data | Why is it important not to invent missing information?
+### pandas | Why do you use pandas?
 
-## PCP project | Explain the PCP calculator in 30 seconds.
+### SQLite | Why do you use SQLite?
 
-## Same car | Why was comparing offers for exactly the same car useful?
+### Jupyter | Why do you use Jupyter?
 
-## 36-month term | Why did the equal term matter?
+### Leaflet | What is Leaflet?
 
-## Same GMFV | Why did the same GMFV make comparison easier?
+### OpenStreetMap | What is OpenStreetMap?
 
-## Higher deposit | Why was the largest deposit not automatically the cheapest option?
+### Free technology | Why do you value freely available technology?
 
-## Future cost | What was the less obvious future cost?
+### CareerPortfolio Starter | What is CareerPortfolio Starter?
 
-## Cash comparison | What numbers did you add together to compare total cash outlay?
+### Reusable structure | What part of your website is reusable by another student?
 
-## AI | How do you use AI in your work?
+### Give back | What do you mean by contributing something back?
 
-## AI research | What do you use AI research for?
+### Initiative principle | Explain curiosity, ownership, follow-through and learning quickly in one example.
 
-## AI coding | What do you use AI coding help for?
+## Projects, Portfolio and Volunteering | Projects, Portfolio and Volunteering — explain every project
 
-## AI debugging | What does debugging mean?
+### Portfolio | What is on your personal project portfolio?
 
-## Verification | How do you check AI-generated work?
+### Practical problems | Why do you choose practical finance and data problems?
 
-## Responsibility | What does taking responsibility for the final result mean?
+### Dublin Bikes summary | Explain the Dublin Bikes project in 30 seconds.
 
-### Additional Information
+### Cleaning | What cleaning did you perform on the Dublin Bikes data?
 
-## Financial Mathematics | Why did you choose Financial Mathematics?
+### Datetime standardisation | What did datetime standardisation involve?
 
-## Maths and technology | How had maths and technology come together for you by the end of school?
+### Storage | Why did you use SQLite for storage?
 
-## Broad course | What do you mean by a broad range of mathematical subjects?
+### Aggregation | What aggregations did you perform?
 
-## First CAO choice | Why was Financial Mathematics in UL your first CAO choice?
+### Leaflet map | What does the interactive Leaflet map allow a user to see?
 
-## Junior Cycle CBA | What is a CBA?
+### Strava | What is the Strava raw-data project?
 
-## Exceptional | What does an Exceptional CBA mean?
+### GPX | What is a GPX file?
 
-## Academic Excellence | What was the Academic Excellence award?
+### EDA | What does EDA stand for?
 
-## Kolvenbach Medal | What was the Kolvenbach Medal for Business?
+### Exploratory data analysis | What do you actually do during EDA?
 
-## Four H1s | Which subjects did you get H1s in?
+### Validation | What did you validate in the Strava project?
 
-## 579 points | What does 579 CAO points mean?
+### Feature engineering | What is feature engineering?
 
-## Individual achievements | Why do you describe those school achievements as largely individual?
+### Strava features | What features did you create from the raw GPX data?
 
-## Broader experience | How have university and work broadened you into teamwork, customers, responsibility and service?
+### Matplotlib | What is Matplotlib?
 
-## Scratch | What is Scratch?
+### Leaflet explorer | What does the Strava Leaflet explorer show?
 
-## Technology journey | Explain the progression from Scratch → spreadsheets → Python/pandas → databases/SQL → visualisation.
+### Data limitations | What limitations did the Strava data have?
 
-## Docking-station observation | What does one Dublin Bikes observation contain?
+### Missing data | Why is it important not to invent missing information?
 
-## Station ID | What is a station ID?
+### PCP project | Explain the PCP calculator in 30 seconds.
 
-## Bikes available | What does bikes available tell you?
+### Same car | Why was comparing offers for exactly the same car useful?
 
-## Free docks | What do free docks tell you?
+### 36-month term | Why did the equal term matter?
 
-## Latitude and longitude | What are latitude and longitude?
+### Same GMFV | Why did the same GMFV make comparison easier?
 
-## Fixed location | Why are latitude and longitude fixed for a docking station?
+### Higher deposit | Why was the largest deposit not automatically the cheapest option?
 
-## Snapshots over time | How can repeated snapshots show whether a station tends to fill or empty?
+### Future cost | What was the less obvious future cost?
 
-## Rebalancing pressure | What does rebalancing pressure mean?
+### Cash comparison | What numbers did you add together to compare total cash outlay?
 
-## Jupyter workflow | What did you do in Python inside Jupyter?
+### AI | How do you use AI in your work?
 
-## pandas datetime | Why was pd.to_datetime() important?
+### AI research | What do you use AI research for?
 
-## SQLite/SQL | What work did the database handle?
+### AI coding | What do you use AI coding help for?
 
-## Leaflet | What did the interactive visualisation add that a static table could not?
+### AI debugging | What does debugging mean?
 
-## Cycling | Why has cycling influenced the projects you choose?
+### Verification | How do you check AI-generated work?
 
-## Financial Maths fit | Why does Financial Mathematics suit you?
+### Responsibility | What does taking responsibility for the final result mean?
 
-## Cashbook fit | Why does Cashbook appeal to you?
+## Additional Information | Additional Information — explain the academic and technology story
 
-## Finance + data + software | Give one example of how finance, data and software come together in a real customer problem.
+### Financial Mathematics | Why did you choose Financial Mathematics?
 
-## Final check | If an interviewer points at any line of this CV and says “What does that mean?”, can you explain it simply without reading?
+### Maths and technology | How had maths and technology come together for you by the end of school?
+
+### Broad course | What do you mean by a broad range of mathematical subjects?
+
+### First CAO choice | Why was Financial Mathematics in UL your first CAO choice?
+
+### Junior Cycle CBA | What is a CBA?
+
+### Exceptional | What does an Exceptional CBA mean?
+
+### Academic Excellence | What was the Academic Excellence award?
+
+### Kolvenbach Medal | What was the Kolvenbach Medal for Business?
+
+### Four H1s | Which subjects did you get H1s in?
+
+### 579 points | What does 579 CAO points mean?
+
+### Individual achievements | Why do you describe those school achievements as largely individual?
+
+### Broader experience | How have university and work broadened you into teamwork, customers, responsibility and service?
+
+### Scratch | What is Scratch?
+
+### Technology journey | Explain the progression from Scratch → spreadsheets → Python/pandas → databases/SQL → visualisation.
+
+### Docking-station observation | What does one Dublin Bikes observation contain?
+
+### Station ID | What is a station ID?
+
+### Bikes available | What does bikes available tell you?
+
+### Free docks | What do free docks tell you?
+
+### Latitude and longitude | What are latitude and longitude?
+
+### Fixed location | Why are latitude and longitude fixed for a docking station?
+
+### Snapshots over time | How can repeated snapshots show whether a station tends to fill or empty?
+
+### Rebalancing pressure | What does rebalancing pressure mean?
+
+### Jupyter workflow | What did you do in Python inside Jupyter?
+
+### pandas datetime | Why was pd.to_datetime() important?
+
+### SQLite/SQL | What work did the database handle?
+
+### Leaflet | What did the interactive visualisation add that a static table could not?
+
+### Cycling | Why has cycling influenced the projects you choose?
+
+### Financial Maths fit | Why does Financial Mathematics suit you?
+
+### Cashbook fit | Why does Cashbook appeal to you?
+
+### Finance + data + software | Give one example of how finance, data and software come together in a real customer problem.
+
+### Final check | If an interviewer points at any line of this CV and says “What does that mean?”, can you explain it simply without reading?
