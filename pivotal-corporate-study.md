@@ -47,7 +47,11 @@ Financial Mathematics has developed my analytical approach across mathematics, s
 
 In Excel, I investigated a spreadsheet that no longer reconciled after its inputs changed. By duplicating the sheet, exposing the formulas and tracing the calculations, I found a hard-coded value where a relative-reference formula should have been. Replacing it restored the reconciliation and made the workbook update correctly when the data changed.
 
-For larger data, my Dublin Bikes project involved about 55 million station-status observations. I used pandas to standardise changing column structures and datetime formats, then SQLite/SQL to store, query and aggregate the data into an hourly station-level dataset. This strengthened my approach: understand the data, investigate exceptions, validate the logic and choose technology appropriate to the scale.
+For larger data, my Dublin Bikes project involved about 55 million station-status observations spread across historical files with changing structures and timestamp formats. I used pandas to concatenate the files, standardise the schema and normalise the timestamps, then SQLite/SQL to store and query the cleaned data. I derived time-based fields such as hour and weekday/weekend, calculated station occupancy from bikes available relative to capacity, and used grouping and aggregation to reduce millions of observations into station-by-hour profiles for a 24-hour weekday/weekend dashboard. This strengthened my approach: understand the raw data, standardise it, group it at the level relevant to the question, aggregate it into something useful, validate the logic and choose technology appropriate to the scale.
+
+That now gives him useful technical vocabulary he can talk about naturally:
+
+“concatenation”, “schema standardisation”, “datetime normalisation”, “derived fields”, “grouping”, “aggregation”, “station-level occupancy”, “hourly profile”, “weekday/weekend segmentation”.
 
 ## Using Initiative
 
