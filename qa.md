@@ -35,13 +35,31 @@ Journeys through **maths, technology and people** brought me to Financial Maths 
 
 ## Why are you interested in this role?
 
-I’m interested in Cashbook because it feels like the next stage of the same journey rather than a change of direction.
-
-The maths and technology strands now come together through data analysis, SQL, automation and problem-solving. The finance strand becomes real through bank reconciliation, cash application and collections. And the people strand continues through working with customers, understanding what they need and helping them get to a better solution.
-
-So what began for me with numbers, then grew through technology, now has the opportunity to become something more practical — using both to solve financial problems for real people and real businesses.
 
 
+### What I’m going to tell you
+
+**Our journeys are aligned: we both bring maths, technology and people together to solve financial problems and deliver for customers.**
+
+
+
+### The journeys continue
+
+I’m learning how maths, technology and people increasingly come together: maths and data analysis becoming more sophisticated, technology moving into databases, SQL and automation, and my own work moving further into teamwork, customers and professional responsibility.
+
+### More sophisticated tools emerge
+
+That is exactly where Cashbook sits — finance, technology and people coming together to improve real processes for customers. So this role is not a change of direction for me; it is the natural continuation of the direction I am already travelling.
+
+
+
+### What I told you
+
+**Our journeys are aligned: we both bring maths, technology and people together to solve financial problems and deliver for customers.**
+
+
+
+&nbsp;
 
 &nbsp;
 
