@@ -1,9 +1,10 @@
 ---
 layout: doc
-handle: Turboprop Asset Reporting
-title: Turboprop Asset Reporting Dashboard
-eyebrow: PUBLIC DATA · ASSET REPORTING · AIRFRAME RECONCILIATION
+handle: Turboprop Fleet Map
+title: Turboprop Fleet Map
+eyebrow: AIRCRAFT · LESSEES · COUNTRIES
 permalink: /fleet-map.html
+public_mode: true
 ---
 
 ABEL0_MAP_APP
