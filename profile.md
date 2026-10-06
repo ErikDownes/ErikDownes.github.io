@@ -11,6 +11,10 @@ profile_mode: true
 eyebrow: 3rd YEAR · FINANCIAL MATHEMATICS · UNIVERSITY OF LIMERICK
 ---
 
+<div class="profile-study-link" markdown="1">
+**Complex Analysis study:** [MS4045 · Tutorial Sheet 1 — clear worked solutions →]({{ '/modules/ms4045/tutorial-sheet-1-solutions.html' | relative_url }})
+</div>
+
 
 &nbsp;
 
