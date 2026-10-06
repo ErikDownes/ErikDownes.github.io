@@ -1,17 +1,32 @@
----
-layout: doc
-permalink: /analytics.html
-handle: Problem Solving & Analytics
-title: Problem Solving & Analytics
-subtitle: How I analyse information, find what is wrong, explain it and reach a
-  reliable solution.
-nav_order: 40
-top_nav: true
-description: Problem solving, data analysis, accuracy and troubleshooting
-  interview preparation.
-eyebrow: INTERVIEW DOMAIN · PROBLEM SOLVING & ANALYTICS
----
 ## Tell me about a difficult problem you had to break down and solve.
+
+### Situation
+
+In the 2024 Higher Level Applied Maths paper, I worked through a business-planning problem where a company had different promotional strategies available over four years, with different profits and losses attached to each route.
+
+### Task
+
+Looking at the whole network at once made the problem complicated, so I needed to reduce it into smaller decisions while keeping the final objective clear — **maximising total profit**.
+
+### Action
+
+I used **Bellman’s Principle of Optimality**. Instead of trying every complete route from the start, I worked backwards from the final year.
+
+At each stage I calculated the best outcome available from that point onwards, recorded it, and then used that result when analysing the previous stage. That turned one large problem into a sequence of smaller, manageable decisions.
+
+### Result
+
+By working backwards systematically, I could identify the optimal route through the network rather than relying on trial and error.
+
+### What I learned
+
+When a problem looks too large, I try to **define the objective, break it into smaller components, solve them in a logical order and then bring the results back together**.
+
+
+
+&nbsp;
+
+&nbsp;
 
 ## Tell me about a time your first assumption or approach was wrong and you had to rethink it.
 
@@ -49,9 +64,63 @@ My first approach was not useless — it gave me a clean baseline — but it was
 
 ## Tell me about a time you found an error or inconsistency and worked out what was causing it.
 
+### Situation
+
+I was working with an existing Excel spreadsheet where one of the calculated results no longer matched what I expected after some of the input figures had been changed.
+
+### Task
+
+I needed to work out whether the problem was with the new inputs or with the way the spreadsheet itself had been built.
+
+### Action
+
+I first duplicated the worksheet so I could investigate it without changing the original. I then used **Show Formulas** and compared the calculations across the relevant rows and columns.
+
+That exposed the problem: one of the cells that should have contained a formula using **relative cell references** had instead been replaced with a hard-coded figure. It had originally produced the right answer, but when the input data later changed, that cell did not recalculate with everything else.
+
+I replaced the hard-coded value with the correct relative-reference formula and then changed the inputs again to check that the calculation updated properly.
+
+### Result
+
+The figures reconciled again, and the spreadsheet responded correctly when its inputs changed.
+
+### What I learned
+
+A spreadsheet can **look correct because the current answer is correct while the underlying logic is still wrong**. When something does not reconcile, I check the calculation structure as well as the numbers themselves.
+
+
+
+&nbsp;
+
+&nbsp;
+
 ## Tell me about a time you analysed a large or messy set of data and made it reliable.
 
 ## Tell me about a time you had to check or reconcile information to make sure it was accurate.
 
 ## Tell me about a time you used analysis to support a decision or recommendation.
+
+### Situation
+
+In fifth year, my mother was comparing three PCP offers for an Audi A4: a higher deposit with lower monthly repayments, a lower deposit with higher monthly repayments, and an option in between. She was leaning towards the higher deposit because she had the money available in the bank.
+
+### Task
+
+I wanted to compare the offers objectively on their **overall financial outcome**, rather than letting the size of the monthly repayment drive the decision.
+
+### Action
+
+I used what I had learned about loan amortisation to build a simple [PCP calculator](/pcp-calculator.html). I modelled the deposit, the annuity of monthly repayments and the GMFV balloon payment, and used the calculator to compare the **total cash outlay** under each offer.
+
+I then used graphs and the headline figures to make the comparison easy to understand.
+
+### Result
+
+The middle option was about **€800 cheaper in total cash outlay**, so the analysis changed the basis of the decision from immediate affordability to the overall financial cost.
+
+### What I learned
+
+Analysis is most useful when it **changes or improves a decision**. It is not enough to calculate an answer; the result has to be presented in a way that someone can actually use.
+
+
 
