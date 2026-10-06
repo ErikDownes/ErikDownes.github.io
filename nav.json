@@ -3,7 +3,7 @@ layout: null
 permalink: /nav.json
 ---
 [
-{% assign nav_pages = site.pages | where_exp: "p", "p.nav_order" | sort: "nav_order" %}
+{% assign nav_pages = site.pages | where_exp: "p", "p.top_nav == true" | sort: "nav_order" %}
 {% assign first_nav_item = true %}
 {% for p in nav_pages %}
   {% assign raw_title = p.title | default: '' %}
