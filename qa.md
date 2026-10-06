@@ -1,8 +1,8 @@
 ---
 layout: doc
 permalink: /qa.html
-handle: Motivation
-title: Motivation
+handle: career and Motivation
+title: career and Motivation
 nav_order: 20
 top_nav: true
 description: Motivation and role-fit interview questions for co-op preparation.
@@ -34,8 +34,6 @@ Journeys through **maths, technology and people** brought me to Financial Maths 
 
 
 ## Why are you interested in this role?
-
-
 
 ### What I’m going to tell you
 
