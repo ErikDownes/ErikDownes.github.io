@@ -11,7 +11,7 @@ description: Problem solving, data analysis, accuracy and troubleshooting
   interview preparation.
 eyebrow: INTERVIEW DOMAIN · PROBLEM SOLVING & ANALYTICS
 ---
-## Problem you had to break down and solve |  Tell me about a difficult problem you had to break down and solve.
+## Break Down a Large Problem | Tell me about a difficult problem you had to break down and solve.
 
 ### Situation
 
@@ -109,8 +109,6 @@ A spreadsheet can **look correct because the current answer is correct while the
 
 ## Messy Data | Tell me about a time you analysed a large or messy set of data and made it reliable.
 
-
-
 Yes. The **Dublin Bikes rebalancing project** is the right story, and we do not need to drown it in code.
 
 
@@ -163,8 +161,6 @@ Much easier to scan.
 
 ## Reconcile & Check | Tell me about a time you had to check or reconcile information to make sure it was accurate.
 
-
-
 ### Situation
 
 I was checking an existing Excel spreadsheet where some of the totals no longer reconciled after the underlying data had been updated.
@@ -191,7 +187,7 @@ For me, reconciliation is not just getting two totals to agree once. It is check
 
 
 
-
+&nbsp;
 
 ## Tell me about a time you used analysis to support a decision or recommendation.
 
