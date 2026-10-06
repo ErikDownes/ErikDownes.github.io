@@ -9,7 +9,7 @@ top_nav: true
 description: Teamwork, communication and customer-facing interview preparation.
 eyebrow: INTERVIEW DOMAIN · TEAMWORK & COMMUNICATION
 ---
-**PEOPLE = teamwork · communication · customer care · taking direction.**
+**TEAMWORK & COMMUNICATION = teamwork · communication · customer care · taking direction.**
 
 Use this domain when the question is fundamentally about **how you work with other people**.
 
