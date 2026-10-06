@@ -9,7 +9,7 @@ top_nav: true
 description: Problem solving, data analysis, accuracy and troubleshooting interview preparation.
 eyebrow: INTERVIEW DOMAIN · PROBLEM SOLVING & ANALYTICS
 ---
-**ANALYTICS = problem solving · data · accuracy · troubleshooting.**
+**PROBLEM SOLVING & ANALYTICS = problem solving · data · accuracy · troubleshooting.**
 
 Use this domain when the interviewer wants to know **how you think through a problem and reach a reliable result**.
 
