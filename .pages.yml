@@ -15,7 +15,8 @@ components:
       - { name: permalink, type: string, hidden: true }
       - { name: cms_key, type: string, hidden: true }
       - { name: handle, type: string, label: Menu label }
-      - { name: nav_order, type: number, label: "Menu position (10, 20, 30...)" }\n      - { name: top_nav, type: boolean, hidden: true }
+      - { name: nav_order, type: number, label: "Menu position (10, 20, 30...)" }
+      - { name: top_nav, type: boolean, hidden: true }
       - { name: title, type: string, label: Title }
       - { name: eyebrow, type: string, label: Eyebrow }
       - { name: intro, type: text, label: Introduction }
@@ -27,7 +28,12 @@ content:
     type: group
     items:
       - { name: profile, label: "10 · About Me", type: file, path: profile.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: qa, label: "20 · Motivation", type: file, path: qa.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }\n      - { name: people, label: "30 · People", type: file, path: people.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }\n      - { name: analytics, label: "40 · Analytics", type: file, path: analytics.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }\n      - { name: initiative, label: "50 · Initiative", type: file, path: initiative.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }\n      - { name: technology, label: "60 · Technology", type: file, path: technology.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }\n      - { name: finance_role, label: "70 · Finance & Role", type: file, path: finance-role.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: qa, label: "20 · Motivation", type: file, path: qa.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: people, label: "30 · People", type: file, path: people.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: analytics, label: "40 · Analytics", type: file, path: analytics.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: initiative, label: "50 · Initiative", type: file, path: initiative.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: technology, label: "60 · Technology", type: file, path: technology.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: finance_role, label: "70 · Finance & Role", type: file, path: finance-role.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: education, label: "20 · Financial Maths", type: file, path: education.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: academic_record, label: "30 · Results", type: file, path: academic-record.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: job_spec, label: "39 · Job Spec", type: file, path: job-spec.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
