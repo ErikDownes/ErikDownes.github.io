@@ -26,7 +26,7 @@ My technology journey brought me from Scratch and spreadsheets to Python and pan
 
 ### People
 
-My people journey began more with individual achievement — two Exceptional CBAs in Junior Cycle, an academic achievement award in fifth year, a medal for being the top Business student in sixth year, and four H1s contributing to 579 CAO points. But my Jesuit education also had a strong ethos of community, responsibility and looking beyond the individual. Since then, working in teams and dealing with customers has taught me that achievement is also about understanding what other people need, adapting to those needs and being accountable for providing a high-quality service.
+My people journey began more with individual achievement — two Exceptional CBAs in Junior Cycle, an academic achievement award in fifth year, a medal for being the top Business student in sixth year, and four H1s contributing to 579 (445)  CAO points. But my Jesuit education also had a strong ethos of community, responsibility and looking beyond the individual. Since then, working in teams and dealing with customers has taught me that achievement is also about understanding what other people need, adapting to those needs and being accountable for providing a high-quality service.
 
 ### What I told you
 
