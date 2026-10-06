@@ -3,6 +3,7 @@ layout: doc
 permalink: /finance-role.html
 handle: Finance & Role
 title: Finance & Role
+subtitle: How my financial knowledge connects to Cashbook, TIMS and the work of an Implementation Associate.
 nav_order: 70
 top_nav: true
 description: Cashbook, TIMS and core finance-process interview preparation.
