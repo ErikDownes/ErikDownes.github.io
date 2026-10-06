@@ -3,31 +3,24 @@ layout: doc
 permalink: /people.html
 handle: Teamwork & Communication
 title: Teamwork & Communication
-subtitle: How I work with colleagues, communicate with customers, build relationships and respond to feedback.
+subtitle: How I work with colleagues, communicate with customers, build
+  relationships and respond to feedback.
 nav_order: 30
 top_nav: true
 description: Teamwork, communication and customer-facing interview preparation.
-eyebrow: INTERVIEW DOMAIN · TEAMWORK & COMMUNICATION
+eyebrow: teamwork · communication · customer care · taking direction.
 ---
-**TEAMWORK & COMMUNICATION = teamwork · communication · customer care · taking direction.**
 
-Use this domain when the question is fundamentally about **how you work with other people**.
 
-## Teamwork | Tell me about a time you worked successfully in a team.
+## Tell me about a time you worked effectively as part of a team.
 
-Best evidence bank: **O'Mahony's**, **Mr Price**, or **Java pair programming**.
+## Tell me about a time you had to explain something clearly to another person.
 
-## Communication | Tell me about a time you communicated something clearly.
+## Tell me about a time you dealt with a customer or client problem.
 
-Best evidence bank: the **O'Mahony's library delivery issue** — identify who needs to know, explain clearly, agree the practical fix and follow through.
+## Tell me about a time you received direction or feedback and had to adapt.
 
-## Customer Care | Tell me about a time you had to look after a customer.
-
-Focus on being **responsive, clear, practical and reliable**.
-
-## Taking Direction | Tell me about a time you had to absorb information quickly.
-
-Show that you **listen, clarify, act and check** rather than pretending to understand.
+## Tell me about a time you had to work with different people to get something done.
 
 
 
@@ -35,9 +28,27 @@ Show that you **listen, clarify, act and check** rather than pretending to under
 
 &nbsp;
 
-Yes. The Pivotal material gives us much stronger language than simply **“serving people.”**
+&nbsp;
 
-The best client-service vocabulary is:
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
 
 - **high-quality professional service**
 - **high standards of client care**
