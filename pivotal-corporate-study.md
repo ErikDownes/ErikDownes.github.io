@@ -19,7 +19,7 @@ We needed to complete the changeover with minimum disruption to customers and mi
 
 We also used data to choose the best time. Reolink cameras feeding into Frigate on a Raspberry Pi used AI computer vision to generate timestamped person-detection events. These discrete observations could be aggregated into integer footfall counts. A second camera provided redundancy, and the two feeds reconciled to the same overall pattern and totals, giving us extra confidence in the data.
 
-I analysed the events locally in a Jupyter notebook using Python and pandas. By aggregating them by day of week and time of day, and then looking at the longer time-series pattern, we identified Sunday evening into Monday morning as one of the quietest periods.
+We analysed the events locally in a Jupyter notebook using Python and pandas. By aggregating them by day of week and time of day, and then looking at the longer time-series pattern, we identified Sunday evening into Monday morning as one of the quietest periods.
 
 When several staff became unavailable through illness, I took direction, switched tasks as priorities changed and helped focus effort on the activities that other parts of the project depended on. Despite being short-staffed, we completed the redesign within the planned window, minimising disruption to customers and protecting sales.
 
