@@ -12,6 +12,56 @@ image: /assets/erik-profile-200kb.jpg
 image_alt: Erik Downes
 eyebrow: 3rd YEAR · FINANCIAL MATHEMATICS · UNIVERSITY OF LIMERICK
 ---
+
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+I was always drawn to maths, and by the end of secondary school I was looking for a course with a           broad spectrum of topics with a large mathematical component   so putting financial maths in UL down as my top pick was an easy choice.
+
+
+
+My technology journey brought me from Scratch and spreadsheets to Python and pandas, then Parquet, and ultimately, when looking at station rebalancing demands across the Dublin Bikes network, I needed SQL and Leaflet to manage and map a 55-million-row database.
+
+
+
+My people journey began more with individual achievement — two Exceptional CBAs in Junior Cycle, an academic achievement award in fifth year, a medal for being the top Business student in sixth year, and four H1s contributing to 579 (445)  CAO points. But my Jesuit education also had a strong ethos of community, responsibility and looking beyond the individual. Since then, working in teams and dealing with customers has taught me that achievement is also about understanding what other people need, adapting to those needs and being accountable for providing a high-quality service.
+
+
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+## Old bio
+
+
+
 I am a third-year Financial Mathematics student at the University of Limerick with a strong interest in financial services, data analysis and applied problem solving. My degree combines mathematics, statistics, modelling and financial mathematics with programming, data analysis, finance and accounting, helping me develop strong analytical, problem-solving and communication skills.
 
 Alongside my studies, I have worked in retail and logistics, where being organised, reliable and responsive is essential. These roles have strengthened my teamwork, communication and ability to take responsibility while managing competing priorities. I am particularly interested in opportunities where I can contribute to a professional team, develop professionally, and apply my quantitative and financial skills to add value for clients and the wider business.
