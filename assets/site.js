@@ -551,9 +551,14 @@
       { label: 'About Me', href: rootHref },
       { label: 'UL CV', href: new URL('pivotal-corporate-study.html', rootHref).href },
       { label: 'Results', href: new URL('academic-record.html', rootHref).href },
-      { section: 'Job Specs' },
-      { label: 'Cashbook Limited — Implementation Associate (TIMS)', href: new URL('job-spec.html#cashbook-implementation', rootHref).href },
-      { label: 'HSE Mid-West — Co-Op Finance', href: new URL('job-spec.html#hse-finance', rootHref).href }
+      { label: 'Financial Maths (LM058)', href: new URL('education.html', rootHref).href },
+      { label: 'Projects', href: new URL('projects.html', rootHref).href },
+      { section: 'Cashbook Interview' },
+      { label: 'Cashbook Role Study', href: new URL('cashbook-study.html', rootHref).href },
+      { label: 'Cashbook Job Spec', href: new URL('job-spec.html#cashbook-implementation', rootHref).href },
+      { section: 'Reference' },
+      { label: 'Acronyms & Glossary', href: new URL('glossary.html', rootHref).href },
+      { label: 'Contact', href: new URL('contact.html', rootHref).href }
     ];
 
     links.forEach(entry => {
