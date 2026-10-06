@@ -41,8 +41,6 @@ Journeys through **maths, technology and people** brought me to Financial Maths 
 
 We operate the same way — bringing maths, technology and teamwork together, while never losing sight of the client.
 
-
-
 ### We are going the same way
 
 My own journey is moving towards more sophisticated maths, data analysis, databases, SQL and automation, while also moving further into teamwork and professional responsibility.
