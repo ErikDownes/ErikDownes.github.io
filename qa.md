@@ -57,6 +57,28 @@ Most of all, I want to come out of co-op having moved from being a student who c
 
 &nbsp;
 
+
+
+
+
+## What can you contribute to the placement?
+
+### What I bring
+
+I can contribute across the same three areas — maths, technology and people. From Financial Maths, I bring analytical thinking and practical experience with Excel, Python, pandas, databases, SQL and AI tools, but I would particularly bring experience of working as part of a team.
+
+### Evidence from work
+
+In my logistics work with O’Mahony’s, I’ve learned that doing my own job well is only part of what is expected. Accuracy, communication and following through matter because colleagues and customers depend on me to be reliable, responsive and professional and to deliver a high-quality service. During my TY work experience in Mr Price, I worked in a large team with frequent staff changes, which taught me to build professional working relationships quickly, take guidance and feedback positively, and help wherever I was needed to keep the overall job moving.
+
+### How I contribute in a team
+
+I’ve also had paired programming experience in college, where we worked through problems together, supported each other and respected each other’s contribution to the shared task. So I think I can bring my individual analytical and technical skills into a team, take responsibility for my part and contribute to delivering a reliable, high-quality service to the customer.
+
+
+
+&nbsp;
+
 &nbsp;
 
 &nbsp;
