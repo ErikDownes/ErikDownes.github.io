@@ -1,12 +1,13 @@
 ---
 layout: doc
 permalink: /technology.html
-handle: Technology
-title: Technology
+handle: Technology & Portfolio
+title: Technology & Portfolio
+subtitle: How I use and learn technology — Excel, Python, pandas, databases, SQL, AI and projects.
 nav_order: 60
 top_nav: true
 description: Python, pandas, SQL, databases, Excel and technical aptitude for interview preparation.
-eyebrow: INTERVIEW DOMAIN · TECHNOLOGY
+eyebrow: INTERVIEW DOMAIN · TECHNOLOGY & PORTFOLIO
 ---
 **TECHNOLOGY = Python · pandas · SQL · databases · Excel · Jupyter · AI tools.**
 
