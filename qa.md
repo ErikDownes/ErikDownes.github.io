@@ -11,13 +11,13 @@ eyebrow: INTERVIEW DOMAIN · MOTIVATION · ROLE FIT
 ---
 ## Why  choose Financial Maths?
 
-Journeys through time technology and people  brought me to Financial Maths in UL.
+Journeys through maths, technology and people brought me to Financial Maths in UL.
 
-From as early as I can remember I have loved numbers and I have had the "maths bug" through primary school and  secondary school and  I was determined that maths would be central  on my ongoing journey to third level but I wanted a broader education than studying pure maths would afford.  
+I was always drawn to maths  and by secondary school I was sure  it would remain central to my journey into third level. But I wanted a broader education than studying pure maths would afford.
 
-My technology journey brought me from Scratch to spreadsheets, from Python and pandas to Parquet, and ultimately when studying 8 years of Dublin Bike logs I needed databases and SQL.
+My technology journey brought me from Scratch and spreadsheets,from pandas to parquet and ultimately, when studying station rebalancing demands across the  Dublin Bikes network I needed  SQL and Leaflet to manage and map the 55 million row database.
 
-My people journey began more with individual achievement — H1s, academic awards and being the top Business student in my school. But my education also had a strong ethos of community, responsibility and looking beyond the individual. Since then, working in teams and dealing with customers has taught me that achievement is also about understanding what other people need, adapting to those needs and being accountable for providing a high-quality service.
+My people journey began more with individual achievement  such as 4 H1s, 2 Exceptional CBAs, an academic award of achievement in 5th year  and a medal for being top Business student in 6th year. But my Jesuit education also had a strong ethos of community, responsibility and looking beyond the individual. Since then, working in teams and dealing with customers has taught me that achievement is also about understanding what other people need, adapting to those needs and being accountable for providing a high-quality service.
 
 Financial Maths brought those three journeys together: maths, technology and people.
 
