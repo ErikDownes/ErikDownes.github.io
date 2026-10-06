@@ -11,8 +11,6 @@ eyebrow: INTERVIEW DOMAIN · MOTIVATION · ROLE FIT
 ---
 ## Why  choose Financial Maths?
 
-
-
 Journeys through maths, technology and people brought me to Financial Maths in UL.
 
 I was always drawn to maths, and by secondary school I was  looking for a course with a large  mathematical component  but someting giving a broader education than pursuing pure maths.
@@ -57,9 +55,9 @@ Most of all, I want to come out of co-op having moved from being a student who c
 
 &nbsp;
 
+&nbsp;
 
-
-
+&nbsp;
 
 ## What can you contribute to the placement?
 
@@ -73,11 +71,26 @@ In my logistics work with O’Mahony’s, I’ve learned that doing my own job w
 
 ### How I contribute in a team
 
-I’ve also had paired programming experience in college, where we worked through problems together, supported each other and respected each other’s contribution to the shared task. So I think I can bring my individual analytical and technical skills into a team, take responsibility for my part and contribute to delivering a reliable, high-quality service to the customer.
+I’ve also had paired programming experience in college, where we worked through problems together, supported each other and respected each other’s contribution to the shared task. So I think I can bring my individual analytical and technical skills into a team, take responsibility for my part and contribute to delivering a reliable, high-quality service to the customer.  
+  
+  
 
 
+## What do you enjoy most about Financial Maths?
 
-&nbsp;
+### Turning messy data into something useful
+
+What I enjoy most is where maths, statistics and technology come together in data analysis. I like taking real data that is not perfectly clean or consistent and working out what has to be done before I can trust the answer. In my Dublin Bikes project, for example, I had years of data with changing formats and timestamp inconsistencies, so I had to clean and normalise the data, use SQL to manage the 55-million-row database and then use Leaflet to map the results.
+
+### Finding why things do not balance
+
+I also enjoy reconciliation-type problems in Excel — where something does not balance or match and you have to work backwards, identify the inconsistency and understand why it happened. I find that very satisfying because the analysis has a clear purpose: find the problem, explain it and get to a reliable answer.
+
+### Analysis that leads to action
+
+That is probably the part I enjoy most about Financial Maths: using maths and technology to move from a messy problem to something accurate and useful. That is also why areas such as bank reconciliation, cash application, troubleshooting and automation appeal to me — the analysis is not just theoretical; somebody can actually use the answer to improve a real process.
+
+
 
 &nbsp;
 
