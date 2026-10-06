@@ -496,6 +496,7 @@
         const span = label?.querySelector('span');
         const menuTitle = entry.title || '';
         const pageTitle = entry.page_title || entry.title || '';
+        item.classList.toggle('nav-right', menuTitle === 'Fin Mat Modules');
         if (label) {
           label.href = href;
           if (menuTitle === 'Aviation' || menuTitle === 'Portfolio' || menuTitle === 'LM058') {
