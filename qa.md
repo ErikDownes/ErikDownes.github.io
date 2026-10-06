@@ -38,7 +38,7 @@ Journeys through **maths, technology and people** brought me to Financial Maths 
 
 ### What I’m going to tell you
 
-We operate the same way — bringing maths, technology and teamwork together, while never losing sight of the client.
+We both bring maths, technology and teamwork together, while never losing sight of the client.
 
 ### We are going the same way
 
@@ -48,11 +48,9 @@ My own journey is moving towards more sophisticated maths, data analysis, databa
 
 Cashbook brings those same strengths together — finance, technology, automation and AI — but always with a **client-focused, solutions-driven** approach and an emphasis on adapting to changing client needs.
 
-
-
 ### What I told you
 
-We operate the same way — bringing maths, technology and teamwork together, while never losing sight of the client.
+We both bring maths, technology and teamwork together, while never losing sight of the client.
 
 
 
