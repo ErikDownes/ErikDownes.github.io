@@ -11,15 +11,13 @@ eyebrow: INTERVIEW DOMAIN · MOTIVATION · ROLE FIT
 ---
 ## Why  choose Financial Maths?
 
-Journeys through maths, technology and people brought me to Financial Maths in UL.
 
-I was always drawn to maths  and by secondary school I was sure  it would remain central to my journey into third level. But I wanted a broader education than studying pure maths would afford.
 
-My technology journey brought me from Scratch and spreadsheets,from pandas to parquet and ultimately, when studying station rebalancing demands across the  Dublin Bikes network I needed  SQL and Leaflet to manage and map the 55 million row database.
+&nbsp;
 
-My people journey began more with individual achievement  such as 4 H1s, 2 Exceptional CBAs, an academic award of achievement in 5th year  and a medal for being top Business student in 6th year. But my Jesuit education also had a strong ethos of community, responsibility and looking beyond the individual. Since then, working in teams and dealing with customers has taught me that achievement is also about understanding what other people need, adapting to those needs and being accountable for providing a high-quality service.
+&nbsp;
 
-Financial Maths brought those three journeys together: maths, technology and people.
+&nbsp;
 
 ## Why are you interested in this role?
 
