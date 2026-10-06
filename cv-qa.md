@@ -5,7 +5,7 @@ handle: CV QA
 title: CV QA
 subtitle: Start with the whole CV claim, then drill down until every word, tool and example can be explained simply.
 nav_order: 16
-top_nav: true
+top_nav: false
 description: CV drill page for checking that every claim, tool, technical term and example in Erik's CV can be explained clearly in interview.
 eyebrow: CV QA · KNOW EVERY CLAIM · EXPLAIN EVERY TOOL · DEFEND EVERY EXAMPLE
 ---
