@@ -11,33 +11,39 @@ eyebrow: INTERVIEW DOMAIN · MOTIVATION · ROLE FIT
 ---
 ## Why  choose Financial Maths?
 
-It’s a story that spans from primary school to university, from spreadsheets to databases, and from being an  highest scoring   Business student   in my school to welcoming the challenge of being accountable for delivering accurate, high-quality service to clients in my current logistics job.
+Journeys through time technology and people  brought me to Financial Maths in UL.
 
-I’ve had the maths bug since primary school and wanted to continue my enjoyment and success in the subject through secondary school and into third level, but I wanted a broader education than pure maths offered. From Scratch in primary school to dataloggers and spreadsheet-based projects in secondary school, by the end of school I’d added the technology bug to the maths bug.
+From as early as I can remember I have loved numbers and I have had the "maths bug" through primary school and  secondary school and  I was determined that maths would be central  on my ongoing journey to third level but I wanted a broader education than studying pure maths would afford.  
+  
+My technology journey brought me from Scratch to spreadsheets, from Python and pandas to Parquet, and ultimately when studying 8 years of Dublin Bike logs I needed databases and SQL.
 
-That continued into college and personal projects with Python, pandas, SQL and databases. As the datasets grew beyond a million rows and needed to be joined using timestamp fields, databases and SQL replaced spreadsheets.
+My people journey began more with individual achievement — H1s, academic awards and being the top Business student in my school. But my education also had a strong ethos of community, responsibility and looking beyond the individual. Since then, working in teams and dealing with customers has taught me that achievement is also about understanding what other people need, adapting to those needs and being accountable for providing a high-quality service.
 
-Financial Maths in UL brought together technology, statistics, finance and my favourite area, data analysis, in one broad education — that same special blend of finance and technology that Cashbook is built around, where accuracy, understanding client needs and delivering a high-quality service really matter.
-
-
+Financial Maths brought those three journeys together: maths, technology and people.
 
 ## Why are you interested in this role?
 
-I’m interested in this role because it brings together the areas I want to develop most — finance, technology, data and working with customers.
+I’m interested in Cashbook because it feels like the next stage of the same journey rather than a change of direction.
 
-The TIMS role would let me apply what I’ve learned in Financial Maths while building practical experience in bank reconciliation, cash application, collections, SQL and Excel. I also like the problem-solving side — analysing errors, troubleshooting issues and helping improve automation.
+The maths and technology strands now come together through data analysis, SQL, automation and problem-solving. The finance strand becomes real through bank reconciliation, cash application and collections. And the people strand continues through working with customers, understanding what they need and helping them get to a better solution.
 
-The client side appeals to me as well. I like understanding what someone needs, explaining things clearly and helping deliver a reliable solution.
-
-Most of all, I see it as a chance to learn quickly, work with an experienced team and contribute to real implementations for customers around the world.
+So what began for me with numbers, then grew through technology, now has the opportunity to become something more practical — using both to solve financial problems for real people and real businesses.
 
 
 
 &nbsp;
 
-&nbsp;
+## What do you want from co-op?
 
-&nbsp;
+I want co-op to be the point where learning starts to become responsibility.
+
+Up to now, most of my maths, finance and technology journey has been about developing my own knowledge and ability. In co-op, I want to learn how those skills are used when other people are depending on the quality of your work.
+
+I want to work with experienced people, learn how real financial and technology processes operate, become more confident dealing with clients and colleagues, and take on increasing responsibility as I prove myself.
+
+Most of all, I want to come out of co-op having moved from being a student who can solve problems to someone who can use those skills reliably as part of a professional team and in the service of others.
+
+
 
 &nbsp;
 
