@@ -141,6 +141,44 @@ button{cursor:pointer}
   position:relative;
 }
 
+.chart-note{
+  margin-top:6px;
+  font-size:12px;
+  color:var(--muted);
+  text-align:center;
+}
+
+.metric-table-wrap{
+  margin-top:12px;
+  overflow-x:auto;
+}
+
+.metric-table{
+  width:100%;
+  border-collapse:collapse;
+  font-size:13px;
+}
+
+.metric-table th,
+.metric-table td{
+  padding:8px 9px;
+  border-bottom:1px solid var(--line);
+  text-align:left;
+}
+
+.metric-table th:last-child,
+.metric-table td:last-child{
+  text-align:right;
+  font-weight:700;
+}
+
+.metric-table thead th{
+  color:var(--muted);
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:.04em;
+}
+
 .explain{
   margin-top:13px;
   border-top:1px solid var(--line);
@@ -303,8 +341,28 @@ button{cursor:pointer}
         <canvas id="networkChart"></canvas>
       </div>
 
-      <div style="margin-top:6px;font-size:12px;color:var(--muted);text-align:center;">
+      <div class="chart-note">
         Selected hour is highlighted on all three series. Click any hour on the chart to jump the map to that time.
+      </div>
+
+      <div class="metric-table-wrap">
+        <table class="metric-table" aria-label="Selected hour network metrics">
+          <thead>
+            <tr>
+              <th>Selected-hour metric</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Hour</td><td id="metricHour">08:00</td></tr>
+            <tr><td>Network occupancy</td><td id="metricOccupancy">—</td></tr>
+            <tr><td>Empty-station rate</td><td id="metricEmptyRate">—</td></tr>
+            <tr><td>Full-station rate</td><td id="metricFullRate">—</td></tr>
+            <tr><td>Empty stations</td><td id="metricEmptyCount">0</td></tr>
+            <tr><td>Balanced stations</td><td id="metricBalancedCount">0</td></tr>
+            <tr><td>Full stations</td><td id="metricFullCount">0</td></tr>
+          </tbody>
+        </table>
       </div>
 
       <div class="explain">
@@ -458,7 +516,6 @@ const chart = new Chart(
       },
 
       onClick:(event, elements, chartRef) => {
-
         const hits =
           chartRef.getElementsAtEventForMode(
             event,
@@ -642,6 +699,26 @@ function render(){
     +
     `${String(selectedHour).padStart(2,"0")}:00`;
 
+  const selectedNetwork =
+    nrows.find(
+      r => Number(r.hour) === selectedHour
+    );
+
+  metricHour.textContent =
+    String(selectedHour).padStart(2,"0") + ":00";
+
+  metricOccupancy.textContent =
+    selectedNetwork ? pct(selectedNetwork.occupancy) : "—";
+
+  metricEmptyRate.textContent =
+    selectedNetwork ? pct(selectedNetwork.empty_rate) : "—";
+
+  metricFullRate.textContent =
+    selectedNetwork ? pct(selectedNetwork.full_rate) : "—";
+
+  metricEmptyCount.textContent = counts.Empty;
+  metricBalancedCount.textContent = counts.Balanced;
+  metricFullCount.textContent = counts.Full;
 
   chart.update();
 
