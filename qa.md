@@ -9,15 +9,29 @@ description: Motivation and role-fit interview questions for co-op preparation.
   for co-op interview practice.
 eyebrow: INTERVIEW DOMAIN · MOTIVATION · ROLE FIT
 ---
-## Why  choose Financial Maths?
+## Why choose Financial Maths?
+
+
+
+### What I’m going to tell you
 
 Journeys through maths, technology and people brought me to Financial Maths in UL.
 
-I was always drawn to maths, and by secondary school I was  looking for a course with a large  mathematical component  but someting giving a broader education than pursuing pure maths.
+### Maths
+
+
+
+I was always drawn to maths, and by secondary school I was looking for a course with a large mathematical component but something giving a broader education than pursuing pure maths.
+
+### Technology
 
 My technology journey brought me from Scratch and spreadsheets to Python and pandas, then Parquet, and ultimately, when looking at station rebalancing demands across the Dublin Bikes network, I needed SQL and Leaflet to manage and map a 55-million-row database.
 
+### People
+
 My people journey began more with individual achievement — two Exceptional CBAs in Junior Cycle, an academic achievement award in fifth year, a medal for being the top Business student in sixth year, and four H1s contributing to 579 CAO points. But my Jesuit education also had a strong ethos of community, responsibility and looking beyond the individual. Since then, working in teams and dealing with customers has taught me that achievement is also about understanding what other people need, adapting to those needs and being accountable for providing a high-quality service.
+
+### What I told you
 
 Financial Maths brought those three journeys together: maths, technology and people.
 
@@ -75,7 +89,7 @@ I’ve also had paired programming experience in college, where we worked throug
 
 
 
-
+&nbsp;
 
 ## What do you enjoy most about Financial Maths?
 
