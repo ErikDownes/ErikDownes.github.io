@@ -35,13 +35,13 @@ So what began for me with numbers, then grew through technology, now has the opp
 
 ## What do you want from co-op?
 
-I want co-op to be the point where learning starts to become responsibility.
+I want co-op to be the point where learning becomes responsibility and individual ability becomes collaborative work.
 
-Up to now, most of my maths, finance and technology journey has been about developing my own knowledge and ability. In co-op, I want to learn how those skills are used when other people are depending on the quality of your work.
+Up to now, my journey through maths, financial processes and technology has mostly been about developing my own knowledge and skills, with some progression from individual work into paired and group work.
 
-I want to work with experienced people, learn how real financial and technology processes operate, become more confident dealing with clients and colleagues, and take on increasing responsibility as I prove myself.
+In co-op, I want to move much further into professional collaboration — working with experienced colleagues, contributing to live financial and technology processes, communicating with customers, and learning what it means when other people are depending on the quality and timeliness of our work.
 
-Most of all, I want to come out of co-op having moved from being a student who can solve problems to someone who can use those skills reliably as part of a professional team and in the service of others.
+Most of all, I want to come out of co-op having moved from being a student who can solve problems to someone who can solve them reliably with other people and for other people.
 
 
 
