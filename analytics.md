@@ -3,14 +3,15 @@ layout: doc
 permalink: /analytics.html
 handle: Problem Solving & Analytics
 title: Problem Solving & Analytics
-subtitle: How I analyse information, find what is wrong, explain it and reach a reliable solution.
+subtitle: How I analyse information, find what is wrong, explain it and reach a
+  reliable solution.
 nav_order: 40
 top_nav: true
-description: Problem solving, data analysis, accuracy and troubleshooting interview preparation.
+description: Problem solving, data analysis, accuracy and troubleshooting
+  interview preparation.
 eyebrow: INTERVIEW DOMAIN · PROBLEM SOLVING & ANALYTICS
 ---
-
-## Tell me about a difficult problem you had to break down and solve.
+## Problem you had to break down and solve |  Tell me about a difficult problem you had to break down and solve.
 
 ### Situation
 
@@ -136,3 +137,4 @@ Analysis is most useful when it **changes or improves a decision**. It is not en
 
 
 
+&nbsp;
