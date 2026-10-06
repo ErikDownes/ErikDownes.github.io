@@ -13,6 +13,17 @@ public_mode: true
 
 ## Dublin Bikes — 24-Hour Rebalancing Dashboard
 
+<div style="margin:1rem 0 1.2rem;border:1px solid rgba(127,127,127,.25);border-radius:14px;overflow:hidden;background:#fff;">
+  <iframe
+    src="{{ '/dublin-bikes-dashboard.html' | relative_url }}"
+    title="Dublin Bikes 24-hour rebalancing dashboard"
+    style="display:block;width:100%;height:900px;border:0;background:#fff;"
+    loading="lazy">
+  </iframe>
+</div>
+
+[Open the Dublin Bikes dashboard full screen →]({{ '/dublin-bikes-dashboard.html' | relative_url }})
+
 **Smart Dublin open data → pandas → SQLite/SQL → hourly aggregation → interactive map → operational insight**
 
 This project asks a more useful question than simply “which stations are empty?”:
@@ -88,17 +99,6 @@ That limitation shaped the project question. Rather than pretending the data con
 - how that imbalance changes by **hour**;
 - how **weekday** and **weekend** patterns differ;
 - where rebalancing may have the greatest operational value.
-
-<div style="margin:1rem 0 1.2rem;border:1px solid rgba(127,127,127,.25);border-radius:14px;overflow:hidden;background:#fff;">
-  <iframe
-    src="{{ '/dublin-bikes-dashboard.html' | relative_url }}"
-    title="Dublin Bikes 24-hour rebalancing dashboard"
-    style="display:block;width:100%;height:900px;border:0;background:#fff;"
-    loading="lazy">
-  </iframe>
-</div>
-
-[Open the Dublin Bikes dashboard full screen →]({{ '/dublin-bikes-dashboard.html' | relative_url }})
 
 ### What the dashboard is testing
 
