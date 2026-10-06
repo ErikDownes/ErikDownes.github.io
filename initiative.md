@@ -9,7 +9,7 @@ top_nav: true
 description: Initiative, learning, ownership and organisation interview preparation.
 eyebrow: INTERVIEW DOMAIN · USING INITIATIVE
 ---
-**INITIATIVE = ownership · learning · organisation · follow-through.**
+**USING INITIATIVE = ownership · learning · organisation · follow-through.**
 
 Use this domain when the question asks whether you **act constructively without needing every step prescribed**.
 
