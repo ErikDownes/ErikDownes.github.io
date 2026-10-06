@@ -498,7 +498,7 @@
         const pageTitle = entry.page_title || entry.title || '';
         if (label) {
           label.href = href;
-          if (menuTitle === 'Aviation' || menuTitle === 'Portfolio') {
+          if (menuTitle === 'Aviation' || menuTitle === 'Portfolio' || menuTitle === 'LM058') {
             label.setAttribute('aria-haspopup', 'true');
             label.setAttribute('aria-expanded', 'false');
           } else {
@@ -563,7 +563,6 @@
     const links = [
       { label: 'About Me', href: rootHref },
       { label: 'Results', href: new URL('academic-record.html', rootHref).href },
-      { label: 'Financial Maths (LM058)', href: new URL('education.html', rootHref).href },
       { label: 'Projects', href: new URL('projects.html', rootHref).href },
       { section: 'Cashbook Interview' },
       { label: 'Cashbook Role Study', href: new URL('cashbook-study.html', rootHref).href },
@@ -946,6 +945,14 @@
     menu.classList.remove('aviation-menu', 'career-menu', 'coursework-menu', 'portfolio-menu');
     item.classList.toggle('has-submenu', modules.length > 0);
     item.classList.remove('has-flyout-menu');
+    const moduleLabel = item.querySelector(':scope > .navlabel[href]');
+    if (modules.length) {
+      moduleLabel?.setAttribute('aria-haspopup', 'true');
+      moduleLabel?.setAttribute('aria-expanded', 'false');
+    } else {
+      moduleLabel?.removeAttribute('aria-haspopup');
+      moduleLabel?.removeAttribute('aria-expanded');
+    }
     if (!modules.length) return;
 
     menu.style.setProperty('--menu-left', `${Math.round(item.getBoundingClientRect().left)}px`);
