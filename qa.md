@@ -1,13 +1,14 @@
 ---
 layout: doc
 permalink: /qa.html
-handle: career and Motivation
-title: career and Motivation
+handle: Career & Motivation
+title: Career & Motivation
+subtitle: Why this path, why this role, what I want from co-op and what I can contribute.
 nav_order: 20
 top_nav: true
 description: Motivation and role-fit interview questions for co-op preparation.
   for co-op interview practice.
-eyebrow: INTERVIEW DOMAIN · MOTIVATION · ROLE FIT
+eyebrow: INTERVIEW DOMAIN · CAREER & MOTIVATION
 ---
 ## Why choose Financial Maths?
 
