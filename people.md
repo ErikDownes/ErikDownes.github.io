@@ -108,7 +108,67 @@ What I learned was that when a customer is already frustrated, good service mean
 
 ## Tell me about a time you received direction or feedback and had to adapt.
 
+### Situation
+
+When I was about 15 on TY in Mr Price, I was still learning how a workplace actually operated. I assumed that if I took a slightly longer lunch but made the time up afterwards, the total hours worked were what mattered.
+
+### Task
+
+My manager explained that it was not really about the total number of hours. The timing mattered because **breaks had to be coordinated so the shop floor remained properly covered**.
+
+### Action
+
+Once that was explained to me, I understood the wider impact straight away. I accepted the feedback, clarified what was expected and changed how I handled my breaks from then on.
+
+### Result
+
+There was no further issue, and I became much more conscious that even small decisions about my own time can affect colleagues and the operation around me.
+
+### What I learned
+
+The lesson for me was that **taking direction is not just following an instruction — it is understanding why the instruction matters and adapting quickly**.
+
+
+
+&nbsp;
+
+&nbsp;
+
 ## Tell me about a time you had to work with different people to get something done.
+
+### What I’m going to tell you
+
+Good teamwork means 
+
+1. **planning together,**
+2. **understanding how your work affects others,**
+3. **and adapting together to deliver the result.**
+
+### Planning together
+
+During my TY placement in Mr Price, we had to reorganise the shop floor with minimum disruption to customers. My manager and I looked at footfall data from the store camera and chose **Sunday night into Monday morning** as the best window. I also produced my **first Gantt chart**, sequencing the different jobs so we could see what depended on what and what had to be completed before the store reopened.
+
+### Adapting together
+
+Once the work started, stock, fixtures, displays and people all had to move in a coordinated sequence. When a colleague called in sick, we had to redistribute the workload and work longer. I took direction, changed tasks as priorities shifted and helped wherever I was needed to keep the overall plan moving.
+
+### What I told you
+
+Good teamwork means 
+
+1. **planning together,**
+2. **understanding how your work affects others,**
+3. **and adapting together to deliver the result.**
+
+
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+
 
 
 
