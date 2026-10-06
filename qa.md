@@ -14,7 +14,7 @@ eyebrow: INTERVIEW DOMAIN · MOTIVATION · ROLE FIT
 Journeys through time technology and people  brought me to Financial Maths in UL.
 
 From as early as I can remember I have loved numbers and I have had the "maths bug" through primary school and  secondary school and  I was determined that maths would be central  on my ongoing journey to third level but I wanted a broader education than studying pure maths would afford.  
-  
+
 My technology journey brought me from Scratch to spreadsheets, from Python and pandas to Parquet, and ultimately when studying 8 years of Dublin Bike logs I needed databases and SQL.
 
 My people journey began more with individual achievement — H1s, academic awards and being the top Business student in my school. But my education also had a strong ethos of community, responsibility and looking beyond the individual. Since then, working in teams and dealing with customers has taught me that achievement is also about understanding what other people need, adapting to those needs and being accountable for providing a high-quality service.
@@ -35,7 +35,7 @@ So what began for me with numbers, then grew through technology, now has the opp
 
 ## What do you want from co-op?
 
-I want co-op to be the point where learning becomes responsibility and individual ability becomes collaborative work.
+I want co-op to be the point ion my journey where learning becomes responsibility and my individual ability becomes my collaborative contribution.
 
 Up to now, my journey through maths, financial processes and technology has mostly been about developing my own knowledge and skills, with some progression from individual work into paired and group work.
 
@@ -44,8 +44,6 @@ In co-op, I want to move much further into professional collaboration — workin
 Most of all, I want to come out of co-op having moved from being a student who can solve problems to someone who can solve them reliably with other people and for other people.
 
 
-
-&nbsp;
 
 &nbsp;
 
