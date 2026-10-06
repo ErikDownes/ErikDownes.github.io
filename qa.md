@@ -18,7 +18,7 @@ Journeys through **maths, technology and people** brought me to Financial Maths 
 
 ### Maths
 
-I was always drawn to maths, and by secondary school I was looking for a course with a large mathematical component but something giving a broad and varied education  so financial maths in UL was an easy choice.
+I was always drawn to maths, and by the end of secondary school I was looking for a course with a           broad spectrum of topics with a large mathematical component   so putting financial maths in UL down as my top pick was an easy choice.
 
 ### Technology
 
