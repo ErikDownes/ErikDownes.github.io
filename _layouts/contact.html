@@ -28,7 +28,7 @@
         {% assign nav_legacy_title = nav_title_parts[0] | strip %}
         {% assign nav_menu_title = navpage.handle | default: nav_legacy_title | strip %}
         {% unless nav_menu_title == 'General Questions' or nav_menu_title == 'Competency / STAR' or nav_menu_title == 'Pivotal Corporate Interview' or nav_menu_title == 'UL CV' or nav_menu_title == 'Results' or nav_menu_title == 'Job Spec' %}
-<div class="navitem{% if nav_menu_title == 'Contact' %} nav-contact-link{% endif %}{% if nav_menu_title == 'Fin Mat Modules' %} nav-right{% endif %}{% if navpage.url == page.url %} is-current{% endif %}">
+<div class="navitem{% if nav_menu_title == 'Contact' %} nav-contact-link{% endif %}{% if nav_menu_title == 'Fin Mat Modules' or nav_menu_title == 'LM058' %} nav-right{% endif %}{% if navpage.url == page.url %} is-current{% endif %}">
           <a class="navlabel" href="{{ navpage.url | relative_url }}"><span>{{ nav_menu_title }}</span></a>
         </div>
         {% endunless %}
