@@ -11,15 +11,11 @@ eyebrow: INTERVIEW DOMAIN · MOTIVATION · ROLE FIT
 ---
 ## Why choose Financial Maths?
 
-
-
 ### What I’m going to tell you
 
-Journeys through maths, technology and people brought me to Financial Maths in UL.
+Journeys through **maths, technology and people** brought me to Financial Maths in UL.
 
 ### Maths
-
-
 
 I was always drawn to maths, and by secondary school I was looking for a course with a large mathematical component but something giving a broader education than pursuing pure maths.
 
@@ -33,7 +29,7 @@ My people journey began more with individual achievement — two Exceptional CBA
 
 ### What I told you
 
-Financial Maths brought those three journeys together: maths, technology and people.
+Journeys through **maths, technology and people** brought me to Financial Maths in UL.
 
 
 
