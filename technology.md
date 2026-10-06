@@ -9,7 +9,7 @@ top_nav: true
 description: Python, pandas, SQL, databases, Excel and technical aptitude for interview preparation.
 eyebrow: INTERVIEW DOMAIN · TECHNOLOGY & PORTFOLIO
 ---
-**TECHNOLOGY = Python · pandas · SQL · databases · Excel · Jupyter · AI tools.**
+**TECHNOLOGY & PORTFOLIO = Python · pandas · SQL · databases · Excel · Jupyter · AI tools.**
 
 Use this domain when the interviewer is testing **technical aptitude and how comfortably you learn and use tools**.
 
