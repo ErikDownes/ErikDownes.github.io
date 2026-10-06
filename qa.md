@@ -39,7 +39,7 @@ So what began for me with numbers, then grew through technology, now has the opp
 
 ## What do you want from co-op?
 
-I want co-op to be the point ion my journey where learning becomes responsibility and my individual ability becomes my collaborative contribution.
+I want co-op to be the point in my journey where learning becomes responsibility and my individual ability becomes my collaborative contribution.
 
 Up to now, my journey through maths, financial processes and technology has mostly been about developing my own knowledge and skills, with some progression from individual work into paired and group work.
 
