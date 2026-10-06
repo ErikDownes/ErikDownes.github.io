@@ -137,6 +137,18 @@ The **Project 1 / Project 2** sequence provides the opportunity to complete a su
 
 **579 CAO points**
 
+
+| Subject | Result |
+| ------------------- | ------ |
+| Mathematics | **H1** |
+| Applied Mathematics | **H1** |
+| Physics | **H1** |
+| Business | **H1** |
+| Spanish | **H3** |
+| English | **H3** |
+| Irish | **O3** |
+
+
 ## LC Business Medal | Highest Business Result in 6th Year
 
 **Kolvenbach Medal for Business · May 2024** — awarded by **Crescent College Comprehensive SJ** for achieving the **highest Business result in 6th year** in the Pre-Leaving Certificate examinations.
