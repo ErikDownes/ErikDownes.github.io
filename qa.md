@@ -109,16 +109,13 @@ For me, that is where the people journey completes the analytical one: the value
 
 ### Finance and technology coming together
 
-What attracts me specifically to Cashbook is that it feels like a natural continuation of the journey that brought me to Financial Maths in the first place. Cashbook sits right where **finance and technology meet** — taking processes such as bank reconciliation, cash application and collections and using data, software and automation to make them faster, more accurate and more reliable.
+What attracts me specifically to Cashbook is that it feels like a natural continuation of the journey that brought me to Financial Maths. Cashbook sits where finance and technology meet — using data, software and automation to improve processes such as bank reconciliation, cash application and collections, making them more accurate, efficient and reliable.
 
-### Solving a real problem
+### Improving the process, not just fixing the error
 
-What particularly caught my attention was seeing what that means in practice with TIMS. I read about a Cashbook customer where bank reconciliation had been a largely manual two-day process and, through automated matching, it was reduced to less than half a day. **That is the kind of problem-solving I enjoy** — understanding the data, finding where the inefficiency is, building reliable logic around it and producing an outcome that genuinely improves somebody’s work.
+That appeals to me because I have started to think in the same way in my own work. At O’Mahony’s, I was working from printed Booksolve order reports, which were really only point-in-time snapshots and could become outdated as information changed. When an inconsistency contributed to books being sent to the wrong customer, I helped resolve the immediate issue with both customers, but then asked my line manager if we could look critically at why it had happened. I suggested reviewing whether appropriate Booksolve access and a refreshed export into Excel could give us more current information rather than relying so heavily on paper. What interested me was moving beyond fixing one mistake and looking at how the process itself could be made more reliable.
 
 ### Technology still has a human destination
 
-The other reason Cashbook appeals to me is that implementation is not just sitting behind a computer writing code. You work with the customer's finance and IT teams through **setup, testing, training and go-live**, understand how their processes actually work, troubleshoot problems and help them get value from the software.
+That is why the implementation side of Cashbook interests me. It is not technology for its own sake. You have to understand the customer’s financial process, work with the people involved, identify where problems or inefficiencies arise and help deliver a solution they can rely on. Ultimately, if the finance and technology work well, the customer spends less time dealing with the process and more time concentrating on their core business.
 
-
-
-&nbsp;
