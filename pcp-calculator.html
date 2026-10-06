@@ -1,105 +1,274 @@
 ---
 layout: doc
-handle: PCP Calculator
-title: PCP Car Finance Calculator
-eyebrow: CAR FINANCE · CASH FLOW · GMFV
+handle: PCP Comparator
+title: PCP Car Finance Comparator
+eyebrow: THREE OFFERS · PRESENT VALUE · CASH FLOW · GMFV
 public_mode: true
 ---
 
-<div class="simple-calc" id="pcpSimple">
-  <div class="simple-calc-grid">
-    <label>Car price (€)<input id="pPrice" type="number" value="40000" min="0" step="500"></label>
-    <label>Deposit (€)<input id="pDeposit" type="number" value="5000" min="0" step="500"></label>
-    <label>APR (%)<input id="pApr" type="number" value="5.9" min="0" max="30" step="0.1"></label>
-    <label>Term (months)<input id="pMonths" type="number" value="36" min="12" max="60" step="1"></label>
-    <label>GMFV / final payment (€)<input id="pFinal" type="number" value="16000" min="0" step="500"></label>
-  </div>
-  <div class="simple-calc-results">
-    <div><span>Amount financed</span><strong id="pFinance">—</strong></div>
-    <div><span>Monthly payment</span><strong id="pMonthly">—</strong></div>
-    <div><span>Final payment</span><strong id="pFinalOut">—</strong></div>
-    <div><span>Total cash outlay</span><strong id="pTotal">—</strong></div>
-  </div>
-  <div class="pcp-chart-wrap">
-    <div class="pcp-chart-head"><strong>PCP cash-flow over the term</strong><span>Move or tap the graph for exact values</span></div>
-    <canvas id="pcpChart" aria-label="Interactive PCP finance cash-flow chart"></canvas>
-  </div>
+**Compare up to three PCP offers for the same car on a like-for-like basis.** The model assumes the final GMFV / balloon is paid and the car is kept, so each offer ends with the same economic outcome: ownership of the same car.
+
+<div class="pcp-compare" id="pcpCompare">
+  <section class="pcp-common">
+    <div>
+      <h2>Common assumptions</h2>
+      <p>These apply to all three offers.</p>
+    </div>
+    <div class="pcp-common-grid">
+      <label>Car price (€)
+        <input id="pcpPrice" type="number" value="40000" min="0" step="500">
+      </label>
+      <label>Comparison discount rate (% p.a.)
+        <input id="pcpDiscount" type="number" value="3.0" min="0" max="30" step="0.1">
+      </label>
+    </div>
+    <p class="pcp-note"><strong>Present value</strong> discounts future monthly payments and the final GMFV back to today's money using the comparison discount rate. It is not the same thing as APR.</p>
+  </section>
+
+  <section class="pcp-offers" aria-label="PCP offers">
+    <article class="pcp-offer" data-offer="0">
+      <div class="pcp-offer-head"><input class="offer-name" value="Offer 1" aria-label="Offer 1 name"><span class="best-badge" hidden>Lowest PV cost</span></div>
+      <div class="pcp-fields">
+        <label>Cash deposit (€)<input class="deposit" type="number" value="5000" min="0" step="250"></label>
+        <label>Dealer contribution / discount (€)<input class="contribution" type="number" value="0" min="0" step="250"></label>
+        <label>APR (%)<input class="apr" type="number" value="5.9" min="0" max="40" step="0.1"></label>
+        <label>Term (months)<input class="months" type="number" value="36" min="12" max="72" step="1"></label>
+        <label>GMFV / final payment (€)<input class="balloon" type="number" value="16000" min="0" step="500"></label>
+        <label>Up-front fees (€)<input class="fees" type="number" value="0" min="0" step="50"></label>
+      </div>
+      <div class="pcp-offer-results">
+        <div><span>Amount financed</span><strong class="financed">—</strong></div>
+        <div><span>Monthly payment</span><strong class="monthly">—</strong></div>
+        <div><span>Total cash to own</span><strong class="cash-total">—</strong></div>
+        <div><span>Present-value cost</span><strong class="pv-total">—</strong></div>
+      </div>
+    </article>
+
+    <article class="pcp-offer" data-offer="1">
+      <div class="pcp-offer-head"><input class="offer-name" value="Offer 2" aria-label="Offer 2 name"><span class="best-badge" hidden>Lowest PV cost</span></div>
+      <div class="pcp-fields">
+        <label>Cash deposit (€)<input class="deposit" type="number" value="4000" min="0" step="250"></label>
+        <label>Dealer contribution / discount (€)<input class="contribution" type="number" value="1000" min="0" step="250"></label>
+        <label>APR (%)<input class="apr" type="number" value="6.9" min="0" max="40" step="0.1"></label>
+        <label>Term (months)<input class="months" type="number" value="36" min="12" max="72" step="1"></label>
+        <label>GMFV / final payment (€)<input class="balloon" type="number" value="17000" min="0" step="500"></label>
+        <label>Up-front fees (€)<input class="fees" type="number" value="0" min="0" step="50"></label>
+      </div>
+      <div class="pcp-offer-results">
+        <div><span>Amount financed</span><strong class="financed">—</strong></div>
+        <div><span>Monthly payment</span><strong class="monthly">—</strong></div>
+        <div><span>Total cash to own</span><strong class="cash-total">—</strong></div>
+        <div><span>Present-value cost</span><strong class="pv-total">—</strong></div>
+      </div>
+    </article>
+
+    <article class="pcp-offer" data-offer="2">
+      <div class="pcp-offer-head"><input class="offer-name" value="Offer 3" aria-label="Offer 3 name"><span class="best-badge" hidden>Lowest PV cost</span></div>
+      <div class="pcp-fields">
+        <label>Cash deposit (€)<input class="deposit" type="number" value="6000" min="0" step="250"></label>
+        <label>Dealer contribution / discount (€)<input class="contribution" type="number" value="0" min="0" step="250"></label>
+        <label>APR (%)<input class="apr" type="number" value="4.9" min="0" max="40" step="0.1"></label>
+        <label>Term (months)<input class="months" type="number" value="48" min="12" max="72" step="1"></label>
+        <label>GMFV / final payment (€)<input class="balloon" type="number" value="14000" min="0" step="500"></label>
+        <label>Up-front fees (€)<input class="fees" type="number" value="0" min="0" step="50"></label>
+      </div>
+      <div class="pcp-offer-results">
+        <div><span>Amount financed</span><strong class="financed">—</strong></div>
+        <div><span>Monthly payment</span><strong class="monthly">—</strong></div>
+        <div><span>Total cash to own</span><strong class="cash-total">—</strong></div>
+        <div><span>Present-value cost</span><strong class="pv-total">—</strong></div>
+      </div>
+    </article>
+  </section>
+
+  <section class="pcp-summary">
+    <div class="pcp-summary-head">
+      <div>
+        <h2>Like-for-like comparison</h2>
+        <p>All three offers assume the same car and that the final GMFV is paid.</p>
+      </div>
+      <div class="pcp-winner" id="pcpWinner">—</div>
+    </div>
+    <div class="pcp-table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Offer</th>
+            <th>APR</th>
+            <th>Term</th>
+            <th>Deposit</th>
+            <th>Contribution</th>
+            <th>Monthly</th>
+            <th>GMFV</th>
+            <th>Total cash to own</th>
+            <th>Finance cost*</th>
+            <th>PV cost today</th>
+            <th>PV-equivalent monthly</th>
+          </tr>
+        </thead>
+        <tbody id="pcpRows"></tbody>
+      </table>
+    </div>
+    <p class="pcp-footnote">*Finance cost = total buyer cash outlay less the net car price after any dealer contribution. It therefore captures interest and included up-front fees under these assumptions.</p>
+  </section>
+
+  <section class="pcp-chart-wrap">
+    <div class="pcp-chart-head"><strong>Cash cost vs present-value cost</strong><span>Lower is better under the shared assumptions</span></div>
+    <canvas id="pcpCompareChart" aria-label="PCP offer comparison chart"></canvas>
+  </section>
 </div>
+
+## What the model is doing
+
+For each offer, the calculator treats the **GMFV as a balloon payment** at the end of the term. It calculates the monthly payment needed to amortise the amount financed down to that balloon, given the quoted APR.
+
+For the present-value comparison, every future monthly payment and the final GMFV are discounted back to today using the shared comparison discount rate:
+
+**PV cost = deposit + up-front fees + PV(monthly payments) + PV(final GMFV)**
+
+This is useful when offers have different deposits, monthly payments, terms and final payments. A low monthly payment is not automatically the cheapest offer.
+
+## Important limitations
+
+This is a financial comparison model, not a replacement for the lender's legal quotation. Real PCP agreements may also differ in mileage limits, excess-mileage charges, damage standards, service plans, optional extras, settlement rules and other fees. Those should be considered before making a real decision.
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
 
 <style>
-.simple-calc{margin:1rem 0;padding:1.25rem;border:1px solid #dbe2ea;border-radius:14px;background:#fff}
-.simple-calc-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
-.simple-calc label{display:grid;gap:6px;font-weight:700;color:#334155}
-.simple-calc input{width:100%;box-sizing:border-box;padding:10px 11px;border:1px solid #cbd5e1;border-radius:8px;font:inherit}
-.simple-calc-results{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:18px}
-.simple-calc-results div{padding:14px;border:1px solid #e2e8f0;border-radius:10px;background:#f8fafc}
-.simple-calc-results span,.simple-calc-results strong{display:block}
-.simple-calc-results span{font-size:.75rem;color:#64748b;text-transform:uppercase;font-weight:800}
-.simple-calc-results strong{margin-top:4px;font-size:1.15rem}
-.pcp-chart-wrap{margin-top:22px;padding-top:18px;border-top:1px solid #e2e8f0;height:430px}
+.pcp-compare{margin:1rem 0 2rem}
+.pcp-common,.pcp-summary,.pcp-chart-wrap{padding:1rem 1.1rem;border:1px solid #dbe2ea;border-radius:14px;background:#fff;margin:0 0 14px}
+.pcp-common h2,.pcp-summary h2{margin:.1rem 0 .25rem;font-size:1.05rem}
+.pcp-common p,.pcp-summary p{margin:.15rem 0;color:#64748b}
+.pcp-common-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:12px}
+.pcp-common label,.pcp-fields label{display:grid;gap:5px;font-weight:700;color:#334155;font-size:.88rem}
+.pcp-common input,.pcp-fields input,.offer-name{width:100%;box-sizing:border-box;padding:9px 10px;border:1px solid #cbd5e1;border-radius:8px;font:inherit;background:#fff}
+.pcp-note{font-size:.86rem;margin-top:10px!important}
+.pcp-offers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-bottom:14px}
+.pcp-offer{min-width:0;padding:14px;border:1px solid #dbe2ea;border-radius:14px;background:#fff}
+.pcp-offer-head{display:flex;gap:8px;align-items:center;margin-bottom:10px}
+.offer-name{font-weight:800;font-size:1rem}
+.best-badge{white-space:nowrap;padding:5px 7px;border-radius:999px;background:#dcfce7;color:#166534;font-size:.7rem;font-weight:900}
+.pcp-fields{display:grid;gap:9px}
+.pcp-offer-results{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;margin-top:12px}
+.pcp-offer-results div{padding:9px;border-radius:9px;background:#f8fafc;border:1px solid #e2e8f0;min-width:0}
+.pcp-offer-results span{display:block;font-size:.65rem;text-transform:uppercase;color:#64748b;font-weight:800}
+.pcp-offer-results strong{display:block;margin-top:3px;font-size:.92rem;overflow:hidden;text-overflow:ellipsis}
+.pcp-summary-head{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:12px}
+.pcp-winner{padding:9px 12px;border-radius:10px;background:#f0fdf4;border:1px solid #bbf7d0;color:#166534;font-weight:800}
+.pcp-table-wrap{overflow:auto}
+.pcp-summary table{width:100%;border-collapse:collapse;font-size:.78rem}
+.pcp-summary th,.pcp-summary td{padding:8px 9px;border-bottom:1px solid #e2e8f0;text-align:right;white-space:nowrap}
+.pcp-summary th:first-child,.pcp-summary td:first-child{text-align:left}
+.pcp-summary th{background:#f8fafc;color:#475569}
+.pcp-summary tr.best-row{background:#f0fdf4}
+.pcp-footnote{font-size:.77rem!important;margin-top:10px!important}
+.pcp-chart-wrap{height:440px}
 .pcp-chart-head{display:flex;justify-content:space-between;gap:12px;align-items:baseline;margin-bottom:10px;color:#334155}
 .pcp-chart-head span{font-size:.8rem;color:#64748b}
-#pcpChart{width:100%!important;height:380px!important}
-@media(max-width:700px){.simple-calc-grid,.simple-calc-results{grid-template-columns:1fr}.pcp-chart-wrap{height:360px}.pcp-chart-head{display:grid}#pcpChart{height:310px!important}}
+#pcpCompareChart{width:100%!important;height:370px!important}
+@media(max-width:1000px){.pcp-offers{grid-template-columns:1fr}.pcp-fields{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:700px){.pcp-common-grid,.pcp-fields,.pcp-offer-results{grid-template-columns:1fr}.pcp-summary-head,.pcp-chart-head{display:grid}.pcp-chart-wrap{height:380px}#pcpCompareChart{height:310px!important}}
 </style>
 
 <script>
 (()=>{
- const ids=['pPrice','pDeposit','pApr','pMonths','pFinal'];
- const euro=n=>new Intl.NumberFormat('en-IE',{style:'currency',currency:'EUR',maximumFractionDigits:0}).format(n||0);
- let chart;
- function buildSeries(financed,monthly,final,months){
-   const labels=[], balance=[], cumulative=[], vehicle=[];
-   const price=Math.max(0,+document.getElementById('pPrice').value||0);
-   const dep=Math.max(0,+document.getElementById('pDeposit').value||0);
-   const r=Math.max(0,+document.getElementById('pApr').value||0)/1200;
-   let bal=financed;
-   for(let m=0;m<=months;m++){
-     labels.push(m);
-     balance.push(Math.max(0,bal));
-     cumulative.push(dep + monthly*m + (m===months?final:0));
-     vehicle.push(Math.max(final, price-(price-final)*(m/months)));
-     if(m<months) bal=Math.max(final, r===0 ? bal-monthly : bal*(1+r)-monthly);
-   }
-   return {labels,balance,cumulative,vehicle};
- }
- function drawChart(financed,monthly,final,months){
-   if(!window.Chart)return;
-   const s=buildSeries(financed,monthly,final,months);
-   const data={labels:s.labels,datasets:[
-     {label:'Finance balance',data:s.balance,borderWidth:3,pointRadius:0,tension:.18},
-     {label:'Cumulative cash paid',data:s.cumulative,borderWidth:3,pointRadius:0,tension:.18},
-     {label:'Illustrative vehicle value',data:s.vehicle,borderWidth:3,pointRadius:0,borderDash:[7,5],tension:.18}
-   ]};
-   const options={responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},plugins:{
-     legend:{position:'top',align:'start'},
-     tooltip:{enabled:true,callbacks:{title:i=>'Month '+i[0].label,label:x=>x.dataset.label+': '+euro(x.parsed.y)}}
-   },scales:{
-     x:{title:{display:true,text:'Month'},ticks:{maxTicksLimit:13}},
-     y:{beginAtZero:true,title:{display:true,text:'€'},ticks:{callback:v=>'€'+new Intl.NumberFormat('en-IE',{notation:'compact',maximumFractionDigits:1}).format(v)}}
-   }};
-   if(chart){chart.data=data;chart.options=options;chart.update();}
-   else chart=new Chart(document.getElementById('pcpChart'),{type:'line',data,options});
- }
- function update(){
-  const price=Math.max(0,+document.getElementById('pPrice').value||0);
-  const deposit=Math.max(0,+document.getElementById('pDeposit').value||0);
-  const months=Math.max(1,+document.getElementById('pMonths').value||1);
-  const final=Math.max(0,+document.getElementById('pFinal').value||0);
-  const r=Math.max(0,+document.getElementById('pApr').value||0)/1200;
-  const financed=Math.max(0,price-deposit);
-  let monthly;
-  if(r===0) monthly=Math.max(0,(financed-final)/months);
-  else monthly=Math.max(0,(financed-final/Math.pow(1+r,months))*r/(1-Math.pow(1+r,-months)));
-  const total=deposit+monthly*months+final;
-  document.getElementById('pFinance').textContent=euro(financed);
-  document.getElementById('pMonthly').textContent=euro(monthly);
-  document.getElementById('pFinalOut').textContent=euro(final);
-  document.getElementById('pTotal').textContent=euro(total);
-  drawChart(financed,monthly,final,months);
- }
- ids.forEach(id=>document.getElementById(id).addEventListener('input',update)); update();
+  const root=document.getElementById('pcpCompare');
+  const offers=[...root.querySelectorAll('.pcp-offer')];
+  const priceEl=document.getElementById('pcpPrice');
+  const discountEl=document.getElementById('pcpDiscount');
+  const rowsEl=document.getElementById('pcpRows');
+  const winnerEl=document.getElementById('pcpWinner');
+  const euro=n=>new Intl.NumberFormat('en-IE',{style:'currency',currency:'EUR',maximumFractionDigits:0}).format(Number.isFinite(n)?n:0);
+  const pct=n=>Number(n).toFixed(1)+'%';
+  let chart;
+
+  function val(el){return Math.max(0,Number(el.value)||0);}
+  function annuityFactor(r,n){return r===0?n:(1-Math.pow(1+r,-n))/r;}
+
+  function calculate(card){
+    const name=card.querySelector('.offer-name').value.trim()||'Offer';
+    const price=val(priceEl);
+    const deposit=val(card.querySelector('.deposit'));
+    const contribution=val(card.querySelector('.contribution'));
+    const apr=val(card.querySelector('.apr'));
+    const months=Math.max(1,Math.round(val(card.querySelector('.months'))||1));
+    const balloon=val(card.querySelector('.balloon'));
+    const fees=val(card.querySelector('.fees'));
+
+    const financed=Math.max(0,price-deposit-contribution);
+    const r=apr/1200;
+    let monthly;
+    if(r===0) monthly=Math.max(0,(financed-balloon)/months);
+    else monthly=Math.max(0,(financed-balloon/Math.pow(1+r,months))*r/(1-Math.pow(1+r,-months)));
+
+    const totalCash=deposit+fees+monthly*months+balloon;
+    const netCarPrice=Math.max(0,price-contribution);
+    const financeCost=totalCash-netCarPrice;
+
+    const d=val(discountEl)/1200;
+    const pvMonthly=monthly*annuityFactor(d,months);
+    const pvBalloon=balloon/Math.pow(1+d,months);
+    const pvCost=deposit+fees+pvMonthly+pvBalloon;
+    const pvEquivalentMonthly=pvCost/annuityFactor(d,months);
+
+    return {name,price,deposit,contribution,apr,months,balloon,fees,financed,monthly,totalCash,financeCost,pvCost,pvEquivalentMonthly};
+  }
+
+  function render(){
+    const results=offers.map(calculate);
+    let best=0;
+    results.forEach((r,i)=>{if(r.pvCost<results[best].pvCost)best=i;});
+
+    offers.forEach((card,i)=>{
+      const r=results[i];
+      card.querySelector('.financed').textContent=euro(r.financed);
+      card.querySelector('.monthly').textContent=euro(r.monthly);
+      card.querySelector('.cash-total').textContent=euro(r.totalCash);
+      card.querySelector('.pv-total').textContent=euro(r.pvCost);
+      card.querySelector('.best-badge').hidden=i!==best;
+    });
+
+    rowsEl.innerHTML=results.map((r,i)=>`
+      <tr class="${i===best?'best-row':''}">
+        <td><strong>${r.name}</strong></td>
+        <td>${pct(r.apr)}</td>
+        <td>${r.months} mo</td>
+        <td>${euro(r.deposit)}</td>
+        <td>${euro(r.contribution)}</td>
+        <td>${euro(r.monthly)}</td>
+        <td>${euro(r.balloon)}</td>
+        <td>${euro(r.totalCash)}</td>
+        <td>${euro(r.financeCost)}</td>
+        <td><strong>${euro(r.pvCost)}</strong></td>
+        <td>${euro(r.pvEquivalentMonthly)}</td>
+      </tr>`).join('');
+
+    winnerEl.textContent='Lowest PV cost: '+results[best].name+' · '+euro(results[best].pvCost);
+
+    if(window.Chart){
+      const data={
+        labels:results.map(r=>r.name),
+        datasets:[
+          {label:'Total cash to own',data:results.map(r=>r.totalCash),borderWidth:1},
+          {label:"Present-value cost today",data:results.map(r=>r.pvCost),borderWidth:1}
+        ]
+      };
+      const options={
+        responsive:true,maintainAspectRatio:false,
+        plugins:{
+          legend:{position:'top',align:'start'},
+          tooltip:{callbacks:{label:x=>x.dataset.label+': '+euro(x.parsed.y)}}
+        },
+        scales:{
+          y:{beginAtZero:true,title:{display:true,text:'€'},ticks:{callback:v=>'€'+new Intl.NumberFormat('en-IE',{notation:'compact',maximumFractionDigits:1}).format(v)}}
+        }
+      };
+      if(chart){chart.data=data;chart.options=options;chart.update();}
+      else chart=new Chart(document.getElementById('pcpCompareChart'),{type:'bar',data,options});
+    }
+  }
+
+  root.querySelectorAll('input').forEach(el=>el.addEventListener('input',render));
+  render();
 })();
 </script>
