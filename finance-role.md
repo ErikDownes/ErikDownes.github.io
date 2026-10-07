@@ -3,51 +3,70 @@ layout: doc
 permalink: /finance-role.html
 handle: Finance
 title: Finance
-subtitle: Core finance and Cashbook concepts for the Implementation Associate interview.
+subtitle: Core finance concepts for the HSE Mid-West Co-Op Finance interview.
 nav_order: 60
 top_nav: false
 interview_mode: true
-description: Cashbook, TIMS and core finance-process interview preparation.
+description: HSE Mid-West finance-process interview preparation.
 eyebrow: INTERVIEW DOMAIN · FINANCE
 ---
-## What does Cashbook do?
 
-Cashbook is a financial-software company that helps automate finance processes including Accounts Payable, Accounts Receivable, cash application, collections and bank reconciliation.
+## What is the HSE Mid-West finance role?
 
-AP|AR|Cash Application|Reconciliation
+It is a hands-on finance placement supporting the HSE Mid-West Finance Department. The work includes month-end close, Pay/Non-Pay/Income reconciliations, finance-policy compliance, patient-level costing and Activity Based Funding returns, insurer claims and AP payments through SAP Financials.
 
-## What would you be doing as a TIMS Implementation Associate?
+Month-End|Reconciliations|SAP|AP|Deadlines
 
-I would support the TIMS implementation team, learn the customer’s finance processes, help with lockbox and payment-processing work, troubleshoot issues and work with customers to increase reliable automation.
+## What is month-end close?
 
-Implement|Troubleshoot|Customer|Automate
+Month-end close is the process of making sure the financial records for the month are complete, accurate and ready for reporting. It includes checking transactions, resolving outstanding items, posting necessary entries and completing reconciliations.
 
-## What is bank reconciliation?
+Complete|Check|Adjust|Reconcile|Report
 
-Bank reconciliation means comparing the bank record with the organisation’s own accounting records, identifying differences and resolving or explaining the exceptions.
+## What is a financial reconciliation?
 
-Compare|Exceptions|Resolve|Check
+A reconciliation compares two sets of financial records that should agree, identifies any differences and explains or corrects the exceptions.
 
-## What is cash application?
+Compare|Difference|Investigate|Resolve
 
-Cash application means matching incoming customer payments to the correct customer accounts and invoices so receivables are updated accurately.
+## What do Pay, Non-Pay and Income mean?
 
-Payment|Customer|Invoice|Accurate
+**Pay** is staff-related expenditure such as salaries and wages. **Non-Pay** is other expenditure such as supplies, services and operating costs. **Income** is money received or due to the organisation.
 
-## What are collections?
+Pay|Non-Pay|Income
 
-Collections means following up and managing amounts owed by customers, helping the business understand and reduce overdue receivables.
+## What is Patient Level Costing?
 
-Receivables|Follow Up|Overdue|Payment
+Patient Level Costing assigns or analyses healthcare costs at the level of individual patient activity so the organisation can understand what services actually cost.
 
-## What is TIMS?
+Patient|Activity|Cost|Analysis
 
-TIMS is ERP software from Computers Unlimited. Cashbook integrates with TIMS so finance processes such as cash application, Accounts Payable and bank reconciliation can be automated around the customer’s core business system.
+## What is Activity Based Funding?
 
-ERP|Integration|Finance Automation
+Activity Based Funding links funding to the type and volume of healthcare activity delivered rather than relying only on a fixed historical budget.
 
-## What is an ERP system?
+Activity|Volume|Funding|Service
 
-ERP stands for Enterprise Resource Planning. It is software that brings core business processes and data — such as finance, purchasing, inventory, sales and operations — into an integrated system.
+## What is Accounts Payable?
 
-One System|Shared Data|Business Processes
+Accounts Payable, or **AP**, is the process of recording, checking and paying money owed to suppliers.
+
+Invoice|Approve|Pay|Record
+
+## What is SAP Financials?
+
+SAP Financials is an integrated financial-management system used to process and record financial transactions and support accounting and reporting.
+
+System|Transactions|Accounting|Reporting
+
+## What does compliance with finance policies mean?
+
+It means following the approved controls and procedures for income and expenditure so transactions are properly authorised, recorded, supported and auditable.
+
+Authorise|Record|Evidence|Control
+
+## Why do deadlines and service levels matter?
+
+Finance work often feeds into month-end reporting, payments, claims and statutory or management returns. Missing a deadline can delay other people and reduce the reliability of the information being used.
+
+Accurate|On Time|Reliable|Service
