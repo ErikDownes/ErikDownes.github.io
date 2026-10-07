@@ -3,7 +3,7 @@ layout: doc
 permalink: /qa.html
 handle: Motivation
 title: Career & Motivation
-subtitle: Why this path, why this role, what I want from co-op and what I can contribute.
+subtitle: Why this path, why this role and what I want from co-op.
 nav_order: 20
 top_nav: false
 interview_mode: true
@@ -12,30 +12,24 @@ eyebrow: INTERVIEW DOMAIN · CAREER & MOTIVATION
 ---
 ## Why choose Financial Maths?
 
-I wanted to take a broad course, and I was always drawn to maths at school. Financial Maths is practical and highly applicable, combining technology, data analysis, finance and accounting, while also developing the people and service side of working in the field. I was also attracted by UL’s co-op programme and the opportunity to gain real workplace experience.
+I was always drawn to maths and also had an aptitude for IT and technical concepts. At school I did very well in Business, and I started to picture myself working in a financial, accounting or business environment. Financial Maths gave me a broad course that brought those interests together — maths, technology, data analysis, finance and accounting — and UL’s co-op programme gave me the chance to apply them in a real workplace.
 
-Maths | Practical | Technology | Finance | People | Co-op
+Maths | IT | Business | Finance | Co-op
 
 ## Why are you interested in this role?
 
-My own direction is moving towards data analysis, SQL, automation and greater professional responsibility. Cashbook brings those together in a client-focused role where technology is used to improve real financial processes and deliver reliable solutions.
+My own direction is moving towards data analysis, SQL and automation, but I want to apply those skills to real financial processes rather than just technical exercises. Cashbook brings together finance, technology, customer work and problem-solving. It also looks like a role where I can learn quickly, take direction, contribute to a team and gradually take on more professional responsibility.
 
-FinanceTechnologyClients
+Finance | Technology | Customers | Learn | Responsibility
 
 ## What do you want from co-op?
 
-I want co-op to move me from mainly developing my own skills into using them professionally with other people. I want experience of live financial and technology processes, working with experienced colleagues and learning what it means when customers and teammates depend on the quality and timeliness of my work.
+I want co-op to move me from mainly developing my own skills into using them professionally with other people. I want experience of live financial and technology processes, working with experienced colleagues and managing several priorities where accuracy and timeliness matter. I have a strong desire to learn, but I also want to bring professional drive — take direction, absorb information quickly and become someone the team can depend on.
 
-LearningTeamworkResponsibility
-
-## What can you contribute?
-
-I can contribute analytical thinking and practical experience with Excel, Python, pandas, databases, SQL and AI tools. I also bring teamwork, communication and reliability from O’Mahony’s, Mr Price and pair programming, so I am comfortable taking direction, adapting when priorities change and taking responsibility for my part of a shared task.
-
-AnalyticsTeamworkReliability
+Learn | Professional drive | Priorities | Responsibility
 
 ## What do you enjoy most about Financial Maths?
 
 I enjoy taking data or calculations that do not initially line up and working systematically until I understand why. Whether it is cleaning timestamps in a large dataset or tracing an Excel reconciliation problem, I like turning something messy into something accurate, reliable and useful.
 
-DataReconcileUseful
+Data | Reconcile | Useful
