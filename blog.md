@@ -4,6 +4,7 @@ permalink: /blog.html
 handle: Blog
 title: Blog
 nav_order: 100
+top_nav: true
 description: Notes on software, tools, projects and practical technology choices.
 eyebrow: SOFTWARE · TOOLS · PRACTICAL NOTES
 public_mode: true
