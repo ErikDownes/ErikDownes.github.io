@@ -22,44 +22,56 @@ description: What implementation work means in practice, from scoping and data m
 
 Cashbook's public implementation material describes installation, initial setup, file-transfer locations, payment-file configuration, training, testing across Development / QA / Production, go-live and post-live support. The exact internal workflow can vary by client, but that is the mental model to carry into the role.
 
-## Things to say — and questions to ask
+## Learn it by asking questions
 
 <div class="cash-grid">
   <div class="cash-card">
     <h3>Keep the facts straight</h3>
-    <p><strong>Say:</strong> “I’d keep a controlled implementation record — configuration, test cases, open actions, owners and decisions — so nothing gets lost between the customer and the technical team.”</p>
-    <p><strong>Ask:</strong> “How do you track implementation actions and configuration changes — a project tracker, ticketing system, or within TIMS?”</p>
+    <p>An implementation can involve customer decisions, configuration settings, sample files, test cases, open issues and different people responsible for different actions. Good administration means keeping all of that traceable.</p>
+    <details><summary><strong>Check yourself: why would an action need an owner and a due date?</strong></summary><p>Because otherwise it can sit between teams with everyone assuming somebody else is dealing with it. An owner creates accountability; a due date makes the next step visible.</p></details>
   </div>
 
   <div class="cash-card">
     <h3>Prepare and check data</h3>
-    <p><strong>Say:</strong> “Before mapping anything, I’d validate the source file: field names, formats, customer IDs, bank-account identifiers, row counts, control totals, duplicates and missing values.”</p>
-    <p><strong>Ask:</strong> “What file formats do customers most commonly provide, and who signs off the field mapping before testing starts?”</p>
+    <p>Before data is imported, you need to know what each field means and whether the incoming file matches what the system expects: names, formats, IDs, dates, row counts and totals.</p>
+    <details><summary><strong>Check yourself: if a bank file has 250 rows but only 247 import, what would you compare first?</strong></summary><p>Expected versus actual row count, then the three rejected rows, their field values and the error message. Look for a common format or mapping problem.</p></details>
   </div>
 
   <div class="cash-card">
     <h3>Test</h3>
-    <p><strong>Say:</strong> “I’d define the expected result before running a test, compare expected with actual, keep the evidence and repeat the same test after a fix.”</p>
-    <p><strong>Ask:</strong> “How is testing divided between Development, QA and UAT, and what evidence is normally required before sign-off?”</p>
+    <p>Testing is not simply clicking around to see if something works. You begin with a defined input and an expected result, run the test, record the actual result, and keep evidence.</p>
+    <details><summary><strong>Check yourself: why decide the expected result before running the test?</strong></summary><p>Because otherwise it is easy to accept whatever happens as “probably correct”. A test only proves something when the expected outcome is known in advance.</p></details>
   </div>
 
   <div class="cash-card">
     <h3>Triage problems</h3>
-    <p><strong>Say:</strong> “I’d reproduce the problem first, then isolate whether it is data, mapping, configuration, permissions, file transfer or software behaviour before escalating it.”</p>
-    <p><strong>Ask:</strong> “When an import fails, what logs or diagnostic information would an implementation associate normally have access to?”</p>
+    <p>When something fails, the first job is usually not to fix it immediately. It is to narrow the problem: data, mapping, configuration, permissions, file transfer, environment or software behaviour.</p>
+    <details><summary><strong>Check yourself: what would you want to know before telling a developer “the import is broken”?</strong></summary><p>Which file, which customer/account, which environment, what should have happened, what actually happened, whether it can be reproduced, and any log or error message.</p></details>
   </div>
 
   <div class="cash-card">
     <h3>Communicate</h3>
-    <p><strong>Say:</strong> “A useful status update should name the environment and file, explain expected versus actual behaviour, give the evidence, identify the impact and state the next action.”</p>
-    <p><strong>Ask:</strong> “On the customer side, would I normally be dealing with finance, treasury, IT, the ERP team, or a mixture of those people?”</p>
+    <p>Implementation sits between customers and technical teams. A useful update gives enough detail for the next person to act without having to rediscover the problem.</p>
+    <details><summary><strong>Check yourself: which is more useful — “it doesn't work” or a precise expected-versus-actual description?</strong></summary><p>The precise description. It reduces ambiguity and helps the next person reproduce, diagnose and resolve the issue.</p></details>
   </div>
 
   <div class="cash-card">
     <h3>Protect production</h3>
-    <p><strong>Say:</strong> “I’d treat Production as a controlled environment: no casual testing with live financial data; changes should be approved, traceable and tested before they are promoted.”</p>
-    <p><strong>Ask:</strong> “What change-control process do you use to move configuration or fixes from QA into Production?”</p>
+    <p>Development and QA/test are places to experiment safely. Production is the live customer environment, so changes there need much tighter control.</p>
+    <details><summary><strong>Check yourself: why not test a speculative fix directly in Production?</strong></summary><p>Because Production may contain live financial processes and data. An untested change could create incorrect transactions, disrupt processing or make an incident harder to unwind.</p></details>
   </div>
+</div>
+
+## Questions worth being able to ask
+
+<div class="cash-callout">
+<strong>These are useful because they show understanding, not because they need to be memorised.</strong><br><br>
+How do you track actions and configuration changes during an implementation?<br>
+What file formats and ERP exports do customers most commonly provide?<br>
+How are Development, QA and UAT separated in practice?<br>
+What logs or diagnostic information would an Implementation Associate normally use?<br>
+Who on the customer side would I work with most — finance, treasury, IT or ERP teams?<br>
+What has to happen before a tested change is allowed into Production?
 </div>
 
 ## A useful troubleshooting pattern
