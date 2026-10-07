@@ -775,7 +775,6 @@
     const isEducationParent = /\/(?:education|coursework)\.html$/.test(labelPath) && /\/modules\//.test(currentPath);
     const rootHref = document.querySelector('.brand')?.href || new URL('/', location.origin).href;
     const aboutChildPaths = [
-      normalisePath(new URL('pivotal-corporate-study.html', rootHref).href),
       normalisePath(new URL('academic-record.html', rootHref).href)
     ];
     const isAboutParent = labelPath === normalisePath(rootHref) && aboutChildPaths.includes(currentPath);
@@ -1173,8 +1172,9 @@
       return;
     }
 
-    // About Me is deliberately a single flat page: never build a dropdown for it.
-    if (targetPath === rootPath) {
+    // About Me and CV are deliberately direct links: their navigation lives in-page.
+    const cvPath = normalisePath(new URL('pivotal-corporate-study.html', document.querySelector('.brand')?.href || location.href).href);
+    if (targetPath === rootPath || targetPath === cvPath) {
       menu.replaceChildren();
       item.classList.remove('has-submenu', 'is-open');
       label.removeAttribute('aria-haspopup');
