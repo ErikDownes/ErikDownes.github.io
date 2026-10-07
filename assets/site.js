@@ -1,5 +1,6 @@
 (async () => {
   const body = document.getElementById('docBody');
+  const isInterviewAccordion = document.body.classList.contains('interview-mode');
   const topbar = document.querySelector('.topbar');
   const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
   const synth = window.speechSynthesis;
@@ -677,7 +678,7 @@
     }
   };
 
-  setupInterviewMenu();
+  // Interview domains now use the in-page sidebar rather than a top-nav dropdown.
 
   /* -----------------------------------------------------------------------
      Navigation: same open/pin behaviour as the Education site.
@@ -1855,9 +1856,68 @@
     });
   };
 
-  restoreMovedSections();
+  if (!isInterviewAccordion) restoreMovedSections();
   restoreSavedAnswers();
   hideInlinePointerWords();
+
+  const setupInterviewAccordions = () => {
+    if (!isInterviewAccordion) return;
+
+    sectionHeadings().forEach(heading => {
+      const answerNodes = sourceNodesFor(heading);
+      if (!answerNodes.length) return;
+
+      heading.classList.add('interview-accordion-heading');
+      heading.tabIndex = 0;
+      heading.setAttribute('role', 'button');
+      heading.setAttribute('aria-expanded', 'false');
+
+      answerNodes.forEach((node, index) => {
+        node.classList.add('interview-answer-node');
+        if (index === 0) node.classList.add('interview-answer-first');
+        if (index === answerNodes.length - 1) node.classList.add('interview-answer-last');
+        node.hidden = true;
+      });
+
+      const toggle = document.createElement('button');
+      toggle.type = 'button';
+      toggle.className = 'interview-answer-toggle';
+      toggle.textContent = 'Show answer';
+      toggle.setAttribute('aria-label', 'Show answer');
+
+      const setOpen = open => {
+        heading.classList.toggle('is-open', open);
+        heading.setAttribute('aria-expanded', String(open));
+        answerNodes.forEach(node => { node.hidden = !open; });
+        toggle.textContent = open ? 'Hide answer' : 'Show answer';
+        toggle.setAttribute('aria-label', open ? 'Hide answer' : 'Show answer');
+      };
+
+      const flip = () => setOpen(heading.getAttribute('aria-expanded') !== 'true');
+
+      toggle.addEventListener('click', event => {
+        event.preventDefault();
+        event.stopPropagation();
+        flip();
+      });
+
+      heading.addEventListener('click', event => {
+        if (event.target.closest('a,input,textarea,select')) return;
+        flip();
+      });
+
+      heading.addEventListener('keydown', event => {
+        if (event.key !== 'Enter' && event.key !== ' ') return;
+        if (event.target.closest('a,input,textarea,select')) return;
+        event.preventDefault();
+        flip();
+      });
+
+      heading.appendChild(toggle);
+    });
+  };
+
+  setupInterviewAccordions();
 
   /* -----------------------------------------------------------------------
      Audio state shared by inline play, focus play and page Listen.
@@ -1903,6 +1963,7 @@
   };
 
   const addInlinePlayButtons = () => {
+    if (isInterviewAccordion) return;
     practiceHeadings().forEach(heading => {
       if (heading.querySelector(':scope > .cm-question-play')) return;
       const button = document.createElement('button');
@@ -1928,7 +1989,7 @@
   addInlinePlayButtons();
 
   const addSectionMoveMenus = () => {
-    if (document.body.classList.contains('education-mode')) return;
+    if (document.body.classList.contains('education-mode') || isInterviewAccordion) return;
     let dragging = null;
     let dropTarget = null;
     let dropAfter = false;
@@ -2437,6 +2498,7 @@
   };
 
   practiceHeadings().forEach(heading => {
+    if (isInterviewAccordion) return;
     heading.tabIndex = 0;
     heading.setAttribute('role', 'button');
     heading.setAttribute('aria-haspopup', 'dialog');
@@ -2506,6 +2568,7 @@
     let questionsVisible = true;
     let answersVisible = true;
     const questions = practiceHeadings();
+    const accordionInterview = isInterviewAccordion;
     // Shared by Listen and Random; dropdown visibility does not change the page selection.
     const currentHeading = () => {
       const headings = Array.from(body.querySelectorAll(':scope > h1, :scope > h2'));
@@ -2547,7 +2610,7 @@
       rail.appendChild(listen);
     }
 
-    if (body) {
+    if (body && !accordionInterview) {
       const makeSwitch = ({ id, label, checked, onChange }) => {
         const button = document.createElement('button');
         button.id = id;
@@ -2616,7 +2679,7 @@
     // Rehearsal across all H2 headings on the open page, with one session queue per page.
     // Keep the control visible on every document page so the tool rail stays identical.
     const randomQuestions = sectionHeadings();
-    if (body) {
+    if (body && !accordionInterview) {
       const random = document.createElement('button');
       random.id = 'floating-page-random';
       random.type = 'button';
