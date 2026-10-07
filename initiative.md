@@ -3,7 +3,7 @@ layout: doc
 permalink: /initiative.html
 handle: Initiative
 title: Initiative
-nav_order: 50
+nav_order: 60
 top_nav: false
 interview_mode: true
 description: Initiative, learning, ownership and organisation interview preparation.
