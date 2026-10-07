@@ -1225,7 +1225,7 @@
 
   const PORTFOLIO_SUBPAGES = [
     { label: 'Dublin Bikes', path: 'dublin-bikes.html' },
-    { label: 'Strava Raw Data Analysis', path: 'cycling.html' },
+    { label: 'Strava Analysis', path: 'cycling.html' },
     { label: 'Mortgage Calculator', path: 'mortgage-calculator.html' },
     { label: 'PCP Finance Comparator', path: 'pcp-calculator.html' }
   ];
