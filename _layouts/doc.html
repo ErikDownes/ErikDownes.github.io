@@ -82,8 +82,8 @@
   <script>
     window.MathJax = {
       tex: {
-        inlineMath: [['\\\\(','\\\\)']],
-        displayMath: [['\\\\[','\\\\]']],
+        inlineMath: [[String.fromCharCode(92) + '(', String.fromCharCode(92) + ')']],
+        displayMath: [[String.fromCharCode(92) + '[', String.fromCharCode(92) + ']']],
         processEscapes: true
       },
       chtml: {
@@ -111,8 +111,20 @@
     @media(max-width:700px){.module-toc ol{columns:1}.module-source-grid{display:grid;gap:5px}}
   </style>
   {% endif %}
+  <style>
+    .finmath-current-shell{align-items:flex-start}
+    .finmath-current-sidebar{position:sticky;top:86px;align-self:flex-start}
+    .finmath-current-sidebar nav a{line-height:1.28}
+    @media(max-width:900px){
+      .finmath-current-shell{display:block}
+      .finmath-current-sidebar{position:static;margin:0 0 14px}
+      .finmath-current-sidebar nav{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px}
+      .finmath-current-sidebar nav a{white-space:nowrap}
+      .finmath-current-sidebar .cv-sidebar-divider{display:none}
+    }
+  </style>
 </head>
-<body class="{% if page.study_mode %}study-mode{% endif %}{% if page.profile_mode %} profile-mode{% endif %}{% if page.public_mode %} public-mode{% endif %}{% if page.interview_mode %} interview-mode{% endif %}{% if page.interview_hub %} interview-hub{% endif %}{% if page.cv_mode %} cv-mode{% endif %}{% if page.cashbook_mode %} cashbook-mode{% endif %}{% if page.path == 'coursework.md' %} education-mode{% endif %}">
+<body class="{% if page.study_mode %}study-mode{% endif %}{% if page.profile_mode %} profile-mode{% endif %}{% if page.public_mode %} public-mode{% endif %}{% if page.interview_mode %} interview-mode{% endif %}{% if page.interview_hub %} interview-hub{% endif %}{% if page.cv_mode %} cv-mode{% endif %}{% if page.cashbook_mode %} cashbook-mode{% endif %}{% if page.finmath_current %} finmath-current-mode{% endif %}{% if page.path == 'coursework.md' %} education-mode{% endif %}">
   <header class="topbar">
     <a class="brand" href="{{ '/' | relative_url }}" aria-label="Erik Downes — Financial Maths and Data Analysis — Home">
       <img src="{{ '/assets/coop-logo.svg' | relative_url }}" alt="Erik Downes — Financial Maths and Data Analysis — University of Limerick">
@@ -163,6 +175,24 @@
           <a{% if page.url == '/cv-qa.html' %} class="is-active" aria-current="page"{% endif %} href="{{ '/cv-qa.html' | relative_url }}">CV QA</a>
           <span class="cv-sidebar-divider" aria-hidden="true"></span>
           <div class="cv-current-sections" id="cvCurrentSections" aria-label="Sections on this page"></div>
+        </nav>
+      </aside>
+    {% elsif page.finmath_current %}
+    <div class="interview-shell finmath-current-shell">
+      <aside class="interview-domain-sidebar finmath-current-sidebar" aria-label="Current Financial Mathematics">
+        <nav>
+          <a href="{{ '/education.html' | relative_url }}"><strong>Current · Year 3 Sem 1</strong></a>
+          <span class="cv-sidebar-divider" aria-hidden="true"></span>
+          <a{% if page.url == '/modules/ms4027-fundamentals-financial-mathematics.html' %} class="is-active" aria-current="page"{% endif %} href="{{ '/modules/ms4027-fundamentals-financial-mathematics.html' | relative_url }}">MS4027</a>
+          <a{% if page.url == '/modules/ms4045-complex-analysis.html' %} class="is-active" aria-current="page"{% endif %} href="{{ '/modules/ms4045-complex-analysis.html' | relative_url }}">MS4045 Complex Analysis</a>
+          <a{% if page.url == '/modules/ms4045/tutorial-sheet-1.html' or page.ws1_question %} class="is-active" aria-current="page"{% endif %} href="{{ '/modules/ms4045/tutorial-sheet-1.html' | relative_url }}">Worksheet 1</a>
+          <a{% if page.url == '/modules/ms4045/tutorial-sheet-2.html' or page.ws2_question %} class="is-active" aria-current="page"{% endif %} href="{{ '/modules/ms4045/tutorial-sheet-2.html' | relative_url }}">Worksheet 2</a>
+          <a{% if page.url == '/modules/ms4045/exam-2023.html' %} class="is-active" aria-current="page"{% endif %} href="{{ '/modules/ms4045/exam-2023.html' | relative_url }}">Exam 2023</a>
+          <a{% if page.url == '/modules/ms4045/exam-2021.html' %} class="is-active" aria-current="page"{% endif %} href="{{ '/modules/ms4045/exam-2021.html' | relative_url }}">Exam 2021</a>
+          <span class="cv-sidebar-divider" aria-hidden="true"></span>
+          <a href="{{ '/modules/ms4105-linear-algebra-2.html' | relative_url }}">MS4105</a>
+          <a href="{{ '/modules/ms4214-statistical-inference.html' | relative_url }}">MS4214</a>
+          <a href="{{ '/modules/ms4215-advanced-data-analysis.html' | relative_url }}">MS4215</a>
         </nav>
       </aside>
     {% elsif page.cashbook_mode %}
@@ -315,7 +345,7 @@
         })();
       </script>
     </article>
-    {% if page.interview_mode or page.interview_hub or page.cv_mode or page.cashbook_mode %}
+    {% if page.interview_mode or page.interview_hub or page.cv_mode or page.cashbook_mode or page.finmath_current %}
     </div>
     {% endif %}
   </main>
