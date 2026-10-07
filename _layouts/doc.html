@@ -123,7 +123,7 @@
     }
   </style>
 </head>
-<body class="{% if page.study_mode %}study-mode{% endif %}{% if page.profile_mode %} profile-mode{% endif %}{% if page.public_mode %} public-mode{% endif %}{% if page.interview_mode %} interview-mode{% endif %}{% if page.interview_hub %} interview-hub{% endif %}{% if page.cv_mode %} cv-mode{% endif %}{% if page.cashbook_mode %} cashbook-mode{% endif %}{% if page.finmath_current %} finmath-current-mode{% endif %}{% if page.path == 'coursework.md' %} education-mode{% endif %}">
+<body class="{% if page.study_mode %}study-mode{% endif %}{% if page.profile_mode %} profile-mode{% endif %}{% if page.public_mode %} public-mode{% endif %}{% if page.interview_mode %} interview-mode{% endif %}{% if page.interview_hub %} interview-hub{% endif %}{% if page.cv_mode %} cv-mode{% endif %}{% if page.hse_mode %} cashbook-mode{% endif %}{% if page.finmath_current %} finmath-current-mode{% endif %}{% if page.path == 'coursework.md' %} education-mode{% endif %}">
   <header class="topbar">
     <a class="brand" href="{{ '/' | relative_url }}" aria-label="Erik Downes — Financial Maths and Data Analysis — Home">
       <img src="{{ '/assets/coop-logo.svg' | relative_url }}" alt="Erik Downes — Financial Maths and Data Analysis — University of Limerick">
@@ -194,32 +194,16 @@
           <a href="{{ '/modules/ms4215-advanced-data-analysis.html' | relative_url }}">MS4215</a>
         </nav>
       </aside>
-    {% elsif page.cashbook_mode %}
+    {% elsif page.hse_mode %}
     <div class="cv-shell">
-      <aside class="cv-section-sidebar" aria-label="Cashbook job specification navigation">
+      <aside class="cv-section-sidebar" aria-label="HSE job specification navigation">
         <nav>
-          <a href="{{ '/cashbook-tims.html' | relative_url }}"><strong>Learning Path →</strong></a>
-          <span class="cv-sidebar-divider" aria-hidden="true"></span>
-          <a href="#company">Company</a>
-          <a href="#description">Description</a>
-          <a href="#duties-responsibilities">Duties &amp; Responsibilities</a>
-          <a href="#skills-requirements">Skills &amp; Requirements</a>
-          <a href="#candidate-experience">Candidate Experience</a>
-          <a href="#travel-placement">Travel &amp; Placement</a>
-        </nav>
-      </aside>
-    {% elsif page.cashbook_learning %}
-    <div class="cv-shell">
-      <aside class="cv-section-sidebar" aria-label="Cashbook learning navigation">
-        <nav>
-          <a href="{{ '/cashbook.html' | relative_url }}">← Job Spec</a>
-          <span class="cv-sidebar-divider" aria-hidden="true"></span>
-          <a{% if page.url == '/cashbook-tims.html' %} class="is-active" aria-current="page"{% endif %} href="{{ '/cashbook-tims.html' | relative_url }}">TIMS &amp; Data Flow</a>
-          <a{% if page.url == '/cashbook-implementation.html' %} class="is-active" aria-current="page"{% endif %} href="{{ '/cashbook-implementation.html' | relative_url }}">Implementation</a>
-          <a{% if page.url == '/cashbook-finance-processes.html' %} class="is-active" aria-current="page"{% endif %} href="{{ '/cashbook-finance-processes.html' | relative_url }}">Finance Processes</a>
-          <a{% if page.url == '/cashbook-lockbox.html' %} class="is-active" aria-current="page"{% endif %} href="{{ '/cashbook-lockbox.html' | relative_url }}">Lockbox</a>
-          <a{% if page.url == '/cashbook-reconciliation-automation.html' %} class="is-active" aria-current="page"{% endif %} href="{{ '/cashbook-reconciliation-automation.html' | relative_url }}">Automation</a>
-          <a{% if page.url == '/cashbook-sql-lab.html' %} class="is-active" aria-current="page"{% endif %} href="{{ '/cashbook-sql-lab.html' | relative_url }}">SQL Lab</a>
+          <a href="#job-title-grade">Job Title &amp; Grade</a>
+          <a href="#location-post">Location of Post</a>
+          <a href="#details-service">Details of Service</a>
+          <a href="#reporting-relationship">Reporting Relationship</a>
+          <a href="#job-description-duties">Job Description / Duties</a>
+          <a href="#candidate">Candidate / Skills</a>
         </nav>
       </aside>
     {% endif %}
@@ -344,7 +328,7 @@
         })();
       </script>
     </article>
-    {% if page.interview_mode or page.interview_hub or page.cv_mode or page.cashbook_mode or page.finmath_current %}
+    {% if page.interview_mode or page.interview_hub or page.cv_mode or page.hse_mode or page.finmath_current %}
     </div>
     {% endif %}
   </main>
@@ -396,7 +380,7 @@
     }
   </style>
 </head>
-<body class="{% if page.study_mode %}study-mode{% endif %}{% if page.profile_mode %} profile-mode{% endif %}{% if page.public_mode %} public-mode{% endif %}{% if page.interview_mode %} interview-mode{% endif %}{% if page.interview_hub %} interview-hub{% endif %}{% if page.cv_mode %} cv-mode{% endif %}{% if page.cashbook_mode %} cashbook-mode{% endif %}{% if page.finmath_current %} finmath-current-mode{% endif %}{% if page.path == 'coursework.md' %} education-mode{% endif %}">
+<body class="{% if page.study_mode %}study-mode{% endif %}{% if page.profile_mode %} profile-mode{% endif %}{% if page.public_mode %} public-mode{% endif %}{% if page.interview_mode %} interview-mode{% endif %}{% if page.interview_hub %} interview-hub{% endif %}{% if page.cv_mode %} cv-mode{% endif %}{% if page.hse_mode %} cashbook-mode{% endif %}{% if page.finmath_current %} finmath-current-mode{% endif %}{% if page.path == 'coursework.md' %} education-mode{% endif %}">
   <header class="topbar">
     <a class="brand" href="{{ '/' | relative_url }}" aria-label="Erik Downes — Financial Maths and Data Analysis — Home">
       <img src="{{ '/assets/coop-logo.svg' | relative_url }}" alt="Erik Downes — Financial Maths and Data Analysis — University of Limerick">
@@ -467,32 +451,16 @@
           <a href="{{ '/modules/ms4215-advanced-data-analysis.html' | relative_url }}">MS4215</a>
         </nav>
       </aside>
-    {% elsif page.cashbook_mode %}
+    {% elsif page.hse_mode %}
     <div class="cv-shell">
-      <aside class="cv-section-sidebar" aria-label="Cashbook job specification navigation">
+      <aside class="cv-section-sidebar" aria-label="HSE job specification navigation">
         <nav>
-          <a href="{{ '/cashbook-tims.html' | relative_url }}"><strong>Learning Path →</strong></a>
-          <span class="cv-sidebar-divider" aria-hidden="true"></span>
-          <a href="#company">Company</a>
-          <a href="#description">Description</a>
-          <a href="#duties-responsibilities">Duties &amp; Responsibilities</a>
-          <a href="#skills-requirements">Skills &amp; Requirements</a>
-          <a href="#candidate-experience">Candidate Experience</a>
-          <a href="#travel-placement">Travel &amp; Placement</a>
-        </nav>
-      </aside>
-    {% elsif page.cashbook_learning %}
-    <div class="cv-shell">
-      <aside class="cv-section-sidebar" aria-label="Cashbook learning navigation">
-        <nav>
-          <a href="{{ '/cashbook.html' | relative_url }}">← Job Spec</a>
-          <span class="cv-sidebar-divider" aria-hidden="true"></span>
-          <a{% if page.url == '/cashbook-tims.html' %} class="is-active" aria-current="page"{% endif %} href="{{ '/cashbook-tims.html' | relative_url }}">TIMS &amp; Data Flow</a>
-          <a{% if page.url == '/cashbook-implementation.html' %} class="is-active" aria-current="page"{% endif %} href="{{ '/cashbook-implementation.html' | relative_url }}">Implementation</a>
-          <a{% if page.url == '/cashbook-finance-processes.html' %} class="is-active" aria-current="page"{% endif %} href="{{ '/cashbook-finance-processes.html' | relative_url }}">Finance Processes</a>
-          <a{% if page.url == '/cashbook-lockbox.html' %} class="is-active" aria-current="page"{% endif %} href="{{ '/cashbook-lockbox.html' | relative_url }}">Lockbox</a>
-          <a{% if page.url == '/cashbook-reconciliation-automation.html' %} class="is-active" aria-current="page"{% endif %} href="{{ '/cashbook-reconciliation-automation.html' | relative_url }}">Automation</a>
-          <a{% if page.url == '/cashbook-sql-lab.html' %} class="is-active" aria-current="page"{% endif %} href="{{ '/cashbook-sql-lab.html' | relative_url }}">SQL Lab</a>
+          <a href="#job-title-grade">Job Title &amp; Grade</a>
+          <a href="#location-post">Location of Post</a>
+          <a href="#details-service">Details of Service</a>
+          <a href="#reporting-relationship">Reporting Relationship</a>
+          <a href="#job-description-duties">Job Description / Duties</a>
+          <a href="#candidate">Candidate / Skills</a>
         </nav>
       </aside>
     {% endif %}
@@ -617,7 +585,7 @@
         })();
       </script>
     </article>
-    {% if page.interview_mode or page.interview_hub or page.cv_mode or page.cashbook_mode or page.finmath_current %}
+    {% if page.interview_mode or page.interview_hub or page.cv_mode or page.hse_mode or page.finmath_current %}
     </div>
     {% endif %}
   </main>
@@ -670,7 +638,7 @@
     }
   </style>
 </head>
-<body class="{% if page.study_mode %}study-mode{% endif %}{% if page.profile_mode %} profile-mode{% endif %}{% if page.public_mode %} public-mode{% endif %}{% if page.interview_mode %} interview-mode{% endif %}{% if page.interview_hub %} interview-hub{% endif %}{% if page.cv_mode %} cv-mode{% endif %}{% if page.cashbook_mode %} cashbook-mode{% endif %}{% if page.finmath_current %} finmath-current-mode{% endif %}{% if page.path == 'coursework.md' %} education-mode{% endif %}">
+<body class="{% if page.study_mode %}study-mode{% endif %}{% if page.profile_mode %} profile-mode{% endif %}{% if page.public_mode %} public-mode{% endif %}{% if page.interview_mode %} interview-mode{% endif %}{% if page.interview_hub %} interview-hub{% endif %}{% if page.cv_mode %} cv-mode{% endif %}{% if page.hse_mode %} cashbook-mode{% endif %}{% if page.finmath_current %} finmath-current-mode{% endif %}{% if page.path == 'coursework.md' %} education-mode{% endif %}">
   <header class="topbar">
     <a class="brand" href="{{ '/' | relative_url }}" aria-label="Erik Downes — Financial Maths and Data Analysis — Home">
       <img src="{{ '/assets/coop-logo.svg' | relative_url }}" alt="Erik Downes — Financial Maths and Data Analysis — University of Limerick">
@@ -741,32 +709,16 @@
           <a href="{{ '/modules/ms4215-advanced-data-analysis.html' | relative_url }}">MS4215</a>
         </nav>
       </aside>
-    {% elsif page.cashbook_mode %}
+    {% elsif page.hse_mode %}
     <div class="cv-shell">
-      <aside class="cv-section-sidebar" aria-label="Cashbook job specification navigation">
+      <aside class="cv-section-sidebar" aria-label="HSE job specification navigation">
         <nav>
-          <a href="{{ '/cashbook-tims.html' | relative_url }}"><strong>Learning Path →</strong></a>
-          <span class="cv-sidebar-divider" aria-hidden="true"></span>
-          <a href="#company">Company</a>
-          <a href="#description">Description</a>
-          <a href="#duties-responsibilities">Duties &amp; Responsibilities</a>
-          <a href="#skills-requirements">Skills &amp; Requirements</a>
-          <a href="#candidate-experience">Candidate Experience</a>
-          <a href="#travel-placement">Travel &amp; Placement</a>
-        </nav>
-      </aside>
-    {% elsif page.cashbook_learning %}
-    <div class="cv-shell">
-      <aside class="cv-section-sidebar" aria-label="Cashbook learning navigation">
-        <nav>
-          <a href="{{ '/cashbook.html' | relative_url }}">← Job Spec</a>
-          <span class="cv-sidebar-divider" aria-hidden="true"></span>
-          <a{% if page.url == '/cashbook-tims.html' %} class="is-active" aria-current="page"{% endif %} href="{{ '/cashbook-tims.html' | relative_url }}">TIMS &amp; Data Flow</a>
-          <a{% if page.url == '/cashbook-implementation.html' %} class="is-active" aria-current="page"{% endif %} href="{{ '/cashbook-implementation.html' | relative_url }}">Implementation</a>
-          <a{% if page.url == '/cashbook-finance-processes.html' %} class="is-active" aria-current="page"{% endif %} href="{{ '/cashbook-finance-processes.html' | relative_url }}">Finance Processes</a>
-          <a{% if page.url == '/cashbook-lockbox.html' %} class="is-active" aria-current="page"{% endif %} href="{{ '/cashbook-lockbox.html' | relative_url }}">Lockbox</a>
-          <a{% if page.url == '/cashbook-reconciliation-automation.html' %} class="is-active" aria-current="page"{% endif %} href="{{ '/cashbook-reconciliation-automation.html' | relative_url }}">Automation</a>
-          <a{% if page.url == '/cashbook-sql-lab.html' %} class="is-active" aria-current="page"{% endif %} href="{{ '/cashbook-sql-lab.html' | relative_url }}">SQL Lab</a>
+          <a href="#job-title-grade">Job Title &amp; Grade</a>
+          <a href="#location-post">Location of Post</a>
+          <a href="#details-service">Details of Service</a>
+          <a href="#reporting-relationship">Reporting Relationship</a>
+          <a href="#job-description-duties">Job Description / Duties</a>
+          <a href="#candidate">Candidate / Skills</a>
         </nav>
       </aside>
     {% endif %}
@@ -891,7 +843,7 @@
         })();
       </script>
     </article>
-    {% if page.interview_mode or page.interview_hub or page.cv_mode or page.cashbook_mode or page.finmath_current %}
+    {% if page.interview_mode or page.interview_hub or page.cv_mode or page.hse_mode or page.finmath_current %}
     </div>
     {% endif %}
   </main>
