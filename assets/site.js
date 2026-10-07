@@ -2064,6 +2064,8 @@
   const resetAudio = () => {
     if (synth) synth.cancel();
     if (activeAudioButton?.dataset?.idleLabel) activeAudioButton.textContent = activeAudioButton.dataset.idleLabel;
+    if (activeAudioButton?.dataset?.idleAria) activeAudioButton.setAttribute('aria-label', activeAudioButton.dataset.idleAria);
+    if (activeAudioButton?.dataset?.idleTitle) activeAudioButton.title = activeAudioButton.dataset.idleTitle;
     activeAudioButton?.classList.remove('is-active', 'is-paused');
     activeAudioTarget?.classList.remove('cm-audio-speaking');
     activeAudioButton = null;
@@ -2089,6 +2091,8 @@
     activeAudioButton = button;
     activeAudioTarget = target;
     if (button?.dataset?.activeLabel) button.textContent = button.dataset.activeLabel;
+    if (button?.dataset?.activeAria) button.setAttribute('aria-label', button.dataset.activeAria);
+    if (button?.dataset?.activeTitle) button.title = button.dataset.activeTitle;
     button?.classList.add('is-active');
     target?.classList.add('cm-audio-speaking');
     activeUtterance = new SpeechSynthesisUtterance(text);
@@ -2748,6 +2752,10 @@
       listen.textContent = 'Listen';
       listen.dataset.idleLabel = 'Listen';
       listen.dataset.activeLabel = 'Shut up';
+      listen.dataset.idleAria = 'Listen to the current view';
+      listen.dataset.activeAria = 'Stop speaking';
+      listen.dataset.idleTitle = 'Listen to the current view';
+      listen.dataset.activeTitle = 'Stop speaking';
       listen.setAttribute('aria-label', 'Listen to the current view');
       listen.title = 'Listen to the current view';
       listen.addEventListener('click', () => {
