@@ -1948,13 +1948,37 @@
     };
 
     const formatBreadcrumb = node => {
-      const parts = breadcrumbParts(node);
+      const parts = breadcrumbParts(node).length ? breadcrumbParts(node) : parseBreadcrumbWords(node?.textContent || '');
       if (!parts.length) return;
+
       node.classList.add('interview-breadcrumbs');
       node.style.setProperty('--breadcrumb-count', String(parts.length));
-      node.replaceChildren(...parts.map(part => {
+
+      // Force the recall hints to use the entire answer width:
+      // first at the far left, last at the far right, equal gaps between.
+      node.style.display = 'flex';
+      node.style.alignItems = 'center';
+      node.style.justifyContent = 'space-between';
+      node.style.columnGap = '0';
+      node.style.width = '100%';
+      node.style.maxWidth = 'none';
+      node.style.minWidth = '0';
+      node.style.boxSizing = 'border-box';
+      node.style.marginLeft = '0';
+      node.style.marginRight = '0';
+      node.style.padding = '18px 0 8px';
+      node.style.borderTop = '1px solid #dfe5ea';
+
+      node.replaceChildren(...parts.map((part, index) => {
         const span = document.createElement('span');
         span.textContent = part;
+        span.style.display = 'block';
+        span.style.flex = '0 0 auto';
+        span.style.minWidth = '0';
+        span.style.padding = '0';
+        span.style.border = '0';
+        span.style.whiteSpace = 'nowrap';
+        span.style.textAlign = index === 0 ? 'left' : (index === parts.length - 1 ? 'right' : 'center');
         return span;
       }));
     };
