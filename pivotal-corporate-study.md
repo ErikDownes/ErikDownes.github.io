@@ -85,4 +85,4 @@ My technology journey moved from Scratch and spreadsheets into Python and pandas
 
 Cycling is also one of my main interests, which has naturally influenced some of the data projects I choose to work on, including Dublin Bikes and my analysis of raw Strava GPX data.
 
-Financial Mathematics suits me because it brings together mathematics, technology and practical problem solving. That is also why Cashbook appeals to me — it applies finance, data and software to real customer problems and turns analysis into something useful.
+Financial Mathematics suits me because it brings together mathematics, technology and practical problem solving. That is also why practical finance and data roles appeal to me — they turn analysis into something useful in a real organisation.
