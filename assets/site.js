@@ -1963,8 +1963,8 @@
       node.classList.add('interview-breadcrumbs');
       node.style.setProperty('--breadcrumb-count', String(parts.length));
 
-      // Force the recall hints to use the entire answer width:
-      // first at the far left, last at the far right, equal gaps between.
+      // Spread the recall hints evenly across the answer row, but leave
+      // a little breathing room at the ends (roughly two tabs left, three right).
       node.style.display = 'flex';
       node.style.alignItems = 'center';
       node.style.justifyContent = 'space-between';
@@ -1975,7 +1975,7 @@
       node.style.boxSizing = 'border-box';
       node.style.marginLeft = '0';
       node.style.marginRight = '0';
-      node.style.padding = '18px 0 8px';
+      node.style.padding = '18px 48px 8px 32px';
       node.style.borderTop = '1px solid #dfe5ea';
 
       node.replaceChildren(...parts.map((part, index) => {
