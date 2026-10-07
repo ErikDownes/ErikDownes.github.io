@@ -38,7 +38,6 @@
     { term: 'VAT', definition: 'Value Added Tax: a consumption tax charged on many goods and services, collected and reported by businesses under the applicable tax rules.', cue: 'Tax on value added through the supply chain.' },
     { term: 'GitHub', definition: 'A web platform for hosting Git repositories and collaborating on source code. This site uses GitHub to store and publish its files.', cue: 'Repository + version history + publishing.' },
     { term: 'Strava', definition: 'A digital platform for recording and analysing activities such as cycling and running using GPS and activity data.', cue: 'Activity → GPS/data → analysis.' },
-    { term: 'TIMS', definition: 'Total Information Management System: the flagship business and ERP software from Computers Unlimited. Cashbook integrates with TIMS to automate finance processes including cash application, accounts payable, bank reconciliation, deductions and collections.', cue: 'TIMS = customer ERP/business system → Cashbook integration → finance automation.' },
     { term: 'EAL', definition: 'English as an Additional Language: English used or learned alongside a person’s other language or languages. In communication, adapt clarity, pace and wording to the individual’s needs and preferences. EFL means English as a Foreign Language.', cue: 'Clear speech · suitable pace · check understanding.' },
     { term: 'Regional route', definition: 'A relatively short air service linking cities or airports within a region, often with lower passenger demand than major trunk routes.', cue: 'Shorter sector → thinner demand → right-sized aircraft.', examples: ['A service linking a smaller regional airport with a nearby city or hub'], misconceptions: ['Regional does not simply mean small aircraft; the route, demand and airport constraints matter.'] },
     { term: 'Lease transition',
@@ -568,9 +567,9 @@
       { label: 'LM058 · Degree at a Glance', href: new URL('lm058.html', rootHref).href },
       { label: 'Results', href: new URL('academic-record.html', rootHref).href },
       { label: 'Projects', href: new URL('projects.html', rootHref).href },
-      { section: 'Cashbook Interview' },
-      { label: 'Cashbook Role Study', href: new URL('cashbook-study.html', rootHref).href },
-      { label: 'Original Cashbook Job Spec', href: new URL('job-spec.html#cashbook-implementation', rootHref).href },
+      { section: 'HSE Finance' },
+      { label: 'HSE Job Specification', href: new URL('hse.html', rootHref).href },
+      { label: 'HSE Finance Study', href: new URL('hse-finance-study.html', rootHref).href },
       { section: 'Reference' },
       { label: 'Acronyms & Glossary', href: new URL('glossary.html', rootHref).href },
       { label: 'Contact', href: new URL('contact.html', rootHref).href }
@@ -647,8 +646,8 @@
       { label: 'Organisation & Priorities', href: interviewHref + '#organisation-priorities' },
       { label: 'Motivation & Role Fit', href: interviewHref + '#motivation-role-fit' },
       { section: 'Role Research' },
-      { label: 'Cashbook Limited — Implementation Associate (TIMS)', href: new URL('cashbook-study.html', rootHref).href },
-      { label: 'HSE Mid-West — Co-Op Finance', href: new URL('hse-finance-study.html', rootHref).href }
+      { label: 'HSE Job Specification', href: new URL('hse.html', rootHref).href },
+      { label: 'HSE Mid-West — Co-Op Finance Study', href: new URL('hse-finance-study.html', rootHref).href }
     ];
 
     links.forEach(entry => {
