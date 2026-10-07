@@ -44,24 +44,24 @@ finmath_current: true
 ### (1)
 
 Consider the dependence
-\[
+$$
 f^3=z^2
 \tag{1}
-\]
+$$
 on the complex plane with the **non-positive part of the real axis removed**, and require
-\[
+$$
 f(1)=1.
 \tag{2}
-\]
+$$
 
 **(a)** Argue that (1)–(2) and the proposed branch cut describe a single-valued function.
 
 **(b)** Find
-\[
+$$
 f(-1-i0)
 \qquad\text{and}\qquad
 f(-1+i0).
-\]
+$$
   </div>
 </section>
 <section class="worksheet-question">
@@ -70,22 +70,22 @@ f(-1+i0).
 ### (2)
 
 A single-valued function is defined as a branch of
-\[
+$$
 f=\ln z
-\]
+$$
 on the complex plane with the **non-negative part of the imaginary axis removed**, together with
-\[
+$$
 f(1)=2\pi i.
-\]
+$$
 
-**(a)** Express \(f\) in terms of \(|z|\) and \(\arg z\), and specify the branch of \(\arg z\) to be used.
+**(a)** Express $f$ in terms of $|z|$ and $\arg z$, and specify the branch of $\arg z$ to be used.
 
 **(b)** Find
-\[
+$$
 f(i-0)
 \qquad\text{and}\qquad
 f(i+0).
-\]
+$$
   </div>
 </section>
 <section class="worksheet-question">
@@ -94,15 +94,15 @@ f(i+0).
 ### (3)
 
 Consider
-\[
+$$
 f^4=(z+1)^2(z-1)
 \tag{3}
-\]
-on the complex plane with the segment \([-1,1]\) of the real axis removed, and require
-\[
+$$
+on the complex plane with the segment $[-1,1]$ of the real axis removed, and require
+$$
 f(2)=\sqrt3.
 \tag{4}
-\]
+$$
 
 **(a)** Show that (3)–(4) and the proposed branch cut **do not** describe a single-valued function.
 
@@ -115,15 +115,15 @@ f(2)=\sqrt3.
 ### (4)
 
 Consider the dependence
-\[
+$$
 f=\ln[z(z+1)]
 \tag{5}
-\]
-on the complex plane with the segment \([-1,0]\) of the real axis removed, and require
-\[
+$$
+on the complex plane with the segment $[-1,0]$ of the real axis removed, and require
+$$
 f(1)=\ln2+4\pi i.
 \tag{6}
-\]
+$$
 
 **(a)** Show that (5)–(6) and the proposed branch cut **do not** describe a single-valued function.
 
