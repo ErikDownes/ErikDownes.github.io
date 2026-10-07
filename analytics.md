@@ -4,7 +4,7 @@ permalink: /analytics.html
 handle: Analytics
 title: Problem & Analytics
 subtitle: How I analyse information, find what is wrong, explain it and reach a reliable solution.
-nav_order: 20
+nav_order: 90
 top_nav: false
 interview_mode: true
 description: Problem solving, data analysis, accuracy and troubleshooting interview preparation.
