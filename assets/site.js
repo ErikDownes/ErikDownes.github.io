@@ -547,8 +547,8 @@
     const label = aboutItem.querySelector(':scope > .navlabel[href]');
     if (label) {
       const labelSpan = label.querySelector('span');
-      if (labelSpan) labelSpan.textContent = 'Career';
-      else label.textContent = 'Career';
+      if (labelSpan) labelSpan.textContent = 'Home';
+      else label.textContent = 'Home';
       label.setAttribute('aria-haspopup', 'true');
       label.setAttribute('aria-expanded', 'false');
     }
@@ -569,7 +569,7 @@
       { label: 'Projects', href: new URL('projects.html', rootHref).href },
       { section: 'Cashbook Interview' },
       { label: 'Cashbook Role Study', href: new URL('cashbook-study.html', rootHref).href },
-      { label: 'Cashbook Job Spec', href: new URL('job-spec.html#cashbook-implementation', rootHref).href },
+      { label: 'Original Cashbook Job Spec', href: new URL('job-spec.html#cashbook-implementation', rootHref).href },
       { section: 'Reference' },
       { label: 'Acronyms & Glossary', href: new URL('glossary.html', rootHref).href },
       { label: 'Contact', href: new URL('contact.html', rootHref).href }
@@ -597,7 +597,7 @@
       toggle.className = 'navtoggle';
       toggle.dataset.navToggle = '';
       toggle.textContent = '▾';
-      toggle.setAttribute('aria-label', 'Open About menu');
+      toggle.setAttribute('aria-label', 'Open Home menu');
       toggle.setAttribute('aria-expanded', 'false');
       aboutItem.insertBefore(toggle, menu);
     }
