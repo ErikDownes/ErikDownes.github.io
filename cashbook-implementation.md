@@ -22,15 +22,44 @@ description: What implementation work means in practice, from scoping and data m
 
 Cashbook's public implementation material describes installation, initial setup, file-transfer locations, payment-file configuration, training, testing across Development / QA / Production, go-live and post-live support. The exact internal workflow can vary by client, but that is the mental model to carry into the role.
 
-## What a junior implementation associate may actually do
+## Things to say — and questions to ask
 
 <div class="cash-grid">
-  <div class="cash-card"><h3>Keep the facts straight</h3><p>Maintain configuration lists, file samples, account details, test cases, actions and meeting notes.</p></div>
-  <div class="cash-card"><h3>Prepare and check data</h3><p>Compare field names, formats, totals, customer IDs, bank-account identifiers and sample files.</p></div>
-  <div class="cash-card"><h3>Test</h3><p>Run a defined scenario, record expected vs actual result, capture evidence and repeat after a fix.</p></div>
-  <div class="cash-card"><h3>Triage problems</h3><p>Reproduce the issue, isolate whether it is data, configuration, mapping, permissions or software behaviour.</p></div>
-  <div class="cash-card"><h3>Communicate</h3><p>Ask precise questions, confirm decisions and give a useful status update rather than “it doesn't work”.</p></div>
-  <div class="cash-card"><h3>Protect production</h3><p>Know the difference between Development, QA/test and Production. Do not experiment casually with live financial data.</p></div>
+  <div class="cash-card">
+    <h3>Keep the facts straight</h3>
+    <p><strong>Say:</strong> “I’d keep a controlled implementation record — configuration, test cases, open actions, owners and decisions — so nothing gets lost between the customer and the technical team.”</p>
+    <p><strong>Ask:</strong> “How do you track implementation actions and configuration changes — a project tracker, ticketing system, or within TIMS?”</p>
+  </div>
+
+  <div class="cash-card">
+    <h3>Prepare and check data</h3>
+    <p><strong>Say:</strong> “Before mapping anything, I’d validate the source file: field names, formats, customer IDs, bank-account identifiers, row counts, control totals, duplicates and missing values.”</p>
+    <p><strong>Ask:</strong> “What file formats do customers most commonly provide, and who signs off the field mapping before testing starts?”</p>
+  </div>
+
+  <div class="cash-card">
+    <h3>Test</h3>
+    <p><strong>Say:</strong> “I’d define the expected result before running a test, compare expected with actual, keep the evidence and repeat the same test after a fix.”</p>
+    <p><strong>Ask:</strong> “How is testing divided between Development, QA and UAT, and what evidence is normally required before sign-off?”</p>
+  </div>
+
+  <div class="cash-card">
+    <h3>Triage problems</h3>
+    <p><strong>Say:</strong> “I’d reproduce the problem first, then isolate whether it is data, mapping, configuration, permissions, file transfer or software behaviour before escalating it.”</p>
+    <p><strong>Ask:</strong> “When an import fails, what logs or diagnostic information would an implementation associate normally have access to?”</p>
+  </div>
+
+  <div class="cash-card">
+    <h3>Communicate</h3>
+    <p><strong>Say:</strong> “A useful status update should name the environment and file, explain expected versus actual behaviour, give the evidence, identify the impact and state the next action.”</p>
+    <p><strong>Ask:</strong> “On the customer side, would I normally be dealing with finance, treasury, IT, the ERP team, or a mixture of those people?”</p>
+  </div>
+
+  <div class="cash-card">
+    <h3>Protect production</h3>
+    <p><strong>Say:</strong> “I’d treat Production as a controlled environment: no casual testing with live financial data; changes should be approved, traceable and tested before they are promoted.”</p>
+    <p><strong>Ask:</strong> “What change-control process do you use to move configuration or fixes from QA into Production?”</p>
+  </div>
 </div>
 
 ## A useful troubleshooting pattern
