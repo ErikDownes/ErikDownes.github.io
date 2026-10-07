@@ -1,37 +1,53 @@
 ---
 layout: doc
 permalink: /finance-role.html
-handle: Finance & Role
-title: Finance & Role
-subtitle: How my financial knowledge connects to Cashbook, TIMS and the work of
-  an Implementation Associate.
+handle: Finance
+title: Finance
+subtitle: Core finance and Cashbook concepts for the Implementation Associate interview.
 nav_order: 70
-top_nav: true
+top_nav: false
+interview_mode: true
 description: Cashbook, TIMS and core finance-process interview preparation.
-eyebrow: INTERVIEW DOMAIN · FINANCE · CASHBOOK ROLE
+eyebrow: INTERVIEW DOMAIN · FINANCE
 ---
-# Technology & Portfolio
+## What does Cashbook do?
 
-## Tell me about working with large data.
+Cashbook is a financial-software company that helps automate finance processes including Accounts Payable, Accounts Receivable, cash application, collections and bank reconciliation.
 
-My Dublin Bikes project used about 55 million station-status observations. I cleaned and standardised the historical files with pandas, stored the data in SQLite, then used SQL to reduce it into station-by-hour patterns for the dashboard. That turned a very large dataset into something practical and understandable.
+AP | AR | Cash application | Reconciliation
 
-55 million | pandas | SQLite | SQL | Dashboard
+## What would you be doing as a TIMS Implementation Associate?
 
-## Tell me about combining messy files.
+I would support the TIMS implementation team, learn the customer’s finance processes, help with lockbox and payment-processing work, troubleshoot issues and work with customers to increase reliable automation.
 
-The Dublin Bikes data came from different years with changing file structures and timestamp formats. I standardised the columns and dates in pandas, checked that they matched properly, then combined the cleaned data into one SQLite database. It taught me to make the data consistent before trying to analyse it.
+Implement | Troubleshoot | Customer | Automate
 
-Standardise | Validate | Combine | Query
+## What is bank reconciliation?
 
-## Tell me about working with raw data.
+Bank reconciliation means comparing the bank record with the organisation’s own accounting records, identifying differences and resolving or explaining the exceptions.
 
-I exported one of my own Strava rides as a GPX file and analysed the raw track points. I checked what information was actually available, cleaned the elevation data and compared my results with Strava. I also found that the file had no timestamps, so I did not try to invent speed or moving-time information that the data could not support.
+Compare | Exceptions | Resolve | Check
 
-Raw data | Clean | Validate | Know limits
+## What is cash application?
 
-## Tell me about a financial tool you built.
+Cash application means matching incoming customer payments to the correct customer accounts and invoices so receivables are updated accurately.
 
-My mother was comparing three PCP offers for the same car, so I built a calculator comparing the deposit, monthly repayments, final GMFV and total cash outlay. The middle option came out about €800 cheaper overall. I later used the same loan-amortisation ideas in an interactive mortgage calculator.
+Payment | Customer | Invoice | Accurate
 
-PCP | Amortisation | Compare | Explain | Decision
+## What are collections?
+
+Collections means following up and managing amounts owed by customers, helping the business understand and reduce overdue receivables.
+
+Receivables | Follow up | Overdue | Payment
+
+## What is TIMS?
+
+TIMS is ERP software from Computers Unlimited. Cashbook integrates with TIMS so finance processes such as cash application, Accounts Payable and bank reconciliation can be automated around the customer’s core business system.
+
+ERP | Integration | Finance automation
+
+## What is an ERP system?
+
+ERP stands for Enterprise Resource Planning. It is software that brings core business processes and data — such as finance, purchasing, inventory, sales and operations — into an integrated system.
+
+One system | Shared data | Business processes
