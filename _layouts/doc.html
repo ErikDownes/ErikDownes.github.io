@@ -82,8 +82,8 @@
   <script>
     window.MathJax = {
       tex: {
-        inlineMath: [{% if page.mathjax_dollar %}[String.fromCharCode(36), String.fromCharCode(36)],{% endif %} ['\\\\(','\\\\)']],
-        displayMath: [{% if page.mathjax_dollar %}[String.fromCharCode(36)+String.fromCharCode(36), String.fromCharCode(36)+String.fromCharCode(36)],{% endif %} ['\\\\[','\\\\]']]
+        inlineMath: [{% if page.mathjax_dollar %}[String.fromCharCode(36), String.fromCharCode(36)],{% endif %} [String.fromCharCode(92)+'(', String.fromCharCode(92)+')']],
+        displayMath: [{% if page.mathjax_dollar %}[String.fromCharCode(36)+String.fromCharCode(36), String.fromCharCode(36)+String.fromCharCode(36)],{% endif %} [String.fromCharCode(92)+'[', String.fromCharCode(92)+']']]
       },
       options: { skipHtmlTags: ['script','noscript','style','textarea','pre','code'] }
     };
