@@ -1,18 +1,15 @@
 ---
 layout: doc
 permalink: /technology.html
-handle: Technology & Portfolio
-title: Technology & Portfolio
-subtitle: How I use and learn technology — Excel, Python, pandas, databases,
-  SQL, AI and projects.
+handle: Technology
+title: Technology
+subtitle: How I use and learn technology — Excel, Python, pandas, databases, SQL, AI and projects.
 nav_order: 60
-top_nav: true
-description: Python, pandas, SQL, databases, Excel and technical aptitude for
-  interview preparation.
-eyebrow: INTERVIEW DOMAIN · TECHNOLOGY & PORTFOLIO
+top_nav: false
+interview_mode: true
+description: Python, pandas, SQL, databases, Excel and technical aptitude for interview preparation.
+eyebrow: INTERVIEW DOMAIN · TECHNOLOGY
 ---
-# Technology & Portfolio
-
 ## Tell me about working with large data.
 
 My Dublin Bikes project used about 55 million station-status observations. I cleaned and standardised the historical files with pandas, stored the data in SQLite, then used SQL to reduce it into station-by-hour patterns for the dashboard. That turned a very large dataset into something practical and understandable.
