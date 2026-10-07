@@ -9,14 +9,24 @@ eyebrow: INTERACTIVE PROJECTS
 public_mode: true
 ---
 
-Four projects. Open the interactive work first; the explanation is underneath.
+Open a project to see the working output first, followed by the analytical explanation.
 
 <style>
-.project-index{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin:1rem 0 2rem}
-.project-card{display:block;padding:18px 20px;border:1px solid #dbe2ea;border-radius:14px;background:#fff;text-decoration:none!important;color:inherit!important;box-shadow:0 2px 8px rgba(15,23,42,.04);transition:transform .15s ease,box-shadow .15s ease,border-color .15s ease}
+.doc-paper{
+  width:min(1180px,calc(100vw - 28px));
+  padding:46px clamp(18px,4vw,64px) 76px;
+}
+.project-index{display:block;margin:1rem 0 2rem}
+.project-card{
+  display:block;width:100%;padding:22px 24px;margin:0 0 14px;
+  border:1px solid #dbe2ea;border-radius:14px;background:#fff;
+  text-decoration:none!important;color:inherit!important;
+  box-shadow:0 2px 8px rgba(15,23,42,.04);
+  transition:transform .15s ease,box-shadow .15s ease,border-color .15s ease
+}
 .project-card:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(15,23,42,.09);border-color:#aebdca}
-.project-card strong{display:block;font-size:1.05rem;color:#0f172a;margin-bottom:5px}
-.project-card span{display:block;color:#475569;line-height:1.45}
+.project-card strong{display:block;font-size:1.12rem;color:#0f172a;margin-bottom:6px}
+.project-card span{display:block;color:#475569;line-height:1.5}
 </style>
 
 <div class="project-index">
@@ -26,8 +36,8 @@ Four projects. Open the interactive work first; the explanation is underneath.
   </a>
 
   <a class="project-card" href="{{ '/cycling.html' | relative_url }}">
-    <strong>Strava Raw Data Analysis</strong>
-    <span>Raw GPX → EDA → feature engineering → SQLite/SQL → visualisation and Leaflet.</span>
+    <strong>Strava Analysis</strong>
+    <span>Real GPX → EDA → pandas feature engineering → SQLite/SQL → full-width interactive ride, motion, terrain and data-quality analysis.</span>
   </a>
 
   <a class="project-card" href="{{ '/mortgage-calculator.html' | relative_url }}">
