@@ -4255,7 +4255,7 @@ article img.img-full,
   .interview-answer-toggle{font-size:.8rem}
 }
 
-/* Interview breadcrumbs — first cue left, last cue right, equal gaps between cues. */
+/* Interview breadcrumbs — equal gaps, with breathing room at both ends. */
 .interview-mode .interview-breadcrumbs{
   display:flex!important;
   align-items:center!important;
@@ -4267,7 +4267,8 @@ article img.img-full,
   box-sizing:border-box!important;
   margin-left:0!important;
   margin-right:0!important;
-  padding:18px 0 8px!important;
+  /* About two tab-widths on the left and three on the right. */
+  padding:18px 48px 8px 32px!important;
   border-top:1px solid #dfe5ea;
 }
 .interview-mode .interview-breadcrumbs span{
@@ -4293,6 +4294,7 @@ article img.img-full,
   .interview-mode .interview-breadcrumbs{
     overflow-x:auto;
     column-gap:24px!important;
+    padding:18px 24px 8px 16px!important;
   }
   .interview-mode .interview-breadcrumbs span{
     flex:0 0 auto!important;
