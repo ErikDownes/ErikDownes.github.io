@@ -14,7 +14,7 @@ eyebrow: INTERVIEW DOMAIN · TECHNOLOGY
 
 My Dublin Bikes project used about 55 million station-status observations. I cleaned and standardised the historical files with pandas, stored the data in SQLite, then used SQL to reduce it into station-by-hour patterns for the dashboard. That turned a very large dataset into something practical and understandable.
 
-55 million | pandas | SQLite | SQL | Dashboard
+55 Million | Pandas | SQLite | SQL | Dashboard
 
 ## Tell me about combining messy files.
 
@@ -26,7 +26,7 @@ Standardise | Validate | Combine | Query
 
 I exported one of my own Strava rides as a GPX file and analysed the raw track points. I checked what information was actually available, cleaned the elevation data and compared my results with Strava. I also found that the file had no timestamps, so I did not try to invent speed or moving-time information that the data could not support.
 
-Raw data | Clean | Validate | Know limits
+Raw Data | Clean | Validate | Know Limits
 
 ## Tell me about a financial tool you built.
 
