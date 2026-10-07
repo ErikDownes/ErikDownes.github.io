@@ -3,8 +3,8 @@ layout: doc
 permalink: /sql-bank-reconciliation.html
 handle: SQL Bank Reconciliation Lab
 title: SQL Bank Reconciliation Lab
-description: A Microsoft SQL practice project for Cashbook interview preparation.
-eyebrow: CASHBOOK PREP · MICROSOFT SQL · RECONCILIATION
+description: A Microsoft SQL practice project for finance reconciliation and data skills.
+eyebrow: FINANCE DATA PRACTICE · MICROSOFT SQL · RECONCILIATION
 public_mode: true
 ---
 
@@ -115,11 +115,11 @@ Because two unrelated transactions can have the same value. A stronger rule comb
 **What is the danger of aggressive automation?**  
 A false positive can be worse than an unresolved exception. Good automation increases the match rate while preserving an audit trail and sending uncertain items for review.
 
-**How does this relate to Cashbook?**  
-The job specification specifically mentions **bank reconciliation, cash application, collections, Microsoft SQL, troubleshooting and increasing customer automation rates**.
+**Why is this useful interview evidence?**  
+It demonstrates structured-data thinking, reconciliation logic, exception handling and the ability to learn technical tools around a finance process.
 
 ## Starter Files
 
 [Download / open the SQL starter script →]({{ '/sql-bank-reconciliation-starter.sql' | relative_url }})
 
-When the first six stages work, the next version should add **lockbox-style remittance data**, deliberately messy references and a simple dashboard or Excel export.
+When the first six stages work, the next version should add deliberately messy remittance references and a simple dashboard or Excel export.
