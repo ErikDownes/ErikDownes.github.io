@@ -837,31 +837,45 @@
   // LM058 subject strands. Each module has one primary home so the menu stays easy to scan.
   const LM058_STRANDS = [
     {
-      label: 'Financial Mathematics & Finance',
+      key: 'financial',
+      label: 'Financial',
+      sidebarLabel: 'Financial Mathematics & Finance',
       codes: ['FI4003', 'MS4027', 'MS4028', 'MS4528']
     },
     {
+      key: 'probability-statistics',
       label: 'Probability & Statistics',
+      sidebarLabel: 'Probability & Statistics',
       codes: ['MS4222', 'MS4035', 'MS4034', 'MS4214', 'MS4215', 'MS4217', 'MS4218', 'MS4037', 'MS4038']
     },
     {
+      key: 'analysis',
       label: 'Analysis',
+      sidebarLabel: 'Analysis',
       codes: ['MS4021', 'MS4022', 'MS4043', 'MS4045', 'MS4403', 'MS4404', 'MS4613', 'MA4617', 'MS4407', 'MS4414']
     },
     {
+      key: 'algebra',
       label: 'Algebra',
+      sidebarLabel: 'Algebra',
       codes: ['MS4131', 'MS4122', 'MS4105', 'MS4117']
     },
     {
+      key: 'computation',
       label: 'Computation',
+      sidebarLabel: 'Computation',
       codes: ['CE4701', 'CE4702', 'MS4101', 'MS4014', 'MS4303', 'MS4008']
     },
     {
+      key: 'business',
       label: 'Business',
+      sidebarLabel: 'Business',
       codes: ['AC4213', 'AC4214']
     },
     {
-      label: 'Co-operative Education',
+      key: 'co-op',
+      label: 'Co-op Education',
+      sidebarLabel: 'Co-operative Education',
       codes: ['CO4320']
     }
   ];
@@ -907,6 +921,94 @@
 
   const LM058_CURRENT_MODULE_CODES = ['MS4027', 'MS4045', 'MS4105', 'MS4214', 'MS4215'];
 
+  const lm058Categories = () => [
+    {
+      key: 'current',
+      label: 'Current',
+      sidebarLabel: 'Current · Year 3 Semester 1',
+      codes: LM058_CURRENT_MODULE_CODES
+    },
+    ...LM058_STRANDS
+  ];
+
+  const renderLm058Sidebar = (modules, educationUrl, explicitKey = '') => {
+    const isEducationPage = /\/education(?:\.html)?$/.test(currentPath);
+    const isModulePage = /\/modules\/[^/]+\.html$/.test(currentPath);
+    if (!isEducationPage && !isModulePage) return;
+
+    const article = document.querySelector('.lm058-shell > .doc-paper') ||
+      document.querySelector('.page-stage > .doc-paper');
+    if (!article) return;
+
+    let shell = article.closest('.lm058-shell');
+    if (!shell) {
+      shell = document.createElement('div');
+      shell.className = 'lm058-shell';
+      article.parentNode.insertBefore(shell, article);
+      shell.appendChild(article);
+    }
+
+    let sidebar = shell.querySelector(':scope > .lm058-module-sidebar');
+    if (!sidebar) {
+      sidebar = document.createElement('aside');
+      sidebar.className = 'lm058-module-sidebar';
+      sidebar.setAttribute('aria-label', 'Financial Mathematics module navigation');
+      shell.insertBefore(sidebar, article);
+    }
+
+    const categories = lm058Categories();
+    const params = new URL(location.href).searchParams;
+    const requestedKey = explicitKey || params.get('strand') || '';
+    const currentModule = modules.find(module => normalisePath(module.href.href) === currentPath);
+    const inferred = currentModule
+      ? LM058_STRANDS.find(strand => strand.codes.includes(currentModule.code))?.key
+      : '';
+    const selected = categories.find(category => category.key === requestedKey) ||
+      categories.find(category => category.key === inferred) ||
+      categories[0];
+
+    const byCode = new Map(modules.map(module => [module.code, module]));
+    const selectedModules = selected.codes.map(code => byCode.get(code)).filter(Boolean);
+
+    sidebar.replaceChildren();
+
+    const head = document.createElement('div');
+    head.className = 'lm058-sidebar-head';
+
+    const eyebrow = document.createElement('span');
+    eyebrow.textContent = 'FIN MATH MODULES';
+
+    const title = document.createElement('strong');
+    title.textContent = selected.sidebarLabel || selected.label;
+
+    head.append(eyebrow, title);
+    sidebar.appendChild(head);
+
+    const nav = document.createElement('nav');
+    selectedModules.forEach(module => {
+      const link = document.createElement('a');
+      const href = new URL(module.href.href);
+      href.searchParams.set('strand', selected.key);
+      link.href = href.href;
+      link.textContent = module.label;
+      if (normalisePath(module.href.href) === currentPath) {
+        link.classList.add('is-active');
+        link.setAttribute('aria-current', 'page');
+      }
+      nav.appendChild(link);
+    });
+
+    if (!selectedModules.length) {
+      const empty = document.createElement('span');
+      empty.className = 'lm058-sidebar-empty';
+      empty.textContent = 'No modules in this group yet.';
+      nav.appendChild(empty);
+    }
+
+    sidebar.appendChild(nav);
+    document.body.classList.add('lm058-navigation-mode');
+  };
+
   const populateModuleMenu = (item, links, pageUrl) => {
     const menu = item.querySelector(':scope > .dropmenu');
     if (!menu) return;
@@ -945,7 +1047,7 @@
       });
 
     menu.replaceChildren();
-    menu.classList.remove('aviation-menu', 'career-menu', 'coursework-menu', 'portfolio-menu');
+    menu.classList.remove('aviation-menu', 'career-menu', 'coursework-menu', 'portfolio-menu', 'lm058-category-menu');
     item.classList.toggle('has-submenu', modules.length > 0);
     item.classList.remove('has-flyout-menu');
     const moduleLabel = item.querySelector(':scope > .navlabel[href]');
@@ -977,50 +1079,42 @@
     const isLm058Menu = /\/education(?:\.html)?$/.test(cleanPagePath);
 
     if (isLm058Menu) {
-      const byCode = new Map(modules.map(module => [module.code, module]));
-      const currentModules = LM058_CURRENT_MODULE_CODES.map(code => byCode.get(code)).filter(Boolean);
-      const currentCodes = new Set(currentModules.map(module => module.code));
+      menu.classList.add('lm058-category-menu');
 
-      if (currentModules.length) {
-        const currentLabel = document.createElement('div');
-        currentLabel.className = 'dropmenu-section-label dropmenu-current-label';
-        currentLabel.textContent = 'Currently underway · Year 3 Semester 1';
-        menu.appendChild(currentLabel);
-        currentModules.forEach(module => appendModuleLink(module, true));
-      }
+      const categories = lm058Categories();
+      const activeKey = /\/education(?:\.html)?$/.test(currentPath)
+        ? (new URL(location.href).searchParams.get('strand') || 'current')
+        : '';
 
-      const groupedCodes = new Set(currentCodes);
-      LM058_STRANDS.forEach(strand => {
-        const strandModules = strand.codes
-          .map(code => byCode.get(code))
-          .filter(module => module && !currentCodes.has(module.code));
+      categories.forEach(category => {
+        const link = document.createElement('a');
+        const href = new URL(pageUrl.href);
+        href.searchParams.set('strand', category.key);
+        href.hash = '';
+        link.href = href.href;
+        link.textContent = category.label;
+        if (category.key === activeKey) link.setAttribute('aria-current', 'page');
 
-        if (!strandModules.length) return;
+        link.addEventListener('click', event => {
+          if (/\/education(?:\.html)?$/.test(currentPath)) {
+            event.preventDefault();
+            const nextUrl = new URL(location.href);
+            nextUrl.searchParams.set('strand', category.key);
+            history.replaceState(null, '', nextUrl.href);
+            menu.querySelectorAll('a[aria-current="page"]').forEach(current => current.removeAttribute('aria-current'));
+            link.setAttribute('aria-current', 'page');
+            renderLm058Sidebar(modules, pageUrl, category.key);
+          }
 
-        const strandLabel = document.createElement('div');
-        strandLabel.className = 'dropmenu-strand-label';
-        strandLabel.setAttribute('role', 'heading');
-        strandLabel.setAttribute('aria-level', '1');
-        strandLabel.textContent = strand.label;
-        menu.appendChild(strandLabel);
-
-        strandModules.forEach(module => {
-          groupedCodes.add(module.code);
-          appendModuleLink(module);
+          item.classList.remove('is-open');
+          item.querySelector('[data-nav-toggle]')?.setAttribute('aria-expanded', 'false');
+          if (window.innerWidth <= 1500) topbar?.classList.remove('nav-open');
         });
+
+        menu.appendChild(link);
       });
 
-      // Safety net for any future LM058 module not yet assigned to a strand.
-      const ungrouped = modules.filter(module => !groupedCodes.has(module.code));
-      if (ungrouped.length) {
-        const otherLabel = document.createElement('div');
-        otherLabel.className = 'dropmenu-strand-label';
-        otherLabel.setAttribute('role', 'heading');
-        otherLabel.setAttribute('aria-level', '1');
-        otherLabel.textContent = 'Other modules';
-        menu.appendChild(otherLabel);
-        ungrouped.forEach(module => appendModuleLink(module));
-      }
+      renderLm058Sidebar(modules, pageUrl);
       return;
     }
 
