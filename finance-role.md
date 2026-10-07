@@ -14,7 +14,7 @@ eyebrow: INTERVIEW DOMAIN · FINANCE
 
 Cashbook is a financial-software company that helps automate finance processes including Accounts Payable, Accounts Receivable, cash application, collections and bank reconciliation.
 
-AP | AR | Cash application | Reconciliation
+AP | AR | Cash Application | Reconciliation
 
 ## What would you be doing as a TIMS Implementation Associate?
 
@@ -38,16 +38,16 @@ Payment | Customer | Invoice | Accurate
 
 Collections means following up and managing amounts owed by customers, helping the business understand and reduce overdue receivables.
 
-Receivables | Follow up | Overdue | Payment
+Receivables | Follow Up | Overdue | Payment
 
 ## What is TIMS?
 
 TIMS is ERP software from Computers Unlimited. Cashbook integrates with TIMS so finance processes such as cash application, Accounts Payable and bank reconciliation can be automated around the customer’s core business system.
 
-ERP | Integration | Finance automation
+ERP | Integration | Finance Automation
 
 ## What is an ERP system?
 
 ERP stands for Enterprise Resource Planning. It is software that brings core business processes and data — such as finance, purchasing, inventory, sales and operations — into an integrated system.
 
-One system | Shared data | Business processes
+One System | Shared Data | Business Processes
