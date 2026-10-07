@@ -26,7 +26,7 @@ Finance | Technology | Customers | Learn | Responsibility
 
 I want co-op to move me from mainly developing my own skills into using them professionally with other people. I want experience of live financial and technology processes, working with experienced colleagues and managing several priorities where accuracy and timeliness matter. I have a strong desire to learn, but I also want to bring professional drive — take direction, absorb information quickly and become someone the team can depend on.
 
-Learn | Professional drive | Priorities | Responsibility
+Learn | Professional Drive | Priorities | Responsibility
 
 ## What do you enjoy most about Financial Maths?
 
