@@ -4,7 +4,7 @@ permalink: /technology.html
 handle: Technology
 title: Technology
 subtitle: How I use and learn technology — Excel, Python, pandas, databases, SQL, AI and projects.
-nav_order: 90
+nav_order: 20
 top_nav: false
 interview_mode: true
 description: Python, pandas, SQL, databases, Excel and technical aptitude for interview preparation.
