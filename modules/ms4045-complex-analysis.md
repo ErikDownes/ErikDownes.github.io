@@ -1,10 +1,6 @@
 ---
 layout: doc
 title: "MS4045 — Complex Analysis"
-code: "MS4045"
-year: "3rd"
-semester: "Sem1"
-status: "Midterm 1"
 eyebrow: "MS4045 · COMPLEX ANALYSIS"
 ---
 
