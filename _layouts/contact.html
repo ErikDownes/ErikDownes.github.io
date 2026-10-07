@@ -194,9 +194,9 @@
         careerItem.classList.add('nav-about', 'nav-about-parent');
         const careerLabel = careerItem.querySelector(':scope > .navlabel[href]');
         const careerSpan = careerLabel?.querySelector('span');
-        if (careerSpan) careerSpan.textContent = 'Career';
-        else if (careerLabel) careerLabel.textContent = 'Career';
-        buildMenu(careerItem, 'about-menu', 'Career', [
+        if (careerSpan) careerSpan.textContent = 'Home';
+        else if (careerLabel) careerLabel.textContent = 'Home';
+        buildMenu(careerItem, 'about-menu', 'Home', [
           { label: 'About Me', href: rootHref },
           { label: 'CV QA', href: new URL('cv-qa.html', rootHref).href },
           { label: 'LM058 · Degree at a Glance', href: new URL('lm058.html', rootHref).href },
@@ -204,7 +204,7 @@
           { label: 'Projects', href: new URL('projects.html', rootHref).href },
           { section: 'Cashbook Interview' },
           { label: 'Cashbook Role Study', href: new URL('cashbook-study.html', rootHref).href },
-          { label: 'Cashbook Job Spec', href: new URL('job-spec.html#cashbook-implementation', rootHref).href },
+          { label: 'Original Cashbook Job Spec', href: new URL('job-spec.html#cashbook-implementation', rootHref).href },
           { section: 'Reference' },
           { label: 'Acronyms & Glossary', href: new URL('glossary.html', rootHref).href },
           { label: 'Contact', href: new URL('contact.html', rootHref).href }
