@@ -17,27 +17,34 @@ window.MathJax.tex = Object.assign({}, window.MathJax.tex || {}, {
   inlineMath: [['<style>
 .ms4045-study-intro{margin:14px 0 26px;padding:18px 20px;border:1px solid #d7e2ea;border-radius:16px;background:#f8fbfd}
 .ms4045-study-intro strong{display:block;color:#173f67;font-size:1.05rem;margin-bottom:4px}
-.ms4045-study-card{margin:28px 0 34px;padding:0 0 22px;border:1px solid #d9e3ea;border-radius:18px;background:#fff;box-shadow:0 5px 18px rgba(30,48,66,.05);overflow:hidden}
-.ms4045-question{padding:22px 24px 10px}
-.ms4045-question h3{margin-top:0;color:#183a5b}
-.ms4045-modebar{display:flex;align-items:center;gap:6px;flex-wrap:wrap;padding:12px 24px 14px;border-top:1px solid #edf1f4;background:#fbfcfd}
+.ms4045-study-card{margin:36px 0 46px;padding:0 0 28px;border:1px solid #d9e3ea;border-radius:18px;background:#fff;box-shadow:0 5px 18px rgba(30,48,66,.05);overflow:hidden}
+.ms4045-question{padding:28px 30px 18px}
+.ms4045-question h3{margin:0 0 22px;color:#183a5b}
+.ms4045-question p{margin:18px 0;line-height:1.8}
+.ms4045-question .ms4045-two-col{gap:34px}
+.ms4045-question .ms4045-two-col>div{display:flex;flex-direction:column;gap:18px}
+.ms4045-question .ms4045-two-col>div>p{margin:0}
+.ms4045-question mjx-container[display="true"]{margin:1.65em 0!important}
+.ms4045-question mjx-container:not([display="true"]){margin-left:.08em;margin-right:.08em}
+.ms4045-modebar{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:16px 30px 18px;border-top:1px solid #edf1f4;background:#fbfcfd}
 .ms4045-modebar>span{margin-right:5px;color:#5a6b78;font-size:.88rem;font-weight:800}
 .ms4045-mode{border:1px solid #cfdbe4;border-radius:999px;background:#fff;color:#31536d;padding:7px 13px;font:inherit;font-size:.88rem;font-weight:850;cursor:pointer}
 .ms4045-mode.is-active{background:#183f67;color:#fff;border-color:#183f67}
-.ms4045-inline-solution{display:none;padding:8px 24px 4px;border-top:1px solid #e5ebef;background:#fcfdfe}
+.ms4045-inline-solution{display:none;padding:18px 30px 10px;border-top:1px solid #e5ebef;background:#fcfdfe}
 .ms4045-inline-solution[data-state="on"],.ms4045-inline-solution[data-state="reveal"]{display:block}
 .ms4045-inline-solution[data-state="reveal"]>.ms4045-step{display:none}
 .ms4045-inline-solution[data-state="reveal"]>.ms4045-step.is-revealed{display:block}
-.ms4045-next-wrap{display:none;align-items:center;gap:12px;padding:10px 24px 4px}
+.ms4045-next-wrap{display:none;align-items:center;gap:14px;padding:18px 30px 8px}
 .ms4045-study-card.is-reveal .ms4045-next-wrap{display:flex}
 .ms4045-next{border:1px solid #183f67;border-radius:999px;background:#fff;color:#183f67;padding:8px 14px;font:inherit;font-weight:850;cursor:pointer}
 .ms4045-next:disabled{opacity:.45;cursor:default}
 .ms4045-step-count{color:#667684;font-size:.86rem}
-.ms4045-inline-solution mjx-container[display="true"]{margin:1.25em 0!important}
-.ms4045-inline-solution p,.ms4045-question p{line-height:1.65}
-.ms4045-inline-solution>.ms4045-step{margin-top:14px;margin-bottom:14px}
-.ms4045-inline-solution>.ms4045-step:first-child{margin-top:4px}
-@media(max-width:760px){.ms4045-question,.ms4045-modebar,.ms4045-inline-solution,.ms4045-next-wrap{padding-left:15px;padding-right:15px}.ms4045-study-card{margin:20px 0 26px}}
+.ms4045-inline-solution mjx-container[display="true"]{margin:1.7em 0!important}
+.ms4045-inline-solution p{line-height:1.8}
+.ms4045-inline-solution>.ms4045-step{margin-top:22px;margin-bottom:22px}
+.ms4045-inline-solution>.ms4045-step:first-child{margin-top:8px}
+.ms4045-inline-solution>.ms4045-step+ .ms4045-step{padding-top:2px}
+@media(max-width:760px){.ms4045-question,.ms4045-modebar,.ms4045-inline-solution,.ms4045-next-wrap{padding-left:18px;padding-right:18px}.ms4045-study-card{margin:26px 0 34px}.ms4045-question .ms4045-two-col{grid-template-columns:1fr;gap:18px}}
 </style>
 
 <p><a href="{{ '/modules/ms4045-complex-analysis.html' | relative_url }}">← MS4045 Complex Analysis</a></p>
