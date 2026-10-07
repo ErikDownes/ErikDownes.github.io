@@ -4255,24 +4255,29 @@ article img.img-full,
   .interview-answer-toggle{font-size:.8rem}
 }
 
-/* Career & Motivation breadcrumbs: full-width visual recall cues. */
+/* Interview breadcrumbs — pipe-delimited recall cues fill the answer width site-wide. */
 .interview-mode .interview-breadcrumbs{
-  display:flex;
-  width:100%;
-  gap:0;
+  display:grid!important;
+  grid-template-columns:repeat(var(--breadcrumb-count,3),minmax(0,1fr))!important;
+  width:100%!important;
+  max-width:none!important;
+  min-width:0!important;
+  box-sizing:border-box!important;
+  margin-left:0!important;
+  margin-right:0!important;
   padding-top:10px!important;
+  justify-self:stretch!important;
 }
 .interview-mode .interview-breadcrumbs span{
   display:flex;
-  flex:1 1 0;
-  min-width:0;
   align-items:center;
   justify-content:center;
-  min-height:38px;
+  min-width:0;
+  min-height:40px;
   padding:8px 10px 0;
   border-top:1px solid #dfe5ea;
   color:#596775;
-  font-size:.88rem;
+  font-size:.86rem;
   font-weight:750;
   line-height:1.2;
   text-align:center;
@@ -4280,11 +4285,15 @@ article img.img-full,
 .interview-mode .interview-breadcrumbs span+span{
   border-left:1px solid #edf0f2;
 }
-@media(max-width:600px){
+@media(max-width:700px){
+  .interview-mode .interview-breadcrumbs{
+    grid-template-columns:repeat(var(--breadcrumb-count,3),minmax(74px,1fr))!important;
+    overflow-x:auto;
+  }
   .interview-mode .interview-breadcrumbs span{
-    padding-left:5px;
-    padding-right:5px;
-    font-size:.78rem;
+    padding-left:6px;
+    padding-right:6px;
+    font-size:.76rem;
   }
 }
 
