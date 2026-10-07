@@ -98,7 +98,7 @@
   </style>
   {% endif %}
 </head>
-<body class="{% if page.study_mode %}study-mode{% endif %}{% if page.profile_mode %} profile-mode{% endif %}{% if page.public_mode %} public-mode{% endif %}{% if page.interview_mode %} interview-mode{% endif %}{% if page.interview_hub %} interview-hub{% endif %}{% if page.cv_mode %} cv-mode{% endif %}{% if page.path == 'coursework.md' %} education-mode{% endif %}">
+<body class="{% if page.study_mode %}study-mode{% endif %}{% if page.profile_mode %} profile-mode{% endif %}{% if page.public_mode %} public-mode{% endif %}{% if page.interview_mode %} interview-mode{% endif %}{% if page.interview_hub %} interview-hub{% endif %}{% if page.cv_mode %} cv-mode{% endif %}{% if page.cashbook_mode %} cashbook-mode{% endif %}{% if page.path == 'coursework.md' %} education-mode{% endif %}">
   <header class="topbar">
     <a class="brand" href="{{ '/' | relative_url }}" aria-label="Erik Downes — Financial Maths and Data Analysis — Home">
       <img src="{{ '/assets/coop-logo.svg' | relative_url }}" alt="Erik Downes — Financial Maths and Data Analysis — University of Limerick">
@@ -147,6 +147,18 @@
           <a{% if page.url == '/cv-qa.html' %} class="is-active" aria-current="page"{% endif %} href="{{ '/cv-qa.html' | relative_url }}">CV QA</a>
           <span class="cv-sidebar-divider" aria-hidden="true"></span>
           <div class="cv-current-sections" id="cvCurrentSections" aria-label="Sections on this page"></div>
+        </nav>
+      </aside>
+    {% elsif page.cashbook_mode %}
+    <div class="cv-shell">
+      <aside class="cv-section-sidebar" aria-label="Cashbook job specification navigation">
+        <nav>
+          <a href="#company">Company</a>
+          <a href="#description">Description</a>
+          <a href="#duties-responsibilities">Duties &amp; Responsibilities</a>
+          <a href="#skills-requirements">Skills &amp; Requirements</a>
+          <a href="#candidate-experience">Candidate Experience</a>
+          <a href="#travel-placement">Travel &amp; Placement</a>
         </nav>
       </aside>
     {% endif %}
@@ -271,7 +283,7 @@
         })();
       </script>
     </article>
-    {% if page.interview_mode or page.interview_hub or page.cv_mode %}
+    {% if page.interview_mode or page.interview_hub or page.cv_mode or page.cashbook_mode %}
     </div>
     {% endif %}
   </main>
