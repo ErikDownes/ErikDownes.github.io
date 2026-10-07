@@ -1,6 +1,7 @@
 (async () => {
   const body = document.getElementById('docBody');
   const isInterviewAccordion = document.body.classList.contains('interview-mode');
+  const isSingleOpenInterview = isInterviewAccordion && /\/qa\.html\/?$/.test(location.pathname);
   const topbar = document.querySelector('.topbar');
   const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
   const synth = window.speechSynthesis;
@@ -1862,7 +1863,20 @@
   const setupInterviewAccordions = () => {
     if (!isInterviewAccordion) return;
 
-    sectionHeadings().forEach(heading => {
+    const headings = sectionHeadings();
+
+    const setOpen = (heading, open) => {
+      if (!heading) return;
+      heading.classList.toggle('is-open', open);
+      heading.setAttribute('aria-expanded', String(open));
+      sourceNodesFor(heading).forEach(node => {
+        if (node.classList.contains('interview-answer-node')) node.hidden = !open;
+      });
+    };
+
+    const notifyChange = () => window.dispatchEvent(new CustomEvent('interview-accordion-change'));
+
+    headings.forEach(heading => {
       const answerNodes = sourceNodesFor(heading);
       if (!answerNodes.length) return;
 
@@ -1878,23 +1892,33 @@
         node.hidden = true;
       });
 
-      const toggle = document.createElement('button');
-      toggle.type = 'button';
-      toggle.className = 'interview-answer-toggle';
-      toggle.textContent = 'Show answer';
-      toggle.setAttribute('aria-label', 'Show answer');
+      let toggle = null;
+      if (!isSingleOpenInterview) {
+        toggle = document.createElement('button');
+        toggle.type = 'button';
+        toggle.className = 'interview-answer-toggle';
+        toggle.textContent = 'Show answer';
+        toggle.setAttribute('aria-label', 'Show answer');
+        heading.appendChild(toggle);
+      }
 
-      const setOpen = open => {
-        heading.classList.toggle('is-open', open);
-        heading.setAttribute('aria-expanded', String(open));
-        answerNodes.forEach(node => { node.hidden = !open; });
-        toggle.textContent = open ? 'Hide answer' : 'Show answer';
-        toggle.setAttribute('aria-label', open ? 'Hide answer' : 'Show answer');
+      const applyOpen = open => {
+        if (isSingleOpenInterview && open) {
+          headings.forEach(other => setOpen(other, other === heading));
+          document.body.classList.remove('interview-all-open');
+        } else {
+          setOpen(heading, open);
+        }
+        if (toggle) {
+          toggle.textContent = open ? 'Hide answer' : 'Show answer';
+          toggle.setAttribute('aria-label', open ? 'Hide answer' : 'Show answer');
+        }
+        notifyChange();
       };
 
-      const flip = () => setOpen(heading.getAttribute('aria-expanded') !== 'true');
+      const flip = () => applyOpen(heading.getAttribute('aria-expanded') !== 'true');
 
-      toggle.addEventListener('click', event => {
+      toggle?.addEventListener('click', event => {
         event.preventDefault();
         event.stopPropagation();
         flip();
@@ -1911,9 +1935,20 @@
         event.preventDefault();
         flip();
       });
-
-      heading.appendChild(toggle);
     });
+
+    if (isSingleOpenInterview) {
+      window.coopInterviewAccordion = {
+        setAllOpen(open) {
+          headings.forEach(heading => setOpen(heading, open));
+          document.body.classList.toggle('interview-all-open', open);
+          notifyChange();
+        },
+        openHeadings() {
+          return headings.filter(heading => heading.getAttribute('aria-expanded') === 'true');
+        }
+      };
+    }
   };
 
   setupInterviewAccordions();
@@ -2568,6 +2603,30 @@
     let answersVisible = true;
     const questions = practiceHeadings();
     const accordionInterview = isInterviewAccordion;
+
+    if (isSingleOpenInterview) {
+      const expandAll = document.createElement('button');
+      expandAll.id = 'floating-page-expand-all';
+      expandAll.type = 'button';
+
+      const syncExpandAll = () => {
+        const headings = sectionHeadings();
+        const allOpen = headings.length > 0 && headings.every(heading => heading.getAttribute('aria-expanded') === 'true');
+        expandAll.textContent = allOpen ? 'Collapse all' : 'Expand all';
+        expandAll.setAttribute('aria-label', allOpen ? 'Collapse all answers' : 'Expand all answers');
+        expandAll.title = allOpen ? 'Collapse all answers' : 'Expand all answers';
+      };
+
+      expandAll.addEventListener('click', () => {
+        const headings = sectionHeadings();
+        const allOpen = headings.length > 0 && headings.every(heading => heading.getAttribute('aria-expanded') === 'true');
+        window.coopInterviewAccordion?.setAllOpen(!allOpen);
+        syncExpandAll();
+      });
+      window.addEventListener('interview-accordion-change', syncExpandAll);
+      syncExpandAll();
+      rail.appendChild(expandAll);
+    }
     // Shared by Listen and Random; dropdown visibility does not change the page selection.
     const currentHeading = () => {
       const headings = Array.from(body.querySelectorAll(':scope > h1, :scope > h2'));
@@ -2593,17 +2652,36 @@
           return style.display !== 'none' && style.visibility !== 'hidden' && !element.hidden;
         };
 
-        const start = currentHeading();
-        const nodes = Array.from(body.children);
-        const startIndex = start ? Math.max(0, nodes.indexOf(start)) : 0;
-        const text = nodes
-          .slice(startIndex)
-          .filter(visible)
-          .map(node => node.innerText || node.textContent || '')
-          .join(' ')
-          .replace(/\s+/g, ' ')
-          .trim();
+        let text = '';
 
+        if (isSingleOpenInterview) {
+          const openHeadings = window.coopInterviewAccordion?.openHeadings?.() || [];
+          if (openHeadings.length) {
+            text = openHeadings
+              .map(heading => {
+                const question = heading.dataset.questionText || cleanText(heading.textContent);
+                const answer = sourceNodesFor(heading)
+                  .filter(visible)
+                  .map(node => node.innerText || node.textContent || '')
+                  .join(' ');
+                return `${question}. ${answer}`;
+              })
+              .join(' ');
+          }
+        }
+
+        if (!text) {
+          const start = currentHeading();
+          const nodes = Array.from(body.children);
+          const startIndex = start ? Math.max(0, nodes.indexOf(start)) : 0;
+          text = nodes
+            .slice(startIndex)
+            .filter(visible)
+            .map(node => node.innerText || node.textContent || '')
+            .join(' ');
+        }
+
+        text = text.replace(/\s+/g, ' ').trim();
         speak({ text, button: listen, rate: answersVisible ? 0.92 : 0.89 });
       });
       rail.appendChild(listen);
