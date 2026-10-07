@@ -8,6 +8,7 @@ nav_order: 16
 top_nav: false
 description: CV drill page for checking that every claim, tool, technical term and example in Erik's CV can be explained clearly in interview.
 eyebrow: CV QA · KNOW EVERY CLAIM · EXPLAIN EVERY TOOL · DEFEND EVERY EXAMPLE
+cv_mode: true
 ---
 
 > **How to use this page:** start with the whole CV block, answer the broad question, then work down through the pick-up questions at finer and finer granularity. Where the CV does not actually contain enough detail, the page says **Need detail from Erik/Ronan** rather than inventing an answer.\n\n**Rule:** if it is written on the CV, be ready to explain **what it means, what you actually did, what tool you used, why you used it and what the result was**.
