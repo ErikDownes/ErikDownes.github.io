@@ -98,7 +98,7 @@
   </style>
   {% endif %}
 </head>
-<body class="{% if page.study_mode %}study-mode{% endif %}{% if page.profile_mode %} profile-mode{% endif %}{% if page.public_mode %} public-mode{% endif %}{% if page.interview_mode %} interview-mode{% endif %}{% if page.interview_hub %} interview-hub{% endif %}{% if page.path == 'coursework.md' %} education-mode{% endif %}">
+<body class="{% if page.study_mode %}study-mode{% endif %}{% if page.profile_mode %} profile-mode{% endif %}{% if page.public_mode %} public-mode{% endif %}{% if page.interview_mode %} interview-mode{% endif %}{% if page.interview_hub %} interview-hub{% endif %}{% if page.cv_mode %} cv-mode{% endif %}{% if page.path == 'coursework.md' %} education-mode{% endif %}">
   <header class="topbar">
     <a class="brand" href="{{ '/' | relative_url }}" aria-label="Erik Downes — Financial Maths and Data Analysis — Home">
       <img src="{{ '/assets/coop-logo.svg' | relative_url }}" alt="Erik Downes — Financial Maths and Data Analysis — University of Limerick">
@@ -137,6 +137,16 @@
           <a{% if page.url == '/initiative.html' %} class="is-active" aria-current="page"{% endif %} href="{{ '/initiative.html' | relative_url }}">Initiative</a>
           <a{% if page.url == '/technology.html' %} class="is-active" aria-current="page"{% endif %} href="{{ '/technology.html' | relative_url }}">Technology</a>
           <a{% if page.url == '/finance-role.html' %} class="is-active" aria-current="page"{% endif %} href="{{ '/finance-role.html' | relative_url }}">Finance</a>
+        </nav>
+      </aside>
+    {% elsif page.cv_mode %}
+    <div class="cv-shell">
+      <aside class="cv-section-sidebar" aria-label="CV navigation">
+        <nav>
+          <a{% if page.url == '/pivotal-corporate-study.html' %} class="is-active" aria-current="page"{% endif %} href="{{ '/pivotal-corporate-study.html' | relative_url }}">CV</a>
+          <a{% if page.url == '/cv-qa.html' %} class="is-active" aria-current="page"{% endif %} href="{{ '/cv-qa.html' | relative_url }}">CV QA</a>
+          <span class="cv-sidebar-divider" aria-hidden="true"></span>
+          <div class="cv-current-sections" id="cvCurrentSections" aria-label="Sections on this page"></div>
         </nav>
       </aside>
     {% endif %}
@@ -231,10 +241,37 @@
             }
           });
           if (moduleToc && moduleTocList && moduleTocList.children.length) moduleToc.hidden = false;
+
+          if (document.body.classList.contains('cv-mode')) {
+            const cvNav = document.getElementById('cvCurrentSections');
+            if (cvNav) {
+              const sectionIds = new Set();
+              body.querySelectorAll(':scope > h2').forEach((heading, index) => {
+                const label = heading.dataset.menuLabel || heading.textContent.replace(/\s+/g, ' ').trim();
+                if (!label) return;
+                if (!heading.id) {
+                  let slug = label.toLowerCase().normalize('NFKD').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '') || `section-${index + 1}`;
+                  let uniqueSlug = slug;
+                  let suffix = 2;
+                  while (sectionIds.has(uniqueSlug) || document.getElementById(uniqueSlug)) uniqueSlug = `${slug}-${suffix++}`;
+                  heading.id = uniqueSlug;
+                }
+                sectionIds.add(heading.id);
+                const link = document.createElement('a');
+                link.href = `#${heading.id}`;
+                link.textContent = label;
+                link.addEventListener('click', () => {
+                  cvNav.querySelectorAll('a').forEach(item => item.classList.remove('is-section-active'));
+                  link.classList.add('is-section-active');
+                });
+                cvNav.appendChild(link);
+              });
+            }
+          }
         })();
       </script>
     </article>
-    {% if page.interview_mode or page.interview_hub %}
+    {% if page.interview_mode or page.interview_hub or page.cv_mode %}
     </div>
     {% endif %}
   </main>
