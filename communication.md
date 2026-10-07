@@ -4,7 +4,7 @@ permalink: /communication.html
 handle: Communication
 title: Communication
 subtitle: How I explain, listen, adapt to an audience, handle feedback and make information useful.
-nav_order: 40
+nav_order: 70
 top_nav: false
 interview_mode: true
 description: Communication, customer communication and feedback interview preparation.
