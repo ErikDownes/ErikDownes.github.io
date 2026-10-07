@@ -2,98 +2,154 @@
 layout: doc
 permalink: /job-spec.html
 handle: Job Spec
-description: Cashbook and HSE Mid-West Co-Op job specifications.
-eyebrow: CASHBOOK · HSE MID-WEST · CO-OP
+description: Original Cashbook Implementation Associate (TIMS team) job specification, followed by the HSE Mid-West Co-Op Finance specification.
+eyebrow: ORIGINAL JOB SPECIFICATIONS
 public_mode: true
-title: Job Spec
+title: Job Specifications
+subtitle: Original wording · editable text version
 ---
-# Cashbook Job Spec
 
-Cashbook Limited – Implementation Associate (TIMS team)
+<style>
+.original-job-spec-wrap{
+  max-width:860px;
+  margin:18px auto 72px;
+}
+.original-job-spec-note{
+  margin:0 0 14px;
+  color:#5f6368;
+  font-size:.92rem;
+}
+.original-job-spec{
+  background:#fff;
+  border:1px solid #e0e0e0;
+  box-shadow:0 1px 3px rgba(60,64,67,.10);
+  padding:30px 38px 36px;
+  color:#202124;
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:15px;
+  line-height:1.34;
+}
+.original-job-spec .cashbook-mark{
+  text-align:center;
+  margin:0 0 30px;
+}
+.original-job-spec .cashbook-word{
+  display:block;
+  font-size:25px;
+  line-height:1;
+  font-weight:800;
+  letter-spacing:.24em;
+  color:#30343b;
+}
+.original-job-spec .cashbook-bookmark{
+  display:block;
+  width:12px;
+  height:12px;
+  margin:8px auto 0;
+  background:#f9bd22;
+  clip-path:polygon(0 0,100% 0,100% 100%,50% 72%,0 100%);
+}
+.original-job-spec .role-title{
+  margin:0;
+  text-align:center;
+  color:#23566d;
+  font-size:18px;
+  font-weight:700;
+}
+.original-job-spec .role-dates{
+  margin:18px 0 32px;
+  text-align:center;
+  color:#23566d;
+  font-size:16px;
+  font-weight:700;
+}
+.original-job-spec p{
+  margin:0 0 20px;
+}
+.original-job-spec .spec-section{
+  margin-top:22px;
+}
+.original-job-spec .spec-section-title{
+  margin:0 0 14px;
+  font-weight:700;
+}
+.original-job-spec ul{
+  margin:0 0 22px 22px;
+  padding-left:18px;
+}
+.original-job-spec li{
+  margin:3px 0;
+  padding-left:4px;
+}
+.original-job-spec .final-line{
+  margin-top:26px;
+}
+@media(max-width:700px){
+  .original-job-spec{padding:24px 20px 28px;font-size:14px}
+  .original-job-spec .cashbook-word{font-size:22px}
+}
+</style>
 
-## Cashbook Interview
+<div class="original-job-spec-wrap" id="cashbook-implementation">
+  <p class="original-job-spec-note"><strong>Original Job Specification</strong> · text version</p>
 
-**Wednesday 7 October 2026 · 1:00 PM Online**
+  <section class="original-job-spec" aria-label="Cashbook original job specification">
+    <div class="cashbook-mark" aria-label="Cashbook">
+      <span class="cashbook-word">CASHBOOK</span>
+      <span class="cashbook-bookmark" aria-hidden="true"></span>
+    </div>
 
-### Placement Period
+    <p class="role-title">Implementation Associate (TIMS team)</p>
+    <p class="role-dates">Job Spec: Jan - Aug 2027</p>
 
-**January – August 2027**
+    <p><strong>Company:</strong> Cashbook is an Irish software company, based in the Technology Park in Limerick. We have an international customer base. We sell financial software which automates key financial processes such as Accounts Payable, Accounts Receivable and Bank Reconciliation.</p>
 
-## Company
+    <p><strong>Description:</strong> We are looking for an Implementation Associate to join our TIMS team. The successful candidate will be highly focused, a good communicator, a team player, dedicated, hard-working and analytical. The candidate will be in the process of completing a financial mathematics degree. They will support the daily implementations and support activities of the TIMS team and will be involved in some larger projects during the placement. This position reports to the to the TIMS Implementation Director as a junior business consultant.</p>
 
-Cashbook is an Irish software company, based in the Technology Park in Limerick. We have an international customer base. We sell financial software which automates key financial processes such as Accounts Payable, Accounts Receivable and Bank Reconciliation. 
+    <div class="spec-section">
+      <p class="spec-section-title">Duties and Responsibilities:</p>
+      <ul>
+        <li>Support the TIMS Implementation team in daily administrative tasks.</li>
+        <li>Learn the basics of Cash Application, Bank Reconciliation and Collections</li>
+        <li>Assist the TIMS team on Lockbox development and assist in the application of Lockboxes</li>
+        <li>Work alongside customers to achieve higher rates of automation in Bank Reconciliation</li>
+      </ul>
+    </div>
 
-## Description
+    <div class="spec-section">
+      <p class="spec-section-title">Skills and Requirements:</p>
+      <ul>
+        <li>Strong desire to learn along with a professional drive.</li>
+        <li>Excellent multitasking and organisational abilities.</li>
+        <li>Ability to take direction and absorb information quickly.</li>
+        <li>Basic finance knowledge</li>
+        <li>Aptitude for IT/technical concepts</li>
+      </ul>
+    </div>
 
- We are looking for an Implementation Associate to join our TIMS team. The successful candidate will be highly focused, a good communicator, a team player, dedicated, hard-working and analytical. The candidate will be in the process of completing a financial mathematics degree. They will support the daily implementations and support activities of the TIMS team and will be involved in some larger projects during the placement. This position reports to the to the TIMS Implementation Director as a junior business consultant.
+    <div class="spec-section">
+      <p class="spec-section-title">The candidate will get a great experience in:</p>
+      <ul>
+        <li>International finance processes</li>
+        <li>Basic accounting principles</li>
+        <li>Bank Reconciliation, Cash Application and Collections processes in particular</li>
+        <li>Microsoft SQL</li>
+        <li>Excel</li>
+        <li>Best practice in American manufacturing activities</li>
+        <li>Experience in an indigenous Fintech company with customers worldwide</li>
+        <li>Working with upper management in a flat organisational structure</li>
+        <li>Communicating and troubleshooting with customers</li>
+        <li>Customer tutorial training videos</li>
+        <li>Analysing application errors and liaising with IT to debug</li>
+        <li>AI Tools</li>
+      </ul>
+    </div>
 
-## Duties and Responsibilities:
+    <p>Travel may be required within Ireland or internationally to events and customers.</p>
 
-- Support the TIMS Implementation team in daily administrative tasks.
-- Learn the basics of Cash Application, Bank Reconciliation and Collections
-- Assist the TIMS team on Lockbox development and assist in the application of Lockboxes
-- Work alongside customers to achieve higher rates of automation in Bank Reconciliation
-
-
-
-**TIMS — Total Information Management System:** The flagship business and **ERP (Enterprise Resource Planning)** software from Computers Unlimited. Cashbook integrates with TIMS to automate finance processes including cash application, accounts payable, bank reconciliation, deductions and collections.
-
-
-
-**ERP — Enterprise Resource Planning:** Business software that brings core processes such as finance, accounting, purchasing, inventory and operations together in one integrated system.
-
-## Skills and Requirements:
-
-- Strong desire to learn along with a professional drive.
-- Excellent multitasking and organisational abilities.
-- Ability to take direction and absorb information quickly.
-- Basic finance knowledge
-- Aptitude for IT/technical concepts
-
-## The candidate will get a great experience in:
-
-- International finance processes
-- Basic accounting principles
-- Bank Reconciliation, Cash Application and Collections processes in particular
-- Microsoft SQL
-- Excel
-- Best practice in American manufacturing activities
-- Experience in an indigenous Fintech company with customers worldwide
-- Working with upper management in a flat organisational structure
-- Communicating and troubleshooting with customers
-- Customer tutorial training videos
-- Analysing application errors and liaising with IT to debug
-- AI Tools
-
-Travel may be required within Ireland or internationally to events and customers.
-
-**This is a full-time paid placement for the period of internship:** 5 days and 39hrs per week.
-
-
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
+    <p class="final-line"><strong>This is a full-time paid placement for the period of internship:</strong> 5 days and 39hrs per week.</p>
+  </section>
+</div>
 
 &nbsp;
 
