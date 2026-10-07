@@ -2,10 +2,6 @@
 layout: doc
 title: "MS4045 — Worksheet 2"
 handle: "Worksheet 2"
-code: "MS4045"
-year: "3rd"
-semester: "Sem1"
-status: "Midterm 1"
 eyebrow: "MS4045 · MIDTERM 1 · WORKSHEET 2"
 mathjax: true
 mathjax_dollar: true
@@ -14,6 +10,8 @@ mathjax_dollar: true
 {% include ms4045-styles.html %}
 
 <style>
+.doc-paper > h1{display:none}
+.doc-paper > .doc-kicker{display:none}
 .worksheet-actions{display:flex;flex-wrap:wrap;gap:9px;align-items:center;margin:0 0 16px}
 .worksheet-actions a{padding:8px 11px;border:1px solid #d3dde5;border-radius:999px;background:#fff;text-decoration:none!important;font-weight:750}
 .worksheet-modebar{position:sticky;top:72px;z-index:12;display:flex;align-items:center;gap:7px;flex-wrap:wrap;margin:0 0 18px;padding:10px 12px;border:1px solid #d8e1e8;border-radius:12px;background:rgba(250,252,253,.96);backdrop-filter:blur(7px)}
