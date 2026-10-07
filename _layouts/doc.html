@@ -98,7 +98,7 @@
   </style>
   {% endif %}
 </head>
-<body class="{% if page.study_mode %}study-mode{% endif %}{% if page.profile_mode %} profile-mode{% endif %}{% if page.public_mode %} public-mode{% endif %}{% if page.path == 'coursework.md' %} education-mode{% endif %}">
+<body class="{% if page.study_mode %}study-mode{% endif %}{% if page.profile_mode %} profile-mode{% endif %}{% if page.public_mode %} public-mode{% endif %}{% if page.interview_mode %} interview-mode{% endif %}{% if page.interview_hub %} interview-hub{% endif %}{% if page.path == 'coursework.md' %} education-mode{% endif %}">
   <header class="topbar">
     <a class="brand" href="{{ '/' | relative_url }}" aria-label="Erik Downes — Financial Maths and Data Analysis — Home">
       <img src="{{ '/assets/coop-logo.svg' | relative_url }}" alt="Erik Downes — Financial Maths and Data Analysis — University of Limerick">
@@ -127,6 +127,19 @@
 
 
   <main class="page-stage">
+    {% if page.interview_mode or page.interview_hub %}
+    <div class="interview-shell">
+      <aside class="interview-domain-sidebar" aria-label="Interview domains">
+        <nav>
+          <a{% if page.url == '/qa.html' %} class="is-active" aria-current="page"{% endif %} href="{{ '/qa.html' | relative_url }}">Motivation</a>
+          <a{% if page.url == '/people.html' %} class="is-active" aria-current="page"{% endif %} href="{{ '/people.html' | relative_url }}">Teamwork</a>
+          <a{% if page.url == '/analytics.html' %} class="is-active" aria-current="page"{% endif %} href="{{ '/analytics.html' | relative_url }}">Analytics</a>
+          <a{% if page.url == '/initiative.html' %} class="is-active" aria-current="page"{% endif %} href="{{ '/initiative.html' | relative_url }}">Initiative</a>
+          <a{% if page.url == '/technology.html' %} class="is-active" aria-current="page"{% endif %} href="{{ '/technology.html' | relative_url }}">Technology</a>
+          <a{% if page.url == '/finance-role.html' %} class="is-active" aria-current="page"{% endif %} href="{{ '/finance-role.html' | relative_url }}">Finance</a>
+        </nav>
+      </aside>
+    {% endif %}
     <article class="doc-paper">
       {% if page.eyebrow and page.eyebrow != "" %}<p class="doc-kicker">{{ page.eyebrow }}</p>{% endif %}
       <h1>{{ page_display_title }}</h1>
@@ -221,6 +234,9 @@
         })();
       </script>
     </article>
+    {% if page.interview_mode or page.interview_hub %}
+    </div>
+    {% endif %}
   </main>
 
   <script src="{{ '/assets/practice.js' | relative_url }}?v={{ site.github.build_revision }}"></script>
