@@ -4255,10 +4255,12 @@ article img.img-full,
   .interview-answer-toggle{font-size:.8rem}
 }
 
-/* Interview breadcrumbs — pipe-delimited recall cues fill the answer width site-wide. */
+/* Interview breadcrumbs — recall cues always spread across the full answer width. */
 .interview-mode .interview-breadcrumbs{
-  display:grid!important;
-  grid-template-columns:repeat(var(--breadcrumb-count,3),minmax(0,1fr))!important;
+  display:flex!important;
+  align-items:stretch!important;
+  justify-content:space-between!important;
+  gap:0!important;
   width:100%!important;
   max-width:none!important;
   min-width:0!important;
@@ -4266,10 +4268,10 @@ article img.img-full,
   margin-left:0!important;
   margin-right:0!important;
   padding-top:10px!important;
-  justify-self:stretch!important;
 }
 .interview-mode .interview-breadcrumbs span{
-  display:flex;
+  display:flex!important;
+  flex:1 1 0!important;
   align-items:center;
   justify-content:center;
   min-width:0;
@@ -4287,10 +4289,10 @@ article img.img-full,
 }
 @media(max-width:700px){
   .interview-mode .interview-breadcrumbs{
-    grid-template-columns:repeat(var(--breadcrumb-count,3),minmax(74px,1fr))!important;
     overflow-x:auto;
   }
   .interview-mode .interview-breadcrumbs span{
+    flex:1 0 74px!important;
     padding-left:6px;
     padding-right:6px;
     font-size:.76rem;
