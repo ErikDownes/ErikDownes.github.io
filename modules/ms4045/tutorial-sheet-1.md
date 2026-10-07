@@ -55,28 +55,28 @@ finmath_current: true
 ### (1)
 
 Assume
-\[
+$$
 z=a+ib.
-\]
+$$
 
 Determine whether each equality is correct. For those that are not, give a counterexample and, wherever possible, correct them.
 
 <div class="ms4045-two-col" markdown="1">
 
 <div markdown="1">
-**(a)** \(\operatorname{Re}z=a\)
+**(a)** $\operatorname{Re}z=a$
 
-**(b)** \(\operatorname{Im}z=ib\)
+**(b)** $\operatorname{Im}z=ib$
 
-**(c)** \(\lvert z\rvert=\sqrt{a^2+(ib)^2}\)
+**(c)** $\lvert z\rvert=\sqrt{a^2+(ib)^2}$
 </div>
 
 <div markdown="1">
-**(d)** \((z-1)(z-1)^*=(z-1)(z^*+1)\)
+**(d)** $(z-1)(z-1)^*=(z-1)(z^*+1)$
 
-**(e)** \(\lvert e^z\rvert=e^{\lvert z\rvert}\)
+**(e)** $\lvert e^z\rvert=e^{\lvert z\rvert}$
 
-**(f)** \(\lvert e^{iz}\rvert=\sqrt{(e^{iz})^2}\)
+**(f)** $\lvert e^{iz}\rvert=\sqrt{(e^{iz})^2}$
 </div>
 
 </div>
@@ -88,11 +88,11 @@ Determine whether each equality is correct. For those that are not, give a count
   <div markdown="1">
 ### (2)
 
-\[
+$$
 \text{(a)}\quad \frac{1+3i}{3-i},
 \qquad
 \text{(b}^+\text{)}\quad \frac{3-i}{1+3i}.
-\]
+$$
   </div>
 </section>
 
@@ -101,14 +101,14 @@ Determine whether each equality is correct. For those that are not, give a count
   <div markdown="1">
 ### (3)
 
-\[
+$$
 \text{(a)}\quad \overline{z_1z_2}=\overline{z_1}\,\overline{z_2},
 \qquad
 \text{(b}^+\text{)}\quad
 \overline{\frac{z_1}{z_2}}
 =
 \frac{\overline{z_1}}{\overline{z_2}}.
-\]
+$$
   </div>
 </section>
 
@@ -128,14 +128,14 @@ Prove **Theorem 1.2**, filling all the gaps in the proof presented in the lectur
 
 Prove each identity twice: first using the polar representation of complex numbers, then without using it.
 
-\[
+$$
 \text{(a)}\quad \lvert z_1z_2\rvert=\lvert z_1\rvert\lvert z_2\rvert,
 \qquad
 \text{(b}^+\text{)}\quad
 \left\lvert\frac{z_1}{z_2}\right\rvert
 =
 \frac{\lvert z_1\rvert}{\lvert z_2\rvert}.
-\]
+$$
   </div>
 </section>
 
@@ -153,9 +153,9 @@ Prove **Theorems 1.3 and 1.4**.
   <div markdown="1">
 ### (7)
 
-Let \(z=x+iy\). Express each quantity in terms of \(x\) and \(y\).
+Let $z=x+iy$. Express each quantity in terms of $x$ and $y$.
 
-\[
+$$
 \begin{aligned}
 \text{(a)}&\quad \operatorname{Im}\!\left(\frac1z\right), &
 \text{(b}^+\text{)}&\quad \operatorname{Im}\!\left(\frac1{z^2}\right),\\[4pt]
@@ -164,7 +164,7 @@ Let \(z=x+iy\). Express each quantity in terms of \(x\) and \(y\).
 \text{(e)}&\quad \operatorname{Re}\!\left(\frac{z}{z^*}\right), &
 \text{(f}^+\text{)}&\quad \operatorname{Im}\!\left(\frac1{(z^*)^2}\right).
 \end{aligned}
-\]
+$$
   </div>
 </section>
 
@@ -173,9 +173,9 @@ Let \(z=x+iy\). Express each quantity in terms of \(x\) and \(y\).
   <div markdown="1">
 ### (8)
 
-Assume \(r=\lvert z\rvert\) and \(\theta=\arg z\). Graph \(z\) in the complex plane and express it as \(x+iy\).
+Assume $r=\lvert z\rvert$ and $\theta=\arg z$. Graph $z$ in the complex plane and express it as $x+iy$.
 
-\[
+$$
 \begin{aligned}
 \text{(a)}&\ r=1,\ \theta=\frac\pi2, &
 \text{(b}^+\text{)}&\ r=1,\ \theta=-\frac\pi2, &
@@ -187,7 +187,7 @@ Assume \(r=\lvert z\rvert\) and \(\theta=\arg z\). Graph \(z\) in the complex pl
 \text{(h)}&\ r=2,\ \theta=\frac{3\pi}{2}, &
 \text{(i}^+\text{)}&\ r=3,\ \theta=-\frac{13\pi}{6}.
 \end{aligned}
-\]
+$$
   </div>
 </section>
 
@@ -197,23 +197,23 @@ Assume \(r=\lvert z\rvert\) and \(\theta=\arg z\). Graph \(z\) in the complex pl
 ### (9*)
 
 For
-\[
+$$
 z=x+iy,
-\]
-relate \(\operatorname{Arg}z\) to
-\[
+$$
+relate $\operatorname{Arg}z$ to
+$$
 \arcsin\!\left(\frac{y}{\sqrt{x^2+y^2}}\right).
-\]
+$$
 
 **Hint 1.** Here and everywhere in this module,
-\[
+$$
 \sqrt{\text{positive real number}}>0.
-\]
+$$
 
 **Hint 2.**
-\[
+$$
 -\frac\pi2\le \arcsin a\le \frac\pi2.
-\]
+$$
 
 **Hint 3.** Consider one quadrant of the complex plane at a time.
   </div>
@@ -224,9 +224,9 @@ relate \(\operatorname{Arg}z\) to
   <div markdown="1">
 ### (10)
 
-Show the sets of points \(z\) satisfying:
+Show the sets of points $z$ satisfying:
 
-\[
+$$
 \begin{aligned}
 \text{(a)}&\ \operatorname{Re}z=1, &
 \text{(b}^+\text{)}&\ \operatorname{Im}z=2, &
@@ -239,7 +239,7 @@ Show the sets of points \(z\) satisfying:
 \text{(i)}&\ \operatorname{Arg}z=\frac\pi2, &
 \text{(k}^+\text{)}&\ \arg\bar z=\frac\pi3.
 \end{aligned}
-\]
+$$
   </div>
 </section>
 
@@ -261,13 +261,13 @@ Prove **Theorem 1.1**.
 
 Find all solutions. Give both polar and Cartesian forms and sketch the solutions in the complex plane.
 
-\[
+$$
 \text{(a)}\quad w^2=-i,
 \qquad
 \text{(b)}\quad w^3=1,
 \qquad
 \text{(c)}\quad w^4=1.
-\]
+$$
   </div>
 </section>
 
@@ -278,11 +278,11 @@ Find all solutions. Give both polar and Cartesian forms and sketch the solutions
 
 Find all solutions. Give both polar and Cartesian forms and sketch some of them in the complex plane.
 
-\[
+$$
 \text{(a)}\quad e^w=i,
 \qquad
 \text{(b)}\quad e^w=-1-i.
-\]
+$$
   </div>
 </section>
 
