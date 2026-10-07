@@ -165,6 +165,10 @@ cv_mode: true
 
 ### Pricing problem | Why did you involve a manager?
 
+### Feedback | Tell me about a time you received corrective feedback.
+
+**Answer:** Early in my TY placement at Mr Price, my manager corrected me on punctuality after breaks; I accepted it, understood the effect on the team, and changed my routine immediately.
+
 ### Know your audience | What does “know your audience” mean?
 
 ### Articulation | What does articulation mean?
