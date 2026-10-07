@@ -5,7 +5,7 @@ handle: Cashbook
 title: Cashbook
 subtitle: Original Job Specification · Implementation Associate (TIMS team) · Jan–Aug 2027
 nav_order: 25
-top_nav: true
+top_nav: false
 cashbook_mode: true
 public_mode: true
 description: Original Cashbook Implementation Associate (TIMS team) job specification.
