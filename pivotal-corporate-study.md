@@ -12,7 +12,7 @@ eyebrow: CV · UL EVIDENCE · EXPERIENCE · ACHIEVEMENTS
 public_mode: true
 cv_mode: true
 ---
-## Teamwork
+## Teamwork | Teamwork
 
 During my TY placement at Mr Price, I worked as part of a large team reorganising the shop floor and redesigning the shelf layout. It was an all-hands-on-deck project, and everyone was encouraged to contribute ideas outside their normal role.
 
@@ -30,7 +30,7 @@ Together, those experiences reinforced three elements of successful teamwork for
 
 
 
-## Communication Skills
+## Communication | Communication Skills
 
 My retail, logistics and university experience has developed strong written and verbal communication skills. At O’Mahony’s, I work with orders, invoices, dispatch information, colleagues and client libraries, so information needs to be clear, accurate and appropriate to the person receiving it. At Mr Price, I learned to listen to customers, verify the facts and involve the appropriate manager when resolving a pricing problem.
 
@@ -44,7 +44,7 @@ I am also conscious that good communication includes knowing what information sh
 
 For me, good communication means making information accurate, accessible, appropriately presented, properly referenced and useful to the person who needs it.
 
-## Problem Solving and Analytics
+## Analytics | Problem Solving and Analytics
 
 Financial Mathematics has developed my analytical approach across mathematics, statistics, finance, accounting, modelling and data analysis. I like identifying differences, checking assumptions and working systematically until the result can be trusted.
 
@@ -54,7 +54,7 @@ For larger data, my Dublin Bikes project involved about 55 million station-statu
 
 
 
-## Using Initiative
+## Initiative | Using Initiative
 
 I try to look beyond the immediate task and ask whether the underlying process can be improved. At O’Mahony’s, I was working from printed Booksolve order reports that were point-in-time snapshots and could become outdated as information changed. After an inconsistency contributed to books being sent to the wrong customer, I helped resolve the immediate issue with the customers involved, but I also wanted to understand why it had happened rather than treating it as a one-off mistake.
 
@@ -66,7 +66,7 @@ I also try to use open-source and freely available technology where it is approp
 
 I bring initiative through curiosity, ownership, responsible follow-through and a willingness to learn quickly. For me, initiative is not simply having an idea; it is identifying what could be improved, finding and learning the right tools, following the solution through and, where possible, making the result useful to other people as well.
 
-## Projects, Portfolio and Volunteering
+## Projects | Projects, Portfolio and Volunteering
 
 I maintain a personal project portfolio at [https://erikdownes.github.io](https://erikdownes.github.io), where I apply university learning to practical finance and data problems.
 
@@ -78,7 +78,7 @@ My PCP car-finance calculator came from a real decision my mother was making bet
 
 I use AI for research, coding and debugging, while checking source data, testing outputs and taking responsibility for the final result.
 
-## Additional Information
+## Additional | Additional Information
 
 I chose Financial Mathematics because maths and technology had increasingly come together for me by the end of secondary school. I was always drawn to maths and wanted a university course with a broad range of mathematical subjects, so putting Financial Mathematics in UL first on my CAO was an easy choice.
 
