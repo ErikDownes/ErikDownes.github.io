@@ -9,7 +9,7 @@ eyebrow: INTERACTIVE PROJECTS
 public_mode: true
 ---
 
-Open a project to see the working output first, followed by the analytical explanation.
+Projects turn mathematics, finance, data and software into something practical and inspectable. Each one starts with a clear question and develops into a working analysis, model, dashboard or calculator.\n\nOpen a project to see the output first, then the method behind it.
 
 <style>
 .doc-paper{
