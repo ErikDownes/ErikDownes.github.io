@@ -564,7 +564,6 @@
 
     const links = [
       { label: 'About Me', href: rootHref },
-      { label: 'CV QA', href: new URL('cv-qa.html', rootHref).href },
       { label: 'LM058 · Degree at a Glance', href: new URL('lm058.html', rootHref).href },
       { label: 'Results', href: new URL('academic-record.html', rootHref).href },
       { label: 'Projects', href: new URL('projects.html', rootHref).href },
