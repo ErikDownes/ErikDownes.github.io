@@ -4,7 +4,7 @@ permalink: /finance-role.html
 handle: Finance
 title: Finance
 subtitle: Core finance and Cashbook concepts for the Implementation Associate interview.
-nav_order: 70
+nav_order: 50
 top_nav: false
 interview_mode: true
 description: Cashbook, TIMS and core finance-process interview preparation.
