@@ -1,7 +1,7 @@
 (async () => {
   const body = document.getElementById('docBody');
   const isInterviewAccordion = document.body.classList.contains('interview-mode');
-  const isSingleOpenInterview = isInterviewAccordion && /\/qa\.html\/?$/.test(location.pathname);
+  const isSingleOpenInterview = isInterviewAccordion;
   const topbar = document.querySelector('.topbar');
   const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
   const synth = window.speechSynthesis;
@@ -1934,6 +1934,31 @@
 
     const headings = sectionHeadings();
 
+    const breadcrumbParts = node => {
+      if (!node?.matches?.('p,div')) return [];
+      if (node.classList.contains('interview-breadcrumbs') && node.children.length) {
+        return Array.from(node.children).map(child => cleanText(child.textContent)).filter(Boolean);
+      }
+      const raw = cleanText(node.textContent);
+      if (!raw.includes('|')) return [];
+      const parts = raw.split('|').map(part => cleanText(part)).filter(Boolean);
+      if (parts.length < 2 || parts.length > 7) return [];
+      if (parts.some(part => part.length > 36)) return [];
+      return parts;
+    };
+
+    const formatBreadcrumb = node => {
+      const parts = breadcrumbParts(node);
+      if (!parts.length) return;
+      node.classList.add('interview-breadcrumbs');
+      node.style.setProperty('--breadcrumb-count', String(parts.length));
+      node.replaceChildren(...parts.map(part => {
+        const span = document.createElement('span');
+        span.textContent = part;
+        return span;
+      }));
+    };
+
     const setOpen = (heading, open) => {
       if (!heading) return;
       heading.classList.toggle('is-open', open);
@@ -1955,6 +1980,7 @@
       heading.setAttribute('aria-expanded', 'false');
 
       answerNodes.forEach((node, index) => {
+        formatBreadcrumb(node);
         node.classList.add('interview-answer-node');
         if (index === 0) node.classList.add('interview-answer-first');
         if (index === answerNodes.length - 1) node.classList.add('interview-answer-last');
@@ -2037,6 +2063,7 @@
 
   const resetAudio = () => {
     if (synth) synth.cancel();
+    if (activeAudioButton?.dataset?.idleLabel) activeAudioButton.textContent = activeAudioButton.dataset.idleLabel;
     activeAudioButton?.classList.remove('is-active', 'is-paused');
     activeAudioTarget?.classList.remove('cm-audio-speaking');
     activeAudioButton = null;
@@ -2061,6 +2088,7 @@
     resetAudio();
     activeAudioButton = button;
     activeAudioTarget = target;
+    if (button?.dataset?.activeLabel) button.textContent = button.dataset.activeLabel;
     button?.classList.add('is-active');
     target?.classList.add('cm-audio-speaking');
     activeUtterance = new SpeechSynthesisUtterance(text);
@@ -2718,9 +2746,19 @@
       listen.id = 'floating-page-listen';
       listen.type = 'button';
       listen.textContent = 'Listen';
+      listen.dataset.idleLabel = 'Listen';
+      listen.dataset.activeLabel = 'Shut up';
       listen.setAttribute('aria-label', 'Listen to the current view');
       listen.title = 'Listen to the current view';
       listen.addEventListener('click', () => {
+        if (activeAudioButton === listen && (synth.speaking || synth.paused)) {
+          resetAudio();
+          listen.setAttribute('aria-label', 'Listen to the current view');
+          listen.title = 'Listen to the current view';
+          return;
+        }
+        listen.setAttribute('aria-label', 'Stop speaking');
+        listen.title = 'Stop speaking';
         const visible = element => {
           if (!element) return false;
           const style = getComputedStyle(element);
