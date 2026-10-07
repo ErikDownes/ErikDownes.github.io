@@ -18,9 +18,9 @@ Maths|IT|Business|Finance|Co-op
 
 ## Why are you interested in this role?
 
-My own direction is moving towards data analysis, SQL and automation, but I want to apply those skills to real financial processes rather than just technical exercises. Cashbook brings together finance, technology, customer work and problem-solving. It also looks like a role where I can learn quickly, take direction, contribute to a team and gradually take on more professional responsibility.
+The HSE finance role appeals to me because it is practical, structured finance work where accuracy has a real purpose. I would be working on month-end, reconciliations, AP, costing and funding returns, while learning SAP Financials and using Excel. I also like that it is a service environment where meeting deadlines and doing the work properly matters to the wider organisation.
 
-Finance|Technology|Customers|Learn|Responsibility
+Finance|Public Service|Accuracy|Learn|Responsibility
 
 ## What do you want from co-op?
 
