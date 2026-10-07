@@ -1,7 +1,7 @@
 ---
 layout: doc
 permalink: /pivotal-corporate-study.html
-handle: CV
+handle: Co-op CV
 title: CV
 nav_order: 15
 top_nav: true
