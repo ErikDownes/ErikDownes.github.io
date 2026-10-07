@@ -501,7 +501,7 @@
         item.classList.toggle('nav-right', menuTitle === 'LM058');
         if (label) {
           label.href = href;
-          if (menuTitle === 'Aviation' || menuTitle === 'Portfolio' || menuTitle === 'LM058' || menuTitle === 'FinMath Mod') {
+          if (menuTitle === 'Aviation' || menuTitle === 'Portfolio' || menuTitle === 'Projects' || menuTitle === 'LM058' || menuTitle === 'FinMath Mod') {
             label.setAttribute('aria-haspopup', 'true');
             label.setAttribute('aria-expanded', 'false');
           } else {
@@ -1081,40 +1081,32 @@
     if (isLm058Menu) {
       menu.classList.add('lm058-category-menu');
 
-      const categories = lm058Categories();
-      const activeKey = /\/education(?:\.html)?$/.test(currentPath)
-        ? (new URL(location.href).searchParams.get('strand') || 'current')
-        : '';
-
-      categories.forEach(category => {
-        const link = document.createElement('a');
-        const href = new URL(pageUrl.href);
-        href.searchParams.set('strand', category.key);
-        href.hash = '';
-        link.href = href.href;
-        link.textContent = category.label;
-        if (category.key === activeKey) link.setAttribute('aria-current', 'page');
-
-        link.addEventListener('click', event => {
-          if (/\/education(?:\.html)?$/.test(currentPath)) {
-            event.preventDefault();
-            const nextUrl = new URL(location.href);
-            nextUrl.searchParams.set('strand', category.key);
-            history.replaceState(null, '', nextUrl.href);
-            menu.querySelectorAll('a[aria-current="page"]').forEach(current => current.removeAttribute('aria-current'));
-            link.setAttribute('aria-current', 'page');
-            renderLm058Sidebar(modules, pageUrl, category.key);
-          }
-
-          item.classList.remove('is-open');
-          item.querySelector('[data-nav-toggle]')?.setAttribute('aria-expanded', 'false');
-          if (window.innerWidth <= 1500) topbar?.classList.remove('nav-open');
-        });
-
-        menu.appendChild(link);
+      const byCode = new Map(modules.map(module => [module.code, module]));
+      const directLinks = [];
+      const addModule = code => {
+        const module = byCode.get(code);
+        if (module) directLinks.push(module);
+      };
+      const addDirect = (label, path) => directLinks.push({
+        label,
+        href: new URL(path, pageUrl.href),
+        code: 'MS4045'
       });
 
-      renderLm058Sidebar(modules, pageUrl);
+      addModule('MS4027');
+      addModule('MS4045');
+      addDirect('MS4045 · Worksheet 1', 'modules/ms4045/tutorial-sheet-1.html');
+      addDirect('MS4045 · Worksheet 2', 'modules/ms4045/tutorial-sheet-2.html');
+      addDirect('MS4045 · Exam 2023', 'modules/ms4045/exam-2023.html');
+      addDirect('MS4045 · Exam 2021', 'modules/ms4045/exam-2021.html');
+      addModule('MS4105');
+      addModule('MS4214');
+      addModule('MS4215');
+
+      directLinks.forEach(module => appendModuleLink(
+        module,
+        normalisePath(module.href.href) === currentPath
+      ));
       return;
     }
 
