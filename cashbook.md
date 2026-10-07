@@ -60,6 +60,9 @@ eyebrow: CASHBOOK · ORIGINAL JOB SPECIFICATION
 .cashbook-spec p{margin:0 0 18px}
 .cashbook-spec ul{margin:0 0 8px 22px;padding-left:18px}
 .cashbook-spec li{margin:4px 0;padding-left:4px}
+.cashbook-spec .learn-link{color:inherit;text-decoration:none;border-bottom:1px dotted #9bb0bb}
+.cashbook-spec .learn-link:hover{color:#12648a;border-bottom-color:#12648a}
+.cashbook-spec .learn-badge{display:inline-block;margin-left:8px;padding:1px 7px;border-radius:999px;background:#eef6f9;color:#17607e;font-size:.78rem;font-weight:700;white-space:nowrap}
 @media(max-width:700px){
   .cashbook-spec{font-size:14px}
   .cashbook-spec .cashbook-word{font-size:22px}
@@ -72,7 +75,7 @@ eyebrow: CASHBOOK · ORIGINAL JOB SPECIFICATION
     <span class="cashbook-bookmark" aria-hidden="true"></span>
   </div>
 
-  <p class="role-title">Implementation Associate (TIMS team)</p>
+  <p class="role-title">Implementation Associate (<a class="learn-link" href="{{ '/cashbook-tims.html' | relative_url }}">TIMS team</a>)</p>
   <p class="role-dates">Job Spec: Jan - Aug 2027</p>
 
   <section id="company">
@@ -82,16 +85,16 @@ eyebrow: CASHBOOK · ORIGINAL JOB SPECIFICATION
 
   <section id="description">
     <h2>Description</h2>
-    <p>We are looking for an Implementation Associate to join our TIMS team. The successful candidate will be highly focused, a good communicator, a team player, dedicated, hard-working and analytical. The candidate will be in the process of completing a financial mathematics degree. They will support the daily implementations and support activities of the TIMS team and will be involved in some larger projects during the placement. This position reports to the to the TIMS Implementation Director as a junior business consultant.</p>
+    <p>We are looking for an Implementation Associate to join our <a class="learn-link" href="{{ '/cashbook-tims.html' | relative_url }}">TIMS team <span class="learn-badge">Understand TIMS →</span></a>. The successful candidate will be highly focused, a good communicator, a team player, dedicated, hard-working and analytical. The candidate will be in the process of completing a financial mathematics degree. They will support the daily implementations and support activities of the TIMS team and will be involved in some larger projects during the placement. This position reports to the to the TIMS Implementation Director as a junior business consultant.</p>
   </section>
 
   <section id="duties-responsibilities">
     <h2>Duties and Responsibilities</h2>
     <ul>
-      <li>Support the TIMS Implementation team in daily administrative tasks.</li>
-      <li>Learn the basics of Cash Application, Bank Reconciliation and Collections</li>
-      <li>Assist the TIMS team on Lockbox development and assist in the application of Lockboxes</li>
-      <li>Work alongside customers to achieve higher rates of automation in Bank Reconciliation</li>
+      <li><a class="learn-link" href="{{ '/cashbook-implementation.html' | relative_url }}">Support the TIMS Implementation team in daily administrative tasks. <span class="learn-badge">Learn →</span></a></li>
+      <li><a class="learn-link" href="{{ '/cashbook-finance-processes.html' | relative_url }}">Learn the basics of Cash Application, Bank Reconciliation and Collections <span class="learn-badge">Learn →</span></a></li>
+      <li><a class="learn-link" href="{{ '/cashbook-lockbox.html' | relative_url }}">Assist the TIMS team on Lockbox development and assist in the application of Lockboxes <span class="learn-badge">Learn →</span></a></li>
+      <li><a class="learn-link" href="{{ '/cashbook-reconciliation-automation.html' | relative_url }}">Work alongside customers to achieve higher rates of automation in Bank Reconciliation <span class="learn-badge">Learn →</span></a></li>
     </ul>
   </section>
 
@@ -111,15 +114,15 @@ eyebrow: CASHBOOK · ORIGINAL JOB SPECIFICATION
     <ul>
       <li>International finance processes</li>
       <li>Basic accounting principles</li>
-      <li>Bank Reconciliation, Cash Application and Collections processes in particular</li>
-      <li>Microsoft SQL</li>
+      <li><a class="learn-link" href="{{ '/cashbook-finance-processes.html' | relative_url }}">Bank Reconciliation, Cash Application and Collections processes in particular <span class="learn-badge">Learn →</span></a></li>
+      <li><a class="learn-link" href="{{ '/cashbook-sql-lab.html' | relative_url }}">Microsoft SQL <span class="learn-badge">Practise →</span></a></li>
       <li>Excel</li>
       <li>Best practice in American manufacturing activities</li>
       <li>Experience in an indigenous Fintech company with customers worldwide</li>
       <li>Working with upper management in a flat organisational structure</li>
       <li>Communicating and troubleshooting with customers</li>
       <li>Customer tutorial training videos</li>
-      <li>Analysing application errors and liaising with IT to debug</li>
+      <li><a class="learn-link" href="{{ '/cashbook-implementation.html' | relative_url }}">Analysing application errors and liaising with IT to debug <span class="learn-badge">Practise →</span></a></li>
       <li>AI Tools</li>
     </ul>
   </section>
