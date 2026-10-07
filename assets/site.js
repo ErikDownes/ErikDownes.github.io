@@ -1916,7 +1916,13 @@
         notifyChange();
       };
 
-      const flip = () => applyOpen(heading.getAttribute('aria-expanded') !== 'true');
+      const flip = () => {
+        if (isSingleOpenInterview && document.body.classList.contains('interview-all-open')) {
+          applyOpen(true);
+          return;
+        }
+        applyOpen(heading.getAttribute('aria-expanded') !== 'true');
+      };
 
       toggle?.addEventListener('click', event => {
         event.preventDefault();
