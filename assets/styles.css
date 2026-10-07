@@ -4257,13 +4257,15 @@ article img.img-full,
 
 /* Career & Motivation breadcrumbs: full-width visual recall cues. */
 .interview-mode .interview-breadcrumbs{
-  display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
+  display:flex;
+  width:100%;
   gap:0;
   padding-top:10px!important;
 }
 .interview-mode .interview-breadcrumbs span{
   display:flex;
+  flex:1 1 0;
+  min-width:0;
   align-items:center;
   justify-content:center;
   min-height:38px;
