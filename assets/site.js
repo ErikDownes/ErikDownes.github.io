@@ -1856,8 +1856,77 @@
     });
   };
 
+  // Accept memory-word breadcrumbs in either of these authoring forms:
+  //   CatDogHorse
+  //   Cat | Dog | Horse
+  // A short Title Case line such as "Cat Dog Horse" is also supported.
+  // This runs after local saved edits are restored, so older browser-saved
+  // answers are normalised as well as the Markdown source.
+  const parseBreadcrumbWords = value => {
+    const text = cleanText(value);
+    if (!text || text.length > 180 || /[.!?;:]$/.test(text)) return [];
+
+    let words = [];
+    if (text.includes('|')) {
+      words = text.split('|').map(cleanText).filter(Boolean);
+    } else if (!/\s/.test(text)) {
+      words = text.match(/[A-Z]+(?=[A-Z][a-z]|\d|$)|[A-Z]?[a-z]+|\d+(?:\.\d+)?/g) || [];
+    } else {
+      const chunks = text.split(/\s+/).filter(Boolean);
+      const looksLikeCue = chunk => /^[A-Z0-9][A-Za-z0-9/&+.'’-]*$/.test(chunk);
+      if (chunks.every(looksLikeCue)) words = chunks;
+    }
+
+    words = words.map(cleanText).filter(Boolean);
+    if (words.length < 2 || words.length > 8) return [];
+    if (words.some(word => word.length > 32)) return [];
+    return words;
+  };
+
+  const normaliseInterviewBreadcrumbs = () => {
+    if (!isInterviewAccordion) return;
+
+    sectionHeadings().forEach(heading => {
+      const nodes = sourceNodesFor(heading);
+      if (!nodes.length) return;
+
+      // Existing explicit breadcrumb markup remains valid.
+      nodes.filter(node => node.matches?.('.interview-breadcrumbs')).forEach(node => {
+        const existing = Array.from(node.querySelectorAll(':scope > span'));
+        if (!existing.length) {
+          const words = parseBreadcrumbWords(node.textContent);
+          if (words.length) node.replaceChildren(...words.map(word => {
+            const span = document.createElement('span');
+            span.textContent = word;
+            return span;
+          }));
+        }
+      });
+
+      // For ordinary edited Markdown/HTML, treat only the final short paragraph
+      // as an implicit breadcrumb line. This avoids mistaking answer prose for cues.
+      const current = sourceNodesFor(heading);
+      const last = current[current.length - 1];
+      if (!last?.matches?.('p') || last.matches('[data-pointer-words],.recall-chain')) return;
+
+      const words = parseBreadcrumbWords(last.textContent);
+      if (!words.length) return;
+
+      const breadcrumb = document.createElement('div');
+      breadcrumb.className = 'interview-breadcrumbs';
+      breadcrumb.setAttribute('aria-label', 'Breadcrumbs');
+      words.forEach(word => {
+        const span = document.createElement('span');
+        span.textContent = word;
+        breadcrumb.appendChild(span);
+      });
+      last.replaceWith(breadcrumb);
+    });
+  };
+
   if (!isInterviewAccordion) restoreMovedSections();
   restoreSavedAnswers();
+  normaliseInterviewBreadcrumbs();
   hideInlinePointerWords();
 
   const setupInterviewAccordions = () => {
