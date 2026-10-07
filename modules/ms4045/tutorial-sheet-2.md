@@ -3,6 +3,7 @@ layout: doc
 title: "MS4045 — Worksheet 2"
 handle: "Worksheet 2"
 mathjax: true
+finmath_current: true
 ---
 
 <style>
