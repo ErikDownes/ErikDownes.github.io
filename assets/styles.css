@@ -4255,10 +4255,10 @@ article img.img-full,
   .interview-answer-toggle{font-size:.8rem}
 }
 
-/* Interview breadcrumbs — recall cues always spread across the full answer width. */
+/* Interview breadcrumbs — first cue left, last cue right, equal gaps between cues. */
 .interview-mode .interview-breadcrumbs{
   display:flex!important;
-  align-items:stretch!important;
+  align-items:center!important;
   justify-content:space-between!important;
   gap:0!important;
   width:100%!important;
@@ -4267,34 +4267,35 @@ article img.img-full,
   box-sizing:border-box!important;
   margin-left:0!important;
   margin-right:0!important;
-  padding-top:10px!important;
+  padding:18px 0 8px!important;
+  border-top:1px solid #dfe5ea;
 }
 .interview-mode .interview-breadcrumbs span{
-  display:flex!important;
-  flex:1 1 0!important;
-  align-items:center;
-  justify-content:center;
+  display:block!important;
+  flex:0 0 auto!important;
   min-width:0;
-  min-height:40px;
-  padding:8px 10px 0;
-  border-top:1px solid #dfe5ea;
+  padding:0!important;
+  border:0!important;
   color:#596775;
   font-size:.86rem;
   font-weight:750;
   line-height:1.2;
   text-align:center;
+  white-space:nowrap;
 }
-.interview-mode .interview-breadcrumbs span+span{
-  border-left:1px solid #edf0f2;
+.interview-mode .interview-breadcrumbs span:first-child{
+  text-align:left;
+}
+.interview-mode .interview-breadcrumbs span:last-child{
+  text-align:right;
 }
 @media(max-width:700px){
   .interview-mode .interview-breadcrumbs{
     overflow-x:auto;
+    column-gap:24px!important;
   }
   .interview-mode .interview-breadcrumbs span{
-    flex:1 0 74px!important;
-    padding-left:6px;
-    padding-right:6px;
+    flex:0 0 auto!important;
     font-size:.76rem;
   }
 }
