@@ -1,25 +1,22 @@
 ---
 layout: doc
 permalink: /analytics.html
-handle: Problem Solving & Analytics
-title: Problem Solving & Analytics
-subtitle: How I analyse information, find what is wrong, explain it and reach a
-  reliable solution.
+handle: Analytics
+title: Problem & Analytics
+subtitle: How I analyse information, find what is wrong, explain it and reach a reliable solution.
 nav_order: 40
-top_nav: true
-description: Problem solving, data analysis, accuracy and troubleshooting
-  interview preparation.
-eyebrow: INTERVIEW DOMAIN · PROBLEM SOLVING & ANALYTICS
+top_nav: false
+interview_mode: true
+description: Problem solving, data analysis, accuracy and troubleshooting interview preparation.
+eyebrow: INTERVIEW DOMAIN · PROBLEM & ANALYTICS
 ---
-# Problem Solving & Analytics
-
 ## Tell me about a problem you solved.
 
 In my Dublin Bikes project, I had about 55 million observations spread across files with different structures and timestamp formats. I broke the problem into stages, cleaned and standardised the data with pandas, stored it in SQLite, used SQL to analyse it, and then visualised the results in Leaflet.
 
 Break down | Clean | SQL | Visualise
 
-## Tell me about a time you found an error.
+## Tell me about a time you identified and corrected an error.
 
 I was checking an Excel spreadsheet that stopped reconciling after the inputs changed. I exposed the formulas and found a hard-coded number where there should have been a relative-reference formula. I corrected it and tested the spreadsheet again to make sure it updated properly.
 
