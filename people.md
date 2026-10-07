@@ -14,13 +14,13 @@ eyebrow: INTERVIEW DOMAIN · TEAMWORK & COMMUNICATION
 
 During my TY placement at Mr Price, I worked with a large team reorganising the shop floor. We planned the work carefully because different jobs depended on each other, and when several staff became unavailable I changed tasks as priorities changed. We still completed the work within the planned window with minimum disruption to customers.
 
-Plan together | Dependencies | Adapt | Deliver
+Plan Together | Dependencies | Adapt | Deliver
 
 ## Tell us about a time you explained something clearly.
 
 My mother was comparing three PCP offers for the same car. I built a calculator to compare the deposit, monthly repayments, final payment and total cash outlay, then used simple figures and graphs to explain the result. The middle option was about €800 cheaper overall.
 
-PCP | Simple language | Visuals | Decision
+PCP | Simple Language | Visuals | Decision
 
 ## Tell us about a customer problem you handled.
 
@@ -32,7 +32,7 @@ Listen | Resolve | Communicate | Improve
 
 During the Mr Price store reorganisation, staffing changed unexpectedly and some of the original plan had to change. I took direction, moved between tasks as priorities changed and helped wherever the team needed me most. It taught me that good teamwork means adapting to what the whole team needs, not just completing your own task.
 
-Take direction | Adapt | Help team | Deliver
+Take Direction | Adapt | Help Team | Deliver
 
 ## Tell us about a time you responded to correction or direction.
 
@@ -42,4 +42,4 @@ My manager corrected me and explained that it did not work like that. I was part
 
 What I took from it was that reliability is not just about completing your total hours. In a team, timing matters because other people's work and expectations can depend on you being where you said you would be.
 
-Listen | Accept correction | Understand impact | Change behaviour
+Listen | Accept Correction | Understand Impact | Change Behaviour
