@@ -1,6 +1,6 @@
 /*
 SQL Bank Reconciliation Lab
-Cashbook interview preparation
+Finance reconciliation practice
 Target: Microsoft SQL Server
 
 Goal:
