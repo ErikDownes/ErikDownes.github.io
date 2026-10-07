@@ -2694,9 +2694,9 @@
   });
 
   /* -----------------------------------------------------------------------
-     Floating page tools: Edit, GitHub, Print, Listen, Questions, Answers.
-     Questions and Answers are independent binary switches; Print and Listen
-     always use the content currently visible on the page.
+     Floating page tools: Edit, GitHub, Print, contextual page action, Listen.
+     Random / Questions / Answers are deliberately parked for now so the
+     shared rail stays clean; the code remains available to restore later.
      ----------------------------------------------------------------------- */
   const setupFloatingTools = () => {
     if (!pageCms && !pageGithub && !pagePrint) return;
@@ -2743,6 +2743,7 @@
     let answersVisible = true;
     const questions = practiceHeadings();
     const accordionInterview = isInterviewAccordion;
+    const showParkedPracticeTools = false;
 
     if (isSingleOpenInterview) {
       const expandAll = document.createElement('button');
@@ -2841,7 +2842,7 @@
       rail.appendChild(listen);
     }
 
-    if (body && !accordionInterview) {
+    if (showParkedPracticeTools && body && !accordionInterview) {
       const makeSwitch = ({ id, label, checked, onChange }) => {
         const button = document.createElement('button');
         button.id = id;
@@ -2910,7 +2911,7 @@
     // Rehearsal across all H2 headings on the open page, with one session queue per page.
     // Keep the control visible on every document page so the tool rail stays identical.
     const randomQuestions = sectionHeadings();
-    if (body && !accordionInterview) {
+    if (showParkedPracticeTools && body && !accordionInterview) {
       const random = document.createElement('button');
       random.id = 'floating-page-random';
       random.type = 'button';
