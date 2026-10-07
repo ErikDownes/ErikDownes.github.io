@@ -1,8 +1,8 @@
 ---
 layout: doc
 permalink: /hse.html
-handle: HSE
-title: HSE
+handle: HSE Finance
+title: HSE Finance
 subtitle: Original Job Specification · Co-Op Finance · HSE Mid-West Finance Department
 nav_order: 25
 top_nav: true
