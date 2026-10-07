@@ -1864,17 +1864,26 @@
   // answers are normalised as well as the Markdown source.
   const parseBreadcrumbWords = value => {
     const text = cleanText(value);
-    if (!text || text.length > 180 || /[.!?;:]$/.test(text)) return [];
+    if (!text || text.length > 180) return [];
 
     let words = [];
+
+    // A pipe is an explicit breadcrumb delimiter. Spaces and capitalisation
+    // are optional, so "maths|it|business" works exactly like
+    // "Maths | IT | Business".
     if (text.includes('|')) {
       words = text.split('|').map(cleanText).filter(Boolean);
-    } else if (!/\s/.test(text)) {
-      words = text.match(/[A-Z]+(?=[A-Z][a-z]|\d|$)|[A-Z]?[a-z]+|\d+(?:\.\d+)?/g) || [];
     } else {
-      const chunks = text.split(/\s+/).filter(Boolean);
-      const looksLikeCue = chunk => /^[A-Z0-9][A-Za-z0-9/&+.'’-]*$/.test(chunk);
-      if (chunks.every(looksLikeCue)) words = chunks;
+      // Without pipes, stay conservative so ordinary prose is not mistaken
+      // for a breadcrumb line.
+      if (/[.!?;:]$/.test(text)) return [];
+      if (!/\s/.test(text)) {
+        words = text.match(/[A-Z]+(?=[A-Z][a-z]|\d|$)|[A-Z]?[a-z]+|\d+(?:\.\d+)?/g) || [];
+      } else {
+        const chunks = text.split(/\s+/).filter(Boolean);
+        const looksLikeCue = chunk => /^[A-Z0-9][A-Za-z0-9/&+.'’-]*$/.test(chunk);
+        if (chunks.every(looksLikeCue)) words = chunks;
+      }
     }
 
     words = words.map(cleanText).filter(Boolean);
