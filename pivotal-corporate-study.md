@@ -5,8 +5,7 @@ handle: Co-op CV
 title: CV
 nav_order: 15
 top_nav: true
-description: UL CV evidence tailored for the Cashbook Limited Implementation
-  Associate (TIMS) interview.
+description: UL CV evidence for co-op interview preparation.
 public_mode: true
 cv_mode: true
 ---
