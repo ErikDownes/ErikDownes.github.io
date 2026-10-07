@@ -1,14 +1,14 @@
 ---
 layout: doc
 permalink: /qa.html
-handle: Motivation
-title: Career & Motivation
-subtitle: Why this path, why this role and what I want from co-op.
-nav_order: 20
+handle: Career
+title: Career
+subtitle: Where I am heading, what I want after university and how Financial Maths fits that direction.
+nav_order: 30
 top_nav: false
 interview_mode: true
-description: Motivation and role-fit interview questions for co-op preparation.
-eyebrow: INTERVIEW DOMAIN · CAREER & MOTIVATION
+description: Career direction and Financial Mathematics interview questions for co-op preparation.
+eyebrow: INTERVIEW DOMAIN · CAREER
 ---
 ## Why choose Financial Maths?
 
@@ -16,20 +16,20 @@ I was always drawn to maths and also had an aptitude for IT and technical concep
 
 Maths|IT|Business|Finance|Co-op
 
-## Why are you interested in this role?
-
-My own direction is moving towards data analysis, SQL and automation, but I want to apply those skills to real financial processes rather than just technical exercises. Cashbook brings together finance, technology, customer work and problem-solving. It also looks like a role where I can learn quickly, take direction, contribute to a team and gradually take on more professional responsibility.
-
-Finance|Technology|Customers|Learn|Responsibility
-
-## What do you want from co-op?
-
-I want co-op to move me from mainly developing my own skills into using them professionally with other people. I want experience of live financial and technology processes, working with experienced colleagues and managing several priorities where accuracy and timeliness matter. I have a strong desire to learn, but I also want to bring professional drive — take direction, absorb information quickly and become someone the team can depend on.
-
-Learn|Professional Drive|Priorities|Responsibility
-
 ## What do you enjoy most about Financial Maths?
 
 I enjoy taking data or calculations that do not initially line up and working systematically until I understand why. Whether it is cleaning timestamps in a large dataset or tracing an Excel reconciliation problem, I like turning something messy into something accurate, reliable and useful.
 
 Data|Reconcile|Useful
+
+## What kind of role are you aiming for after university?
+
+Initially, I would like a graduate role where I can combine finance, data and technology, learn strong professional processes and work on problems that matter to customers or the business. I want to keep developing technically while also taking on more responsibility and becoming someone a team can rely on.
+
+Finance|Data|Technology|Learn|Responsibility
+
+## Where do you see yourself in five years?
+
+I would like to be established in a role where I am trusted with real responsibility and using data and technology to improve financial or business processes. I do not think the exact job title matters as much as continuing to learn, becoming technically stronger and being able to take ownership of more complex work.
+
+Responsibility|Technical Growth|Ownership|Useful Work
