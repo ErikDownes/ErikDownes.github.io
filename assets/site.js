@@ -568,7 +568,7 @@
       { label: 'Results', href: new URL('academic-record.html', rootHref).href },
       { label: 'Projects', href: new URL('projects.html', rootHref).href },
       { section: 'HSE Finance' },
-      { label: 'HSE Job Specification', href: new URL('hse.html', rootHref).href },
+      { label: 'HSE Finance', href: new URL('hse.html', rootHref).href },
       { label: 'HSE Finance Study', href: new URL('hse-finance-study.html', rootHref).href },
       { section: 'Reference' },
       { label: 'Acronyms & Glossary', href: new URL('glossary.html', rootHref).href },
@@ -646,7 +646,7 @@
       { label: 'Organisation & Priorities', href: interviewHref + '#organisation-priorities' },
       { label: 'Motivation & Role Fit', href: interviewHref + '#motivation-role-fit' },
       { section: 'Role Research' },
-      { label: 'HSE Job Specification', href: new URL('hse.html', rootHref).href },
+      { label: 'HSE Finance', href: new URL('hse.html', rootHref).href },
       { label: 'HSE Mid-West — Co-Op Finance Study', href: new URL('hse-finance-study.html', rootHref).href }
     ];
 
