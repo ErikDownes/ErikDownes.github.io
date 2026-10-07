@@ -12,9 +12,9 @@ eyebrow: INTERVIEW DOMAIN · CAREER & MOTIVATION
 ---
 ## Why choose Financial Maths?
 
-I was always drawn to maths and wanted a broad course with a strong mathematical component. Financial Maths lets me combine maths with technology, data analysis, finance and accounting, while also developing the people and service side of working in the field. I was also attracted by UL’s co-op programme and the opportunity to gain real workplace experience.
+I wanted to take a broad course, and I was always drawn to maths at school. Financial Maths is practical and highly applicable, combining technology, data analysis, finance and accounting, while also developing the people and service side of working in the field. I was also attracted by UL’s co-op programme and the opportunity to gain real workplace experience.
 
-**Maths | Technology | Finance | People | Co-op**
+Maths | Practical | Technology | Finance | People | Co-op
 
 ## Why are you interested in this role?
 
