@@ -74,6 +74,7 @@
   <link rel="icon" href="{{ '/assets/favicon.svg' | relative_url }}" type="image/svg+xml">
   <link rel="stylesheet" href="{{ '/assets/styles.css' | relative_url }}?v={{ site.github.build_revision }}">
   <link rel="stylesheet" href="{{ '/assets/mirror-fixes.css' | relative_url }}?v={{ site.github.build_revision }}">
+  {% if page.cashbook_learning %}<link rel="stylesheet" href="{{ '/assets/cashbook-learning.css' | relative_url }}?v={{ site.github.build_revision }}">{% endif %}
   {% if page.profile_mode %}<link rel="stylesheet" href="{{ '/assets/profile.css' | relative_url }}?v={{ site.github.build_revision }}">{% endif %}
   {% if page.ac4214_course %}<link rel="stylesheet" href="{{ '/assets/ac4214-course.css' | relative_url }}?v={{ site.github.build_revision }}">{% endif %}
   {% if page.or1_course %}<link rel="stylesheet" href="{{ '/assets/or1-course.css' | relative_url }}?v={{ site.github.build_revision }}">{% endif %}
@@ -153,12 +154,28 @@
     <div class="cv-shell">
       <aside class="cv-section-sidebar" aria-label="Cashbook job specification navigation">
         <nav>
+          <a href="{{ '/cashbook-tims.html' | relative_url }}"><strong>Learning Path →</strong></a>
+          <span class="cv-sidebar-divider" aria-hidden="true"></span>
           <a href="#company">Company</a>
           <a href="#description">Description</a>
           <a href="#duties-responsibilities">Duties &amp; Responsibilities</a>
           <a href="#skills-requirements">Skills &amp; Requirements</a>
           <a href="#candidate-experience">Candidate Experience</a>
           <a href="#travel-placement">Travel &amp; Placement</a>
+        </nav>
+      </aside>
+    {% elsif page.cashbook_learning %}
+    <div class="cv-shell">
+      <aside class="cv-section-sidebar" aria-label="Cashbook learning navigation">
+        <nav>
+          <a href="{{ '/cashbook.html' | relative_url }}">← Job Spec</a>
+          <span class="cv-sidebar-divider" aria-hidden="true"></span>
+          <a{% if page.url == '/cashbook-tims.html' %} class="is-active" aria-current="page"{% endif %} href="{{ '/cashbook-tims.html' | relative_url }}">TIMS &amp; Data Flow</a>
+          <a{% if page.url == '/cashbook-implementation.html' %} class="is-active" aria-current="page"{% endif %} href="{{ '/cashbook-implementation.html' | relative_url }}">Implementation</a>
+          <a{% if page.url == '/cashbook-finance-processes.html' %} class="is-active" aria-current="page"{% endif %} href="{{ '/cashbook-finance-processes.html' | relative_url }}">Finance Processes</a>
+          <a{% if page.url == '/cashbook-lockbox.html' %} class="is-active" aria-current="page"{% endif %} href="{{ '/cashbook-lockbox.html' | relative_url }}">Lockbox</a>
+          <a{% if page.url == '/cashbook-reconciliation-automation.html' %} class="is-active" aria-current="page"{% endif %} href="{{ '/cashbook-reconciliation-automation.html' | relative_url }}">Automation</a>
+          <a{% if page.url == '/cashbook-sql-lab.html' %} class="is-active" aria-current="page"{% endif %} href="{{ '/cashbook-sql-lab.html' | relative_url }}">SQL Lab</a>
         </nav>
       </aside>
     {% endif %}
