@@ -4521,7 +4521,7 @@ article img.img-full,
 
 
 /* Interview recall: Markdown **bold** in answer prose is permanently vivid blue.
-   Prompt strips stay underneath, with even distribution. */
+   Prompt strips sit above the answer, with even distribution. */
 .interview-mode .doc-body > p.interview-answer-node strong,
 .interview-mode .doc-body > p.interview-answer-node b,
 .interview-mode .answer-focus-copy strong,
@@ -4533,3 +4533,7 @@ article img.img-full,
   color:#0057ff!important;
   font-weight:850!important;
 }
+
+/* Recall strip is a preview above the answer; keep answer text unboxed. */
+.interview-mode .interview-breadcrumbs{border-top:0!important;border-bottom:1px solid #dfe5ea!important;padding-top:13px!important;padding-bottom:13px!important;background:#f8fbff!important}
+.interview-mode .interview-answer-node strong,.interview-mode .interview-answer-node b{color:#0057ff!important;font-weight:850!important}
