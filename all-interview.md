@@ -11,7 +11,7 @@ This view is generated from the interview pages. Changes to those pages appear h
 {% assign pages = site.pages | where: 'interview_mode', true | sort: 'nav_order' %}
 {% for source in pages %}
 {% unless source.url == page.url %}
-<p class="all-domain-label">{{ source.handle | default: source.title }}</p>
+<h2 class="all-domain-label">{{ source.handle | default: source.title }}</h2>
 {{ source.content | markdownify }}
 {% endunless %}
 {% endfor %}
