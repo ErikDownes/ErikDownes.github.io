@@ -305,7 +305,7 @@ function bindControls(){
  });
  by("check",function(){
    if(verify()){
-     state.completed[state.topic+"-build"]=true;lastKind="good";lastMessage="Correct across the examples and extra test cases. Now explain what it does and why it matters.";save();workspace();setTimeout(function(){state.step=2;lastKind="";lastMessage="";save();render()},700);
+     state.completed[state.topic+"-build"]=true;lastKind="good";lastMessage="Correct across the examples and extra test cases. Select 3 · Explain when you are ready, then describe why the formula matters.";save();workspace();
    }else{lastKind="bad";lastMessage="Not quite. At least one row or test case behaves incorrectly. Check the comparison, column position and any fixed references.";workspace()}
  });
  var textarea=document.getElementById("my-answer");
