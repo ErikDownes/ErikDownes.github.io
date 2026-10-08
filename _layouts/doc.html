@@ -120,7 +120,7 @@
       .finmath-current-sidebar .cv-sidebar-divider{display:none}
     }
   </style>
-  {% if page.research_mode %}
+  {% if page.research_mode or page.hse_mode %}
   <style>
     .research-shell {align-items:start}
     .research-nav-label {display:block;padding:10px 20px 5px;color:#33485a;font-size:.92rem}
@@ -280,8 +280,13 @@
         <nav id="researchSectionLinks" aria-label="Research topics"></nav>
       </aside>
     {% elsif page.hse_mode %}
-    <div class="cv-shell">
-      <aside class="cv-section-sidebar" aria-label="HSE job specification navigation">
+    <div class="cv-shell research-shell">
+      <aside class="cv-section-sidebar research-sidebar" aria-label="HSE job specification navigation">
+        <strong class="research-nav-label">Original job specification</strong>
+        <div class="research-sidebar-controls" role="group" aria-label="Job specification section controls">
+          <button id="hseExpandAll" type="button">Expand all</button>
+          <button id="hseCollapseAll" type="button">Collapse all</button>
+        </div>
         <nav>
           <a href="#job-title-grade">Job Title &amp; Grade</a>
           <a href="#location-post">Location of Post</a>
