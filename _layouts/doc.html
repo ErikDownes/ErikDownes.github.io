@@ -120,8 +120,51 @@
       .finmath-current-sidebar .cv-sidebar-divider{display:none}
     }
   </style>
+  {% if page.research_mode %}
+  <style>
+    .research-shell {align-items:start}
+    .research-nav-label {display:block;padding:10px 20px 5px;color:#33485a;font-size:.92rem}
+    .research-sidebar-controls {display:flex;gap:6px;padding:9px 14px 12px;border-bottom:1px solid #e2e8ee}
+    .research-sidebar-controls button {
+      flex:1;white-space:nowrap;border:1px solid #cad6e2;background:#f8fafc;color:#164d7a;
+      padding:8px 4px;border-radius:7px;font-size:.78rem;font-weight:750;cursor:pointer
+    }
+    .research-sidebar-controls button:hover,.research-sidebar-controls button:focus-visible {background:#e8f2fc;outline:2px solid #2a6cb5;outline-offset:1px}
+    .research-sidebar nav a {font-size:.9rem;padding:11px 17px}
+    .research-mode .doc-body>.research-section {
+      margin:20px 0;padding:0;border:1px solid #dae3ec;background:#fff;border-radius:12px;overflow:hidden
+    }
+    .research-mode .research-section>h2 {
+      margin:0;padding:0;border:0!important;font-size:1.08rem;line-height:1.3;display:flex;align-items:stretch
+    }
+    .research-section-toggle {
+      width:100%;display:flex;justify-content:space-between;align-items:center;text-align:left;gap:12px;
+      border:0;background:#f4f8fc;padding:15px 18px;color:#143d65;font:inherit;font-weight:800;cursor:pointer
+    }
+    .research-section-toggle:hover,.research-section-toggle:focus-visible {background:#eaf3fc;outline:2px solid #2176ba;outline-offset:-2px}
+    .research-section-toggle .research-toggle-label {font-size:.78rem;color:#255d88;font-weight:700;white-space:nowrap}
+    .research-section-body {padding:14px 19px 17px;overflow-wrap:anywhere}
+    .research-section-body[hidden] {display:none}
+    .research-section-body>:first-child {margin-top:0}
+    .research-section-body>:last-child {margin-bottom:0}
+    .research-section-body table {width:100%;border-collapse:collapse;font-size:.92rem}
+    .research-section-body th,.research-section-body td {padding:9px 10px;border:1px solid #dce4eb;vertical-align:top;text-align:left}
+    .research-section-body th {background:#f0f6fc}
+    @media(max-width:900px){
+      .research-sidebar-controls {max-width:350px}
+      .research-sidebar nav {min-width:0;flex-wrap:wrap}
+      .research-sidebar nav a {white-space:normal}
+    }
+    @media print{
+      .research-section-body[hidden]{display:block!important}
+      .research-section-toggle{background:transparent;padding:8px 0}
+      .research-toggle-label{display:none}
+      .research-mode .doc-body>.research-section {break-inside:avoid;border:0}
+    }
+  </style>
+  {% endif %}
 </head>
-<body class="{% if page.study_mode %}study-mode{% endif %}{% if page.profile_mode %} profile-mode{% endif %}{% if page.public_mode %} public-mode{% endif %}{% if page.interview_mode %} interview-mode{% endif %}{% if page.interview_hub %} interview-hub{% endif %}{% if page.cv_mode %} cv-mode{% endif %}{% if page.hse_mode %} hse-mode{% endif %}{% if page.finmath_current %} finmath-current-mode{% endif %}{% if page.path == 'coursework.md' %} education-mode{% endif %}">
+<body class="{% if page.study_mode %}study-mode{% endif %}{% if page.profile_mode %} profile-mode{% endif %}{% if page.public_mode %} public-mode{% endif %}{% if page.interview_mode %} interview-mode{% endif %}{% if page.interview_hub %} interview-hub{% endif %}{% if page.cv_mode %} cv-mode{% endif %}{% if page.hse_mode %} hse-mode{% endif %}{% if page.research_mode %} research-mode{% endif %}{% if page.finmath_current %} finmath-current-mode{% endif %}{% if page.path == 'coursework.md' %} education-mode{% endif %}">
   <header class="topbar">
     <a class="brand" href="{{ '/' | relative_url }}" aria-label="Erik Downes — Financial Maths and Data Analysis — Home">
       <img src="{{ '/assets/coop-logo.svg' | relative_url }}" alt="Erik Downes — Financial Maths and Data Analysis — University of Limerick">
@@ -226,6 +269,16 @@
         });
       </script>
       {% endif %}
+    {% elsif page.research_mode %}
+    <div class="cv-shell research-shell">
+      <aside class="cv-section-sidebar research-sidebar" aria-label="HSE Finance research navigation">
+        <strong class="research-nav-label">On this page</strong>
+        <div class="research-sidebar-controls" role="group" aria-label="Research section controls">
+          <button id="researchExpandAll" type="button">Expand all</button>
+          <button id="researchCollapseAll" type="button">Collapse all</button>
+        </div>
+        <nav id="researchSectionLinks" aria-label="Research topics"></nav>
+      </aside>
     {% elsif page.hse_mode %}
     <div class="cv-shell">
       <aside class="cv-section-sidebar" aria-label="HSE job specification navigation">
@@ -360,13 +413,73 @@
         })();
       </script>
     </article>
-    {% if page.interview_mode or page.interview_hub or page.cv_mode or page.hse_mode or page.finmath_current or page.handle == 'Projects' or page.handle == 'Blog' %}
+    {% if page.interview_mode or page.interview_hub or page.cv_mode or page.hse_mode or page.research_mode or page.finmath_current or page.handle == 'Projects' or page.handle == 'Blog' %}
     </div>
     {% endif %}
   </main>
 
   <script src="{{ '/assets/practice.js' | relative_url }}?v={{ site.github.build_revision }}"></script>
   <script src="{{ '/assets/site.js' | relative_url }}?v={{ site.github.build_revision }}"></script>
+
+  {% if page.research_mode %}
+  <script>
+    (() => {
+      const body = document.getElementById('docBody');
+      const links = document.getElementById('researchSectionLinks');
+      if (!body || !links) return;
+      const headings = Array.from(body.querySelectorAll(':scope > h2'));
+      const sections = [];
+      headings.forEach((heading, i) => {
+        if (!heading.id) heading.id = 'research-topic-' + (i+1);
+        const title = heading.textContent.trim();
+        const card = document.createElement('section');
+        card.className = 'research-section';
+        heading.before(card);
+        card.appendChild(heading);
+        const content = document.createElement('div');
+        content.className = 'research-section-body';
+        while (card.nextSibling && card.nextSibling.nodeName !== 'H2') {
+          content.appendChild(card.nextSibling);
+        }
+        card.appendChild(content);
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'research-section-toggle';
+        button.setAttribute('aria-controls', 'research-body-' + (i+1));
+        const headingText = document.createElement('span');
+        headingText.textContent = title;
+        const stateLabel = document.createElement('span');
+        stateLabel.className = 'research-toggle-label';
+        button.append(headingText,stateLabel);
+        heading.replaceChildren(button);
+        content.id = 'research-body-' + (i+1);
+        const section = {card, button, content, stateLabel};
+        const setOpen = open => {
+          content.hidden = !open;
+          button.setAttribute('aria-expanded', String(open));
+          stateLabel.textContent = open ? 'Collapse' : 'Expand';
+        };
+        section.setOpen = setOpen;
+        setOpen(true);
+        button.addEventListener('click', () => setOpen(content.hidden));
+        sections.push(section);
+        const link = document.createElement('a');
+        link.href = '#' + heading.id;
+        link.textContent = title;
+        link.addEventListener('click', () => setOpen(true));
+        links.appendChild(link);
+      });
+      const setAll = open => sections.forEach(section => section.setOpen(open));
+      document.getElementById('researchExpandAll')?.addEventListener('click', () => setAll(true));
+      document.getElementById('researchCollapseAll')?.addEventListener('click', () => setAll(false));
+      if (location.hash) {
+        const target = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+        const selected = target?.closest('.research-section');
+        if (selected) sections.find(section => section.card === selected)?.setOpen(true);
+      }
+    })();
+  </script>
+  {% endif %}
   {% if page.interview_mode %}<script src="{{ '/assets/random-rehearsal.js' | relative_url }}?v={{ site.github.build_revision }}"></script>{% endif %}
   {% if page.path == 'coursework.md' %}<script src="{{ '/assets/education.js' | relative_url }}?v={{ site.github.build_revision }}"></script>{% endif %}
   {% if page.ac4214_course %}<script src="{{ '/assets/ac4214-course.js' | relative_url }}?v={{ site.github.build_revision }}"></script>{% endif %}
