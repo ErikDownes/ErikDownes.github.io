@@ -4510,3 +4510,11 @@ article img.img-full,
     display:none!important;
   }
 }
+
+/* Projects and Blog must never expose their top-navigation dropdowns. */
+.navitem:has(> .navlabel[href$='/projects.html']) > .dropmenu,
+.navitem:has(> .navlabel[href$='/blog.html']) > .dropmenu {display:none!important}
+.navitem:has(> .navlabel[href$='/projects.html']),
+.navitem:has(> .navlabel[href$='/blog.html']) {grid-template-columns:1fr}
+/* LM058 belongs alongside the other top-level links, not pushed to the right. */
+.navitem:has(> .navlabel[href$='/lm058.html']) {margin-left:0!important}
