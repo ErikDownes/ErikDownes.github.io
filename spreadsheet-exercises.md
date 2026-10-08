@@ -16,7 +16,17 @@ public_mode: true
 
 This project is a structured practice workbook built around the type of spreadsheet work that appears in corporate services and financial operations.
 
-[Open the current practice workbook →](https://docs.google.com/spreadsheets/d/1nrBBSbxHZ3jOyKf868grsnVoFMlXPyEOdLIBb8tRNy4/edit?usp=drivesdk)
+## Make your own copy before you start
+
+**This is a shared, view-only master workbook. Please do not request editing access.**
+
+Click **Make your own copy**, sign in to Google if prompted, save the copy in **your own Google Drive**, and work in that copy. You can edit formulas, explore examples and change anything you like without affecting the teaching resource.
+
+[**MAKE YOUR OWN COPY — START HERE →**](https://docs.google.com/spreadsheets/d/1nrBBSbxHZ3jOyKf868grsnVoFMlXPyEOdLIBb8tRNy4/copy)
+
+[Preview the original view-only workbook →](https://docs.google.com/spreadsheets/d/1nrBBSbxHZ3jOyKf868grsnVoFMlXPyEOdLIBb8tRNy4/edit?usp=drivesdk)
+
+*Already made a copy? Open it from your own Google Drive and continue there.*
 
 ## What I am practising
 
