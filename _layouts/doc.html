@@ -137,7 +137,7 @@
       {% assign nav_legacy_title = nav_title_parts[0] | strip %}
       {% assign nav_menu_title = navpage.handle | default: nav_legacy_title | strip %}
       {% unless nav_menu_title == 'General Questions' or nav_menu_title == 'Competency / STAR' or nav_menu_title == 'Pivotal Corporate Interview' or nav_menu_title == 'UL CV' or nav_menu_title == 'Results' or nav_menu_title == 'Job Spec' %}
-<div class="navitem{% if nav_menu_title == 'LM058' %} nav-right{% endif %} nav-dynamic{% if nav_menu_title == 'Contact' %} nav-contact-link{% endif %}" data-question-menu>
+<div class="navitem nav-dynamic{% if nav_menu_title == 'Contact' %} nav-contact-link{% endif %}" data-question-menu>
         <a class="navlabel" href="{{ navpage.url | relative_url }}"{% if nav_menu_title == 'Home' or nav_menu_title == 'Profile' or nav_menu_title == 'Education' or nav_menu_title == 'BSc Financial Mathematics' or nav_menu_title == 'FinMath Mod' or nav_menu_title == 'Co-op' %} aria-haspopup="true" aria-expanded="false"{% endif %}><span>{{ nav_menu_title }}</span></a>
         <div class="dropmenu"></div>
       </div>
@@ -193,6 +193,38 @@
           <a href="{{ '/modules/ms4215-advanced-data-analysis.html' | relative_url }}">MS4215</a>
         </nav>
       </aside>
+    {% elsif page.handle == 'Projects' or page.handle == 'Blog' %}
+    <div class="cv-shell">
+      <aside class="cv-section-sidebar" aria-label="{{ page.handle }} navigation">
+        <nav>
+          {% if page.handle == 'Projects' %}
+          <a href="{{ '/projects.html' | relative_url }}"><strong>All Projects</strong></a>
+          <a href="{{ '/dublin-bikes.html' | relative_url }}">Dublin Bikes</a>
+          <a href="{{ '/cycling.html' | relative_url }}">Strava Analysis</a>
+          <a href="{{ '/mortgage-calculator.html' | relative_url }}">Mortgage Calculator</a>
+          <a href="{{ '/pcp-calculator.html' | relative_url }}">PCP Comparator</a>
+          {% else %}
+          <a href="{{ '/blog.html' | relative_url }}"><strong>Blog</strong></a>
+          <div id="blogSectionLinks" aria-label="Blog entries"></div>
+          {% endif %}
+        </nav>
+      </aside>
+      {% if page.handle == 'Blog' %}
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          const panel = document.getElementById('blogSectionLinks');
+          const doc = document.getElementById('docBody');
+          if (!panel || !doc) return;
+          doc.querySelectorAll(':scope > h2').forEach(function (heading, index) {
+            if (!heading.id) heading.id = 'blog-entry-' + (index + 1);
+            const link = document.createElement('a');
+            link.href = '#' + heading.id;
+            link.textContent = heading.textContent.trim();
+            panel.appendChild(link);
+          });
+        });
+      </script>
+      {% endif %}
     {% elsif page.hse_mode %}
     <div class="cv-shell">
       <aside class="cv-section-sidebar" aria-label="HSE job specification navigation">
