@@ -4518,3 +4518,18 @@ article img.img-full,
 .navitem:has(> .navlabel[href$='/blog.html']) {grid-template-columns:1fr}
 /* LM058 belongs alongside the other top-level links, not pushed to the right. */
 .navitem:has(> .navlabel[href$='/lm058.html']) {margin-left:0!important}
+
+
+/* Interview recall: Markdown **bold** in answer prose is permanently vivid blue.
+   Prompt strips stay underneath, with even distribution. */
+.interview-mode .doc-body > p.interview-answer-node strong,
+.interview-mode .doc-body > p.interview-answer-node b,
+.interview-mode .answer-focus-copy strong,
+.interview-mode .answer-focus-copy b {
+  color:#0057ff!important;
+  font-weight:850!important;
+}
+.interview-mode .interview-breadcrumbs span {
+  color:#0057ff!important;
+  font-weight:850!important;
+}
