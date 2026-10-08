@@ -13,10 +13,10 @@ eyebrow: INTERVIEW DOMAIN · INITIATIVE
 
 At O’Mahony’s Bookshop, I identified a weakness in how orders were being checked before dispatch. We were relying on printed reports from Booksolve, which could become outdated. I flagged the problem with my manager and suggested using the latest information directly from the system. I got access to Booksolve and started using it to check orders more accurately.
 
-Identify | Flag | Suggest | Follow through | Improve
+Root cause|Initiative|Prevention
 
 ## Tell me about something you had to learn quickly.
 
 In my Dublin Bikes project, historical files had different timestamp formats and I could not correct millions of records manually. I learned how to use pandas and `to_datetime()` to standardise them, tested the results and then continued the analysis.
 
-Identify Gap|Learn|Test|Apply
+Independent learning|Testing|Application
