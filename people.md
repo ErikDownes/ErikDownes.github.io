@@ -28,6 +28,12 @@ At O’Mahony’s, our printed address information had not been updated, and boo
 
 Customer care|Communication|Resolution
 
+## STAR · Handling a price complaint (illustrative example)
+
+A customer at the counter was upset because the price at the till was higher than the shelf label. I **listened calmly**, **checked the shelf price** and followed store policy to **resolve the issue**. I explained the outcome clearly so the customer knew their concern had been taken seriously.
+
+Listened calmly|Checked the shelf price|Resolve the issue
+
 ## STAR · Adapting quickly
 
 During the Mr Price store reorganisation, staffing changed unexpectedly and some of the original plan had to change. I took direction, moved between tasks as priorities changed and helped wherever the team needed me most. It taught me that good teamwork means adapting to what the whole team needs, not just completing your own task.
