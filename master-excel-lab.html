@@ -1,343 +1,215 @@
 <!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Master Excel | Interactive practice</title>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Master Excel · Interactive school</title>
 <style>
-:root{--ink:#172539;--muted:#53657b;--border:#dce4ed;--blue:#1764d3;--blue-soft:#ebf3ff;--paper:#fff;--ground:#f6f8fb;--edit:#fffbeb;--good:#11623a;--warn:#9b4708}
-*{box-sizing:border-box}
-body{margin:0;background:var(--ground);color:var(--ink);font:17px/1.55 system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
-button,input,textarea{font:inherit}
-button{cursor:pointer}
-.wrap{max-width:1260px;margin:auto;padding:18px clamp(10px,2.5vw,28px) 38px}
-.mast{display:flex;justify-content:space-between;gap:15px;align-items:center;flex-wrap:wrap;margin-bottom:14px}
-.mast p{margin:0;color:var(--muted);font-size:.95rem}.progress{font-size:.86rem;font-weight:750;color:#28517e}
-.topic-tabs,.step-tabs{display:flex;gap:9px;flex-wrap:wrap}
-.topic-tabs{margin-bottom:16px}
-.topic-tabs button{border:1px solid var(--border);background:#fff;color:var(--ink);border-radius:11px;padding:12px 22px;font-weight:800}
-.topic-tabs button[aria-selected=true]{background:var(--ink);border-color:var(--ink);color:#fff}
-.card{background:var(--paper);border:1px solid var(--border);border-radius:18px;padding:clamp(18px,2.6vw,32px);box-shadow:0 7px 27px rgba(21,36,56,.04)}
-.lesson-head{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;flex-wrap:wrap}
-.lesson-head h2{font-size:clamp(1.3rem,2.6vw,1.9rem);line-height:1.2;margin:0 0 9px}
-.lesson-head p{color:var(--muted);margin:0;max-width:740px}
-.step-tabs{margin:25px 0 18px;border-bottom:1px solid var(--border);padding-bottom:13px}
-.step-tabs button{border:1px solid var(--border);background:white;border-radius:10px;padding:10px 16px;font-weight:700}
-.step-tabs button[aria-selected=true]{border-color:var(--blue);background:var(--blue-soft);color:#0d4c9d}
-.instructions{margin:0 0 17px;background:#f2f7fd;border-left:4px solid var(--blue);padding:13px 17px;border-radius:0 9px 9px 0}
-.instructions strong{color:#0d4c9d}.sheet-container{width:100%;overflow:auto}
-.two-sheets{display:grid;grid-template-columns:minmax(280px,1fr) minmax(280px,1fr);gap:21px}
-.block-label{font-weight:800;margin:0 0 9px;color:#364a60}
-.sheet{border-collapse:separate;border-spacing:0;width:100%;table-layout:fixed;border:1px solid var(--border);border-radius:10px;overflow:hidden;background:#fff}
-.sheet th,.sheet td{border-right:1px solid var(--border);border-bottom:1px solid var(--border);text-align:center;padding:12px 8px;min-width:78px;height:64px;vertical-align:middle;overflow-wrap:anywhere}
-.sheet tr>*:last-child{border-right:0}.sheet tr:last-child>*{border-bottom:0}
-.sheet thead tr:first-child th{background:#eef3f8;font-size:.79rem;color:#60718a;height:36px;padding:5px}
-.sheet .row-id{background:#eef3f8;color:#60718a;width:39px;min-width:39px;font-size:.8rem}
-.sheet thead tr:nth-child(2) th{background:#f6f8fc;font-size:.87rem;font-weight:750}
-.sheet td.result{background:#eaf5ff;font-weight:750;color:#124c85;cursor:pointer}
-.sheet td.result:hover,.sheet td.result.selected{outline:3px solid var(--blue);outline-offset:-3px}
-.sheet td.empty{background:#fbfcfd;color:#b4bfce}
-.sheet input{border:1px solid #e6cf81;border-radius:7px;background:var(--edit);color:var(--ink);width:100%;height:40px;padding:5px;text-align:center;min-width:54px}
-.sheet input:focus{outline:3px solid #9cbef0;border-color:var(--blue)}
-.sheet td.na{color:var(--warn)}.sheet td.error{color:#a32020}
-.formula-line{display:flex;align-items:center;gap:12px;flex-wrap:wrap;background:#f7f9fc;border:1px solid var(--border);border-radius:10px;padding:12px 14px;margin:16px 0 10px}
-.formula-line span{font-weight:800;color:#415771;min-width:31px}
-.formula-line code{font:600 1rem/1.5 Consolas,Monaco,monospace;overflow-wrap:anywhere;color:#17344f}
-.build-input{flex:1;min-width:250px;padding:11px;border:1px solid #9bbbe9;border-radius:8px;font:600 1rem Consolas,monospace}
-.controls{display:flex;gap:10px;flex-wrap:wrap;margin-top:17px}
-.btn{border:1px solid #bccbdb;border-radius:10px;background:#fff;color:#17344f;padding:11px 16px;font-weight:700}
-.btn.primary{background:var(--blue);border-color:var(--blue);color:#fff}
-.btn:disabled{opacity:.4;cursor:not-allowed}
-.feedback{margin:13px 0 0;min-height:24px;font-weight:700;color:#445d76}
-.feedback.good{color:var(--good)}.feedback.bad{color:#9f2626}
-.note{margin:13px 0 0;color:var(--muted);font-size:.86rem}
-.explain textarea{width:100%;min-height:135px;resize:vertical;padding:15px;border:1px solid #aebfd3;border-radius:10px;background:#fff}
-.explain label{display:block;font-weight:800;margin-bottom:8px}
-.question{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0}
-.question>div{background:#f7f9fc;padding:16px;border-radius:10px}
-.question strong{display:block;color:#174e8c;margin-bottom:4px}
-.example{display:none;margin-top:14px;background:#f1f8f4;border:1px solid #b9ddc9;border-radius:10px;padding:14px 18px}
-.example.open{display:block}
-.footer{font-size:.85rem;color:var(--muted);margin-top:15px}
-@media(max-width:850px){.two-sheets{grid-template-columns:1fr}.question{grid-template-columns:1fr}}
-@media(max-width:550px){body{font-size:15px}.wrap{padding:10px 6px 20px}.card{padding:16px 10px}.topic-tabs button,.step-tabs button{padding:9px 12px}.sheet th,.sheet td{padding:7px 4px;min-width:66px;height:58px}.sheet .row-id{min-width:30px;width:30px}.sheet input{min-width:46px}.formula-line code{font-size:.83rem}}
-</style>
-</head>
-<body>
-<div class="wrap">
-  <div class="mast"><p>Small datasets. Real decisions. No login required.</p><span class="progress" id="progress"></span></div>
-  <nav class="topic-tabs" id="topics" aria-label="Excel topics"></nav>
-  <section class="card">
-    <header class="lesson-head"><div><h2 id="lesson-title"></h2><p id="lesson-intro"></p></div></header>
-    <nav class="step-tabs" id="steps" aria-label="Lesson stages"></nav>
-    <div id="workspace" aria-live="polite"></div>
-  </section>
-  <div class="footer">An interactive teaching model of selected Excel formulas, not Microsoft Excel itself. For full spreadsheet features and saving a workbook, use Excel or Google Sheets. Practice changes are stored only in this browser.</div>
+:root{--ink:#17283b;--mute:#52657b;--border:#dce5ed;--blue:#1764d3;--light:#e9f3ff;--yellow:#fffae6;--paper:white}
+*{box-sizing:border-box}body{margin:0;color:var(--ink);background:#f6f8fb;font:16px/1.53 system-ui,-apple-system,Segoe UI,sans-serif}button,input,textarea,select{font:inherit}button{cursor:pointer}
+.school{display:grid;grid-template-columns:204px minmax(0,1fr);gap:22px;margin:0 auto;max-width:1310px;padding:18px 15px 34px;align-items:start}
+.sidebar{background:white;border:1px solid var(--border);border-radius:14px;padding:16px 10px;position:sticky;top:10px}
+.sidebar h2{font-size:.9rem;letter-spacing:.06em;text-transform:uppercase;margin:2px 9px 13px;color:#42546b}
+.sidebar button{width:100%;display:flex;align-items:center;gap:9px;text-align:left;border:0;background:transparent;color:var(--ink);border-radius:9px;padding:12px 10px;line-height:1.25;font-size:.92rem}
+.sidebar button:hover{background:#f2f7fc}.sidebar button[aria-current=page]{background:var(--light);font-weight:800;color:#154c99}
+.ordinal{background:#edf1f6;border-radius:6px;min-width:25px;text-align:center;padding:3px 1px;font-size:.78rem}.sidebar button[aria-current=page] .ordinal{background:#d2e5ff}
+.progress{font-size:.8rem;color:var(--mute);padding:15px 10px 0;border-top:1px solid var(--border);margin-top:13px}
+.content{min-width:0}.intro{padding:5px 5px 17px}.intro h1{font-size:clamp(1.45rem,2.2vw,2.05rem);margin:0 0 5px;line-height:1.2}.intro p{margin:0;color:var(--mute)}
+.sheet-card{background:white;border:1px solid var(--border);border-radius:15px;padding:clamp(13px,2.2vw,26px);box-shadow:0 4px 20px rgba(10,35,70,.035)}
+.stages{display:flex;gap:7px;flex-wrap:wrap;border-bottom:1px solid var(--border);padding:0 0 13px;margin:0 0 18px}
+.stages button{border:1px solid #d1dfec;border-radius:9px;background:#fff;padding:9px 13px;font-size:.89rem;font-weight:750}
+.stages button[aria-selected=true]{background:#1558b7;border-color:#1558b7;color:#fff}
+.task{font-size:1rem;margin-bottom:15px}.task strong{display:block;margin:0 0 5px;font-size:1.08rem}.task p{margin:0 0 8px;color:#40576c}
+.formula-bar{display:grid;grid-template-columns:65px 36px minmax(0,1fr);gap:8px;align-items:center;background:#f4f7fb;border:1px solid var(--border);border-radius:11px;padding:9px;margin:12px 0 15px}
+.namebox{text-align:center;padding:9px 4px;background:white;border:1px solid #d1dce8;border-radius:7px;font-weight:800;font-family:Consolas,monospace;font-size:.92rem}
+.fx{text-align:center;font-style:italic;color:#54718f;font-weight:800}
+.formula-bar input{width:100%;padding:9px 11px;min-height:43px;border:1px solid #c6d4e2;background:white;border-radius:7px;font:600 .93rem Consolas,monospace;color:#173752}
+.formula-bar input:focus{outline:2px solid #71a5f2}
+.formula-help{font-size:.82rem;color:#607086;margin:-6px 2px 15px;min-height:18px}
+.tables{display:grid;grid-template-columns:1fr;gap:15px}.tables.split{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.table-title{font-size:.87rem;font-weight:800;color:#465a6e;margin:0 0 8px}
+.grid-scroll{overflow:auto;border:1px solid var(--border);border-radius:9px}
+table.excel{width:100%;border-collapse:collapse;table-layout:fixed;min-width:360px}
+.excel td,.excel th{border:1px solid #e0e6ed;text-align:center;height:55px;padding:7px 5px;vertical-align:middle;overflow-wrap:anywhere}
+.excel thead th{height:29px;background:#edf2f7;color:#65738a;font-size:.74rem;font-weight:700}
+.excel thead tr:last-child th{background:#f5f7fa;color:#26384a;font-size:.81rem;height:45px}
+.excel .index{width:33px;min-width:33px;background:#eef3f8;color:#65738a;font-size:.76rem;font-weight:700}
+.excel td{font-size:.92rem;background:white;cursor:pointer}
+.excel td.source{background:#fffbeb}.excel td.computed{background:#ebf4ff;color:#134f9d;font-weight:750}
+.excel td.blank-result{background:#fff8e5}.excel td.selected{outline:3px solid #2773d6;outline-offset:-3px}
+.excel td.err{color:#a32020}
+.excel td input{display:block;width:100%;height:38px;background:transparent;border:1px solid transparent;border-radius:6px;text-align:center;padding:5px 2px;color:#202d3d;min-width:42px}
+.excel td input:focus{outline:2px solid #5896ef;background:#fff;border-color:#abc6eb}
+.pivot-tools{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:10px 0}.pivot-tools label{font-weight:750}.pivot-tools select{border:1px solid #bacbdc;border-radius:7px;padding:9px;background:white}
+.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:17px}.button{border:1px solid #bbcddd;border-radius:9px;background:white;color:#183e66;font-weight:750;padding:10px 15px}.button.primary{background:#1764d3;border-color:#1764d3;color:white}.button:hover{filter:brightness(.96)}
+.message{font-size:.91rem;font-weight:700;min-height:20px;margin-top:11px;color:#35536e}.message.good{color:#11683b}.message.bad{color:#a02222}
+.hint{background:#f5f9fe;border-left:3px solid #78a7df;padding:10px 13px;margin-top:12px;color:#35526e;font-size:.91rem}
+.reflect{display:grid;grid-template-columns:1fr 1fr;gap:16px}.reflect p{margin:0 0 12px}.reflect-checks label{display:block;margin:12px 0}.reflect-checks input{margin-right:8px;transform:scale(1.15)}
+.reflect textarea{min-height:130px;width:100%;padding:12px;border:1px solid #b8cddd;border-radius:9px;resize:vertical}
+.footer{font-size:.82rem;color:#64748b;margin:18px 7px}.note{font-size:.87rem;color:var(--mute);margin:10px 0}
+@media(max-width:920px){.school{grid-template-columns:160px minmax(0,1fr);gap:11px}.tables.split{grid-template-columns:1fr}.sidebar button{font-size:.81rem;padding:10px 6px}}
+@media(max-width:650px){.school{display:block;padding:9px}.sidebar{position:static;margin-bottom:14px;padding:9px}.sidebar h2{margin:2px 9px}.sidebar nav{display:flex;overflow:auto;gap:4px}.sidebar button{width:auto;white-space:nowrap;padding:8px}.sidebar .progress{display:none}.sheet-card{padding:12px}.reflect{grid-template-columns:1fr}.excel td,.excel th{height:47px}.formula-bar{grid-template-columns:55px 28px minmax(0,1fr)}}
+</style></head><body>
+<div class="school">
+<aside class="sidebar"><h2>Excel Explorer</h2><nav id="topics" aria-label="Choose an Excel skill"></nav><div id="progress" class="progress"></div></aside>
+<main class="content"><div class="intro"><h1 id="lesson-title">Master Excel</h1><p id="lesson-sub"></p></div>
+<section class="sheet-card"><div id="stages" class="stages" role="tablist" aria-label="Stages"></div><div id="workspace"></div></section>
+<p class="footer">Small, invented but realistic practice datasets. This is a browser learning model, not the full Excel application. Changes are private to this browser and never alter another visitor's work.</p></main>
 </div>
 <script>
 (function(){
-"use strict";
-var STORE="master-excel-school-v1";
-var specs={
-  IF:{name:"IF",title:"IF · Does this payment match?",intro:"One decision, two possible results. Change a payment and watch the status recalculate.",formula:'=IF(D2=C2,"Matched","Check")',output:"E",rows:6,example:"IF checks whether the payment equals the amount due. If it matches, the result is Matched; otherwise it says Check. That helps a finance colleague spot an exception instead of checking every invoice by hand.",challenge:"Change a payment so that it no longer matches. What happens to the check? Why should an overpayment also be investigated?"},
-  IFS:{name:"IFS",title:"IFS · Which kind of exception?",intro:"Several conditions, one informative result: matched, underpaid or overpaid.",formula:'=IFS(D2=C2,"Matched",D2<C2,"Underpaid",D2>C2,"Overpaid")',output:"E",rows:6,example:"IFS tests several conditions and returns the first matching result. Here it separates matched payments, underpayments and overpayments. It gives the team a useful reason to investigate each exception.",challenge:"Create one underpayment and one overpayment. Why is this more informative than a simple Matched / Check flag?"},
-  VLOOKUP:{name:"VLOOKUP",title:"VLOOKUP · Find the right price",intro:"Two independent tables: a product catalogue on the left and orders on the right. Change a catalogue price and see the matching order update.",formula:"=VLOOKUP(E2,$A$2:$C$6,3,FALSE)",output:"G",rows:5,example:"VLOOKUP takes the product code from an order and finds the matching code in the catalogue. It returns the price from the third column. The FALSE argument requires an exact match, and the dollar signs keep the lookup table fixed when the formula is copied.",challenge:"Change a catalogue price and then try an unknown product code. What should a colleague do if the lookup says #N/A?"}
+'use strict';
+var STORE='master-excel-school-v2';
+var settings={
+ basics:{label:'Basics',title:'Basics · Months and cycling',intro:'See how changing an input changes an entire calculation. Practise monthly sequences, cells and references.',columns:['Month','Rides','Km / ride','Total km'],output:['D'],fx:{D:'=B2*C2'},units:['D'],aim:'Monthly distance = number of rides × distance per ride.',explain:'This totals the distance cycled in a month. If the number of rides changes, the result updates, so a training summary stays consistent.'},
+ calc:{label:'Calculations',title:'Calculations · Small business sales',intro:'Convert individual figures into useful totals without typing the answer manually.',columns:['Item','Quantity','Price €','Sales €'],output:['D'],fx:{D:'=B2*C2'},money:['C','D'],aim:'Sales = quantity × price.',explain:'This calculates sales for each product. I would check the quantities and prices against the original order.'},
+ if:{label:'IF',title:'IF · Match a payment',intro:'Ask one yes/no question and return an appropriate result.',columns:['Invoice','Due €','Paid €','Check'],output:['D'],fx:{D:'=IF(C2=B2,"Matched","Review")'},money:['B','C'],aim:'Show Matched when paid equals due; otherwise show Review.',explain:'IF checks whether a payment matches the amount due. Exceptions are flagged for somebody to investigate.'},
+ ifs:{label:'IFS',title:'IFS · Explain an exception',intro:'Move from two outcomes to several meaningful outcomes.',columns:['Invoice','Due €','Paid €','Status'],output:['D'],fx:{D:'=IFS(C2=B2,"Matched",C2<B2,"Underpaid",C2>B2,"Overpaid")'},money:['B','C'],aim:'Distinguish Matched, Underpaid and Overpaid.',explain:'IFS distinguishes underpayments from overpayments. That tells a colleague what type of problem to investigate.'},
+ lookup:{label:'VLOOKUP',title:'VLOOKUP · Find the right price',intro:'Two short tables, one product code. Change a price in the catalogue and watch the matching order recalculate.',columns:['Code','Product','Price €'],orders:['Code','Quantity','Price €'],output:['G'],fx:{G:'=VLOOKUP(E2,$A$2:$C$6,3,FALSE)'},money:['C','G'],aim:'Find each order price by looking up its product code in the catalogue.',explain:'VLOOKUP matches an order code to a product in a separate table and returns the price. An unknown code should be investigated, not silently ignored.'},
+ sumifs:{label:'SUMIFS',title:'SUMIFS · Analyse cycling distance',intro:'Group distances by county or route type using a clear condition.',columns:['Region','Month','Distance km'],summary:['Region','Total km'],output:['F'],fx:{F:'=SUMIFS($C$2:$C$7,$A$2:$A$7,E2)'},aim:'Add Distance km for the region shown in the summary.',explain:'SUMIFS adds only distances that match a chosen region. It makes a useful summary without manually selecting individual rides.'},
+ clean:{label:'Clean Data',title:'Clean Data · Standardise records',intro:'Turn inconsistent spacing, capital letters and emails into predictable values.',columns:['Raw name','City','Raw email','Clean name','Email lowercase'],output:['D','E'],fx:{D:'=PROPER(TRIM(A2))',E:'=LOWER(TRIM(C2))'},aim:'Clean Name with PROPER and TRIM; Email with LOWER and TRIM.',explain:'Cleaning data before matching reduces false duplicates and missed matches. I would also inspect genuinely ambiguous records.'},
+ pivot:{label:'Pivot Tables',title:'Pivot Tables · Summarise rides',intro:'Turn individual rides into a summary by month or by region and check the total.',columns:['Month','Region','Distance km'],summary:['Group','Total km'],output:['F'],aim:'Group distances by Month or Region, and use SUM of Distance km.',explain:'A pivot table groups detailed records without changing them. I would check its grand total against the raw distances.'}
 };
-var initial={
-  IF:[
-    ["INV-101","Cedar",120,120],["INV-102","Maple",85,60],["INV-103","Oak",240,240],
-    ["INV-104","Birch",49,54],["INV-105","Ash",175,175],["INV-106","Elm",310,250]
-  ],
-  IFS:[
-    ["INV-201","Cedar",120,120],["INV-202","Maple",85,60],["INV-203","Oak",240,260],
-    ["INV-204","Birch",49,49],["INV-205","Ash",175,170],["INV-206","Elm",310,315]
-  ],
-  VLOOKUP:{
-    catalog:[["P101","Mouse",24],["P102","Keyboard",45],["P103","Webcam",68],["P104","Stand",31],["P105","Headset",59]],
-    orders:[["P103",2],["P105",1],["P101",3],["P104",1],["P999",2]]
-  }
+var samples={
+ basics:[
+ [['Jan',5,21],['Feb',6,24],['Mar',4,31],['Apr',7,27],['May',8,28],['Jun',6,34]],
+ [['Jul',4,36],['Aug',7,32],['Sep',5,30],['Oct',6,26],['Nov',3,22],['Dec',4,20]],
+ [['Jan',6,29],['Feb',8,24],['Mar',5,34],['Apr',9,31],['May',7,40],['Jun',10,25]]
+ ],
+ calc:[
+ [['Notebook',4,6.5],['Pens',12,1.8],['Folders',5,3.2],['Markers',6,2.9],['Diary',3,9.5],['Stapler',2,11]],
+ [['Mouse',3,24],['Keyboard',2,59],['Hub',4,31],['Headset',3,46],['Webcam',2,68],['Stand',1,39]],
+ [['USB cable',7,12],['Lamp',3,38],['Mouse mat',8,9],['Laptop stand',4,43],['Power bank',5,51],['SSD',2,129]]
+ ],
+ if:[
+ [['INV-101',120,120],['INV-102',85,60],['INV-103',240,240],['INV-104',49,54],['INV-105',175,175],['INV-106',310,250]],
+ [['INV-211',96,96],['INV-212',145,120],['INV-213',78,78],['INV-214',219,229],['INV-215',340,340],['INV-216',52,0]],
+ [['INV-301',270,270],['INV-302',155,100],['INV-303',64,69],['INV-304',420,420],['INV-305',89,0],['INV-306',188,188]]
+ ],
+ ifs:[
+ [['INV-401',120,120],['INV-402',85,60],['INV-403',240,260],['INV-404',49,49],['INV-405',175,170],['INV-406',310,315]],
+ [['INV-501',96,96],['INV-502',145,160],['INV-503',78,48],['INV-504',219,219],['INV-505',340,330],['INV-506',52,80]],
+ [['INV-601',270,280],['INV-602',155,155],['INV-603',64,59],['INV-604',420,390],['INV-605',89,89],['INV-606',188,200]]
+ ],
+ lookup:[
+ {catalog:[['P101','Mouse',24],['P102','Keyboard',45],['P103','Webcam',68],['P104','Stand',31],['P105','Headset',59]],orders:[['P103',2],['P105',1],['P101',3],['P104',1],['P999',2]]},
+ {catalog:[['C201','Hub',32],['C202','Cable',13],['C203','SSD',139],['C204','Lamp',42],['C205','Monitor',205]],orders:[['C204',2],['C201',5],['C205',1],['C203',2],['C999',1]]},
+ {catalog:[['T301','Tyre',44],['T302','Light',28],['T303','Helmet',77],['T304','Chain',35],['T305','Pump',22]],orders:[['T302',2],['T305',3],['T301',2],['T303',1],['T000',1]]}
+ ],
+ sumifs:[
+ {data:[['West','Jan',38],['East','Jan',45],['West','Feb',64],['North','Feb',32],['East','Mar',51],['North','Mar',48]],keys:['West','East','North']},
+ {data:[['North','Apr',55],['South','Apr',38],['West','May',67],['North','May',49],['West','Jun',73],['South','Jun',46]],keys:['North','South','West']},
+ {data:[['East','Jul',42],['West','Jul',65],['South','Aug',39],['East','Aug',58],['South','Sep',70],['West','Sep',44]],keys:['South','East','West']}
+ ],
+ clean:[
+ [['  aoife byrne  ','Limerick','AOIFE.B@EXAMPLE.COM'],['BRIAN O NEILL','Dublin','Brian.O@example.com'],['  cara murphy','Cork','CARA@Example.COM'],['darragh kelly ','Galway','DARRAGH@example.com'],['EMMA RYAN','Clare','Emma@Example.com']],
+ [['  liam murphy','Dublin','LIAM.M@EXAMPLE.COM'],['NIAMH WALSH ','Limerick','Niamh@Example.Com'],[' sara o brien  ','Cork','SARA@EXAMPLE.COM'],['OWEN POWER','Galway','Owen@Example.com'],[' cara lee ','Mayo','CARA.L@EXAMPLE.COM']],
+ [[' eoin ryan ','Cork','EOIN@EXAMPLE.COM'],['MIA KELLY','Clare','MIA.K@EXAMPLE.COM'],['  josh byrne','Dublin','JOSH@Example.com'],['GRACE MOLLOY','Galway','GRACE@example.com'],['  ava o neil','Limerick','Ava@Example.com']]
+ ],
+ pivot:[
+ [['Jan','West',38],['Jan','East',45],['Feb','West',64],['Feb','North',32],['Mar','East',51],['Mar','North',48],['Apr','West',55],['Apr','East',44]],
+ [['May','North',55],['May','South',38],['Jun','West',67],['Jun','North',49],['Jul','West',73],['Jul','South',46],['Aug','North',61],['Aug','South',42]],
+ [['Sep','East',42],['Sep','West',65],['Oct','South',39],['Oct','East',58],['Nov','South',70],['Nov','West',44],['Dec','East',59],['Dec','South',48]]
+ ]
 };
-function fresh(){return{topic:"IF",step:0,data:JSON.parse(JSON.stringify(initial)),build:{},notes:{},completed:{},selected:{}}}
-var state=fresh();
-try{var saved=JSON.parse(localStorage.getItem(STORE));if(saved&&saved.data&&saved.build)state=Object.assign(fresh(),saved)}catch(e){}
-if(!specs[state.topic])state.topic="IF";
-var lastMessage="",lastKind="";
+var order=['basics','calc','if','ifs','lookup','sumifs','clean','pivot'];
+function clone(a){return JSON.parse(JSON.stringify(a))}
+function first(){return{topic:'basics',stage:0,sets:{},formulas:{},selected:{},pivot:{},notes:{},checked:{},tests:{},hints:{}}}
+var state=first();try{var old=JSON.parse(localStorage.getItem(STORE)||'null');if(old&&old.sets&&old.formulas)state=Object.assign(first(),old)}catch(e){}
+if(!settings[state.topic])state.topic='basics';
 function save(){try{localStorage.setItem(STORE,JSON.stringify(state))}catch(e){}}
-function esc(v){return String(v==null?"":v).replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})}
-function colIndex(c){return c.charCodeAt(0)-65}
-function numText(x){if(typeof x!=="number"||!Number.isFinite(x))return String(x);return "€"+new Intl.NumberFormat("en-IE",{maximumFractionDigits:2,minimumFractionDigits:2}).format(x)}
-function sheetData(topic){
- var m={};var d=state.data[topic];
- if(topic!=="VLOOKUP"){
-   ["Invoice","Customer","Due","Paid","Check"].forEach(function(t,i){m[String.fromCharCode(65+i)+"1"]=t});
-   d.forEach(function(r,i){r.forEach(function(v,j){m[String.fromCharCode(65+j)+(i+2)]=v})});
- }else{
-   ["Code","Product","Price"].forEach(function(t,i){m[String.fromCharCode(65+i)+"1"]=t});
-   ["Code","Qty","Price"].forEach(function(t,i){m[String.fromCharCode(69+i)+"1"]=t});
-   d.catalog.forEach(function(r,i){r.forEach(function(v,j){m[String.fromCharCode(65+j)+(i+2)]=v})});
-   d.orders.forEach(function(r,i){r.forEach(function(v,j){m[String.fromCharCode(69+j)+(i+2)]=v})});
- }
- return m;
-}
-function splitArgs(s){
- var out=[],part="",depth=0,quoted=false;
- for(var i=0;i<s.length;i++){var c=s[i];if(c==='"')quoted=!quoted;if(!quoted){if(c==="(")depth++;if(c===")")depth--;if(c===","&&depth===0){out.push(part.trim());part="";continue}}part+=c}
- out.push(part.trim());return out;
-}
-function shiftFormula(f,delta){
- return f.replace(/(\$?)([A-Z])(\$?)(\d+)/g,function(all,ac,col,ar,row){
-   return (ac?"$":"")+col+(ar?"$":"")+String(Number(row)+(ar?0:delta));
- });
-}
-function value(s,m){
- s=s.trim();
- if(/^".*"$/.test(s))return s.slice(1,-1);
- if(/^TRUE$/i.test(s))return true;if(/^FALSE$/i.test(s))return false;
- if(/^-?\d+(\.\d+)?$/.test(s))return Number(s);
- if(/^\$?[A-G]\$?\d+$/i.test(s)){var key=s.replace(/\$/g,"").toUpperCase();return m[key]===undefined?"":m[key]}
- throw Error("Unsupported expression");
-}
-function condition(expr,m){
- var mt=expr.match(/^(.+?)(>=|<=|<>|=|>|<)(.+)$/);
- if(!mt)return Boolean(value(expr,m));
- var a=value(mt[1],m),b=value(mt[3],m),op=mt[2];
- if(typeof a==="number"||typeof b==="number"){a=Number(a);b=Number(b)}
- if(op==="=")return a===b;if(op==="<>")return a!==b;
- if(op===">")return a>b;if(op==="<")return a<b;if(op===">=")return a>=b;return a<=b;
-}
-function calculate(formula,row,m){
- if(!formula)return "";
- try{
-  var text=shiftFormula(formula.trim(),row-2);
-  var mt=text.match(/^=([A-Z]+)\((.*)\)$/i);if(!mt)throw Error("Formula must start with =");
-  var fun=mt[1].toUpperCase(),args=splitArgs(mt[2]);
-  if(fun==="IF"){if(args.length!==3)throw Error();return value(condition(args[0],m)?args[1]:args[2],m)}
-  if(fun==="IFS"){if(args.length<2||args.length%2)throw Error();
-    for(var i=0;i<args.length;i+=2)if(condition(args[i],m))return value(args[i+1],m);
-    return "#N/A";
-  }
-  if(fun==="VLOOKUP"){if(args.length!==4||value(args[3],m)!==false)throw Error("Use exact match");
-    var q=value(args[0],m),range=args[1].toUpperCase().match(/^(\$?)([A-C])(\$?)(\d+):(\$?)([A-C])(\$?)(\d+)$/);
-    if(!range)throw Error("Invalid range");
-    var startCol=colIndex(range[2]),endCol=colIndex(range[6]),startRow=+range[4],endRow=+range[8],idx=Number(value(args[2],m));
-    if(idx<1||startCol+idx-1>endCol)throw Error("Column outside range");
-    for(var r=startRow;r<=endRow;r++){
-      var key=String.fromCharCode(65+startCol)+r;
-      if(String(m[key])===String(q))return m[String.fromCharCode(65+startCol+idx-1)+r];
-    }
-    return "#N/A";
-  }
-  throw Error("Function not in this lesson");
- }catch(e){return "#FORMULA!"}
-}
-function currBuild(){return state.build[state.topic]||{formula:"",applied:false,filled:false}}
-function currentFormula(){return state.step===1?currBuild().formula:specs[state.topic].formula}
-function displayOutput(row,m){
- var b=currBuild();
- if(state.step===1&&(!b.applied||(row>2&&!b.filled)))return "";
- return calculate(currentFormula(),row,m);
-}
-function isEditable(col,topic){return topic==="VLOOKUP"?["A","B","C","E","F"].includes(col):["C","D"].includes(col)}
-function editValue(ref,raw){
- var topic=state.topic,row=Number(ref.slice(1)),col=ref[0],idx=row-2;
- if(idx<0)return;
- var d=state.data[topic],numeric=topic==="VLOOKUP"?["C","F"].includes(col):["C","D"].includes(col);
- var val=numeric?(raw===""?0:Number(raw)):raw;
- if(topic==="VLOOKUP"){
-   if(["A","B","C"].includes(col))d.catalog[idx][colIndex(col)]=val;
-   else d.orders[idx][colIndex(col)-4]=val;
- }else{d[idx][colIndex(col)]=val}
- save();refreshResults();
-}
-function table(cols,m,caption){
- var h='<div class="sheet-container"><p class="block-label">'+esc(caption)+'</p><table class="sheet"><thead><tr><th class="row-id"></th>';
- cols.forEach(function(c){h+='<th>'+c+'</th>'});h+='</tr><tr><th class="row-id">1</th>';
- cols.forEach(function(c){h+='<th>'+esc(m[c+"1"])+'</th>'});h+='</tr></thead><tbody>';
- var max=state.topic==="VLOOKUP"?5:6;
- for(var r=2;r<=max+1;r++){
-  h+='<tr><th class="row-id" scope="row">'+r+'</th>';
-  cols.forEach(function(c){
-    var key=c+r,output=c===specs[state.topic].output,v=output?displayOutput(r,m):m[key];
-    if(output){
-      var clazz=v==="#N/A"?" na":v==="#FORMULA!"?" error":"";
-      h+='<td class="result'+clazz+'" data-result="'+key+'" title="Click to inspect the formula">'+(v===""?"—":typeof v==="number"?numText(v):esc(v))+'</td>';
-    }else if(isEditable(c,state.topic)){
-      var numeric=state.topic==="VLOOKUP"?["C","F"].includes(c):["C","D"].includes(c);
-      h+='<td><input aria-label="'+esc(key+" "+(m[c+"1"]||""))+'" data-cell="'+key+'" type="'+(numeric?"number":"text")+'" '+(numeric?'step="0.01" min="0" ':'')+'value="'+esc(v)+'"></td>';
-    }else{h+='<td>'+esc(v)+'</td>'}
-  });h+='</tr>';
- }
- return h+'</tbody></table></div>';
-}
-function viewSheet(){
- var m=sheetData(state.topic);
- if(state.topic==="VLOOKUP")return '<div class="two-sheets">'+table(["A","B","C"],m,"Product catalogue · source data")+table(["E","F","G"],m,"Orders · lookup result")+'</div>';
- return table(["A","B","C","D","E"],m,"Invoice payments · edit the yellow cells");
-}
-function formulaDisplay(){
- var row=Number((state.selected[state.topic]||specs[state.topic].output+"2").slice(1)),f=shiftFormula(currentFormula()||specs[state.topic].formula,row-2);
- return '<div class="formula-line"><span>fx</span><code id="shown-formula">'+esc(f)+'</code></div>';
-}
-function workspace(){
- var topic=state.topic,s=specs[topic],step=state.step,b=currBuild(),html="";
- if(step===0){
-   html='<div class="instructions"><strong>Explore a finished formula.</strong> Change a payment, price or product code in a yellow cell. The blue result cells update. Click a blue result to see the formula for that row.</div>';
-   html+=viewSheet()+formulaDisplay()+'<div class="controls"><button class="btn" id="reset">Reset example</button><button class="btn primary" id="next">I understand · Build it →</button></div>';
-   html+='<p class="note">Try this: '+esc(s.challenge)+'</p>';
- }else if(step===1){
-   html='<div class="instructions"><strong>Build it yourself.</strong> Start with an empty result column. Type the formula for row 2, apply it, then fill down. Change the source data to test whether it still works. A formula is checked for correct results, not whether it merely looks familiar.</div>';
-   html+=viewSheet()+'<div class="formula-line"><span>fx</span><input class="build-input" id="formula-input" spellcheck="false" autocapitalize="off" autocomplete="off" placeholder="= your formula here" value="'+esc(b.formula)+'" aria-label="Write Excel formula for the first result cell"></div>';
-   html+='<div class="controls"><button class="btn" id="hint">Show a hint</button><button class="btn" id="apply">Apply to row 2</button><button class="btn" id="fill" '+(!b.applied?"disabled":"")+'>Fill down</button><button class="btn primary" id="check" '+(!b.filled?"disabled":"")+'>Check my work</button></div>';
-   html+='<p id="hintbox" class="note" hidden>'+esc(topic==="VLOOKUP"?'Use the order code in E2, the catalogue A2:C6, column 3 and FALSE for an exact match. Keep the catalogue range fixed using $.':topic==="IFS"?'Consider D2=C2, D2<C2 and D2>C2. Each condition should have its own label.':'Compare D2 and C2. Return "Matched" when they are equal; otherwise return "Check".')+'</p>';
-   html+='<p class="feedback '+lastKind+'" id="feedback" role="status">'+esc(lastMessage)+'</p>';
-   html+='<p class="note">You may edit the yellow cells while testing. A correct formula should still give sensible results after changes.</p>';
- }else{
-   html='<div class="instructions"><strong>Explain it to somebody else.</strong> Imagine a colleague asks you what this formula does, why the results change and how the team would use it. Write two natural sentences, not a definition from a textbook.</div>';
-   html+=viewSheet()+formulaDisplay();
-   html+='<div class="question"><div><strong>Show understanding</strong>'+esc(s.challenge)+'</div><div><strong>Workplace value</strong>What problem does the formula help identify or solve? What should somebody check before relying on the result?</div></div>';
-   html+='<div class="explain"><label for="my-answer">My explanation (about 20 seconds aloud)</label><textarea id="my-answer" placeholder="I would explain it like this…">'+esc(state.notes[topic]||"")+'</textarea></div>';
-   html+='<div class="controls"><button class="btn" id="model">Compare with an example</button><button class="btn primary" id="explained">I can explain it</button></div><div id="model-answer" class="example">'+esc(s.example)+'</div>';
-   html+='<p class="feedback '+lastKind+'" id="feedback" role="status">'+esc(lastMessage)+'</p><p class="note">No automatic grade for communication. Check whether you explained the purpose, a changing result, and what action someone should take. Then try saying it aloud.</p>';
- }
- document.getElementById("workspace").innerHTML=html;
- bindControls();setSelected(state.selected[topic]||s.output+"2");resize();
-}
-function refreshResults(){
- var m=sheetData(state.topic);
- document.querySelectorAll("[data-result]").forEach(function(el){
-   var row=Number(el.dataset.result.slice(1)),v=displayOutput(row,m);
-   el.textContent=v===""?"—":typeof v==="number"?numText(v):String(v);
-   el.classList.toggle("na",v==="#N/A");el.classList.toggle("error",v==="#FORMULA!");
- });
- var selected=state.selected[state.topic]||specs[state.topic].output+"2";setSelected(selected);
-}
-function setSelected(key){
- state.selected[state.topic]=key;
- document.querySelectorAll("[data-result]").forEach(function(el){el.classList.toggle("selected",el.dataset.result===key)});
- var f=document.getElementById("shown-formula");
- if(f){var r=Number(key.slice(1));f.textContent=shiftFormula(currentFormula()||specs[state.topic].formula,r-2)}
- save();
-}
-function verify(){
- var topic=state.topic,s=specs[topic],f=currBuild().formula,tests=[],original=sheetData(topic);
- tests.push(original);
- if(topic!=="VLOOKUP"){
-  [-15,0,15].forEach(function(delta){
-   var next=Object.assign({},original);next.D2=Number(next.C2)+delta;tests.push(next);
-  });
- }else{
-  var adjust=Object.assign({},original);adjust.C6=199;adjust.E2="P105";tests.push(adjust);
-  var missing=Object.assign({},original);missing.E2="P000";tests.push(missing);
- }
- for(var t=0;t<tests.length;t++){
-  var m=tests[t];
-  for(var row=2;row<s.rows+2;row++){
-   var got=calculate(f,row,m),want=calculate(s.formula,row,m);
-   if(got!==want)return false;
-  }
- }
- return true;
-}
-function bindControls(){
- document.querySelectorAll("[data-cell]").forEach(function(el){
-   el.addEventListener("input",function(){editValue(el.dataset.cell,el.value)});
- });
- document.querySelectorAll("[data-result]").forEach(function(el){
-   el.addEventListener("click",function(){setSelected(el.dataset.result)});
- });
- function by(id,fn){var x=document.getElementById(id);if(x)x.addEventListener("click",fn)}
- by("reset",function(){state.data[state.topic]=JSON.parse(JSON.stringify(initial[state.topic]));save();workspace()});
- by("next",function(){state.step=1;lastKind="";lastMessage="";save();render()});
- by("hint",function(){document.getElementById("hintbox").hidden=false;resize()});
- var input=document.getElementById("formula-input");
- if(input){
-   input.addEventListener("input",function(){state.build[state.topic]={formula:input.value,applied:false,filled:false};save()});
-   input.addEventListener("keydown",function(e){if(e.key==="Enter"){e.preventDefault();document.getElementById("apply").click()}});
- }
- by("apply",function(){
-   var formula=input.value.trim(),r=calculate(formula,2,sheetData(state.topic));
-   state.build[state.topic]={formula:formula,applied:true,filled:false};save();
-   lastKind=r==="#FORMULA!"?"bad":"";lastMessage=r==="#FORMULA!"?"The formula could not be calculated. Check the function, brackets and cell references.":"Result in "+s.output+"2: "+(typeof r==="number"?numText(r):r)+". Now fill down and test every row.";
-   workspace();
- });
- by("fill",function(){
-   var b=currBuild();b.filled=true;save();lastKind="";lastMessage="Copied down. Check whether all rows still make sense.";workspace();
- });
- by("check",function(){
-   if(verify()){
-     state.completed[state.topic+"-build"]=true;lastKind="good";lastMessage="Correct across the examples and extra test cases. Select 3 · Explain when you are ready, then describe why the formula matters.";save();workspace();
-   }else{lastKind="bad";lastMessage="Not quite. At least one row or test case behaves incorrectly. Check the comparison, column position and any fixed references.";workspace()}
- });
- var textarea=document.getElementById("my-answer");
- if(textarea)textarea.addEventListener("input",function(){state.notes[state.topic]=textarea.value;save()});
- by("model",function(){document.getElementById("model-answer").classList.toggle("open");resize()});
- by("explained",function(){
-   var ans=(state.notes[state.topic]||"").trim();
-   if(ans.length<40){lastKind="bad";lastMessage="Try two short sentences first: what it does and why a colleague would use it."}
-   else{state.completed[state.topic+"explain"]=true;lastKind="good";lastMessage="Explanation saved in this browser. Try saying it aloud, then move to another topic."}
-   save();var feedback=document.getElementById("feedback");feedback.className="feedback "+lastKind;feedback.textContent=lastMessage;updateProgress();resize();
- });
-}
-function updateProgress(){
- var n=Object.keys(specs).filter(function(t){return state.completed[t+"-build"]&&state.completed[t+"explain"]}).length;
- document.getElementById("progress").textContent=n+" of 3 topics explained";
-}
-function render(){
- document.getElementById("lesson-title").textContent=specs[state.topic].title;
- document.getElementById("lesson-intro").textContent=specs[state.topic].intro;
- var tabs=document.getElementById("topics");tabs.innerHTML="";
- Object.keys(specs).forEach(function(t){var b=document.createElement("button");b.textContent=t;b.setAttribute("aria-selected",String(state.topic===t));b.addEventListener("click",function(){state.topic=t;state.step=0;lastKind="";lastMessage="";save();render()});tabs.appendChild(b)});
- var steps=document.getElementById("steps");steps.innerHTML="";
- ["1 · Explore","2 · Build & test","3 · Explain"].forEach(function(t,i){var b=document.createElement("button");b.textContent=t;b.setAttribute("aria-selected",String(state.step===i));b.addEventListener("click",function(){state.step=i;lastKind="";lastMessage="";save();render()});steps.appendChild(b)});
- updateProgress();workspace();
-}
-function resize(){
- try{window.parent.postMessage({type:"master-excel-height",height:document.documentElement.scrollHeight},"*")}catch(e){}
-}
-if("ResizeObserver" in window)new ResizeObserver(resize).observe(document.body);
-window.addEventListener("load",resize);
-render();
+function html(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+function key(){return state.topic+'-'+Math.min(state.stage,2)}
+function data(){var k=key();if(!state.sets[k])state.sets[k]=clone(samples[state.topic][Math.min(state.stage,2)]);return state.sets[k]}
+function ncol(s){return s.charCodeAt(0)-65}
+function col(n){return String.fromCharCode(65+n)}
+function bare(ref){return ref.replace(/\$/g,'').toUpperCase()}
+function model(){var id=state.topic,d=data(),m={},tables=[],head=settings[id].columns;function add(c,r,v){m[c+r]=v}
+if(id==='lookup'){['A','B','C'].forEach(function(c,j){add(c,1,head[j])});['E','F','G'].forEach(function(c,j){add(c,1,settings[id].orders[j])});d.catalog.forEach(function(row,i){row.forEach(function(v,j){add(col(j),i+2,v)})});d.orders.forEach(function(row,i){row.forEach(function(v,j){add(col(j+4),i+2,v)})});tables=[{cols:['A','B','C'],title:'Product catalogue · change a price here',count:5},{cols:['E','F','G'],title:'Orders · matched prices',count:5}];}
+else if(id==='sumifs'||id==='pivot'){['A','B','C'].forEach(function(c,j){add(c,1,head[j])});['E','F'].forEach(function(c,j){add(c,1,settings[id].summary[j])});var source=id==='sumifs'?d.data:d;source.forEach(function(row,i){row.forEach(function(v,j){add(col(j),i+2,v)})});var group=id==='pivot'?(state.pivot[key()]||'Month'):null,keys=id==='pivot'?[...new Set(source.map(function(r){return r[group==='Month'?0:1]}))]:d.keys;keys.forEach(function(v,i){add('E',i+2,v)});tables=[{cols:['A','B','C'],title:id==='pivot'?'Ride records · sample data':'Cycling records · sample data',count:source.length},{cols:['E','F'],title:id==='pivot'?'Pivot-style grouped summary':'Regional totals',count:keys.length}];}
+else {head.forEach(function(v,i){add(col(i),1,v)});d.forEach(function(row,i){row.forEach(function(v,j){add(col(j),i+2,v)})});tables=[{cols:head.map(function(v,i){return col(i)}),title:id==='basics'?'Monthly cycling · sample figures':'Worksheet · change the yellow cells',count:d.length}]}
+return{m:m,tables:tables};}
+function rangeValues(spec,m){var mt=spec.match(/^\$?([A-G])\$?(\d+):\$?([A-G])\$?(\d+)$/i);if(!mt)throw Error('Bad range');var out=[];for(var r=+mt[2];r<=+mt[4];r++)for(var i=ncol(mt[1].toUpperCase());i<=ncol(mt[3].toUpperCase());i++)out.push(m[col(i)+r]);return out}
+function shift(f,delta){return f.replace(/(\$?)([A-G])(\$?)(\d+)/gi,function(all,ac,c,ar,r){return (ac?'$':'')+c.toUpperCase()+(ar?'$':'')+(Number(r)+(ar?0:delta))})}
+function args(s){var a=[],b='',n=0,q=false;for(var i=0;i<s.length;i++){var c=s[i];if(c==='"')q=!q;if(!q&&c==='(')n++;if(!q&&c===')')n--;if(c===','&&!q&&n===0){a.push(b.trim());b='';continue}b+=c}a.push(b.trim());return a}
+function evalExpr(exp,m){var s=exp.trim(),ref=bare(s);if(/^".*"$/.test(s))return s.slice(1,-1);if(/^[-+]?\d+(\.\d+)?$/.test(s))return +s;if(/^TRUE$/i.test(s))return true;if(/^FALSE$/i.test(s))return false;if(/^[A-G]\d+$/.test(ref))return m[ref]===undefined?'':m[ref];if(/^[A-G]\$?\d+:[A-G]\$?\d+$/i.test(ref))return rangeValues(s,m);if(/^[A-Z]+\(/i.test(s))return calc('='+s,m);throw Error('Unsupported expression')}
+function cond(s,m){var t=s.match(/^(.+?)(>=|<=|<>|=|>|<)(.+)$/);if(!t)throw Error('Missing comparison');var a=evalExpr(t[1],m),b=evalExpr(t[3],m);if(t[2]==='=')return a===b;if(t[2]==='<>')return a!==b;if(t[2]==='>')return a>b;if(t[2]==='<')return a<b;if(t[2]==='>=')return a>=b;return a<=b}
+function calc(f,m){try{if(!f||f[0]!=='=')return '#FORMULA!';var arithmetic=f.match(/^=\s*(\$?[A-G]\$?\d+)\s*([*+\-/])\s*(\$?[A-G]\$?\d+)\s*$/i);
+if(arithmetic){var a=Number(evalExpr(arithmetic[1],m)),b=Number(evalExpr(arithmetic[3],m));if(arithmetic[2]==='*')return a*b;if(arithmetic[2]==='+')return a+b;if(arithmetic[2]==='-')return a-b;return b===0?'#DIV/0!':a/b}
+var mt=f.match(/^=([A-Z]+)\((.*)\)$/i);if(!mt)throw Error('Invalid formula');var name=mt[1].toUpperCase(),v=args(mt[2]);
+if(name==='IF')return evalExpr(cond(v[0],m)?v[1]:v[2],m);
+if(name==='IFS'){for(var i=0;i<v.length;i+=2)if(cond(v[i],m))return evalExpr(v[i+1],m);return '#N/A'}
+if(name==='TRIM')return String(evalExpr(v[0],m)).trim().replace(/\s+/g,' ');
+if(name==='LOWER')return String(evalExpr(v[0],m)).toLowerCase();
+if(name==='PROPER')return String(evalExpr(v[0],m)).toLowerCase().replace(/(^|[\s\-'])\p{L}/gu,function(x){return x.toUpperCase()});
+if(name==='VLOOKUP'){if(String(v[3]).trim().toUpperCase()!=='FALSE')throw Error('Exact match required');var search=evalExpr(v[0],m),rg=v[1].match(/^\$?([A-G])\$?(\d+):\$?([A-G])\$?(\d+)$/i),index=Number(v[2]);if(!rg||index<1||(ncol(rg[1])+index-1)>ncol(rg[3]))throw Error('Lookup range');for(var r=+rg[2];r<=+rg[4];r++)if(String(m[rg[1].toUpperCase()+r])===String(search))return m[col(ncol(rg[1].toUpperCase())+index-1)+r];return '#N/A'}
+if(name==='SUMIFS'){var sum=rangeValues(v[0],m),range=rangeValues(v[1],m),needle=evalExpr(v[2],m),total=0;for(var j=0;j<sum.length;j++)if(String(range[j])===String(needle))total+=Number(sum[j])||0;return total}
+throw Error('Unsupported function')
+}catch(e){return '#FORMULA!'}}
+function output(ref,m){var c=ref[0],r=Number(ref.slice(1)),base=settings[state.topic].fx; if(state.topic==='pivot'){var d=data(),group=state.pivot[key()]||'Month',field=group==='Month'?0:1,v=m['E'+r];return d.reduce(function(s,row){return s+(row[field]===v?Number(row[2]):0)},0)}
+var f=readFormula(ref);return f?calc(f,m):''}
+function outputRef(ref){var c=ref[0],r=Number(ref.slice(1)),m=model().m;return settings[state.topic].output.indexOf(c)>=0&&r>=2&&m[(state.topic==='sumifs'||state.topic==='pivot'?'E':'A')+r]!==undefined}
+function isSource(ref){var m=model().m;return ref.slice(1)!=='1'&&!outputRef(ref)&&Object.prototype.hasOwnProperty.call(m,ref)}
+function readFormula(ref){var stage=state.stage,t=state.topic,c=ref[0],r=Number(ref.slice(1)),f=settings[t].fx||{};if(!outputRef(ref)||!f[c])return '';if(stage===0)return shift(f[c],r-2);if(stage===1&&r===2)return f[c];if(stage===1)return state.formulas[key()+'-'+ref]||'';if(stage>=2){var own=state.formulas[t+'-2-'+c+'2']||'';return own?shift(own,r-2):''}return ''}
+function selected(){var s=state.selected[key()]||settings[state.topic].output[0]+'2';return s}
+function pretty(v,ref){if(v===''||v===undefined||v===null)return '—';if(typeof v==='number'){if((settings[state.topic].money||[]).indexOf(ref[0])>=0)return '€'+v.toLocaleString('en-IE',{minimumFractionDigits:2,maximumFractionDigits:2});return Number(v.toFixed(2)).toLocaleString('en-IE')}return String(v)}
+function oneTable(tab,m){var h='<div class="grid-scroll"><table class="excel"><thead><tr><th class="index"></th>';tab.cols.forEach(function(c){h+='<th>'+c+'</th>'});h+='</tr><tr><th class="index">1</th>';tab.cols.forEach(function(c){h+='<th>'+html(m[c+'1'])+'</th>'});h+='</tr></thead><tbody>';
+for(var r=2;r<=tab.count+1;r++){h+='<tr><th class="index">'+r+'</th>';tab.cols.forEach(function(c){var ref=c+r,computed=outputRef(ref),v=computed?output(ref,m):m[ref],cl=computed?'computed':'source';if(computed&&v==='')cl='blank-result';var err=typeof v==='string'&&v[0]==='#';h+='<td data-ref="'+ref+'" tabindex="0" aria-label="Cell '+ref+'" class="'+cl+(err?' err':'')+(selected()===ref?' selected':'')+'">';if(!computed&&isSource(ref)){h+='<input data-input="'+ref+'" aria-label="Edit '+ref+'" value="'+html(v)+'">'}else h+=html(pretty(v,ref));h+='</td>'});h+='</tr>'}return h+'</tbody></table></div>'}
+function formBar(){var m=model().m,ref=selected(),v=outputRef(ref)?readFormula(ref):m[ref],readonly=outputRef(ref)&&(state.stage===0||state.stage===3||state.topic==='pivot');var allow=outputRef(ref)?!readonly:isSource(ref);
+if(state.topic==='pivot'&&outputRef(ref))v='Pivot summary: SUM of Distance km grouped by '+(state.pivot[key()]||'Month');
+return '<div class="formula-bar"><span id="namebox" class="namebox">'+html(ref)+'</span><span class="fx">fx</span><input id="formula-field" aria-label="Formula bar showing selected cell contents" value="'+html(v==null?'':v)+'" '+(allow?'':'readonly')+'></div><div class="formula-help" id="bar-help">'+html(outputRef(ref)?(state.topic==='pivot'?'Pivot summary — calculated by grouping, not an ordinary cell formula':readonly?'Calculated formula · select any result to inspect it':'Type a formula here and press Enter'):isSource(ref)?'Entered value · edit this cell or change it in the grid':'Choose any cell to inspect its contents')+'</div>'}
+function docs(stage){var s=settings[state.topic];if(stage===0)return ['Explore a finished model','Every blue cell works. Click any cell to inspect the entered value or formula above the grid. Change a yellow input and predict the result before checking it.'];if(stage===1)return ['Finish this model','A different dataset. Row 2 is worked out. Click the blank result in row 3 and write your own formula. Complete row 4 as well; try extra rows if you want.'];if(stage===2)return ['Build and test from scratch','A third dataset, with no worked result. Select the first blank result in row 2 and write a formula from memory. Apply it, then change an input to test whether it still works.'];return ['Assessment as learning · Reflect','You are judging your own understanding, not giving a formal definition. Predict, check, explain what changed and identify what you would improve.']}
+function renderWorkspace(){var stage=state.stage,t=state.topic,s=settings[t],d=data(),m=model(),text=docs(stage);var h='<div class="task"><strong>'+html(text[0])+'</strong><p>'+html(text[1])+'</p><p class="note"><b>Goal:</b> '+html(s.aim)+'</p></div>';
+if(t==='basics'&&stage===1)h+='<div class="hint">Sequence warm-up: Jan, Feb, Mar… through Dec. In Excel, enter Jan and Feb, select both cells and drag the fill handle to extend the pattern. Here, recognise the sequence and then complete the distance formulas.</div>';
+h+=formBar();
+if(t==='pivot')h+='<div class="pivot-tools"><label for="group">Group rides by</label><select id="group"><option'+((state.pivot[key()]||'Month')==='Month'?' selected':'')+'>Month</option><option'+((state.pivot[key()]||'Month')==='Region'?' selected':'')+'>Region</option></select><span class="note">Real Excel: Insert → PivotTable → Rows = chosen group, Values = Sum of Distance.</span></div>';
+h+='<div class="tables'+(m.tables.length>1?' split':'')+'">';
+m.tables.forEach(function(tab){h+='<div><p class="table-title">'+html(tab.title)+'</p>'+oneTable(tab,m.m)+'</div>'});h+='</div>';
+if(stage===0)h+='<div class="actions"><button class="button" data-action="reset">Restore original example</button><button class="button primary" data-action="next">Now finish one yourself →</button></div><div class="hint">Try changing a number, a product code or a region. Watch which results update. Then inspect a blue result in the formula bar.</div>';
+if(stage===1)h+='<div class="actions"><button class="button" data-action="hint">Show a small hint</button><button class="button primary" data-action="check-guided">Check rows 3 and 4</button><button class="button" data-action="next">Build without the example →</button></div>';
+if(stage===2)h+='<div class="actions"><button class="button" data-action="hint">Hint if needed</button><button class="button primary" data-action="test">Run tests</button><button class="button" data-action="next">Reflect on my learning →</button></div><div class="hint">Test at least one changed input. The check tests your formula against several rows and a change to the data, not just the first displayed answer.</div>';
+if(stage===3){var checks=state.checked[t]||{},memo=state.notes[t]||'';h+='<div class="reflect"><div class="reflect-checks"><p><strong>My own checks</strong></p>';
+['I predicted the result before changing an input.','I checked a result against the source data.','I can explain what the formula does for a colleague.'].forEach(function(q,i){h+='<label><input type="checkbox" data-check="'+i+'" '+(checks[i]?'checked':'')+'> '+html(q)+'</label>'});h+='</div><div><label for="my-note"><strong>What did I notice?</strong></label><p class="note">Sentence starter: “I changed …, so … changed. This matters because …”</p><textarea id="my-note" placeholder="Two short sentences, in my own words">'+html(memo)+'</textarea></div></div>';
+h+='<div class="actions"><button class="button" data-action="model">Show an example explanation</button><button class="button primary" data-action="reflect">Save my reflection</button></div><div id="model" class="hint" hidden>'+html(s.explain)+'</div>';}
+h+='<div id="feedback" role="status" class="message"></div><div id="hintbox" class="hint" hidden>'+html(t==='lookup'?'Use the order code from E2 and the catalogue A2:C6. In VLOOKUP, use column 3 and FALSE.':t==='sumifs'?'SUMIFS needs the distance range C2:C7, region range A2:A7 and a summary-region cell such as E2.':t==='pivot'?'Select a group such as Region and compare the totals with the original rides.':t==='clean'?'TRIM removes extra spaces. PROPER uses normal name case. LOWER changes letters to lowercase.':'Ask what two inputs you are comparing or combining, then select them from the same row.')+'</div>';
+document.getElementById('workspace').innerHTML=h;bind();resize()}
+function show(ref){state.selected[key()]=ref;save();var m=model().m,field=document.getElementById('formula-field'),v=outputRef(ref)?readFormula(ref):m[ref];
+if(state.topic==='pivot'&&outputRef(ref))v='Pivot summary: SUM of Distance km grouped by '+(state.pivot[key()]||'Month');
+field.value=v==null?'':v;field.readOnly=outputRef(ref)?(state.stage===0||state.stage===3||state.topic==='pivot'):!isSource(ref);
+document.getElementById('namebox').textContent=ref;document.getElementById('bar-help').textContent=outputRef(ref)?(state.topic==='pivot'?'Pivot result · grouped calculation':field.readOnly?'Formula behind the result':'Enter a formula here, then press Enter'):isSource(ref)?'Entered value, not a formula':'Header';
+document.querySelectorAll('[data-ref]').forEach(function(c){c.classList.toggle('selected',c.dataset.ref===ref)})}
+function writeValue(ref,newValue){var old=model().m[ref],v=typeof old==='number'?Number(newValue):newValue;var d=data(),r=Number(ref.slice(1))-2,c=ncol(ref[0]);if(state.topic==='lookup'){if(c<=2)d.catalog[r][c]=v;else if(c>=4&&c<=5)d.orders[r][c-4]=v}
+else if(state.topic==='sumifs'){if(c<=2)d.data[r][c]=v;else if(c===4)d.keys[r]=v}
+else if(state.topic==='pivot'){if(c<=2)d[r][c]=v}
+else d[r][c]=v;save();renderWorkspace();show(ref)}
+function writeFormula(ref,f){if(!outputRef(ref)||state.stage===0||state.stage===3||state.topic==='pivot')return;state.formulas[key()+'-'+ref]=f.trim();save();renderWorkspace();show(ref)}
+function match(a,b){if(typeof a==='number'&&typeof b==='number')return Math.abs(a-b)<.001;return a===b}
+function verifyGuided(){var m=model().m,targets=state.topic==='clean'?['D3','E3','D4','E4']:[settings[state.topic].output[0]+'3',settings[state.topic].output[0]+'4'];
+if(state.topic==='pivot'){document.getElementById('feedback').textContent='Check that each group includes only its own records and that the totals add up to the source data.';return}
+var wrong=targets.filter(function(ref){return !state.formulas[key()+'-'+ref]||!match(output(ref,m),calc(shift(settings[state.topic].fx[ref[0]],Number(ref.slice(1))-2),m))});message(wrong.length?'Try these cells again: '+wrong.join(', ')+'. Check each reference against its row.':'Well done. The guided rows match. Try changing a source value before moving on.',!wrong.length)}
+function verifyBuild(){if(state.topic==='pivot'){message('Check your grouping against the original rides. A pivot should account for every ride exactly once.',true);return}
+var m=model().m,outs=settings[state.topic].output,wrong=[],d=data();for(var i=0;i<outs.length;i++){var c=outs[i],f=state.formulas[key()+'-'+c+'2'];if(!f){wrong.push(c+'2');continue}for(var r=2;r<=Math.min(5,settings[state.topic].label==='VLOOKUP'?6:state.topic==='sumifs'?4:d.length+1);r++){var g=calc(shift(f,r-2),m),w=calc(shift(settings[state.topic].fx[c],r-2),m);if(!match(g,w)){wrong.push(c+r);break}}}
+if(!wrong.length){var altered=Object.assign({},m);if(state.topic==='lookup'){altered.C2=Number(m.C2)+17;altered.E2=m.A2}
+else if(state.topic==='clean')altered.A2='  NEW NAME ',altered.C2='EXAMPLE@MAIL.COM';
+else if(state.topic==='sumifs')altered.C2=Number(m.C2)+51;
+else if(state.topic==='if'||state.topic==='ifs')altered.C2=Number(m.B2)+17;
+else altered.B2=Number(m.B2)+2;
+for(var j=0;j<outs.length;j++){var cc=outs[j],user=calc(state.formulas[key()+'-'+cc+'2'],altered),goal=calc(settings[state.topic].fx[cc],altered);if(!match(user,goal))wrong.push(cc+'2 test case')}}
+message(wrong.length?'Not quite: '+wrong.join(', ')+'. Check the cell references and test after changing an input.':'Your formulas match the sample rows and a changed-data test. Now explain why those results matter.',!wrong.length);if(!wrong.length){state.tests[state.topic]=true;save()}}
+function message(v,good){var el=document.getElementById('feedback');el.textContent=v;el.className='message '+(good?'good':'bad')}
+function bind(){
+document.querySelectorAll('[data-ref]').forEach(function(td){td.addEventListener('click',function(){show(td.dataset.ref)});td.addEventListener('keydown',function(e){if(e.key==='Enter'){show(td.dataset.ref);document.getElementById('formula-field').focus()}})});
+document.querySelectorAll('[data-input]').forEach(function(inp){inp.addEventListener('focus',function(){show(inp.dataset.input)});inp.addEventListener('change',function(){writeValue(inp.dataset.input,inp.value)})});
+document.getElementById('formula-field').addEventListener('keydown',function(e){if(e.key==='Enter'){var ref=selected(),v=e.target.value;if(outputRef(ref))writeFormula(ref,v);else if(isSource(ref))writeValue(ref,v)}});
+document.querySelectorAll('[data-action]').forEach(function(b){b.addEventListener('click',function(){var action=b.dataset.action;if(action==='reset'){delete state.sets[key()];save();renderWorkspace()}
+if(action==='next'){state.stage=Math.min(3,state.stage+1);save();render()}
+if(action==='hint'){document.getElementById('hintbox').hidden=false;resize()}
+if(action==='check-guided')verifyGuided();if(action==='test')verifyBuild();if(action==='model'){document.getElementById('model').hidden=false;resize()}
+if(action==='reflect'){var c=state.checked[state.topic]||{},count=Object.keys(c).filter(function(k){return c[k]}).length;message(count===3?'Self-assessment saved. You can return to any stage, try new values or ask AI for a fresh dataset.':'Choose the checks you have genuinely completed. Go back and test anything you are unsure about.',count===3);save()}})});
+document.querySelectorAll('[data-check]').forEach(function(el){el.addEventListener('change',function(){var c=state.checked[state.topic]||{};c[el.dataset.check]=el.checked;state.checked[state.topic]=c;save()})});
+var note=document.getElementById('my-note');if(note)note.addEventListener('input',function(){state.notes[state.topic]=note.value;save()});
+var sel=document.getElementById('group');if(sel)sel.addEventListener('change',function(){state.pivot[key()]=sel.value;state.selected[key()]='F2';save();renderWorkspace()})}
+function render(){document.getElementById('lesson-title').textContent=settings[state.topic].title;document.getElementById('lesson-sub').textContent=settings[state.topic].intro;
+var nav=document.getElementById('topics');nav.innerHTML='';order.forEach(function(id,i){var b=document.createElement('button');b.innerHTML='<span class="ordinal">'+(i+1)+'</span><span>'+html(settings[id].label)+'</span>';if(id===state.topic)b.setAttribute('aria-current','page');b.addEventListener('click',function(){state.topic=id;state.stage=0;save();render()});nav.appendChild(b)});
+var stages=document.getElementById('stages');stages.innerHTML='';['Explore','Finish','Build & test','Reflect'].forEach(function(name,i){var b=document.createElement('button');b.textContent=(i+1)+' · '+name;b.setAttribute('aria-selected',String(state.stage===i));b.addEventListener('click',function(){state.stage=i;save();render()});stages.appendChild(b)});
+document.getElementById('progress').textContent=order.filter(function(id){return state.tests[id]}).length+' of 8 build tests passed · no login';renderWorkspace()}
+function resize(){try{window.parent.postMessage({type:'master-excel-height',height:document.documentElement.scrollHeight},'*')}catch(e){}}
+if('ResizeObserver' in window)new ResizeObserver(resize).observe(document.body);window.addEventListener('load',resize);render();
 })();
-</script>
-</body>
-</html>
+</script></body></html>
