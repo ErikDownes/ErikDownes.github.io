@@ -2096,7 +2096,7 @@
       if (!cueNode) return;
       const cues = breadcrumbParts(cueNode);
       if (!cues.length) return;
-      const escapeRe = value => value.replace(/[.*+?^\u0024{}()|[\]\\]/g, '\\    const setOpen = (heading, open) => {');
+      const escapeRe = value => value.replace(/[^\w\s]/g, char => '\\' + char);
       const patterns = cues.map(cue => {
         const clean = cleanText(cue);
         // A small, deliberate set of inflections, rather than loose stemming.
