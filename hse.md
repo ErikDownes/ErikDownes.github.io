@@ -1,10 +1,10 @@
 ---
 layout: doc
 permalink: /hse.html
-handle: HSE Finance
-title: HSE Finance
+handle: HSE Job Spec
+title: HSE Job Spec
 subtitle: Original Job Specification · Co-Op Finance · HSE Mid-West Finance Department
-nav_order: 25
+nav_order: 55
 top_nav: true
 hse_mode: true
 public_mode: true
@@ -47,6 +47,7 @@ eyebrow: HSE MID-WEST · ORIGINAL JOB SPECIFICATION
 </style>
 
 <div class="hse-spec">
+<p><strong>Original HSE job specification.</strong> This page preserves the employer’s wording. For explanations and links to Erik’s experience, <a href="/hse-finance-study.html">use the edited HSE Finance study guide</a>.</p>
 
 <section id="job-title-grade">
 <h2>Job Title and Grade</h2>
@@ -111,12 +112,12 @@ eyebrow: HSE MID-WEST · ORIGINAL JOB SPECIFICATION
   <li>Working on Patient Level Cost and Activity Based Funding Annual Returns</li>
   <li>Collating consultant private insurer claims for submission</li>
   <li>Processing AP payments on SAP Financials</li>
-  <li>Ensure deadlines are met and that service levels are maintained</li>
-  <li>Work on Ad-hoc projects as they arise</li>
+  <li>Ensure deadlines are met and that service levels are maintained.</li>
+  <li>Work on Ad-hoc projects as they arise.</li>
   <li>Any other duties assigned by your line manager to meet service need</li>
 </ul>
 
-<p>The role will involve using integrated financial management systems – <strong>SAP Financials</strong> and the suite of Microsoft packages e.g. <strong>Word, Excel, Outlook, PowerPoint</strong> etc.</p>
+<p>The role will involve using integrated financial management systems – <strong>SAP Financials</strong> and the suite of Microsoft packages e.g. <strong>Word, Excel, Outlook, Power Point</strong> etc.</p>
 
 <p>Detailed training and review on all aspect of work will be carried out.</p>
 
