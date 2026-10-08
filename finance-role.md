@@ -24,12 +24,6 @@ It's a practical finance placement supporting month-end work, reconciliations, p
 Good finance work helps the HSE pay suppliers, control costs and make sound decisions about resources. It supports patient services indirectly by making the financial information dependable.
 
 
-## Who would you report to and how would you learn the procedures?
-
-I would report to the **Finance Manager or assigned manager**. I'd **listen carefully**, ask questions, **check my work** and gradually **take responsibility** as I learned the procedures.
-
-Finance Manager|Check my work|Take responsibility
-
 ## What happens during month-end close?
 
 The finance team checks that the month's transactions are complete and accurate before reporting. I could help with supporting records, reconciliations and investigating differences under supervision.
