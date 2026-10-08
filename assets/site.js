@@ -1968,6 +1968,8 @@
     if (text.includes('|')) {
       words = text.split('|').map(cleanText).filter(Boolean);
     } else {
+      return [];
+      /* Legacy non-pipe guessing disabled. Keep the old recovery code below inert.
       // Without pipes, stay conservative so ordinary prose is not mistaken
       // for a breadcrumb line.
       if (/[.!?;:]$/.test(text)) return [];
@@ -1986,6 +1988,8 @@
         }
       }
     }
+
+    */
 
     words = words.map(cleanText).filter(Boolean);
     // A single prompt is valid when explicitly marked with a pipe (e.g. Learn|).
@@ -2150,6 +2154,21 @@
     headings.forEach(heading => {
       const initialNodes = sourceNodesFor(heading);
       if (!initialNodes.length) return;
+      // Every interview answer gets a consistent horizontal recall strip.
+      // Explicit pipes are the ONLY authoring delimiter; no capitalisation guesses.
+      // When an older question lacks cues, show a clearly editable scaffold.
+      const hasCue = initialNodes.some(node =>
+        node.classList?.contains('interview-breadcrumbs') ||
+        (node.matches?.('p,div') && node.textContent.includes('|') &&
+         parseBreadcrumbWords(node.textContent).length > 0)
+      );
+      if (!hasCue) {
+        const lastSource = initialNodes[initialNodes.length - 1];
+        const scaffold = document.createElement('p');
+        scaffold.textContent = 'Main point|Evidence|Result';
+        scaffold.dataset.cueScaffold = 'true';
+        lastSource.insertAdjacentElement('afterend', scaffold);
+      }
       // Keep cues in their authored position, ordinarily below the answer.
       const answerNodes = sourceNodesFor(heading);
 
