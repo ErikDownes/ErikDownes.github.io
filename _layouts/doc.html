@@ -201,9 +201,10 @@
           <a{% if page.url == '/qa.html' %} class="is-active" aria-current="page"{% endif %} href="{{ '/qa.html' | relative_url }}">Introduction &amp; Icebreakers</a>
           <a{% if page.url == '/motivation.html' %} class="is-active" aria-current="page"{% endif %} href="{{ '/motivation.html' | relative_url }}">Motivation &amp; Career Direction</a>
           <a{% if page.url == '/technology.html' %} class="is-active" aria-current="page"{% endif %} href="{{ '/technology.html' | relative_url }}">Education, Knowledge &amp; Technical Skills</a>
-          <a{% if page.url == '/people.html' %} class="is-active" aria-current="page"{% endif %} href="{{ '/people.html' | relative_url }}">Competency &amp; Behavioural Questions</a>
-          <a{% if page.url == '/communication.html' %} class="is-active" aria-current="page"{% endif %} href="{{ '/communication.html' | relative_url }}">↳ Communication</a>
-          <a{% if page.url == '/initiative.html' %} class="is-active" aria-current="page"{% endif %} href="{{ '/initiative.html' | relative_url }}">↳ Initiative &amp; Adaptability</a>
+          <span class="interview-sidebar-category">Competency &amp; Behavioural Questions</span>
+          <a class="interview-sidebar-subitem{% if page.url == '/people.html' %} is-active{% endif %}"{% if page.url == '/people.html' %} aria-current="page"{% endif %} href="{{ '/people.html' | relative_url }}">Teamwork</a>
+          <a class="interview-sidebar-subitem{% if page.url == '/communication.html' %} is-active{% endif %}"{% if page.url == '/communication.html' %} aria-current="page"{% endif %} href="{{ '/communication.html' | relative_url }}">Communication</a>
+          <a class="interview-sidebar-subitem{% if page.url == '/initiative.html' %} is-active{% endif %}"{% if page.url == '/initiative.html' %} aria-current="page"{% endif %} href="{{ '/initiative.html' | relative_url }}">Initiative &amp; Adaptability</a>
           <a{% if page.url == '/finance-role.html' %} class="is-active" aria-current="page"{% endif %} href="{{ '/finance-role.html' | relative_url }}">Understanding the Job</a>
           <a{% if page.url == '/analytics.html' %} class="is-active" aria-current="page"{% endif %} href="{{ '/analytics.html' | relative_url }}">Strengths, Suitability &amp; Contribution</a>
           <a href="{{ '/all-interview.html' | relative_url }}#interview-closing">Closing &amp; Questions for the Interviewer</a>
@@ -332,6 +333,9 @@
         <button type="button" data-action="print">Print / PDF</button>
       </div>
 
+      {% if page.handle == 'Teamwork' or page.handle == 'Communication' or page.handle == 'Initiative' %}
+      <p class="interview-star-note"><strong>STAR</strong> means <strong>Situation, Task, Action, Result</strong>. When a question asks for an example from your experience, use these four steps to <strong>tell the story naturally</strong>.</p>
+      {% endif %}
       <div class="doc-body" id="docBody">{{ content }}</div>
       <script>
         (() => {
