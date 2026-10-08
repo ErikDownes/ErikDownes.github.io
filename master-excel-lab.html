@@ -145,7 +145,7 @@ throw Error('Unsupported function')
 function output(ref,m){var c=ref[0],r=Number(ref.slice(1)),base=settings[state.topic].fx; if(state.topic==='pivot'){var d=data(),group=state.pivot[key()]||'Month',field=group==='Month'?0:1,v=m['E'+r];return d.reduce(function(s,row){return s+(row[field]===v?Number(row[2]):0)},0)}
 var f=readFormula(ref);return f?calc(f,m):''}
 function outputRef(ref){var c=ref[0],r=Number(ref.slice(1)),m=model().m;return settings[state.topic].output.indexOf(c)>=0&&r>=2&&m[(state.topic==='sumifs'||state.topic==='pivot'?'E':'A')+r]!==undefined}
-function isSource(ref){var m=model().m;return ref.slice(1)!=='1'&&!outputRef(ref)&&Object.prototype.hasOwnProperty.call(m,ref)}
+function isSource(ref){var m=model().m;return ref.slice(1)!=='1'&&!outputRef(ref)&&!(state.topic==='pivot'&&ref[0]==='E')&&Object.prototype.hasOwnProperty.call(m,ref)}
 function readFormula(ref){var stage=state.stage,t=state.topic,c=ref[0],r=Number(ref.slice(1)),f=settings[t].fx||{};if(!outputRef(ref)||!f[c])return '';if(stage===0)return shift(f[c],r-2);if(stage===1&&r===2)return f[c];if(stage===1)return state.formulas[key()+'-'+ref]||'';if(stage>=2){var own=state.formulas[t+'-2-'+c+'2']||'';return own?shift(own,r-2):''}return ''}
 function selected(){var s=state.selected[key()]||settings[state.topic].output[0]+'2';return s}
 function pretty(v,ref){if(v===''||v===undefined||v===null)return '—';if(typeof v==='number'){if((settings[state.topic].money||[]).indexOf(ref[0])>=0)return '€'+v.toLocaleString('en-IE',{minimumFractionDigits:2,maximumFractionDigits:2});return Number(v.toFixed(2)).toLocaleString('en-IE')}return String(v)}
