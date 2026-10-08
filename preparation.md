@@ -6,11 +6,14 @@ title: Interview
 nav_order: 5
 top_nav: true
 interview_hub: true
+description: Interview practice built around short answers, real evidence and reflection. Learn how to prepare, not just what to memorise.
 eyebrow: INTERVIEW · PRACTISE · REFLECT · IMPROVE
 public_mode: true
 ---
 
 # Interview Preparation
+
+**Learn to prepare, not just what to say.** Practise short answers, use real examples, and reflect until explaining your strengths feels natural.
 
 This is a place to **learn how to prepare**, not a collection of speeches to memorise. Start with a question, try a short answer in your own words, then check whether you actually gave evidence. Strong interview preparation is built on practice, feedback and reflection — not reading a perfect paragraph over and over.
 
