@@ -10,41 +10,35 @@ top_nav: false
 interview_mode: true
 description: Communication, customer communication and feedback interview preparation.
 eyebrow: INTERVIEW DOMAIN · COMMUNICATION
-intro: >-
-  What is a competency-based question?
+intro: |-
+  **What is a competency-based question?**
 
+  It asks you to recall a real experience from work, college or a project to show a skill.
 
-  A question that asks you to look back at something you did in work, college or
-  a project to show a particular skill.
+  **Look for:** “Tell me about a time…” · “Give me an example…” · “Have you ever…?”
 
+  **Use STAR** to organise almost any story:
 
-  Buzzwords: “Tell me about a time…” / “Give me an example…” / “Have you ever…?”
+  | STAR | What to explain |
+  |---|---|
+  | **S – Situation** | What was happening? |
+  | **T – Task** | What did you need to do? |
+  | **A – Action** | What did you do? |
+  | **R – Result** | What happened? |
 
+  **Why?** Four clear steps help you explain your experience and show your skills.
 
-  Use STAR to turn almost any experience into a clear, structured answer.
+  **Must you say STAR?** No. Tell the story naturally. You can use “The situation was…” if it helps.
 
-
-  | STAR          | What to explain           |
-
-  | ------------- | ------------------------- |
-
-  | S – Situation | What was happening?       |
-
-  | T – Task      | What did you need to do?  |
-
-  | A – Action    | What did you actually do? |
-
-  | R – Result    | What was the outcome?     |
-
-
-  Why use STAR? It breaks one story into four clear parts, making your answer
-  easier to follow and showing the interviewer how you handled the situation.
-
-
-  Do you have to say S, T, A and R? No. Tell the story naturally, but it's
-  perfectly fine to say “The situation was… My task was… I decided to… The
-  result was…” Interviewers recognise this structure.
 ---
+## STAR Practice | What is a competency-based question, and how can STAR help you answer it?
+
+**Learning question — this will not be asked in the interview.**
+
+A competency-based question asks for a real example from your past. STAR helps you tell it clearly: **Situation** (what happened), **Task** (what you needed to do), **Action** (what you did) and **Result** (what happened in the end). You don't have to name each step aloud — just tell the story naturally.
+
+Recognise the question|Situation|Task|Action|Result
+
 ## Explain Clearly | Tell me about a time you explained something complex clearly.
 
 My mother was comparing three PCP offers for the same car. I built a calculator to compare the deposit, monthly repayments, final payment and total cash outlay, then used simple figures and graphs to explain the result. The middle option was about €800 cheaper overall.
