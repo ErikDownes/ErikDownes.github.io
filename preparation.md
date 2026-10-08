@@ -21,7 +21,7 @@ This is a place to **learn how to prepare**, not a collection of speeches to mem
 
 ## Start with the questions
 
-[All Questions](/all-interview.html) follows a natural interview order. The [Education, Knowledge & Technical Skills](/technology.html) section includes Excel explanations and [hands-on spreadsheet practice](https://docs.google.com/spreadsheets/d/1CsGCxVfs8xBEGT7KsAcbAFXfqFl-XcvSe9Jb4rv5h0A/edit?gid=1524497728#gid=1524497728). Other sections cover [teamwork](/people.html), [communication](/communication.html), [initiative](/initiative.html) and [understanding the job](/finance-role.html).
+[All Questions](/all-interview.html) follows a natural interview order. The [Education, Knowledge & Technical Skills](/technology.html) section includes Excel explanations and [Master Excel]({{ '/master-excel.html' | relative_url }}) for interactive formula practice. Other sections cover [teamwork](/people.html), [communication](/communication.html), [initiative](/initiative.html) and [understanding the job](/finance-role.html).
 
 ## Use a simple routine
 
