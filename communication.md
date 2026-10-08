@@ -39,13 +39,13 @@ A competency-based question asks you to **recognise a question about a real expe
 
 Recognise|Structure|Outcome
 
-## Explain Clearly | Tell me about a time you explained something complex clearly.
+## STAR · Explaining something complex clearly
 
 My mother was deciding between **three PCP offers** for the same car and preferred the one with the highest deposit and lowest monthly repayments. I **listened** to what mattered to her, then **compared the total cost** of each offer. I **explained the difference simply**, and she chose the middle option, **saving €800**.
 
 Listening|Evidence|Clarity
 
-## Customer Communication | Tell me about a time communication helped resolve a customer problem.
+## STAR · Resolving a customer problem through communication
 
 At O’Mahony’s, our printed address information had not been updated, and books were sent to the wrong library. I helped resolve the problem by organising the return and correct delivery, while communicating directly with both libraries so that each knew what was happening. I worked with colleagues to minimise the delay. Afterwards, I raised the outdated printouts with my line manager so we could use up-to-date Booksolve information.
 
@@ -57,7 +57,7 @@ I start by considering my **audience** and what they need. A customer usually wa
 
 Audience awareness|Clarity|Adaptation
 
-## Feedback | Tell me about a time you received corrective feedback.
+## STAR · Receiving corrective feedback
 
 Early in my TY placement at Mr Price, my manager gave me **feedback** about returning on time after breaks. I **accepted** it, **understood** how delays affected the team and **changed my routine** immediately.
 
