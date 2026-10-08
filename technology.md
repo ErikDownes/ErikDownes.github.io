@@ -12,6 +12,47 @@ description: Python, pandas, SQL, databases, Excel and technical aptitude for
   interview preparation.
 eyebrow: INTERVIEW DOMAIN · TECHNOLOGY
 ---
+## Excel | How would you use Excel in a finance role?
+
+I can organise data, calculate totals, match records and check exceptions. I'm practising **IF**, **SUMIFS**, **XLOOKUP**, filters and pivot tables in a [spreadsheet workbook](https://docs.google.com/spreadsheets/d/1CsGCxVfs8xBEGT7KsAcbAFXfqFl-XcvSe9Jb4rv5h0A/edit?gid=1524497728#gid=1524497728). I would always check an unusual figure against its source.
+
+## Excel | What does IF do?
+
+**IF** checks a condition and returns one answer if it is true and another if it is false. For example, it can flag an invoice for review when the amount paid is too low.
+
+## Excel | What is the difference between SUMIF and SUMIFS?
+
+**SUMIF** adds values meeting one condition. **SUMIFS** can use several conditions, such as payments for one department within a particular month.
+
+## Excel | What is XLOOKUP used for?
+
+**XLOOKUP** finds a matching reference in another table. I could use an invoice ID to find its payment record, then investigate any missing or duplicate match.
+
+## Excel | What do the dollar signs mean in an Excel formula?
+
+The dollar signs keep a reference fixed when a formula is copied. For example, **$H$4** always points to H4, which is useful when every row uses the same rate.
+
+## Excel | What is IFERROR for?
+
+**IFERROR** deals with a formula error, such as division by zero. I would check *why* it happened rather than automatically hiding a genuine data problem.
+
+## Excel | How would you check a spreadsheet that stopped balancing?
+
+I would show the formulas, trace the references, check the source totals and test a known example. A hard-coded number in place of a formula can make a workbook fail when inputs change.
+
+## Excel | How would you clean imported data?
+
+I would check dates and number formats, remove unwanted spaces, look for duplicates and filter for missing values. Then I would recheck the totals before using the data.
+
+## Excel | What does a pivot table do?
+
+A pivot table groups many rows into a quick summary, such as expenditure by month or category. I would verify the data range and the totals before using a chart.
+
+## Excel | How is Excel different from SAP Financials?
+
+Excel is useful for calculations, checking and analysis. SAP Financials is an organisation's controlled system for finance transactions. I would follow the approved SAP procedures rather than treating my spreadsheet as the official record.
+
+
 ## STAR · Working with large data
 
 My Dublin Bikes project used about 55 million station-status observations. I cleaned and standardised the historical files with pandas, stored the data in SQLite, then used SQL to reduce it into station-by-hour patterns for the dashboard. That turned a very large dataset into something practical and understandable.
