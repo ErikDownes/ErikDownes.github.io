@@ -4,7 +4,7 @@ permalink: /education.html
 handle: LM058
 title: BSc Financial Mathematics programme at the University of Limerick
 nav_order: 990
-top_nav: true
+top_nav: false
 eyebrow: UNIVERSITY OF LIMERICK · BSC FINANCIAL MATHEMATICS · LM058
 study_mode: true
 ---
