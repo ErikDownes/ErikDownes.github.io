@@ -9,7 +9,7 @@ interview_mode: true
 description: Initiative, learning, ownership and organisation interview preparation.
 eyebrow: INTERVIEW DOMAIN · INITIATIVE
 ---
-## Tell me about a process you improved.
+## Tell me about a time you identified a problem and took the initiative to improve things.
 
 At O’Mahony’s Bookshop, I identified a weakness in how orders were being checked before dispatch. We were relying on printed reports from Booksolve, which could become outdated. I flagged the problem with my manager and suggested using the latest information directly from the system. I got access to Booksolve and started using it to check orders more accurately.
 
