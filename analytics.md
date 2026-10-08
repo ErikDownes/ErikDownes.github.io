@@ -16,19 +16,19 @@ I bring analytical problem-solving, an aptitude for IT and technical concepts, a
 
 Analytical ability|Technical aptitude|Dependability
 
-## Tell me about a problem you solved.
+## STAR · Solving a problem
 
 In my Dublin Bikes project, I had about 55 million observations spread across files with different structures and timestamp formats. I broke the problem into stages, cleaned and standardised the data with pandas, stored it in SQLite, used SQL to analyse it, and then visualised the results in Leaflet.
 
 Problem solving|Technical approach|Outcome
 
-## Tell me about a time you identified and corrected an error.
+## STAR · Identifying and correcting an error
 
 I was checking an Excel spreadsheet that stopped reconciling after the inputs changed. I exposed the formulas and found a hard-coded number where there should have been a relative-reference formula. I corrected it and tested the spreadsheet again to make sure it updated properly.
 
 Diagnosis|Correction|Verification
 
-## Tell me about a time analysis helped a decision.
+## STAR · Using analysis to support a decision
 
 My mother was comparing three PCP offers for the same car and initially preferred the one with the highest deposit and lowest monthly repayments. I listened to her reasoning, compared the total cost of each offer and explained the difference simply. She chose the middle option, saving about €800.
 
