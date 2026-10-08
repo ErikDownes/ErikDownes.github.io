@@ -2061,40 +2061,22 @@
     };
 
     const formatBreadcrumb = node => {
-      const parts = breadcrumbParts(node).length ? breadcrumbParts(node) : parseBreadcrumbWords(node?.textContent || '');
-      if (!parts.length) return;
+      const parsed = breadcrumbParts(node);
+      const parts = parsed.length ? parsed : parseBreadcrumbWords(node?.textContent || '');
+      if (!parts.length) return false;
 
+      // Cues are one source of truth: the same phrases are highlighted in
+      // the answer and displayed in a three-column strip underneath it.
+      // Layout belongs in CSS rather than a competing set of inline styles.
       node.classList.add('interview-breadcrumbs');
       node.style.setProperty('--breadcrumb-count', String(parts.length));
-
-      // Spread the recall hints evenly across the answer row, but leave
-      // a little breathing room at the ends (roughly two tabs left, three right).
-      node.style.display = 'grid';
-      node.style.gridTemplateColumns = `repeat(${parts.length}, minmax(0, 1fr))`;
-      node.style.alignItems = 'center';
-      node.style.justifyContent = 'stretch';
-      node.style.columnGap = '0';
-      node.style.width = '100%';
-      node.style.maxWidth = 'none';
-      node.style.minWidth = '0';
-      node.style.boxSizing = 'border-box';
-      node.style.marginLeft = '0';
-      node.style.marginRight = '0';
-      node.style.padding = '14px 22px 12px';
-      node.style.borderTop = '1px solid #dfe5ea';
-
-      node.replaceChildren(...parts.map((part, index) => {
+      node.setAttribute('aria-label', 'Memory prompts');
+      node.replaceChildren(...parts.map(part => {
         const span = document.createElement('span');
         span.textContent = part;
-        span.style.display = 'block';
-        span.style.flex = '0 0 auto';
-        span.style.minWidth = '0';
-        span.style.padding = '0';
-        span.style.border = '0';
-        span.style.whiteSpace = 'normal';
-        span.style.textAlign = index === 0 ? 'left' : (index === parts.length - 1 ? 'right' : 'center');
         return span;
       }));
+      return true;
     };
 
     // Derive blue/bold memory emphasis from the SAME cues displayed below.
