@@ -24,9 +24,9 @@ Listening|Evidence|Clarity
 
 ## STAR · Handling a customer problem
 
-At O’Mahony’s, our printed address information had not been updated, and books were sent to the wrong library. I helped resolve the problem by organising the return and correct delivery, while communicating directly with both libraries so that each knew what was happening. I worked with colleagues to minimise the delay. Afterwards, I raised the outdated printouts with my line manager so we could use up-to-date Booksolve information.
+At O’Mahony’s, our printed address information was outdated, so books went to the wrong library. I helped **resolve the problem** by organising the return and correct delivery. I made sure to **keep both libraries informed** and worked with colleagues to minimise the delay. Afterwards, I raised the issue with my manager so we could use current Booksolve information and **prevent the same mistake**.
 
-Customer care|Communication|Resolution
+Resolve the problem|Keep both libraries informed|Prevent the same mistake
 
 ## STAR · Handling a price complaint (illustrative example)
 
@@ -46,7 +46,7 @@ Early in my TY placement at Mr Price, my manager corrected me on punctuality aft
 
 Accountability|Learning|Improvement
 
-## STAR · Working closely with one other person
+## STAR · Pair programming with a classmate
 
 In CE4702 pair programming, I worked closely with one classmate on the same programming tasks. We divided the work, talked through our reasoning, reviewed each other’s code and made sure that both of us understood the final solution rather than simply joining two separate pieces together at the end.
 
