@@ -13,6 +13,8 @@ eyebrow: INTERVIEW DOMAIN · EDUCATION & TECHNICAL SKILLS
 ---
 # Excel
 
+[**Master Excel — Explore, Build & Explain**]({{ '/master-excel.html' | relative_url }}) is the interactive practice school for IF, IFS and VLOOKUP. Work with a completed example, change the data, build the formula yourself, then practise explaining the result in plain English.
+
 ## Excel | How would you use Excel in a finance role?
 
 I can organise data, calculate totals, match records and check exceptions. I'm practising **IF**, **SUMIFS**, **XLOOKUP**, filters and pivot tables in a [spreadsheet workbook](https://docs.google.com/spreadsheets/d/1CsGCxVfs8xBEGT7KsAcbAFXfqFl-XcvSe9Jb4rv5h0A/edit?gid=1524497728#gid=1524497728). I would always check an unusual figure against its source.
