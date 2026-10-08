@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Master Excel | Interactive practice</title>
+<style>
+:root{--ink:#172539;--muted:#53657b;--border:#dce4ed;--blue:#1764d3;--blue-soft:#ebf3ff;--paper:#fff;--ground:#f6f8fb;--edit:#fffbeb;--good:#11623a;--warn:#9b4708}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font:17px/1.55 system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+button,input,textarea{font:inherit}
+button{cursor:pointer}
+.wrap{max-width:1260px;margin:auto;padding:18px clamp(10px,2.5vw,28px) 38px}
+.mast{display:flex;justify-content:space-between;gap:15px;align-items:center;flex-wrap:wrap;margin-bottom:14px}
+.mast p{margin:0;color:var(--muted);font-size:.95rem}.progress{font-size:.86rem;font-weight:750;color:#28517e}
+.topic-tabs,.step-tabs{display:flex;gap:9px;flex-wrap:wrap}
+.topic-tabs{margin-bottom:16px}
+.topic-tabs button{border:1px solid var(--border);background:#fff;color:var(--ink);border-radius:11px;padding:12px 22px;font-weight:800}
+.topic-tabs button[aria-selected=true]{background:var(--ink);border-color:var(--ink);color:#fff}
+.card{background:var(--paper);border:1px solid var(--border);border-radius:18px;padding:clamp(18px,2.6vw,32px);box-shadow:0 7px 27px rgba(21,36,56,.04)}
+.lesson-head{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.lesson-head h2{font-size:clamp(1.3rem,2.6vw,1.9rem);line-height:1.2;margin:0 0 9px}
+.lesson-head p{color:var(--muted);margin:0;max-width:740px}
+.step-tabs{margin:25px 0 18px;border-bottom:1px solid var(--border);padding-bottom:13px}
+.step-tabs button{border:1px solid var(--border);background:white;border-radius:10px;padding:10px 16px;font-weight:700}
+.step-tabs button[aria-selected=true]{border-color:var(--blue);background:var(--blue-soft);color:#0d4c9d}
+.instructions{margin:0 0 17px;background:#f2f7fd;border-left:4px solid var(--blue);padding:13px 17px;border-radius:0 9px 9px 0}
+.instructions strong{color:#0d4c9d}.sheet-container{width:100%;overflow:auto}
+.two-sheets{display:grid;grid-template-columns:minmax(280px,1fr) minmax(280px,1fr);gap:21px}
+.block-label{font-weight:800;margin:0 0 9px;color:#364a60}
+.sheet{border-collapse:separate;border-spacing:0;width:100%;table-layout:fixed;border:1px solid var(--border);border-radius:10px;overflow:hidden;background:#fff}
+.sheet th,.sheet td{border-right:1px solid var(--border);border-bottom:1px solid var(--border);text-align:center;padding:12px 8px;min-width:78px;height:64px;vertical-align:middle;overflow-wrap:anywhere}
+.sheet tr>*:last-child{border-right:0}.sheet tr:last-child>*{border-bottom:0}
+.sheet thead tr:first-child th{background:#eef3f8;font-size:.79rem;color:#60718a;height:36px;padding:5px}
+.sheet .row-id{background:#eef3f8;color:#60718a;width:39px;min-width:39px;font-size:.8rem}
+.sheet thead tr:nth-child(2) th{background:#f6f8fc;font-size:.87rem;font-weight:750}
+.sheet td.result{background:#eaf5ff;font-weight:750;color:#124c85;cursor:pointer}
+.sheet td.result:hover,.sheet td.result.selected{outline:3px solid var(--blue);outline-offset:-3px}
+.sheet td.empty{background:#fbfcfd;color:#b4bfce}
+.sheet input{border:1px solid #e6cf81;border-radius:7px;background:var(--edit);color:var(--ink);width:100%;height:40px;padding:5px;text-align:center;min-width:54px}
+.sheet input:focus{outline:3px solid #9cbef0;border-color:var(--blue)}
+.sheet td.na{color:var(--warn)}.sheet td.error{color:#a32020}
+.formula-line{display:flex;align-items:center;gap:12px;flex-wrap:wrap;background:#f7f9fc;border:1px solid var(--border);border-radius:10px;padding:12px 14px;margin:16px 0 10px}
+.formula-line span{font-weight:800;color:#415771;min-width:31px}
+.formula-line code{font:600 1rem/1.5 Consolas,Monaco,monospace;overflow-wrap:anywhere;color:#17344f}
+.build-input{flex:1;min-width:250px;padding:11px;border:1px solid #9bbbe9;border-radius:8px;font:600 1rem Consolas,monospace}
+.controls{display:flex;gap:10px;flex-wrap:wrap;margin-top:17px}
+.btn{border:1px solid #bccbdb;border-radius:10px;background:#fff;color:#17344f;padding:11px 16px;font-weight:700}
+.btn.primary{background:var(--blue);border-color:var(--blue);color:#fff}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+.feedback{margin:13px 0 0;min-height:24px;font-weight:700;color:#445d76}
+.feedback.good{color:var(--good)}.feedback.bad{color:#9f2626}
+.note{margin:13px 0 0;color:var(--muted);font-size:.86rem}
+.explain textarea{width:100%;min-height:135px;resize:vertical;padding:15px;border:1px solid #aebfd3;border-radius:10px;background:#fff}
+.explain label{display:block;font-weight:800;margin-bottom:8px}
+.question{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0}
+.question>div{background:#f7f9fc;padding:16px;border-radius:10px}
+.question strong{display:block;color:#174e8c;margin-bottom:4px}
+.example{display:none;margin-top:14px;background:#f1f8f4;border:1px solid #b9ddc9;border-radius:10px;padding:14px 18px}
+.example.open{display:block}
+.footer{font-size:.85rem;color:var(--muted);margin-top:15px}
+@media(max-width:850px){.two-sheets{grid-template-columns:1fr}.question{grid-template-columns:1fr}}
+@media(max-width:550px){body{font-size:15px}.wrap{padding:10px 6px 20px}.card{padding:16px 10px}.topic-tabs button,.step-tabs button{padding:9px 12px}.sheet th,.sheet td{padding:7px 4px;min-width:66px;height:58px}.sheet .row-id{min-width:30px;width:30px}.sheet input{min-width:46px}.formula-line code{font-size:.83rem}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="mast"><p>Small datasets. Real decisions. No login required.</p><span class="progress" id="progress"></span></div>
+  <nav class="topic-tabs" id="topics" aria-label="Excel topics"></nav>
+  <section class="card">
+    <header class="lesson-head"><div><h2 id="lesson-title"></h2><p id="lesson-intro"></p></div></header>
+    <nav class="step-tabs" id="steps" aria-label="Lesson stages"></nav>
+    <div id="workspace" aria-live="polite"></div>
+  </section>
+  <div class="footer">An interactive teaching model of selected Excel formulas, not Microsoft Excel itself. For full spreadsheet features and saving a workbook, use Excel or Google Sheets. Practice changes are stored only in this browser.</div>
+</div>
+<script>
+(function(){
+"use strict";
+var STORE="master-excel-school-v1";
+var specs={
+  IF:{name:"IF",title:"IF · Does this payment match?",intro:"One decision, two possible results. Change a payment and watch the status recalculate.",formula:'=IF(D2=C2,"Matched","Check")',output:"E",rows:6,example:"IF checks whether the payment equals the amount due. If it matches, the result is Matched; otherwise it says Check. That helps a finance colleague spot an exception instead of checking every invoice by hand.",challenge:"Change a payment so that it no longer matches. What happens to the check? Why should an overpayment also be investigated?"},
+  IFS:{name:"IFS",title:"IFS · Which kind of exception?",intro:"Several conditions, one informative result: matched, underpaid or overpaid.",formula:'=IFS(D2=C2,"Matched",D2<C2,"Underpaid",D2>C2,"Overpaid")',output:"E",rows:6,example:"IFS tests several conditions and returns the first matching result. Here it separates matched payments, underpayments and overpayments. It gives the team a useful reason to investigate each exception.",challenge:"Create one underpayment and one overpayment. Why is this more informative than a simple Matched / Check flag?"},
+  VLOOKUP:{name:"VLOOKUP",title:"VLOOKUP · Find the right price",intro:"Two independent tables: a product catalogue on the left and orders on the right. Change a catalogue price and see the matching order update.",formula:"=VLOOKUP(E2,$A$2:$C$6,3,FALSE)",output:"G",rows:5,example:"VLOOKUP takes the product code from an order and finds the matching code in the catalogue. It returns the price from the third column. The FALSE argument requires an exact match, and the dollar signs keep the lookup table fixed when the formula is copied.",challenge:"Change a catalogue price and then try an unknown product code. What should a colleague do if the lookup says #N/A?"}
+};
+var initial={
+  IF:[
+    ["INV-101","Cedar",120,120],["INV-102","Maple",85,60],["INV-103","Oak",240,240],
+    ["INV-104","Birch",49,54],["INV-105","Ash",175,175],["INV-106","Elm",310,250]
+  ],
+  IFS:[
+    ["INV-201","Cedar",120,120],["INV-202","Maple",85,60],["INV-203","Oak",240,260],
+    ["INV-204","Birch",49,49],["INV-205","Ash",175,170],["INV-206","Elm",310,315]
+  ],
+  VLOOKUP:{
+    catalog:[["P101","Mouse",24],["P102","Keyboard",45],["P103","Webcam",68],["P104","Stand",31],["P105","Headset",59]],
+    orders:[["P103",2],["P105",1],["P101",3],["P104",1],["P999",2]]
+  }
+};
+function fresh(){return{topic:"IF",step:0,data:JSON.parse(JSON.stringify(initial)),build:{},notes:{},completed:{},selected:{}}}
+var state=fresh();
+try{var saved=JSON.parse(localStorage.getItem(STORE));if(saved&&saved.data&&saved.build)state=Object.assign(fresh(),saved)}catch(e){}
+if(!specs[state.topic])state.topic="IF";
+var lastMessage="",lastKind="";
+function save(){try{localStorage.setItem(STORE,JSON.stringify(state))}catch(e){}}
+function esc(v){return String(v==null?"":v).replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})}
+function colIndex(c){return c.charCodeAt(0)-65}
+function numText(x){if(typeof x!=="number"||!Number.isFinite(x))return String(x);return "€"+new Intl.NumberFormat("en-IE",{maximumFractionDigits:2,minimumFractionDigits:2}).format(x)}
+function sheetData(topic){
+ var m={};var d=state.data[topic];
+ if(topic!=="VLOOKUP"){
+   ["Invoice","Customer","Due","Paid","Check"].forEach(function(t,i){m[String.fromCharCode(65+i)+"1"]=t});
+   d.forEach(function(r,i){r.forEach(function(v,j){m[String.fromCharCode(65+j)+(i+2)]=v})});
+ }else{
+   ["Code","Product","Price"].forEach(function(t,i){m[String.fromCharCode(65+i)+"1"]=t});
+   ["Code","Qty","Price"].forEach(function(t,i){m[String.fromCharCode(69+i)+"1"]=t});
+   d.catalog.forEach(function(r,i){r.forEach(function(v,j){m[String.fromCharCode(65+j)+(i+2)]=v})});
+   d.orders.forEach(function(r,i){r.forEach(function(v,j){m[String.fromCharCode(69+j)+(i+2)]=v})});
+ }
+ return m;
+}
+function splitArgs(s){
+ var out=[],part="",depth=0,quoted=false;
+ for(var i=0;i<s.length;i++){var c=s[i];if(c==='"')quoted=!quoted;if(!quoted){if(c==="(")depth++;if(c===")")depth--;if(c===","&&depth===0){out.push(part.trim());part="";continue}}part+=c}
+ out.push(part.trim());return out;
+}
+function shiftFormula(f,delta){
+ return f.replace(/(\$?)([A-Z])(\$?)(\d+)/g,function(all,ac,col,ar,row){
+   return (ac?"$":"")+col+(ar?"$":"")+String(Number(row)+(ar?0:delta));
+ });
+}
+function value(s,m){
+ s=s.trim();
+ if(/^".*"$/.test(s))return s.slice(1,-1);
+ if(/^TRUE$/i.test(s))return true;if(/^FALSE$/i.test(s))return false;
+ if(/^-?\d+(\.\d+)?$/.test(s))return Number(s);
+ if(/^\$?[A-G]\$?\d+$/i.test(s)){var key=s.replace(/\$/g,"").toUpperCase();return m[key]===undefined?"":m[key]}
+ throw Error("Unsupported expression");
+}
+function condition(expr,m){
+ var mt=expr.match(/^(.+?)(>=|<=|<>|=|>|<)(.+)$/);
+ if(!mt)return Boolean(value(expr,m));
+ var a=value(mt[1],m),b=value(mt[3],m),op=mt[2];
+ if(typeof a==="number"||typeof b==="number"){a=Number(a);b=Number(b)}
+ if(op==="=")return a===b;if(op==="<>")return a!==b;
+ if(op===">")return a>b;if(op==="<")return a<b;if(op===">=")return a>=b;return a<=b;
+}
+function calculate(formula,row,m){
+ if(!formula)return "";
+ try{
+  var text=shiftFormula(formula.trim(),row-2);
+  var mt=text.match(/^=([A-Z]+)\((.*)\)$/i);if(!mt)throw Error("Formula must start with =");
+  var fun=mt[1].toUpperCase(),args=splitArgs(mt[2]);
+  if(fun==="IF"){if(args.length!==3)throw Error();return value(condition(args[0],m)?args[1]:args[2],m)}
+  if(fun==="IFS"){if(args.length<2||args.length%2)throw Error();
+    for(var i=0;i<args.length;i+=2)if(condition(args[i],m))return value(args[i+1],m);
+    return "#N/A";
+  }
+  if(fun==="VLOOKUP"){if(args.length!==4||value(args[3],m)!==false)throw Error("Use exact match");
+    var q=value(args[0],m),range=args[1].toUpperCase().match(/^(\$?)([A-C])(\$?)(\d+):(\$?)([A-C])(\$?)(\d+)$/);
+    if(!range)throw Error("Invalid range");
+    var startCol=colIndex(range[2]),endCol=colIndex(range[6]),startRow=+range[4],endRow=+range[8],idx=Number(value(args[2],m));
+    if(idx<1||startCol+idx-1>endCol)throw Error("Column outside range");
+    for(var r=startRow;r<=endRow;r++){
+      var key=String.fromCharCode(65+startCol)+r;
+      if(String(m[key])===String(q))return m[String.fromCharCode(65+startCol+idx-1)+r];
+    }
+    return "#N/A";
+  }
+  throw Error("Function not in this lesson");
+ }catch(e){return "#FORMULA!"}
+}
+function currBuild(){return state.build[state.topic]||{formula:"",applied:false,filled:false}}
+function currentFormula(){return state.step===1?currBuild().formula:specs[state.topic].formula}
+function displayOutput(row,m){
+ var b=currBuild();
+ if(state.step===1&&(!b.applied||(row>2&&!b.filled)))return "";
+ return calculate(currentFormula(),row,m);
+}
+function isEditable(col,topic){return topic==="VLOOKUP"?["A","B","C","E","F"].includes(col):["C","D"].includes(col)}
+function editValue(ref,raw){
+ var topic=state.topic,row=Number(ref.slice(1)),col=ref[0],idx=row-2;
+ if(idx<0)return;
+ var d=state.data[topic],numeric=topic==="VLOOKUP"?["C","F"].includes(col):["C","D"].includes(col);
+ var val=numeric?(raw===""?0:Number(raw)):raw;
+ if(topic==="VLOOKUP"){
+   if(["A","B","C"].includes(col))d.catalog[idx][colIndex(col)]=val;
+   else d.orders[idx][colIndex(col)-4]=val;
+ }else{d[idx][colIndex(col)]=val}
+ save();refreshResults();
+}
+function table(cols,m,caption){
+ var h='<div class="sheet-container"><p class="block-label">'+esc(caption)+'</p><table class="sheet"><thead><tr><th class="row-id"></th>';
+ cols.forEach(function(c){h+='<th>'+c+'</th>'});h+='</tr><tr><th class="row-id">1</th>';
+ cols.forEach(function(c){h+='<th>'+esc(m[c+"1"])+'</th>'});h+='</tr></thead><tbody>';
+ var max=state.topic==="VLOOKUP"?5:6;
+ for(var r=2;r<=max+1;r++){
+  h+='<tr><th class="row-id" scope="row">'+r+'</th>';
+  cols.forEach(function(c){
+    var key=c+r,output=c===specs[state.topic].output,v=output?displayOutput(r,m):m[key];
+    if(output){
+      var clazz=v==="#N/A"?" na":v==="#FORMULA!"?" error":"";
+      h+='<td class="result'+clazz+'" data-result="'+key+'" title="Click to inspect the formula">'+(v===""?"—":typeof v==="number"?numText(v):esc(v))+'</td>';
+    }else if(isEditable(c,state.topic)){
+      var numeric=state.topic==="VLOOKUP"?["C","F"].includes(c):["C","D"].includes(c);
+      h+='<td><input aria-label="'+esc(key+" "+(m[c+"1"]||""))+'" data-cell="'+key+'" type="'+(numeric?"number":"text")+'" '+(numeric?'step="0.01" min="0" ':'')+'value="'+esc(v)+'"></td>';
+    }else{h+='<td>'+esc(v)+'</td>'}
+  });h+='</tr>';
+ }
+ return h+'</tbody></table></div>';
+}
+function viewSheet(){
+ var m=sheetData(state.topic);
+ if(state.topic==="VLOOKUP")return '<div class="two-sheets">'+table(["A","B","C"],m,"Product catalogue · source data")+table(["E","F","G"],m,"Orders · lookup result")+'</div>';
+ return table(["A","B","C","D","E"],m,"Invoice payments · edit the yellow cells");
+}
+function formulaDisplay(){
+ var row=Number((state.selected[state.topic]||specs[state.topic].output+"2").slice(1)),f=shiftFormula(currentFormula()||specs[state.topic].formula,row-2);
+ return '<div class="formula-line"><span>fx</span><code id="shown-formula">'+esc(f)+'</code></div>';
+}
+function workspace(){
+ var topic=state.topic,s=specs[topic],step=state.step,b=currBuild(),html="";
+ if(step===0){
+   html='<div class="instructions"><strong>Explore a finished formula.</strong> Change a payment, price or product code in a yellow cell. The blue result cells update. Click a blue result to see the formula for that row.</div>';
+   html+=viewSheet()+formulaDisplay()+'<div class="controls"><button class="btn" id="reset">Reset example</button><button class="btn primary" id="next">I understand · Build it →</button></div>';
+   html+='<p class="note">Try this: '+esc(s.challenge)+'</p>';
+ }else if(step===1){
+   html='<div class="instructions"><strong>Build it yourself.</strong> Start with an empty result column. Type the formula for row 2, apply it, then fill down. Change the source data to test whether it still works. A formula is checked for correct results, not whether it merely looks familiar.</div>';
+   html+=viewSheet()+'<div class="formula-line"><span>fx</span><input class="build-input" id="formula-input" spellcheck="false" autocapitalize="off" autocomplete="off" placeholder="= your formula here" value="'+esc(b.formula)+'" aria-label="Write Excel formula for the first result cell"></div>';
+   html+='<div class="controls"><button class="btn" id="hint">Show a hint</button><button class="btn" id="apply">Apply to row 2</button><button class="btn" id="fill" '+(!b.applied?"disabled":"")+'>Fill down</button><button class="btn primary" id="check" '+(!b.filled?"disabled":"")+'>Check my work</button></div>';
+   html+='<p id="hintbox" class="note" hidden>'+esc(topic==="VLOOKUP"?'Use the order code in E2, the catalogue A2:C6, column 3 and FALSE for an exact match. Keep the catalogue range fixed using $.':topic==="IFS"?'Consider D2=C2, D2<C2 and D2>C2. Each condition should have its own label.':'Compare D2 and C2. Return "Matched" when they are equal; otherwise return "Check".')+'</p>';
+   html+='<p class="feedback '+lastKind+'" id="feedback" role="status">'+esc(lastMessage)+'</p>';
+   html+='<p class="note">You may edit the yellow cells while testing. A correct formula should still give sensible results after changes.</p>';
+ }else{
+   html='<div class="instructions"><strong>Explain it to somebody else.</strong> Imagine a colleague asks you what this formula does, why the results change and how the team would use it. Write two natural sentences, not a definition from a textbook.</div>';
+   html+=viewSheet()+formulaDisplay();
+   html+='<div class="question"><div><strong>Show understanding</strong>'+esc(s.challenge)+'</div><div><strong>Workplace value</strong>What problem does the formula help identify or solve? What should somebody check before relying on the result?</div></div>';
+   html+='<div class="explain"><label for="my-answer">My explanation (about 20 seconds aloud)</label><textarea id="my-answer" placeholder="I would explain it like this…">'+esc(state.notes[topic]||"")+'</textarea></div>';
+   html+='<div class="controls"><button class="btn" id="model">Compare with an example</button><button class="btn primary" id="explained">I can explain it</button></div><div id="model-answer" class="example">'+esc(s.example)+'</div>';
+   html+='<p class="feedback '+lastKind+'" id="feedback" role="status">'+esc(lastMessage)+'</p><p class="note">No automatic grade for communication. Check whether you explained the purpose, a changing result, and what action someone should take. Then try saying it aloud.</p>';
+ }
+ document.getElementById("workspace").innerHTML=html;
+ bindControls();setSelected(state.selected[topic]||s.output+"2");resize();
+}
+function refreshResults(){
+ var m=sheetData(state.topic);
+ document.querySelectorAll("[data-result]").forEach(function(el){
+   var row=Number(el.dataset.result.slice(1)),v=displayOutput(row,m);
+   el.textContent=v===""?"—":typeof v==="number"?numText(v):String(v);
+   el.classList.toggle("na",v==="#N/A");el.classList.toggle("error",v==="#FORMULA!");
+ });
+ var selected=state.selected[state.topic]||specs[state.topic].output+"2";setSelected(selected);
+}
+function setSelected(key){
+ state.selected[state.topic]=key;
+ document.querySelectorAll("[data-result]").forEach(function(el){el.classList.toggle("selected",el.dataset.result===key)});
+ var f=document.getElementById("shown-formula");
+ if(f){var r=Number(key.slice(1));f.textContent=shiftFormula(currentFormula()||specs[state.topic].formula,r-2)}
+ save();
+}
+function verify(){
+ var topic=state.topic,s=specs[topic],f=currBuild().formula,tests=[],original=sheetData(topic);
+ tests.push(original);
+ if(topic!=="VLOOKUP"){
+  [-15,0,15].forEach(function(delta){
+   var next=Object.assign({},original);next.D2=Number(next.C2)+delta;tests.push(next);
+  });
+ }else{
+  var adjust=Object.assign({},original);adjust.C6=199;adjust.E2="P105";tests.push(adjust);
+  var missing=Object.assign({},original);missing.E2="P000";tests.push(missing);
+ }
+ for(var t=0;t<tests.length;t++){
+  var m=tests[t];
+  for(var row=2;row<s.rows+2;row++){
+   var got=calculate(f,row,m),want=calculate(s.formula,row,m);
+   if(got!==want)return false;
+  }
+ }
+ return true;
+}
+function bindControls(){
+ document.querySelectorAll("[data-cell]").forEach(function(el){
+   el.addEventListener("input",function(){editValue(el.dataset.cell,el.value)});
+ });
+ document.querySelectorAll("[data-result]").forEach(function(el){
+   el.addEventListener("click",function(){setSelected(el.dataset.result)});
+ });
+ function by(id,fn){var x=document.getElementById(id);if(x)x.addEventListener("click",fn)}
+ by("reset",function(){state.data[state.topic]=JSON.parse(JSON.stringify(initial[state.topic]));save();workspace()});
+ by("next",function(){state.step=1;lastKind="";lastMessage="";save();render()});
+ by("hint",function(){document.getElementById("hintbox").hidden=false;resize()});
+ var input=document.getElementById("formula-input");
+ if(input){
+   input.addEventListener("input",function(){state.build[state.topic]={formula:input.value,applied:false,filled:false};save()});
+   input.addEventListener("keydown",function(e){if(e.key==="Enter"){e.preventDefault();document.getElementById("apply").click()}});
+ }
+ by("apply",function(){
+   var formula=input.value.trim(),r=calculate(formula,2,sheetData(state.topic));
+   state.build[state.topic]={formula:formula,applied:true,filled:false};save();
+   lastKind=r==="#FORMULA!"?"bad":"";lastMessage=r==="#FORMULA!"?"The formula could not be calculated. Check the function, brackets and cell references.":"Result in "+s.output+"2: "+(typeof r==="number"?numText(r):r)+". Now fill down and test every row.";
+   workspace();
+ });
+ by("fill",function(){
+   var b=currBuild();b.filled=true;save();lastKind="";lastMessage="Copied down. Check whether all rows still make sense.";workspace();
+ });
+ by("check",function(){
+   if(verify()){
+     state.completed[state.topic+"-build"]=true;lastKind="good";lastMessage="Correct across the examples and extra test cases. Now explain what it does and why it matters.";save();workspace();setTimeout(function(){state.step=2;lastKind="";lastMessage="";save();render()},700);
+   }else{lastKind="bad";lastMessage="Not quite. At least one row or test case behaves incorrectly. Check the comparison, column position and any fixed references.";workspace()}
+ });
+ var textarea=document.getElementById("my-answer");
+ if(textarea)textarea.addEventListener("input",function(){state.notes[state.topic]=textarea.value;save()});
+ by("model",function(){document.getElementById("model-answer").classList.toggle("open");resize()});
+ by("explained",function(){
+   var ans=(state.notes[state.topic]||"").trim();
+   if(ans.length<40){lastKind="bad";lastMessage="Try two short sentences first: what it does and why a colleague would use it."}
+   else{state.completed[state.topic+"explain"]=true;lastKind="good";lastMessage="Explanation saved in this browser. Try saying it aloud, then move to another topic."}
+   save();var feedback=document.getElementById("feedback");feedback.className="feedback "+lastKind;feedback.textContent=lastMessage;updateProgress();resize();
+ });
+}
+function updateProgress(){
+ var n=Object.keys(specs).filter(function(t){return state.completed[t+"-build"]&&state.completed[t+"explain"]}).length;
+ document.getElementById("progress").textContent=n+" of 3 topics explained";
+}
+function render(){
+ document.getElementById("lesson-title").textContent=specs[state.topic].title;
+ document.getElementById("lesson-intro").textContent=specs[state.topic].intro;
+ var tabs=document.getElementById("topics");tabs.innerHTML="";
+ Object.keys(specs).forEach(function(t){var b=document.createElement("button");b.textContent=t;b.setAttribute("aria-selected",String(state.topic===t));b.addEventListener("click",function(){state.topic=t;state.step=0;lastKind="";lastMessage="";save();render()});tabs.appendChild(b)});
+ var steps=document.getElementById("steps");steps.innerHTML="";
+ ["1 · Explore","2 · Build & test","3 · Explain"].forEach(function(t,i){var b=document.createElement("button");b.textContent=t;b.setAttribute("aria-selected",String(state.step===i));b.addEventListener("click",function(){state.step=i;lastKind="";lastMessage="";save();render()});steps.appendChild(b)});
+ updateProgress();workspace();
+}
+function resize(){
+ try{window.parent.postMessage({type:"master-excel-height",height:document.documentElement.scrollHeight},"*")}catch(e){}
+}
+if("ResizeObserver" in window)new ResizeObserver(resize).observe(document.body);
+window.addEventListener("load",resize);
+render();
+})();
+</script>
+</body>
+</html>
