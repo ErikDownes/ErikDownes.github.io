@@ -55,9 +55,9 @@ Excel is useful for calculations, checking and analysis. SAP Financials is an or
 
 ## STAR · Working with large data
 
-My Dublin Bikes project used about 55 million station-status observations. I cleaned and standardised the historical files with pandas, stored the data in SQLite, then used SQL to reduce it into station-by-hour patterns for the dashboard. That turned a very large dataset into something practical and understandable.
+In my Dublin Bikes project, I worked with **96 CSV files** covering eight years and about 55 million observations. I used pandas to **standardise dates** and combine the data. The result was too large to manage conveniently as another CSV, so I **stored it in SQLite** and used SQL for the analysis.
 
-Scale|Method|Outcome
+96 CSV files|Standardise dates|SQLite
 
 ## STAR · Standardising date formats
 
@@ -67,9 +67,9 @@ Date formats|Standardise|Check
 
 ## STAR · Working with raw data
 
-I exported one of my own Strava rides as a GPX file and analysed the raw track points. I checked what information was actually available, cleaned the elevation data and compared my results with Strava. I also found that the file had no timestamps, so I did not try to invent speed or moving-time information that the data could not support.
+Combining my interests in cycling and data analysis, I imported one of my Strava GPX files into Python. GPX files provide basic raw data, including GPS coordinates, elevation and sometimes timestamps. I **inspected** the available fields, **cleaned** the elevation data and **calculated** useful measures without assuming information was there when it was not.
 
-Data integrity|Critical thinking|Limits
+Inspected|Cleaned|Calculated
 
 ## STAR · Building a financial tool
 
