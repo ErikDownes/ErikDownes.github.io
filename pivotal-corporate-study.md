@@ -9,6 +9,8 @@ description: UL CV evidence for co-op interview preparation.
 public_mode: true
 cv_mode: true
 ---
+> **Erik:** I know these CV sections have been moved around. See if you can edit them yourself. Click **Edit** and sign in with your GitHub account (try your GitHub password if prompted). If that doesn't work, let me know.
+
 ## Teamwork | Teamwork
 
 During my TY placement at Mr Price, I worked as part of a large team reorganising the shop floor and redesigning the shelf layout. It was an all-hands-on-deck project, and everyone was encouraged to contribute ideas outside their normal role.
