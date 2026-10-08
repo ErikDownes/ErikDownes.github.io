@@ -26,11 +26,11 @@ Accurate finance information helps the organisation understand its costs, contro
 
 Accuracy|Resources|Services|Accountability
 
-## Who would you report to, and how would you learn the procedures?
+## Who would you report to and how would you learn the procedures?
 
-The job specification identifies the **Finance Manager or assigned manager**. I would take direction, ask what a completed task should look like, follow approved procedures and keep clear records. The specification explicitly provides for training and review, so I would learn first and then take on responsibility progressively.
+I would report to the **Finance Manager** or another **assigned manager**. I would **learn the procedures**, **ask questions** when needed, **check my work thoroughly** and gradually **take more responsibility**.
 
-Manager|Training|Ask|Check|Improve
+Finance Manager|Learn the procedures|Ask questions|Check my work thoroughly|Take more responsibility
 
 ## What happens during month-end close?
 
