@@ -197,6 +197,7 @@
     <div class="interview-shell">
       <aside class="interview-domain-sidebar" aria-label="Interview domains">
         <nav>
+          <a{% if page.url == '/preparation.html' %} class="is-active" aria-current="page"{% endif %} href="{{ '/preparation.html' | relative_url }}"><strong>Answers &amp; Questions</strong></a>
           <a{% if page.url == '/all-interview.html' %} class="is-active" aria-current="page"{% endif %} href="{{ '/all-interview.html' | relative_url }}"><strong>All Questions</strong></a>
           <a{% if page.url == '/qa.html' %} class="is-active" aria-current="page"{% endif %} href="{{ '/qa.html' | relative_url }}">Introduction &amp; Icebreakers</a>
           <a{% if page.url == '/motivation.html' %} class="is-active" aria-current="page"{% endif %} href="{{ '/motivation.html' | relative_url }}">Motivation &amp; Career Direction</a>
