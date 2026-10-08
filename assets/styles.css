@@ -4560,3 +4560,78 @@ article img.img-full,
 /* Recall strip is a preview above the answer; keep answer text unboxed. */
 .interview-mode .interview-breadcrumbs{border-top:0!important;border-bottom:1px solid #dfe5ea!important;padding-top:13px!important;padding-bottom:13px!important;background:#f8fbff!important}
 .interview-mode .interview-answer-node strong,.interview-mode .interview-answer-node b{color:#0057ff!important;font-weight:850!important}
+
+
+/* Group interview questions under visible H1 subject headings. */
+.interview-mode .doc-body > h1 {
+  margin: 26px 0 10px;
+  padding: 0 0 9px;
+  font-size: 1.25rem;
+  font-weight: 800;
+  line-height: 1.35;
+  color: #0c5277;
+  border-bottom: 2px solid #dcebf4;
+}
+.interview-mode .doc-body > h1:first-child { margin-top: 8px; }
+
+/* Compact worked example within the Excel pivot-table answer. */
+.interview-mode .pivot-learning-visual {
+  margin: 13px 0 7px;
+  padding: 14px;
+  border: 1px solid #d6e6f2;
+  border-radius: 12px;
+  background: #f7fbff;
+  color: #19374f;
+}
+.interview-mode .pivot-learning-flow {
+  display: grid;
+  grid-template-columns: minmax(0,1fr) 32px minmax(0,1fr);
+  gap: 9px;
+  align-items: center;
+}
+.interview-mode .pivot-learning-panel { min-width: 0; }
+.interview-mode .pivot-learning-panel h3 {
+  margin: 0 0 8px;
+  font-size: .82rem;
+  line-height: 1.25;
+  color: #145e88;
+  font-weight: 800;
+}
+.interview-mode .pivot-learning-panel table {
+  width: 100%;
+  margin: 0;
+  border-collapse: collapse;
+  font-size: .81rem;
+  background: white;
+}
+.interview-mode .pivot-learning-panel th,
+.interview-mode .pivot-learning-panel td {
+  padding: 6px 8px;
+  text-align: left;
+  border: 1px solid #dce8f0;
+}
+.interview-mode .pivot-learning-panel td:last-child,
+.interview-mode .pivot-learning-panel th:last-child { text-align: right; white-space: nowrap; }
+.interview-mode .pivot-learning-panel thead th { background: #e4f0fa; color: #123c61; }
+.interview-mode .pivot-learning-panel .pivot-learning-total th,
+.interview-mode .pivot-learning-panel .pivot-learning-total td { background: #d8f1ec; font-weight: 800; }
+.interview-mode .pivot-learning-arrow {
+  font-size: 1.9rem;
+  font-weight: 800;
+  color: #1775c4;
+  text-align: center;
+}
+.interview-mode .pivot-learning-visual figcaption {
+  margin-top: 12px;
+  font-size: .82rem;
+  line-height: 1.45;
+  color: #205b7b;
+  text-align: center;
+}
+@media (max-width: 630px) {
+  .interview-mode .pivot-learning-flow { grid-template-columns: minmax(0,1fr); }
+  .interview-mode .pivot-learning-arrow { transform: rotate(90deg); font-size: 1.6rem; line-height: 1; }
+}
+@media print {
+  .interview-mode .pivot-learning-visual { break-inside: avoid; }
+}
