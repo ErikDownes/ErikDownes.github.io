@@ -16,6 +16,17 @@ eyebrow: HSE MID-WEST · RESEARCH · UNDERSTAND · CONNECT
 
 **Interview priority:** Know the role, understand a few core financial processes, and be ready to explain what you have actually done. You do **not** need to memorise every HSE service or claim to know software you have not used.
 
+## Independent Research — HSE Sources
+
+**How the organisation is structured:** HSE Mid West covers Limerick, Clare and North Tipperary. The HSE now describes two healthcare areas within the region: Limerick City and Tipperary North; and Clare and Limerick County. Each of the six health regions has responsibility for local planning and budgets. [HSE Mid West overview](https://about.hse.ie/organisation/hse-mid-west/about-hse-mid-west/) · [How HSE health regions work](https://about.hse.ie/leadership-and-operations/hse-health-regions/).
+
+**Where the money comes from:** The Government funds the HSE through public budgets. The HSE's financial management includes expenditure controls, financial reporting and different ways of distributing funding, including Activity Based Funding. [HSE financial management](https://about.hse.ie/leadership-and-operations/hse-financial-management/).
+
+**One useful current development:** HSE Audit and Risk Committee minutes from April 2026 discuss steps toward greater Activity Based Funding, including an intended transition toward ABF-based hospital budget allocations from 2028. That is *context for the role*, not proof of exactly what a co-op student would work on. [HSE Audit and Risk Committee — 17 April 2026](https://about.hse.ie/publications/hse-audit-and-risk-committee-meeting-minutes-17-april-2026/).
+
+**Interview takeaway:** The placement is about making financial records useful and trustworthy in a publicly funded service. You need to understand the purpose and controls, not memorise an organisational chart.
+
+
 ## The Big Picture — Why Finance Matters
 
 HSE Mid West provides hospital, community and public-health services across **Limerick, Clare and North Tipperary**. Its finance work supports these services through budgets, payments, recording income and expenditure, financial controls, cost information and reporting.
