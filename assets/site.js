@@ -2098,8 +2098,14 @@
     const notifyChange = () => window.dispatchEvent(new CustomEvent('interview-accordion-change'));
 
     headings.forEach(heading => {
+      const initialNodes = sourceNodesFor(heading);
+      if (!initialNodes.length) return;
+      // Put the recall cue row immediately after the question, ahead of the prose.
+      const recallRow = initialNodes.find(node => node.classList?.contains('interview-breadcrumbs'));
+      if (recallRow && recallRow !== initialNodes[0]) {
+        heading.parentNode.insertBefore(recallRow, initialNodes[0]);
+      }
       const answerNodes = sourceNodesFor(heading);
-      if (!answerNodes.length) return;
 
       heading.classList.add('interview-accordion-heading');
       heading.tabIndex = 0;
