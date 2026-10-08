@@ -81,8 +81,7 @@
   <script>
     window.MathJax = {
       tex: {
-        inlineMath: [['
-      },
+        inlineMath: [['\\(', '\\)'], ['
       chtml: {
         displayAlign: 'center',
         displayIndent: '0'
@@ -340,7 +339,6 @@
 </body>
 </html>
 , '
-      },
       chtml: {
         displayAlign: 'center',
         displayIndent: '0'
@@ -412,6 +410,7 @@
     <div class="interview-shell">
       <aside class="interview-domain-sidebar" aria-label="Interview domains">
         <nav>
+          <a{% if page.url == '/all-interview.html' %} class="is-active" aria-current="page"{% endif %} href="{{ '/all-interview.html' | relative_url }}"><strong>All Questions</strong></a>
           <a{% if page.url == '/technology.html' %} class="is-active" aria-current="page"{% endif %} href="{{ '/technology.html' | relative_url }}">Technology</a>
           <a{% if page.url == '/people.html' %} class="is-active" aria-current="page"{% endif %} href="{{ '/people.html' | relative_url }}">Teamwork</a>
           <a{% if page.url == '/motivation.html' %} class="is-active" aria-current="page"{% endif %} href="{{ '/motivation.html' | relative_url }}">Motivation</a>
@@ -591,13 +590,12 @@
 
   <script src="{{ '/assets/practice.js' | relative_url }}?v={{ site.github.build_revision }}"></script>
   <script src="{{ '/assets/site.js' | relative_url }}?v={{ site.github.build_revision }}"></script>
+  {% if page.interview_mode %}<script src="{{ '/assets/random-rehearsal.js' | relative_url }}?v={{ site.github.build_revision }}"></script>{% endif %}
   {% if page.path == 'coursework.md' %}<script src="{{ '/assets/education.js' | relative_url }}?v={{ site.github.build_revision }}"></script>{% endif %}
   {% if page.ac4214_course %}<script src="{{ '/assets/ac4214-course.js' | relative_url }}?v={{ site.github.build_revision }}"></script>{% endif %}
 </body>
 </html>
-]],
-        displayMath: [['$', '$']],
-        processEscapes: true
+]]
       },
       chtml: {
         displayAlign: 'center',
@@ -670,6 +668,7 @@
     <div class="interview-shell">
       <aside class="interview-domain-sidebar" aria-label="Interview domains">
         <nav>
+          <a{% if page.url == '/all-interview.html' %} class="is-active" aria-current="page"{% endif %} href="{{ '/all-interview.html' | relative_url }}"><strong>All Questions</strong></a>
           <a{% if page.url == '/technology.html' %} class="is-active" aria-current="page"{% endif %} href="{{ '/technology.html' | relative_url }}">Technology</a>
           <a{% if page.url == '/people.html' %} class="is-active" aria-current="page"{% endif %} href="{{ '/people.html' | relative_url }}">Teamwork</a>
           <a{% if page.url == '/motivation.html' %} class="is-active" aria-current="page"{% endif %} href="{{ '/motivation.html' | relative_url }}">Motivation</a>
@@ -849,6 +848,7 @@
 
   <script src="{{ '/assets/practice.js' | relative_url }}?v={{ site.github.build_revision }}"></script>
   <script src="{{ '/assets/site.js' | relative_url }}?v={{ site.github.build_revision }}"></script>
+  {% if page.interview_mode %}<script src="{{ '/assets/random-rehearsal.js' | relative_url }}?v={{ site.github.build_revision }}"></script>{% endif %}
   {% if page.path == 'coursework.md' %}<script src="{{ '/assets/education.js' | relative_url }}?v={{ site.github.build_revision }}"></script>{% endif %}
   {% if page.ac4214_course %}<script src="{{ '/assets/ac4214-course.js' | relative_url }}?v={{ site.github.build_revision }}"></script>{% endif %}
 </body>
