@@ -10,6 +10,6 @@ el('rq-bread').onclick=()=>{bread=!bread;el('rq-crumbs').hidden=!bread||!el('rq-
 el('rq-next').onclick=question;
 function close(){overlay.hidden=true;opener?.focus({preventScroll:true})}
 el('rq-close').onclick=close;overlay.onclick=e=>{if(e.target===overlay)close()};document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!overlay.hidden)close()});
-function install(){const rail=document.querySelector('#floating-page-tools');if(!rail)return false;if(document.getElementById('floating-page-random'))return true;const b=document.createElement('button');b.id='floating-page-random';b.textContent='Random question';b.onclick=e=>{opener=e.currentTarget;bread=true;el('rq-bread').setAttribute('aria-checked','true');question();overlay.hidden=false};rail.append(b);return true}
+function install(){const rail=document.querySelector('#floating-page-tools');if(!rail)return false;if(document.getElementById('floating-page-random'))return true;const b=document.createElement('button');b.id='floating-page-random';b.textContent=location.pathname.endsWith('/all-interview.html')?'Random — all questions':'Random question';b.onclick=e=>{opener=e.currentTarget;bread=true;el('rq-bread').setAttribute('aria-checked','true');question();overlay.hidden=false};rail.append(b);return true}
 if(!install()){const obs=new MutationObserver(()=>{if(install())obs.disconnect()});obs.observe(document.body,{childList:true,subtree:true})}
 })();
