@@ -1981,8 +1981,11 @@
     }
 
     words = words.map(cleanText).filter(Boolean);
-    if (words.length < 2 || words.length > 8) return [];
-    if (words.some(word => word.length > 32)) return [];
+    // A single prompt is valid when explicitly marked with a pipe (e.g. Learn|).
+    // Do not interpret an ordinary one-word paragraph as a cue.
+    if (words.length < 1 || words.length > 8) return [];
+    if (words.length === 1 && !text.includes('|')) return [];
+    if (words.some(word => word.length > 36)) return [];
     return words;
   };
 
@@ -2045,7 +2048,7 @@
       const raw = cleanText(node.textContent);
       if (!raw.includes('|')) return [];
       const parts = raw.split('|').map(part => cleanText(part)).filter(Boolean);
-      if (parts.length < 2 || parts.length > 7) return [];
+      if (parts.length < 1 || parts.length > 8) return [];
       if (parts.some(part => part.length > 36)) return [];
       return parts;
     };
@@ -2086,6 +2089,63 @@
       }));
     };
 
+    // Derive blue/bold memory emphasis from the SAME cues displayed below.
+    // Match whole words/phrases, not arbitrary substrings; preserve hand-authored markup.
+    const highlightCueWords = (heading, nodes) => {
+      const cueNode = nodes.find(node => node.classList?.contains('interview-breadcrumbs'));
+      if (!cueNode) return;
+      const cues = breadcrumbParts(cueNode);
+      if (!cues.length) return;
+      const escapeRe = value => value.replace(/[.*+?^\u0024{}()|[\]\\]/g, '\\    const setOpen = (heading, open) => {');
+      const patterns = cues.map(cue => {
+        const clean = cleanText(cue);
+        // A small, deliberate set of inflections, rather than loose stemming.
+        const alternatives = [clean];
+        if (/^professional$/i.test(clean)) alternatives.push('professionally');
+        if (/^responsibility$/i.test(clean)) alternatives.push('responsibilities', 'responsible');
+        if (/^priority$/i.test(clean)) alternatives.push('priorities');
+        if (/^priorities$/i.test(clean)) alternatives.push('priority');
+        if (/^learn$/i.test(clean)) alternatives.push('learning', 'learned');
+        return alternatives.map(phrase => phrase.split(/\s+/).map(escapeRe).join('\\s+'));
+      }).flat().sort((a,b) => b.length - a.length);
+      if (!patterns.length) return;
+      const regex = new RegExp('(^|[^\\p{L}\\p{N}])(' + patterns.join('|') + ')(?=$|[^\\p{L}\\p{N}])', 'giu');
+      nodes.filter(node => node !== cueNode).forEach(node => {
+        const walker = document.createTreeWalker(node, NodeFilter.SHOW_TEXT, {
+          acceptNode(textNode) {
+            if (!textNode.nodeValue?.trim() || textNode.parentElement?.closest('.interview-breadcrumbs,.recall-chain,[data-pointer-words],script,style,a,button,.memory-cue-highlight')) return NodeFilter.FILTER_REJECT;
+            return NodeFilter.FILTER_ACCEPT;
+          }
+        });
+        const texts = [];
+        while (walker.nextNode()) texts.push(walker.currentNode);
+        texts.forEach(textNode => {
+          const value = textNode.nodeValue;
+          regex.lastIndex = 0;
+          const matches = Array.from(value.matchAll(regex));
+          if (!matches.length) return;
+          const fragment = document.createDocumentFragment();
+          let cursor = 0;
+          matches.forEach(match => {
+            const lead = match[1] || '';
+            const word = match[2];
+            const start = match.index + lead.length;
+            if (start < cursor) return;
+            fragment.appendChild(document.createTextNode(value.slice(cursor, start)));
+            const mark = document.createElement('strong');
+            mark.className = 'memory-cue-highlight';
+            mark.style.color = '#0057d9';
+            mark.style.fontWeight = '700';
+            mark.textContent = word;
+            fragment.appendChild(mark);
+            cursor = start + word.length;
+          });
+          fragment.appendChild(document.createTextNode(value.slice(cursor)));
+          textNode.replaceWith(fragment);
+        });
+      });
+    };
+
     const setOpen = (heading, open) => {
       if (!heading) return;
       heading.classList.toggle('is-open', open);
@@ -2100,11 +2160,7 @@
     headings.forEach(heading => {
       const initialNodes = sourceNodesFor(heading);
       if (!initialNodes.length) return;
-      // Put the recall cue row immediately after the question, ahead of the prose.
-      const recallRow = initialNodes.find(node => node.classList?.contains('interview-breadcrumbs'));
-      if (recallRow && recallRow !== initialNodes[0]) {
-        heading.parentNode.insertBefore(recallRow, initialNodes[0]);
-      }
+      // Keep cues in their authored position, ordinarily below the answer.
       const answerNodes = sourceNodesFor(heading);
 
       heading.classList.add('interview-accordion-heading');
@@ -2119,6 +2175,7 @@
         if (index === answerNodes.length - 1) node.classList.add('interview-answer-last');
         node.hidden = true;
       });
+      highlightCueWords(heading, answerNodes);
 
       let toggle = null;
       if (!isSingleOpenInterview) {
