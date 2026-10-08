@@ -18,9 +18,9 @@ Maths|IT|Business|Finance|Co-op
 
 ## Why are you interested in this role?
 
-The HSE finance role appeals to me because it is practical, structured finance work where accuracy has a real purpose. I would be working on month-end, reconciliations, AP, costing and funding returns, while learning SAP Financials and using Excel. I also like that it is a service environment where meeting deadlines and doing the work properly matters to the wider organisation.
+I enjoy **accounting, finance and technology**, especially using **Excel** to check figures, find errors and solve problems. That's why this HSE Finance role interests me. I'd be able to put those skills to use in **reconciliations**, payments and other real finance work.
 
-Finance|Public Service|Accuracy|Learn|Responsibility
+In my **part-time job**, I've already shown that I can **learn new software**. I'd like to build on that by learning **SAP Financials** and working with an experienced finance team. I would enjoy doing accurate work that helps support the **health service**.
 
 ## What do you want from co-op?
 
