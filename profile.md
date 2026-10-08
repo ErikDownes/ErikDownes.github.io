@@ -1,11 +1,11 @@
 ---
 layout: doc
-permalink: /
-handle: Home
-title: Erik Downes
+permalink: /about.html
+handle: About Me
+title: About Me — Erik Downes
 description: Financial Mathematics student at the University of Limerick with
   interests in finance, data analysis and applied problem solving.
-nav_order: 10
+nav_order: 15
 top_nav: true
 profile_mode: true
 eyebrow: 3rd YEAR · FINANCIAL MATHEMATICS · UNIVERSITY OF LIMERICK
