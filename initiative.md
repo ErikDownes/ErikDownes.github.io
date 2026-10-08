@@ -11,9 +11,9 @@ eyebrow: INTERVIEW DOMAIN · INITIATIVE
 ---
 ## Tell me about a process you improved.
 
-At O’Mahony’s, I realised that printed Booksolve reports could become outdated as information changed. After an inconsistency contributed to books going to the wrong customer, I helped resolve the immediate problem, then raised the underlying issue with my manager. I got appropriate Booksolve access and started using more current information in my checks rather than relying only on printed reports.
+At O’Mahony’s Bookshop, I identified a weakness in how orders were being checked before dispatch. We were relying on printed reports from Booksolve, which could become outdated. I flagged the problem with my manager and suggested using the latest information directly from the system. I got access to Booksolve and started using it to check orders more accurately.
 
-Notice|Raise It|Follow Through|Improve
+Identify | Flag | Suggest | Follow through | Improve
 
 ## Tell me about something you had to learn quickly.
 
