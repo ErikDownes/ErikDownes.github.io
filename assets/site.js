@@ -1249,7 +1249,7 @@
     const rootPath = normalisePath(document.querySelector('.brand')?.href || '/');
 
     // Projects and Blog are standalone links; no top navigation dropdown.
-    if (/\/(?:projects|blog)(?:\.html)?$/.test(pageUrl.pathname.replace(/\/+$/, ''))) {
+    if (/\/(?:projects|blog|preparation|about|hse|hse-finance-study)(?:\.html)?$/.test(pageUrl.pathname.replace(/\/+$/, ''))) {
       menu.replaceChildren();
       item.classList.remove('has-submenu', 'is-open');
       label.removeAttribute('aria-haspopup');
