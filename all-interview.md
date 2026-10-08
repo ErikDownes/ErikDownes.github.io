@@ -43,3 +43,13 @@ The questions below follow a typical financial mathematics internship or graduat
     {{ source.content | markdownify }}
   {% endunless %}
 {% endfor %}
+
+<h3 class="all-domain-label">Closing &amp; Questions for the Interviewer</h3>
+
+End by briefly reinforcing **accuracy, analytical ability, initiative and willingness to learn**. Then ask a genuine question that shows you are thinking about contributing to the team.
+
+**Good closing questions to ask:**
+
+- What would you expect a successful intern to be able to do independently by the end of the placement?
+- Which systems and processes would I learn during the first few weeks?
+- Where could I make the most useful contribution to the team?
