@@ -59,11 +59,11 @@ My Dublin Bikes project used about 55 million station-status observations. I cle
 
 Scale|Method|Outcome
 
-## STAR · Combining messy files
+## STAR · Standardising date formats
 
-The Dublin Bikes data came from different years with changing file structures and timestamp formats. I standardised the columns and dates in pandas, checked that they matched properly, then combined the cleaned data into one SQLite database. It taught me to make the data consistent before trying to analyse it.
+The Dublin Bikes project covered eight years of data, but the **date formats** were inconsistent. I used pandas `to_datetime()` to **standardise** the dates and **check** that they had converted correctly before combining the data for analysis.
 
-Data quality|Validation|Reliability
+Date formats|Standardise|Check
 
 ## STAR · Working with raw data
 
