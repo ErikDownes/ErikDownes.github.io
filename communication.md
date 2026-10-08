@@ -2,7 +2,7 @@
 layout: doc
 permalink: /communication.html
 handle: Communication
-title: Communication
+title: Communication -Tell us about a time questions
 subtitle: How I explain, listen, adapt to an audience, handle feedback and make
   information useful.
 nav_order: 70
@@ -10,12 +10,46 @@ top_nav: false
 interview_mode: true
 description: Communication, customer communication and feedback interview preparation.
 eyebrow: INTERVIEW DOMAIN · COMMUNICATION
+intro: >-
+  What is a competency-based question?
+
+
+  A question that asks you to look back at something you did in work, college or
+  a project to show a particular skill.
+
+
+  Buzzwords: “Tell me about a time…” / “Give me an example…” / “Have you ever…?”
+
+
+  Use STAR to turn almost any experience into a clear, structured answer.
+
+
+  | STAR          | What to explain           |
+
+  | ------------- | ------------------------- |
+
+  | S – Situation | What was happening?       |
+
+  | T – Task      | What did you need to do?  |
+
+  | A – Action    | What did you actually do? |
+
+  | R – Result    | What was the outcome?     |
+
+
+  Why use STAR? It breaks one story into four clear parts, making your answer
+  easier to follow and showing the interviewer how you handled the situation.
+
+
+  Do you have to say S, T, A and R? No. Tell the story naturally, but it's
+  perfectly fine to say “The situation was… My task was… I decided to… The
+  result was…” Interviewers recognise this structure.
 ---
 ## Explain Clearly | Tell me about a time you explained something complex clearly.
 
 My mother was comparing three PCP offers for the same car. I built a calculator to compare the deposit, monthly repayments, final payment and total cash outlay, then used simple figures and graphs to explain the result. The middle option was about €800 cheaper overall.
 
-PCP|Simple language|Visuals|Decision
+PCP offers|Simple language|Visuals|Decision
 
 ## Customer Communication | Tell me about a time communication helped resolve a customer problem.
 
