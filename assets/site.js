@@ -1690,7 +1690,7 @@
   window.coopEducationGlossary = { readGlossary, linkKnownGlossaryTerms, renderGlossaryLearningContent };
   linkKnownGlossaryTerms(body);
 
-  const sectionHeadings = () => Array.from(body.querySelectorAll(':scope > h2[data-section-heading]'));
+  const sectionHeadings = () => Array.from(body.querySelectorAll(':scope > h2[data-section-heading]:not(.all-domain-label)'));
   // Education has its own learning-cycle controls; keep the generic rehearsal chrome off that page.
   const practiceHeadings = () => document.body.classList.contains('education-mode') ? [] : sectionHeadings();
 
