@@ -104,25 +104,25 @@ Finance policies set the rules for authorisation, recording, supporting evidence
 
 Controls|Confidentiality|Escalation
 
-## Tell us about a time you demonstrated accuracy.
+## STAR · Demonstrating accuracy
 
 An example I could use is checking information in a **library dispatch** task: a destination detail was wrong, so I helped arrange the correct return and communication rather than letting the error continue. I would describe **what I noticed, what I did and the outcome**, then connect the lesson to checking invoice or payment details before submission.
 
 Attention to detail|Correction|Prevention
 
-## Tell us about a time you worked well in a team.
+## STAR · Working well in a team
 
 I could use the **Mr Price store reorganisation**: the team had to complete a large practical task, coordinate across shifts and adapt as priorities changed. I would explain **my particular contribution**, how I communicated with colleagues and how we kept the overall task moving. The link to HSE is being flexible and dependable in a busy service team.
 
 Collaboration|Adaptability|Contribution
 
-## Tell us about a time you explained something clearly.
+## STAR · Explaining something clearly
 
 I could draw on **Java pair programming**: explain a coding decision to my partner, listen to their view, check that we both understood the implementation and integrate the solution. In finance, the same skill means explaining a discrepancy or spreadsheet finding clearly to a colleague who needs to act on it.
 
 Clarity|Listening|Shared understanding
 
-## Tell us about a time you solved a technical problem.
+## STAR · Solving a technical problem
 
 The **Dublin Bikes / Strava data project** is a useful example. Data from different sources may record time differently; I used Python and pandas to clean timestamps, consider time zones and align records so comparisons were meaningful. I would explain the original problem in plain English before introducing technical terms. This connects to validating data before producing finance reports.
 
