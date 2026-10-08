@@ -94,7 +94,7 @@ A good answer may fit several questions, but **not every question**. The importa
 ## What sort of answer am I giving?
 
 <div class="answer-ways" aria-label="Three types of interview response">
-<div class="answer-way"><strong>Past experience · I did</strong><p>**STAR**: Situation, Task, Action, Result. Explain a real experience, what **you did**, and what happened.</p></div>
+<div class="answer-way"><strong>Past experience · I did</strong><p><strong>STAR</strong>: Situation, Task, Action, Result. Explain a real experience, what <strong>you did</strong>, and what happened.</p></div>
 <div class="answer-way"><strong>Future situation · I would</strong><p>Explain the steps you **would take** in a new situation: check, act appropriately, communicate and review.</p></div>
 <div class="answer-way"><strong>Knowledge · I know</strong><p>Explain a concept clearly, perhaps with a short example. You do not need to invent a story about everything.</p></div>
 </div>
