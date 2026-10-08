@@ -333,6 +333,7 @@
 
   <script src="{{ '/assets/practice.js' | relative_url }}?v={{ site.github.build_revision }}"></script>
   <script src="{{ '/assets/site.js' | relative_url }}?v={{ site.github.build_revision }}"></script>
+  {% if page.interview_mode %}<script src="{{ '/assets/random-rehearsal.js' | relative_url }}?v={{ site.github.build_revision }}"></script>{% endif %}
   {% if page.path == 'coursework.md' %}<script src="{{ '/assets/education.js' | relative_url }}?v={{ site.github.build_revision }}"></script>{% endif %}
   {% if page.ac4214_course %}<script src="{{ '/assets/ac4214-course.js' | relative_url }}?v={{ site.github.build_revision }}"></script>{% endif %}
 </body>
