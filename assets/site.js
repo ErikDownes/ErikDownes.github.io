@@ -500,7 +500,7 @@
         item.classList.toggle('nav-right', menuTitle === 'LM058');
         if (label) {
           label.href = href;
-          if (menuTitle === 'Aviation' || menuTitle === 'Portfolio' || menuTitle === 'Projects' || menuTitle === 'LM058' || menuTitle === 'FinMath Mod') {
+          if (menuTitle === 'Aviation' || menuTitle === 'Portfolio' || menuTitle === 'LM058' || menuTitle === 'FinMath Mod') {
             label.setAttribute('aria-haspopup', 'true');
             label.setAttribute('aria-expanded', 'false');
           } else {
@@ -1247,6 +1247,15 @@
     const pageUrl = new URL(label.href, location.href);
     const targetPath = normalisePath(pageUrl.href);
     const rootPath = normalisePath(document.querySelector('.brand')?.href || '/');
+
+    // Projects is a standalone overview page, not a top-navigation dropdown.
+    if (/\/projects(?:\.html)?$/.test(pageUrl.pathname.replace(/\/+$/, ''))) {
+      menu.replaceChildren();
+      item.classList.remove('has-submenu', 'is-open');
+      label.removeAttribute('aria-haspopup');
+      label.removeAttribute('aria-expanded');
+      return;
+    }
 
     // LM058 is deliberately a standalone direct link; Fin Mat Modules owns the module dropdown.
     if (/\/lm058\.html$/.test(targetPath)) {
