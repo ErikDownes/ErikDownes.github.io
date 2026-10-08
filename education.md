@@ -1,7 +1,7 @@
 ---
 layout: doc
 permalink: /education.html
-handle: FinMath Mod
+handle: LM058
 title: BSc Financial Mathematics programme at the University of Limerick
 nav_order: 990
 top_nav: true
@@ -32,7 +32,7 @@ These five modules are currently underway.
 
 
 
-
+&nbsp;
 
 # First Year · 2024/25 Completed
 
