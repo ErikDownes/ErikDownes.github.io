@@ -35,36 +35,36 @@ intro: |-
 
 **Learning question — this will not be asked in the interview.**
 
-A competency-based question asks for a real example from your past. STAR helps you tell it clearly: **Situation** (what happened), **Task** (what you needed to do), **Action** (what you did) and **Result** (what happened in the end). You don't have to name each step aloud — just tell the story naturally.
+A competency-based question asks you to **recognise a question about a real experience** from your past. STAR helps you tell it clearly: **Situation** (what happened), **Task** (what you needed to do), **Action** (what you did) and **Result** (what happened in the end). You don't have to name each step aloud — just tell the story naturally.
 
-Recognise the question|Situation|Task|Action|Result
+Recognise|Situation|Task|Action|Result
 
 ## Explain Clearly | Tell me about a time you explained something complex clearly.
 
-My mother was comparing three PCP offers for the same car. I built a calculator to compare the deposit, monthly repayments, final payment and total cash outlay, then used simple figures and graphs to explain the result. The middle option was about €800 cheaper overall.
+My mother was deciding between **three PCP offers** for the same car and preferred the one with the highest deposit and lowest monthly repayments. I **listened** to what mattered to her, then **compared the total cost** of each offer. I **explained the difference simply**, and she chose the middle option, **saving €800**.
 
-PCP offers|Simple language|Visuals|Decision
+PCP Offers|Listened|Total Cost|Explained|€800 Saved
 
 ## Customer Communication | Tell me about a time communication helped resolve a customer problem.
 
-At O’Mahony’s, books were sent to the wrong library because the address information we were working from was incorrect. I helped organise the return, kept the libraries informed and worked with colleagues to minimise the delay. The important part was being clear about what had happened, what we were doing next and when the customer could expect it to be resolved.
+At O’Mahony’s, books were sent to the **wrong library** because the address details were incorrect. I **explained the problem** clearly, helped **organise the return** and **kept both libraries updated**. Working with colleagues, we **minimised the delay** and made sure everyone understood the next steps.
 
-Listen|Explain|Update|Resolve
+Wrong Library|Explained|Return|Updated|Minimised Delay
 
 ## Adapt to Audience | How do you adapt your communication to different audiences?
 
-I start with what the other person actually needs. A customer usually needs a clear practical explanation and next step, while a colleague may need more operational detail. For technical work I use the format that makes the information easiest to understand — for example a short written summary, a structured table, a graph or a flow diagram — and I adjust my pace and level of detail as I go.
+I start by considering my **audience** and what they need. A customer usually wants a clear **next step**, while a colleague may need more **detail**. I choose the most useful **format** — a short explanation, table, graph or diagram — and adjust my pace as I go.
 
-Audience|Purpose|Detail|Format
+Audience|Next Step|Detail|Format
 
 ## Feedback | Tell me about a time you received corrective feedback.
 
-Early in my TY placement at Mr Price, my manager corrected me on punctuality after breaks; I accepted it, understood the effect on the team, and changed my routine immediately.
+Early in my TY placement at Mr Price, my manager gave me **feedback** about returning on time after breaks. I **accepted** it, **understood** how delays affected the team and **changed my routine** immediately.
 
-Listen|Accept|Understand|Change
+Feedback|Accepted|Understood|Changed
 
 ## Written Communication | How do you make technical or written information clear and accessible?
 
-I use clear headings, concise explanations, properly structured tables and visualisations where they genuinely help. In project work I have used Overleaf and LaTeX for structured reports and GitHub Pages for publishing technical work so that another person can follow the purpose, method and result without having to work through the raw code first.
+I use a clear **structure**, with headings and concise explanations, and aim for **clarity** before adding detail. I include **visuals** such as tables or graphs only when they genuinely help. In project work I have used Overleaf and LaTeX for reports, and GitHub Pages for publishing, always considering the **audience** so readers can understand the purpose, method and result without working through the raw code.
 
 Structure|Clarity|Visuals|Audience
