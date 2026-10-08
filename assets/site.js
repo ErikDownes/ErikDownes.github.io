@@ -1248,7 +1248,7 @@
     const targetPath = normalisePath(pageUrl.href);
     const rootPath = normalisePath(document.querySelector('.brand')?.href || '/');
 
-    // Projects is a standalone overview page, not a top-navigation dropdown.
+    // Projects and Blog are standalone links; no top navigation dropdown.
     if (/\/(?:projects|blog)(?:\.html)?$/.test(pageUrl.pathname.replace(/\/+$/, ''))) {
       menu.replaceChildren();
       item.classList.remove('has-submenu', 'is-open');
@@ -1280,7 +1280,7 @@
     const isStudiesLibrary = /\/(?:education|coursework)(?:\.html)?$/.test(cleanPagePath);
     const isAviationLibrary = /\/aviation(?:\.html)?$/.test(cleanPagePath);
     const isCareerLibrary = /\/career(?:\.html)?$/.test(cleanPagePath);
-    const isPortfolioLibrary = /\/(?:portfolio|projects)(?:\.html)?$/.test(cleanPagePath);
+    const isPortfolioLibrary = /\/portfolio(?:\.html)?$/.test(cleanPagePath);
 
     try {
       if (isPortfolioLibrary) {
