@@ -249,7 +249,7 @@
           const moduleToc = document.getElementById('moduleToc');
           const moduleTocList = document.getElementById('moduleTocList');
           const usedIds = new Set();
-          body.querySelectorAll(':scope > h2').forEach(heading => {
+          body.querySelectorAll(':scope > h2:not(.all-domain-label)').forEach(heading => {
             const raw = heading.textContent.replace(/\s+/g, ' ').trim();
             if (!raw) return;
 
