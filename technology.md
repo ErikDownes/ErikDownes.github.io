@@ -2,16 +2,17 @@
 layout: doc
 permalink: /technology.html
 handle: Technology
-title: Technology
-subtitle: How I use and learn technology — Excel, Python, pandas, databases,
-  SQL, AI and projects.
+title: Education, Knowledge & Technical Skills
+subtitle: Short interview answers on Excel, programming, data analysis and projects.
 nav_order: 200
 top_nav: false
 interview_mode: true
 description: Python, pandas, SQL, databases, Excel and technical aptitude for
   interview preparation.
-eyebrow: INTERVIEW DOMAIN · TECHNOLOGY
+eyebrow: INTERVIEW DOMAIN · EDUCATION & TECHNICAL SKILLS
 ---
+# Excel
+
 ## Excel | How would you use Excel in a finance role?
 
 I can organise data, calculate totals, match records and check exceptions. I'm practising **IF**, **SUMIFS**, **XLOOKUP**, filters and pivot tables in a [spreadsheet workbook](https://docs.google.com/spreadsheets/d/1CsGCxVfs8xBEGT7KsAcbAFXfqFl-XcvSe9Jb4rv5h0A/edit?gid=1524497728#gid=1524497728). I would always check an unusual figure against its source.
@@ -46,12 +47,46 @@ I would check dates and number formats, remove unwanted spaces, look for duplica
 
 ## Excel | What does a pivot table do?
 
-A pivot table groups many rows into a quick summary, such as expenditure by month or category. I would verify the data range and the totals before using a chart.
+A pivot table **groups** rows and **totals** amounts, for example spending by department. I would **check** the grand total against the source data.
+
+
+<figure class="pivot-learning-visual" aria-label="Worked pivot table example showing transactions being grouped and totalled by department">
+  <div class="pivot-learning-flow">
+    <div class="pivot-learning-panel">
+      <h3>Before · Individual transactions</h3>
+      <table>
+        <thead><tr><th>Department</th><th>Amount</th></tr></thead>
+        <tbody>
+          <tr><td>Finance</td><td>€120</td></tr>
+          <tr><td>HR</td><td>€60</td></tr>
+          <tr><td>Finance</td><td>€80</td></tr>
+          <tr><td>HR</td><td>€40</td></tr>
+          <tr><td>Finance</td><td>€30</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="pivot-learning-arrow" aria-hidden="true">→</div>
+    <div class="pivot-learning-panel">
+      <h3>After · Pivot table summary</h3>
+      <table>
+        <thead><tr><th>Department</th><th>Sum of Amount</th></tr></thead>
+        <tbody>
+          <tr><td>Finance</td><td>€230</td></tr>
+          <tr><td>HR</td><td>€100</td></tr>
+          <tr class="pivot-learning-total"><th scope="row">Grand total</th><td>€330</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <figcaption><strong>Group</strong> the rows → <strong>Sum</strong> the amounts → <strong>Check</strong> the grand total.</figcaption>
+</figure>
 
 ## Excel | How is Excel different from SAP Financials?
 
 Excel is useful for calculations, checking and analysis. SAP Financials is an organisation's controlled system for finance transactions. I would follow the approved SAP procedures rather than treating my spreadsheet as the official record.
 
+
+# Python, pandas & SQL
 
 ## STAR · Working with large data
 
@@ -70,6 +105,8 @@ Date formats|Standardise|Check
 Combining my interests in cycling and data analysis, I imported one of my Strava GPX files into Python. GPX files provide basic raw data, including GPS coordinates, elevation and sometimes timestamps. I **inspected** the available fields, **cleaned** the elevation data and **calculated** useful measures without assuming information was there when it was not.
 
 Inspected|Cleaned|Calculated
+
+# Financial Modelling & Projects
 
 ## STAR · Building a financial tool
 
