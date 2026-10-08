@@ -3,17 +3,16 @@ layout: doc
 permalink: /finance-role.html
 handle: HSE Finance
 title: HSE Finance — Role & Questions
-subtitle: HSE Mid-West Co-Op Finance · Job duties, practical examples and interview prompts
+subtitle: HSE Mid-West Co-Op Finance · Job duties, practical examples and
+  interview prompts
 nav_order: 60
 top_nav: false
 interview_mode: true
-description: HSE Mid-West finance role explained through interview questions, examples and memory prompts.
+description: HSE Mid-West finance role explained through interview questions,
+  examples and memory prompts.
 eyebrow: HSE MID-WEST · FINANCE ROLE · PRACTICE
 ---
 
-The aim is to **understand the work and tell the story in your own words**, not memorise a script. Each answer ends with a short set of recall prompts. Use **Listen**, **Expand All / Collapse All** and the question cards to practise.
-
-**[Original HSE job specification →]({{ '/hse.html' | relative_url }}) · [HSE interview questions →]({{ '/hse-finance-interview.html' | relative_url }}) · [HSE study notes →]({{ '/hse-finance-study.html' | relative_url }})**
 
 ## What is the HSE Mid-West Co-Op Finance role?
 
