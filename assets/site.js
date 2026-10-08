@@ -497,7 +497,7 @@
         const span = label?.querySelector('span');
         const menuTitle = entry.title || '';
         const pageTitle = entry.page_title || entry.title || '';
-        item.classList.toggle('nav-right', menuTitle === 'LM058');
+        item.classList.remove('nav-right');
         if (label) {
           label.href = href;
           if (menuTitle === 'Aviation' || menuTitle === 'Portfolio' || menuTitle === 'LM058' || menuTitle === 'FinMath Mod') {
@@ -1249,7 +1249,7 @@
     const rootPath = normalisePath(document.querySelector('.brand')?.href || '/');
 
     // Projects is a standalone overview page, not a top-navigation dropdown.
-    if (/\/projects(?:\.html)?$/.test(pageUrl.pathname.replace(/\/+$/, ''))) {
+    if (/\/(?:projects|blog)(?:\.html)?$/.test(pageUrl.pathname.replace(/\/+$/, ''))) {
       menu.replaceChildren();
       item.classList.remove('has-submenu', 'is-open');
       label.removeAttribute('aria-haspopup');
