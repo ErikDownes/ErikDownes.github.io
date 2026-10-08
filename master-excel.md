@@ -75,3 +75,12 @@ body:has(.master-excel-embed) .doc-paper {
 **A formula is a technical skill; explaining its purpose is a professional skill.** In a finance role, a colleague needs to understand what the calculation checks, when the result can be trusted and which exceptions deserve attention. Aim to give a natural explanation in about 20 seconds.
 
 More lessons can follow the same three-stage pattern: **SUMIFS**, **COUNTIFS**, **XLOOKUP**, **pivot tables** and spreadsheet checks. This first set establishes the method without creating a sprawling workbook.
+
+
+## Create your own exercise with AI
+
+Once you understand a skill, try designing a new example yourself rather than completing somebody else's sheet. You can give ChatGPT a brief like this:
+
+> Create a small Excel lesson on SUMIFS using no more than five columns and eight rows. First show me a working example and let me change the data. Next ask me to construct the formula without showing me the answer. Test it with changed values and an exception. Finally, ask me to explain to a colleague what the formula does and why it is useful. Give hints only when I ask.
+
+**Erik:** Ask AI for a *new problem*, not an autofilled answer. Change the figures, challenge the results and explain your reasoning. You can reuse the same approach for any other Excel function.
