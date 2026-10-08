@@ -1976,7 +1976,14 @@
       } else {
         const chunks = text.split(/\s+/).filter(Boolean);
         const looksLikeCue = chunk => /^[A-Z0-9][A-Za-z0-9/&+.'’-]*$/.test(chunk);
-        if (chunks.every(looksLikeCue)) words = chunks;
+        if (chunks.every(looksLikeCue)) {
+          words = chunks;
+        } else {
+          // Some saved edits lose their pipe separators. Recover clear
+          // title-cased cue groups, including phrases like "Customer care".
+          const groups = text.match(/[A-Z][\p{L}\p{N}’'-]*(?:\s+[a-z][\p{L}\p{N}’'-]*)*/gu) || [];
+          if (groups.length >= 2 && cleanText(groups.join(' ')) === text) words = groups;
+        }
       }
     }
 
@@ -2062,9 +2069,10 @@
 
       // Spread the recall hints evenly across the answer row, but leave
       // a little breathing room at the ends (roughly two tabs left, three right).
-      node.style.display = 'flex';
+      node.style.display = 'grid';
+      node.style.gridTemplateColumns = `repeat(${parts.length}, minmax(0, 1fr))`;
       node.style.alignItems = 'center';
-      node.style.justifyContent = 'space-between';
+      node.style.justifyContent = 'stretch';
       node.style.columnGap = '0';
       node.style.width = '100%';
       node.style.maxWidth = 'none';
@@ -2072,7 +2080,7 @@
       node.style.boxSizing = 'border-box';
       node.style.marginLeft = '0';
       node.style.marginRight = '0';
-      node.style.padding = '18px 48px 8px 32px';
+      node.style.padding = '14px 22px 12px';
       node.style.borderTop = '1px solid #dfe5ea';
 
       node.replaceChildren(...parts.map((part, index) => {
@@ -2083,7 +2091,7 @@
         span.style.minWidth = '0';
         span.style.padding = '0';
         span.style.border = '0';
-        span.style.whiteSpace = 'nowrap';
+        span.style.whiteSpace = 'normal';
         span.style.textAlign = index === 0 ? 'left' : (index === parts.length - 1 ? 'right' : 'center');
         return span;
       }));
@@ -2169,7 +2177,12 @@
       heading.setAttribute('aria-expanded', 'false');
 
       answerNodes.forEach((node, index) => {
-        formatBreadcrumb(node);
+        // Only the final cue line (or an explicit cue) is a breadcrumb.
+        // Ordinary short answer paragraphs must remain normal prose.
+        if (node.classList.contains('interview-breadcrumbs') ||
+            (index === answerNodes.length - 1 && node.matches('p,div'))) {
+          formatBreadcrumb(node);
+        }
         node.classList.add('interview-answer-node');
         if (index === 0) node.classList.add('interview-answer-first');
         if (index === answerNodes.length - 1) node.classList.add('interview-answer-last');
