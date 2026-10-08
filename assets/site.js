@@ -1706,7 +1706,7 @@
   const sourceNodesFor = heading => {
     const nodes = [];
     let node = heading.nextElementSibling;
-    while (node && node.tagName !== 'H2') {
+    while (node && node.tagName !== 'H2' && node.tagName !== 'H1') {
       nodes.push(node);
       node = node.nextElementSibling;
     }
