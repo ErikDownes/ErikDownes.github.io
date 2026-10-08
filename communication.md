@@ -10,32 +10,23 @@ top_nav: false
 interview_mode: true
 description: Communication, customer communication and feedback interview preparation.
 eyebrow: INTERVIEW DOMAIN · COMMUNICATION
-intro: |-
-  **What is a competency-based question?**
-
-  It asks you to recall a real experience from work, college or a project to show a skill.
-
-  **Look for:** “Tell me about a time…” · “Give me an example…” · “Have you ever…?”
-
-  **Use STAR** to organise almost any story:
-
-  | STAR | What to explain |
-  |---|---|
-  | **S – Situation** | What was happening? |
-  | **T – Task** | What did you need to do? |
-  | **A – Action** | What did you do? |
-  | **R – Result** | What happened? |
-
-  **Why?** Four clear steps help you explain your experience and show your skills.
-
-  **Must you say STAR?** No. Tell the story naturally. You can use “The situation was…” if it helps.
-
 ---
 ## STAR Practice | What is a competency-based question, and how can STAR help you answer it?
 
 **Learning question — this will not be asked in the interview.**
 
-A competency-based question asks you to **recognise a question about a real experience** from your past. STAR helps you tell it clearly: **Situation** (what happened), **Task** (what you needed to do), **Action** (what you did) and **Result** (what happened in the end). You don't have to name each step aloud — just tell the story naturally.
+A competency-based question asks for a **real example** from work, college or a project. **Recognise** it from “Tell me about a time…”, “Give me an example…” or “Have you ever…?”
+
+**Structure** your answer with STAR:
+
+| STAR | What to explain |
+|---|---|
+| **S – Situation** | What was happening? |
+| **T – Task** | What did you need to do? |
+| **A – Action** | What did you do? |
+| **R – Result** | What happened in the end? |
+
+Finish with the **outcome**. You don't have to name the steps aloud — **tell the story naturally**.
 
 Recognise|Structure|Outcome
 
