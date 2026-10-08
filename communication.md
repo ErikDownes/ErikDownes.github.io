@@ -3,7 +3,8 @@ layout: doc
 permalink: /communication.html
 handle: Communication
 title: Communication
-subtitle: How I explain, listen, adapt to an audience, handle feedback and make information useful.
+subtitle: How I explain, listen, adapt to an audience, handle feedback and make
+  information useful.
 nav_order: 70
 top_nav: false
 interview_mode: true
@@ -14,7 +15,7 @@ eyebrow: INTERVIEW DOMAIN · COMMUNICATION
 
 My mother was comparing three PCP offers for the same car. I built a calculator to compare the deposit, monthly repayments, final payment and total cash outlay, then used simple figures and graphs to explain the result. The middle option was about €800 cheaper overall.
 
-PCP|Simple Language|Visuals|Decision
+PCP|Simple language|Visuals|Decision
 
 ## Customer Communication | Tell me about a time communication helped resolve a customer problem.
 
