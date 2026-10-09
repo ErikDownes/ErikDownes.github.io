@@ -60,6 +60,11 @@ This is a **new teaching investigation**, not the lecturer's six questions rewri
 
 The final exercise offers **three independent missions** (music curator, data-quality investigator, predictive-model reviewer) and a reasoned report rubric. The learner chooses and defends an approach. The notebook is not an autofill exercise.
 
+**[Open the independent Spotify analyst challenge in Colab →](https://colab.research.google.com/github/ErikDownes/ErikDownes.github.io/blob/main/resources/ms4215/notebooks/MS4215_Python_03_Spotify_Independent_Analyst_Challenge.ipynb)**  
+[View its starter .ipynb on GitHub](https://github.com/ErikDownes/ErikDownes.github.io/blob/main/resources/ms4215/notebooks/MS4215_Python_03_Spotify_Independent_Analyst_Challenge.ipynb)
+
+**Second pass: independent mastery.** The assessment notebook provides a clean copy of the original dataset, an analyst brief, three mission choices, a one-page report structure and a 20-point rubric. It deliberately does **not** supply finished analysis code. It checks whether the student can transfer the reasoning rather than merely reproduce an example.
+
 **Technical stack:** Python · pandas · NumPy · Matplotlib · scikit-learn. In Colab the notebook loads the dataset automatically. Work in VS Code or JupyterLab is also supported.
 
 **A key limitation to teach:** Spotify already provides the energy score; predicting it from the other supplied audio features is a **deliberate training simulation**, not a claim that an actual application needs a redundant energy estimator. The relationships do not establish what *causes* musical energy or popularity.
