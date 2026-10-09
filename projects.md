@@ -32,6 +32,11 @@ Open a project to see the output first, then the method behind it.
 </style>
 
 <div class="project-index">
+  <a class="project-card" href="{{ '/education/ms4215/python-training.html' | relative_url }}">
+    <strong>Advanced Data Analysis · Python Training (MS4215)</strong>
+    <span>Follow the university teaching order: Irish weather → Spotify → espresso → statistical modelling. Guided Jupyter notebooks, real datasets and one-click Colab.</span>
+  </a>
+
   <a class="project-card" href="{{ '/dublin-bikes.html' | relative_url }}">
     <strong>Dublin Bikes</strong>
     <span>Large public dataset → pandas → SQLite/SQL → 24-hour rebalancing dashboard.</span>
