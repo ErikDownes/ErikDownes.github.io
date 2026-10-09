@@ -4255,11 +4255,11 @@ article img.img-full,
   .interview-answer-toggle{font-size:.8rem}
 }
 
-/* Interview breadcrumbs — equal gaps, with breathing room at both ends. */
+/* Pipe-delimited interview hints: equal interior and edge spacing. */
 .interview-mode .interview-breadcrumbs{
   display:flex!important;
   align-items:center!important;
-  justify-content:space-between!important;
+  justify-content:space-evenly!important;
   gap:0!important;
   width:100%!important;
   max-width:none!important;
@@ -4267,8 +4267,7 @@ article img.img-full,
   box-sizing:border-box!important;
   margin-left:0!important;
   margin-right:0!important;
-  /* About two tab-widths on the left and three on the right. */
-  padding:18px 48px 8px 32px!important;
+  padding:18px 0 8px!important;
   border-top:1px solid #dfe5ea;
 }
 .interview-mode .interview-breadcrumbs span{
@@ -4284,22 +4283,14 @@ article img.img-full,
   text-align:center;
   white-space:nowrap;
 }
-.interview-mode .interview-breadcrumbs span:first-child{
-  text-align:left;
-}
-.interview-mode .interview-breadcrumbs span:last-child{
-  text-align:right;
-}
 @media(max-width:700px){
   .interview-mode .interview-breadcrumbs{
     overflow-x:auto;
-    column-gap:24px!important;
-    padding:18px 24px 8px 16px!important;
+    justify-content:space-evenly!important;
+    column-gap:12px!important;
+    padding:18px 0 8px!important;
   }
-  .interview-mode .interview-breadcrumbs span{
-    flex:0 0 auto!important;
-    font-size:.76rem;
-  }
+  .interview-mode .interview-breadcrumbs span{font-size:.76rem;}
 }
 
 /* CV sidebar navigation */
