@@ -12,11 +12,21 @@ eyebrow: INTERVIEW DOMAIN · MOTIVATION
 ---
 ## Why choose Financial Maths?
 
-I was always drawn to maths and also had an aptitude for IT and technical concepts. At school I did very well in Business, and I started to picture myself working in a financial, accounting or business environment. Financial Maths gave me a broad course that brought those interests together — maths, technology, data analysis, finance and accounting — and UL’s co-op programme gave me the chance to apply them in a real workplace.
 
-Interests|Course fit|Application
 
-## Why are you interested in this role?
+&nbsp;
+
+I've loved maths from a young age, and at school I discovered an interest in technology and business. I began to see myself working in the finance or accounting sector.
+
+Financial Maths brings my strengths and interests together — maths, technology, data analysis, finance and accounting.
+
+UL also pioneered co-op in Ireland, giving me the chance to apply what I've learned in a real workplace.
+
+**Maths | Technology | Business | See myself in sector | Financial Maths | UL pioneered Co-op**
+
+
+
+Why are you interested in this role?
 
 I enjoy **accounting, finance and technology**, especially using **Excel** to check figures, find errors and solve problems. That's why this HSE Finance role interests me. I'd be able to put those skills to use in **reconciliations**, payments and other real finance work.
 
