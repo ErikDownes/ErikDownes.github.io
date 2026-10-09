@@ -14,6 +14,8 @@ The original course material uses **R**. Keep the R work visible and run selecte
 
 [Open MS4215 →]({{ '/modules/ms4215-advanced-data-analysis.html' | relative_url }})
 
+**[Start the course-ordered Python notebooks: Irish weather and Spotify →]({{ '/education/ms4215/python-training.html' | relative_url }})**
+
 ## MS4034 · SPSS + Python (pandas · SciPy · statsmodels · scikit-learn) | Applied analysis, regression and classification
 **Applied Data Analysis** is being treated as a reproducible Python/Colab laboratory:
 
