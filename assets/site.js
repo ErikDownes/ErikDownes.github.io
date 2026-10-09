@@ -2866,8 +2866,8 @@
 
   /* -----------------------------------------------------------------------
      Floating page tools: Edit, GitHub, Print, contextual page action, Listen.
-     Random / Questions / Answers are deliberately parked for now so the
-     shared rail stays clean; the code remains available to restore later.
+     Keep page-wide Print, Random, Expand/Collapse and Listen available.
+     The old Questions/Answers switches remain retired.
      ----------------------------------------------------------------------- */
   const setupFloatingTools = () => {
     if (!pageCms && !pageGithub && !pagePrint) return;
@@ -2914,7 +2914,7 @@
     let answersVisible = true;
     const questions = practiceHeadings();
     const accordionInterview = isInterviewAccordion;
-    const showParkedPracticeTools = false;
+    const showParkedPracticeTools = false; // Keep redundant Questions/Answers switches retired.
 
     if (isSingleOpenInterview) {
       const expandAll = document.createElement('button');
@@ -3082,11 +3082,11 @@
     // Rehearsal across all H2 headings on the open page, with one session queue per page.
     // Keep the control visible on every document page so the tool rail stays identical.
     const randomQuestions = sectionHeadings();
-    if (showParkedPracticeTools && body && !accordionInterview) {
+    if (body && randomQuestions.length) {
       const random = document.createElement('button');
       random.id = 'floating-page-random';
       random.type = 'button';
-      random.textContent = 'Rand';
+      random.textContent = 'Random';
       const status = document.createElement('span');
       status.setAttribute('role', 'status');
       status.style.cssText = 'position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);';
@@ -3133,6 +3133,7 @@
         const heading = document.getElementById(id);
         resetAudio();
         history.replaceState(null, '', '#' + encodeURIComponent(id));
+        if (isSingleOpenInterview && heading.getAttribute('aria-expanded') !== 'true') heading.click();
         alignHashTarget();
         heading.setAttribute('tabindex', '-1');
         heading.focus({ preventScroll: true });
