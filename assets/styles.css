@@ -4689,3 +4689,15 @@ article img.img-full,
     font-size:.74rem;
   }
 }
+
+/* Accordion visibility must override the grid display used by recall cues. */
+.interview-mode .doc-body .interview-breadcrumbs.interview-answer-node[hidden],
+.interview-mode .doc-body .interview-answer-node[hidden] {
+  display:none!important;
+}
+/* The cue strip spans the full answer width, with equally sized blue cues. */
+.interview-mode .doc-body .interview-breadcrumbs.interview-answer-node:not([hidden]) {
+  display:grid!important;
+  grid-template-columns:repeat(var(--breadcrumb-count,3),minmax(0,1fr))!important;
+  width:100%!important;
+}
