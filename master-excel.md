@@ -12,11 +12,7 @@ eyebrow: MASTER EXCEL · EXPLORE · FINISH · BUILD · REFLECT
 
 # Master Excel
 
-**Explore a model → Finish it → Build independently → Reflect on what you learned.**
 
-This is a small, practical Excel school. Each skill begins with a **finished, working example**: change a price, payment or code and see the result immediately. Next, finish a partially completed worksheet, build a similar one using different data, and assess your own understanding. You do not need an account or a download.
-
-Use the **Excel Explorer** on the left to choose from eight topics, starting with months, basic calculations and cell references before progressing to IF, IFS, VLOOKUP, SUMIFS, cleaning data and pivot tables. Click any cell to see its entered value or the calculation behind it in the formula bar **above** the worksheet. Each stage uses a fresh, realistic sample dataset. Most examples fit into a few columns and six to eight rows.
 
 <style>
 .master-excel-page .doc-paper,
