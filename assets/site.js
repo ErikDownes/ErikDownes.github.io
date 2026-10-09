@@ -1957,8 +1957,8 @@
   // This runs after local saved edits are restored, so older browser-saved
   // answers are normalised as well as the Markdown source.
   const parseBreadcrumbWords = value => {
-    const text = cleanText(value);
-    if (!text || text.length > 180) return [];
+    const text = cleanText(value).replace(/\*\*/g, '');
+    if (!text || text.length > 240) return [];
 
     let words = [];
 
@@ -2036,7 +2036,7 @@
       if (node.classList.contains('interview-breadcrumbs') && node.children.length) {
         return Array.from(node.children).map(child => cleanText(child.textContent)).filter(Boolean);
       }
-      const raw = cleanText(node.textContent);
+      const raw = cleanText(node.textContent).replace(/\*\*/g, '');
       if (!raw.includes('|')) return [];
       const parts = raw.split('|').map(part => cleanText(part)).filter(Boolean);
       if (parts.length < 1 || parts.length > 8) return [];
