@@ -7,10 +7,10 @@ study_mode: true
 ---
 [← Projects]({{ '/projects.html' | relative_url }})
 
-## MS4215 · R + Python (pandas · NumPy · SciPy · statsmodels) | Regression, GLMs and model diagnostics
+## MS4215 · Python first (pandas · NumPy · Matplotlib · scikit-learn) | Data investigation and statistical modelling
 **Advanced Data Analysis** develops regression, ANOVA, generalised linear models, diagnostics and model selection.
 
-The original course material uses **R**. Keep the R work visible and run selected analyses alongside it in **Python** using **pandas, NumPy, SciPy and statsmodels**. The point is to show that I understand the statistical method across both environments.
+The **original teaching materials use R**. This companion training starts in **Python** and teaches the statistical reasoning through investigation, data-quality decisions, prediction, validation and clear communication. The university's R exercises remain available separately as original references.
 
 [Open MS4215 →]({{ '/modules/ms4215-advanced-data-analysis.html' | relative_url }})
 
