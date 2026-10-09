@@ -11,6 +11,11 @@ study_mode: true
 
 [← Education]({{ '/education.html' | relative_url }})
 
+## Python learning track — begin with the real course datasets
+
+**[MS4215 Python training: Week 1 Irish weather → Week 2 → Lab 1 Spotify →]({{ '/education/ms4215/python-training.html' | relative_url }})**  
+Guided Jupyter/Colab notebooks explain not just how to run code but how to ask a statistical question, evaluate data quality, select a method and interpret the evidence. Original R material remains available below.
+
 ## Start here
 
 **[Read Week 1 as a web page →]({{ '/education/ms4215/week-01.html' | relative_url }})**  
