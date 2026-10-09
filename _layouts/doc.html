@@ -329,7 +329,7 @@
       {% assign cms_key = page.path | replace: '/', '_' | replace: '-', '_' | replace: '.md', '' %}
       {% assign cms_url = 'https://app.pagescms.org/ErikDownes/ErikDownes.github.io/main/file/' | append: cms_key %}
       <div class="doc-toolbar" aria-label="Document controls">
-        {% if page.path contains '.md' %}<a class="edit-link cms-edit-link" href="{{ cms_url }}" target="_blank" rel="noopener">CMS</a>{% endif %}
+        {% if page.path contains '.md' %}<a class="edit-link cms-edit-link" href="{{ cms_url }}" target="_blank" rel="noopener">Edit</a>{% endif %}
         <a class="edit-link github-edit-link" href="https://github.com/ErikDownes/ErikDownes.github.io/edit/main/{{ page.path }}" target="_blank" rel="noopener">GitHub</a>
         <button type="button" data-action="print">Print / PDF</button>
       </div>
@@ -430,6 +430,106 @@
 
   <script src="{{ '/assets/practice.js' | relative_url }}?v={{ site.github.build_revision }}"></script>
   <script src="{{ '/assets/site.js' | relative_url }}?v={{ site.github.build_revision }}"></script>
+
+  <!-- Independent safety net: the primary page script normally builds the right rail. -->
+  <script>
+    (() => {
+      const body = document.getElementById('docBody');
+      const toolbar = document.querySelector('.doc-toolbar');
+      if (!body || !toolbar) return;
+      const interview = document.body.classList.contains('interview-mode');
+      const headings = () => Array.from(body.querySelectorAll(':scope > h2[data-section-heading], :scope > h2.interview-accordion-heading'));
+      const contentFor = heading => {
+        const nodes = [];
+        for (let n = heading.nextElementSibling; n && !/^H[12]$/.test(n.tagName); n = n.nextElementSibling) nodes.push(n);
+        return nodes;
+      };
+      const setOpen = (heading, open) => {
+        heading.setAttribute('aria-expanded', String(open));
+        heading.classList.toggle('is-open', open);
+        contentFor(heading).forEach(n => { n.hidden = !open; });
+      };
+      const ensureAccordion = () => {
+        if (!interview) return;
+        const hs = headings();
+        if (!hs.length) return;
+        // The normal accordion owns clicks when already initialised.
+        if (window.coopInterviewAccordion) return;
+        hs.forEach(h => {
+          h.classList.add('interview-accordion-heading');
+          h.setAttribute('role','button');
+          h.tabIndex = 0;
+          setOpen(h,false);
+          const toggle = () => {
+            const willOpen = h.getAttribute('aria-expanded') !== 'true';
+            hs.forEach(other => setOpen(other, willOpen && other === h));
+          };
+          h.addEventListener('click',toggle);
+          h.addEventListener('keydown', e => {
+            if (e.target !== h || !['Enter',' '].includes(e.key)) return;
+            e.preventDefault();toggle();
+          });
+        });
+        window.coopInterviewAccordion = {
+          setAllOpen(open) { hs.forEach(h => setOpen(h,open)); document.body.classList.toggle('interview-all-open',open); },
+          openHeadings() { return hs.filter(h => h.getAttribute('aria-expanded') === 'true'); }
+        };
+      };
+      const ensureRail = () => {
+        if (document.getElementById('floating-page-tools')) return;
+        const rail = document.createElement('div');
+        rail.id = 'floating-page-tools';
+        rail.setAttribute('aria-label','Page tools');
+        const add = (label, fn) => {
+          const b=document.createElement('button');b.type='button';b.textContent=label;
+          b.addEventListener('click',fn);rail.appendChild(b);return b;
+        };
+        const edit=toolbar.querySelector('.cms-edit-link, .github-edit-link');
+        if (edit) {
+          const a=document.createElement('a');a.href=edit.href;a.target='_blank';a.rel='noopener';
+          a.textContent='Edit';rail.appendChild(a);
+        }
+        const github=toolbar.querySelector('.github-edit-link');
+        if (github) {
+          const a=document.createElement('a');a.href=github.href;a.target='_blank';a.rel='noopener';
+          a.textContent='GitHub';rail.appendChild(a);
+        }
+        add('Print',()=>window.print());
+        if (interview) {
+          const hs=headings();
+          if (hs.length) {
+            const random=add('Random',()=>{
+              const options=headings();if(!options.length)return;
+              const h=options[Math.floor(Math.random()*options.length)];
+              if(window.coopInterviewAccordion) {
+                window.coopInterviewAccordion.setAllOpen(false);
+                h.click();
+              }
+              h.scrollIntoView({behavior:'smooth',block:'start'});
+            });
+            const expand=add('Expand all',()=>{
+              const all=headings().every(h=>h.getAttribute('aria-expanded')==='true');
+              window.coopInterviewAccordion?.setAllOpen(!all);
+              expand.textContent=all?'Expand all':'Collapse all';
+            });
+          }
+        }
+        if ('speechSynthesis' in window && 'SpeechSynthesisUtterance' in window) {
+          const listen=add('Listen',()=>{
+            if(window.speechSynthesis.speaking){window.speechSynthesis.cancel();listen.textContent='Listen';return;}
+            const open=interview?headings().filter(h=>h.getAttribute('aria-expanded')==='true'):[];
+            const words=open.length?open.map(h=>[h.textContent,...contentFor(h).map(n=>n.textContent)].join(' ')).join(' '):body.innerText;
+            const utterance=new SpeechSynthesisUtterance(words);utterance.rate=.92;
+            utterance.onend=()=>{listen.textContent='Listen';};
+            window.speechSynthesis.speak(utterance);listen.textContent='Stop';
+          });
+        }
+        document.body.appendChild(rail);
+      };
+      // Let the full-featured shared code initialise first; recover only if needed.
+      setTimeout(()=>{ensureAccordion();ensureRail();},0);
+    })();
+  </script>
 
   {% if page.research_mode %}
   <script>
