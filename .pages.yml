@@ -33,7 +33,7 @@ content:
       - { name: cv_qa, label: "16 · CV QA", type: file, path: cv-qa.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: technology, label: "20 · Technology", type: file, path: technology.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: people, label: "30 · Teamwork", type: file, path: people.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
-      - { name: motivation, label: "40 · Motivation", type: file, path: motivation.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
+      - { name: motivation, label: "Motivation & Career Direction", type: file, path: motivation.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: initiative, label: "50 · Initiative", type: file, path: initiative.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: finance_role, label: "60 · Finance", type: file, path: finance-role.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
       - { name: communication, label: "70 · Communication", type: file, path: communication.md, format: yaml-frontmatter, fields: *docfields, operations: { delete: false } }
