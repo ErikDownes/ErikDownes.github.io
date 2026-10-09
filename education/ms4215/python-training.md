@@ -34,24 +34,43 @@ We follow the **University of Limerick MS4215 order** from the supplied lecture 
 
 **Big question:** If two measurements move together, can we describe the relationship, predict an outcome, and justify the prediction? This is where correlation, slopes, intercepts, residuals and R² enter the picture.
 
-## Lab 1 — Spotify Track Energy in Python
+## The flagship investigation — Spotify Data Detective
 
-**[Open the guided Spotify laboratory in Google Colab →](https://colab.research.google.com/github/ErikDownes/ErikDownes.github.io/blob/main/resources/ms4215/notebooks/MS4215_Python_02_Lab1_Spotify_Track_Energy.ipynb)**  
-[View the actual .ipynb on GitHub](https://github.com/ErikDownes/ErikDownes.github.io/blob/main/resources/ms4215/notebooks/MS4215_Python_02_Lab1_Spotify_Track_Energy.ipynb)
+**[Open Spotify Data Detective in Google Colab →](https://colab.research.google.com/github/ErikDownes/ErikDownes.github.io/blob/main/resources/ms4215/notebooks/MS4215_Python_02_Lab1_Spotify_Track_Energy.ipynb)**  
+[View or download the actual Jupyter notebook on GitHub](https://github.com/ErikDownes/ErikDownes.github.io/blob/main/resources/ms4215/notebooks/MS4215_Python_02_Lab1_Spotify_Track_Energy.ipynb)
 
-**Investigation:** Which musical characteristics are associated with track energy?
+**The central question:** *What makes a song energetic — and how could our analysis fool us?*
 
-The notebook follows **all six original Lab 1 question groups in order**: inspect the data → histograms and summaries → correlations → simple linear regression → multiple linear regression → residual diagnostics.
+This is a **new teaching investigation**, not the lecturer's six questions rewritten in Python. It uses the authentic **114,000-row Spotify dataset**, but organises the learning around decisions a responsible data analyst actually has to make.
 
-It uses **3,000 tracks sampled reproducibly from the original 114,000-track file**. Python sampling will not pick the identical records as R's `sample_n()`, even with the same seed.
+### Six acts: scaffolded teaching that becomes independent analysis
 
-[Original Lab 1 questions →]({{ '/resources/ms4215/labs/lab_1_questions.pdf' | relative_url }}) · [Original Spotify dataset (ZIP) →]({{ '/resources/ms4215/archives/lab1_dataset_spotify.zip' | relative_url }})
+| Act | What the learner investigates | New statistical habits |
+|:--|:--|:--|
+| 1. Understand | What exactly is a row? How many unique songs? | Variable types · unit of analysis · duplicate records · sampling |
+| 2. Audit | Are missing values, zeros and duplicates the same problem? | Missingness · data quality · reasoned cleaning |
+| 3. Explore | Is energy linked to loudness, genre or popularity? | Distribution · centre and spread · group comparisons · correlation |
+| 4. Predict | Can audio features estimate unseen tracks' energy scores? | Baseline · regression · train/test split · MAE · test R² |
+| 5. Challenge | Where is the model wrong, and what changes with the sample? | Residuals · data leakage · repeated splits · causal limits |
+| 6. Defend | Could a music curator rely on our recommendation? | Evidence-based conclusions · limitations · professional reporting |
+
+**The real data contain traps worth teaching.** The 114 genres each have exactly 1,000 rows, while many track IDs recur, sometimes under multiple genres. That is an opportunity to distinguish a **genre-labelled row** from a **unique song**, and to discuss misleading representations and non-independent train/test data.
+
+**Teaching method:** predict before revealing → explore a worked model → change one assumption → explain the result → solve a genuinely new problem.
+
+The final exercise offers **three independent missions** (music curator, data-quality investigator, predictive-model reviewer) and a reasoned report rubric. The learner chooses and defends an approach. The notebook is not an autofill exercise.
+
+**Technical stack:** Python · pandas · NumPy · Matplotlib · scikit-learn. In Colab the notebook loads the dataset automatically. Work in VS Code or JupyterLab is also supported.
+
+**A key limitation to teach:** Spotify already provides the energy score; predicting it from the other supplied audio features is a **deliberate training simulation**, not a claim that an actual application needs a redundant energy estimator. The relationships do not establish what *causes* musical energy or popularity.
+
+[Original Lab 1 questions for reference →]({{ '/resources/ms4215/labs/lab_1_questions.pdf' | relative_url }}) · [Original dataset ZIP →]({{ '/resources/ms4215/archives/lab1_dataset_spotify.zip' | relative_url }})
 
 ## The original lab sequence — in order
 
 | Lab | Application | Main statistical method | Training status |
 |:--|:--|:--|:--|
-| 1 | Spotify music | Exploration, correlation, regression and diagnostics | **Python notebook available** |
+| 1 | Spotify music | Data auditing, investigation, predictive evaluation, analyst reporting | **Extended six-act Python investigation available** |
 | 2 | Espresso extraction | Design matrix, OLS estimation, tests and VIF | [Existing Python notebook](https://colab.research.google.com/github/ronandownes/coop/blob/main/resources/ms4215/notebooks/MS4215_Lab2_Espresso_R_to_Python.ipynb) |
 | 3 | Blood pressure | Regression model building | Original exercise indexed |
 | 4 | Earnings | Inference for regression | Original exercise indexed |
