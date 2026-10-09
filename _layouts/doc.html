@@ -465,7 +465,7 @@
             const existing = last.classList.contains('interview-breadcrumbs')
               ? Array.from(last.querySelectorAll(':scope > span')).map(x => x.textContent.trim()).filter(Boolean)
               : [];
-            const cues = existing.length ? existing : last.textContent.split('|').map(x=>x.trim()).filter(Boolean);
+            const cues = existing.length ? existing : last.textContent.replace(/\*\*/g,'').split('|').map(x=>x.trim()).filter(Boolean);
             if (cues.length >= 1 && cues.length <= 8) {
               const strip = last.tagName === 'DIV' ? last : document.createElement('div');
               strip.classList.add('interview-breadcrumbs','interview-answer-node');
