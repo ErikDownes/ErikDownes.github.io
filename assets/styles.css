@@ -4695,18 +4695,37 @@ article img.img-full,
 .interview-mode .doc-body .interview-answer-node[hidden] {
   display:none!important;
 }
-/* Flexible recall cues: 2, 3, 4 or more phrases spread evenly across
-   their own answer width, with breathing room at both ends. */
+/* Recall words sit directly beneath EACH answer, never in a page footer.
+   The number of pipe-separated cues is variable. Leave balanced whitespace
+   before the first phrase, between phrases and after the last phrase. */
 .interview-mode .doc-body .interview-breadcrumbs.interview-answer-node:not([hidden]) {
   display:flex!important;
-  justify-content:space-evenly!important;
-  align-items:center!important;
   flex-wrap:nowrap!important;
-  gap:clamp(6px,1.4vw,16px)!important;
+  align-items:center!important;
+  justify-content:space-evenly!important;
+  gap:clamp(8px,1.5vw,18px)!important;
   width:100%!important;
+  min-width:0!important;
+  margin:0 0 16px!important;
+  padding:12px clamp(14px,3%,26px)!important;
+  border:0!important;
+  border-top:1px solid #e4eaf4!important;
+  border-radius:0!important;
+  background:#f8fbff!important;
+  box-shadow:none!important;
+  box-sizing:border-box!important;
 }
 .interview-mode .doc-body .interview-breadcrumbs.interview-answer-node > span {
+  display:block!important;
   flex:0 1 auto!important;
   min-width:0!important;
   max-width:100%;
+  padding:0!important;
+  border:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+  color:#0057d9!important;
+  font-weight:750!important;
+  text-align:center!important;
+  line-height:1.35;
 }
