@@ -4729,3 +4729,11 @@ article img.img-full,
   text-align:center!important;
   line-height:1.35;
 }
+
+/* Shared pipe-only interview recall breadcrumbs: normal weight, blue, evenly spaced. */
+.interview-mode .doc-body .interview-breadcrumbs.interview-answer-node > span,
+.interview-mode .doc-body .interview-breadcrumbs > span {
+  color:#0057d9!important;
+  font-weight:400!important;
+  font-style:normal!important;
+}
