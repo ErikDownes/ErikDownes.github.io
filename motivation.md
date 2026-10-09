@@ -20,7 +20,7 @@ Financial Maths brings my strengths and interests together — maths, technology
 
 UL also pioneered co-op in Ireland, giving me the chance to apply what I've learned in a real workplace.
 
-**Maths | Technology | Business | See myself in sector | Financial Maths | UL pioneered Co-op**
+Maths|Technology|Business|See myself in sector|Financial Maths|UL pioneered Co-op
 
 
 
