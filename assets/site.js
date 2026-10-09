@@ -1941,40 +1941,13 @@
     });
   };
 
-  // Accept memory-word breadcrumbs in either of these authoring forms:
-  //   CatDogHorse
-  //   Cat | Dog | Horse
-  // A short Title Case line such as "Cat Dog Horse" is also supported.
-  // This runs after local saved edits are restored, so older browser-saved
-  // answers are normalised as well as the Markdown source.
+  // Only an authored pipe-delimited line triggers bottom interview hints.
+  // Both leading/trailing pipes and whitespace around separators are optional.
   const parseBreadcrumbWords = value => {
-    const text = cleanText(value);
-    if (!text || text.length > 180) return [];
-
-    let words = [];
-
-    // A pipe is an explicit breadcrumb delimiter. Spaces and capitalisation
-    // are optional, so "maths|it|business" works exactly like
-    // "Maths | IT | Business".
-    if (text.includes('|')) {
-      words = text.split('|').map(cleanText).filter(Boolean);
-    } else {
-      // Without pipes, stay conservative so ordinary prose is not mistaken
-      // for a breadcrumb line.
-      if (/[.!?;:]$/.test(text)) return [];
-      if (!/\s/.test(text)) {
-        words = text.match(/[A-Z]+(?=[A-Z][a-z]|\d|$)|[A-Z]?[a-z]+|\d+(?:\.\d+)?/g) || [];
-      } else {
-        const chunks = text.split(/\s+/).filter(Boolean);
-        const looksLikeCue = chunk => /^[A-Z0-9][A-Za-z0-9/&+.'’-]*$/.test(chunk);
-        if (chunks.every(looksLikeCue)) words = chunks;
-      }
-    }
-
-    words = words.map(cleanText).filter(Boolean);
-    if (words.length < 2 || words.length > 8) return [];
-    if (words.some(word => word.length > 32)) return [];
-    return words;
+    const raw = String(value || '').trim();
+    if (!raw.includes('|') || raw.length > 600) return [];
+    const words = raw.split('|').map(cleanText).filter(Boolean);
+    return words.length >= 1 && words.length <= 20 ? words : [];
   };
 
   const normaliseInterviewBreadcrumbs = () => {
@@ -2030,19 +2003,13 @@
 
     const breadcrumbParts = node => {
       if (!node?.matches?.('p,div')) return [];
-      if (node.classList.contains('interview-breadcrumbs') && node.children.length) {
-        return Array.from(node.children).map(child => cleanText(child.textContent)).filter(Boolean);
-      }
-      const raw = cleanText(node.textContent);
-      if (!raw.includes('|')) return [];
-      const parts = raw.split('|').map(part => cleanText(part)).filter(Boolean);
-      if (parts.length < 2 || parts.length > 7) return [];
-      if (parts.some(part => part.length > 36)) return [];
-      return parts;
+      // Existing elements also need actual pipes: no class, capitalisation,
+      // CamelCase or whitespace-only hint trigger.
+      return parseBreadcrumbWords(node.textContent);
     };
 
     const formatBreadcrumb = node => {
-      const parts = breadcrumbParts(node).length ? breadcrumbParts(node) : parseBreadcrumbWords(node?.textContent || '');
+      const parts = breadcrumbParts(node);
       if (!parts.length) return;
 
       node.classList.add('interview-breadcrumbs');
@@ -2052,7 +2019,7 @@
       // a little breathing room at the ends (roughly two tabs left, three right).
       node.style.display = 'flex';
       node.style.alignItems = 'center';
-      node.style.justifyContent = 'space-between';
+      node.style.justifyContent = 'space-evenly';
       node.style.columnGap = '0';
       node.style.width = '100%';
       node.style.maxWidth = 'none';
@@ -2060,7 +2027,7 @@
       node.style.boxSizing = 'border-box';
       node.style.marginLeft = '0';
       node.style.marginRight = '0';
-      node.style.padding = '18px 48px 8px 32px';
+      node.style.padding = '18px 0 8px';
       node.style.borderTop = '1px solid #dfe5ea';
 
       node.replaceChildren(...parts.map((part, index) => {
