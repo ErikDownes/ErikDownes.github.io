@@ -14,8 +14,6 @@ eyebrow: INTERVIEW DOMAIN · MOTIVATION
 
 
 
-&nbsp;
-
 I've loved maths from a young age, and at school I discovered an interest in technology and business. I began to see myself working in the finance or accounting sector.
 
 Financial Maths brings my strengths and interests together — maths, technology, data analysis, finance and accounting.
@@ -26,7 +24,7 @@ UL also pioneered co-op in Ireland, giving me the chance to apply what I've lear
 
 
 
-Why are you interested in this role?
+## Why are you interested in this role?
 
 I enjoy **accounting, finance and technology**, especially using **Excel** to check figures, find errors and solve problems. That's why this HSE Finance role interests me. I'd be able to put those skills to use in **reconciliations**, payments and other real finance work.
 
