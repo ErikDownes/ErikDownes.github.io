@@ -1,10 +1,9 @@
 {
-  "version": 1,
-  "description": "Prototype single-source answer bank. All rendered views read this file.",
+  "version": 2,
+  "description": "Each answer owns its permanent ID, body and cues. Domains and linked questions are many-to-many retrieval metadata.",
   "answers": [
     {
-      "id": "motivation-1",
-      "domain": "Opening",
+      "id": "ANS-001",
       "title": "Why choose Financial Maths",
       "answer": "I was always drawn to maths and also had an aptitude for IT and technical concepts. At school I did very well in Business, and I started to picture myself working in a financial, accounting or business environment. Financial Maths gave me a broad course that brought those interests together — maths, technology, data analysis, finance and accounting — and UL’s co-op programme gave me the chance to apply them in a real workplace.",
       "breadcrumbs": [
@@ -17,11 +16,13 @@
       "questions": [
         "Why choose Financial Maths?"
       ],
-      "source": "motivation.md"
+      "source": "motivation.md",
+      "domains": [
+        "Opening"
+      ]
     },
     {
-      "id": "motivation-2",
-      "domain": "Opening",
+      "id": "ANS-002",
       "title": "Why are you interested in this role",
       "answer": "The HSE finance role appeals to me because it is practical, structured finance work where accuracy has a real purpose. I would be working on month-end, reconciliations, AP, costing and funding returns, while learning SAP Financials and using Excel. I also like that it is a service environment where meeting deadlines and doing the work properly matters to the wider organisation.",
       "breadcrumbs": [
@@ -34,11 +35,13 @@
       "questions": [
         "Why are you interested in this role?"
       ],
-      "source": "motivation.md"
+      "source": "motivation.md",
+      "domains": [
+        "Opening"
+      ]
     },
     {
-      "id": "motivation-3",
-      "domain": "Opening",
+      "id": "ANS-003",
       "title": "What do you want from co-op",
       "answer": "I want co-op to move me from mainly developing my own skills into using them professionally with other people. I want experience of live financial and technology processes, working with experienced colleagues and managing several priorities where accuracy and timeliness matter. I have a strong desire to learn, but I also want to bring professional drive — take direction, absorb information quickly and become someone the team can depend on.",
       "breadcrumbs": [
@@ -50,11 +53,13 @@
       "questions": [
         "What do you want from co-op?"
       ],
-      "source": "motivation.md"
+      "source": "motivation.md",
+      "domains": [
+        "Opening"
+      ]
     },
     {
-      "id": "motivation-4",
-      "domain": "Opening",
+      "id": "ANS-004",
       "title": "What do you enjoy most about Financial Maths",
       "answer": "I enjoy taking data or calculations that do not initially line up and working systematically until I understand why. Whether it is cleaning timestamps in a large dataset or tracing an Excel reconciliation problem, I like turning something messy into something accurate, reliable and useful.",
       "breadcrumbs": [
@@ -65,11 +70,13 @@
       "questions": [
         "What do you enjoy most about Financial Maths?"
       ],
-      "source": "motivation.md"
+      "source": "motivation.md",
+      "domains": [
+        "Opening"
+      ]
     },
     {
-      "id": "technology-1",
-      "domain": "Capabilities",
+      "id": "ANS-005",
       "title": "Tell me about working with large data.",
       "answer": "My Dublin Bikes project used about 55 million station-status observations. I cleaned and standardised the historical files with pandas, stored the data in SQLite, then used SQL to reduce it into station-by-hour patterns for the dashboard. That turned a very large dataset into something practical and understandable.",
       "breadcrumbs": [
@@ -82,11 +89,14 @@
       "questions": [
         "Tell me about working with large data."
       ],
-      "source": "technology.md"
+      "source": "technology.md",
+      "domains": [
+        "Capabilities",
+        "Experience"
+      ]
     },
     {
-      "id": "technology-2",
-      "domain": "Capabilities",
+      "id": "ANS-006",
       "title": "Tell me about combining messy files.",
       "answer": "The Dublin Bikes data came from different years with changing file structures and timestamp formats. I standardised the columns and dates in pandas, checked that they matched properly, then combined the cleaned data into one SQLite database. It taught me to make the data consistent before trying to analyse it.",
       "breadcrumbs": [
@@ -98,11 +108,14 @@
       "questions": [
         "Tell me about combining messy files."
       ],
-      "source": "technology.md"
+      "source": "technology.md",
+      "domains": [
+        "Capabilities",
+        "Experience"
+      ]
     },
     {
-      "id": "technology-3",
-      "domain": "Capabilities",
+      "id": "ANS-007",
       "title": "Tell me about working with raw data.",
       "answer": "I exported one of my own Strava rides as a GPX file and analysed the raw track points. I checked what information was actually available, cleaned the elevation data and compared my results with Strava. I also found that the file had no timestamps, so I did not try to invent speed or moving-time information that the data could not support.",
       "breadcrumbs": [
@@ -114,11 +127,14 @@
       "questions": [
         "Tell me about working with raw data."
       ],
-      "source": "technology.md"
+      "source": "technology.md",
+      "domains": [
+        "Capabilities",
+        "Experience"
+      ]
     },
     {
-      "id": "technology-4",
-      "domain": "Capabilities",
+      "id": "ANS-008",
       "title": "Tell me about a financial tool you built.",
       "answer": "My mother was comparing three PCP offers for the same car, so I built a calculator comparing the deposit, monthly repayments, final GMFV and total cash outlay. The middle option came out about €800 cheaper overall. I later used the same loan-amortisation ideas in an interactive mortgage calculator.",
       "breadcrumbs": [
@@ -131,11 +147,14 @@
       "questions": [
         "Tell me about a financial tool you built."
       ],
-      "source": "technology.md"
+      "source": "technology.md",
+      "domains": [
+        "Capabilities",
+        "Experience"
+      ]
     },
     {
-      "id": "analytics-1",
-      "domain": "Capabilities",
+      "id": "ANS-009",
       "title": "What skills do you bring",
       "answer": "I bring analytical problem-solving, an aptitude for IT and technical concepts, and practical experience with Excel, Python, pandas, databases and SQL. I also have strong multitasking and organisational abilities, developed through balancing university, projects and work. I am comfortable taking direction, absorbing information quickly and staying reliable when priorities change.",
       "breadcrumbs": [
@@ -148,11 +167,13 @@
       "questions": [
         "What skills do you bring?"
       ],
-      "source": "analytics.md"
+      "source": "analytics.md",
+      "domains": [
+        "Capabilities"
+      ]
     },
     {
-      "id": "analytics-2",
-      "domain": "Capabilities",
+      "id": "ANS-010",
       "title": "Tell me about a problem you solved.",
       "answer": "In my Dublin Bikes project, I had about 55 million observations spread across files with different structures and timestamp formats. I broke the problem into stages, cleaned and standardised the data with pandas, stored it in SQLite, used SQL to analyse it, and then visualised the results in Leaflet.",
       "breadcrumbs": [
@@ -164,11 +185,14 @@
       "questions": [
         "Tell me about a problem you solved."
       ],
-      "source": "analytics.md"
+      "source": "analytics.md",
+      "domains": [
+        "Capabilities",
+        "Experience"
+      ]
     },
     {
-      "id": "analytics-3",
-      "domain": "Capabilities",
+      "id": "ANS-011",
       "title": "Tell me about a time you identified and corrected an error.",
       "answer": "I was checking an Excel spreadsheet that stopped reconciling after the inputs changed. I exposed the formulas and found a hard-coded number where there should have been a relative-reference formula. I corrected it and tested the spreadsheet again to make sure it updated properly.",
       "breadcrumbs": [
@@ -180,11 +204,14 @@
       "questions": [
         "Tell me about a time you identified and corrected an error."
       ],
-      "source": "analytics.md"
+      "source": "analytics.md",
+      "domains": [
+        "Capabilities",
+        "Experience"
+      ]
     },
     {
-      "id": "analytics-4",
-      "domain": "Capabilities",
+      "id": "ANS-012",
       "title": "Tell me about a time analysis helped a decision.",
       "answer": "My mother was comparing three PCP offers for the same car. I built a calculator comparing the deposit, monthly repayments, final payment and total cash outlay. The middle option was about €800 cheaper overall, so the analysis helped her make the decision based on total cost rather than just the monthly payment.",
       "breadcrumbs": [
@@ -196,11 +223,14 @@
       "questions": [
         "Tell me about a time analysis helped a decision."
       ],
-      "source": "analytics.md"
+      "source": "analytics.md",
+      "domains": [
+        "Capabilities",
+        "Experience"
+      ]
     },
     {
-      "id": "communication-1",
-      "domain": "Experience",
+      "id": "ANS-013",
       "title": "Explain Clearly",
       "answer": "My mother was comparing three PCP offers for the same car. I built a calculator to compare the deposit, monthly repayments, final payment and total cash outlay, then used simple figures and graphs to explain the result. The middle option was about €800 cheaper overall.",
       "breadcrumbs": [
@@ -212,11 +242,14 @@
       "questions": [
         "Tell me about a time you explained something complex clearly."
       ],
-      "source": "communication.md"
+      "source": "communication.md",
+      "domains": [
+        "Experience",
+        "Capabilities"
+      ]
     },
     {
-      "id": "communication-2",
-      "domain": "Experience",
+      "id": "ANS-014",
       "title": "Customer Communication",
       "answer": "At O’Mahony’s, books were sent to the wrong library because the address information we were working from was incorrect. I helped organise the return, kept the libraries informed and worked with colleagues to minimise the delay. The important part was being clear about what had happened, what we were doing next and when the customer could expect it to be resolved.",
       "breadcrumbs": [
@@ -228,11 +261,14 @@
       "questions": [
         "Tell me about a time communication helped resolve a customer problem."
       ],
-      "source": "communication.md"
+      "source": "communication.md",
+      "domains": [
+        "Experience",
+        "Capabilities"
+      ]
     },
     {
-      "id": "communication-3",
-      "domain": "Experience",
+      "id": "ANS-015",
       "title": "Adapt to Audience",
       "answer": "I start with what the other person actually needs. A customer usually needs a clear practical explanation and next step, while a colleague may need more operational detail. For technical work I use the format that makes the information easiest to understand — for example a short written summary, a structured table, a graph or a flow diagram — and I adjust my pace and level of detail as I go.",
       "breadcrumbs": [
@@ -244,11 +280,14 @@
       "questions": [
         "How do you adapt your communication to different audiences?"
       ],
-      "source": "communication.md"
+      "source": "communication.md",
+      "domains": [
+        "Experience",
+        "Capabilities"
+      ]
     },
     {
-      "id": "communication-4",
-      "domain": "Experience",
+      "id": "ANS-016",
       "title": "Feedback",
       "answer": "Early in my TY placement at Mr Price, my manager corrected me on punctuality after breaks; I accepted it, understood the effect on the team, and changed my routine immediately.",
       "breadcrumbs": [
@@ -260,11 +299,14 @@
       "questions": [
         "Tell me about a time you received corrective feedback."
       ],
-      "source": "communication.md"
+      "source": "communication.md",
+      "domains": [
+        "Experience",
+        "Capabilities"
+      ]
     },
     {
-      "id": "communication-5",
-      "domain": "Experience",
+      "id": "ANS-017",
       "title": "Written Communication",
       "answer": "I use clear headings, concise explanations, properly structured tables and visualisations where they genuinely help. In project work I have used Overleaf and LaTeX for structured reports and GitHub Pages for publishing technical work so that another person can follow the purpose, method and result without having to work through the raw code first.",
       "breadcrumbs": [
@@ -276,11 +318,14 @@
       "questions": [
         "How do you make technical or written information clear and accessible?"
       ],
-      "source": "communication.md"
+      "source": "communication.md",
+      "domains": [
+        "Experience",
+        "Capabilities"
+      ]
     },
     {
-      "id": "initiative-1",
-      "domain": "Experience",
+      "id": "ANS-018",
       "title": "Tell me about a process you improved.",
       "answer": "At O’Mahony’s, I realised that printed Booksolve reports could become outdated as information changed. After an inconsistency contributed to books going to the wrong customer, I helped resolve the immediate problem, then raised the underlying issue with my manager. I got appropriate Booksolve access and started using more current information in my checks rather than relying only on printed reports.",
       "breadcrumbs": [
@@ -292,11 +337,14 @@
       "questions": [
         "Tell me about a process you improved."
       ],
-      "source": "initiative.md"
+      "source": "initiative.md",
+      "domains": [
+        "Experience",
+        "Capabilities"
+      ]
     },
     {
-      "id": "initiative-2",
-      "domain": "Experience",
+      "id": "ANS-019",
       "title": "Tell me about something you had to learn quickly.",
       "answer": "In my Dublin Bikes project, historical files had different timestamp formats and I could not correct millions of records manually. I learned how to use pandas and `to_datetime()` to standardise them, tested the results and then continued the analysis.",
       "breadcrumbs": [
@@ -308,7 +356,11 @@
       "questions": [
         "Tell me about something you had to learn quickly."
       ],
-      "source": "initiative.md"
+      "source": "initiative.md",
+      "domains": [
+        "Experience",
+        "Capabilities"
+      ]
     }
   ]
 }
