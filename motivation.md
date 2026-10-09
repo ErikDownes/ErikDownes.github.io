@@ -3,7 +3,6 @@ layout: doc
 permalink: /motivation.html
 handle: Motivation & Career Direction
 title: Motivation & Career Direction
-subtitle: Why this path, why this role and what I want from co-op.
 nav_order: 40
 top_nav: false
 interview_mode: true
@@ -11,8 +10,6 @@ description: Motivation and role-fit interview questions for co-op preparation.
 eyebrow: INTERVIEW DOMAIN · MOTIVATION
 ---
 ## Why choose Financial Maths?
-
-
 
 I've loved maths from a young age, and at school I discovered an interest in technology and business. I began to see myself working in the finance or accounting sector.
 
