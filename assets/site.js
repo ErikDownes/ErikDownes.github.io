@@ -1969,27 +1969,7 @@
       words = text.split('|').map(cleanText).filter(Boolean);
     } else {
       return [];
-      /* Legacy non-pipe guessing disabled. Keep the old recovery code below inert.
-      // Without pipes, stay conservative so ordinary prose is not mistaken
-      // for a breadcrumb line.
-      if (/[.!?;:]$/.test(text)) return [];
-      if (!/\s/.test(text)) {
-        words = text.match(/[A-Z]+(?=[A-Z][a-z]|\d|$)|[A-Z]?[a-z]+|\d+(?:\.\d+)?/g) || [];
-      } else {
-        const chunks = text.split(/\s+/).filter(Boolean);
-        const looksLikeCue = chunk => /^[A-Z0-9][A-Za-z0-9/&+.'’-]*$/.test(chunk);
-        if (chunks.every(looksLikeCue)) {
-          words = chunks;
-        } else {
-          // Some saved edits lose their pipe separators. Recover clear
-          // title-cased cue groups, including phrases like "Customer care".
-          const groups = text.match(/[A-Z][\p{L}\p{N}’'-]*(?:\s+[a-z][\p{L}\p{N}’'-]*)*/gu) || [];
-          if (groups.length >= 2 && cleanText(groups.join(' ')) === text) words = groups;
-        }
-      }
     }
-
-    */
 
     words = words.map(cleanText).filter(Boolean);
     // A single prompt is valid when explicitly marked with a pipe (e.g. Learn|).
