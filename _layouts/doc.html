@@ -458,14 +458,25 @@
         hs.forEach(h => {
           const nodes = contentFor(h);
           const last = nodes[nodes.length-1];
-          if (last?.tagName === 'P' && last.textContent.includes('|')) {
-            const cues = last.textContent.split('|').map(x=>x.trim()).filter(Boolean);
-            if (cues.length > 1 && cues.length <= 8) {
-              const strip=document.createElement('div');
-              strip.className='interview-breadcrumbs interview-answer-node';
+          // Recover pipe-separated cues even when the main script has already
+          // created their div but has not yet added the answer-node class.
+          if (last?.classList.contains('interview-breadcrumbs') ||
+              (last?.tagName === 'P' && last.textContent.includes('|'))) {
+            const existing = last.classList.contains('interview-breadcrumbs')
+              ? Array.from(last.querySelectorAll(':scope > span')).map(x => x.textContent.trim()).filter(Boolean)
+              : [];
+            const cues = existing.length ? existing : last.textContent.split('|').map(x=>x.trim()).filter(Boolean);
+            if (cues.length >= 1 && cues.length <= 8) {
+              const strip = last.tagName === 'DIV' ? last : document.createElement('div');
+              strip.classList.add('interview-breadcrumbs','interview-answer-node');
+              strip.setAttribute('aria-label','Memory prompts');
               strip.style.setProperty('--breadcrumb-count',String(cues.length));
-              cues.forEach(cue=>{const span=document.createElement('span');span.textContent=cue;strip.appendChild(span);});
-              last.replaceWith(strip);
+              strip.replaceChildren(...cues.map(cue => {
+                const span = document.createElement('span');
+                span.textContent = cue;
+                return span;
+              }));
+              if (strip !== last) last.replaceWith(strip);
             }
           }
           h.classList.add('interview-accordion-heading');
