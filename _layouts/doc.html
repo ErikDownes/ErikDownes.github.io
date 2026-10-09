@@ -456,6 +456,18 @@
         // The normal accordion owns clicks when already initialised.
         if (window.coopInterviewAccordion) return;
         hs.forEach(h => {
+          const nodes = contentFor(h);
+          const last = nodes[nodes.length-1];
+          if (last?.tagName === 'P' && last.textContent.includes('|')) {
+            const cues = last.textContent.split('|').map(x=>x.trim()).filter(Boolean);
+            if (cues.length > 1 && cues.length <= 8) {
+              const strip=document.createElement('div');
+              strip.className='interview-breadcrumbs interview-answer-node';
+              strip.style.setProperty('--breadcrumb-count',String(cues.length));
+              cues.forEach(cue=>{const span=document.createElement('span');span.textContent=cue;strip.appendChild(span);});
+              last.replaceWith(strip);
+            }
+          }
           h.classList.add('interview-accordion-heading');
           h.setAttribute('role','button');
           h.tabIndex = 0;
@@ -527,7 +539,7 @@
         document.body.appendChild(rail);
       };
       // Let the full-featured shared code initialise first; recover only if needed.
-      setTimeout(()=>{ensureAccordion();ensureRail();},0);
+      setTimeout(()=>{ensureAccordion();ensureRail();},800);
     })();
   </script>
 
