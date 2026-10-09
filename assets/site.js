@@ -2134,21 +2134,8 @@
     headings.forEach(heading => {
       const initialNodes = sourceNodesFor(heading);
       if (!initialNodes.length) return;
-      // Every interview answer gets a consistent horizontal recall strip.
-      // Explicit pipes are the ONLY authoring delimiter; no capitalisation guesses.
-      // When an older question lacks cues, show a clearly editable scaffold.
-      const hasCue = initialNodes.some(node =>
-        node.classList?.contains('interview-breadcrumbs') ||
-        (node.matches?.('p,div') && node.textContent.includes('|') &&
-         parseBreadcrumbWords(node.textContent).length > 0)
-      );
-      if (!hasCue) {
-        const lastSource = initialNodes[initialNodes.length - 1];
-        const scaffold = document.createElement('p');
-        scaffold.textContent = 'Main point|Evidence|Result';
-        scaffold.dataset.cueScaffold = 'true';
-        lastSource.insertAdjacentElement('afterend', scaffold);
-      }
+      // Only pipe-separated cues explicitly authored in the answer become prompts.
+      // Never invent generic prompts for answers without a cue line.
       // Keep cues in their authored position, ordinarily below the answer.
       const answerNodes = sourceNodesFor(heading);
 
