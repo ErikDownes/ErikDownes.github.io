@@ -1,13 +1,15 @@
 ---
 layout: doc
 permalink: /qa.html
-handle: Career
-title: Career
-subtitle: Where I am heading, what I want after university and how Financial Maths fits that direction.
-nav_order: 80
+handle: Opener
+title: Opener
+subtitle: Where I am heading, what I want after university and how Financial
+  Maths fits that direction.
+nav_order: 4
 top_nav: false
 interview_mode: true
-description: Career direction and Financial Mathematics interview questions for co-op preparation.
+description: Career direction and Financial Mathematics interview questions for
+  co-op preparation.
 eyebrow: INTERVIEW DOMAIN · CAREER
 ---
 ## Why choose Financial Maths?
