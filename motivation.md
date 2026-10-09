@@ -1,8 +1,8 @@
 ---
 layout: doc
 permalink: /motivation.html
-handle: Motivation
-title: Motivation
+handle: Motivation & Career Direction
+title: Motivation & Career Direction
 subtitle: Why this path, why this role and what I want from co-op.
 nav_order: 40
 top_nav: false
