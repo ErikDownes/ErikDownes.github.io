@@ -131,41 +131,21 @@
     </button>
 
     <nav class="topnav" id="mainNav" aria-label="Main navigation">
-      {% assign nav_pages = site.pages | where_exp: "p", "p.top_nav == true" | sort: "nav_order" %}
-      {% for navpage in nav_pages %}
-      {% assign nav_title_parts = navpage.title | split: '|' %}
-      {% assign nav_legacy_title = nav_title_parts[0] | strip %}
-      {% assign nav_menu_title = navpage.handle | default: nav_legacy_title | strip %}
-      {% unless nav_menu_title == 'General Questions' or nav_menu_title == 'Competency / STAR' or nav_menu_title == 'Pivotal Corporate Interview' or nav_menu_title == 'UL CV' or nav_menu_title == 'Results' or nav_menu_title == 'Job Spec' %}
-<div class="navitem{% if nav_menu_title == 'LM058' %} nav-right{% endif %} nav-dynamic{% if nav_menu_title == 'Contact' %} nav-contact-link{% endif %}" data-question-menu>
-        <a class="navlabel" href="{{ navpage.url | relative_url }}"{% if nav_menu_title == 'Home' or nav_menu_title == 'Profile' or nav_menu_title == 'Education' or nav_menu_title == 'BSc Financial Mathematics' or nav_menu_title == 'FinMath Mod' or nav_menu_title == 'Projects' or nav_menu_title == 'Co-op' %} aria-haspopup="true" aria-expanded="false"{% endif %}><span>{{ nav_menu_title }}</span></a>
-        <div class="dropmenu"></div>
-      </div>
-      {% endunless %}
-
-      {% endfor %}
+      <div class="navitem"><a class="navlabel" href="{{ '/' | relative_url }}"><span>About Me</span></a></div>
+      <div class="navitem"><a class="navlabel" href="{{ '/stories.html' | relative_url }}"><span>Stories</span></a></div>
+      <div class="navitem"><a class="navlabel" href="{{ '/projects.html' | relative_url }}"><span>Projects</span></a></div>
     </nav>
-    <a class="contact-cta{% if page.url == '/contact.html' %} is-current{% endif %}" href="{{ '/contact.html' | relative_url }}">Contact Me</a>
   </header>
 
 
   <main class="page-stage">
     {% if page.interview_mode or page.interview_hub %}
     <div class="interview-shell">
-      <aside class="interview-domain-sidebar" aria-label="Interview domains">
-        <nav>
-          <a{% if page.url == '/all-interview.html' %} class="is-active" aria-current="page"{% endif %} href="{{ '/all-interview.html' | relative_url }}"><strong>All Questions</strong></a>
-          <a{% if page.url == '/story-lab.html' %} class="is-active" aria-current="page"{% endif %} href="{{ '/story-lab.html' | relative_url }}"><strong>Story Laboratory</strong></a>
-          <a{% if page.url == '/technology.html' %} class="is-active" aria-current="page"{% endif %} href="{{ '/technology.html' | relative_url }}">Technology</a>
-          <a{% if page.url == '/people.html' %} class="is-active" aria-current="page"{% endif %} href="{{ '/people.html' | relative_url }}">Teamwork</a>
-          <a{% if page.url == '/motivation.html' %} class="is-active" aria-current="page"{% endif %} href="{{ '/motivation.html' | relative_url }}">Motivation</a>
-          <a{% if page.url == '/initiative.html' %} class="is-active" aria-current="page"{% endif %} href="{{ '/initiative.html' | relative_url }}">Initiative</a>
-          <a{% if page.url == '/finance-role.html' %} class="is-active" aria-current="page"{% endif %} href="{{ '/finance-role.html' | relative_url }}">Finance</a>
-          <a{% if page.url == '/communication.html' %} class="is-active" aria-current="page"{% endif %} href="{{ '/communication.html' | relative_url }}">Communication</a>
-          <a{% if page.url == '/qa.html' %} class="is-active" aria-current="page"{% endif %} href="{{ '/qa.html' | relative_url }}">Career</a>
-          <a{% if page.url == '/analytics.html' %} class="is-active" aria-current="page"{% endif %} href="{{ '/analytics.html' | relative_url }}">Analytics</a>
-        </nav>
-      </aside>
+      <aside class="interview-domain-sidebar" aria-label="Site sections"><nav>
+        <a href="{{ '/' | relative_url }}">About Me</a>
+        <a{% if page.url == '/stories.html' %} class="is-active" aria-current="page"{% endif %} href="{{ '/stories.html' | relative_url }}"><strong>Stories</strong></a>
+        <a href="{{ '/projects.html' | relative_url }}">Projects</a>
+      </nav></aside>
     {% elsif page.cv_mode %}
     <div class="cv-shell">
       <aside class="cv-section-sidebar" aria-label="CV navigation">
