@@ -135,6 +135,7 @@ body:has(#sl-bank) .doc-body{width:100%!important;min-width:0!important}
 .sl-bank .sl-current-story-name{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#87939e;font-size:.84rem;letter-spacing:.01em}
 .sl-bank .sl-inner-control-row #sl-table-actions{margin-left:auto}
 @media(max-width:540px){.sl-bank .record-controls{gap:3px}.sl-bank .record-controls .sl-mic-meter{margin-left:0;padding:2px 5px}.sl-bank .record-controls .transport{width:37px;min-width:37px}.sl-bank .record-controls .sl-download-icon{width:37px!important;min-width:37px}.sl-bank .sl-current-story-name{font-size:.75rem}}
+.sl-bank .sl-record-pause,.sl-bank .sl-play-stop{color:#c32031;width:42px;height:42px}.sl-bank .sl-play-stop{color:#0b65d8}.sl-bank .sl-record-pause svg,.sl-bank .sl-play-stop svg{width:22px;height:22px;fill:currentColor}.sl-bank .record-controls button[hidden]{display:none!important}.sl-bank .transport.record{color:#c32031}
 </style>
 <section class="sl-bank" id="sl-bank">
   <div id="sl-accordion" class="sl-accordion"></div>
@@ -147,8 +148,9 @@ body:has(#sl-bank) .doc-body{width:100%!important;min-width:0!important}
     <div class="record-console" id="sl-recording-booth">
       <div class="record-controls" aria-label="Audio recorder">
         <button class="transport record" type="button" id="sl-record" title="Record" aria-label="Record"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/></svg></button>
-        <button class="transport stop" type="button" id="sl-stop" title="Stop recording" aria-label="Stop recording" disabled><svg viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="1"/></svg></button>
+        <button class="transport sl-record-pause" type="button" id="sl-record-pause" title="Pause recording" aria-label="Pause recording" hidden><svg viewBox="0 0 24 24"><rect x="5" y="4" width="5" height="16"/><rect x="14" y="4" width="5" height="16"/></svg></button>
         <button class="transport play sl-read-icon" type="button" id="sl-play" title="Play recording" aria-label="Play recording" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5 L20 12 L6 20.5 Z"/></svg></button>
+        <button class="transport sl-play-stop" type="button" id="sl-play-stop" title="Stop playback" aria-label="Stop playback" hidden><svg viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="1"/></svg></button>
         <button class="download sl-download-icon" type="button" id="sl-download" title="Download latest recording" aria-label="Download latest recording" disabled><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3v12m-4-4 4 4 4-4M4 16v4h16v-4" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
       <div class="sl-mic-meter"><span class="sl-mic-symbol" aria-hidden="true">🎙</span><canvas class="level" id="sl-level" aria-label="Audio level progressing to the right"></canvas><output id="sl-elapsed">00:00</output></div>
       </div>
@@ -165,7 +167,7 @@ const stories=[{"name":"Problem Solving – Rerouting","paragraphs":["The situat
 const root=document.getElementById("sl-bank");if(!root)return;
 const $=id=>document.getElementById(id);
 const body=$("sl-story-text"),table=$("sl-story-table"),activeCard=$("sl-active-card");
-const record=$("sl-record"),stop=$("sl-stop"),play=$("sl-play"),download=$("sl-download");
+const record=$("sl-record"),recordPause=$("sl-record-pause"),play=$("sl-play"),playStop=$("sl-play-stop"),download=$("sl-download");
 const status=$("sl-status"),audio=$("sl-audio"),canvas=$("sl-level"),ctx=canvas.getContext("2d");
 const recordingToggle=$("sl-recording-toggle"),recordingBooth=$("sl-recording-booth");
 let recordingVisible=true;
@@ -263,7 +265,7 @@ function render(){
 
 
 const elapsed=$("sl-elapsed"),list=$("sl-attempt-list"),history=$("sl-attempts");
-const attempts=[];let started=0,ticker=null,levels=[],nextNumber=1;
+const attempts=[];let started=0,ticker=null,levels=[],nextNumber=1,pausedAt=0,pausedTotal=0;
 const fmt=ms=>{const n=Math.floor(ms/1000);return String(Math.floor(n/60)).padStart(2,"0")+":"+String(n%60).padStart(2,"0")};
 function draw(){
  const ratio=window.devicePixelRatio||1,w=canvas.clientWidth,h=canvas.clientHeight;
@@ -287,35 +289,85 @@ function addAttempt(e){
  const x=document.createElement("button");x.textContent="Remove";x.onclick=()=>{audio.pause();const i=attempts.indexOf(e);if(i>=0)attempts.splice(i,1);URL.revokeObjectURL(e.url);li.remove()};
  li.append(p,d,x);list.prepend(li);
 }
+const iconPause='<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="5" height="16"/><rect x="14" y="4" width="5" height="16"/></svg>';
+const iconPlay='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5 L20 12 L6 20.5 Z"/></svg>';
+const iconStop='<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="5" width="14" height="14" rx="1"/></svg>';
+const iconRecord='<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/></svg>';
+function syncPlayback(){
+ const active=!audio.paused&&!audio.ended&&!!audio.src;
+ // Keep Stop visible while an audio take is paused part-way through.
+ const hasPosition=!!audio.src && audio.currentTime>0 && (!audio.duration || audio.currentTime<audio.duration);
+ playStop.hidden=!(active||hasPosition);
+ play.innerHTML=active?iconPause:iconPlay;
+ play.title=active?"Pause playback":(hasPosition?"Resume playback":"Play recording");
+ play.setAttribute("aria-label",play.title);
+ play.disabled=!attempts.length || !!media;
+}
+function syncRecording(){
+ const active=!!media;
+ record.innerHTML=active?iconStop:iconRecord;
+ record.title=active?"Stop recording":"Record";
+ record.setAttribute("aria-label",record.title);
+ recordPause.hidden=!active;
+ recordPause.innerHTML=media?.state==="paused"?iconPlay:iconPause;
+ recordPause.title=media?.state==="paused"?"Resume recording":"Pause recording";
+ recordPause.setAttribute("aria-label",recordPause.title);
+ play.disabled=active||!attempts.length;
+}
+function recordingDuration(){
+ return performance.now()-started-pausedTotal-(pausedAt?performance.now()-pausedAt:0);
+}
 record.addEventListener("click",async()=>{
- if(media?.state==="recording")return;
+ if(media){
+  if(media.state==="recording"||media.state==="paused"){
+   if(pausedAt){pausedTotal+=performance.now()-pausedAt;pausedAt=0}
+   media.stop();cancelAnimationFrame(animation);record.disabled=true;recordPause.disabled=true;
+  }
+  return;
+ }
  if(!navigator.mediaDevices?.getUserMedia||!window.MediaRecorder){status.textContent="Microphone recording unavailable.";return}
  record.disabled=true;
  try{
- stream=await navigator.mediaDevices.getUserMedia({audio:true});
- const mime=["audio/webm;codecs=opus","audio/webm","audio/mp4"].find(x=>MediaRecorder.isTypeSupported(x));
- media=new MediaRecorder(stream,mime?{mimeType:mime}:undefined);chunks=[];levels=[];
- audioContext=new (window.AudioContext||window.webkitAudioContext)();analyser=audioContext.createAnalyser();analyser.fftSize=2048;
- source=audioContext.createMediaStreamSource(stream);source.connect(analyser);
- const story=stories[selected].name;started=performance.now();elapsed.textContent="00:00";
- media.ondataavailable=e=>{if(e.data.size)chunks.push(e.data)};
- media.onstop=async()=>{
- clearInterval(ticker);ticker=null;
- const e={n:nextNumber++,story,ms:performance.now()-started,blob:new Blob(chunks,{type:media.mimeType||"audio/webm"})};
- e.url=URL.createObjectURL(e.blob);attempts.push(e);addAttempt(e);
- blob=e.blob;blobUrl=e.url;recordedStory=e.story;play.disabled=false;download.disabled=false;
- stream.getTracks().forEach(t=>t.stop());source.disconnect();await audioContext.close();
- stream=null;source=null;audioContext=null;analyser=null;media=null;record.disabled=false;stop.disabled=true;
- elapsed.textContent=fmt(e.ms);status.textContent="Attempt saved on this page. Download to keep it.";draw();
- };
- media.start();stop.disabled=false;status.textContent="Recording…";
- ticker=setInterval(()=>elapsed.textContent=fmt(performance.now()-started),200);draw();
- }catch(err){status.textContent="Microphone unavailable. Check permissions.";stream?.getTracks().forEach(t=>t.stop());record.disabled=false}
+  audio.pause();audio.currentTime=0;syncPlayback();
+  stream=await navigator.mediaDevices.getUserMedia({audio:true});
+  const mime=["audio/webm;codecs=opus","audio/webm","audio/mp4"].find(x=>MediaRecorder.isTypeSupported(x));
+  media=new MediaRecorder(stream,mime?{mimeType:mime}:undefined);chunks=[];levels=[];
+  audioContext=new (window.AudioContext||window.webkitAudioContext)();analyser=audioContext.createAnalyser();analyser.fftSize=2048;
+  source=audioContext.createMediaStreamSource(stream);source.connect(analyser);
+  const story=stories[selected].name;started=performance.now();pausedAt=0;pausedTotal=0;elapsed.textContent="00:00";
+  media.ondataavailable=e=>{if(e.data.size)chunks.push(e.data)};
+  media.onstop=async()=>{
+   clearInterval(ticker);ticker=null;
+   const duration=recordingDuration();
+   const e={n:nextNumber++,story,ms:duration,blob:new Blob(chunks,{type:media.mimeType||"audio/webm"})};
+   e.url=URL.createObjectURL(e.blob);attempts.push(e);addAttempt(e);
+   blob=e.blob;blobUrl=e.url;recordedStory=e.story;download.disabled=false;
+   stream.getTracks().forEach(t=>t.stop());source.disconnect();await audioContext.close();
+   stream=null;source=null;audioContext=null;analyser=null;media=null;record.disabled=false;recordPause.disabled=false;
+   elapsed.textContent=fmt(duration);status.textContent="Recording ready to download.";draw();syncRecording();syncPlayback();
+  };
+  media.start();record.disabled=false;syncRecording();status.textContent="Recording";
+  ticker=setInterval(()=>elapsed.textContent=fmt(recordingDuration()),200);draw();
+ }catch(err){status.textContent="Microphone unavailable. Check permissions.";stream?.getTracks().forEach(t=>t.stop());media=null;record.disabled=false;syncRecording()}
 });
-stop.addEventListener("click",()=>{if(media?.state==="recording"){media.stop();cancelAnimationFrame(animation);stop.disabled=true}});
-play.addEventListener("click",()=>{const e=attempts[attempts.length-1];if(e){audio.src=e.url;audio.currentTime=0;audio.play()}});
+recordPause.addEventListener("click",()=>{
+ if(!media)return;
+ if(media.state==="recording"){media.pause();pausedAt=performance.now();cancelAnimationFrame(animation);status.textContent="Recording paused"}
+ else if(media.state==="paused"){pausedTotal+=performance.now()-pausedAt;pausedAt=0;media.resume();status.textContent="Recording";draw()}
+ syncRecording();
+});
+play.addEventListener("click",()=>{
+ if(media||!attempts.length)return;
+ if(!audio.paused){audio.pause();return}
+ if(!audio.src || audio.ended || audio.currentTime===0){const e=attempts[attempts.length-1];audio.src=e.url;audio.currentTime=0}
+ audio.play().catch(()=>{status.textContent="Playback unavailable."});
+});
+playStop.addEventListener("click",()=>{audio.pause();audio.currentTime=0;syncPlayback()});
 download.addEventListener("click",()=>{const e=attempts[attempts.length-1];if(e)saveAttempt(e)});
-audio.addEventListener("ended",()=>{status.textContent=""});
+audio.addEventListener("play",syncPlayback);
+audio.addEventListener("pause",syncPlayback);
+audio.addEventListener("ended",()=>{audio.currentTime=0;syncPlayback()});
+syncRecording();syncPlayback();
 window.addEventListener("pagehide",()=>attempts.forEach(e=>URL.revokeObjectURL(e.url)));
 // All story bars start collapsed. The recorder appears inside the opened story.
 })();
