@@ -120,6 +120,18 @@
       .finmath-current-sidebar .cv-sidebar-divider{display:none}
     }
   </style>
+<style>
+    .projects-shell{align-items:flex-start}
+    .projects-shell .projects-sidebar{position:sticky;top:86px;align-self:flex-start}
+    .projects-shell .projects-sidebar nav a{line-height:1.35}
+    .projects-shell .doc-paper{min-width:0;flex:1}
+    @media(max-width:900px){
+      .projects-shell{display:block}
+      .projects-shell .projects-sidebar{position:static;margin:0 0 14px}
+      .projects-shell .projects-sidebar nav{display:flex;gap:8px;overflow-x:auto;padding-bottom:5px}
+      .projects-shell .projects-sidebar nav a{white-space:nowrap}
+    }
+  </style>
 </head>
 <body class="{% if page.study_mode %}study-mode{% endif %}{% if page.profile_mode %} profile-mode{% endif %}{% if page.public_mode %} public-mode{% endif %}{% if page.interview_mode %} interview-mode{% endif %}{% if page.interview_hub %} interview-hub{% endif %}{% if page.cv_mode %} cv-mode{% endif %}{% if page.hse_mode %} hse-mode{% endif %}{% if page.finmath_current %} finmath-current-mode{% endif %}{% if page.path == 'coursework.md' %} education-mode{% endif %}">
   <header class="topbar">
@@ -138,8 +150,23 @@
   </header>
 
 
+  {% assign project_sidebar = false %}
+  {% if page.url == '/projects.html' or page.url == '/dublin-bikes.html' or page.url == '/cycling.html' or page.url == '/mortgage-calculator.html' or page.url == '/pcp-calculator.html' %}
+    {% assign project_sidebar = true %}
+  {% endif %}
   <main class="page-stage">
-    {% if page.interview_mode or page.interview_hub %}
+    {% if project_sidebar %}
+    <div class="interview-shell projects-shell">
+      <aside class="interview-domain-sidebar projects-sidebar" aria-label="Project navigation">
+        <nav>
+          <a href="{{ '/projects.html' | relative_url }}"{% if page.url == '/projects.html' %} class="is-active" aria-current="page"{% endif %}><strong>Projects</strong></a>
+          <a href="{{ '/dublin-bikes.html' | relative_url }}"{% if page.url == '/dublin-bikes.html' %} class="is-active" aria-current="page"{% endif %}>Dublin Bikes</a>
+          <a href="{{ '/cycling.html' | relative_url }}"{% if page.url == '/cycling.html' %} class="is-active" aria-current="page"{% endif %}>Strava</a>
+          <a href="{{ '/mortgage-calculator.html' | relative_url }}"{% if page.url == '/mortgage-calculator.html' %} class="is-active" aria-current="page"{% endif %}>Mortgage Calculator</a>
+          <a href="{{ '/pcp-calculator.html' | relative_url }}"{% if page.url == '/pcp-calculator.html' %} class="is-active" aria-current="page"{% endif %}>PCP Finance</a>
+        </nav>
+      </aside>
+    {% elsif page.interview_mode or page.interview_hub %}
     <div class="interview-shell">
       <aside class="interview-domain-sidebar" aria-label="Site sections"><nav>
         <a href="{{ '/' | relative_url }}">About Me</a>
@@ -308,7 +335,7 @@
         })();
       </script>
     </article>
-    {% if page.interview_mode or page.interview_hub or page.cv_mode or page.hse_mode or page.finmath_current %}
+    {% if project_sidebar or page.interview_mode or page.interview_hub or page.cv_mode or page.hse_mode or page.finmath_current %}
     </div>
     {% endif %}
   </main>
