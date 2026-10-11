@@ -44,13 +44,14 @@ eyebrow: INTERVIEW STORIES · PRACTISE · RECORD
 .sl-bank .sl-section-row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:22px}.sl-bank .sl-section-row .sl-section-heading{margin:0 0 12px}.sl-bank .sl-visibility{min-width:62px;padding:7px 12px;border-radius:9px;border:1px solid #b6c8d7;background:#e7f1fd;color:#174a77;font-weight:650;cursor:pointer}.sl-bank .sl-visibility[aria-pressed="false"]{background:#f0f1f2;color:#5a6670}
 .sl-bank #sl-attempts{margin-top:20px}.sl-bank #sl-attempt-list li{padding:7px 0}.sl-bank #sl-attempt-list button{margin:3px 5px;padding:5px 10px}.sl-bank #sl-elapsed{font-variant-numeric:tabular-nums;font-weight:650;min-width:45px}
 .sl-bank .sl-accordion{display:grid;gap:11px}.sl-bank .sl-accordion-item{border-radius:13px;border:1px solid #dae4ee;background:#fff;box-shadow:0 4px 13px rgba(26,49,75,.065);overflow:hidden}.sl-bank .sl-accordion-header{display:flex;width:100%;align-items:center;justify-content:space-between;gap:14px;padding:19px 22px;border:0;background:#fff;color:#193a56;font-size:1.05rem;font-weight:700;text-align:left;cursor:pointer}.sl-bank .sl-accordion-header:hover{background:#f5f8fc}.sl-bank .sl-accordion-header[aria-expanded=true]{background:#eff5fb}.sl-bank .sl-chevron{font-size:1.5rem;transition:transform .18s ease}.sl-bank .sl-accordion-header[aria-expanded=true] .sl-chevron{transform:rotate(180deg)}.sl-bank .sl-accordion-panel .sl-bank-card{box-shadow:none;border:0;border-top:1px solid #e2e9f0;border-radius:0;padding:18px 22px 24px}.interview-domain-sidebar{display:none!important}.sl-bank .sl-accordion-panel .sl-section-row:first-child{margin-top:0}
+.sl-bank .sl-visibility{display:inline-flex;align-items:center;gap:12px;min-width:0;padding:6px 4px;border:0;background:transparent!important;color:inherit!important;box-shadow:none;font-weight:600}.sl-bank .sl-visibility .sl-switch-track{display:inline-block;position:relative;width:42px;height:23px;flex:none;border-radius:99px;background:#aeb5b8;transition:background .15s}.sl-bank .sl-visibility .sl-switch-track::after{content:"";position:absolute;top:3px;left:3px;width:17px;height:17px;border-radius:50%;background:white;box-shadow:0 1px 3px #0003;transition:transform .15s}.sl-bank .sl-visibility[aria-pressed=true] .sl-switch-track{background:#0b65d8}.sl-bank .sl-visibility[aria-pressed=true] .sl-switch-track::after{transform:translateX(19px)}.sl-bank .sl-visibility:focus-visible{outline:2px solid #126ad6;outline-offset:3px}
 </style>
 <section class="sl-bank" id="sl-bank">
   <div id="sl-accordion" class="sl-accordion"></div>
   <div class="sl-bank-card" id="sl-active-card" hidden>
-    <div class="sl-section-row"><button type="button" class="sl-visibility" id="sl-show-story" aria-pressed="true" aria-label="Toggle exposition">Exposition: On</button></div>
+    <div class="sl-section-row"><button type="button" class="sl-visibility" id="sl-show-story" aria-pressed="true" aria-label="Toggle exposition"><span class="sl-switch-label">Exposition</span><span class="sl-switch-track" aria-hidden="true"></span></button></div>
     <div class="story-copy" id="sl-story-text"></div>
-    <div class="sl-section-row"><h4 class="sl-section-heading">STAR Table</h4><button type="button" class="sl-visibility" id="sl-show-table" aria-pressed="true">On</button></div>
+    <div class="sl-section-row"><h4 class="sl-section-heading">STAR Table</h4><button type="button" class="sl-visibility" id="sl-show-table" aria-pressed="true" aria-label="Toggle STAR Table"><span class="sl-switch-track" aria-hidden="true"></span></button></div>
     <div id="sl-story-table"></div>
     <div class="record-console">
       <div class="record-controls" aria-label="Audio recorder">
@@ -104,7 +105,7 @@ function render(){
  const tbody=document.createElement("tbody");s.cues.filter(r=>r.some(Boolean)).forEach(row=>{let tr=document.createElement("tr");row.forEach(word=>{let td=document.createElement("td");td.textContent=word;tr.append(td)});tbody.append(tr)});t.append(tbody);table.append(t);
 
  body.hidden=!showStory;table.hidden=!showTable;
- sb.textContent=showStory?"Exposition: On":"Exposition: Off";tb.textContent=showTable?"On":"Off";
+ 
  sb.setAttribute("aria-pressed",String(showStory));tb.setAttribute("aria-pressed",String(showTable));
 
 }
