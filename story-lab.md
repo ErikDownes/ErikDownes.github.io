@@ -132,3 +132,51 @@ eyebrow: ANSWERS FIRST · ONE STORY · MULTIPLE ANGLES
   });
 })();
 </script>
+
+
+<style>
+.sl-practice{margin:24px 0;border:1px solid #dbe5ec;border-radius:18px;padding:22px;background:#fff}
+.sl-practice h2{margin:0 0 12px!important;font-size:1.45rem!important}
+.sl-practice .sl-four p{margin:0 0 12px;line-height:1.65}
+.sl-practice .sl-switch{display:flex;gap:7px;margin:18px 0 12px;flex-wrap:wrap}
+.sl-practice .sl-switch button{border:1px solid #b8cad7;border-radius:9px;background:#fff;color:#23445e;padding:8px 17px;font:inherit;cursor:pointer}
+.sl-practice .sl-switch button[aria-pressed="true"]{background:#2261a6;color:#fff;border-color:#2261a6}
+.sl-practice .sl-memory-table{width:100%;border-collapse:collapse;font-size:.9rem}
+.sl-practice .sl-memory-table th,.sl-practice .sl-memory-table td{border:1px solid #d1dee7;text-align:left;padding:9px 10px;vertical-align:top}
+.sl-practice .sl-memory-table th{background:#f1f7fb}
+.sl-practice .sl-cue-line{border:1px solid #d1dee7;border-radius:8px;padding:12px;line-height:1.7}
+.sl-practice .sl-competencies{font-size:.9rem;color:#385569;margin-top:12px}
+@media(max-width:600px){.sl-practice{padding:15px}.sl-practice .sl-memory-table{font-size:.8rem}.sl-practice .sl-memory-table th,.sl-practice .sl-memory-table td{padding:6px}}
+</style>
+<section class="sl-practice" id="sl-onboarding" aria-labelledby="sl-onboarding-heading">
+<h2 id="sl-onboarding-heading">Onboarding, Training and Supporting a Colleague</h2>
+<div class="sl-four">
+<p>The situation was that I was training a new colleague in dispatch procedures using the buddy system.</p>
+<p>My task was to train my colleague, monitor their progress, provide feedback and assess when they were ready to work independently.</p>
+<p>I showed my colleague how to process orders, explaining why each step mattered and what could go wrong in real situations. We then switched roles so they could practise while I observed, asked questions and gave feedback. Once I was happy they could work independently, I signed them off and informed my manager.</p>
+<p>The result was that my colleague became more confident and could process routine orders accurately with less supervision.</p>
+</div>
+<div class="sl-switch" role="group" aria-label="Choose memory prompts">
+<button type="button" data-format="table" aria-pressed="true">Table</button>
+<button type="button" data-format="cue" aria-pressed="false">Cue</button>
+</div>
+<div class="sl-memory-table-wrap" data-panel="table">
+<table class="sl-memory-table">
+<thead><tr><th scope="col">Situation</th><th scope="col">Task</th><th scope="col">Action</th><th scope="col">Result</th></tr></thead>
+<tbody><tr><td>New colleague<br>Buddy system</td><td>Train<br>Assess readiness</td><td>Show<br>Explain why<br>Real problems<br>Switch roles<br>Question<br>Sign off</td><td>Confident<br>Accurate<br>Independent</td></tr></tbody>
+</table>
+</div>
+<div class="sl-cue-line" data-panel="cue" hidden>| New colleague · Buddy system | Train · Assess readiness | Show · Explain why · Real problems · Switch roles · Question · Sign off | Confident · Accurate · Independent |</div>
+<p class="sl-competencies">Training and supporting colleagues · Communication · Coaching and feedback · Assessing progress · Empowering others</p>
+</section>
+<script>
+(function(){
+var root=document.getElementById('sl-onboarding');if(!root)return;
+var buttons=root.querySelectorAll('[data-format]');
+buttons.forEach(function(btn){btn.addEventListener('click',function(){
+var chosen=btn.getAttribute('data-format');
+buttons.forEach(function(b){b.setAttribute('aria-pressed',String(b===btn))});
+root.querySelectorAll('[data-panel]').forEach(function(panel){panel.hidden=panel.getAttribute('data-panel')!==chosen});
+});});
+})();
+</script>
