@@ -90,14 +90,30 @@ body:has(#sl-bank) .doc-body{width:100%!important;min-width:0!important}
 .sl-bank .sl-inner-control-row .sl-read-icon svg{width:22px;height:22px;display:block}
 .sl-bank .sl-inner-control-row .sl-read-icon[aria-pressed=true]{color:#0b65d8;border-color:#0b65d8;background:#e3f0ff}
 .sl-bank .sl-inner-control-row .sl-visibility{grid-column:3;justify-self:end}
+
+.sl-bank .sl-section-name{display:inline-flex;align-items:center;gap:9px}
+.sl-bank .sl-section-name svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;color:#215b90}
+@media(prefers-color-scheme:dark){
+ body:has(#sl-bank) .sl-bank{color:#e5eaf0}
+ body:has(#sl-bank) .sl-accordion-item,body:has(#sl-bank) .sl-bank-card,body:has(#sl-bank) .sl-accordion-header{background:#202a36;color:#e5eaf0;border-color:#465568}
+ body:has(#sl-bank) .sl-accordion-header[aria-expanded=true],body:has(#sl-bank) .sl-accordion-header:hover{background:#2c3e54;color:#f4f8fd}
+ body:has(#sl-bank) .sl-section-name{color:#e5eaf0}
+ body:has(#sl-bank) .sl-section-name svg{color:#7bbdff}
+ body:has(#sl-bank) .sl-inner-control-row .sl-read-icon{background:#263543;color:#b9c5d1;border-color:#8292a0}
+ body:has(#sl-bank) .sl-inner-control-row .sl-read-icon[aria-pressed=true]{background:#15385b;color:#7bbdff;border-color:#2382dd}
+ body:has(#sl-bank) .sl-visibility:hover{background:#354656!important}
+ body:has(#sl-bank) .sl-accordion-panel table th{background:#34485d;color:#fff}
+ body:has(#sl-bank) .sl-accordion-panel table td{background:#222f3d;color:#e5eaf0;border-color:#465568}
+ body:has(#sl-bank) .sl-accordion-panel table tbody tr:nth-child(even) td{background:#2a3949}
+}
 </style>
 <section class="sl-bank" id="sl-bank">
   <div id="sl-accordion" class="sl-accordion"></div>
   <div class="sl-bank-card" id="sl-active-card" hidden>
     
-    <div class="sl-inner-control-row"><strong>STAR Story</strong><div id="sl-story-actions"></div></div><div class="story-copy" id="sl-story-text"></div>
+    <div class="sl-inner-control-row"><strong class="sl-section-name"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16M4 10h16M4 15h13M4 20h10"/></svg><span>Story</span></strong><div id="sl-story-actions"></div></div><div class="story-copy" id="sl-story-text"></div>
     
-    <div class="sl-inner-control-row"><strong>STAR Table</strong><div id="sl-table-actions"></div></div><div id="sl-story-table"></div>
+    <div class="sl-inner-control-row"><strong class="sl-section-name"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="1.5"/><path d="M3 10h18M3 15h18M10 4v16M16 4v16"/></svg><span>Table</span></strong><div id="sl-table-actions"></div></div><div id="sl-story-table"></div>
     <div class="record-console">
       <div class="record-controls" aria-label="Audio recorder">
         <button class="transport record" type="button" id="sl-record" title="Record" aria-label="Record"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/></svg></button>
@@ -179,9 +195,9 @@ stories.forEach((story,i)=>{
  return button;
 }
 const storyControls=document.createElement("div");storyControls.className="sl-control-pair";
-storyControls.append(makeReadControl("STAR Story","exposition"),makeSwitch("STAR Story","exposition"));
+storyControls.append(makeReadControl("Story","exposition"),makeSwitch("Story","exposition"));
 const tableControls=document.createElement("div");tableControls.className="sl-control-pair";
-tableControls.append(makeReadControl("STAR Table","table"),makeSwitch("STAR Table","table"));
+tableControls.append(makeReadControl("Table","table"),makeSwitch("Table","table"));
 
  const panel=document.createElement("div");panel.className="sl-accordion-panel";panel.id="sl-panel-"+(i+1);panel.hidden=true;
  header.addEventListener("click",()=>{
