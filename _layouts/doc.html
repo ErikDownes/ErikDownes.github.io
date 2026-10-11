@@ -146,7 +146,18 @@
       <div class="navitem"><a class="navlabel" href="{{ '/' | relative_url }}"><span>Home</span></a></div>
       <div class="navitem"><a class="navlabel" href="{{ '/stories.html' | relative_url }}"><span>Stories</span></a></div>
       <div class="navitem"><a class="navlabel" href="{{ '/interview.html' | relative_url }}"><span>Interview</span></a></div>
-      <div class="navitem"><a class="navlabel" href="{{ '/projects.html' | relative_url }}"><span>Projects</span></a></div>
+      <div class="navitem has-submenu nav-projects">
+        <a class="navlabel" href="{{ '/projects.html' | relative_url }}"><span>Projects</span></a>
+        <button class="navtoggle" type="button" aria-label="Show Projects menu" aria-expanded="false" aria-controls="projectsDropdown">▾</button>
+        <div class="dropmenu" id="projectsDropdown">
+          <a href="{{ '/projects.html' | relative_url }}">All Projects</a>
+          <a href="{{ '/dublin-bikes.html' | relative_url }}">Dublin Bikes</a>
+          <a href="{{ '/cycling.html' | relative_url }}">Strava</a>
+          <a href="{{ '/mortgage-calculator.html' | relative_url }}">Mortgage Calculator</a>
+          <a href="{{ '/pcp-calculator.html' | relative_url }}">PCP Finance</a>
+          <a href="{{ '/fleet-map.html' | relative_url }}">Fleet Map</a>
+        </div>
+      </div>
       <div class="navitem"><a class="navlabel" href="{{ '/academic-record.html' | relative_url }}"><span>Results</span></a></div>
       <div class="navitem"><a class="navlabel" href="{{ '/lm058.html' | relative_url }}"><span>Courses</span></a></div>
     </nav>
