@@ -44,13 +44,14 @@ eyebrow: INTERVIEW STORIES · PRACTISE · RECORD
 .sl-bank #sl-attempts{margin-top:20px}.sl-bank #sl-attempt-list li{padding:7px 0}.sl-bank #sl-attempt-list button{margin:3px 5px;padding:5px 10px}.sl-bank #sl-elapsed{font-variant-numeric:tabular-nums;font-weight:650;min-width:45px}
 .sl-bank .sl-accordion{display:grid;grid-template-columns:minmax(0,1fr);width:100%;gap:11px}.sl-bank .sl-accordion-item{border-radius:13px;border:1px solid #dae4ee;background:#fff;box-shadow:0 4px 13px rgba(26,49,75,.065);overflow:hidden}.sl-bank .sl-accordion-header{display:flex;width:100%;align-items:center;justify-content:space-between;gap:14px;padding:19px 22px;border:0;background:#fff;color:#193a56;font-size:1.05rem;font-weight:700;text-align:left;cursor:pointer}.sl-bank .sl-accordion-header:hover{background:#f5f8fc}.sl-bank .sl-accordion-header[aria-expanded=true]{background:#eff5fb}.sl-bank .sl-chevron{font-size:1.5rem;transition:transform .18s ease}.sl-bank .sl-accordion-header[aria-expanded=true] .sl-chevron{transform:rotate(180deg)}.sl-bank .sl-accordion-panel .sl-bank-card{box-shadow:none;border:0;border-top:1px solid #e2e9f0;border-radius:0;padding:18px 22px 24px}.interview-domain-sidebar{display:none!important}.sl-bank .sl-accordion-panel .sl-section-row:first-child{margin-top:0}
 .sl-bank .sl-visibility{display:inline-flex;align-items:center;gap:12px;min-width:0;padding:6px 4px;border:0;background:transparent!important;color:inherit!important;box-shadow:none;font-weight:600}.sl-bank .sl-visibility .sl-switch-track{display:inline-block;position:relative;width:42px;height:23px;flex:none;border-radius:99px;background:#aeb5b8;transition:background .15s}.sl-bank .sl-visibility .sl-switch-track::after{content:"";position:absolute;top:3px;left:3px;width:17px;height:17px;border-radius:50%;background:white;box-shadow:0 1px 3px #0003;transition:transform .15s}.sl-bank .sl-visibility[aria-pressed=true] .sl-switch-track{background:#0b65d8}.sl-bank .sl-visibility[aria-pressed=true] .sl-switch-track::after{transform:translateX(19px)}.sl-bank .sl-visibility:focus-visible{outline:2px solid #126ad6;outline-offset:3px}
+.sl-bank .sl-story-bar{display:flex;align-items:center;gap:10px;padding-right:16px}.sl-bank .sl-story-bar .sl-accordion-header{flex:1;min-width:0}.sl-bank .sl-header-controls{display:flex;align-items:center;gap:12px;flex:none}.sl-bank .sl-header-controls .sl-visibility{font-size:.82rem;white-space:nowrap;gap:7px}.sl-bank .sl-accordion-panel .story-copy{margin-top:12px}@media(max-width:700px){.sl-bank .sl-story-bar{flex-wrap:wrap;padding:0 10px 9px}.sl-bank .sl-story-bar .sl-accordion-header{flex-basis:100%}.sl-bank .sl-header-controls{justify-content:flex-end;width:100%}}
 </style>
 <section class="sl-bank" id="sl-bank">
   <div id="sl-accordion" class="sl-accordion"></div>
   <div class="sl-bank-card" id="sl-active-card" hidden>
-    <div class="sl-section-row"><button type="button" class="sl-visibility" id="sl-show-story" aria-pressed="true" aria-label="Toggle exposition"><span class="sl-switch-label">Exposition</span><span class="sl-switch-track" aria-hidden="true"></span></button></div>
+    
     <div class="story-copy" id="sl-story-text"></div>
-    <div class="sl-section-row"><h4 class="sl-section-heading">STAR Table</h4><button type="button" class="sl-visibility" id="sl-show-table" aria-pressed="true" aria-label="Toggle STAR Table"><span class="sl-switch-track" aria-hidden="true"></span></button></div>
+    
     <div id="sl-story-table"></div>
     <div class="record-console">
       <div class="record-controls" aria-label="Audio recorder">
@@ -73,10 +74,11 @@ const stories=[{"name":"Problem Solving – Rerouting","paragraphs":["The situat
 const root=document.getElementById("sl-bank");if(!root)return;
 const $=id=>document.getElementById(id);
 const body=$("sl-story-text"),table=$("sl-story-table"),activeCard=$("sl-active-card");
-const sb=$("sl-show-story"),tb=$("sl-show-table"),record=$("sl-record"),stop=$("sl-stop"),play=$("sl-play"),download=$("sl-download");
+const record=$("sl-record"),stop=$("sl-stop"),play=$("sl-play"),download=$("sl-download");
 const status=$("sl-status"),audio=$("sl-audio"),canvas=$("sl-level"),ctx=canvas.getContext("2d");
-let selected=0,showStory=true,showTable=true,media=null,stream=null,chunks=[],blob=null,blobUrl=null,recordedStory="",audioContext=null,analyser=null,source=null,animation=0;
+let selected=0,media=null,stream=null,chunks=[],blob=null,blobUrl=null,recordedStory="",audioContext=null,analyser=null,source=null,animation=0;
 const accordion=$("sl-accordion");
+const visibility=stories.map(()=>({exposition:true,table:true}));
 let openIndex=-1;
 stories.forEach((story,i)=>{
  const item=document.createElement("div");item.className="sl-accordion-item";item.id="story-"+(i+1);
@@ -85,6 +87,19 @@ stories.forEach((story,i)=>{
  const name=document.createElement("span");name.textContent=story.name;
  const chevron=document.createElement("span");chevron.className="sl-chevron";chevron.textContent="⌄";chevron.setAttribute("aria-hidden","true");
  header.append(name,chevron);
+ const controls=document.createElement("div");controls.className="sl-header-controls";
+ function makeSwitch(label,key){
+  const button=document.createElement("button");button.type="button";button.className="sl-visibility";
+  button.setAttribute("aria-label",label+" for "+story.name);
+  const caption=document.createElement("span");caption.textContent=label;
+  const track=document.createElement("span");track.className="sl-switch-track";track.setAttribute("aria-hidden","true");
+  button.append(caption,track);
+  const sync=()=>button.setAttribute("aria-pressed",String(visibility[i][key]));
+  sync();
+  button.addEventListener("click",()=>{visibility[i][key]=!visibility[i][key];sync();if(openIndex===i)render()});
+  return button;
+ }
+ controls.append(makeSwitch("Exposition","exposition"),makeSwitch("STAR Table","table"));
  const panel=document.createElement("div");panel.className="sl-accordion-panel";panel.id="sl-panel-"+(i+1);panel.hidden=true;
  header.addEventListener("click",()=>{
   if(media?.state==="recording"){status.textContent="Stop the current recording before switching stories.";return}
@@ -94,7 +109,8 @@ stories.forEach((story,i)=>{
   selected=i;openIndex=i;panel.hidden=false;header.setAttribute("aria-expanded","true");
   activeCard.hidden=false;panel.append(activeCard);render();
  });
- item.append(header,panel);accordion.append(item);
+ const bar=document.createElement("div");bar.className="sl-story-bar";bar.append(header,controls);
+ item.append(bar,panel);accordion.append(item);
 });
 function render(){
  const s=stories[selected];body.replaceChildren();table.replaceChildren();
@@ -103,14 +119,11 @@ function render(){
  ["Situation","Task","Action","Result"].forEach(h=>{const th=document.createElement("th");th.textContent=h;tr.append(th)});head.append(tr);t.append(head);
  const tbody=document.createElement("tbody");s.cues.filter(r=>r.some(Boolean)).forEach(row=>{let tr=document.createElement("tr");row.forEach(word=>{let td=document.createElement("td");td.textContent=word;tr.append(td)});tbody.append(tr)});t.append(tbody);table.append(t);
 
- body.hidden=!showStory;table.hidden=!showTable;
- 
- sb.setAttribute("aria-pressed",String(showStory));tb.setAttribute("aria-pressed",String(showTable));
+ body.hidden=!visibility[selected].exposition;table.hidden=!visibility[selected].table;
 
 }
 
-sb.addEventListener("click",()=>{showStory=!showStory;render()});
-tb.addEventListener("click",()=>{showTable=!showTable;render()});
+
 const elapsed=$("sl-elapsed"),list=$("sl-attempt-list"),history=$("sl-attempts");
 const attempts=[];let started=0,ticker=null,levels=[],nextNumber=1;
 const fmt=ms=>{const n=Math.floor(ms/1000);return String(Math.floor(n/60)).padStart(2,"0")+":"+String(n%60).padStart(2,"0")};
