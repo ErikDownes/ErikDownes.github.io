@@ -205,6 +205,28 @@ body.addEventListener("click",()=>{if(readingMode)revealLines()});
 body.addEventListener("wheel",e=>{if(readingMode&&e.deltaY>0){e.preventDefault();revealLines()}},{passive:false});
 
 let speakingButton=null,speakingStop=null,speechPaused=false;
+let speechHighlight=null;
+function clearSpeechHighlight(){if(speechHighlight){speechHighlight.classList.remove("sl-speech-word-active");speechHighlight=null}}
+function highlightSpeechWord(charIndex){
+ if(readingMode)return;
+ const words=body.querySelectorAll("[data-speech-start]");
+ let chosen=null;
+ for(const word of words){if(Number(word.dataset.speechStart)<=charIndex)chosen=word;else break}
+ if(chosen!==speechHighlight){clearSpeechHighlight();if(chosen){chosen.classList.add("sl-speech-word-active");speechHighlight=chosen}}
+}
+function prepareSpeechWords(){
+ let offset=0;
+ body.replaceChildren();
+ stories[selected].paragraphs.forEach((paragraph,pi)=>{
+  const p=document.createElement("p");
+  const rx=/\S+|\s+/g;let match;
+  while((match=rx.exec(paragraph))){
+   if(/^\s+$/.test(match[0]))p.append(document.createTextNode(match[0]));
+   else{const word=document.createElement("span");word.dataset.speechStart=String(offset+match.index);word.textContent=match[0];p.append(word)}
+  }
+  body.append(p);offset+=paragraph.length+(pi===stories[selected].paragraphs.length-1?0:1);
+ });
+}
 function speechIcon(button,kind){
  const paths={play:'<path d="M6 3.5 L20 12 L6 20.5 Z"/>',pause:'<rect x="5" y="4" width="5" height="16"/><rect x="14" y="4" width="5" height="16"/>',stop:'<rect x="5" y="5" width="14" height="14" rx="1"/>'};
  button.innerHTML='<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" fill="currentColor">'+paths[kind]+'</svg>';
@@ -218,6 +240,7 @@ function speechVisual(){
 }
 function stopReading(){
  if("speechSynthesis" in window)window.speechSynthesis.cancel();
+ clearSpeechHighlight();
  if(speakingButton){speechIcon(speakingButton,"play");speakingButton.setAttribute("aria-pressed","false");speakingButton.title="Play aloud";speakingButton.setAttribute("aria-label","Play aloud")}
  if(speakingStop)speakingStop.hidden=true;
  speakingButton=null;speakingStop=null;speechPaused=false;
@@ -231,6 +254,8 @@ function readAloud(button,stopButton,content){
  }
  stopReading();
  const utterance=new SpeechSynthesisUtterance(content);utterance.lang="en-IE";utterance.rate=0.95;
+ if(button.closest("#sl-story-actions")){prepareSpeechWords();utterance.onboundary=e=>{if(e.name==="word"||e.name===undefined)highlightSpeechWord(e.charIndex)}}
+ 
  speakingButton=button;speakingStop=stopButton;speechPaused=false;
  button.setAttribute("aria-pressed","true");speechVisual();
  utterance.onend=()=>{if(speakingButton===button)stopReading()};
@@ -292,7 +317,7 @@ tableControls.append(...makeReadControl("Table","table"));
 });
 function render(){
  const s=stories[selected];body.replaceChildren();table.replaceChildren();
- s.paragraphs.forEach(t=>{let p=document.createElement("p");p.textContent=t;body.append(p)});
+ clearSpeechHighlight();s.paragraphs.forEach(t=>{let p=document.createElement("p");p.textContent=t;body.append(p)});
  body.classList.toggle("sl-progressive",readingMode);
  if(readingMode){body.querySelectorAll("p").forEach(p=>{p.style.maxHeight="0px";p.style.overflow="hidden";p.style.opacity=".4"});requestAnimationFrame(revealLines)}
  const t=document.createElement("table"),head=document.createElement("thead"),tr=document.createElement("tr");
