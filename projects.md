@@ -51,4 +51,8 @@ Open a project to see the output first, then the method behind it.
     <strong>PCP Finance Comparator</strong>
     <span>Compare up to three offers for the same car using cash cost and present-value cost.</span>
   </a>
+  <a class="project-card" href="{{ '/fleet-map.html' | relative_url }}">
+    <strong>Turboprop Fleet Map</strong>
+    <span>Interactive map of aircraft placements, lessees and countries.</span>
+  </a>
 </div>
