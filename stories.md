@@ -63,6 +63,13 @@ body:has(#sl-bank) .doc-body{width:100%!important;min-width:0!important}
 .sl-bank .sl-visibility:focus-visible{outline:2px solid #0b65d8;outline-offset:2px}
 @media(max-width:650px){body:has(#sl-bank) .doc-paper{width:100%!important;padding:24px 14px 45px!important}}
 
+.sl-bank .sl-story-bar .sl-header-controls{margin-left:auto;justify-content:flex-end}
+.sl-bank .sl-control-pair{display:flex;align-items:center;gap:3px;white-space:nowrap}
+.sl-bank .sl-read-icon{display:inline-flex;align-items:center;justify-content:center;min-width:32px;height:32px;padding:0;border:1px solid #d1dfec;border-radius:8px;background:#fff;color:#1d609b;font-size:16px;cursor:pointer}
+.sl-bank .sl-read-icon:hover{background:#e9f2fc}
+.sl-bank .sl-read-icon[aria-pressed=true]{background:#dfebf8}
+.sl-bank .sl-read-icon:focus-visible{outline:2px solid #0b65d8;outline-offset:2px}
+@media(max-width:700px){.sl-bank .sl-story-bar .sl-header-controls{margin-left:auto;width:auto;flex-wrap:wrap;justify-content:flex-end}}
 </style>
 <section class="sl-bank" id="sl-bank">
   <div id="sl-accordion" class="sl-accordion"></div>
@@ -98,6 +105,19 @@ let selected=0,media=null,stream=null,chunks=[],blob=null,blobUrl=null,recordedS
 const accordion=$("sl-accordion");
 const visibility=stories.map(()=>({exposition:true,table:true}));
 let openIndex=-1;
+let speakingButton=null;
+function stopReading(){if("speechSynthesis" in window)window.speechSynthesis.cancel();if(speakingButton){speakingButton.textContent="▶";speakingButton.setAttribute("aria-pressed","false");speakingButton=null}}
+function readAloud(button,content){
+ if(!("speechSynthesis" in window))return;
+ if(speakingButton===button){stopReading();return}
+ stopReading();
+ const utterance=new SpeechSynthesisUtterance(content);utterance.lang="en-IE";utterance.rate=0.95;
+ speakingButton=button;button.textContent="■";button.setAttribute("aria-pressed","true");
+ utterance.onend=()=>{if(speakingButton===button)stopReading()};
+ utterance.onerror=()=>{if(speakingButton===button)stopReading()};
+ window.speechSynthesis.speak(utterance);
+}
+
 stories.forEach((story,i)=>{
  const item=document.createElement("div");item.className="sl-accordion-item";item.id="story-"+(i+1);
  const header=document.createElement("button");header.type="button";header.className="sl-accordion-header";
@@ -117,9 +137,26 @@ stories.forEach((story,i)=>{
   button.addEventListener("click",()=>{visibility[i][key]=!visibility[i][key];sync();if(openIndex===i)render()});
   return button;
  }
- controls.append(makeSwitch("STAR Story","exposition"),makeSwitch("STAR Table","table"));
+ function makeReadControl(label,key){
+ const button=document.createElement("button");button.type="button";button.className="sl-read-icon";
+ button.textContent="▶";button.title="Play "+label+" aloud (click again to stop)";
+ button.setAttribute("aria-label","Play "+label+" aloud for "+story.name);
+ button.setAttribute("aria-pressed","false");
+ button.addEventListener("click",()=>{
+  const content=key==="exposition"?story.paragraphs.join(" "):
+   ["Situation, Task, Action, Result.",...story.cues.filter(row=>row.some(Boolean)).map(row=>row.map((cell,j)=>["Situation","Task","Action","Result"][j]+": "+(cell||"")).join(". "))].join(". ");
+  readAloud(button,content);
+ });
+ return button;
+}
+const storyControls=document.createElement("div");storyControls.className="sl-control-pair";
+storyControls.append(makeReadControl("STAR Story","exposition"),makeSwitch("STAR Story","exposition"));
+const tableControls=document.createElement("div");tableControls.className="sl-control-pair";
+tableControls.append(makeReadControl("STAR Table","table"),makeSwitch("STAR Table","table"));
+controls.append(storyControls,tableControls);
  const panel=document.createElement("div");panel.className="sl-accordion-panel";panel.id="sl-panel-"+(i+1);panel.hidden=true;
  header.addEventListener("click",()=>{
+  stopReading();
   if(media?.state==="recording"){status.textContent="Stop the current recording before switching stories.";return}
   if(openIndex===i){panel.hidden=true;header.setAttribute("aria-expanded","false");activeCard.hidden=true;openIndex=-1;return}
   accordion.querySelectorAll(".sl-accordion-panel").forEach(x=>x.hidden=true);
