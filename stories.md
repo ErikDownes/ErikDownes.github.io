@@ -117,7 +117,7 @@ stories.forEach((story,i)=>{
   button.addEventListener("click",()=>{visibility[i][key]=!visibility[i][key];sync();if(openIndex===i)render()});
   return button;
  }
- controls.append(makeSwitch("Exposition","exposition"),makeSwitch("STAR Table","table"));
+ controls.append(makeSwitch("STAR Table","table"));
  const panel=document.createElement("div");panel.className="sl-accordion-panel";panel.id="sl-panel-"+(i+1);panel.hidden=true;
  header.addEventListener("click",()=>{
   if(media?.state==="recording"){status.textContent="Stop the current recording before switching stories.";return}
