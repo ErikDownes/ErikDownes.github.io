@@ -112,10 +112,10 @@ body:has(#sl-bank) .doc-body{width:100%!important;min-width:0!important}
   <div id="sl-accordion" class="sl-accordion"></div>
   <div class="sl-bank-card" id="sl-active-card" hidden>
     
-    <div class="sl-inner-control-row"><strong class="sl-section-name"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16M4 10h16M4 15h13M4 20h10"/></svg><span>Story</span></strong><div id="sl-story-actions"></div></div><div class="story-copy" id="sl-story-text"></div>
+    <div class="sl-inner-control-row"><strong class="sl-section-name" title="Story" aria-label="Story"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16M4 10h16M4 15h13M4 20h10"/></svg></strong><div id="sl-story-actions"></div></div><div class="story-copy" id="sl-story-text"></div>
     
-    <div class="sl-inner-control-row"><strong class="sl-section-name"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="1.5"/><path d="M3 10h18M3 15h18M10 4v16M16 4v16"/></svg><span>Table</span></strong><div id="sl-table-actions"></div></div><div id="sl-story-table"></div>
-    <div class="sl-inner-control-row sl-recording-heading"><strong class="sl-section-name">Recording</strong><button type="button" id="sl-recording-toggle" class="sl-visibility" aria-label="Show or hide recording booth" aria-pressed="true"><span class="sl-switch-track" aria-hidden="true"></span></button></div>
+    <div class="sl-inner-control-row"><strong class="sl-section-name" title="Table" aria-label="Table"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="1.5"/><path d="M3 10h18M3 15h18M10 4v16M16 4v16"/></svg></strong><div id="sl-table-actions"></div></div><div id="sl-story-table"></div>
+    <div class="sl-inner-control-row sl-recording-heading"><strong class="sl-section-name" title="Recording" aria-label="Recording"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="2.5" width="6" height="12" rx="3"/><path d="M5.5 10.5a6.5 6.5 0 0 0 13 0M12 17v4M8 21h8"/></svg></strong><button type="button" id="sl-recording-toggle" class="sl-visibility" aria-label="Show or hide recording booth" aria-pressed="true"><span class="sl-switch-track" aria-hidden="true"></span></button></div>
     <div class="record-console" id="sl-recording-booth">
       <div class="record-controls" aria-label="Audio recorder">
         <button class="transport record" type="button" id="sl-record" title="Record" aria-label="Record"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/></svg></button>
