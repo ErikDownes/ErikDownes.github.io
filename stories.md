@@ -108,6 +108,17 @@ body:has(#sl-bank) .doc-body{width:100%!important;min-width:0!important}
 }
 .sl-bank .sl-recording-heading{grid-template-columns:minmax(0,1fr) minmax(44px,1fr) minmax(52px,1fr);padding-top:12px;border-top:1px solid #dbe5ec;margin-top:22px}.sl-bank .sl-recording-heading .sl-visibility{grid-column:3;justify-self:end}.sl-bank #sl-recording-booth[hidden]{display:none!important}
 .sl-bank .record-console .transport.play.sl-read-icon{width:42px;height:42px;min-width:42px;border:1.5px solid #0b65d8;border-radius:50%;background:#fff;color:#0b65d8;padding:0;box-shadow:none}.sl-bank .record-console .transport.play.sl-read-icon svg{width:22px;height:22px;fill:currentColor;display:block}.sl-bank .record-console .transport.play.sl-read-icon:disabled{opacity:.35;border-color:#8b99a7;color:#8b99a7;cursor:not-allowed}.sl-bank .sl-attempt-play{min-width:33px;border-radius:50%;color:#0b65d8;border:1px solid #0b65d8;background:#fff}.sl-bank .sl-attempt-play:hover{background:#e3f0ff}
+
+/* Right-aligned paired controls: play immediately beside switch. */
+.sl-bank .sl-inner-control-row{display:flex!important;align-items:center;justify-content:space-between;gap:12px}
+.sl-bank .sl-inner-control-row>strong{margin-right:auto}
+.sl-bank .sl-inner-control-row>div{display:flex!important;align-items:center;justify-content:flex-end;margin-left:auto}
+.sl-bank .sl-inner-control-row .sl-control-pair{display:flex!important;align-items:center;justify-content:flex-end;gap:12px}
+.sl-bank .sl-inner-control-row .sl-read-icon{position:static;justify-self:auto;opacity:1;color:#0b65d8;border-color:#0b65d8;background:transparent;transition:opacity .18s ease,color .18s ease,border-color .18s ease}
+.sl-bank .sl-inner-control-row .sl-read-icon.sl-play-faded{opacity:.18;color:#8b929b;border-color:#a6adb5;cursor:default}
+.sl-bank .sl-inner-control-row .sl-read-icon[aria-pressed=true]{opacity:1;color:#0b65d8;border-color:#0b65d8}
+.sl-bank .sl-inner-control-row .sl-visibility{position:static;justify-self:auto}
+@media(prefers-color-scheme:dark){body:has(#sl-bank) .sl-inner-control-row .sl-read-icon:not(.sl-play-faded){color:#0b65d8;border-color:#0b65d8}}
 </style>
 <section class="sl-bank" id="sl-bank">
   <div id="sl-accordion" class="sl-accordion"></div>
@@ -188,7 +199,7 @@ stories.forEach((story,i)=>{
   button.setAttribute("aria-label",label+" for "+story.name);
   const track=document.createElement("span");track.className="sl-switch-track";track.setAttribute("aria-hidden","true");
   button.append(track);
-  const sync=()=>button.setAttribute("aria-pressed",String(visibility[i][key]));
+  const sync=()=>{button.setAttribute("aria-pressed",String(visibility[i][key]));button.parentElement?.querySelector(".sl-read-icon")?.classList.toggle("sl-play-faded",!visibility[i][key])};
   sync();
   button.addEventListener("click",()=>{visibility[i][key]=!visibility[i][key];sync();if(openIndex===i)render()});
   return button;
@@ -199,6 +210,7 @@ stories.forEach((story,i)=>{
  button.setAttribute("aria-label","Play "+label+" aloud for "+story.name);
  button.setAttribute("aria-pressed","false");
  button.addEventListener("click",()=>{
+  if(!visibility[i][key])return;
   const content=key==="exposition"?story.paragraphs.join(" "):
    ["Situation","Task","Action","Result"].map((heading,j)=>heading+". "+story.cues.map(row=>row[j]).filter(Boolean).join(". ")).join(". ");
   readAloud(button,content);
