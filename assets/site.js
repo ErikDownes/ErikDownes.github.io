@@ -530,80 +530,91 @@
   // About is a small page group rather than three competing top-level tabs.
   // Build it after the fresh-nav pass so it also works when an older HTML page
   // is still in the browser/CDN cache.
+  // Home is the biography only; no dropdown.
   const setupAboutMenu = () => {
     const nav = document.getElementById('mainNav');
     if (!nav) return;
-
     const rootHref = document.querySelector('.brand')?.href || new URL('/', location.origin).href;
-    const rootPath = normalisePath(rootHref);
-    const aboutItem = Array.from(nav.querySelectorAll(':scope > .navitem')).find(item => {
+    const home = Array.from(nav.querySelectorAll(':scope > .navitem')).find(item => {
       const label = item.querySelector(':scope > .navlabel[href]');
-      return label && normalisePath(label.href) === rootPath;
+      return label && normalisePath(label.href) === normalisePath(rootHref);
     });
-    if (!aboutItem) return;
-
-    aboutItem.removeAttribute('data-question-menu');
-    aboutItem.classList.add('nav-about', 'nav-about-parent', 'has-submenu');
-
-    const label = aboutItem.querySelector(':scope > .navlabel[href]');
+    if (!home) return;
+    home.removeAttribute('data-question-menu');
+    home.classList.remove('has-submenu', 'nav-about-parent', 'is-open');
+    home.querySelector(':scope > .dropmenu')?.remove();
+    home.querySelector(':scope > .navtoggle')?.remove();
+    const label = home.querySelector(':scope > .navlabel');
     if (label) {
-      const labelSpan = label.querySelector('span');
-      if (labelSpan) labelSpan.textContent = 'Home';
-      else label.textContent = 'Home';
-      label.setAttribute('aria-haspopup', 'true');
-      label.setAttribute('aria-expanded', 'false');
+      const text = label.querySelector('span');
+      if (text) text.textContent = 'Home'; else label.textContent = 'Home';
+      label.removeAttribute('aria-haspopup');
+      label.removeAttribute('aria-expanded');
     }
+  };
 
-    let menu = aboutItem.querySelector(':scope > .dropmenu');
-    if (!menu) {
-      menu = document.createElement('div');
-      aboutItem.appendChild(menu);
-    }
-    menu.className = 'dropmenu about-menu';
+  setupAboutMenu();
+
+  // Projects has four dedicated pages, available from the top navigation dropdown.
+  const setupProjectsMenu = () => {
+    const nav = document.getElementById('mainNav');
+    if (!nav) return;
+    const rootHref = document.querySelector('.brand')?.href || new URL('/', location.origin).href;
+    const projectsHref = new URL('projects.html', rootHref).href;
+    const projectItem = Array.from(nav.querySelectorAll(':scope > .navitem')).find(item => {
+      const label = item.querySelector(':scope > .navlabel[href]');
+      return label && normalisePath(label.href) === normalisePath(projectsHref);
+    });
+    if (!projectItem) return;
+    projectItem.removeAttribute('data-question-menu');
+    projectItem.classList.add('has-submenu');
+    let menu = projectItem.querySelector(':scope > .dropmenu');
+    if (!menu) { menu = document.createElement('div'); projectItem.appendChild(menu); }
+    menu.className = 'dropmenu portfolio-menu';
     menu.replaceChildren();
-
-    const links = [
-      { label: 'About Me', href: rootHref },
-      { label: 'LM058 · Degree at a Glance', href: new URL('lm058.html', rootHref).href },
-      { label: 'Results', href: new URL('academic-record.html', rootHref).href },
-      { label: 'Projects', href: new URL('projects.html', rootHref).href },
-      { section: 'HSE Finance' },
-      { label: 'HSE Finance', href: new URL('hse.html', rootHref).href },
-      { label: 'HSE Finance Study', href: new URL('hse-finance-study.html', rootHref).href },
-      { section: 'Reference' },
-      { label: 'Acronyms & Glossary', href: new URL('glossary.html', rootHref).href },
-      { label: 'Contact', href: new URL('contact.html', rootHref).href }
-    ];
-
-    links.forEach(entry => {
-      if (entry.section) {
-        const section = document.createElement('span');
-        section.className = 'dropmenu-section-label';
-        section.textContent = entry.section;
-        menu.appendChild(section);
-        return;
-      }
+    [
+      ['Dublin Bikes', 'dublin-bikes.html'],
+      ['Strava', 'cycling.html'],
+      ['Mortgage Calculator', 'mortgage-calculator.html'],
+      ['PCP Finance', 'pcp-calculator.html']
+    ].forEach(([name, path]) => {
       const link = document.createElement('a');
-      link.href = entry.href;
-      link.textContent = entry.label;
-      if (normalisePath(entry.href) === currentPath) link.setAttribute('aria-current', 'page');
+      link.textContent = name;
+      link.href = new URL(path, rootHref).href;
       menu.appendChild(link);
     });
-
-    let toggle = aboutItem.querySelector(':scope > .navtoggle');
+    const label = projectItem.querySelector(':scope > .navlabel[href]');
+    label?.setAttribute('aria-haspopup', 'true');
+    label?.setAttribute('aria-expanded', 'false');
+    let toggle = projectItem.querySelector(':scope > .navtoggle');
     if (!toggle) {
       toggle = document.createElement('button');
       toggle.type = 'button';
       toggle.className = 'navtoggle';
       toggle.dataset.navToggle = '';
       toggle.textContent = '▾';
-      toggle.setAttribute('aria-label', 'Open Home menu');
+      toggle.setAttribute('aria-label', 'Open Projects menu');
       toggle.setAttribute('aria-expanded', 'false');
-      aboutItem.insertBefore(toggle, menu);
+      projectItem.insertBefore(toggle, menu);
     }
   };
+  setupProjectsMenu();
 
-  setupAboutMenu();
+  // Interview is an intentionally empty, direct-link placeholder.
+  const interviewItem = Array.from(document.querySelectorAll('#mainNav > .navitem')).find(item => {
+    const href = item.querySelector(':scope > .navlabel[href]')?.href;
+    return href && /\/preparation\.html$/.test(new URL(href).pathname);
+  });
+  if (interviewItem) {
+    interviewItem.removeAttribute('data-question-menu');
+    interviewItem.classList.remove('has-submenu', 'is-open');
+    interviewItem.querySelector(':scope > .dropmenu')?.remove();
+    interviewItem.querySelector(':scope > .navtoggle')?.remove();
+    const link = interviewItem.querySelector(':scope > .navlabel[href]');
+    link?.removeAttribute('aria-haspopup');
+    link?.removeAttribute('aria-expanded');
+  }
+
 
   // Interview is organised by transferable domains, with separate employer/role research entrances.
   const setupInterviewMenu = () => {
