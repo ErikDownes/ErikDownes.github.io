@@ -75,9 +75,9 @@ body:has(#sl-bank) .doc-body{width:100%!important;min-width:0!important}
   <div id="sl-accordion" class="sl-accordion"></div>
   <div class="sl-bank-card" id="sl-active-card" hidden>
     
-    <div class="story-copy" id="sl-story-text"></div>
+    <div class="sl-inner-control-row"><strong>STAR Story</strong><div id="sl-story-actions"></div></div><div class="story-copy" id="sl-story-text"></div>
     
-    <div id="sl-story-table"></div>
+    <div class="sl-inner-control-row"><strong>STAR Table</strong><div id="sl-table-actions"></div></div><div id="sl-story-table"></div>
     <div class="record-console">
       <div class="record-controls" aria-label="Audio recorder">
         <button class="transport record" type="button" id="sl-record" title="Record" aria-label="Record"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/></svg></button>
@@ -125,13 +125,12 @@ stories.forEach((story,i)=>{
  const name=document.createElement("span");name.textContent=story.name;
  const chevron=document.createElement("span");chevron.className="sl-chevron";chevron.textContent="⌄";chevron.setAttribute("aria-hidden","true");
  header.append(name,chevron);
- const controls=document.createElement("div");controls.className="sl-header-controls";
+ 
  function makeSwitch(label,key){
   const button=document.createElement("button");button.type="button";button.className="sl-visibility";
   button.setAttribute("aria-label",label+" for "+story.name);
-  const caption=document.createElement("span");caption.textContent=label;
   const track=document.createElement("span");track.className="sl-switch-track";track.setAttribute("aria-hidden","true");
-  button.append(caption,track);
+  button.append(track);
   const sync=()=>button.setAttribute("aria-pressed",String(visibility[i][key]));
   sync();
   button.addEventListener("click",()=>{visibility[i][key]=!visibility[i][key];sync();if(openIndex===i)render()});
@@ -153,7 +152,7 @@ const storyControls=document.createElement("div");storyControls.className="sl-co
 storyControls.append(makeReadControl("STAR Story","exposition"),makeSwitch("STAR Story","exposition"));
 const tableControls=document.createElement("div");tableControls.className="sl-control-pair";
 tableControls.append(makeReadControl("STAR Table","table"),makeSwitch("STAR Table","table"));
-controls.append(storyControls,tableControls);
+
  const panel=document.createElement("div");panel.className="sl-accordion-panel";panel.id="sl-panel-"+(i+1);panel.hidden=true;
  header.addEventListener("click",()=>{
   stopReading();
@@ -162,10 +161,9 @@ controls.append(storyControls,tableControls);
   accordion.querySelectorAll(".sl-accordion-panel").forEach(x=>x.hidden=true);
   accordion.querySelectorAll(".sl-accordion-header").forEach(x=>x.setAttribute("aria-expanded","false"));
   selected=i;openIndex=i;panel.hidden=false;header.setAttribute("aria-expanded","true");
-  activeCard.hidden=false;panel.append(activeCard);render();
+  activeCard.hidden=false;panel.append(activeCard);$("sl-story-actions").replaceChildren(storyControls);$("sl-table-actions").replaceChildren(tableControls);render();
  });
- const bar=document.createElement("div");bar.className="sl-story-bar";bar.append(header,controls);
- item.append(bar,panel);accordion.append(item);
+ item.append(header,panel);accordion.append(item);
 });
 function render(){
  const s=stories[selected];body.replaceChildren();table.replaceChildren();
