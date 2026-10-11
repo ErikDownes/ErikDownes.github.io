@@ -70,6 +70,17 @@ body:has(#sl-bank) .doc-body{width:100%!important;min-width:0!important}
 .sl-bank .sl-read-icon[aria-pressed=true]{background:#dfebf8}
 .sl-bank .sl-read-icon:focus-visible{outline:2px solid #0b65d8;outline-offset:2px}
 @media(max-width:700px){.sl-bank .sl-story-bar .sl-header-controls{margin-left:auto;width:auto;flex-wrap:wrap;justify-content:flex-end}}
+
+.sl-bank .sl-accordion-item>.sl-accordion-header{width:100%;box-sizing:border-box}
+.sl-bank .sl-inner-control-row{display:flex;justify-content:space-between;align-items:center;gap:16px;width:100%;margin:12px 0 14px}
+.sl-bank .sl-inner-control-row strong{font-size:1rem;font-weight:700;color:#17364c}
+.sl-bank .sl-inner-control-row>div{display:flex;justify-content:flex-end;align-items:center}
+.sl-bank .sl-control-pair{display:flex;align-items:center;gap:14px}
+.sl-bank .sl-control-pair .sl-visibility{margin:0!important;padding:6px!important}
+.sl-bank .sl-read-icon{width:32px;height:32px;min-width:32px;border-radius:50%;border:1.5px solid #8a969e;background:transparent;color:#6e7b85;font-size:14px;line-height:1}
+.sl-bank .sl-read-icon:hover{background:#f1f5f8;color:#465663}
+.sl-bank .sl-read-icon[aria-pressed=true]{background:#e3f0ff;border-color:#0b65d8;color:#0b65d8}
+.sl-bank .sl-accordion-panel .story-copy{margin-top:0}
 </style>
 <section class="sl-bank" id="sl-bank">
   <div id="sl-accordion" class="sl-accordion"></div>
