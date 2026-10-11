@@ -45,6 +45,24 @@ eyebrow: INTERVIEW STORIES · PRACTISE · RECORD
 .sl-bank .sl-accordion{display:grid;grid-template-columns:minmax(0,1fr);width:100%;gap:11px}.sl-bank .sl-accordion-item{border-radius:13px;border:1px solid #dae4ee;background:#fff;box-shadow:0 4px 13px rgba(26,49,75,.065);overflow:hidden}.sl-bank .sl-accordion-header{display:flex;width:100%;align-items:center;justify-content:space-between;gap:14px;padding:19px 22px;border:0;background:#fff;color:#193a56;font-size:1.05rem;font-weight:700;text-align:left;cursor:pointer}.sl-bank .sl-accordion-header:hover{background:#f5f8fc}.sl-bank .sl-accordion-header[aria-expanded=true]{background:#eff5fb}.sl-bank .sl-chevron{font-size:1.5rem;transition:transform .18s ease}.sl-bank .sl-accordion-header[aria-expanded=true] .sl-chevron{transform:rotate(180deg)}.sl-bank .sl-accordion-panel .sl-bank-card{box-shadow:none;border:0;border-top:1px solid #e2e9f0;border-radius:0;padding:18px 22px 24px}.interview-domain-sidebar{display:none!important}.sl-bank .sl-accordion-panel .sl-section-row:first-child{margin-top:0}
 .sl-bank .sl-visibility{display:inline-flex;align-items:center;gap:12px;min-width:0;padding:6px 4px;border:0;background:transparent!important;color:inherit!important;box-shadow:none;font-weight:600}.sl-bank .sl-visibility .sl-switch-track{display:inline-block;position:relative;width:42px;height:23px;flex:none;border-radius:99px;background:#aeb5b8;transition:background .15s}.sl-bank .sl-visibility .sl-switch-track::after{content:"";position:absolute;top:3px;left:3px;width:17px;height:17px;border-radius:50%;background:white;box-shadow:0 1px 3px #0003;transition:transform .15s}.sl-bank .sl-visibility[aria-pressed=true] .sl-switch-track{background:#0b65d8}.sl-bank .sl-visibility[aria-pressed=true] .sl-switch-track::after{transform:translateX(19px)}.sl-bank .sl-visibility:focus-visible{outline:2px solid #126ad6;outline-offset:3px}
 .sl-bank .sl-story-bar{display:flex;align-items:center;gap:10px;padding-right:16px}.sl-bank .sl-story-bar .sl-accordion-header{flex:1;min-width:0}.sl-bank .sl-header-controls{display:flex;align-items:center;gap:12px;flex:none}.sl-bank .sl-header-controls .sl-visibility{font-size:.82rem;white-space:nowrap;gap:7px}.sl-bank .sl-accordion-panel .story-copy{margin-top:12px}@media(max-width:700px){.sl-bank .sl-story-bar{flex-wrap:wrap;padding:0 10px 9px}.sl-bank .sl-story-bar .sl-accordion-header{flex-basis:100%}.sl-bank .sl-header-controls{justify-content:flex-end;width:100%}}
+
+/* Stories: full reading width regardless of the older interview grid. */
+body:has(#sl-bank) .interview-shell{display:block!important;width:min(1140px,100%)!important;margin-inline:auto}
+body:has(#sl-bank) .interview-domain-sidebar{display:none!important}
+body:has(#sl-bank) .doc-paper{box-sizing:border-box!important;width:min(1060px,calc(100% - 24px))!important;max-width:none!important;min-width:0!important;margin-inline:auto!important;padding:42px clamp(18px,4vw,58px) 72px!important}
+body:has(#sl-bank) .doc-body{width:100%!important;min-width:0!important}
+.sl-bank,.sl-bank .sl-accordion,.sl-bank .sl-accordion-item{box-sizing:border-box;width:100%;min-width:0}
+.sl-bank .sl-story-bar{width:100%;box-sizing:border-box}
+/* Chrome-style toggle: grey track/dark knob when off, blue track/white knob when on. */
+.sl-bank .sl-visibility{border:0!important;background:transparent!important;box-shadow:none!important;border-radius:18px;padding:6px!important}
+.sl-bank .sl-visibility .sl-switch-track{width:40px;height:21px;background:#e2e4e4;border:1px solid #858b8b;border-radius:99px;box-sizing:border-box;transition:background-color .16s,border-color .16s}
+.sl-bank .sl-visibility .sl-switch-track::after{width:13px;height:13px;top:3px;left:3px;background:#747979;box-shadow:none;transition:transform .16s,background-color .16s}
+.sl-bank .sl-visibility[aria-pressed="true"] .sl-switch-track{background:#0b65d8;border-color:#0b65d8}
+.sl-bank .sl-visibility[aria-pressed="true"] .sl-switch-track::after{background:#fff;transform:translateX(19px)}
+.sl-bank .sl-visibility:hover{background:#eceff1!important}
+.sl-bank .sl-visibility:focus-visible{outline:2px solid #0b65d8;outline-offset:2px}
+@media(max-width:650px){body:has(#sl-bank) .doc-paper{width:100%!important;padding:24px 14px 45px!important}}
+
 </style>
 <section class="sl-bank" id="sl-bank">
   <div id="sl-accordion" class="sl-accordion"></div>
