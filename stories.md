@@ -5,13 +5,12 @@ handle: Stories
 title: Stories
 nav_order: 2
 top_nav: true
-interview_hub: true
 description: Erik's workplace STAR interview stories, recall tables and repeatable speaking practice.
 eyebrow: INTERVIEW STORIES · PRACTISE · RECORD
 ---
 
 <style>
-.sl-bank{max-width:940px;margin:20px auto 40px;color:#172c40}
+.sl-bank{width:100%;max-width:940px;min-width:0;margin:20px auto 40px;color:#172c40}
 .sl-bank-card{background:#fff;border:1px solid #dbe5ec;border-radius:16px;padding:24px;box-shadow:0 12px 32px rgba(24,60,91,.06)}
 .sl-bank h2{font-size:1.55rem!important;margin:0 0 18px!important}
 .sl-bank h3{font-size:1.2rem!important;margin:0 0 16px!important}
@@ -43,7 +42,7 @@ eyebrow: INTERVIEW STORIES · PRACTISE · RECORD
 @media print{.sl-bank-controls,.record-console{display:none!important}.sl-bank-card{box-shadow:none}}
 .sl-bank .sl-section-row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:22px}.sl-bank .sl-section-row .sl-section-heading{margin:0 0 12px}.sl-bank .sl-visibility{min-width:62px;padding:7px 12px;border-radius:9px;border:1px solid #b6c8d7;background:#e7f1fd;color:#174a77;font-weight:650;cursor:pointer}.sl-bank .sl-visibility[aria-pressed="false"]{background:#f0f1f2;color:#5a6670}
 .sl-bank #sl-attempts{margin-top:20px}.sl-bank #sl-attempt-list li{padding:7px 0}.sl-bank #sl-attempt-list button{margin:3px 5px;padding:5px 10px}.sl-bank #sl-elapsed{font-variant-numeric:tabular-nums;font-weight:650;min-width:45px}
-.sl-bank .sl-accordion{display:grid;gap:11px}.sl-bank .sl-accordion-item{border-radius:13px;border:1px solid #dae4ee;background:#fff;box-shadow:0 4px 13px rgba(26,49,75,.065);overflow:hidden}.sl-bank .sl-accordion-header{display:flex;width:100%;align-items:center;justify-content:space-between;gap:14px;padding:19px 22px;border:0;background:#fff;color:#193a56;font-size:1.05rem;font-weight:700;text-align:left;cursor:pointer}.sl-bank .sl-accordion-header:hover{background:#f5f8fc}.sl-bank .sl-accordion-header[aria-expanded=true]{background:#eff5fb}.sl-bank .sl-chevron{font-size:1.5rem;transition:transform .18s ease}.sl-bank .sl-accordion-header[aria-expanded=true] .sl-chevron{transform:rotate(180deg)}.sl-bank .sl-accordion-panel .sl-bank-card{box-shadow:none;border:0;border-top:1px solid #e2e9f0;border-radius:0;padding:18px 22px 24px}.interview-domain-sidebar{display:none!important}.sl-bank .sl-accordion-panel .sl-section-row:first-child{margin-top:0}
+.sl-bank .sl-accordion{display:grid;grid-template-columns:minmax(0,1fr);width:100%;gap:11px}.sl-bank .sl-accordion-item{border-radius:13px;border:1px solid #dae4ee;background:#fff;box-shadow:0 4px 13px rgba(26,49,75,.065);overflow:hidden}.sl-bank .sl-accordion-header{display:flex;width:100%;align-items:center;justify-content:space-between;gap:14px;padding:19px 22px;border:0;background:#fff;color:#193a56;font-size:1.05rem;font-weight:700;text-align:left;cursor:pointer}.sl-bank .sl-accordion-header:hover{background:#f5f8fc}.sl-bank .sl-accordion-header[aria-expanded=true]{background:#eff5fb}.sl-bank .sl-chevron{font-size:1.5rem;transition:transform .18s ease}.sl-bank .sl-accordion-header[aria-expanded=true] .sl-chevron{transform:rotate(180deg)}.sl-bank .sl-accordion-panel .sl-bank-card{box-shadow:none;border:0;border-top:1px solid #e2e9f0;border-radius:0;padding:18px 22px 24px}.interview-domain-sidebar{display:none!important}.sl-bank .sl-accordion-panel .sl-section-row:first-child{margin-top:0}
 .sl-bank .sl-visibility{display:inline-flex;align-items:center;gap:12px;min-width:0;padding:6px 4px;border:0;background:transparent!important;color:inherit!important;box-shadow:none;font-weight:600}.sl-bank .sl-visibility .sl-switch-track{display:inline-block;position:relative;width:42px;height:23px;flex:none;border-radius:99px;background:#aeb5b8;transition:background .15s}.sl-bank .sl-visibility .sl-switch-track::after{content:"";position:absolute;top:3px;left:3px;width:17px;height:17px;border-radius:50%;background:white;box-shadow:0 1px 3px #0003;transition:transform .15s}.sl-bank .sl-visibility[aria-pressed=true] .sl-switch-track{background:#0b65d8}.sl-bank .sl-visibility[aria-pressed=true] .sl-switch-track::after{transform:translateX(19px)}.sl-bank .sl-visibility:focus-visible{outline:2px solid #126ad6;outline-offset:3px}
 </style>
 <section class="sl-bank" id="sl-bank">
