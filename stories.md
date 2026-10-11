@@ -42,16 +42,17 @@ eyebrow: INTERVIEW STORIES · PRACTISE · RECORD
 .interview-domain-sidebar .story-index a{line-height:1.3;padding:9px 12px;font-size:.88rem}
 @media(max-width:650px){.sl-bank-card{padding:15px}.sl-bank table{font-size:.82rem}.sl-bank th,.sl-bank td{padding:6px}}
 @media print{.sl-bank-controls,.record-console{display:none!important}.sl-bank-card{box-shadow:none}}
+.sl-bank .sl-section-row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:22px}.sl-bank .sl-section-row .sl-section-heading{margin:0 0 12px}.sl-bank .sl-visibility{min-width:62px;padding:7px 12px;border-radius:9px;border:1px solid #b6c8d7;background:#e7f1fd;color:#174a77;font-weight:650;cursor:pointer}.sl-bank .sl-visibility[aria-pressed="false"]{background:#f0f1f2;color:#5a6670}
 </style>
 <section class="sl-bank" id="sl-bank">
   <h2>Stories</h2>
   <div class="sl-bank-card">
     <h3 id="sl-story-title"></h3>
     <p class="sl-guidance">Practise the precise, well-articulated exposition first. Then practise using the STAR cues to recall the essential evidence in your own words. Keep the key actions and results accurate; improvise only the connecting language.</p>
-    <h4 class="sl-section-heading">Exposition</h4>
+    <div class="sl-section-row"><h4 class="sl-section-heading">Exposition</h4><button type="button" class="sl-visibility" id="sl-show-story" aria-pressed="true">On</button></div>
     <div class="story-copy" id="sl-story-text"></div>
-    <h4 class="sl-section-heading">STAR Table</h4>
-    <p class="sl-table-note">Essential wording and evidence to retain when paraphrasing.</p>
+    <div class="sl-section-row"><h4 class="sl-section-heading">STAR Table</h4><button type="button" class="sl-visibility" id="sl-show-table" aria-pressed="true">On</button></div>
+    <p class="sl-table-note" id="sl-table-note">Essential wording and evidence to retain when paraphrasing.</p>
     <div id="sl-story-table"></div>
     <div class="record-console">
       <div class="record-controls" aria-label="Audio recorder">
@@ -73,9 +74,9 @@ const stories=[{"name":"Problem Solving – Rerouting","paragraphs":["The situat
 const root=document.getElementById("sl-bank");if(!root)return;
 const $=id=>document.getElementById(id);
 const title=$("sl-story-title"),body=$("sl-story-text"),table=$("sl-story-table");
-const record=$("sl-record"),stop=$("sl-stop"),play=$("sl-play"),download=$("sl-download");
+const sb=$("sl-show-story"),tb=$("sl-show-table"),record=$("sl-record"),stop=$("sl-stop"),play=$("sl-play"),download=$("sl-download");
 const status=$("sl-status"),audio=$("sl-audio"),canvas=$("sl-level"),ctx=canvas.getContext("2d");
-let selected=0,media=null,stream=null,chunks=[],blob=null,blobUrl=null,recordedStory="",audioContext=null,analyser=null,source=null,animation=0;
+let selected=0,showStory=true,showTable=true,media=null,stream=null,chunks=[],blob=null,blobUrl=null,recordedStory="",audioContext=null,analyser=null,source=null,animation=0;
 const sidebar=document.querySelector(".interview-domain-sidebar nav");
 if(sidebar){
  sidebar.replaceChildren();sidebar.classList.add("story-index");
@@ -88,9 +89,14 @@ function render(){
  ["Situation","Task","Action","Result"].forEach(h=>{const th=document.createElement("th");th.textContent=h;tr.append(th)});head.append(tr);t.append(head);
  const tbody=document.createElement("tbody");s.cues.filter(r=>r.some(Boolean)).forEach(row=>{let tr=document.createElement("tr");row.forEach(word=>{let td=document.createElement("td");td.textContent=word;tr.append(td)});tbody.append(tr)});t.append(tbody);table.append(t);
 
- sidebar?.querySelectorAll("a").forEach((a,i)=>{a.classList.toggle("is-active",i===selected);if(i===selected)a.setAttribute("aria-current","page");else a.removeAttribute("aria-current")});
+ body.hidden=!showStory;table.hidden=!showTable;$("sl-table-note").hidden=!showTable;
+ sb.textContent=showStory?"On":"Off";tb.textContent=showTable?"On":"Off";
+ sb.setAttribute("aria-pressed",String(showStory));tb.setAttribute("aria-pressed",String(showTable));
+  sidebar?.querySelectorAll("a").forEach((a,i)=>{a.classList.toggle("is-active",i===selected);if(i===selected)a.setAttribute("aria-current","page");else a.removeAttribute("aria-current")});
 }
 
+sb.addEventListener("click",()=>{showStory=!showStory;render()});
+tb.addEventListener("click",()=>{showTable=!showTable;render()});
 function draw(){
  const ratio=window.devicePixelRatio||1;let w=canvas.clientWidth,h=canvas.clientHeight;
  if(canvas.width!==Math.floor(w*ratio)||canvas.height!==Math.floor(h*ratio)){canvas.width=Math.floor(w*ratio);canvas.height=Math.floor(h*ratio);}
