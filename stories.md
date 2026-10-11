@@ -3,7 +3,6 @@ layout: doc
 permalink: /stories.html
 handle: Stories
 title: Stories
-subtitle: Interview practice — eleven genuine workplace stories.
 nav_order: 2
 top_nav: true
 interview_hub: true
@@ -45,7 +44,6 @@ eyebrow: INTERVIEW STORIES · PRACTISE · RECORD
 .sl-bank .sl-section-row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:22px}.sl-bank .sl-section-row .sl-section-heading{margin:0 0 12px}.sl-bank .sl-visibility{min-width:62px;padding:7px 12px;border-radius:9px;border:1px solid #b6c8d7;background:#e7f1fd;color:#174a77;font-weight:650;cursor:pointer}.sl-bank .sl-visibility[aria-pressed="false"]{background:#f0f1f2;color:#5a6670}
 </style>
 <section class="sl-bank" id="sl-bank">
-  <h2>Stories</h2>
   <div class="sl-bank-card">
     <h3 id="sl-story-title"></h3>
     <div class="sl-section-row"><button type="button" class="sl-visibility" id="sl-show-story" aria-pressed="true" aria-label="Toggle exposition">Exposition: On</button></div>
