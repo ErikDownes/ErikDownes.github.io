@@ -96,44 +96,61 @@ function render(){
 
 sb.addEventListener("click",()=>{showStory=!showStory;render()});
 tb.addEventListener("click",()=>{showTable=!showTable;render()});
+const elapsed=$("sl-elapsed"),list=$("sl-attempt-list"),history=$("sl-attempts");
+const attempts=[];let started=0,ticker=null,levels=[],nextNumber=1;
+const fmt=ms=>{const n=Math.floor(ms/1000);return String(Math.floor(n/60)).padStart(2,"0")+":"+String(n%60).padStart(2,"0")};
 function draw(){
- const ratio=window.devicePixelRatio||1;let w=canvas.clientWidth,h=canvas.clientHeight;
- if(canvas.width!==Math.floor(w*ratio)||canvas.height!==Math.floor(h*ratio)){canvas.width=Math.floor(w*ratio);canvas.height=Math.floor(h*ratio);}
- ctx.setTransform(ratio,0,0,ratio,0,0);ctx.clearRect(0,0,w,h);
- ctx.strokeStyle="#2261a6";ctx.lineWidth=2;ctx.beginPath();
- if(analyser){const values=new Uint8Array(analyser.fftSize);analyser.getByteTimeDomainData(values);for(let x=0;x<w;x++){const n=values[Math.min(values.length-1,Math.floor(x*values.length/w))];const y=h/2+(n-128)/128*h*.42;if(x===0)ctx.moveTo(x,y);else ctx.lineTo(x,y)}}
- else{ctx.moveTo(0,h/2);ctx.lineTo(w,h/2)}
- ctx.stroke();if(media?.state==="recording")animation=requestAnimationFrame(draw);
+ const ratio=window.devicePixelRatio||1,w=canvas.clientWidth,h=canvas.clientHeight;
+ canvas.width=Math.round(w*ratio);canvas.height=Math.round(h*ratio);ctx.setTransform(ratio,0,0,ratio,0,0);
+ ctx.clearRect(0,0,w,h);
+ if(analyser&&media?.state==="recording"){
+  const v=new Uint8Array(analyser.fftSize);analyser.getByteTimeDomainData(v);
+  let sq=0;for(const n of v)sq+=((n-128)/128)**2;
+  levels.push(Math.min(1,Math.sqrt(sq/v.length)*3));
+ }
+ const last=levels.slice(-Math.floor(w/3));
+ ctx.strokeStyle="#2261a6";ctx.lineWidth=2;ctx.lineCap="round";
+ last.forEach((v,i)=>{const a=Math.max(1,v*h*.4),x=i*3+1;ctx.beginPath();ctx.moveTo(x,h/2-a);ctx.lineTo(x,h/2+a);ctx.stroke()});
+ if(media?.state==="recording")animation=requestAnimationFrame(draw);
 }
-draw();
+function saveAttempt(e){const a=document.createElement("a");a.href=e.url;a.download=e.story.replace(/[^a-z0-9]+/gi,"-")+"-attempt-"+e.n+(e.blob.type.includes("mp4")?".m4a":".webm");a.click()}
+function addAttempt(e){
+ const li=document.createElement("li");li.textContent="Attempt "+e.n+" — "+e.story+" — "+fmt(e.ms)+" ";
+ const p=document.createElement("button");p.textContent="Play";p.onclick=()=>{audio.src=e.url;audio.currentTime=0;audio.play()};
+ const d=document.createElement("button");d.textContent="Download";d.onclick=()=>saveAttempt(e);
+ const x=document.createElement("button");x.textContent="Remove";x.onclick=()=>{audio.pause();const i=attempts.indexOf(e);if(i>=0)attempts.splice(i,1);URL.revokeObjectURL(e.url);li.remove()};
+ li.append(p,d,x);list.prepend(li);
+}
 record.addEventListener("click",async()=>{
  if(media?.state==="recording")return;
- if(!navigator.mediaDevices?.getUserMedia||!window.MediaRecorder){status.textContent="This browser does not support microphone recording.";return}
+ if(!navigator.mediaDevices?.getUserMedia||!window.MediaRecorder){status.textContent="Microphone recording unavailable.";return}
+ record.disabled=true;
  try{
  stream=await navigator.mediaDevices.getUserMedia({audio:true});
  const mime=["audio/webm;codecs=opus","audio/webm","audio/mp4"].find(x=>MediaRecorder.isTypeSupported(x));
- media=new MediaRecorder(stream,mime?{mimeType:mime}:undefined);chunks=[];
- audioContext=new (window.AudioContext||window.webkitAudioContext)();
- analyser=audioContext.createAnalyser();analyser.fftSize=2048;source=audioContext.createMediaStreamSource(stream);source.connect(analyser);
+ media=new MediaRecorder(stream,mime?{mimeType:mime}:undefined);chunks=[];levels=[];
+ audioContext=new (window.AudioContext||window.webkitAudioContext)();analyser=audioContext.createAnalyser();analyser.fftSize=2048;
+ source=audioContext.createMediaStreamSource(stream);source.connect(analyser);
+ const story=stories[selected].name;started=performance.now();elapsed.textContent="00:00";
  media.ondataavailable=e=>{if(e.data.size)chunks.push(e.data)};
  media.onstop=async()=>{
-  blob=new Blob(chunks,{type:media.mimeType||"audio/webm"});if(blobUrl)URL.revokeObjectURL(blobUrl);
-  blobUrl=URL.createObjectURL(blob);audio.src=blobUrl;play.disabled=false;download.disabled=false;
-  stream?.getTracks().forEach(t=>t.stop());stream=null;source?.disconnect();source=null;await audioContext?.close();audioContext=null;analyser=null;draw();
-  status.textContent="Recording finished. Press Play to listen, or Download to save it.";
+ clearInterval(ticker);ticker=null;
+ const e={n:nextNumber++,story,ms:performance.now()-started,blob:new Blob(chunks,{type:media.mimeType||"audio/webm"})};
+ e.url=URL.createObjectURL(e.blob);attempts.push(e);addAttempt(e);
+ blob=e.blob;blobUrl=e.url;recordedStory=e.story;play.disabled=false;download.disabled=false;
+ stream.getTracks().forEach(t=>t.stop());source.disconnect();await audioContext.close();
+ stream=null;source=null;audioContext=null;analyser=null;media=null;record.disabled=false;stop.disabled=true;
+ elapsed.textContent=fmt(e.ms);status.textContent="Attempt saved on this page. Download to keep it.";draw();
  };
- recordedStory=stories[selected].name;media.start();record.disabled=true;stop.disabled=false;play.disabled=true;download.disabled=true;
- status.textContent="Recording… Stop when finished.";draw();
- }catch(e){status.textContent="Microphone unavailable. Check browser permissions.";stream?.getTracks().forEach(t=>t.stop());stream=null;}
+ media.start();stop.disabled=false;status.textContent="Recording…";
+ ticker=setInterval(()=>elapsed.textContent=fmt(performance.now()-started),200);draw();
+ }catch(err){status.textContent="Microphone unavailable. Check permissions.";stream?.getTracks().forEach(t=>t.stop());record.disabled=false}
 });
-stop.addEventListener("click",()=>{if(media?.state==="recording"){media.stop();cancelAnimationFrame(animation);stop.disabled=true;record.disabled=false}});
-play.addEventListener("click",()=>{if(blobUrl){audio.currentTime=0;audio.play().catch(()=>{status.textContent="Playback could not start."});status.textContent="Playing recording…"}});
+stop.addEventListener("click",()=>{if(media?.state==="recording"){media.stop();cancelAnimationFrame(animation);stop.disabled=true}});
+play.addEventListener("click",()=>{const e=attempts[attempts.length-1];if(e){audio.src=e.url;audio.currentTime=0;audio.play()}});
+download.addEventListener("click",()=>{const e=attempts[attempts.length-1];if(e)saveAttempt(e)});
 audio.addEventListener("ended",()=>{status.textContent=""});
-download.addEventListener("click",()=>{
- if(!blobUrl)return;const a=document.createElement("a");a.href=blobUrl;
- a.download=recordedStory.replace(/[^a-z0-9]+/gi,"-").replace(/^-|-$/g,"")+"-practice."+(blob.type.includes("mp4")?"m4a":"webm");
- document.body.append(a);a.click();a.remove();
-});
+window.addEventListener("pagehide",()=>attempts.forEach(e=>URL.revokeObjectURL(e.url)));
 render();
 })();
 </script>
