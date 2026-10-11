@@ -119,6 +119,7 @@ body:has(#sl-bank) .doc-body{width:100%!important;min-width:0!important}
 .sl-bank .sl-inner-control-row .sl-read-icon[aria-pressed=true]{opacity:1;color:#0b65d8;border-color:#0b65d8}
 .sl-bank .sl-inner-control-row .sl-visibility{position:static;justify-self:auto}
 @media(prefers-color-scheme:dark){body:has(#sl-bank) .sl-inner-control-row .sl-read-icon:not(.sl-play-faded){color:#0b65d8;border-color:#0b65d8}}
+.sl-bank .sl-download-icon{display:inline-flex;align-items:center;justify-content:center;width:42px!important;height:42px;padding:7px!important;vertical-align:middle;color:#52606b;background:transparent;border:1px solid #d9e1e9;border-radius:9px;cursor:pointer}.sl-bank .sl-download-icon svg{width:23px;height:23px;display:block}.sl-bank .sl-download-icon:hover:not(:disabled){color:#0b65d8;border-color:#0b65d8;background:#eaf3ff}.sl-bank .sl-download-icon:disabled{opacity:.35;cursor:not-allowed}
 </style>
 <section class="sl-bank" id="sl-bank">
   <div id="sl-accordion" class="sl-accordion"></div>
@@ -133,7 +134,7 @@ body:has(#sl-bank) .doc-body{width:100%!important;min-width:0!important}
         <button class="transport record" type="button" id="sl-record" title="Record" aria-label="Record"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/></svg></button>
         <button class="transport stop" type="button" id="sl-stop" title="Stop recording" aria-label="Stop recording" disabled><svg viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="1"/></svg></button>
         <button class="transport play sl-read-icon" type="button" id="sl-play" title="Play recording" aria-label="Play recording" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5 L20 12 L6 20.5 Z"/></svg></button>
-        <button class="download" type="button" id="sl-download" disabled>Download</button>
+        <button class="download sl-download-icon" type="button" id="sl-download" title="Download latest recording" aria-label="Download latest recording" disabled><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3v12m-4-4 4 4 4-4M4 16v4h16v-4" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
       </div>
       <div class="sl-mic-meter"><span class="sl-mic-symbol" aria-hidden="true">🎙</span><canvas class="level" id="sl-level" aria-label="Audio level progressing to the right"></canvas><output id="sl-elapsed">00:00</output></div>
       <p class="status" id="sl-status" role="status">Ready. Press the red record circle to begin.</p>
@@ -267,7 +268,7 @@ function saveAttempt(e){const a=document.createElement("a");a.href=e.url;a.downl
 function addAttempt(e){
  const li=document.createElement("li");li.textContent="Attempt "+e.n+" — "+e.story+" — "+fmt(e.ms)+" ";
  const p=document.createElement("button");p.className="sl-attempt-play";p.title="Play attempt";p.setAttribute("aria-label","Play attempt "+e.n);p.textContent="▶";p.onclick=()=>{audio.src=e.url;audio.currentTime=0;audio.play()};
- const d=document.createElement("button");d.textContent="Download";d.onclick=()=>saveAttempt(e);
+ const d=document.createElement("button");d.className="sl-download-icon";d.title="Download attempt "+e.n;d.setAttribute("aria-label","Download attempt "+e.n);d.innerHTML="<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M12 3v12m-4-4 4 4 4-4M4 16v4h16v-4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>";d.onclick=()=>saveAttempt(e);
  const x=document.createElement("button");x.textContent="Remove";x.onclick=()=>{audio.pause();const i=attempts.indexOf(e);if(i>=0)attempts.splice(i,1);URL.revokeObjectURL(e.url);li.remove()};
  li.append(p,d,x);list.prepend(li);
 }
