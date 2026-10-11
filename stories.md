@@ -42,6 +42,7 @@ eyebrow: INTERVIEW STORIES · PRACTISE · RECORD
 @media(max-width:650px){.sl-bank-card{padding:15px}.sl-bank table{font-size:.82rem}.sl-bank th,.sl-bank td{padding:6px}}
 @media print{.sl-bank-controls,.record-console{display:none!important}.sl-bank-card{box-shadow:none}}
 .sl-bank .sl-section-row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:22px}.sl-bank .sl-section-row .sl-section-heading{margin:0 0 12px}.sl-bank .sl-visibility{min-width:62px;padding:7px 12px;border-radius:9px;border:1px solid #b6c8d7;background:#e7f1fd;color:#174a77;font-weight:650;cursor:pointer}.sl-bank .sl-visibility[aria-pressed="false"]{background:#f0f1f2;color:#5a6670}
+.sl-bank #sl-attempts{margin-top:20px}.sl-bank #sl-attempt-list li{padding:7px 0}.sl-bank #sl-attempt-list button{margin:3px 5px;padding:5px 10px}.sl-bank #sl-elapsed{font-variant-numeric:tabular-nums;font-weight:650;min-width:45px}
 </style>
 <section class="sl-bank" id="sl-bank">
   <div class="sl-bank-card">
@@ -58,9 +59,10 @@ eyebrow: INTERVIEW STORIES · PRACTISE · RECORD
         <button class="transport play" type="button" id="sl-play" title="Play recording" aria-label="Play recording" disabled><svg viewBox="0 0 24 24"><path d="M7 4L21 12 7 20Z"/></svg></button>
         <button class="download" type="button" id="sl-download" disabled>Download</button>
       </div>
-      <div class="sl-mic-meter"><span class="sl-mic-symbol" aria-hidden="true">🎙</span><canvas class="level" id="sl-level" aria-label="Live microphone audio level"></canvas></div>
+      <div class="sl-mic-meter"><span class="sl-mic-symbol" aria-hidden="true">🎙</span><canvas class="level" id="sl-level" aria-label="Audio level progressing to the right"></canvas><output id="sl-elapsed">00:00</output></div>
       <p class="status" id="sl-status" role="status">Ready. Press the red record circle to begin.</p>
       <audio id="sl-audio" preload="metadata" hidden></audio>
+      <div id="sl-attempts"><h4>Recorded attempts</h4><ol id="sl-attempt-list"></ol></div>
     </div>
   </div>
 </section>
