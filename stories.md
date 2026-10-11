@@ -136,6 +136,7 @@ body:has(#sl-bank) .doc-body{width:100%!important;min-width:0!important}
 .sl-bank .sl-inner-control-row #sl-table-actions{margin-left:auto}
 @media(max-width:540px){.sl-bank .record-controls{gap:3px}.sl-bank .record-controls .sl-mic-meter{margin-left:0;padding:2px 5px}.sl-bank .record-controls .transport{width:37px;min-width:37px}.sl-bank .record-controls .sl-download-icon{width:37px!important;min-width:37px}.sl-bank .sl-current-story-name{font-size:.75rem}}
 .sl-bank .sl-record-pause,.sl-bank .sl-play-stop{color:#c32031;width:42px;height:42px}.sl-bank .sl-play-stop{color:#0b65d8}.sl-bank .sl-record-pause svg,.sl-bank .sl-play-stop svg{width:22px;height:22px;fill:currentColor}.sl-bank .record-controls button[hidden]{display:none!important}.sl-bank .transport.record{color:#c32031}
+.sl-bank .sl-record-pause svg circle{fill:#fff;stroke:#c32031;stroke-width:3}
 </style>
 <section class="sl-bank" id="sl-bank">
   <div id="sl-accordion" class="sl-accordion"></div>
@@ -293,6 +294,7 @@ const iconPause='<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" w
 const iconPlay='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5 L20 12 L6 20.5 Z"/></svg>';
 const iconStop='<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="5" width="14" height="14" rx="1"/></svg>';
 const iconRecord='<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/></svg>';
+const iconResumeRecord='<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="7.5" fill="white" stroke="currentColor" stroke-width="3"/></svg>';
 function syncPlayback(){
  const active=!audio.paused&&!audio.ended&&!!audio.src;
  // Keep Stop visible while an audio take is paused part-way through.
@@ -309,7 +311,7 @@ function syncRecording(){
  record.title=active?"Stop recording":"Record";
  record.setAttribute("aria-label",record.title);
  recordPause.hidden=!active;
- recordPause.innerHTML=media?.state==="paused"?iconPlay:iconPause;
+ recordPause.innerHTML=media?.state==="paused"?iconResumeRecord:iconPause;
  recordPause.title=media?.state==="paused"?"Resume recording":"Pause recording";
  recordPause.setAttribute("aria-label",recordPause.title);
  play.disabled=active||!attempts.length;
