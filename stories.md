@@ -107,6 +107,7 @@ body:has(#sl-bank) .doc-body{width:100%!important;min-width:0!important}
  body:has(#sl-bank) .sl-accordion-panel table tbody tr:nth-child(even) td{background:#2a3949}
 }
 .sl-bank .sl-recording-heading{grid-template-columns:minmax(0,1fr) minmax(44px,1fr) minmax(52px,1fr);padding-top:12px;border-top:1px solid #dbe5ec;margin-top:22px}.sl-bank .sl-recording-heading .sl-visibility{grid-column:3;justify-self:end}.sl-bank #sl-recording-booth[hidden]{display:none!important}
+.sl-bank .record-console .transport.play.sl-read-icon{width:42px;height:42px;min-width:42px;border:1.5px solid #0b65d8;border-radius:50%;background:#fff;color:#0b65d8;padding:0;box-shadow:none}.sl-bank .record-console .transport.play.sl-read-icon svg{width:22px;height:22px;fill:currentColor;display:block}.sl-bank .record-console .transport.play.sl-read-icon:disabled{opacity:.35;border-color:#8b99a7;color:#8b99a7;cursor:not-allowed}.sl-bank .sl-attempt-play{min-width:33px;border-radius:50%;color:#0b65d8;border:1px solid #0b65d8;background:#fff}.sl-bank .sl-attempt-play:hover{background:#e3f0ff}
 </style>
 <section class="sl-bank" id="sl-bank">
   <div id="sl-accordion" class="sl-accordion"></div>
@@ -120,7 +121,7 @@ body:has(#sl-bank) .doc-body{width:100%!important;min-width:0!important}
       <div class="record-controls" aria-label="Audio recorder">
         <button class="transport record" type="button" id="sl-record" title="Record" aria-label="Record"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/></svg></button>
         <button class="transport stop" type="button" id="sl-stop" title="Stop recording" aria-label="Stop recording" disabled><svg viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="1"/></svg></button>
-        <button class="transport play" type="button" id="sl-play" title="Play recording" aria-label="Play recording" disabled><svg viewBox="0 0 24 24"><path d="M7 4L21 12 7 20Z"/></svg></button>
+        <button class="transport play sl-read-icon" type="button" id="sl-play" title="Play recording" aria-label="Play recording" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5 L20 12 L6 20.5 Z"/></svg></button>
         <button class="download" type="button" id="sl-download" disabled>Download</button>
       </div>
       <div class="sl-mic-meter"><span class="sl-mic-symbol" aria-hidden="true">🎙</span><canvas class="level" id="sl-level" aria-label="Audio level progressing to the right"></canvas><output id="sl-elapsed">00:00</output></div>
@@ -253,7 +254,7 @@ function draw(){
 function saveAttempt(e){const a=document.createElement("a");a.href=e.url;a.download=e.story.replace(/[^a-z0-9]+/gi,"-")+"-attempt-"+e.n+(e.blob.type.includes("mp4")?".m4a":".webm");a.click()}
 function addAttempt(e){
  const li=document.createElement("li");li.textContent="Attempt "+e.n+" — "+e.story+" — "+fmt(e.ms)+" ";
- const p=document.createElement("button");p.textContent="Play";p.onclick=()=>{audio.src=e.url;audio.currentTime=0;audio.play()};
+ const p=document.createElement("button");p.className="sl-attempt-play";p.title="Play attempt";p.setAttribute("aria-label","Play attempt "+e.n);p.textContent="▶";p.onclick=()=>{audio.src=e.url;audio.currentTime=0;audio.play()};
  const d=document.createElement("button");d.textContent="Download";d.onclick=()=>saveAttempt(e);
  const x=document.createElement("button");x.textContent="Remove";x.onclick=()=>{audio.pause();const i=attempts.indexOf(e);if(i>=0)attempts.splice(i,1);URL.revokeObjectURL(e.url);li.remove()};
  li.append(p,d,x);list.prepend(li);
