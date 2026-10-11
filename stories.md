@@ -126,7 +126,7 @@ record.addEventListener("click",async()=>{
 });
 stop.addEventListener("click",()=>{if(media?.state==="recording"){media.stop();cancelAnimationFrame(animation);stop.disabled=true;record.disabled=false}});
 play.addEventListener("click",()=>{if(blobUrl){audio.currentTime=0;audio.play().catch(()=>{status.textContent="Playback could not start."});status.textContent="Playing recording…"}});
-audio.addEventListener("ended",()=>{status.textContent="Playback finished. Record again or download this attempt."});
+audio.addEventListener("ended",()=>{status.textContent=""});
 download.addEventListener("click",()=>{
  if(!blobUrl)return;const a=document.createElement("a");a.href=blobUrl;
  a.download=recordedStory.replace(/[^a-z0-9]+/gi,"-").replace(/^-|-$/g,"")+"-practice."+(blob.type.includes("mp4")?"m4a":"webm");
