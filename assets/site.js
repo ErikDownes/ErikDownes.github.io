@@ -6,8 +6,7 @@
   const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
   const synth = window.speechSynthesis;
   const hasSpeech = Boolean(synth && typeof SpeechSynthesisUtterance !== 'undefined');
-  const pageCms = document.querySelector('.doc-toolbar .cms-edit-link[href]');
-  const pageGithub = document.querySelector('.doc-toolbar .github-edit-link[href]');
+    const pageGithub = document.querySelector('.doc-toolbar .github-edit-link[href]');
   const pagePrint = document.querySelector('.doc-toolbar [data-action="print"]');
   const EDIT_PREFIX = 'coop-answer-edit:v1:';
   const MOVE_PREFIX = 'coop-section-moves:v1';
@@ -2781,23 +2780,10 @@
      shared rail stays clean; the code remains available to restore later.
      ----------------------------------------------------------------------- */
   const setupFloatingTools = () => {
-    if (!pageCms && !pageGithub && !pagePrint) return;
+    if (!pageGithub && !pagePrint) return;
     const rail = document.createElement('div');
     rail.id = 'floating-page-tools';
     rail.setAttribute('aria-label', 'Page tools');
-
-    if (pageCms?.href) {
-      const edit = document.createElement('a');
-      edit.id = 'floating-page-cms';
-      edit.href = pageCms.href;
-      edit.target = '_blank';
-      edit.rel = 'noopener';
-      edit.textContent = 'Edit';
-      edit.setAttribute('aria-label', 'Edit this page');
-      edit.title = 'Edit this page';
-      rail.appendChild(edit);
-      pageCms.hidden = true;
-    }
 
     if (pageGithub?.href) {
       const github = document.createElement('a');
@@ -2805,7 +2791,7 @@
       github.href = pageGithub.href;
       github.target = '_blank';
       github.rel = 'noopener';
-      github.textContent = 'GitHub';
+      github.textContent = 'Edit · GitHub';
       github.setAttribute('aria-label', 'Edit this page in GitHub');
       rail.appendChild(github);
       pageGithub.hidden = true;
@@ -2861,7 +2847,7 @@
       return visible.filter(node => node.getBoundingClientRect().top <= offset).pop() || visible[0] || null;
     };
 
-    if (hasSpeech) {
+    if (false && hasSpeech) {
       const listen = document.createElement('button');
       listen.id = 'floating-page-listen';
       listen.type = 'button';
