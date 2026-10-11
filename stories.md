@@ -81,6 +81,15 @@ body:has(#sl-bank) .doc-body{width:100%!important;min-width:0!important}
 .sl-bank .sl-read-icon:hover{background:#f1f5f8;color:#465663}
 .sl-bank .sl-read-icon[aria-pressed=true]{background:#e3f0ff;border-color:#0b65d8;color:#0b65d8}
 .sl-bank .sl-accordion-panel .story-copy{margin-top:0}
+
+/* Each section: title left, playback dead centre, visibility switch right. */
+.sl-bank .sl-inner-control-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(44px,1fr) minmax(52px,1fr);align-items:center;width:100%;gap:8px}
+.sl-bank .sl-inner-control-row>strong{grid-column:1;justify-self:start}
+.sl-bank .sl-inner-control-row>div,.sl-bank .sl-control-pair{display:contents}
+.sl-bank .sl-inner-control-row .sl-read-icon{grid-column:2;justify-self:center;display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border:1.5px solid #8a969e;border-radius:50%;color:#717b85;background:#fff}
+.sl-bank .sl-inner-control-row .sl-read-icon svg{width:22px;height:22px;display:block}
+.sl-bank .sl-inner-control-row .sl-read-icon[aria-pressed=true]{color:#0b65d8;border-color:#0b65d8;background:#e3f0ff}
+.sl-bank .sl-inner-control-row .sl-visibility{grid-column:3;justify-self:end}
 </style>
 <section class="sl-bank" id="sl-bank">
   <div id="sl-accordion" class="sl-accordion"></div>
@@ -117,13 +126,23 @@ const accordion=$("sl-accordion");
 const visibility=stories.map(()=>({exposition:true,table:true}));
 let openIndex=-1;
 let speakingButton=null;
-function stopReading(){if("speechSynthesis" in window)window.speechSynthesis.cancel();if(speakingButton){speakingButton.textContent="▶";speakingButton.setAttribute("aria-pressed","false");speakingButton=null}}
+function setPlaybackIcon(button,playing){
+ button.replaceChildren();
+ const svg=document.createElementNS("http://www.w3.org/2000/svg","svg");
+ svg.setAttribute("viewBox","0 0 24 24");svg.setAttribute("width","22");svg.setAttribute("height","22");
+ svg.setAttribute("aria-hidden","true");svg.setAttribute("focusable","false");
+ const shape=document.createElementNS("http://www.w3.org/2000/svg",playing?"rect":"path");
+ if(playing){shape.setAttribute("x","5");shape.setAttribute("y","5");shape.setAttribute("width","14");shape.setAttribute("height","14");shape.setAttribute("rx","1.5")}
+ else{shape.setAttribute("d","M6 3.5 L20 12 L6 20.5 Z")}
+ shape.setAttribute("fill","currentColor");svg.append(shape);button.append(svg);
+}
+function stopReading(){if("speechSynthesis" in window)window.speechSynthesis.cancel();if(speakingButton){setPlaybackIcon(speakingButton,false);speakingButton.setAttribute("aria-pressed","false");speakingButton=null}}
 function readAloud(button,content){
  if(!("speechSynthesis" in window))return;
  if(speakingButton===button){stopReading();return}
  stopReading();
  const utterance=new SpeechSynthesisUtterance(content);utterance.lang="en-IE";utterance.rate=0.95;
- speakingButton=button;button.textContent="■";button.setAttribute("aria-pressed","true");
+ speakingButton=button;setPlaybackIcon(button,true);button.setAttribute("aria-pressed","true");
  utterance.onend=()=>{if(speakingButton===button)stopReading()};
  utterance.onerror=()=>{if(speakingButton===button)stopReading()};
  window.speechSynthesis.speak(utterance);
@@ -149,7 +168,7 @@ stories.forEach((story,i)=>{
  }
  function makeReadControl(label,key){
  const button=document.createElement("button");button.type="button";button.className="sl-read-icon";
- button.textContent="▶";button.title="Play "+label+" aloud (click again to stop)";
+ setPlaybackIcon(button,false);button.title="Play "+label+" aloud (click again to stop)";
  button.setAttribute("aria-label","Play "+label+" aloud for "+story.name);
  button.setAttribute("aria-pressed","false");
  button.addEventListener("click",()=>{
