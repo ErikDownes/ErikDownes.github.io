@@ -254,7 +254,7 @@ function readAloud(button,stopButton,content){
  }
  stopReading();
  const utterance=new SpeechSynthesisUtterance(content);utterance.lang="en-IE";utterance.rate=0.95;
- if(button.closest("#sl-story-actions")){prepareSpeechWords();utterance.onboundary=e=>{if(e.name==="word"||e.name===undefined)highlightSpeechWord(e.charIndex)}}
+ if(button.closest("#sl-story-actions")&&!readingMode){prepareSpeechWords();utterance.onboundary=e=>{if(e.name==="word"||e.name===undefined)highlightSpeechWord(e.charIndex)}}
  
  speakingButton=button;speakingStop=stopButton;speechPaused=false;
  button.setAttribute("aria-pressed","true");speechVisual();
