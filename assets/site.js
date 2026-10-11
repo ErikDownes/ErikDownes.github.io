@@ -554,6 +554,25 @@
   };
 
   setupAboutMenu();
+  // Keep Home as the leftmost top-level tab, followed immediately by Stories.
+  {
+    const nav = document.getElementById('mainNav');
+    const tabs = nav ? Array.from(nav.querySelectorAll(':scope > .navitem')) : [];
+    const findTab = filename => tabs.find(item => {
+      const href = item.querySelector(':scope > .navlabel[href]')?.href;
+      return href && new URL(href).pathname.endsWith(filename);
+    });
+    const home = tabs.find(item => {
+      const href = item.querySelector(':scope > .navlabel[href]')?.href;
+      return href && normalisePath(href) === normalisePath(document.querySelector('.brand')?.href || '/');
+    });
+    const stories = findTab('/stories.html');
+    if (home && stories) {
+      nav.prepend(home);
+      home.after(stories);
+    }
+  }
+
 
   // Projects has four dedicated pages, available from the top navigation dropdown.
   const setupProjectsMenu = () => {
