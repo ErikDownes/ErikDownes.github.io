@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://erikdownes.github.io/sitemap.xml
