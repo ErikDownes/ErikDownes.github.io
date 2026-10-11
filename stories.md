@@ -151,6 +151,7 @@ body:has(#sl-bank) .doc-body{width:100%!important;min-width:0!important}
         <button class="transport play sl-read-icon" type="button" id="sl-play" title="Play recording" aria-label="Play recording" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5 L20 12 L6 20.5 Z"/></svg></button>
         <button class="download sl-download-icon" type="button" id="sl-download" title="Download latest recording" aria-label="Download latest recording" disabled><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3v12m-4-4 4 4 4-4M4 16v4h16v-4" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
       <div class="sl-mic-meter"><span class="sl-mic-symbol" aria-hidden="true">🎙</span><canvas class="level" id="sl-level" aria-label="Audio level progressing to the right"></canvas><output id="sl-elapsed">00:00</output></div>
+      </div>
       <p class="status sl-visually-hidden" id="sl-status" role="status">Ready. Press the red record circle to begin.</p>
       <audio id="sl-audio" preload="metadata" hidden></audio>
       <div id="sl-attempts"><ol id="sl-attempt-list" aria-label="Recorded takes"></ol></div>
