@@ -139,6 +139,7 @@ body:has(#sl-bank) .doc-body{width:100%!important;min-width:0!important}
 .sl-bank .sl-record-pause svg circle{fill:#fff;stroke:#c32031;stroke-width:3}
 .sl-bank .sl-inner-control-row .sl-speech-stop{width:42px;height:42px;min-width:42px;display:inline-flex;align-items:center;justify-content:center;border:1.5px solid #0b65d8;border-radius:50%;color:#0b65d8;background:transparent;padding:0}.sl-bank .sl-speech-stop svg{width:22px;height:22px}.sl-bank .sl-speech-stop[hidden]{display:none!important}.sl-bank .sl-inner-control-row .sl-read-icon[aria-pressed=true]{background:#0b65d8;color:#fff;border-color:#0b65d8}.sl-bank .sl-record-pause svg circle{fill:#fff;stroke:#c32031;stroke-width:3.8}
 .sl-bank .sl-icon-toggle{display:inline-flex;align-items:center;justify-content:center;border:0;background:transparent;padding:4px;border-radius:7px;cursor:pointer;color:#215b90}.sl-bank .sl-icon-toggle svg{color:inherit}.sl-bank .sl-icon-toggle[aria-pressed=false]{opacity:.28}.sl-bank .sl-icon-toggle:focus-visible{outline:2px solid #0b65d8;outline-offset:3px}.sl-bank .sl-inner-control-row>div{margin-left:auto}
+.sl-bank .sl-reading-mode{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border:1px solid #cad6df;border-radius:50%;background:transparent;color:#53738f;cursor:pointer}.sl-bank .sl-reading-mode svg{height:19px;width:19px}.sl-bank .sl-reading-mode[aria-pressed=true]{background:#0b65d8;color:#fff;border-color:#0b65d8}.sl-bank .story-copy.sl-progressive{cursor:pointer;touch-action:pan-y}.sl-bank .story-copy.sl-progressive p{transition:max-height .18s ease,opacity .18s ease}.sl-bank .sl-speech-word-active{background:#cfe6ff;border-radius:3px;box-decoration-break:clone}
 </style>
 <section class="sl-bank" id="sl-bank">
   <div id="sl-accordion" class="sl-accordion"></div>
@@ -187,6 +188,22 @@ $("sl-table-toggle").addEventListener("click",()=>{if(openIndex<0)return;visibil
 
 const visibility=stories.map(()=>({exposition:true,table:true}));
 let openIndex=-1;
+let readingMode=false;
+function revealLines(){
+ if(!readingMode)return;
+ const paragraphs=[...body.querySelectorAll("p")];
+ const p=paragraphs.find(el=>!el.dataset.completed);
+ if(!p)return;
+ const lineHeight=parseFloat(getComputedStyle(p).lineHeight)||28;
+ const next=(Number(p.dataset.lines)||0)+1;
+ p.dataset.lines=String(next);
+ p.style.maxHeight=(lineHeight*next+2)+"px";
+ p.style.opacity="1";
+ if(p.scrollHeight<=p.clientHeight+2){p.dataset.completed="true";p.style.maxHeight="none"}
+}
+body.addEventListener("click",()=>{if(readingMode)revealLines()});
+body.addEventListener("wheel",e=>{if(readingMode&&e.deltaY>0){e.preventDefault();revealLines()}},{passive:false});
+
 let speakingButton=null,speakingStop=null,speechPaused=false;
 function speechIcon(button,kind){
  const paths={play:'<path d="M6 3.5 L20 12 L6 20.5 Z"/>',pause:'<rect x="5" y="4" width="5" height="16"/><rect x="14" y="4" width="5" height="16"/>',stop:'<rect x="5" y="5" width="14" height="14" rx="1"/>'};
@@ -254,6 +271,9 @@ stories.forEach((story,i)=>{
  return [button,stopButton];
 }
 const storyControls=document.createElement("div");storyControls.className="sl-control-pair";
+const readingModeButton=document.createElement("button");readingModeButton.type="button";readingModeButton.className="sl-reading-mode";readingModeButton.title="Progressive reading mode";readingModeButton.setAttribute("aria-label","Progressive reading mode");readingModeButton.setAttribute("aria-pressed","false");readingModeButton.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 11h16M4 16h11M4 21h6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>';
+readingModeButton.addEventListener("click",()=>{stopReading();readingMode=!readingMode;readingModeButton.setAttribute("aria-pressed",String(readingMode));render()});
+storyControls.append(readingModeButton);
 storyControls.append(...makeReadControl("Story","exposition"));
 const tableControls=document.createElement("div");tableControls.className="sl-control-pair";
 tableControls.append(...makeReadControl("Table","table"));
@@ -265,14 +285,16 @@ tableControls.append(...makeReadControl("Table","table"));
   if(openIndex===i){panel.hidden=true;header.setAttribute("aria-expanded","false");activeCard.hidden=true;openIndex=-1;return}
   accordion.querySelectorAll(".sl-accordion-panel").forEach(x=>x.hidden=true);
   accordion.querySelectorAll(".sl-accordion-header").forEach(x=>x.setAttribute("aria-expanded","false"));
-  selected=i;openIndex=i;panel.hidden=false;header.setAttribute("aria-expanded","true");
-  activeCard.hidden=false;panel.append(activeCard);$("sl-story-actions").replaceChildren(storyControls);$("sl-table-actions").replaceChildren(tableControls);render();
+  selected=i;openIndex=i;readingMode=false;panel.hidden=false;header.setAttribute("aria-expanded","true");
+  activeCard.hidden=false;panel.append(activeCard);$("sl-story-actions").replaceChildren(storyControls);$("sl-table-actions").replaceChildren(tableControls);readingModeButton.setAttribute("aria-pressed","false");render();
  });
  item.append(header,panel);accordion.append(item);
 });
 function render(){
  const s=stories[selected];body.replaceChildren();table.replaceChildren();
  s.paragraphs.forEach(t=>{let p=document.createElement("p");p.textContent=t;body.append(p)});
+ body.classList.toggle("sl-progressive",readingMode);
+ if(readingMode){body.querySelectorAll("p").forEach(p=>{p.style.maxHeight="0px";p.style.overflow="hidden";p.style.opacity=".4"});requestAnimationFrame(revealLines)}
  const t=document.createElement("table"),head=document.createElement("thead"),tr=document.createElement("tr");
  ["Situation","Task","Action","Result"].forEach(h=>{const th=document.createElement("th");th.textContent=h;tr.append(th)});head.append(tr);t.append(head);
  const tbody=document.createElement("tbody");s.cues.filter(r=>r.some(Boolean)).forEach(row=>{let tr=document.createElement("tr");row.forEach(word=>{let td=document.createElement("td");td.textContent=word;tr.append(td)});tbody.append(tr)});t.append(tbody);table.append(t);
