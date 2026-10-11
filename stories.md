@@ -106,6 +106,7 @@ body:has(#sl-bank) .doc-body{width:100%!important;min-width:0!important}
  body:has(#sl-bank) .sl-accordion-panel table td{background:#222f3d;color:#e5eaf0;border-color:#465568}
  body:has(#sl-bank) .sl-accordion-panel table tbody tr:nth-child(even) td{background:#2a3949}
 }
+.sl-bank .sl-recording-heading{grid-template-columns:minmax(0,1fr) minmax(44px,1fr) minmax(52px,1fr);padding-top:12px;border-top:1px solid #dbe5ec;margin-top:22px}.sl-bank .sl-recording-heading .sl-visibility{grid-column:3;justify-self:end}.sl-bank #sl-recording-booth[hidden]{display:none!important}
 </style>
 <section class="sl-bank" id="sl-bank">
   <div id="sl-accordion" class="sl-accordion"></div>
@@ -114,7 +115,8 @@ body:has(#sl-bank) .doc-body{width:100%!important;min-width:0!important}
     <div class="sl-inner-control-row"><strong class="sl-section-name"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16M4 10h16M4 15h13M4 20h10"/></svg><span>Story</span></strong><div id="sl-story-actions"></div></div><div class="story-copy" id="sl-story-text"></div>
     
     <div class="sl-inner-control-row"><strong class="sl-section-name"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="1.5"/><path d="M3 10h18M3 15h18M10 4v16M16 4v16"/></svg><span>Table</span></strong><div id="sl-table-actions"></div></div><div id="sl-story-table"></div>
-    <div class="record-console">
+    <div class="sl-inner-control-row sl-recording-heading"><strong class="sl-section-name">Recording</strong><button type="button" id="sl-recording-toggle" class="sl-visibility" aria-label="Show or hide recording booth" aria-pressed="true"><span class="sl-switch-track" aria-hidden="true"></span></button></div>
+    <div class="record-console" id="sl-recording-booth">
       <div class="record-controls" aria-label="Audio recorder">
         <button class="transport record" type="button" id="sl-record" title="Record" aria-label="Record"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/></svg></button>
         <button class="transport stop" type="button" id="sl-stop" title="Stop recording" aria-label="Stop recording" disabled><svg viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="1"/></svg></button>
@@ -137,6 +139,14 @@ const $=id=>document.getElementById(id);
 const body=$("sl-story-text"),table=$("sl-story-table"),activeCard=$("sl-active-card");
 const record=$("sl-record"),stop=$("sl-stop"),play=$("sl-play"),download=$("sl-download");
 const status=$("sl-status"),audio=$("sl-audio"),canvas=$("sl-level"),ctx=canvas.getContext("2d");
+const recordingToggle=$("sl-recording-toggle"),recordingBooth=$("sl-recording-booth");
+let recordingVisible=true;
+recordingToggle.addEventListener("click",()=>{
+ if(media?.state==="recording")return;
+ recordingVisible=!recordingVisible;
+ recordingBooth.hidden=!recordingVisible;
+ recordingToggle.setAttribute("aria-pressed",String(recordingVisible));
+});
 let selected=0,media=null,stream=null,chunks=[],blob=null,blobUrl=null,recordedStory="",audioContext=null,analyser=null,source=null,animation=0;
 const accordion=$("sl-accordion");
 const visibility=stories.map(()=>({exposition:true,table:true}));
