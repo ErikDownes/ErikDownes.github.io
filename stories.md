@@ -138,15 +138,16 @@ body:has(#sl-bank) .doc-body{width:100%!important;min-width:0!important}
 .sl-bank .sl-record-pause,.sl-bank .sl-play-stop{color:#c32031;width:42px;height:42px}.sl-bank .sl-play-stop{color:#0b65d8}.sl-bank .sl-record-pause svg,.sl-bank .sl-play-stop svg{width:22px;height:22px;fill:currentColor}.sl-bank .record-controls button[hidden]{display:none!important}.sl-bank .transport.record{color:#c32031}
 .sl-bank .sl-record-pause svg circle{fill:#fff;stroke:#c32031;stroke-width:3}
 .sl-bank .sl-inner-control-row .sl-speech-stop{width:42px;height:42px;min-width:42px;display:inline-flex;align-items:center;justify-content:center;border:1.5px solid #0b65d8;border-radius:50%;color:#0b65d8;background:transparent;padding:0}.sl-bank .sl-speech-stop svg{width:22px;height:22px}.sl-bank .sl-speech-stop[hidden]{display:none!important}.sl-bank .sl-inner-control-row .sl-read-icon[aria-pressed=true]{background:#0b65d8;color:#fff;border-color:#0b65d8}.sl-bank .sl-record-pause svg circle{fill:#fff;stroke:#c32031;stroke-width:3.8}
+.sl-bank .sl-icon-toggle{display:inline-flex;align-items:center;justify-content:center;border:0;background:transparent;padding:4px;border-radius:7px;cursor:pointer;color:#215b90}.sl-bank .sl-icon-toggle svg{color:inherit}.sl-bank .sl-icon-toggle[aria-pressed=false]{opacity:.28}.sl-bank .sl-icon-toggle:focus-visible{outline:2px solid #0b65d8;outline-offset:3px}.sl-bank .sl-inner-control-row>div{margin-left:auto}
 </style>
 <section class="sl-bank" id="sl-bank">
   <div id="sl-accordion" class="sl-accordion"></div>
   <div class="sl-bank-card" id="sl-active-card" hidden>
     
-    <div class="sl-inner-control-row"><strong class="sl-section-name" title="Story" aria-label="Story"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16M4 10h16M4 15h13M4 20h10"/></svg></strong><div id="sl-story-actions"></div></div><div class="story-copy" id="sl-story-text"></div>
+    <div class="sl-inner-control-row"><button type="button" id="sl-story-toggle" class="sl-section-name sl-icon-toggle" title="Show or hide story" aria-label="Show or hide story" aria-pressed="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16M4 10h16M4 15h13M4 20h10"/></svg></button><div id="sl-story-actions"></div></div><div class="story-copy" id="sl-story-text"></div>
     
-    <div class="sl-inner-control-row"><strong class="sl-section-name" title="Table" aria-label="Table"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="1.5"/><path d="M3 10h18M3 15h18M10 4v16M16 4v16"/></svg></strong><div id="sl-table-actions"></div></div><div id="sl-story-table"></div>
-    <div class="sl-inner-control-row sl-recording-heading"><strong class="sl-section-name" title="Recording" aria-label="Recording"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="2.5" width="6" height="12" rx="3"/><path d="M5.5 10.5a6.5 6.5 0 0 0 13 0M12 17v4M8 21h8"/></svg></strong><button type="button" id="sl-recording-toggle" class="sl-visibility" aria-label="Show or hide recording booth" aria-pressed="true"><span class="sl-switch-track" aria-hidden="true"></span></button></div>
+    <div class="sl-inner-control-row"><button type="button" id="sl-table-toggle" class="sl-section-name sl-icon-toggle" title="Show or hide table" aria-label="Show or hide table" aria-pressed="true"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="1.5"/><path d="M3 10h18M3 15h18M10 4v16M16 4v16"/></svg></button><div id="sl-table-actions"></div></div><div id="sl-story-table"></div>
+    <div class="sl-inner-control-row sl-recording-heading"><button type="button" id="sl-recording-icon-toggle" class="sl-section-name sl-icon-toggle" title="Show or hide recorder" aria-label="Show or hide recorder" aria-pressed="true"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="2.5" width="6" height="12" rx="3"/><path d="M5.5 10.5a6.5 6.5 0 0 0 13 0M12 17v4M8 21h8"/></svg></button></div>
     <div class="record-console" id="sl-recording-booth">
       <div class="record-controls" aria-label="Audio recorder">
         <button class="transport record" type="button" id="sl-record" title="Record" aria-label="Record"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/></svg></button>
@@ -171,16 +172,19 @@ const $=id=>document.getElementById(id);
 const body=$("sl-story-text"),table=$("sl-story-table"),activeCard=$("sl-active-card");
 const record=$("sl-record"),recordPause=$("sl-record-pause"),play=$("sl-play"),playStop=$("sl-play-stop"),download=$("sl-download");
 const status=$("sl-status"),audio=$("sl-audio"),canvas=$("sl-level"),ctx=canvas.getContext("2d");
-const recordingToggle=$("sl-recording-toggle"),recordingBooth=$("sl-recording-booth");
+const recordingToggle=$("sl-recording-icon-toggle"),recordingBooth=$("sl-recording-booth");
 let recordingVisible=true;
 recordingToggle.addEventListener("click",()=>{
- if(media?.state==="recording")return;
+ if(media && (media.state==="recording"||media.state==="paused"))return;
  recordingVisible=!recordingVisible;
  recordingBooth.hidden=!recordingVisible;
  recordingToggle.setAttribute("aria-pressed",String(recordingVisible));
 });
 let selected=0,media=null,stream=null,chunks=[],blob=null,blobUrl=null,recordedStory="",audioContext=null,analyser=null,source=null,animation=0;
 const accordion=$("sl-accordion");
+$("sl-story-toggle").addEventListener("click",()=>{if(openIndex<0)return;visibility[selected].exposition=!visibility[selected].exposition;if(!visibility[selected].exposition)stopReading();render()});
+$("sl-table-toggle").addEventListener("click",()=>{if(openIndex<0)return;visibility[selected].table=!visibility[selected].table;if(!visibility[selected].table)stopReading();render()});
+
 const visibility=stories.map(()=>({exposition:true,table:true}));
 let openIndex=-1;
 let speakingButton=null,speakingStop=null,speechPaused=false;
@@ -250,9 +254,9 @@ stories.forEach((story,i)=>{
  return [button,stopButton];
 }
 const storyControls=document.createElement("div");storyControls.className="sl-control-pair";
-storyControls.append(...makeReadControl("Story","exposition"),makeSwitch("Story","exposition"));
+storyControls.append(...makeReadControl("Story","exposition"));
 const tableControls=document.createElement("div");tableControls.className="sl-control-pair";
-tableControls.append(...makeReadControl("Table","table"),makeSwitch("Table","table"));
+tableControls.append(...makeReadControl("Table","table"));
 
  const panel=document.createElement("div");panel.className="sl-accordion-panel";panel.id="sl-panel-"+(i+1);panel.hidden=true;
  header.addEventListener("click",()=>{
@@ -274,6 +278,9 @@ function render(){
  const tbody=document.createElement("tbody");s.cues.filter(r=>r.some(Boolean)).forEach(row=>{let tr=document.createElement("tr");row.forEach(word=>{let td=document.createElement("td");td.textContent=word;tr.append(td)});tbody.append(tr)});t.append(tbody);table.append(t);
 
  body.hidden=!visibility[selected].exposition;table.hidden=!visibility[selected].table;
+ $("sl-story-toggle").setAttribute("aria-pressed",String(visibility[selected].exposition));$("sl-table-toggle").setAttribute("aria-pressed",String(visibility[selected].table));
+ $("sl-story-actions").querySelector(".sl-read-icon")?.classList.toggle("sl-play-faded",!visibility[selected].exposition);
+ $("sl-table-actions").querySelector(".sl-read-icon")?.classList.toggle("sl-play-faded",!visibility[selected].table);
 
 }
 
