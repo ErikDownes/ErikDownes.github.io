@@ -199,7 +199,7 @@ stories.forEach((story,i)=>{
  button.setAttribute("aria-pressed","false");
  button.addEventListener("click",()=>{
   const content=key==="exposition"?story.paragraphs.join(" "):
-   ["Situation, Task, Action, Result.",...story.cues.filter(row=>row.some(Boolean)).map(row=>row.map((cell,j)=>["Situation","Task","Action","Result"][j]+": "+(cell||"")).join(". "))].join(". ");
+   ["Situation","Task","Action","Result"].map((heading,j)=>heading+". "+story.cues.map(row=>row[j]).filter(Boolean).join(". ")).join(". ");
   readAloud(button,content);
  });
  return button;
