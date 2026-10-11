@@ -6,7 +6,8 @@
   const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
   const synth = window.speechSynthesis;
   const hasSpeech = Boolean(synth && typeof SpeechSynthesisUtterance !== 'undefined');
-    const pageGithub = document.querySelector('.doc-toolbar .github-edit-link[href]');
+    const pageRepo = document.querySelector('.doc-toolbar .github-repo-link[href]');
+  const pageGithub = document.querySelector('.doc-toolbar .github-edit-link[href]');
   const pagePrint = document.querySelector('.doc-toolbar [data-action="print"]');
   const EDIT_PREFIX = 'coop-answer-edit:v1:';
   const MOVE_PREFIX = 'coop-section-moves:v1';
@@ -2780,10 +2781,22 @@
      shared rail stays clean; the code remains available to restore later.
      ----------------------------------------------------------------------- */
   const setupFloatingTools = () => {
-    if (!pageGithub && !pagePrint) return;
+    if (!pageRepo && !pageGithub && !pagePrint) return;
     const rail = document.createElement('div');
     rail.id = 'floating-page-tools';
     rail.setAttribute('aria-label', 'Page tools');
+
+    if (pageRepo?.href) {
+      const repo = document.createElement('a');
+      repo.id = 'floating-page-repo';
+      repo.href = pageRepo.href;
+      repo.target = '_blank';
+      repo.rel = 'noopener';
+      repo.textContent = 'GitHub Repo';
+      repo.setAttribute('aria-label', 'Open GitHub repository');
+      rail.appendChild(repo);
+      pageRepo.hidden = true;
+    }
 
     if (pageGithub?.href) {
       const github = document.createElement('a');
@@ -2791,8 +2804,8 @@
       github.href = pageGithub.href;
       github.target = '_blank';
       github.rel = 'noopener';
-      github.textContent = 'Edit · GitHub';
-      github.setAttribute('aria-label', 'Edit this page in GitHub');
+      github.textContent = 'VS Code';
+      github.setAttribute('aria-label', 'Edit this page in VS Code');
       rail.appendChild(github);
       pageGithub.hidden = true;
     }
