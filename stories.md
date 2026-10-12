@@ -144,6 +144,7 @@ body:has(#sl-bank) .doc-body{width:100%!important;min-width:0!important}
 @media(max-width:700px){.sl-bank .story-copy p{font-size:1.17rem!important;line-height:1.6!important}}
 .sl-bank table th{padding:0!important}.sl-bank .sl-cue-heading{display:block;width:100%;height:100%;min-height:42px;text-align:left;border:0!important;border-radius:0!important;padding:9px!important;background:transparent!important;color:inherit!important;font:inherit;font-weight:700;cursor:pointer}.sl-bank .sl-cue-heading:hover,.sl-bank .sl-cue-heading:focus-visible{box-shadow:inset 0 0 0 2px #89bcf2;outline:0}.sl-bank .sl-cue-heading[aria-pressed=true]{text-decoration:underline;text-decoration-color:#93c5fd;text-underline-offset:4px}.sl-bank table td.sl-cue-covered{height:2.1em}
 .sl-bank .sl-progressive p span[hidden]{display:none!important}.sl-bank .sl-progressive p{max-height:none!important;overflow:visible!important;opacity:1!important}.sl-bank table td[role=button]{cursor:pointer}.sl-bank table td.sl-cue-covered:hover{background:rgba(34,97,166,.09)}.sl-bank table td[role=button]:focus-visible{outline:2px solid #0b65d8;outline-offset:-2px}
+.sl-bank .sl-upload-link{font-size:.85rem;color:#0b65d8;text-decoration:underline;white-space:nowrap}.sl-bank .sl-audio-name{font-size:.75rem;color:#64748b;white-space:nowrap}.sl-bank #sl-story-actions .sl-control-pair{flex-wrap:wrap;gap:8px}
 </style>
 <section class="sl-bank" id="sl-bank">
   <div id="sl-accordion" class="sl-accordion"></div>
@@ -339,6 +340,8 @@ const readingModeButton=document.createElement("button");readingModeButton.type=
 readingModeButton.addEventListener("click",()=>{if(readingMode){revealLines();return}stopReading();readingMode=true;readingModeButton.setAttribute("aria-pressed","true");render()});
 storyControls.append(readingModeButton);
 storyControls.append(...makeReadControl("Story","exposition"));
+const uploadLink=document.createElement("a");uploadLink.className="sl-upload-link";uploadLink.href="https://github.com/ErikDownes/ErikDownes.github.io/upload/main/assets/story-audio";uploadLink.target="_blank";uploadLink.rel="noopener noreferrer";uploadLink.textContent="Upload your own";uploadLink.title="On GitHub, upload and commit an MP3 named story-"+String(i+1).padStart(2,"0")+".mp3. This then becomes the public story narration.";storyControls.append(uploadLink);
+const fileHint=document.createElement("small");fileHint.textContent="story-"+String(i+1).padStart(2,"0")+".mp3";fileHint.className="sl-audio-name";storyControls.append(fileHint);
 const tableControls=document.createElement("div");tableControls.className="sl-control-pair";
 tableControls.append(...makeReadControl("Table","table"));
 
