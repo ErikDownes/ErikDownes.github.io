@@ -2,7 +2,7 @@
 layout: doc
 permalink: /stories.html
 handle: Stories
-title: Stories
+title: A Story about 
 nav_order: 2
 top_nav: true
 description: Erik's workplace STAR interview stories, recall tables and repeatable speaking practice.
