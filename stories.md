@@ -244,6 +244,7 @@ body.addEventListener("dblclick",e=>{
 body.addEventListener("wheel",e=>{if(readingMode&&e.deltaY>0){e.preventDefault();advanceReading(false)}},{passive:false});
 
 let speakingButton=null,speakingStop=null,speakingPause=null,speechPaused=false;
+let officialAudio=null,playbackGeneration=0;
 let speechHighlight=null;
 function clearSpeechHighlight(){if(speechHighlight){speechHighlight.classList.remove("sl-speech-word-active");speechHighlight=null}}
 function highlightSpeechWord(charIndex){
@@ -279,6 +280,8 @@ function speechVisual(){
  if(speakingPause){speakingPause.hidden=false;speechIcon(speakingPause,speechPaused?"play":"pause");speakingPause.setAttribute("aria-label",speechPaused?"Resume reading":"Pause reading")}
 }
 function stopReading(){
+ playbackGeneration++;
+ if(officialAudio){officialAudio.pause();officialAudio=null}
  if("speechSynthesis" in window)window.speechSynthesis.cancel();
  clearSpeechHighlight();
  if(speakingButton){speakingButton.hidden=false;speechIcon(speakingButton,"play");speakingButton.setAttribute("aria-pressed","false");speakingButton.title="Play aloud";speakingButton.setAttribute("aria-label","Play aloud")}
@@ -286,7 +289,29 @@ function stopReading(){
  if(speakingPause)speakingPause.hidden=true;
  speakingButton=null;speakingStop=null;speakingPause=null;speechPaused=false;
 }
-function readAloud(button,stopButton,pauseButton,content){
+async function readAloud(button,stopButton,pauseButton,content){
+ if(officialAudio&&speakingButton===button){
+  if(officialAudio.paused){officialAudio.play().catch(()=>stopReading());speechPaused=false}
+  else{officialAudio.pause();speechPaused=true}
+  speechVisual();return;
+ }
+ const isWholeFirstStory=!readingMode&&selected===0&&button.closest("#sl-story-actions");
+ if(isWholeFirstStory&&speakingButton!==button){
+  stopReading();
+  const requestId=playbackGeneration;
+  let available=false;
+  try{available=(await fetch("/assets/story-audio/story-01.mp3",{method:"HEAD",cache:"no-store"})).ok}catch(_error){}
+  if(requestId!==playbackGeneration)return;
+  if(available){
+   const player=new Audio("/assets/story-audio/story-01.mp3");
+   officialAudio=player;speakingButton=button;speakingStop=stopButton;speakingPause=pauseButton;speechPaused=false;
+   speechVisual();
+   player.onended=()=>{if(officialAudio===player)stopReading()};
+   player.onerror=()=>{if(officialAudio===player)stopReading()};
+   player.play().catch(()=>{if(officialAudio===player)stopReading()});
+   return;
+  }
+ }
  if(!("speechSynthesis" in window))return;
  if(speakingButton===button){
   if(speechPaused){window.speechSynthesis.resume();speechPaused=false}
