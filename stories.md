@@ -209,8 +209,12 @@ function speakDripSentence(sentence){
 function advanceReading(wholeParagraph=false){
  if(!readingMode)return;
  const paragraphs=[...body.querySelectorAll("p")];
- const p=paragraphs.find(node=>Number(node.dataset.revealed||0)<node.children.length);
- if(!p)return;
+ let p=paragraphs.find(node=>Number(node.dataset.revealed||0)<node.children.length);
+ if(!p){
+  paragraphs.forEach(node=>{node.dataset.revealed="0";[...node.children].forEach(span=>span.hidden=true)});
+  p=paragraphs[0];
+  if(!p)return;
+ }
  const spans=[...p.children],shown=Number(p.dataset.revealed||0);
  const count=wholeParagraph?spans.length:Math.min(spans.length,shown+1);
  for(let i=shown;i<count;i++)spans[i].hidden=false;
