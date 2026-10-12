@@ -224,6 +224,8 @@ body.addEventListener("dblclick",e=>{
 body.addEventListener("wheel",e=>{if(readingMode&&e.deltaY>0){e.preventDefault();advanceReading(false)}},{passive:false});
 
 let speakingButton=null,speakingStop=null,speechPaused=false;
+let publishedAudio=null;
+const narrationFiles=stories.map((_,i)=>"/assets/story-audio/story-"+String(i+1).padStart(2,"0")+".mp3");
 let speechHighlight=null;
 function clearSpeechHighlight(){if(speechHighlight){speechHighlight.classList.remove("sl-speech-word-active");speechHighlight=null}}
 function highlightSpeechWord(charIndex){
@@ -258,13 +260,31 @@ function speechVisual(){
  if(speakingStop)speakingStop.hidden=false;
 }
 function stopReading(){
+ if(publishedAudio){publishedAudio.pause();publishedAudio=null}
  if("speechSynthesis" in window)window.speechSynthesis.cancel();
  clearSpeechHighlight();
  if(speakingButton){speechIcon(speakingButton,"play");speakingButton.setAttribute("aria-pressed","false");speakingButton.title="Play aloud";speakingButton.setAttribute("aria-label","Play aloud")}
  if(speakingStop)speakingStop.hidden=true;
  speakingButton=null;speakingStop=null;speechPaused=false;
 }
-function readAloud(button,stopButton,content){
+async function readAloud(button,stopButton,content){
+ if(publishedAudio&&speakingButton===button){
+  if(publishedAudio.paused){publishedAudio.play();speechPaused=false}else{publishedAudio.pause();speechPaused=true}
+  speechVisual();return;
+ }
+ const chosen=selected;
+ let found=false;
+ try{found=(await fetch(narrationFiles[chosen],{method:"HEAD"})).ok}catch(e){}
+ if(chosen!==selected)return;
+ if(found){
+  stopReading();
+  const player=new Audio(narrationFiles[chosen]);publishedAudio=player;
+  speakingButton=button;speakingStop=stopButton;speechPaused=false;
+  button.setAttribute("aria-pressed","true");speechVisual();
+  player.onended=()=>{if(publishedAudio===player)stopReading()};
+  player.play().catch(()=>{if(publishedAudio===player)stopReading()});
+  return;
+ }
  if(!("speechSynthesis" in window))return;
  if(speakingButton===button){
   if(speechPaused){window.speechSynthesis.resume();speechPaused=false}
