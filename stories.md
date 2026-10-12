@@ -145,6 +145,7 @@ body:has(#sl-bank) .doc-body{width:100%!important;min-width:0!important}
 .sl-bank table th{padding:0!important}.sl-bank .sl-cue-heading{display:block;width:100%;height:100%;min-height:42px;text-align:left;border:0!important;border-radius:0!important;padding:9px!important;background:transparent!important;color:inherit!important;font:inherit;font-weight:700;cursor:pointer}.sl-bank .sl-cue-heading:hover,.sl-bank .sl-cue-heading:focus-visible{box-shadow:inset 0 0 0 2px #89bcf2;outline:0}.sl-bank .sl-cue-heading[aria-pressed=true]{text-decoration:underline;text-decoration-color:#93c5fd;text-underline-offset:4px}.sl-bank table td.sl-cue-covered{height:2.1em}
 .sl-bank .sl-progressive p span[hidden]{display:none!important}.sl-bank .sl-progressive p{max-height:none!important;overflow:visible!important;opacity:1!important}.sl-bank table td[role=button]{cursor:pointer}.sl-bank table td.sl-cue-covered:hover{background:rgba(34,97,166,.09)}.sl-bank table td[role=button]:focus-visible{outline:2px solid #0b65d8;outline-offset:-2px}
 .sl-bank .sl-speech-pause{width:42px;height:42px;padding:8px;border-radius:50%;border:1.5px solid #0b65d8;color:#0b65d8;background:transparent;display:inline-flex;align-items:center;justify-content:center}.sl-bank .sl-speech-pause svg{width:21px;height:21px}.sl-bank .sl-speech-pause[hidden]{display:none!important}
+.sl-bank #sl-story-actions .sl-reading-mode{width:56px;height:56px;min-width:56px;border-width:2px}.sl-bank #sl-story-actions .sl-reading-mode svg{width:31px;height:31px}.sl-bank .story-copy.sl-progressive .sl-previous-sentence{color:#79838e!important}.sl-bank .story-copy.sl-progressive p span:not([hidden]):not(.sl-previous-sentence){color:inherit}
 </style>
 <section class="sl-bank" id="sl-bank">
   <div id="sl-accordion" class="sl-accordion"></div>
@@ -206,20 +207,21 @@ function speakDripSentence(sentence){
  const playButton=controls?.querySelector(".sl-read-icon");
  const pauseButton=controls?.querySelector(".sl-speech-pause");
  const stopButton=controls?.querySelector(".sl-speech-stop");
- if(playButton&&pauseButton&&stopButton)readAloud(playButton,stopButton,pauseButton,sentence.trim());
+ if(playButton&&pauseButton&&stopButton){stopReading();readAloud(playButton,stopButton,pauseButton,sentence.trim())}
 }
 function advanceReading(){
  if(!readingMode)return;
  const paragraphs=[...body.querySelectorAll("p")];
  let p=paragraphs.find(node=>Number(node.dataset.revealed||0)<node.children.length);
  if(!p){
-  paragraphs.forEach(node=>{node.dataset.revealed="0";[...node.children].forEach(span=>span.hidden=true)});
+  paragraphs.forEach(node=>{node.dataset.revealed="0";[...node.children].forEach(span=>{span.hidden=true;span.classList.remove("sl-previous-sentence")})});
   p=paragraphs[0];
   if(!p)return;
  }
  const spans=[...p.children],shown=Number(p.dataset.revealed||0);
  const count=Math.min(spans.length,shown+1);
- for(let i=shown;i<count;i++)spans[i].hidden=false;
+ body.querySelectorAll("p span:not([hidden])").forEach(span=>span.classList.add("sl-previous-sentence"));
+ for(let i=shown;i<count;i++){spans[i].hidden=false;spans[i].classList.remove("sl-previous-sentence")}
  speakDripSentence(spans.slice(shown,count).map(s=>s.textContent).join(" "));
  p.dataset.revealed=String(count);
  p.style.opacity="1";
@@ -266,7 +268,7 @@ function speechIcon(button,kind){
 }
 function speechVisual(){
  if(!speakingButton)return;
- speechIcon(speakingButton,speechPaused?"play":"pause");
+ speakingButton.hidden=true;
  speakingButton.title=speechPaused?"Resume reading":"Pause reading";
  speakingButton.setAttribute("aria-label",speakingButton.title);
  if(speakingStop)speakingStop.hidden=false;
@@ -275,7 +277,7 @@ function speechVisual(){
 function stopReading(){
  if("speechSynthesis" in window)window.speechSynthesis.cancel();
  clearSpeechHighlight();
- if(speakingButton){speechIcon(speakingButton,"play");speakingButton.setAttribute("aria-pressed","false");speakingButton.title="Play aloud";speakingButton.setAttribute("aria-label","Play aloud")}
+ if(speakingButton){speakingButton.hidden=false;speechIcon(speakingButton,"play");speakingButton.setAttribute("aria-pressed","false");speakingButton.title="Play aloud";speakingButton.setAttribute("aria-label","Play aloud")}
  if(speakingStop)speakingStop.hidden=true;
  if(speakingPause)speakingPause.hidden=true;
  speakingButton=null;speakingStop=null;speakingPause=null;speechPaused=false;
