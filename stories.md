@@ -196,7 +196,7 @@ const cueProgress=stories.map(()=>[0,0,0,0]);
 let openIndex=-1;
 let readingMode=false,readingTimer=null;
 function sentencePieces(value){
- return value.match(/[^.!?]+(?:[.!?]+(?=\\s|$)|$)\\s*/g)||[value];
+ return value.match(/[^.!?]+(?:[.!?]+(?=\s|$)|$)\s*/g)||[value];
 }
 function advanceReading(wholeParagraph=false){
  if(!readingMode)return;
@@ -371,7 +371,7 @@ function render(){
    const revealOne=()=>{
     const rows=[...tbody.children],index=rows.indexOf(tr);
     if(cueColumns[selected][j])return;
-    cueProgress[selected][j]=Math.max(cueProgress[selected][j],index+1);
+    cueProgress[selected][j]=Math.min(rows.length,Math.max(cueProgress[selected][j]+1,index+1));
     for(let k=0;k<cueProgress[selected][j];k++){
      const cell=rows[k].children[j];if(cell){cell.textContent=cell.dataset.cue;cell.classList.remove("sl-cue-covered")}
     }
