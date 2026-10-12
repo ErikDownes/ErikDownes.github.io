@@ -142,6 +142,7 @@ body:has(#sl-bank) .doc-body{width:100%!important;min-width:0!important}
 .sl-bank .sl-reading-mode{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border:1px solid #cad6df;border-radius:50%;background:transparent;color:#53738f;cursor:pointer}.sl-bank .sl-reading-mode svg{height:19px;width:19px}.sl-bank .sl-reading-mode[aria-pressed=true]{background:#0b65d8;color:#fff;border-color:#0b65d8}.sl-bank .story-copy.sl-progressive{cursor:pointer;touch-action:pan-y}.sl-bank .story-copy.sl-progressive p{transition:max-height .18s ease,opacity .18s ease}.sl-bank .sl-speech-word-active{background:#cfe6ff;border-radius:3px;box-decoration-break:clone}
 .sl-bank .story-copy p{font-size:clamp(1.25rem,1.55vw + .7rem,1.75rem)!important;line-height:1.65!important;margin-bottom:1.1em!important}
 @media(max-width:700px){.sl-bank .story-copy p{font-size:1.17rem!important;line-height:1.6!important}}
+.sl-bank table th{padding:0!important}.sl-bank .sl-cue-heading{display:block;width:100%;height:100%;min-height:42px;text-align:left;border:0!important;border-radius:0!important;padding:9px!important;background:transparent!important;color:inherit!important;font:inherit;font-weight:700;cursor:pointer}.sl-bank .sl-cue-heading:hover,.sl-bank .sl-cue-heading:focus-visible{box-shadow:inset 0 0 0 2px #89bcf2;outline:0}.sl-bank .sl-cue-heading[aria-pressed=true]{text-decoration:underline;text-decoration-color:#93c5fd;text-underline-offset:4px}.sl-bank table td.sl-cue-covered{height:2.1em}
 </style>
 <section class="sl-bank" id="sl-bank">
   <div id="sl-accordion" class="sl-accordion"></div>
@@ -189,6 +190,7 @@ $("sl-story-toggle").addEventListener("click",()=>{if(openIndex<0)return;visibil
 $("sl-table-toggle").addEventListener("click",()=>{if(openIndex<0)return;visibility[selected].table=!visibility[selected].table;if(!visibility[selected].table)stopReading();render()});
 
 const visibility=stories.map(()=>({exposition:true,table:true}));
+const cueColumns=stories.map(()=>[false,false,false,false]);
 let openIndex=-1;
 let readingMode=false;
 function revealLines(){
@@ -323,8 +325,28 @@ function render(){
  body.classList.toggle("sl-progressive",readingMode);
  if(readingMode){body.querySelectorAll("p").forEach(p=>{p.style.maxHeight="0px";p.style.overflow="hidden";p.style.opacity=".4"});requestAnimationFrame(revealLines)}
  const t=document.createElement("table"),head=document.createElement("thead"),tr=document.createElement("tr");
- ["Situation","Task","Action","Result"].forEach(h=>{const th=document.createElement("th");th.textContent=h;tr.append(th)});head.append(tr);t.append(head);
- const tbody=document.createElement("tbody");s.cues.filter(r=>r.some(Boolean)).forEach(row=>{let tr=document.createElement("tr");row.forEach(word=>{let td=document.createElement("td");td.textContent=word;tr.append(td)});tbody.append(tr)});t.append(tbody);table.append(t);
+ ["Situation","Task","Action","Result"].forEach((h,j)=>{
+  const th=document.createElement("th");
+  const reveal=document.createElement("button");reveal.type="button";reveal.className="sl-cue-heading";
+  reveal.textContent=h;reveal.setAttribute("aria-pressed",String(cueColumns[selected][j]));
+  reveal.setAttribute("aria-label",(cueColumns[selected][j]?"Hide ":"Reveal ")+h+" cues");
+  reveal.addEventListener("click",()=>{
+   cueColumns[selected][j]=!cueColumns[selected][j];
+   reveal.setAttribute("aria-pressed",String(cueColumns[selected][j]));
+   reveal.setAttribute("aria-label",(cueColumns[selected][j]?"Hide ":"Reveal ")+h+" cues");
+   tbody.querySelectorAll("tr").forEach(row=>{
+    const cell=row.children[j];if(cell){cell.textContent=cueColumns[selected][j]?cell.dataset.cue:"";cell.classList.toggle("sl-cue-covered",!cueColumns[selected][j])}
+   });
+  });
+  th.append(reveal);tr.append(th);
+ });head.append(tr);t.append(head);
+ const tbody=document.createElement("tbody");s.cues.filter(r=>r.some(Boolean)).forEach(row=>{
+  const tr=document.createElement("tr");row.forEach((word,j)=>{
+   const td=document.createElement("td");td.dataset.cue=word;
+   td.textContent=cueColumns[selected][j]?word:"";
+   td.classList.toggle("sl-cue-covered",!cueColumns[selected][j]);tr.append(td)
+  });tbody.append(tr)
+ });t.append(tbody);table.append(t);
 
  body.hidden=!visibility[selected].exposition;table.hidden=!visibility[selected].table;
  $("sl-story-toggle").setAttribute("aria-pressed",String(visibility[selected].exposition));$("sl-table-toggle").setAttribute("aria-pressed",String(visibility[selected].table));
