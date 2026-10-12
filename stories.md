@@ -146,6 +146,7 @@ body:has(#sl-bank) .doc-body{width:100%!important;min-width:0!important}
 .sl-bank .sl-progressive p span[hidden]{display:none!important}.sl-bank .sl-progressive p{max-height:none!important;overflow:visible!important;opacity:1!important}.sl-bank table td[role=button]{cursor:pointer}.sl-bank table td.sl-cue-covered:hover{background:rgba(34,97,166,.09)}.sl-bank table td[role=button]:focus-visible{outline:2px solid #0b65d8;outline-offset:-2px}
 .sl-bank .sl-speech-pause{width:42px;height:42px;padding:8px;border-radius:50%;border:1.5px solid #0b65d8;color:#0b65d8;background:transparent;display:inline-flex;align-items:center;justify-content:center}.sl-bank .sl-speech-pause svg{width:21px;height:21px}.sl-bank .sl-speech-pause[hidden]{display:none!important}
 .sl-bank #sl-story-actions .sl-reading-mode{width:56px;height:56px;min-width:56px;border-width:2px}.sl-bank #sl-story-actions .sl-reading-mode svg{width:31px;height:31px}.sl-bank .story-copy.sl-progressive .sl-previous-sentence{color:#79838e!important}.sl-bank .story-copy.sl-progressive p span:not([hidden]):not(.sl-previous-sentence){color:inherit}
+.sl-bank .sl-accordion-item.sl-prior-story>.sl-accordion-header{background:#eef0f2!important;color:#8a929b!important;box-shadow:none}.sl-bank .sl-accordion-item.sl-prior-story{border-color:#e2e5e9;box-shadow:none}.sl-bank .sl-accordion-item.sl-prior-story>.sl-accordion-header:hover{background:#e0e5ea!important;color:#58636f!important}
 </style>
 <section class="sl-bank" id="sl-bank">
   <div id="sl-accordion" class="sl-accordion"></div>
@@ -196,6 +197,9 @@ const visibility=stories.map(()=>({exposition:true,table:true}));
 const cueColumns=stories.map(()=>[true,true,true,true]);
 const cueProgress=stories.map(s=>[s.cues.length,s.cues.length,s.cues.length,s.cues.length]);
 let openIndex=-1;
+function updatePriorStoryAppearance(){
+ accordion.querySelectorAll(".sl-accordion-item").forEach((item,index)=>item.classList.toggle("sl-prior-story",openIndex>=0&&index<openIndex));
+}
 let readingMode=false,dripVoice=true,readingTimer=null;
 let eyeModeButton=null;
 function sentencePieces(value){
@@ -355,10 +359,10 @@ tableControls.append(...makeReadControl("Table","table"));
  header.addEventListener("click",()=>{
   stopReading();
   if(media?.state==="recording"){status.textContent="Stop the current recording before switching stories.";return}
-  if(openIndex===i){panel.hidden=true;header.setAttribute("aria-expanded","false");activeCard.hidden=true;openIndex=-1;return}
+  if(openIndex===i){panel.hidden=true;header.setAttribute("aria-expanded","false");activeCard.hidden=true;openIndex=-1;updatePriorStoryAppearance();return}
   accordion.querySelectorAll(".sl-accordion-panel").forEach(x=>x.hidden=true);
   accordion.querySelectorAll(".sl-accordion-header").forEach(x=>x.setAttribute("aria-expanded","false"));
-  selected=i;openIndex=i;readingMode=false;panel.hidden=false;header.setAttribute("aria-expanded","true");
+  selected=i;openIndex=i;readingMode=false;updatePriorStoryAppearance();panel.hidden=false;header.setAttribute("aria-expanded","true");
   activeCard.hidden=false;panel.append(activeCard);$("sl-story-actions").replaceChildren(storyControls);$("sl-table-actions").replaceChildren(tableControls);readingModeButton.setAttribute("aria-pressed","false");eyeModeButton.setAttribute("aria-pressed","false");render();
  });
  item.append(header,panel);accordion.append(item);
