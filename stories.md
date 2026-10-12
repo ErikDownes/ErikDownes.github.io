@@ -195,18 +195,20 @@ const visibility=stories.map(()=>({exposition:true,table:true}));
 const cueColumns=stories.map(()=>[true,true,true,true]);
 const cueProgress=stories.map(s=>[s.cues.length,s.cues.length,s.cues.length,s.cues.length]);
 let openIndex=-1;
-let readingMode=false,readingTimer=null;
+let readingMode=false,dripVoice=true,readingTimer=null;
+let eyeModeButton=null;
 function sentencePieces(value){
  return value.match(/[^.!?]+(?:[.!?]+(?=\s|$)|$)\s*/g)||[value];
 }
 function speakDripSentence(sentence){
- if(!("speechSynthesis" in window))return;
- stopReading();
- const utterance=new SpeechSynthesisUtterance(sentence.trim());
- utterance.lang="en-IE";utterance.rate=0.95;
- window.speechSynthesis.speak(utterance);
+ if(!dripVoice)return;
+ const controls=document.getElementById("sl-story-actions");
+ const playButton=controls?.querySelector(".sl-read-icon");
+ const pauseButton=controls?.querySelector(".sl-speech-pause");
+ const stopButton=controls?.querySelector(".sl-speech-stop");
+ if(playButton&&pauseButton&&stopButton)readAloud(playButton,stopButton,pauseButton,sentence.trim());
 }
-function advanceReading(wholeParagraph=false){
+function advanceReading(){
  if(!readingMode)return;
  const paragraphs=[...body.querySelectorAll("p")];
  let p=paragraphs.find(node=>Number(node.dataset.revealed||0)<node.children.length);
@@ -216,7 +218,7 @@ function advanceReading(wholeParagraph=false){
   if(!p)return;
  }
  const spans=[...p.children],shown=Number(p.dataset.revealed||0);
- const count=wholeParagraph?spans.length:Math.min(spans.length,shown+1);
+ const count=Math.min(spans.length,shown+1);
  for(let i=shown;i<count;i++)spans[i].hidden=false;
  speakDripSentence(spans.slice(shown,count).map(s=>s.textContent).join(" "));
  p.dataset.revealed=String(count);
@@ -231,7 +233,7 @@ body.addEventListener("click",e=>{
 body.addEventListener("dblclick",e=>{
  if(!readingMode)return;
  if(readingTimer){clearTimeout(readingTimer);readingTimer=null}
- advanceReading(true);
+ advanceReading(false);
 });
 body.addEventListener("wheel",e=>{if(readingMode&&e.deltaY>0){e.preventDefault();advanceReading(false)}},{passive:false});
 
@@ -331,8 +333,18 @@ stories.forEach((story,i)=>{
 }
 const storyControls=document.createElement("div");storyControls.className="sl-control-pair";
 const readingModeButton=document.createElement("button");readingModeButton.type="button";readingModeButton.className="sl-reading-mode";readingModeButton.title="Reveal next line";readingModeButton.setAttribute("aria-label","Reveal next line");readingModeButton.setAttribute("aria-pressed","false");readingModeButton.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 11h16M4 16h11M4 21h6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>';
-readingModeButton.addEventListener("click",()=>{if(readingMode){revealLines();return}stopReading();readingMode=true;readingModeButton.setAttribute("aria-pressed","true");render();revealLines()});
-storyControls.append(readingModeButton);
+readingModeButton.title="Speak next sentence";readingModeButton.setAttribute("aria-label","Speak next sentence");
+function setDripMode(withVoice){
+ if(readingMode&&dripVoice===withVoice){revealLines();return}
+ stopReading();readingMode=true;dripVoice=withVoice;
+ readingModeButton.setAttribute("aria-pressed",String(withVoice));
+ eyeModeButton.setAttribute("aria-pressed",String(!withVoice));
+ render();revealLines();
+}
+readingModeButton.addEventListener("click",()=>setDripMode(true));
+eyeModeButton=document.createElement("button");eyeModeButton.type="button";eyeModeButton.className="sl-reading-mode";eyeModeButton.title="Reveal next sentence silently";eyeModeButton.setAttribute("aria-label","Reveal next sentence silently");eyeModeButton.setAttribute("aria-pressed","false");eyeModeButton.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12Z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/></svg>';
+eyeModeButton.addEventListener("click",()=>setDripMode(false));
+storyControls.append(readingModeButton,eyeModeButton);
 storyControls.append(...makeReadControl("Story","exposition"));
 const tableControls=document.createElement("div");tableControls.className="sl-control-pair";
 tableControls.append(...makeReadControl("Table","table"));
@@ -345,7 +357,7 @@ tableControls.append(...makeReadControl("Table","table"));
   accordion.querySelectorAll(".sl-accordion-panel").forEach(x=>x.hidden=true);
   accordion.querySelectorAll(".sl-accordion-header").forEach(x=>x.setAttribute("aria-expanded","false"));
   selected=i;openIndex=i;readingMode=false;panel.hidden=false;header.setAttribute("aria-expanded","true");
-  activeCard.hidden=false;panel.append(activeCard);$("sl-story-actions").replaceChildren(storyControls);$("sl-table-actions").replaceChildren(tableControls);readingModeButton.setAttribute("aria-pressed","false");render();
+  activeCard.hidden=false;panel.append(activeCard);$("sl-story-actions").replaceChildren(storyControls);$("sl-table-actions").replaceChildren(tableControls);readingModeButton.setAttribute("aria-pressed","false");eyeModeButton.setAttribute("aria-pressed","false");render();
  });
  item.append(header,panel);accordion.append(item);
 });
@@ -360,7 +372,7 @@ function render(){
   body.append(p);
  });
  body.classList.toggle("sl-progressive",readingMode);
- if(readingMode)requestAnimationFrame(revealLines);
+
  const t=document.createElement("table"),head=document.createElement("thead"),tr=document.createElement("tr");
  ["Situation","Task","Action","Result"].forEach((h,j)=>{
   const th=document.createElement("th");
