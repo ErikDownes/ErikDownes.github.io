@@ -175,6 +175,23 @@
       sync();
     });
   </script>
+<style>
+    /* Explicit themes override device colour preference on every page. */
+    html[data-theme=light] .sl-bank .sl-accordion-item,
+    html[data-theme=light] .sl-bank .sl-bank-card,
+    html[data-theme=light] .sl-bank .sl-accordion-panel{background:#fff!important;color:#172c40!important;border-color:#dbe5ec!important}
+    html[data-theme=light] .sl-bank .sl-accordion-header{background:#fff!important;color:#193a56!important}
+    html[data-theme=light] .sl-bank .sl-accordion-header[aria-expanded=true]{background:#eff5fb!important}
+    html[data-theme=light] .sl-bank .story-copy p{color:#172c40!important}
+    html[data-theme=dark] .topnav,html[data-theme=dark] .navitem,
+    html[data-theme=dark] .topnav .navlabel{background:#182535!important;color:#e2eaf4!important}
+    html[data-theme=dark] .navitem.is-current .navlabel,
+    html[data-theme=dark] .navitem.is-open .navlabel{background:#29435f!important;color:#fff!important}
+    html[data-theme=dark] .mobile-nav-toggle{background:#24374c!important;color:#e2eaf4!important;border-color:#526a82!important}
+    html[data-theme=dark] .project-card,html[data-theme=dark] .project-index .project-card{background:#203248!important;border-color:#4b5d72!important}
+    html[data-theme=dark] .project-card strong,html[data-theme=dark] .project-card span{color:#e2eaf4!important}
+    html[data-theme=dark] .doc-body input,html[data-theme=dark] .doc-body select,html[data-theme=dark] .doc-body textarea{background:#24364a;color:#eef3f9;border-color:#64778b}
+  </style>
 </head>
 <body class="{% if page.study_mode %}study-mode{% endif %}{% if page.profile_mode %} profile-mode{% endif %}{% if page.public_mode %} public-mode{% endif %}{% if page.interview_mode %} interview-mode{% endif %}{% if page.interview_hub %} interview-hub{% endif %}{% if page.cv_mode %} cv-mode{% endif %}{% if page.hse_mode %} hse-mode{% endif %}{% if page.finmath_current %} finmath-current-mode{% endif %}{% if page.path == 'coursework.md' %} education-mode{% endif %}">
   <header class="topbar">
