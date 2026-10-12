@@ -28,6 +28,12 @@
   <meta name="google-site-verification" content="V_Uu7628puU2aGX56QFvy7PJfdNDdHTXZnVK_BZBBbU" />
   {% endif %}
   <meta charset="utf-8">
+  <script>
+    (function(){
+      var saved;try{saved=localStorage.getItem('erik-theme')}catch(e){}
+      document.documentElement.dataset.theme=saved==='dark'||saved==='light'?saved:(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');
+    })();
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   {% assign seo_description = page.description | default: site.description %}
   {% if page.profile_mode and is_erik_primary %}
@@ -132,6 +138,43 @@
       .projects-shell .projects-sidebar nav a{white-space:nowrap}
     }
   </style>
+<style>
+    #site-theme-toggle{display:inline-flex;align-items:center;justify-content:center;flex:none;width:39px;height:39px;margin-left:10px;border:1px solid #c9d8e6;border-radius:50%;background:transparent;color:#2261a6;cursor:pointer}
+    #site-theme-toggle svg{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+    #site-theme-toggle .theme-sun{display:none}
+    html[data-theme=dark] #site-theme-toggle .theme-moon{display:none}
+    html[data-theme=dark] #site-theme-toggle .theme-sun{display:block}
+    html[data-theme=dark]{color-scheme:dark}
+    html[data-theme=light]{color-scheme:light}
+    html[data-theme=dark] body{background:#111924!important;color:#e2eaf4!important}
+    html[data-theme=dark] .topbar,html[data-theme=dark] .page-stage,html[data-theme=dark] .doc-paper,html[data-theme=dark] .doc-body,html[data-theme=dark] .interview-shell{background-color:#111924;color:#e2eaf4}
+    html[data-theme=dark] .topbar{background:#182535!important;border-color:#39485a!important}
+    html[data-theme=dark] .topbar a,html[data-theme=dark] .topnav a,html[data-theme=dark] .doc-paper h1,html[data-theme=dark] .doc-paper h2,html[data-theme=dark] .doc-paper h3,html[data-theme=dark] .doc-paper p,html[data-theme=dark] .doc-body li{color:#e2eaf4}
+    html[data-theme=dark] .interview-domain-sidebar,html[data-theme=dark] .cv-section-sidebar,html[data-theme=dark] .project-card,html[data-theme=dark] .doc-toolbar,html[data-theme=dark] .module-toc{background:#1d2b3b!important;color:#e2eaf4!important;border-color:#3d4d60!important}
+    html[data-theme=dark] .interview-domain-sidebar a,html[data-theme=dark] .cv-section-sidebar a,html[data-theme=dark] .project-card strong,html[data-theme=dark] .project-card span{color:#dce7f3!important}
+    html[data-theme=dark] .interview-domain-sidebar a.is-active,html[data-theme=dark] .cv-section-sidebar a.is-active{background:#294b70!important;color:#fff!important}
+    html[data-theme=dark] .sl-bank{color:#e2eaf4!important}
+    html[data-theme=dark] .sl-bank .sl-accordion-item,html[data-theme=dark] .sl-bank .sl-bank-card,html[data-theme=dark] .sl-bank .sl-accordion-header,html[data-theme=dark] .sl-bank .sl-accordion-panel{background:#1c2b3b!important;color:#e2eaf4!important;border-color:#3a4d60!important}
+    html[data-theme=dark] .sl-bank .sl-accordion-header:hover,html[data-theme=dark] .sl-bank .sl-accordion-header[aria-expanded=true]{background:#2a4056!important;color:#fff!important}
+    html[data-theme=light] .sl-bank .sl-accordion-header{background:#fff!important;color:#193a56!important}
+    html[data-theme=light] .sl-bank .sl-accordion-header[aria-expanded=true]{background:#eff5fb!important}
+    html[data-theme=dark] .sl-bank .story-copy p,html[data-theme=dark] .sl-bank .sl-section-name{color:#e2eaf4!important}
+    html[data-theme=dark] .sl-bank table th{background:#344a60!important;color:#fff!important}
+    html[data-theme=dark] .sl-bank table td{background:#243447!important;color:#e2eaf4!important;border-color:#40536a!important}
+    html[data-theme=dark] .sl-bank button:not(.sl-read-icon):not(.sl-speech-stop):not(.sl-icon-toggle):not(.sl-record-pause):not(.sl-play-stop):not(.record):not(.sl-visibility),html[data-theme=dark] .sl-bank .sl-mic-meter{background:#25394e;color:#e2eaf4;border-color:#50647a}
+    html[data-theme=dark] .sl-bank .sl-read-icon,html[data-theme=dark] .sl-bank .sl-speech-stop{background:#1d2e43;color:#70b5ff;border-color:#348de7}
+    html[data-theme=dark] .sl-bank .sl-read-icon[aria-pressed=true]{background:#0b65d8;color:white}
+    html[data-theme=dark] #site-theme-toggle{color:#a9d4ff;border-color:#627b95}
+    @media(max-width:700px){#site-theme-toggle{margin-left:4px;width:35px;height:35px}}
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded',function(){
+      var b=document.getElementById('site-theme-toggle');if(!b)return;
+      function sync(){var dark=document.documentElement.dataset.theme==='dark';b.setAttribute('aria-pressed',String(dark));b.setAttribute('aria-label',dark?'Switch to day mode':'Switch to night mode');b.title=dark?'Switch to day mode':'Switch to night mode'}
+      b.addEventListener('click',function(){var next=document.documentElement.dataset.theme==='dark'?'light':'dark';document.documentElement.dataset.theme=next;try{localStorage.setItem('erik-theme',next)}catch(e){}sync()});
+      sync();
+    });
+  </script>
 </head>
 <body class="{% if page.study_mode %}study-mode{% endif %}{% if page.profile_mode %} profile-mode{% endif %}{% if page.public_mode %} public-mode{% endif %}{% if page.interview_mode %} interview-mode{% endif %}{% if page.interview_hub %} interview-hub{% endif %}{% if page.cv_mode %} cv-mode{% endif %}{% if page.hse_mode %} hse-mode{% endif %}{% if page.finmath_current %} finmath-current-mode{% endif %}{% if page.path == 'coursework.md' %} education-mode{% endif %}">
   <header class="topbar">
@@ -147,6 +190,7 @@
       <div class="navitem"><a class="navlabel" href="{{ '/stories.html' | relative_url }}"><span>Stories</span></a></div>
       <div class="navitem"><a class="navlabel" href="{{ '/projects.html' | relative_url }}"><span>Projects</span></a></div>
     </nav>
+    <button id="site-theme-toggle" type="button" title="Switch day/night mode" aria-label="Switch day/night mode" aria-pressed="false"><svg class="theme-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 15.6A8.8 8.8 0 0 1 8.4 3.5 9 9 0 1 0 20.5 15.6Z"/></svg><svg class="theme-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg></button>
   </header>
 
 
