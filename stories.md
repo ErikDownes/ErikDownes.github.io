@@ -144,7 +144,7 @@ body:has(#sl-bank) .doc-body{width:100%!important;min-width:0!important}
 @media(max-width:700px){.sl-bank .story-copy p{font-size:1.17rem!important;line-height:1.6!important}}
 .sl-bank table th{padding:0!important}.sl-bank .sl-cue-heading{display:block;width:100%;height:100%;min-height:42px;text-align:left;border:0!important;border-radius:0!important;padding:9px!important;background:transparent!important;color:inherit!important;font:inherit;font-weight:700;cursor:pointer}.sl-bank .sl-cue-heading:hover,.sl-bank .sl-cue-heading:focus-visible{box-shadow:inset 0 0 0 2px #89bcf2;outline:0}.sl-bank .sl-cue-heading[aria-pressed=true]{text-decoration:underline;text-decoration-color:#93c5fd;text-underline-offset:4px}.sl-bank table td.sl-cue-covered{height:2.1em}
 .sl-bank .sl-progressive p span[hidden]{display:none!important}.sl-bank .sl-progressive p{max-height:none!important;overflow:visible!important;opacity:1!important}.sl-bank table td[role=button]{cursor:pointer}.sl-bank table td.sl-cue-covered:hover{background:rgba(34,97,166,.09)}.sl-bank table td[role=button]:focus-visible{outline:2px solid #0b65d8;outline-offset:-2px}
-.sl-bank .sl-speech-pause{padding:5px 10px;border-radius:7px;border:1px solid #0b65d8;color:#0b65d8;background:transparent;font-size:.8rem;font-weight:600}
+.sl-bank .sl-speech-pause{width:42px;height:42px;padding:8px;border-radius:50%;border:1.5px solid #0b65d8;color:#0b65d8;background:transparent;display:inline-flex;align-items:center;justify-content:center}.sl-bank .sl-speech-pause svg{width:21px;height:21px}.sl-bank .sl-speech-pause[hidden]{display:none!important}
 </style>
 <section class="sl-bank" id="sl-bank">
   <div id="sl-accordion" class="sl-accordion"></div>
@@ -199,6 +199,13 @@ let readingMode=false,readingTimer=null;
 function sentencePieces(value){
  return value.match(/[^.!?]+(?:[.!?]+(?=\s|$)|$)\s*/g)||[value];
 }
+function speakDripSentence(sentence){
+ if(!("speechSynthesis" in window))return;
+ stopReading();
+ const utterance=new SpeechSynthesisUtterance(sentence.trim());
+ utterance.lang="en-IE";utterance.rate=0.95;
+ window.speechSynthesis.speak(utterance);
+}
 function advanceReading(wholeParagraph=false){
  if(!readingMode)return;
  const paragraphs=[...body.querySelectorAll("p")];
@@ -207,6 +214,7 @@ function advanceReading(wholeParagraph=false){
  const spans=[...p.children],shown=Number(p.dataset.revealed||0);
  const count=wholeParagraph?spans.length:Math.min(spans.length,shown+1);
  for(let i=shown;i<count;i++)spans[i].hidden=false;
+ speakDripSentence(spans.slice(shown,count).map(s=>s.textContent).join(" "));
  p.dataset.revealed=String(count);
  p.style.opacity="1";
 }
@@ -256,7 +264,7 @@ function speechVisual(){
  speakingButton.title=speechPaused?"Resume reading":"Pause reading";
  speakingButton.setAttribute("aria-label",speakingButton.title);
  if(speakingStop)speakingStop.hidden=false;
- if(speakingPause){speakingPause.hidden=false;speakingPause.textContent=speechPaused?"Resume":"Pause"}
+ if(speakingPause){speakingPause.hidden=false;speechIcon(speakingPause,speechPaused?"play":"pause");speakingPause.setAttribute("aria-label",speechPaused?"Resume reading":"Pause reading")}
 }
 function stopReading(){
  if("speechSynthesis" in window)window.speechSynthesis.cancel();
@@ -305,7 +313,7 @@ stories.forEach((story,i)=>{
  function makeReadControl(label,key){
  const button=document.createElement("button");button.type="button";button.className="sl-read-icon";
  const stopButton=document.createElement("button");stopButton.type="button";stopButton.className="sl-speech-stop";stopButton.hidden=true;stopButton.title="Stop reading";stopButton.setAttribute("aria-label","Stop reading");speechIcon(stopButton,"stop");stopButton.addEventListener("click",stopReading);
- const pauseButton=document.createElement("button");pauseButton.type="button";pauseButton.className="sl-speech-pause";pauseButton.hidden=true;pauseButton.textContent="Pause";pauseButton.title="Pause or resume reading";pauseButton.addEventListener("click",()=>{if(speakingButton!==button)return;if(speechPaused){window.speechSynthesis.resume();speechPaused=false}else{window.speechSynthesis.pause();speechPaused=true}speechVisual()});
+ const pauseButton=document.createElement("button");pauseButton.type="button";pauseButton.className="sl-speech-pause";pauseButton.hidden=true;speechIcon(pauseButton,"pause");pauseButton.setAttribute("aria-label","Pause reading");pauseButton.title="Pause or resume reading";pauseButton.addEventListener("click",()=>{if(speakingButton!==button)return;if(speechPaused){window.speechSynthesis.resume();speechPaused=false}else{window.speechSynthesis.pause();speechPaused=true}speechVisual()});
  speechIcon(button,"play");button.title="Play "+label+" aloud";
  button.setAttribute("aria-label","Play "+label+" aloud for "+story.name);
  button.setAttribute("aria-pressed","false");
@@ -319,7 +327,7 @@ stories.forEach((story,i)=>{
 }
 const storyControls=document.createElement("div");storyControls.className="sl-control-pair";
 const readingModeButton=document.createElement("button");readingModeButton.type="button";readingModeButton.className="sl-reading-mode";readingModeButton.title="Reveal next line";readingModeButton.setAttribute("aria-label","Reveal next line");readingModeButton.setAttribute("aria-pressed","false");readingModeButton.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 11h16M4 16h11M4 21h6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>';
-readingModeButton.addEventListener("click",()=>{if(readingMode){revealLines();return}stopReading();readingMode=true;readingModeButton.setAttribute("aria-pressed","true");render()});
+readingModeButton.addEventListener("click",()=>{if(readingMode){revealLines();return}stopReading();readingMode=true;readingModeButton.setAttribute("aria-pressed","true");render();revealLines()});
 storyControls.append(readingModeButton);
 storyControls.append(...makeReadControl("Story","exposition"));
 const tableControls=document.createElement("div");tableControls.className="sl-control-pair";
