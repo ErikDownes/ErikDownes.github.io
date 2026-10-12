@@ -149,9 +149,9 @@ body:has(#sl-bank) .doc-body{width:100%!important;min-width:0!important}
   <div id="sl-accordion" class="sl-accordion"></div>
   <div class="sl-bank-card" id="sl-active-card" hidden>
     
+    <div class="sl-inner-control-row"><button type="button" id="sl-table-toggle" class="sl-section-name sl-icon-toggle" title="Show or hide table" aria-label="Show or hide table" aria-pressed="true"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="1.5"/><path d="M3 10h18M3 15h18M10 4v16M16 4v16"/></svg></button><div id="sl-table-actions"></div></div><div id="sl-story-table"></div>
     <div class="sl-inner-control-row"><button type="button" id="sl-story-toggle" class="sl-section-name sl-icon-toggle" title="Show or hide story" aria-label="Show or hide story" aria-pressed="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16M4 10h16M4 15h13M4 20h10"/></svg></button><div id="sl-story-actions"></div></div><div class="story-copy" id="sl-story-text"></div>
     
-    <div class="sl-inner-control-row"><button type="button" id="sl-table-toggle" class="sl-section-name sl-icon-toggle" title="Show or hide table" aria-label="Show or hide table" aria-pressed="true"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="1.5"/><path d="M3 10h18M3 15h18M10 4v16M16 4v16"/></svg></button><div id="sl-table-actions"></div></div><div id="sl-story-table"></div>
     <div class="sl-inner-control-row sl-recording-heading"><button type="button" id="sl-recording-icon-toggle" class="sl-section-name sl-icon-toggle" title="Show or hide recorder" aria-label="Show or hide recorder" aria-pressed="true"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="2.5" width="6" height="12" rx="3"/><path d="M5.5 10.5a6.5 6.5 0 0 0 13 0M12 17v4M8 21h8"/></svg></button></div>
     <div class="record-console" id="sl-recording-booth">
       <div class="record-controls" aria-label="Audio recorder">
@@ -192,8 +192,8 @@ $("sl-story-toggle").addEventListener("click",()=>{if(openIndex<0)return;visibil
 $("sl-table-toggle").addEventListener("click",()=>{if(openIndex<0)return;visibility[selected].table=!visibility[selected].table;if(!visibility[selected].table)stopReading();render()});
 
 const visibility=stories.map(()=>({exposition:true,table:true}));
-const cueColumns=stories.map(()=>[false,false,false,false]);
-const cueProgress=stories.map(()=>[0,0,0,0]);
+const cueColumns=stories.map(()=>[true,true,true,true]);
+const cueProgress=stories.map(s=>[s.cues.length,s.cues.length,s.cues.length,s.cues.length]);
 let openIndex=-1;
 let readingMode=false,readingTimer=null;
 function sentencePieces(value){
