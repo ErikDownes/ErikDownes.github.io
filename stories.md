@@ -140,6 +140,8 @@ body:has(#sl-bank) .doc-body{width:100%!important;min-width:0!important}
 .sl-bank .sl-inner-control-row .sl-speech-stop{width:42px;height:42px;min-width:42px;display:inline-flex;align-items:center;justify-content:center;border:1.5px solid #0b65d8;border-radius:50%;color:#0b65d8;background:transparent;padding:0}.sl-bank .sl-speech-stop svg{width:22px;height:22px}.sl-bank .sl-speech-stop[hidden]{display:none!important}.sl-bank .sl-inner-control-row .sl-read-icon[aria-pressed=true]{background:#0b65d8;color:#fff;border-color:#0b65d8}.sl-bank .sl-record-pause svg circle{fill:#fff;stroke:#c32031;stroke-width:3.8}
 .sl-bank .sl-icon-toggle{display:inline-flex;align-items:center;justify-content:center;border:0;background:transparent;padding:4px;border-radius:7px;cursor:pointer;color:#215b90}.sl-bank .sl-icon-toggle svg{color:inherit}.sl-bank .sl-icon-toggle[aria-pressed=false]{opacity:.28}.sl-bank .sl-icon-toggle:focus-visible{outline:2px solid #0b65d8;outline-offset:3px}.sl-bank .sl-inner-control-row>div{margin-left:auto}
 .sl-bank .sl-reading-mode{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border:1px solid #cad6df;border-radius:50%;background:transparent;color:#53738f;cursor:pointer}.sl-bank .sl-reading-mode svg{height:19px;width:19px}.sl-bank .sl-reading-mode[aria-pressed=true]{background:#0b65d8;color:#fff;border-color:#0b65d8}.sl-bank .story-copy.sl-progressive{cursor:pointer;touch-action:pan-y}.sl-bank .story-copy.sl-progressive p{transition:max-height .18s ease,opacity .18s ease}.sl-bank .sl-speech-word-active{background:#cfe6ff;border-radius:3px;box-decoration-break:clone}
+.sl-bank .story-copy p{font-size:clamp(1.25rem,1.55vw + .7rem,1.75rem)!important;line-height:1.65!important;margin-bottom:1.1em!important}
+@media(max-width:700px){.sl-bank .story-copy p{font-size:1.17rem!important;line-height:1.6!important}}
 </style>
 <section class="sl-bank" id="sl-bank">
   <div id="sl-accordion" class="sl-accordion"></div>
@@ -296,8 +298,8 @@ stories.forEach((story,i)=>{
  return [button,stopButton];
 }
 const storyControls=document.createElement("div");storyControls.className="sl-control-pair";
-const readingModeButton=document.createElement("button");readingModeButton.type="button";readingModeButton.className="sl-reading-mode";readingModeButton.title="Progressive reading mode";readingModeButton.setAttribute("aria-label","Progressive reading mode");readingModeButton.setAttribute("aria-pressed","false");readingModeButton.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 11h16M4 16h11M4 21h6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>';
-readingModeButton.addEventListener("click",()=>{stopReading();readingMode=!readingMode;readingModeButton.setAttribute("aria-pressed",String(readingMode));render()});
+const readingModeButton=document.createElement("button");readingModeButton.type="button";readingModeButton.className="sl-reading-mode";readingModeButton.title="Reveal next line";readingModeButton.setAttribute("aria-label","Reveal next line");readingModeButton.setAttribute("aria-pressed","false");readingModeButton.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 11h16M4 16h11M4 21h6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>';
+readingModeButton.addEventListener("click",()=>{if(readingMode){revealLines();return}stopReading();readingMode=true;readingModeButton.setAttribute("aria-pressed","true");render()});
 storyControls.append(readingModeButton);
 storyControls.append(...makeReadControl("Story","exposition"));
 const tableControls=document.createElement("div");tableControls.className="sl-control-pair";
