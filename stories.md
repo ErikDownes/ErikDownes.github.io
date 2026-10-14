@@ -194,10 +194,10 @@ $("sl-story-toggle").addEventListener("click",()=>{if(openIndex<0)return;visibil
 $("sl-table-toggle").addEventListener("click",()=>{if(openIndex<0)return;visibility[selected].table=!visibility[selected].table;if(!visibility[selected].table)stopReading();render()});
 
 const visibility=stories.map(()=>({exposition:true,table:true}));
-const cueColumns=stories.map(story=>story.headings.map(()=>true));
-const cueHeadingVisible=stories.map(story=>story.headings.map(()=>true));
-const cueProgress=stories.map(s=>s.headings.map(()=>s.cues.length));
-const cueHiddenCells=stories.map(story=>story.headings.map(()=>new Set()));
+const cueColumns=stories.map(()=>[true,true,true,true]);
+const cueHeadingVisible=stories.map(()=>[true,true,true,true]);
+const cueProgress=stories.map(s=>[s.cues.length,s.cues.length,s.cues.length,s.cues.length]);
+const cueHiddenCells=stories.map(()=>Array.from({length:4},()=>new Set()));
 let openIndex=-1;
 function updatePriorStoryAppearance(){
  accordion.querySelectorAll(".sl-accordion-item").forEach((item,index)=>item.classList.toggle("sl-prior-story",openIndex>=0&&index<openIndex));
@@ -436,7 +436,7 @@ function render(){
  });head.append(tr);t.append(head);
  const tbody=document.createElement("tbody");s.cues.filter(r=>r.some(Boolean)).forEach(row=>{
   const tr=document.createElement("tr");row.forEach((word,j)=>{
-   const td=document.createElement("td");td.dataset.cue=word;td.tabIndex=0;td.setAttribute("role","button");td.setAttribute("aria-label","Reveal next "+s.headings[j]+" cue");
+   const td=document.createElement("td");td.dataset.cue=word;td.tabIndex=0;td.setAttribute("role","button");td.setAttribute("aria-label","Reveal next "+["Situation","Task","Action","Result"][j]+" cue");
    const rowIndex=tbody.children.length;
    const visible=(cueColumns[selected][j] || rowIndex<cueProgress[selected][j]) && !cueHiddenCells[selected][j].has(rowIndex);
    td.textContent=visible?word:"";
