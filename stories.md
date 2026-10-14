@@ -194,8 +194,9 @@ $("sl-story-toggle").addEventListener("click",()=>{if(openIndex<0)return;visibil
 $("sl-table-toggle").addEventListener("click",()=>{if(openIndex<0)return;visibility[selected].table=!visibility[selected].table;if(!visibility[selected].table)stopReading();render()});
 
 const visibility=stories.map(()=>({exposition:true,table:true}));
-const cueColumns=stories.map(()=>[true,true,true,true]);
-const cueProgress=stories.map(s=>[s.cues.length,s.cues.length,s.cues.length,s.cues.length]);
+const cueColumns=stories.map(story=>story.headings.map(()=>true));
+const cueHeadingVisible=stories.map(story=>story.headings.map(()=>true));
+const cueProgress=stories.map(s=>s.headings.map(()=>s.cues.length));
 let openIndex=-1;
 function updatePriorStoryAppearance(){
  accordion.querySelectorAll(".sl-accordion-item").forEach((item,index)=>item.classList.toggle("sl-prior-story",openIndex>=0&&index<openIndex));
@@ -408,22 +409,32 @@ function render(){
  ["Situation","Task","Action","Result"].forEach((h,j)=>{
   const th=document.createElement("th");
   const reveal=document.createElement("button");reveal.type="button";reveal.className="sl-cue-heading";
-  reveal.textContent=h;reveal.setAttribute("aria-pressed",String(cueColumns[selected][j]));
-  reveal.setAttribute("aria-label",(cueColumns[selected][j]?"Hide ":"Reveal ")+h+" cues");
+  const syncHeading=()=>{
+   reveal.textContent=cueHeadingVisible[selected][j]?h:"";
+   reveal.setAttribute("aria-pressed",String(cueHeadingVisible[selected][j]));
+   reveal.setAttribute("aria-label",(cueHeadingVisible[selected][j]?"Hide ":"Reveal ")+h+" heading");
+  };
+  syncHeading();
+  reveal.title="Click to hide or restore this heading";
   reveal.addEventListener("click",()=>{
-   cueColumns[selected][j]=!cueColumns[selected][j];
-   cueProgress[selected][j]=cueColumns[selected][j]?tbody.children.length:0;
-   reveal.setAttribute("aria-pressed",String(cueColumns[selected][j]));
-   reveal.setAttribute("aria-label",(cueColumns[selected][j]?"Hide ":"Reveal ")+h+" cues");
-   tbody.querySelectorAll("tr").forEach(row=>{
-    const cell=row.children[j];if(cell){cell.textContent=cueColumns[selected][j]?cell.dataset.cue:"";cell.classList.toggle("sl-cue-covered",!cueColumns[selected][j])}
-   });
+   if(cueHeadingVisible[selected][j]){
+    cueHeadingVisible[selected][j]=false;
+    cueColumns[selected][j]=false;
+    cueProgress[selected][j]=0;
+    tbody.querySelectorAll("tr").forEach(row=>{
+     const cell=row.children[j];
+     if(cell){cell.textContent="";cell.classList.add("sl-cue-covered")}
+    });
+   }else{
+    cueHeadingVisible[selected][j]=true;
+   }
+   syncHeading();
   });
   th.append(reveal);tr.append(th);
  });head.append(tr);t.append(head);
  const tbody=document.createElement("tbody");s.cues.filter(r=>r.some(Boolean)).forEach(row=>{
   const tr=document.createElement("tr");row.forEach((word,j)=>{
-   const td=document.createElement("td");td.dataset.cue=word;td.tabIndex=0;td.setAttribute("role","button");td.setAttribute("aria-label","Reveal next "+["Situation","Task","Action","Result"][j]+" cue");
+   const td=document.createElement("td");td.dataset.cue=word;td.tabIndex=0;td.setAttribute("role","button");td.setAttribute("aria-label","Reveal next "+s.headings[j]+" cue");
    const visible=cueColumns[selected][j] || tbody.children.length<cueProgress[selected][j];
    td.textContent=visible?word:"";
    td.classList.toggle("sl-cue-covered",!visible);
